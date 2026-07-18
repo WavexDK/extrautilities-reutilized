@@ -46,17 +46,17 @@ Well now, you ask, how do I acquire Grid Power? Well, it's actually pretty simpl
 There are several blocks that generate Grid Power either passively or manually. The most common methods are as follows:
 > Solar Panels
 >
->  ^- Generates 1 Grid Power per block during the daytime with clear access to the sky
+> ^- Generates 1 Grid Power per block during the daytime with clear access to the sky
 >
 > 
 > Lunar Panels
 >
->  ^- Generates 0.7 Grid Power per block during the nighttime with clear access to the sky
+> ^- Generates 0.7 Grid Power per block during the nighttime with clear access to the sky
 >
 > 
 > Manual Mill
 >
->  ^- Generates 15 Grid Power while you are actively right-clicking it, and stops when you stop right-clicking it
+> ^- Generates 15 Grid Power while you are actively right-clicking it, and stops when you stop right-clicking it
 >
 >
 > Other Mills
@@ -74,9 +74,12 @@ This mod brings several new machines to the game, including the Crusher, Electri
 
 Some machines have a crucial purpose in progression, such as;
 > The Resonator;
+>
 > ^- Allows you to make Stoneburnt from Smooth Stone, which is used to craft many generators and machines, along with Upgrades, decorative blocks and more
->  
+>
+> 
 > The Enchanter;
+>
 > ^- Allows you to upgrade some ingots and items into Enchanted versions, along with better Upgrades
 
 The machines in this mod are still being worked on, so expect changes over the next few weeks and months.
