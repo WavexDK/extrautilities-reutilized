@@ -1,0 +1,21 @@
+{
+  "_fv": 89,
+  "_type": "jeirecipe",
+  "definition": {
+    "category": "s_gen_recipe_type",
+    "ingredients": [
+      "TAG:minecraft:wooden_pressure_plates"
+    ],
+    "integers": [],
+    "strings": [
+      "euru:survival_generator",
+      "minecraft:wooden_pressure_plates"
+    ],
+    "recipetype": "SGenRecipeType",
+    "results": [
+      "Blocks.POLISHED_TUFF"
+    ],
+    "resultCounts": [],
+    "count": 0
+  }
+}

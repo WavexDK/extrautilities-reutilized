@@ -1,0 +1,18 @@
+{
+  "type": "euru:f_gen_recipe_type",
+  "ingredients": [
+    {
+      "item": "minecraft:cartography_table"
+    }
+  ],
+  "strings": [
+    "euru:furnace_generator",
+    "minecraft:cartography_table"
+  ],
+  "outputs": [
+    {
+      "id": "minecraft:polished_tuff",
+      "count": 1
+    }
+  ]
+}

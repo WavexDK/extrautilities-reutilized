@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "euru:slightly_larger_chest",
+    "euru:mini_chest",
+    "euru:chunk_loading_ward",
+    "euru:manual_mill"
+  ]
+}

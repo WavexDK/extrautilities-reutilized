@@ -1,0 +1,18 @@
+{
+  "type": "euru:s_gen_recipe_type",
+  "ingredients": [
+    {
+      "tag": "minecraft:wooden_doors"
+    }
+  ],
+  "strings": [
+    "euru:survival_generator",
+    "minecraft:wooden_doors"
+  ],
+  "outputs": [
+    {
+      "id": "minecraft:polished_tuff",
+      "count": 1
+    }
+  ]
+}

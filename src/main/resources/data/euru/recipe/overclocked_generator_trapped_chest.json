@@ -1,0 +1,18 @@
+{
+  "type": "euru:o_gen_recipe_type",
+  "ingredients": [
+    {
+      "item": "minecraft:trapped_chest"
+    }
+  ],
+  "strings": [
+    "euru:overclocked_generator",
+    "minecraft:trapped_chest"
+  ],
+  "outputs": [
+    {
+      "id": "minecraft:polished_tuff",
+      "count": 1
+    }
+  ]
+}

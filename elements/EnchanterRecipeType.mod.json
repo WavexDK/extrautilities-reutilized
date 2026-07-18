@@ -1,0 +1,107 @@
+{
+  "_fv": 89,
+  "_type": "jeirecipetype",
+  "definition": {
+    "textureSelector": "enchanterbackdrop.png",
+    "width": 180,
+    "height": 80,
+    "icon": "CUSTOM:Enchanter",
+    "craftingtables": [
+      "CUSTOM:Enchanter"
+    ],
+    "enableCraftingtable": true,
+    "enableIntList": true,
+    "enableStringList": true,
+    "disableJeiBorder": true,
+    "title": "Enchanter",
+    "slotList": [
+      {
+        "type": "INPUT",
+        "x": 63,
+        "y": 14,
+        "slotid": 0
+      },
+      {
+        "type": "INPUT",
+        "x": 103,
+        "y": 14,
+        "slotid": 1
+      },
+      {
+        "type": "OUTPUT",
+        "x": 83,
+        "y": 53,
+        "slotid": 0
+      }
+    ],
+    "components": [
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_proc_enchanter_recipe_type_value",
+          "text": {
+            "fixedValue": "",
+            "name": "EnchanterRecipeTypeValue"
+          },
+          "width": 24,
+          "height": 24,
+          "x": 182,
+          "y": 140,
+          "locked": false
+        }
+      },
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_proc_enchanter_recipe_type_value1",
+          "text": {
+            "fixedValue": "",
+            "name": "EnchanterRecipeTypeValue"
+          },
+          "width": 24,
+          "height": 24,
+          "x": 182,
+          "y": 163,
+          "locked": false
+        }
+      },
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_proc_enchanter_recipe_type_value2",
+          "text": {
+            "fixedValue": "",
+            "name": "EnchanterRecipeTypeValue"
+          },
+          "width": 24,
+          "height": 24,
+          "x": 224,
+          "y": 140,
+          "locked": false
+        }
+      },
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_proc_enchanter_recipe_type_value3",
+          "text": {
+            "fixedValue": "",
+            "name": "EnchanterRecipeTypeValue"
+          },
+          "width": 24,
+          "height": 24,
+          "x": 224,
+          "y": 163,
+          "locked": false
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}

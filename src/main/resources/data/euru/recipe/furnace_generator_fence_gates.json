@@ -1,0 +1,18 @@
+{
+  "type": "euru:f_gen_recipe_type",
+  "ingredients": [
+    {
+      "tag": "minecraft:fence_gates"
+    }
+  ],
+  "strings": [
+    "euru:furnace_generator",
+    "minecraft:fence_gates"
+  ],
+  "outputs": [
+    {
+      "id": "minecraft:polished_tuff",
+      "count": 1
+    }
+  ]
+}

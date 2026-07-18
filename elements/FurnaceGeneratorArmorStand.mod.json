@@ -1,0 +1,23 @@
+{
+  "_fv": 89,
+  "_type": "jeirecipe",
+  "definition": {
+    "category": "f_gen_recipe_type",
+    "ingredients": [
+      "Items.ARMOR_STAND"
+    ],
+    "integers": [],
+    "strings": [
+      "euru:furnace_generator",
+      "minecraft:armor_stand"
+    ],
+    "recipetype": "FGenRecipeType",
+    "results": [
+      "Blocks.POLISHED_TUFF"
+    ],
+    "resultCounts": [
+      1
+    ],
+    "count": 0
+  }
+}

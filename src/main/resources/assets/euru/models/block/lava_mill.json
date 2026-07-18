@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "euru:block/lavamill-default",
+    "up": "euru:block/lavamill-default",
+    "north": "euru:block/lavamill-side-default",
+    "east": "euru:block/lavamill-side-default",
+    "south": "euru:block/lavamill-side-default",
+    "west": "euru:block/lavamill-side-default",
+    "particle": "euru:block/lavamill-default"
+  },
+  "render_type": "solid"
+}

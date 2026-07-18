@@ -1,0 +1,18 @@
+{
+  "type": "euru:s_gen_recipe_type",
+  "ingredients": [
+    {
+      "item": "minecraft:wooden_hoe"
+    }
+  ],
+  "strings": [
+    "euru:survival_generator",
+    "minecraft:wooden_hoe"
+  ],
+  "outputs": [
+    {
+      "id": "minecraft:polished_tuff",
+      "count": 1
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aba",
+    "aca",
+    "ded"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:lapis_lazuli"
+    },
+    "b": {
+      "item": "euru:lunar_reactive_dust"
+    },
+    "c": {
+      "item": "minecraft:gold_block"
+    },
+    "d": {
+      "item": "minecraft:redstone"
+    },
+    "e": {
+      "item": "euru:furnace_generator"
+    }
+  },
+  "result": {
+    "id": "euru:overclocked_generator",
+    "count": 1
+  }
+}

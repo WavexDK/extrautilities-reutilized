@@ -1,0 +1,14 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "euru:item/golden_lasso"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "euru:golden_lasso_full": 1
+      },
+      "model": "euru:item/golden_lasso_0"
+    }
+  ]
+}

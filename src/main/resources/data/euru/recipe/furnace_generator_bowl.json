@@ -1,0 +1,18 @@
+{
+  "type": "euru:f_gen_recipe_type",
+  "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    }
+  ],
+  "strings": [
+    "euru:furnace_generator",
+    "minecraft:bowl"
+  ],
+  "outputs": [
+    {
+      "id": "minecraft:polished_tuff",
+      "count": 1
+    }
+  ]
+}

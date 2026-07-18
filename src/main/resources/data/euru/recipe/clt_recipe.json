@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "euru:machine_block"
+    },
+    {
+      "item": "euru:resonating_redstone_crystal"
+    }
+  ],
+  "result": {
+    "id": "euru:chunk_loader_tester",
+    "count": 1
+  }
+}

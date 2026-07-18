@@ -1,0 +1,18 @@
+{
+  "type": "euru:s_gen_recipe_type",
+  "ingredients": [
+    {
+      "item": "minecraft:bow"
+    }
+  ],
+  "strings": [
+    "euru:survival_generator",
+    "minecraft:bow"
+  ],
+  "outputs": [
+    {
+      "id": "minecraft:polished_tuff",
+      "count": 1
+    }
+  ]
+}

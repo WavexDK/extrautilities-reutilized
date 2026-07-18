@@ -1,0 +1,29 @@
+{
+  "_fv": 89,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "unlockingItems": [],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      "Items.IRON_INGOT",
+      "CUSTOM:StoneBurnt",
+      "Items.IRON_INGOT",
+      "CUSTOM:EnchantedIngot",
+      "CUSTOM:MachineBlock",
+      "CUSTOM:EnchantedIngot",
+      "Items.IRON_INGOT",
+      "CUSTOM:StoneBurnt",
+      "Items.IRON_INGOT"
+    ],
+    "recipeReturnStack": "CUSTOM:ElectricFurnace",
+    "name": "electric_furnace_recipe",
+    "namespace": "mod"
+  }
+}

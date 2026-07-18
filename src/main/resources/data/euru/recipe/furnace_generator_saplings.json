@@ -1,0 +1,18 @@
+{
+  "type": "euru:f_gen_recipe_type",
+  "ingredients": [
+    {
+      "tag": "minecraft:saplings"
+    }
+  ],
+  "strings": [
+    "euru:furnace_generator",
+    "minecraft:saplings"
+  ],
+  "outputs": [
+    {
+      "id": "minecraft:polished_tuff",
+      "count": 1
+    }
+  ]
+}

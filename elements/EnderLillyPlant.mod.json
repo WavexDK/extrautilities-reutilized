@@ -1,0 +1,101 @@
+{
+  "_fv": 89,
+  "_type": "plant",
+  "definition": {
+    "renderType": 12,
+    "texture": "stage8",
+    "customModelName": "Cross model",
+    "itemTexture": "",
+    "particleTexture": "",
+    "tintType": "No tint",
+    "isItemTinted": false,
+    "plantType": "normal",
+    "suspiciousStewEffect": "SPEED",
+    "suspiciousStewDuration": 0,
+    "secondaryTreeChance": 0.1,
+    "trees": [
+      null,
+      null
+    ],
+    "flowerTrees": [
+      null,
+      null
+    ],
+    "megaTrees": [
+      null,
+      null
+    ],
+    "growapableSpawnType": "Plains",
+    "growapableMaxHeight": 3,
+    "customBoundingBox": true,
+    "disableOffset": false,
+    "boundingBoxes": [
+      {
+        "mx": 1.0,
+        "my": 0.0,
+        "mz": 1.0,
+        "Mx": 15.0,
+        "My": 15.0,
+        "Mz": 15.0,
+        "subtract": false
+      }
+    ],
+    "name": "Ender Lilly Plant",
+    "specialInformation": {
+      "fixedValue": []
+    },
+    "creativeTabs": [
+      "DECORATIONS"
+    ],
+    "hardness": 0.0,
+    "resistance": 0.0,
+    "luminance": 0,
+    "unbreakable": false,
+    "isSolid": false,
+    "isWaterloggable": false,
+    "hasBlockItem": false,
+    "maxStackSize": 64,
+    "rarity": "COMMON",
+    "immuneToFire": false,
+    "soundOnStep": "PLANT",
+    "isCustomSoundType": false,
+    "breakSound": "",
+    "stepSound": "",
+    "placeSound": "",
+    "hitSound": "",
+    "fallSound": "",
+    "useLootTableForDrops": false,
+    "customDrop": "",
+    "dropAmount": 1,
+    "xpAmountMin": 0,
+    "xpAmountMax": 0,
+    "forceTicking": true,
+    "emissiveRendering": false,
+    "hasTileEntity": true,
+    "isReplaceable": false,
+    "colorOnMap": "WARPED_NYLIUM",
+    "creativePickItem": "",
+    "offsetType": "XZ",
+    "aiPathNodeType": "DEFAULT",
+    "strippingResult": "",
+    "ignitedByLava": false,
+    "flammability": 100,
+    "fireSpreadSpeed": 60,
+    "jumpFactor": 1.0,
+    "speedFactor": 1.0,
+    "canBePlacedOn": [
+      "Blocks.END_STONE"
+    ],
+    "isBonemealable": false,
+    "frequencyOnChunks": 32,
+    "generateFeature": true,
+    "restrictionBiomes": [
+      "the_end"
+    ],
+    "generationType": "Flower",
+    "patchSize": 12,
+    "generateAtAnyHeight": false,
+    "onDestroyedByPlayer": "EnderLillyPlantPlantDestroyedByPlayer",
+    "onDestroyedByExplosion": "EnderLillyPlantPlantDestroyedByPlayer"
+  }
+}

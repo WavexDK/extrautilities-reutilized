@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " a ",
+    "bcb",
+    "ded"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:enchanted_book"
+    },
+    "b": {
+      "item": "minecraft:diamond"
+    },
+    "c": {
+      "item": "euru:machine_block"
+    },
+    "d": {
+      "item": "minecraft:iron_ingot"
+    },
+    "e": {
+      "item": "euru:redstone_gear"
+    }
+  },
+  "result": {
+    "id": "euru:enchanter",
+    "count": 1
+  }
+}

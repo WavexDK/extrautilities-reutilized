@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "euru:block/watermill-top",
+    "up": "euru:block/watermill-top",
+    "north": "euru:block/watermill-side",
+    "east": "euru:block/watermill-side",
+    "south": "euru:block/watermill-side",
+    "west": "euru:block/watermill-side",
+    "particle": "euru:block/watermill-default"
+  },
+  "render_type": "solid"
+}

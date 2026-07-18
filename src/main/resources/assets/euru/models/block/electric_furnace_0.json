@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "euru:block/furnace_bottomfinalv1",
+    "up": "euru:block/furnacetop",
+    "north": "euru:block/furnace_finalonv1",
+    "east": "euru:block/furnace_finaloffv1_side",
+    "south": "euru:block/furnace_finaloffv1_side",
+    "west": "euru:block/furnace_finaloffv1_side",
+    "particle": "euru:block/furnace_bottomfinalv1"
+  },
+  "render_type": "solid"
+}

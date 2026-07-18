@@ -1,0 +1,18 @@
+{
+  "type": "euru:s_gen_recipe_type",
+  "ingredients": [
+    {
+      "item": "minecraft:redstone_torch"
+    }
+  ],
+  "strings": [
+    "euru:survival_generator",
+    "minecraft:redstone_torch"
+  ],
+  "outputs": [
+    {
+      "id": "minecraft:polished_tuff",
+      "count": 1
+    }
+  ]
+}

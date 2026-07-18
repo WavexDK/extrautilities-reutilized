@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aba",
+    "cde",
+    "aba"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:ink_sac"
+    },
+    "b": {
+      "item": "minecraft:diamond"
+    },
+    "c": {
+      "item": "euru:golden_lasso_sw"
+    },
+    "d": {
+      "item": "euru:chicken_ring"
+    },
+    "e": {
+      "item": "minecraft:ender_eye"
+    }
+  },
+  "result": {
+    "id": "euru:squid_ring",
+    "count": 1
+  }
+}

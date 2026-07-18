@@ -1,0 +1,23 @@
+{
+  "_fv": 89,
+  "_type": "jeirecipe",
+  "definition": {
+    "category": "f_gen_recipe_type",
+    "ingredients": [
+      "Items.ITEM_FRAME"
+    ],
+    "integers": [],
+    "strings": [
+      "euru:furnace_generator",
+      "minecraft:item_frame"
+    ],
+    "recipetype": "FGenRecipeType",
+    "results": [
+      "Blocks.POLISHED_TUFF"
+    ],
+    "resultCounts": [
+      1
+    ],
+    "count": 0
+  }
+}

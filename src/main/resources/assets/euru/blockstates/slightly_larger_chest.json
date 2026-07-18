@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "euru:block/slightly_larger_chest"
+    },
+    "facing=east": {
+      "model": "euru:block/slightly_larger_chest",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "euru:block/slightly_larger_chest",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "euru:block/slightly_larger_chest",
+      "y": 270
+    }
+  }
+}

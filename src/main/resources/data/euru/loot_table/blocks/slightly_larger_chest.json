@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:block",
+  "random_sequence": "euru:blocks/slightly_larger_chest",
+  "pools": [
+    {
+      "rolls": 1.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "euru:slightly_larger_chest"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "type": "euru:f_gen_recipe_type",
+  "ingredients": [
+    {
+      "item": "minecraft:lectern"
+    }
+  ],
+  "strings": [
+    "euru:furnace_generator",
+    "minecraft:lectern"
+  ],
+  "outputs": [
+    {
+      "id": "minecraft:polished_tuff",
+      "count": 1
+    }
+  ]
+}

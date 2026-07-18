@@ -1,0 +1,50 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "euru:item/shards-1"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "euru:ender_shard_count": 2
+      },
+      "model": "euru:item/ender_shard_0"
+    },
+    {
+      "predicate": {
+        "euru:ender_shard_count": 3
+      },
+      "model": "euru:item/ender_shard_1"
+    },
+    {
+      "predicate": {
+        "euru:ender_shard_count": 4
+      },
+      "model": "euru:item/ender_shard_2"
+    },
+    {
+      "predicate": {
+        "euru:ender_shard_count": 5
+      },
+      "model": "euru:item/ender_shard_3"
+    },
+    {
+      "predicate": {
+        "euru:ender_shard_count": 6
+      },
+      "model": "euru:item/ender_shard_4"
+    },
+    {
+      "predicate": {
+        "euru:ender_shard_count": 7
+      },
+      "model": "euru:item/ender_shard_5"
+    },
+    {
+      "predicate": {
+        "euru:ender_shard_count": 8
+      },
+      "model": "euru:item/ender_shard_6"
+    }
+  ]
+}

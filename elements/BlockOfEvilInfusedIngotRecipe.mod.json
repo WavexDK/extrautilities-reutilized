@@ -1,0 +1,29 @@
+{
+  "_fv": 89,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "unlockingItems": [],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      "CUSTOM:EvilInfusedIngot",
+      "CUSTOM:EvilInfusedIngot",
+      "CUSTOM:EvilInfusedIngot",
+      "CUSTOM:EvilInfusedIngot",
+      "CUSTOM:EvilInfusedIngot",
+      "CUSTOM:EvilInfusedIngot",
+      "CUSTOM:EvilInfusedIngot",
+      "CUSTOM:EvilInfusedIngot",
+      "CUSTOM:EvilInfusedIngot"
+    ],
+    "recipeReturnStack": "CUSTOM:BlockOfEvilInfusedIngot",
+    "name": "block_of_evil_infused_ingot_recipe",
+    "namespace": "mod"
+  }
+}

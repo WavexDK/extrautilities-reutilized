@@ -1,0 +1,21 @@
+{
+  "_fv": 89,
+  "_type": "jeirecipe",
+  "definition": {
+    "category": "s_gen_recipe_type",
+    "ingredients": [
+      "Items.WOODEN_PICKAXE"
+    ],
+    "integers": [],
+    "strings": [
+      "euru:survival_generator",
+      "minecraft:wooden_pickaxe"
+    ],
+    "recipetype": "SGenRecipeType",
+    "results": [
+      "Blocks.POLISHED_TUFF"
+    ],
+    "resultCounts": [],
+    "count": 0
+  }
+}

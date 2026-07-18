@@ -1,0 +1,178 @@
+{
+  "_fv": 89,
+  "_type": "item",
+  "definition": {
+    "renderType": 0,
+    "texture": "shards-1",
+    "customModelName": "Normal",
+    "guiTexture": "",
+    "customProperties": {
+      "count": "EnderShardPropertyValueProvider"
+    },
+    "states": [
+      {
+        "renderType": 0,
+        "texture": "shards-2",
+        "customModelName": "Normal",
+        "stateMap": [
+          {
+            "property": {
+              "min": -1.7976931348623157E308,
+              "max": 1.7976931348623157E308,
+              "name": "CUSTOM:count",
+              "type": "number"
+            },
+            "value": 2.0
+          }
+        ]
+      },
+      {
+        "renderType": 0,
+        "texture": "shards-3",
+        "customModelName": "Normal",
+        "stateMap": [
+          {
+            "property": {
+              "min": -1.7976931348623157E308,
+              "max": 1.7976931348623157E308,
+              "name": "CUSTOM:count",
+              "type": "number"
+            },
+            "value": 3.0
+          }
+        ]
+      },
+      {
+        "renderType": 0,
+        "texture": "shards-4",
+        "customModelName": "Normal",
+        "stateMap": [
+          {
+            "property": {
+              "min": -1.7976931348623157E308,
+              "max": 1.7976931348623157E308,
+              "name": "CUSTOM:count",
+              "type": "number"
+            },
+            "value": 4.0
+          }
+        ]
+      },
+      {
+        "renderType": 0,
+        "texture": "shards-5",
+        "customModelName": "Normal",
+        "stateMap": [
+          {
+            "property": {
+              "min": -1.7976931348623157E308,
+              "max": 1.7976931348623157E308,
+              "name": "CUSTOM:count",
+              "type": "number"
+            },
+            "value": 5.0
+          }
+        ]
+      },
+      {
+        "renderType": 0,
+        "texture": "shards-6",
+        "customModelName": "Normal",
+        "stateMap": [
+          {
+            "property": {
+              "min": -1.7976931348623157E308,
+              "max": 1.7976931348623157E308,
+              "name": "CUSTOM:count",
+              "type": "number"
+            },
+            "value": 6.0
+          }
+        ]
+      },
+      {
+        "renderType": 0,
+        "texture": "shards-7",
+        "customModelName": "Normal",
+        "stateMap": [
+          {
+            "property": {
+              "min": -1.7976931348623157E308,
+              "max": 1.7976931348623157E308,
+              "name": "CUSTOM:count",
+              "type": "number"
+            },
+            "value": 7.0
+          }
+        ]
+      },
+      {
+        "renderType": 0,
+        "texture": "shards-8",
+        "customModelName": "Normal",
+        "stateMap": [
+          {
+            "property": {
+              "min": -1.7976931348623157E308,
+              "max": 1.7976931348623157E308,
+              "name": "CUSTOM:count",
+              "type": "number"
+            },
+            "value": 8.0
+          }
+        ]
+      }
+    ],
+    "animations": [],
+    "name": "Ender Shard",
+    "rarity": "COMMON",
+    "creativeTabs": [
+      "CUSTOM:Euru"
+    ],
+    "stackSize": 8,
+    "enchantability": 0,
+    "useDuration": 0,
+    "toolType": 1.0,
+    "damageCount": 0,
+    "recipeRemainder": "",
+    "destroyAnyBlock": false,
+    "immuneToFire": false,
+    "isPiglinCurrency": false,
+    "repairItems": [],
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false,
+    "enableMeleeDamage": false,
+    "damageVsEntity": 4.0,
+    "attackSpeed": 1.2,
+    "specialInformation": {
+      "fixedValue": []
+    },
+    "glowCondition": {
+      "fixedValue": false
+    },
+    "openGUIOnRightClick": {
+      "fixedValue": false
+    },
+    "inventorySize": 9,
+    "inventoryStackSize": 99,
+    "enableRanged": false,
+    "shootConstantly": false,
+    "rangedItemChargesPower": false,
+    "projectile": "Arrow",
+    "projectileDisableAmmoCheck": false,
+    "isFood": false,
+    "nutritionalValue": 4,
+    "saturation": 0.3,
+    "eatResultItem": "",
+    "isMeat": false,
+    "isAlwaysEdible": false,
+    "animation": "none",
+    "isMusicDisc": false,
+    "musicDiscMusic": "",
+    "musicDiscDescription": "",
+    "musicDiscLengthInTicks": 100,
+    "musicDiscAnalogOutput": 0,
+    "providedBannerPatterns": [],
+    "attributeModifiers": []
+  }
+}

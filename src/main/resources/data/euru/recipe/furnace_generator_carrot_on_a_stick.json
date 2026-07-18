@@ -1,0 +1,18 @@
+{
+  "type": "euru:f_gen_recipe_type",
+  "ingredients": [
+    {
+      "item": "minecraft:carrot_on_a_stick"
+    }
+  ],
+  "strings": [
+    "euru:furnace_generator",
+    "minecraft:carrot_on_a_stick"
+  ],
+  "outputs": [
+    {
+      "id": "minecraft:polished_tuff",
+      "count": 1
+    }
+  ]
+}

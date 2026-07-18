@@ -1,0 +1,479 @@
+{
+  "_fv": 89,
+  "_type": "gui",
+  "definition": {
+    "type": 1,
+    "width": 176,
+    "height": 166,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "image",
+        "data": {
+          "image": "resbackdrop.png",
+          "use1Xscale": false,
+          "x": 182,
+          "y": 46,
+          "locked": false
+        }
+      },
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": ""
+          },
+          "disablePlacement": {
+            "fixedValue": false,
+            "name": "IfNotSpeedUpgrades"
+          },
+          "id": 0,
+          "disablePickup": {
+            "fixedValue": false
+          },
+          "dropItemsWhenNotBound": true,
+          "x": 178,
+          "y": 71,
+          "locked": false
+        }
+      },
+      {
+        "type": "outputslot",
+        "data": {
+          "id": 1,
+          "disablePickup": {
+            "fixedValue": false
+          },
+          "dropItemsWhenNotBound": true,
+          "x": 232,
+          "y": 71,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_resonator",
+          "text": {
+            "fixedValue": "Resonator"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "hasShadow": false,
+          "x": 130,
+          "y": 41,
+          "locked": false
+        }
+      },
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": ""
+          },
+          "disablePlacement": {
+            "fixedValue": false,
+            "name": "OnlySpeedUpgrades"
+          },
+          "id": 2,
+          "disablePickup": {
+            "fixedValue": false
+          },
+          "dropItemsWhenNotBound": true,
+          "x": 131,
+          "y": 77,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "arrow-empty.png",
+          "use1Xscale": false,
+          "displayCondition": "ArrowEmpty",
+          "x": 203,
+          "y": 69,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "arrow-1.png",
+          "use1Xscale": false,
+          "displayCondition": "Arrow1",
+          "x": 203,
+          "y": 69,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "arrow-2.png",
+          "use1Xscale": false,
+          "displayCondition": "Arrow2",
+          "x": 203,
+          "y": 69,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "arrow-3.png",
+          "use1Xscale": false,
+          "displayCondition": "Arrow3",
+          "x": 203,
+          "y": 69,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "arrow-4.png",
+          "use1Xscale": false,
+          "displayCondition": "Arrow4",
+          "x": 203,
+          "y": 69,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "arrow-5.png",
+          "use1Xscale": false,
+          "displayCondition": "Arrow5",
+          "x": 203,
+          "y": 69,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "arrow-6.png",
+          "use1Xscale": false,
+          "displayCondition": "Arrow6",
+          "x": 203,
+          "y": 69,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "arrow-7.png",
+          "use1Xscale": false,
+          "displayCondition": "Arrow7",
+          "x": 203,
+          "y": 69,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "arrow-8.png",
+          "use1Xscale": false,
+          "displayCondition": "Arrow8",
+          "x": 203,
+          "y": 69,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "arrow-9.png",
+          "use1Xscale": false,
+          "displayCondition": "Arrow9",
+          "x": 203,
+          "y": 69,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "arrow-10.png",
+          "use1Xscale": false,
+          "displayCondition": "Arrow10",
+          "x": 203,
+          "y": 69,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "arrow-11.png",
+          "use1Xscale": false,
+          "displayCondition": "Arrow11",
+          "x": 203,
+          "y": 69,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "arrow-12.png",
+          "use1Xscale": false,
+          "displayCondition": "Arrow12",
+          "x": 203,
+          "y": 69,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "arrow-13.png",
+          "use1Xscale": false,
+          "displayCondition": "Arrow13",
+          "x": 203,
+          "y": 69,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "arrow-14.png",
+          "use1Xscale": false,
+          "displayCondition": "Arrow14",
+          "x": 203,
+          "y": 69,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "arrow-15.png",
+          "use1Xscale": false,
+          "displayCondition": "Arrow15",
+          "x": 203,
+          "y": 69,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "arrow-16.png",
+          "use1Xscale": false,
+          "displayCondition": "Arrow16",
+          "x": 203,
+          "y": 69,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "arrow-17.png",
+          "use1Xscale": false,
+          "displayCondition": "Arrow17",
+          "x": 203,
+          "y": 69,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "arrow-18.png",
+          "use1Xscale": false,
+          "displayCondition": "Arrow18",
+          "x": 203,
+          "y": 69,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "arrow-19.png",
+          "use1Xscale": false,
+          "displayCondition": "Arrow19",
+          "x": 203,
+          "y": 69,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "arrow-20.png",
+          "use1Xscale": false,
+          "displayCondition": "Arrow20",
+          "x": 203,
+          "y": 69,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "arrow-21.png",
+          "use1Xscale": false,
+          "displayCondition": "Arrow21",
+          "x": 203,
+          "y": 69,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "arrow-full.png",
+          "use1Xscale": false,
+          "displayCondition": "ArrowFull",
+          "x": 203,
+          "y": 70,
+          "locked": false
+        }
+      },
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_proc_resonator_redstone_mode",
+          "text": {
+            "fixedValue": "",
+            "name": "ResonatorRedstoneMode"
+          },
+          "width": 24,
+          "height": 24,
+          "x": 128,
+          "y": 51,
+          "locked": false
+        }
+      },
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_speed_upgrades",
+          "text": {
+            "fixedValue": "Speed Upgrade"
+          },
+          "displayCondition": "SUTooltip",
+          "width": 24,
+          "height": 24,
+          "x": 128,
+          "y": 75,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "subackdrop.png",
+          "use1Xscale": false,
+          "displayCondition": "SUTooltip",
+          "x": 132,
+          "y": 78,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "symbol_cross.png",
+          "use1Xscale": false,
+          "displayCondition": "TooMuchGP",
+          "x": 206,
+          "y": 72,
+          "locked": false
+        }
+      },
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_not_enough_grid_power_available",
+          "text": {
+            "fixedValue": "Not enough Grid Power available!",
+            "name": "ReturnGPError"
+          },
+          "displayCondition": "TooMuchGP",
+          "width": 24,
+          "height": 24,
+          "x": 202,
+          "y": 68,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "button-gun.png",
+          "use1Xscale": false,
+          "displayCondition": "AlwaysOnProcedure",
+          "x": 130,
+          "y": 53,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "button-always-off.png",
+          "use1Xscale": false,
+          "displayCondition": "AlwaysOffProcedure",
+          "x": 130,
+          "y": 53,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "button-red-off.png",
+          "use1Xscale": false,
+          "displayCondition": "RedstoneOffProcedure",
+          "x": 130,
+          "y": 53,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "button-red.png",
+          "use1Xscale": false,
+          "displayCondition": "RedstoneOnProcedure",
+          "x": 130,
+          "y": 53,
+          "locked": false
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_blank_x20",
+          "image": "blank_x20.png",
+          "hoveredImage": "blank_whiteborder_x20.png",
+          "onClick": "ChangeRedstoneMode",
+          "x": 130,
+          "y": 53,
+          "locked": false
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}

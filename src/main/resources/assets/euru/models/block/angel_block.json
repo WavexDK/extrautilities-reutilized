@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "euru:block/gilded_obsidian_angel_alt3_finalv1_sidetop",
+    "up": "euru:block/gilded_obsidian_angel_alt3_finalv1_sidetop",
+    "north": "euru:block/gilded_obsidian_angel_alt3_finalv1",
+    "east": "euru:block/gilded_obsidian_angel_alt3_finalv1",
+    "south": "euru:block/gilded_obsidian_angel_alt3_finalv1",
+    "west": "euru:block/gilded_obsidian_angel_alt3_finalv1",
+    "particle": "euru:block/gilded_obsidian_angel_alt3_finalv1_sidetop"
+  },
+  "render_type": "solid"
+}

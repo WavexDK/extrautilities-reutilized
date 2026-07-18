@@ -1,0 +1,21 @@
+{
+  "_fv": 89,
+  "_type": "jeirecipe",
+  "definition": {
+    "category": "s_gen_recipe_type",
+    "ingredients": [
+      "Blocks.COAL_BLOCK"
+    ],
+    "integers": [],
+    "strings": [
+      "euru:survival_generator",
+      "minecraft:coal_block"
+    ],
+    "recipetype": "SGenRecipeType",
+    "results": [
+      "Blocks.POLISHED_TUFF"
+    ],
+    "resultCounts": [],
+    "count": 0
+  }
+}

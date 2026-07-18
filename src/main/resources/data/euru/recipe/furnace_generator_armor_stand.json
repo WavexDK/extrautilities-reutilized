@@ -1,0 +1,18 @@
+{
+  "type": "euru:f_gen_recipe_type",
+  "ingredients": [
+    {
+      "item": "minecraft:armor_stand"
+    }
+  ],
+  "strings": [
+    "euru:furnace_generator",
+    "minecraft:armor_stand"
+  ],
+  "outputs": [
+    {
+      "id": "minecraft:polished_tuff",
+      "count": 1
+    }
+  ]
+}

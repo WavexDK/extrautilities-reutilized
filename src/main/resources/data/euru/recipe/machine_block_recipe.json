@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aba",
+    "bcb",
+    "ada"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:iron_ingot"
+    },
+    "b": {
+      "item": "minecraft:redstone"
+    },
+    "c": {
+      "item": "euru:resonating_redstone_crystal"
+    },
+    "d": {
+      "item": "minecraft:chest"
+    }
+  },
+  "result": {
+    "id": "euru:machine_block",
+    "count": 4
+  }
+}

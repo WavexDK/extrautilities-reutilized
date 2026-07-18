@@ -1,0 +1,23 @@
+{
+  "_fv": 89,
+  "_type": "jeirecipe",
+  "definition": {
+    "category": "resonator_recipe_type",
+    "ingredients": [
+      "Blocks.SMOOTH_STONE"
+    ],
+    "integers": [],
+    "strings": [
+      "euru:resonator",
+      "minecraft:smooth_stone"
+    ],
+    "recipetype": "ResonatorRecipeType",
+    "results": [
+      "CUSTOM:StoneBurnt"
+    ],
+    "resultCounts": [
+      1
+    ],
+    "count": 0
+  }
+}

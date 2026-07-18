@@ -1,0 +1,18 @@
+{
+  "type": "euru:o_gen_recipe_type",
+  "ingredients": [
+    {
+      "item": "minecraft:crossbow"
+    }
+  ],
+  "strings": [
+    "euru:overclocked_generator",
+    "minecraft:crossbow"
+  ],
+  "outputs": [
+    {
+      "id": "minecraft:polished_tuff",
+      "count": 1
+    }
+  ]
+}

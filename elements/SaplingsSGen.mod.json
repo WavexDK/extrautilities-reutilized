@@ -1,0 +1,21 @@
+{
+  "_fv": 89,
+  "_type": "jeirecipe",
+  "definition": {
+    "category": "s_gen_recipe_type",
+    "ingredients": [
+      "TAG:minecraft:saplings"
+    ],
+    "integers": [],
+    "strings": [
+      "euru:survival_generator",
+      "minecraft:saplings"
+    ],
+    "recipetype": "SGenRecipeType",
+    "results": [
+      "Blocks.POLISHED_TUFF"
+    ],
+    "resultCounts": [],
+    "count": 0
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "type": "euru:o_gen_recipe_type",
+  "ingredients": [
+    {
+      "item": "minecraft:composter"
+    }
+  ],
+  "strings": [
+    "euru:overclocked_generator",
+    "minecraft:composter"
+  ],
+  "outputs": [
+    {
+      "id": "minecraft:polished_tuff",
+      "count": 1
+    }
+  ]
+}

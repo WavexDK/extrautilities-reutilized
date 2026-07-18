@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "euru:block/crusher"
+    },
+    "facing=east": {
+      "model": "euru:block/crusher",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "euru:block/crusher",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "euru:block/crusher",
+      "y": 270
+    }
+  }
+}

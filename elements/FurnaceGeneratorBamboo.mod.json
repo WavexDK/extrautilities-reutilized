@@ -1,0 +1,23 @@
+{
+  "_fv": 89,
+  "_type": "jeirecipe",
+  "definition": {
+    "category": "f_gen_recipe_type",
+    "ingredients": [
+      "Blocks.BAMBOO"
+    ],
+    "integers": [],
+    "strings": [
+      "euru:furnace_generator",
+      "minecraft:bamboo"
+    ],
+    "recipetype": "FGenRecipeType",
+    "results": [
+      "Blocks.POLISHED_TUFF"
+    ],
+    "resultCounts": [
+      1
+    ],
+    "count": 0
+  }
+}

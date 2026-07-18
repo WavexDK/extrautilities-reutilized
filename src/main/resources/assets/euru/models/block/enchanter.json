@@ -1,0 +1,9 @@
+{
+  "parent": "euru:custom/enchanter_javamodel-off",
+  "textures": {
+    "all": "euru:block/enchanteroff",
+    "particle": "euru:block/enchanteroff",
+    "4": "euru:block/enchanteroff"
+  },
+  "render_type": "cutout"
+}

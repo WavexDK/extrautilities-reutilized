@@ -1,0 +1,21 @@
+{
+  "_fv": 89,
+  "_type": "jeirecipe",
+  "definition": {
+    "category": "s_gen_recipe_type",
+    "ingredients": [
+      "Items.ARMOR_STAND"
+    ],
+    "integers": [],
+    "strings": [
+      "euru:survival_generator",
+      "minecraft:armor_stand"
+    ],
+    "recipetype": "SGenRecipeType",
+    "results": [
+      "Blocks.POLISHED_TUFF"
+    ],
+    "resultCounts": [],
+    "count": 0
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    "aaa",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "euru:sextuple_compressed_cobblestone"
+    }
+  },
+  "result": {
+    "id": "euru:septuple_compressed_cobblestone",
+    "count": 1
+  }
+}

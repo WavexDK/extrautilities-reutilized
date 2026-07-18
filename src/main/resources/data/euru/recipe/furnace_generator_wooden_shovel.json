@@ -1,0 +1,18 @@
+{
+  "type": "euru:f_gen_recipe_type",
+  "ingredients": [
+    {
+      "item": "minecraft:wooden_shovel"
+    }
+  ],
+  "strings": [
+    "euru:furnace_generator",
+    "minecraft:wooden_shovel"
+  ],
+  "outputs": [
+    {
+      "id": "minecraft:polished_tuff",
+      "count": 1
+    }
+  ]
+}

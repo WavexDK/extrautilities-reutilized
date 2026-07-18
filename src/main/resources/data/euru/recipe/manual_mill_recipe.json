@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " a ",
+    "bcb"
+  ],
+  "key": {
+    "a": {
+      "item": "euru:redstone_gear"
+    },
+    "b": {
+      "item": "minecraft:smooth_stone"
+    },
+    "c": {
+      "item": "euru:resonating_redstone_crystal"
+    }
+  },
+  "result": {
+    "id": "euru:manual_mill",
+    "count": 1
+  }
+}

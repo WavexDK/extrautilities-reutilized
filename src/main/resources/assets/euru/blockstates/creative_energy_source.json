@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "euru:block/creative_energy_source"
+    },
+    "facing=east": {
+      "model": "euru:block/creative_energy_source",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "euru:block/creative_energy_source",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "euru:block/creative_energy_source",
+      "y": 270
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "type": "euru:resonator_recipe_type",
+  "ingredients": [
+    {
+      "item": "minecraft:light_weighted_pressure_plate"
+    }
+  ],
+  "strings": [
+    "euru:resonator",
+    "minecraft:light_weighted_pressure_plate"
+  ],
+  "outputs": [
+    {
+      "id": "euru:upgrade_base",
+      "count": 1
+    }
+  ]
+}

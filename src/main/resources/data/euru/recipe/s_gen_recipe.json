@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aba",
+    "aca",
+    "ded"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:cobblestone"
+    },
+    "b": {
+      "item": "minecraft:cobbled_deepslate"
+    },
+    "c": {
+      "item": "minecraft:iron_ingot"
+    },
+    "d": {
+      "item": "minecraft:redstone"
+    },
+    "e": {
+      "item": "minecraft:furnace"
+    }
+  },
+  "result": {
+    "id": "euru:survival_generator",
+    "count": 1
+  }
+}

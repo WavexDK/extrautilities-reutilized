@@ -1,0 +1,57 @@
+{
+  "_fv": 89,
+  "_type": "overlay",
+  "definition": {
+    "priority": "NORMAL",
+    "components": [
+      {
+        "type": "label",
+        "data": {
+          "name": "label_empty",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnAB1"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "hasShadow": true,
+          "anchorPoint": "BOTTOM_CENTER",
+          "x": 186,
+          "y": 199,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_ab_2",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnAB2"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "hasShadow": true,
+          "anchorPoint": "BOTTOM_CENTER",
+          "x": 171,
+          "y": 182,
+          "locked": false
+        }
+      }
+    ],
+    "baseTexture": "",
+    "overlayTarget": "Ingame",
+    "displayCondition": "ActionBarOverlayDisplayOverlayIngame",
+    "gridSettings": {
+      "sx": 12,
+      "sy": 12,
+      "ox": 12,
+      "oy": 12,
+      "snapOnGrid": false
+    }
+  }
+}

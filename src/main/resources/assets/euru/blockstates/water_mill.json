@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "anim=true": {
+      "model": "euru:block/water_mill_0"
+    },
+    "anim=false": {
+      "model": "euru:block/water_mill"
+    }
+  }
+}

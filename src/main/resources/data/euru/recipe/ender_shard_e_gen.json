@@ -1,0 +1,18 @@
+{
+  "type": "euru:e_gen_recipe_type",
+  "ingredients": [
+    {
+      "item": "euru:ender_shard"
+    }
+  ],
+  "strings": [
+    "euru:ender_generator",
+    "euru:ender_shard"
+  ],
+  "outputs": [
+    {
+      "id": "minecraft:polished_tuff",
+      "count": 0
+    }
+  ]
+}

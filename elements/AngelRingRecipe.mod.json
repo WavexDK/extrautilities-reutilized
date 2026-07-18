@@ -1,0 +1,29 @@
+{
+  "_fv": 89,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "unlockingItems": [],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      "Blocks.GLASS",
+      "CUSTOM:EnchantedIngot",
+      "Blocks.GLASS",
+      "CUSTOM:EnchantedIngot",
+      "CUSTOM:SquidRing",
+      "CUSTOM:EnchantedIngot",
+      "CUSTOM:GoldenLassoAR",
+      "CUSTOM:EnchantedIngot",
+      "CUSTOM:CursedLassoAR"
+    ],
+    "recipeReturnStack": "CUSTOM:AngelRing",
+    "name": "angel_ring_recipe",
+    "namespace": "mod"
+  }
+}

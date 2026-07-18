@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aba",
+    "cdc",
+    "aba"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:iron_ingot"
+    },
+    "b": {
+      "item": "euru:stone_burnt"
+    },
+    "c": {
+      "item": "euru:enchanted_ingot"
+    },
+    "d": {
+      "item": "euru:machine_block"
+    }
+  },
+  "result": {
+    "id": "euru:electric_furnace",
+    "count": 1
+  }
+}

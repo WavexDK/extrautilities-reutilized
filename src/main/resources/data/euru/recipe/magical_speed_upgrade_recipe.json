@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aba",
+    "bcb",
+    "aba"
+  ],
+  "key": {
+    "a": {
+      "item": "euru:enchanted_apple"
+    },
+    "b": {
+      "item": "euru:enchanted_ingot"
+    },
+    "c": {
+      "item": "euru:speed_upgrade"
+    }
+  },
+  "result": {
+    "id": "euru:magical_speed_upgrade",
+    "count": 1
+  }
+}

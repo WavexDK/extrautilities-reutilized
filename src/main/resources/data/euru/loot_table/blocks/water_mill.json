@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:block",
+  "random_sequence": "euru:blocks/water_mill",
+  "pools": [
+    {
+      "rolls": 1.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "euru:water_mill"
+        }
+      ]
+    }
+  ]
+}

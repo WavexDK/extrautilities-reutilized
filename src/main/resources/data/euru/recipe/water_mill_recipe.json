@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    "bcb",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "euru:stone_burnt"
+    },
+    "b": {
+      "item": "euru:redstone_gear"
+    },
+    "c": {
+      "item": "euru:resonating_redstone_crystal"
+    }
+  },
+  "result": {
+    "id": "euru:water_mill",
+    "count": 1
+  }
+}

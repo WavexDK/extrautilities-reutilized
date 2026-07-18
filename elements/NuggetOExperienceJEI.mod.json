@@ -1,0 +1,16 @@
+{
+  "_fv": 89,
+  "_type": "jeiinformation",
+  "definition": {
+    "items": [
+      "CUSTOM:NuggetoExperience"
+    ],
+    "information": [
+      "Sneak-Right-Click in the air while holding a Golden Nugget to get this item.",
+      "§r",
+      "§lRequires 10XP to get.",
+      "§r",
+      "Right-Click in the air while holding this item to get 10XP."
+    ]
+  }
+}

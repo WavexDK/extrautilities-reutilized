@@ -1,0 +1,18 @@
+{
+  "type": "euru:o_gen_recipe_type",
+  "ingredients": [
+    {
+      "tag": "minecraft:wooden_trapdoors"
+    }
+  ],
+  "strings": [
+    "euru:overclocked_generator",
+    "minecraft:wooden_trapdoors"
+  ],
+  "outputs": [
+    {
+      "id": "minecraft:polished_tuff",
+      "count": 1
+    }
+  ]
+}

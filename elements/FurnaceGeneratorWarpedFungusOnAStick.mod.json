@@ -1,0 +1,23 @@
+{
+  "_fv": 89,
+  "_type": "jeirecipe",
+  "definition": {
+    "category": "f_gen_recipe_type",
+    "ingredients": [
+      "Items.WARPED_FUNGUS_ON_A_STICK"
+    ],
+    "integers": [],
+    "strings": [
+      "euru:furnace_generator",
+      "minecraft:warped_fungus_on_a_stick"
+    ],
+    "recipetype": "FGenRecipeType",
+    "results": [
+      "Blocks.POLISHED_TUFF"
+    ],
+    "resultCounts": [
+      1
+    ],
+    "count": 0
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "_fv": 89,
+  "_type": "jeirecipe",
+  "definition": {
+    "category": "e_gen_recipe_type",
+    "ingredients": [
+      "Items.ENDER_PEARL"
+    ],
+    "integers": [],
+    "strings": [
+      "euru:ender_generator",
+      "minecraft:ender_pearl"
+    ],
+    "recipetype": "EGenRecipeType",
+    "results": [
+      "Blocks.POLISHED_TUFF"
+    ],
+    "resultCounts": [
+      0
+    ],
+    "count": 0
+  }
+}

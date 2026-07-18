@@ -1,0 +1,25 @@
+{
+  "type": "euru:enchanter_recipe_type",
+  "ingredients": [
+    {
+      "item": "euru:nuggeto_experience"
+    },
+    {
+      "item": "minecraft:lapis_lazuli"
+    }
+  ],
+  "integers": [
+    1,
+    1
+  ],
+  "strings": [
+    "euru:enchanter",
+    "euru:nuggeto_experience"
+  ],
+  "outputs": [
+    {
+      "id": "euru:magical_nugget",
+      "count": 1
+    }
+  ]
+}

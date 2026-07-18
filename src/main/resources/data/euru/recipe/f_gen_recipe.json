@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    "aba",
+    "cdc"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:iron_ingot"
+    },
+    "b": {
+      "item": "euru:machine_block"
+    },
+    "c": {
+      "item": "minecraft:redstone"
+    },
+    "d": {
+      "item": "minecraft:blast_furnace"
+    }
+  },
+  "result": {
+    "id": "euru:furnace_generator",
+    "count": 1
+  }
+}

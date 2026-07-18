@@ -1,0 +1,29 @@
+{
+  "_fv": 89,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "unlockingItems": [],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      "CUSTOM:StoneBurnt",
+      "CUSTOM:StoneBurnt",
+      "CUSTOM:StoneBurnt",
+      "CUSTOM:StoneBurnt",
+      "CUSTOM:ResonatingRedstoneCrystal",
+      "CUSTOM:StoneBurnt",
+      "CUSTOM:StoneBurnt",
+      "Items.GOLD_INGOT",
+      "CUSTOM:StoneBurnt"
+    ],
+    "recipeReturnStack": "CUSTOM:LavaMill",
+    "name": "lava_mill_recipe",
+    "namespace": "mod"
+  }
+}

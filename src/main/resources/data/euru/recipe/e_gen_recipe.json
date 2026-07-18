@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aba",
+    "aca",
+    "ded"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:ender_pearl"
+    },
+    "b": {
+      "item": "minecraft:ender_eye"
+    },
+    "c": {
+      "item": "euru:gilded_obsidian"
+    },
+    "d": {
+      "item": "minecraft:redstone"
+    },
+    "e": {
+      "item": "euru:furnace_generator"
+    }
+  },
+  "result": {
+    "id": "euru:ender_generator",
+    "count": 1
+  }
+}

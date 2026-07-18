@@ -1,0 +1,9 @@
+{
+  "parent": "euru:custom/minichest",
+  "textures": {
+    "all": "euru:block/minichest",
+    "particle": "euru:block/minichest",
+    "0": "euru:block/minichest"
+  },
+  "render_type": "solid"
+}

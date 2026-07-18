@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "euru:block/block_of_evil_infused_ingot"
+    },
+    "facing=east": {
+      "model": "euru:block/block_of_evil_infused_ingot",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "euru:block/block_of_evil_infused_ingot",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "euru:block/block_of_evil_infused_ingot",
+      "y": 270
+    }
+  }
+}

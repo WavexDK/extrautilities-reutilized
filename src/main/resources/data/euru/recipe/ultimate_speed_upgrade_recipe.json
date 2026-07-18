@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aba",
+    "bcb",
+    "aba"
+  ],
+  "key": {
+    "a": {
+      "item": "euru:drop_of_evil"
+    },
+    "b": {
+      "item": "euru:evil_infused_ingot"
+    },
+    "c": {
+      "item": "euru:magical_speed_upgrade"
+    }
+  },
+  "result": {
+    "id": "euru:ultimate_speed_upgrade",
+    "count": 1
+  }
+}

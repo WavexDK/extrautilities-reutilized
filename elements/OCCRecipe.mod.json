@@ -1,0 +1,38 @@
+{
+  "_fv": 89,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "unlockingItems": [
+      "Blocks.COBBLESTONE",
+      "CUSTOM:CompressedCobblestone",
+      "CUSTOM:DoubleCompressedCobblestone",
+      "CUSTOM:QuadrupleCompressedCobblestone",
+      "CUSTOM:TripleCompressedCobblestone",
+      "CUSTOM:QuintupleCompressedCobblestone",
+      "CUSTOM:SextupleCompressedCobblestone",
+      "CUSTOM:SeptupleCompressedCobblestone"
+    ],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      "CUSTOM:SeptupleCompressedCobblestone",
+      "CUSTOM:SeptupleCompressedCobblestone",
+      "CUSTOM:SeptupleCompressedCobblestone",
+      "CUSTOM:SeptupleCompressedCobblestone",
+      "CUSTOM:SeptupleCompressedCobblestone",
+      "CUSTOM:SeptupleCompressedCobblestone",
+      "CUSTOM:SeptupleCompressedCobblestone",
+      "CUSTOM:SeptupleCompressedCobblestone",
+      "CUSTOM:SeptupleCompressedCobblestone"
+    ],
+    "recipeReturnStack": "CUSTOM:OctupleCompressedCobblestone",
+    "name": "occ_recipe",
+    "namespace": "mod"
+  }
+}

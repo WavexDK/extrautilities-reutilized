@@ -1,0 +1,18 @@
+{
+  "type": "euru:s_gen_recipe_type",
+  "ingredients": [
+    {
+      "item": "minecraft:fletching_table"
+    }
+  ],
+  "strings": [
+    "euru:survival_generator",
+    "minecraft:fletching_table"
+  ],
+  "outputs": [
+    {
+      "id": "minecraft:polished_tuff",
+      "count": 1
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    "aba",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "euru:nuggeto_experience"
+    },
+    "b": {
+      "item": "minecraft:obsidian"
+    }
+  },
+  "result": {
+    "id": "euru:gilded_obsidian",
+    "count": 1
+  }
+}

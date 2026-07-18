@@ -1,0 +1,31 @@
+{
+  "_fv": 89,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "unlockingItems": [
+      "CUSTOM:MachineBlock"
+    ],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      "Items.ENDER_PEARL",
+      "Items.ENDER_EYE",
+      "Items.ENDER_PEARL",
+      "Items.ENDER_PEARL",
+      "CUSTOM:GildedObsidian",
+      "Items.ENDER_PEARL",
+      "Items.REDSTONE",
+      "CUSTOM:FurnaceGenerator",
+      "Items.REDSTONE"
+    ],
+    "recipeReturnStack": "CUSTOM:EnderGenerator",
+    "name": "e_gen_recipe",
+    "namespace": "mod"
+  }
+}

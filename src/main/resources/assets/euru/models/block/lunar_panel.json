@@ -1,0 +1,11 @@
+{
+  "parent": "euru:custom/lunar",
+  "textures": {
+    "all": "euru:block/panel_lunar",
+    "particle": "euru:block/panel_lunar",
+    "0": "euru:block/panel_bottom",
+    "1": "euru:block/panel_side",
+    "2": "euru:block/panel_lunar"
+  },
+  "render_type": "cutout"
+}

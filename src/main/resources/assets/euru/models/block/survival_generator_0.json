@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "euru:block/furnace_top",
+    "up": "euru:block/furnace_top",
+    "north": "euru:block/sgen-front",
+    "east": "euru:block/furnace_side",
+    "south": "euru:block/furnace_side",
+    "west": "euru:block/furnace_side",
+    "particle": "euru:block/furnace_top"
+  },
+  "render_type": "solid"
+}

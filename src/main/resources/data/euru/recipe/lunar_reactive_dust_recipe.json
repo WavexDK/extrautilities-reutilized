@@ -1,0 +1,18 @@
+{
+  "type": "euru:resonator_recipe_type",
+  "ingredients": [
+    {
+      "item": "minecraft:lapis_lazuli"
+    }
+  ],
+  "strings": [
+    "euru:resonator",
+    "minecraft:lapis_lazuli"
+  ],
+  "outputs": [
+    {
+      "id": "euru:lunar_reactive_dust",
+      "count": 1
+    }
+  ]
+}

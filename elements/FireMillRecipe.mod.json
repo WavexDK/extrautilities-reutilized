@@ -1,0 +1,29 @@
+{
+  "_fv": 89,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "unlockingItems": [],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      "CUSTOM:StoneBurnt",
+      "CUSTOM:ResonatingRedstoneCrystal",
+      "CUSTOM:StoneBurnt",
+      "CUSTOM:StoneBurnt",
+      "CUSTOM:RedstoneGear",
+      "CUSTOM:StoneBurnt",
+      "CUSTOM:StoneBurnt",
+      "Blocks.NETHER_BRICK_FENCE",
+      "CUSTOM:StoneBurnt"
+    ],
+    "recipeReturnStack": "CUSTOM:FireMill",
+    "name": "fire_mill_recipe",
+    "namespace": "mod"
+  }
+}

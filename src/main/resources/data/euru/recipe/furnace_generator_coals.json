@@ -1,0 +1,18 @@
+{
+  "type": "euru:f_gen_recipe_type",
+  "ingredients": [
+    {
+      "tag": "minecraft:coals"
+    }
+  ],
+  "strings": [
+    "euru:furnace_generator",
+    "minecraft:coals"
+  ],
+  "outputs": [
+    {
+      "id": "minecraft:polished_tuff",
+      "count": 1
+    }
+  ]
+}

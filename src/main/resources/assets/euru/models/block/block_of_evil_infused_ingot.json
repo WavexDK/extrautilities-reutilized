@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "euru:block/evilblock",
+    "up": "euru:block/evilblock",
+    "north": "euru:block/evilblock",
+    "east": "euru:block/evilblock",
+    "south": "euru:block/evilblock",
+    "west": "euru:block/evilblock",
+    "particle": "euru:block/evilblock"
+  },
+  "render_type": "solid"
+}

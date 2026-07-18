@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "ab"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:wither_skeleton_skull"
+    },
+    "b": {
+      "item": "euru:glass_cutter"
+    }
+  },
+  "result": {
+    "id": "euru:drop_of_evil",
+    "count": 1
+  }
+}

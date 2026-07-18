@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "euru:golden_lasso"
+    },
+    {
+      "item": "euru:drop_of_evil"
+    }
+  ],
+  "result": {
+    "id": "euru:cursed_lasso",
+    "count": 1
+  }
+}

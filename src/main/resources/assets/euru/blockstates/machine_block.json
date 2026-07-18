@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "euru:block/machine_block"
+    },
+    "facing=east": {
+      "model": "euru:block/machine_block",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "euru:block/machine_block",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "euru:block/machine_block",
+      "y": 270
+    }
+  }
+}

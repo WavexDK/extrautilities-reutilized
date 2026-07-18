@@ -1,0 +1,18 @@
+{
+  "type": "euru:s_gen_recipe_type",
+  "ingredients": [
+    {
+      "tag": "minecraft:banners"
+    }
+  ],
+  "strings": [
+    "euru:survival_generator",
+    "minecraft:banners"
+  ],
+  "outputs": [
+    {
+      "id": "minecraft:polished_tuff",
+      "count": 1
+    }
+  ]
+}

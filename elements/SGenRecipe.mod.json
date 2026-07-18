@@ -1,0 +1,29 @@
+{
+  "_fv": 89,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "unlockingItems": [],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      "Blocks.COBBLESTONE",
+      "Blocks.COBBLED_DEEPSLATE",
+      "Blocks.COBBLESTONE",
+      "Blocks.COBBLESTONE",
+      "Items.IRON_INGOT",
+      "Blocks.COBBLESTONE",
+      "Items.REDSTONE",
+      "Blocks.FURNACE",
+      "Items.REDSTONE"
+    ],
+    "recipeReturnStack": "CUSTOM:SurvivalGenerator",
+    "name": "s_gen_recipe",
+    "namespace": "mod"
+  }
+}

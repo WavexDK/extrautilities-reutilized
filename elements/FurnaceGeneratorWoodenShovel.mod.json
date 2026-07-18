@@ -1,0 +1,23 @@
+{
+  "_fv": 89,
+  "_type": "jeirecipe",
+  "definition": {
+    "category": "f_gen_recipe_type",
+    "ingredients": [
+      "Items.WOODEN_SHOVEL"
+    ],
+    "integers": [],
+    "strings": [
+      "euru:furnace_generator",
+      "minecraft:wooden_shovel"
+    ],
+    "recipetype": "FGenRecipeType",
+    "results": [
+      "Blocks.POLISHED_TUFF"
+    ],
+    "resultCounts": [
+      1
+    ],
+    "count": 0
+  }
+}

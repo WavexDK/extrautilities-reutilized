@@ -1,0 +1,18 @@
+{
+  "type": "euru:s_gen_recipe_type",
+  "ingredients": [
+    {
+      "tag": "minecraft:boats"
+    }
+  ],
+  "strings": [
+    "euru:survival_generator",
+    "minecraft:boats"
+  ],
+  "outputs": [
+    {
+      "id": "minecraft:polished_tuff",
+      "count": 1
+    }
+  ]
+}

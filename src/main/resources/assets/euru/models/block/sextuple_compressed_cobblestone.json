@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "euru:block/sepcobble",
+    "up": "euru:block/sepcobble",
+    "north": "euru:block/sepcobble",
+    "east": "euru:block/sepcobble",
+    "south": "euru:block/sepcobble",
+    "west": "euru:block/sepcobble",
+    "particle": "euru:block/sepcobble"
+  },
+  "render_type": "solid"
+}

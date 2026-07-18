@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " a ",
+    "aba",
+    " a "
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:redstone_torch"
+    },
+    "b": {
+      "tag": "minecraft:planks"
+    }
+  },
+  "result": {
+    "id": "euru:redstone_gear",
+    "count": 1
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "_fv": 89,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "unlockingItems": [],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      "CUSTOM:DropOfEvil",
+      "CUSTOM:EvilInfusedIngot",
+      "CUSTOM:DropOfEvil",
+      "CUSTOM:EvilInfusedIngot",
+      "CUSTOM:MagicalSpeedUpgrade",
+      "CUSTOM:EvilInfusedIngot",
+      "CUSTOM:DropOfEvil",
+      "CUSTOM:EvilInfusedIngot",
+      "CUSTOM:DropOfEvil"
+    ],
+    "recipeReturnStack": "CUSTOM:UltimateSpeedUpgrade",
+    "name": "ultimate_speed_upgrade_recipe",
+    "namespace": "mod"
+  }
+}

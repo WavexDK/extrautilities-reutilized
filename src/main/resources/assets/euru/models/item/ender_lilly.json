@@ -1,0 +1,7 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "euru:item/stage-1"
+  },
+  "render_type": "translucent"
+}

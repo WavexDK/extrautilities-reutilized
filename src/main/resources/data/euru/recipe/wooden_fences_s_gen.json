@@ -1,0 +1,18 @@
+{
+  "type": "euru:s_gen_recipe_type",
+  "ingredients": [
+    {
+      "tag": "minecraft:wooden_fences"
+    }
+  ],
+  "strings": [
+    "euru:survival_generator",
+    "minecraft:wooden_fences"
+  ],
+  "outputs": [
+    {
+      "id": "minecraft:polished_tuff",
+      "count": 1
+    }
+  ]
+}

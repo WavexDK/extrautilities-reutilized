@@ -1,0 +1,18 @@
+{
+  "type": "euru:o_gen_recipe_type",
+  "ingredients": [
+    {
+      "item": "minecraft:smithing_table"
+    }
+  ],
+  "strings": [
+    "euru:overclocked_generator",
+    "minecraft:smithing_table"
+  ],
+  "outputs": [
+    {
+      "id": "minecraft:polished_tuff",
+      "count": 1
+    }
+  ]
+}

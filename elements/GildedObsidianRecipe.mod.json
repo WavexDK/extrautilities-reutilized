@@ -1,0 +1,31 @@
+{
+  "_fv": 89,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "unlockingItems": [
+      "CUSTOM:NuggetoExperience"
+    ],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      "CUSTOM:NuggetoExperience",
+      "CUSTOM:NuggetoExperience",
+      "CUSTOM:NuggetoExperience",
+      "CUSTOM:NuggetoExperience",
+      "Blocks.OBSIDIAN",
+      "CUSTOM:NuggetoExperience",
+      "CUSTOM:NuggetoExperience",
+      "CUSTOM:NuggetoExperience",
+      "CUSTOM:NuggetoExperience"
+    ],
+    "recipeReturnStack": "CUSTOM:GildedObsidian",
+    "name": "gilded_obsidian_recipe",
+    "namespace": "mod"
+  }
+}

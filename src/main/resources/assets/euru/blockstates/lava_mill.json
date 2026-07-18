@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "anim=true": {
+      "model": "euru:block/lava_mill_0"
+    },
+    "anim=false": {
+      "model": "euru:block/lava_mill"
+    }
+  }
+}

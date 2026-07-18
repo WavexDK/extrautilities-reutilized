@@ -1,0 +1,27 @@
+{
+  "_fv": 89,
+  "_type": "jeirecipe",
+  "definition": {
+    "category": "enchanter_recipe_type",
+    "ingredients": [
+      "Items.APPLE",
+      "Items.DYE#4"
+    ],
+    "integers": [
+      1,
+      1
+    ],
+    "strings": [
+      "euru:enchanter",
+      "minecraft:apple"
+    ],
+    "recipetype": "EnchanterRecipeType",
+    "results": [
+      "CUSTOM:EnchantedApple"
+    ],
+    "resultCounts": [
+      1
+    ],
+    "count": 0
+  }
+}

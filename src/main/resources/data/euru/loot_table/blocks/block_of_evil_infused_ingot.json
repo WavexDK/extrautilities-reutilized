@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:block",
+  "random_sequence": "euru:blocks/block_of_evil_infused_ingot",
+  "pools": [
+    {
+      "rolls": 1.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "euru:block_of_evil_infused_ingot"
+        }
+      ]
+    }
+  ]
+}

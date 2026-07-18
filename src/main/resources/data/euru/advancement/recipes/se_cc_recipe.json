@@ -1,0 +1,98 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "euru:se_cc_recipe"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_ingredient_0": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:cobblestone"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_ingredient_1": {
+      "conditions": {
+        "items": [
+          {
+            "items": "euru:compressed_cobblestone"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_ingredient_2": {
+      "conditions": {
+        "items": [
+          {
+            "items": "euru:double_compressed_cobblestone"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_ingredient_3": {
+      "conditions": {
+        "items": [
+          {
+            "items": "euru:quadruple_compressed_cobblestone"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_ingredient_4": {
+      "conditions": {
+        "items": [
+          {
+            "items": "euru:triple_compressed_cobblestone"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_ingredient_5": {
+      "conditions": {
+        "items": [
+          {
+            "items": "euru:quintuple_compressed_cobblestone"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_ingredient_6": {
+      "conditions": {
+        "items": [
+          {
+            "items": "euru:sextuple_compressed_cobblestone"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_ingredient_0",
+      "has_ingredient_1",
+      "has_ingredient_2",
+      "has_ingredient_3",
+      "has_ingredient_4",
+      "has_ingredient_5",
+      "has_ingredient_6"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "euru:se_cc_recipe"
+    ]
+  }
+}

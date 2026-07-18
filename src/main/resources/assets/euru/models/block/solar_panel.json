@@ -1,0 +1,11 @@
+{
+  "parent": "euru:custom/solarpanel",
+  "textures": {
+    "all": "euru:block/panel_solar",
+    "particle": "euru:block/panel_solar",
+    "0": "euru:block/panel_bottom",
+    "1": "euru:block/panel_side",
+    "2": "euru:block/panel_solar"
+  },
+  "render_type": "cutout"
+}

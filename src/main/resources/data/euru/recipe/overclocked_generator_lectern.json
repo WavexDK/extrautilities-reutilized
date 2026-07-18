@@ -1,0 +1,18 @@
+{
+  "type": "euru:o_gen_recipe_type",
+  "ingredients": [
+    {
+      "item": "minecraft:lectern"
+    }
+  ],
+  "strings": [
+    "euru:overclocked_generator",
+    "minecraft:lectern"
+  ],
+  "outputs": [
+    {
+      "id": "minecraft:polished_tuff",
+      "count": 1
+    }
+  ]
+}

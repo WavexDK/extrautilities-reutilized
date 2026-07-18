@@ -1,0 +1,12 @@
+{
+  "mappings": {
+    "default": {
+      "name": "default",
+      "map": {
+        "0": "panel_bottom",
+        "1": "panel_lunarv1",
+        "2": "panel_side"
+      }
+    }
+  }
+}

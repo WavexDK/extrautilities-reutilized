@@ -1,0 +1,54 @@
+modLoader="javafml"
+loaderVersion="[4,)"
+license="GNU General Public License version 3 (GPLv3)"
+
+[[mods]]
+modId="euru"
+version="0.1.01"
+displayName="Extra Utilities: Reutilized"
+displayURL="https://buymeacoffee.com/wavedk"
+logoFile="logo.png"
+credits="Made with \u2764\uFE0F by WaveDK using MCreator. Textures by @batzorig and @quotat1on."
+authors="Wave"
+description="A remake of the old-but-gold 1.12.2 mod \"Extra Utilities 2\""
+
+# Start of user code block mod configuration
+# End of user code block mod configuration
+
+[[dependencies.euru]]
+    modId="neoforge"
+    type="required"
+    versionRange="[21.1.232,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.euru]]
+    modId="minecraft"
+    type="required"
+    versionRange="[1.21.1]"
+    ordering="AFTER"
+    side="BOTH"
+
+
+[[dependencies.euru]]
+    modId="curios_api"
+    type="optional"
+    versionRange="[0,)"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.euru]]
+    modId="geckolib"
+    type="optional"
+    versionRange="[0,)"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.euru]]
+    modId="jei"
+    type="optional"
+    versionRange="[0,)"
+    ordering="NONE"
+    side="BOTH"
+
+
+# Start of user code block dependencies configuration
+# End of user code block dependencies configuration

@@ -1,0 +1,31 @@
+{
+  "_fv": 89,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "unlockingItems": [
+      "CUSTOM:FurnaceGenerator"
+    ],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      "Items.DYE#4",
+      "CUSTOM:LunarReactiveDust",
+      "Items.DYE#4",
+      "Items.DYE#4",
+      "Blocks.GOLD_BLOCK",
+      "Items.DYE#4",
+      "Items.REDSTONE",
+      "CUSTOM:FurnaceGenerator",
+      "Items.REDSTONE"
+    ],
+    "recipeReturnStack": "CUSTOM:OverclockedGenerator",
+    "name": "o_gen_recipe",
+    "namespace": "mod"
+  }
+}

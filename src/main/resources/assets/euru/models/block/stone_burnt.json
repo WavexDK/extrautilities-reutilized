@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "euru:block/smoothburnstone",
+    "up": "euru:block/smoothburnstone",
+    "north": "euru:block/smoothburnstone",
+    "east": "euru:block/smoothburnstone",
+    "south": "euru:block/smoothburnstone",
+    "west": "euru:block/smoothburnstone",
+    "particle": "euru:block/smoothburnstone"
+  },
+  "render_type": "solid"
+}

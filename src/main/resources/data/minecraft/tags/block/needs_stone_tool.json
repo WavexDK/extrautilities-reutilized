@@ -1,0 +1,29 @@
+{
+  "replace": false,
+  "values": [
+    "euru:sextuple_compressed_cobblestone",
+    "euru:ender_generator",
+    "euru:furnace_generator",
+    "euru:triple_compressed_cobblestone",
+    "euru:fire_mill",
+    "euru:stone_burnt",
+    "euru:octuple_compressed_cobblestone",
+    "euru:double_compressed_cobblestone",
+    "euru:block_of_evil_infused_ingot",
+    "euru:survival_generator",
+    "euru:lava_mill",
+    "euru:overclocked_generator",
+    "euru:netherstar_generator",
+    "euru:electric_furnace",
+    "euru:resonator",
+    "euru:enchanter",
+    "euru:water_mill",
+    "euru:quintuple_compressed_cobblestone",
+    "euru:crusher",
+    "euru:machine_block",
+    "euru:lunar_panel",
+    "euru:solar_panel",
+    "euru:compressed_cobblestone",
+    "euru:quadruple_compressed_cobblestone"
+  ]
+}

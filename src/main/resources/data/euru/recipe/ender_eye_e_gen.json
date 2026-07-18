@@ -1,0 +1,18 @@
+{
+  "type": "euru:e_gen_recipe_type",
+  "ingredients": [
+    {
+      "item": "minecraft:ender_eye"
+    }
+  ],
+  "strings": [
+    "euru:ender_generator",
+    "minecraft:ender_eye"
+  ],
+  "outputs": [
+    {
+      "id": "minecraft:polished_tuff",
+      "count": 0
+    }
+  ]
+}

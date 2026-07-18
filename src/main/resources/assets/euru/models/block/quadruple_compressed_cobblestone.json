@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "euru:block/quidcobble",
+    "up": "euru:block/quidcobble",
+    "north": "euru:block/quidcobble",
+    "east": "euru:block/quidcobble",
+    "south": "euru:block/quidcobble",
+    "west": "euru:block/quidcobble",
+    "particle": "euru:block/quidcobble"
+  },
+  "render_type": "solid"
+}

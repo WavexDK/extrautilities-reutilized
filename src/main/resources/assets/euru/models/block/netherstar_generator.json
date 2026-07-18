@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "euru:block/nsgeneratordown",
+    "up": "euru:block/nsgeneratorup",
+    "north": "euru:block/nsgeneratoroff",
+    "east": "euru:block/nsgeneratorside",
+    "south": "euru:block/nsgeneratorside",
+    "west": "euru:block/nsgeneratorside",
+    "particle": "euru:block/nsgeneratordown"
+  },
+  "render_type": "solid"
+}

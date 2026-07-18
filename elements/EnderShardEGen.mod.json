@@ -1,0 +1,23 @@
+{
+  "_fv": 89,
+  "_type": "jeirecipe",
+  "definition": {
+    "category": "e_gen_recipe_type",
+    "ingredients": [
+      "CUSTOM:EnderShard"
+    ],
+    "integers": [],
+    "strings": [
+      "euru:ender_generator",
+      "euru:ender_shard"
+    ],
+    "recipetype": "EGenRecipeType",
+    "results": [
+      "Blocks.POLISHED_TUFF"
+    ],
+    "resultCounts": [
+      0
+    ],
+    "count": 0
+  }
+}

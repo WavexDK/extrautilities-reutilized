@@ -1,0 +1,29 @@
+{
+  "_fv": 89,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "unlockingItems": [],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      "Items.GOLD_INGOT",
+      "CUSTOM:NuggetoExperience",
+      "Items.GOLD_INGOT",
+      "Blocks.CHEST",
+      "Blocks.BOOKSHELF",
+      "Blocks.CHEST",
+      "Items.GOLD_INGOT",
+      "CUSTOM:NuggetoExperience",
+      "Items.GOLD_INGOT"
+    ],
+    "recipeReturnStack": "CUSTOM:BagOfHolding",
+    "name": "bag_of_holding_recipe",
+    "namespace": "mod"
+  }
+}

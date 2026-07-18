@@ -1,0 +1,71 @@
+{
+  "_fv": 89,
+  "_type": "jeirecipetype",
+  "definition": {
+    "textureSelector": "ogenbackdrop.png",
+    "width": 180,
+    "height": 80,
+    "icon": "CUSTOM:OverclockedGenerator",
+    "craftingtables": [
+      "CUSTOM:OverclockedGenerator"
+    ],
+    "enableCraftingtable": true,
+    "enableIntList": false,
+    "enableStringList": true,
+    "disableJeiBorder": true,
+    "title": "Overclocked Generator",
+    "slotList": [
+      {
+        "type": "INPUT",
+        "x": 52,
+        "y": 31,
+        "slotid": 0
+      },
+      {
+        "type": "OUTPUT",
+        "x": 9999,
+        "y": 9999,
+        "slotid": 0
+      }
+    ],
+    "components": [
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_empty",
+          "text": {
+            "fixedValue": "",
+            "name": "SGenRecipeTypeValue"
+          },
+          "width": 24,
+          "height": 24,
+          "x": 201,
+          "y": 138,
+          "locked": false
+        }
+      },
+      {
+        "type": "jei_sprite",
+        "data": {
+          "updateInterval": 10,
+          "sprite": "asprite.png",
+          "spritesCount": 23,
+          "spriteIndex": {
+            "fixedValue": 0.0,
+            "name": ""
+          },
+          "x": 201,
+          "y": 140,
+          "locked": false
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}

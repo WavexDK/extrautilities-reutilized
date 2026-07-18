@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    "aaa",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "euru:evil_infused_ingot"
+    }
+  },
+  "result": {
+    "id": "euru:block_of_evil_infused_ingot",
+    "count": 1
+  }
+}

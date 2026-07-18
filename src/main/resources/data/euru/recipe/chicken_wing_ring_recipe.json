@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aba",
+    "bcb",
+    "ded"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:feather"
+    },
+    "b": {
+      "item": "euru:enchanted_ingot"
+    },
+    "c": {
+      "item": "euru:golden_lasso_cw"
+    },
+    "d": {
+      "item": "euru:resonating_redstone_crystal"
+    },
+    "e": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "result": {
+    "id": "euru:chicken_ring",
+    "count": 1
+  }
+}

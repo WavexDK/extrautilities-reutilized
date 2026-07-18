@@ -1,0 +1,25 @@
+{
+  "type": "euru:enchanter_recipe_type",
+  "ingredients": [
+    {
+      "item": "minecraft:iron_block"
+    },
+    {
+      "item": "minecraft:nether_star"
+    }
+  ],
+  "integers": [
+    1,
+    1
+  ],
+  "strings": [
+    "euru:enchanter",
+    "minecraft:iron_block"
+  ],
+  "outputs": [
+    {
+      "id": "euru:block_of_evil_infused_ingot",
+      "count": 1
+    }
+  ]
+}

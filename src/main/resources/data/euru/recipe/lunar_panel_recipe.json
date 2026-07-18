@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    "bcb"
+  ],
+  "key": {
+    "a": {
+      "item": "euru:lunar_reactive_dust"
+    },
+    "b": {
+      "item": "minecraft:smooth_stone"
+    },
+    "c": {
+      "item": "euru:resonating_redstone_crystal"
+    }
+  },
+  "result": {
+    "id": "euru:lunar_panel",
+    "count": 1
+  }
+}

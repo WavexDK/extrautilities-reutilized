@@ -1,0 +1,18 @@
+{
+  "type": "euru:o_gen_recipe_type",
+  "ingredients": [
+    {
+      "tag": "minecraft:wool"
+    }
+  ],
+  "strings": [
+    "euru:overclocked_generator",
+    "minecraft:wool"
+  ],
+  "outputs": [
+    {
+      "id": "minecraft:polished_tuff",
+      "count": 1
+    }
+  ]
+}

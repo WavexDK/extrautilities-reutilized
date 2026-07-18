@@ -1,0 +1,18 @@
+{
+  "type": "euru:resonator_recipe_type",
+  "ingredients": [
+    {
+      "item": "minecraft:smooth_stone"
+    }
+  ],
+  "strings": [
+    "euru:resonator",
+    "minecraft:smooth_stone"
+  ],
+  "outputs": [
+    {
+      "id": "euru:stone_burnt",
+      "count": 1
+    }
+  ]
+}

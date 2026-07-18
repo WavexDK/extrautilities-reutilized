@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aba",
+    "bcb",
+    "dbe"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:glass"
+    },
+    "b": {
+      "item": "euru:enchanted_ingot"
+    },
+    "c": {
+      "item": "euru:squid_ring"
+    },
+    "d": {
+      "item": "euru:golden_lasso_ar"
+    },
+    "e": {
+      "item": "euru:cursed_lasso_ar"
+    }
+  },
+  "result": {
+    "id": "euru:angel_ring",
+    "count": 1
+  }
+}

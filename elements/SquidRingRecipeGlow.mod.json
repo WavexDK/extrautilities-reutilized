@@ -1,0 +1,29 @@
+{
+  "_fv": 89,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "unlockingItems": [],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      "Items.GLOW_INK_SAC",
+      "Items.DIAMOND",
+      "Items.GLOW_INK_SAC",
+      "CUSTOM:GoldenLassoSW",
+      "CUSTOM:ChickenRing",
+      "Items.ENDER_EYE",
+      "Items.GLOW_INK_SAC",
+      "Items.DIAMOND",
+      "Items.GLOW_INK_SAC"
+    ],
+    "recipeReturnStack": "CUSTOM:SquidRing",
+    "name": "squid_ring_recipe_glow",
+    "namespace": "mod"
+  }
+}

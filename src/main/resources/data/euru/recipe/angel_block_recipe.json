@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " a ",
+    "bcb"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:gold_ingot"
+    },
+    "b": {
+      "item": "minecraft:feather"
+    },
+    "c": {
+      "item": "euru:gilded_obsidian"
+    }
+  },
+  "result": {
+    "id": "euru:angel_block",
+    "count": 1
+  }
+}

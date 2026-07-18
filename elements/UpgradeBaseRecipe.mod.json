@@ -1,0 +1,23 @@
+{
+  "_fv": 89,
+  "_type": "jeirecipe",
+  "definition": {
+    "category": "resonator_recipe_type",
+    "ingredients": [
+      "Blocks.LIGHT_WEIGHTED_PRESSURE_PLATE"
+    ],
+    "integers": [],
+    "strings": [
+      "euru:resonator",
+      "minecraft:light_weighted_pressure_plate"
+    ],
+    "recipetype": "ResonatorRecipeType",
+    "results": [
+      "CUSTOM:UpgradeBase"
+    ],
+    "resultCounts": [
+      1
+    ],
+    "count": 0
+  }
+}

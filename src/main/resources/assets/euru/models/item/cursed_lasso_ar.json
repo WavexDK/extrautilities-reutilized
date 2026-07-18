@@ -1,0 +1,14 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "euru:item/cursed_lassofull"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "euru:cursed_lasso_ar_full": 1
+      },
+      "model": "euru:item/cursed_lasso_ar_0"
+    }
+  ]
+}

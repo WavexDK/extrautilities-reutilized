@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aba",
+    "b b",
+    "aba"
+  ],
+  "key": {
+    "a": {
+      "item": "euru:nuggeto_experience"
+    },
+    "b": {
+      "item": "minecraft:string"
+    }
+  },
+  "result": {
+    "id": "euru:golden_lasso",
+    "count": 1
+  }
+}

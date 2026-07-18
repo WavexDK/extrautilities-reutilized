@@ -1,0 +1,32 @@
+{
+  "_fv": 89,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "unlockingItems": [
+      "CUSTOM:ResonatingRedstoneCrystal",
+      "CUSTOM:LunarReactiveDust"
+    ],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      "",
+      "",
+      "",
+      "CUSTOM:LunarReactiveDust",
+      "CUSTOM:LunarReactiveDust",
+      "CUSTOM:LunarReactiveDust",
+      "Blocks.SMOOTH_STONE",
+      "CUSTOM:ResonatingRedstoneCrystal",
+      "Blocks.SMOOTH_STONE"
+    ],
+    "recipeReturnStack": "CUSTOM:LunarPanel",
+    "name": "lunar_panel_recipe",
+    "namespace": "mod"
+  }
+}

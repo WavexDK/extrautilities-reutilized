@@ -1,0 +1,23 @@
+{
+  "_fv": 89,
+  "_type": "jeirecipe",
+  "definition": {
+    "category": "resonator_recipe_type",
+    "ingredients": [
+      "Items.DYE#4"
+    ],
+    "integers": [],
+    "strings": [
+      "euru:resonator",
+      "minecraft:lapis_lazuli"
+    ],
+    "recipetype": "ResonatorRecipeType",
+    "results": [
+      "CUSTOM:LunarReactiveDust"
+    ],
+    "resultCounts": [
+      1
+    ],
+    "count": 0
+  }
+}

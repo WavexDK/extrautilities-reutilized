@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aba",
+    "aca",
+    "ada"
+  ],
+  "key": {
+    "a": {
+      "item": "euru:stone_burnt"
+    },
+    "b": {
+      "item": "euru:resonating_redstone_crystal"
+    },
+    "c": {
+      "item": "euru:redstone_gear"
+    },
+    "d": {
+      "item": "minecraft:nether_brick_fence"
+    }
+  },
+  "result": {
+    "id": "euru:fire_mill",
+    "count": 1
+  }
+}

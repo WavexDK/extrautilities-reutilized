@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "euru:block/largerchest-bottomtop",
+    "up": "euru:block/largerchest-bottomtop",
+    "north": "euru:block/largerchest-dront",
+    "east": "euru:block/largerchest-sides",
+    "south": "euru:block/largerchest-sides",
+    "west": "euru:block/largerchest-sides",
+    "particle": "euru:block/largerchest-bottomtop"
+  },
+  "render_type": "solid"
+}

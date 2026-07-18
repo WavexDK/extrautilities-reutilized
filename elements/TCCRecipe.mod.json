@@ -1,0 +1,33 @@
+{
+  "_fv": 89,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "unlockingItems": [
+      "Blocks.COBBLESTONE",
+      "CUSTOM:CompressedCobblestone",
+      "CUSTOM:DoubleCompressedCobblestone"
+    ],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      "CUSTOM:DoubleCompressedCobblestone",
+      "CUSTOM:DoubleCompressedCobblestone",
+      "CUSTOM:DoubleCompressedCobblestone",
+      "CUSTOM:DoubleCompressedCobblestone",
+      "CUSTOM:DoubleCompressedCobblestone",
+      "CUSTOM:DoubleCompressedCobblestone",
+      "CUSTOM:DoubleCompressedCobblestone",
+      "CUSTOM:DoubleCompressedCobblestone",
+      "CUSTOM:DoubleCompressedCobblestone"
+    ],
+    "recipeReturnStack": "CUSTOM:TripleCompressedCobblestone",
+    "name": "tcc_recipe",
+    "namespace": "mod"
+  }
+}
