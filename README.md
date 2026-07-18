@@ -33,7 +33,9 @@ Every player has their own Grid Power pool, which cannot be shared and is used b
 
 Machines require Grid Power to function, while also requiring FE. Generators work without GP by default, but require it when Speed Upgrades are installed.
 > Machines usually need anywhere between 8 and 16 Grid Power to function
+
 > Speed Upgrades increase the Grid Power used by Machines and Generators
+
 > Your Machines and Generators will **not** function if you are using more Grid Power than you have available
 
 Generators require Grid Power only if they have upgrades, and will only generate FE if you have enough Grid Power available.
