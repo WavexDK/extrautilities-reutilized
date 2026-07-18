@@ -58,15 +58,10 @@ public class EuruMod {
 		EuruModVariables.ATTACHMENT_TYPES.register(modEventBus);
 		EuruModMenus.REGISTRY.register(modEventBus);
 		// Start of user code block mod init
-		DATA_COMPONENTS.register(modEventBus);
 		// End of user code block mod init
 	}
 
 	// Start of user code block mod methods
-	public static final net.neoforged.neoforge.registries.DeferredRegister<net.minecraft.core.component.DataComponentType<?>> DATA_COMPONENTS = net.neoforged.neoforge.registries.DeferredRegister
-			.create(net.minecraft.core.registries.Registries.DATA_COMPONENT_TYPE, "euru");
-	public static final net.neoforged.neoforge.registries.DeferredHolder<net.minecraft.core.component.DataComponentType<?>, net.minecraft.core.component.DataComponentType<String>> ENTITY_NBT = DATA_COMPONENTS.register("entity_nbt",
-			() -> net.minecraft.core.component.DataComponentType.<String>builder().persistent(com.mojang.serialization.Codec.STRING).networkSynchronized(net.minecraft.network.codec.ByteBufCodecs.STRING_UTF8).build());
 	// End of user code block mod methods
 	private static boolean networkingRegistered = false;
 	private static final Map<CustomPacketPayload.Type<?>, NetworkMessage<?>> MESSAGES = new HashMap<>();
