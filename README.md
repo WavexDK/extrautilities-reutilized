@@ -45,15 +45,15 @@ Grid Power works across dimensions as long as its sources are loaded. The Chunk 
 Well now, you ask, how do I acquire Grid Power? Well, it's actually pretty simple.
 There are several blocks that generate Grid Power either passively or manually. The most common methods are as follows:
 > Solar Panels
-
+>
 >  ^- Generates 1 Grid Power per block during the daytime with clear access to the sky
 > 
 > Lunar Panels
-
+>
 >  ^- Generates 0.7 Grid Power per block during the nighttime with clear access to the sky
 > 
 > Manual Mill
-
+>
 >  ^- Generates 15 Grid Power while you are actively right-clicking it, and stops when you stop right-clicking it
 >
 > Other Mills
