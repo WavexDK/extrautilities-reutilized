@@ -134,7 +134,8 @@
     "placeSound": "",
     "stepSound": "",
     "luminance": {
-      "fixedValue": 0.0
+      "fixedValue": 0.0,
+      "name": "NetherstarGeneratorLuminance"
     },
     "unbreakable": false,
     "vanillaToolTier": "STONE",

@@ -4723,7 +4723,7 @@
       "name": "ChickenWingRingRecipe",
       "type": "recipe",
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "registry_name": "chicken_wing_ring_recipe",
       "metadata": {
         "files": [
@@ -6887,10 +6887,6 @@
       "metadata": {
         "dependencies": [
           {
-            "name": "blockstate",
-            "type": "blockstate"
-          },
-          {
             "name": "x",
             "type": "number"
           },
@@ -7350,11 +7346,11 @@
   "sound_elements": [],
   "tag_elements": {
     "BLOCKS:minecraft:mineable/pickaxe": [
-      "~NetherstarGenerator@CUSTOM:NetherstarGenerator",
-      "~EnderGenerator@CUSTOM:EnderGenerator",
       "~OverclockedGenerator@CUSTOM:OverclockedGenerator",
+      "~EnderGenerator@CUSTOM:EnderGenerator",
       "~FurnaceGenerator@CUSTOM:FurnaceGenerator",
       "~SurvivalGenerator@CUSTOM:SurvivalGenerator",
+      "~NetherstarGenerator@CUSTOM:NetherstarGenerator",
       "~Crusher@CUSTOM:Crusher",
       "~CreativeEnergySource@CUSTOM:CreativeEnergySource",
       "~ElectricFurnace@CUSTOM:ElectricFurnace",
@@ -7381,11 +7377,11 @@
       "~SolarPanel@CUSTOM:SolarPanel"
     ],
     "BLOCKS:minecraft:needs_stone_tool": [
-      "~NetherstarGenerator@CUSTOM:NetherstarGenerator",
-      "~EnderGenerator@CUSTOM:EnderGenerator",
       "~OverclockedGenerator@CUSTOM:OverclockedGenerator",
+      "~EnderGenerator@CUSTOM:EnderGenerator",
       "~FurnaceGenerator@CUSTOM:FurnaceGenerator",
       "~SurvivalGenerator@CUSTOM:SurvivalGenerator",
+      "~NetherstarGenerator@CUSTOM:NetherstarGenerator",
       "~Crusher@CUSTOM:Crusher",
       "~ElectricFurnace@CUSTOM:ElectricFurnace",
       "~BlockOfEvilInfusedIngot@CUSTOM:BlockOfEvilInfusedIngot",
@@ -7424,6 +7420,7 @@
   "tab_element_order": {
     "CUSTOM:Euru": [
       "CreativeEnergySource",
+      "NetherstarGenerator",
       "EnderGenerator",
       "OverclockedGenerator",
       "FurnaceGenerator",
@@ -7465,13 +7462,12 @@
       "AngelRing",
       "SquidRing",
       "ChickenRing",
+      "EnderLilly",
       "DropOfEvil",
       "NuggetoExperience",
       "ResonatingRedstoneCrystal",
       "GlassCutter",
-      "EnderShard",
-      "NetherstarGenerator",
-      "EnderLilly"
+      "EnderShard"
     ]
   },
   "language_map": {

@@ -1,6 +1,7 @@
 package net.wavedk.extrautilitiesreutilized.block;
 
 import net.wavedk.extrautilitiesreutilized.world.inventory.EGenGUIMenu;
+import net.wavedk.extrautilitiesreutilized.procedures.NetherstarGeneratorLuminanceProcedure;
 import net.wavedk.extrautilitiesreutilized.procedures.GeneratorTickHandlerProcedure;
 import net.wavedk.extrautilitiesreutilized.procedures.EGenAddedHandlerProcedure;
 import net.wavedk.extrautilitiesreutilized.block.entity.EnderGeneratorBlockEntity;
@@ -43,7 +44,7 @@ public class EnderGeneratorBlock extends Block implements EntityBlock {
 	public static final BooleanProperty ON = BooleanProperty.create("on");
 
 	public EnderGeneratorBlock() {
-		super(BlockBehaviour.Properties.of().strength(2f, 10f).requiresCorrectToolForDrops().instrument(NoteBlockInstrument.BASEDRUM));
+		super(BlockBehaviour.Properties.of().strength(2f, 10f).lightLevel(blockstate -> (int) NetherstarGeneratorLuminanceProcedure.execute(blockstate)).requiresCorrectToolForDrops().instrument(NoteBlockInstrument.BASEDRUM));
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(ON, false));
 	}
 

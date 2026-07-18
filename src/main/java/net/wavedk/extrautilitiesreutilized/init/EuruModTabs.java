@@ -18,6 +18,7 @@ public class EuruModTabs {
 	public static final DeferredHolder<CreativeModeTab, CreativeModeTab> EURU = REGISTRY.register("euru",
 			() -> CreativeModeTab.builder().title(Component.translatable("item_group.euru.euru")).icon(() -> new ItemStack(EuruModBlocks.ANGEL_BLOCK.get())).displayItems((parameters, tabData) -> {
 				tabData.accept(EuruModBlocks.CREATIVE_ENERGY_SOURCE.get().asItem());
+				tabData.accept(EuruModBlocks.NETHERSTAR_GENERATOR.get().asItem());
 				tabData.accept(EuruModBlocks.ENDER_GENERATOR.get().asItem());
 				tabData.accept(EuruModBlocks.OVERCLOCKED_GENERATOR.get().asItem());
 				tabData.accept(EuruModBlocks.FURNACE_GENERATOR.get().asItem());
@@ -59,13 +60,12 @@ public class EuruModTabs {
 				tabData.accept(EuruModItems.ANGEL_RING.get());
 				tabData.accept(EuruModItems.SQUID_RING.get());
 				tabData.accept(EuruModItems.CHICKEN_RING.get());
+				tabData.accept(EuruModBlocks.ENDER_LILLY.get().asItem());
 				tabData.accept(EuruModItems.DROP_OF_EVIL.get());
 				tabData.accept(EuruModItems.NUGGETO_EXPERIENCE.get());
 				tabData.accept(EuruModItems.RESONATING_REDSTONE_CRYSTAL.get());
 				tabData.accept(EuruModItems.GLASS_CUTTER.get());
 				tabData.accept(EuruModItems.ENDER_SHARD.get());
-				tabData.accept(EuruModBlocks.NETHERSTAR_GENERATOR.get().asItem());
-				tabData.accept(EuruModBlocks.ENDER_LILLY.get().asItem());
 			}).build());
 	public static final DeferredHolder<CreativeModeTab, CreativeModeTab> EURU_COMPRESSED = REGISTRY.register("euru_compressed",
 			() -> CreativeModeTab.builder().title(Component.translatable("item_group.euru.euru_compressed")).icon(() -> new ItemStack(EuruModBlocks.DOUBLE_COMPRESSED_COBBLESTONE.get())).displayItems((parameters, tabData) -> {

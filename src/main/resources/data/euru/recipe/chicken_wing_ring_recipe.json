@@ -14,7 +14,12 @@
       "item": "euru:enchanted_ingot"
     },
     "c": {
-      "item": "euru:golden_lasso_cw"
+      "id": "euru:golden_lasso",
+      "components": {
+        "minecraft:custom_data": {
+          "entityReg": "minecraft:chicken"
+        }
+      },
     },
     "d": {
       "item": "euru:resonating_redstone_crystal"
