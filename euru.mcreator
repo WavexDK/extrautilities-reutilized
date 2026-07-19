@@ -7600,12 +7600,12 @@
   "sound_elements": [],
   "tag_elements": {
     "BLOCKS:minecraft:mineable/pickaxe": [
+      "~Crusher@CUSTOM:Crusher",
       "~NetherstarGenerator@CUSTOM:NetherstarGenerator",
       "~OverclockedGenerator@CUSTOM:OverclockedGenerator",
       "~EnderGenerator@CUSTOM:EnderGenerator",
       "~FurnaceGenerator@CUSTOM:FurnaceGenerator",
       "~SurvivalGenerator@CUSTOM:SurvivalGenerator",
-      "~Crusher@CUSTOM:Crusher",
       "~CreativeEnergySource@CUSTOM:CreativeEnergySource",
       "~ElectricFurnace@CUSTOM:ElectricFurnace",
       "~CreativeMill@CUSTOM:CreativeMill",
@@ -7631,7 +7631,6 @@
       "~SolarPanel@CUSTOM:SolarPanel"
     ],
     "BLOCKS:minecraft:needs_stone_tool": [
-      "~Crusher@CUSTOM:Crusher",
       "~ElectricFurnace@CUSTOM:ElectricFurnace",
       "~BlockOfEvilInfusedIngot@CUSTOM:BlockOfEvilInfusedIngot",
       "~Enchanter@CUSTOM:Enchanter",

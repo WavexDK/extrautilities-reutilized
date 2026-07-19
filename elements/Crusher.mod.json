@@ -98,7 +98,7 @@
       "fixedValue": 0.0
     },
     "unbreakable": false,
-    "vanillaToolTier": "STONE",
+    "vanillaToolTier": "NONE",
     "isBonemealable": false,
     "sensitiveToVibration": false,
     "vibrationalEvents": [],
