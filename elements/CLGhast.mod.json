@@ -1,0 +1,22 @@
+{
+  "_fv": 89,
+  "_type": "jeirecipe",
+  "definition": {
+    "category": "cursed_lasso_rt",
+    "ingredients": [
+      "CUSTOM:CursedLasso"
+    ],
+    "integers": [],
+    "strings": [
+      "ghast"
+    ],
+    "recipetype": "CursedLassoRT",
+    "results": [
+      "CUSTOM:CursedLassoAR"
+    ],
+    "resultCounts": [
+      1
+    ],
+    "count": 0
+  }
+}

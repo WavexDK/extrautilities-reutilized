@@ -1,0 +1,22 @@
+{
+  "_fv": 89,
+  "_type": "jeirecipe",
+  "definition": {
+    "category": "golden_lasso_rt",
+    "ingredients": [
+      "CUSTOM:GoldenLasso"
+    ],
+    "integers": [],
+    "strings": [
+      "bat"
+    ],
+    "recipetype": "GoldenLassoRT",
+    "results": [
+      "CUSTOM:GoldenLassoAR"
+    ],
+    "resultCounts": [
+      1
+    ],
+    "count": 0
+  }
+}

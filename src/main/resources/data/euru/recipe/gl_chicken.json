@@ -1,0 +1,17 @@
+{
+  "type": "euru:golden_lasso_rt",
+  "ingredients": [
+    {
+      "item": "euru:golden_lasso"
+    }
+  ],
+  "strings": [
+    "chicken"
+  ],
+  "outputs": [
+    {
+      "id": "euru:golden_lasso_cw",
+      "count": 1
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "_fv": 89,
+  "_type": "jeirecipetype",
+  "definition": {
+    "textureSelector": "blankecbd.png",
+    "width": 180,
+    "height": 80,
+    "icon": "CUSTOM:CursedLasso",
+    "craftingtables": [
+      "CUSTOM:CursedLasso"
+    ],
+    "enableCraftingtable": true,
+    "enableIntList": false,
+    "enableStringList": true,
+    "disableJeiBorder": true,
+    "title": "Entity Capturing",
+    "slotList": [
+      {
+        "type": "INPUT",
+        "x": 19,
+        "y": 31,
+        "slotid": 0
+      },
+      {
+        "type": "OUTPUT",
+        "x": 145,
+        "y": 31,
+        "slotid": 0
+      }
+    ],
+    "components": [
+      {
+        "type": "jei_sprite",
+        "data": {
+          "updateInterval": 10,
+          "sprite": "squid.png",
+          "spritesCount": 1,
+          "spriteIndex": {
+            "fixedValue": 0.0,
+            "name": ""
+          },
+          "x": 123,
+          "y": 15,
+          "locked": false
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}

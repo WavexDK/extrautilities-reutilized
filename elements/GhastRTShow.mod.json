@@ -1,0 +1,8 @@
+{
+  "_fv": 89,
+  "_type": "procedure",
+  "definition": {
+    "procedurexml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><variables><variable type=\"Boolean\" id=\"correctEntity\">correctEntity</variable></variables><block type=\"event_trigger\" deletable=\"false\" x=\"74\" y=\"73\"><field name=\"trigger\">no_ext_trigger</field><next><block type=\"string_data_dependency_foreach\"><value name=\"_placeholder2\"><block type=\"string_iterator\" deletable=\"false\" movable=\"false\"></block></value><statement name=\"foreach\"><block type=\"controls_if\"><value name=\"IF0\"><block type=\"text_binary_ops\"><value name=\"A\"><block type=\"string_iterator\"></block></value><value name=\"B\"><block type=\"text\"><field name=\"TEXT\">ghast</field></block></value></block></value><statement name=\"DO0\"><block type=\"variables_set_logic\"><mutation xmlns=\"http://www.w3.org/1999/xhtml\" is_player_var=\"false\" has_entity=\"false\"></mutation><field name=\"VAR\">local:correctEntity</field><value name=\"VAL\"><block type=\"logic_boolean\"><field name=\"BOOL\">TRUE</field></block></value></block></statement></block></statement><next><block type=\"return_logic\"><value name=\"return\"><block type=\"variables_get_logic\"><mutation xmlns=\"http://www.w3.org/1999/xhtml\" is_player_var=\"false\" has_entity=\"false\"></mutation><field name=\"VAR\">local:correctEntity</field></block></value></block></next></block></next></block></xml>",
+    "skipDependencyNullCheck": false
+  }
+}

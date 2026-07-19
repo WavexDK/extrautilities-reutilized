@@ -1,0 +1,22 @@
+{
+  "_fv": 89,
+  "_type": "jeirecipe",
+  "definition": {
+    "category": "golden_lasso_rt",
+    "ingredients": [
+      "CUSTOM:GoldenLasso"
+    ],
+    "integers": [],
+    "strings": [
+      "squid"
+    ],
+    "recipetype": "GoldenLassoRT",
+    "results": [
+      "CUSTOM:GoldenLassoSW"
+    ],
+    "resultCounts": [
+      1
+    ],
+    "count": 0
+  }
+}

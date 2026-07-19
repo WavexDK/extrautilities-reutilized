@@ -4723,7 +4723,7 @@
       "name": "ChickenWingRingRecipe",
       "type": "recipe",
       "compiles": true,
-      "locked_code": true,
+      "locked_code": false,
       "registry_name": "chicken_wing_ring_recipe",
       "metadata": {
         "files": [
@@ -7214,7 +7214,7 @@
           "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/OpenCraftingBlockJEIProcedure.java"
         ]
       },
-      "path": "~/Items"
+      "path": "~/Items/Procedures"
     },
     {
       "name": "GeneratorLuminance",
@@ -7235,6 +7235,166 @@
         ]
       },
       "path": "~/Blocks/Generators/FE/Procedures"
+    },
+    {
+      "name": "SquidRTShow",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "squid_rt_show",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "strings",
+            "type": "stringlist"
+          }
+        ],
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/SquidRTShowProcedure.java"
+        ]
+      },
+      "path": "~/Items/JEI/Procedures"
+    },
+    {
+      "name": "ChickenRTShow",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "chicken_rt_show",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "strings",
+            "type": "stringlist"
+          }
+        ],
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/ChickenRTShowProcedure.java"
+        ]
+      },
+      "path": "~/Items/JEI/Procedures"
+    },
+    {
+      "name": "GoldenLassoRT",
+      "type": "jeirecipetype",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "golden_lasso_rt",
+      "metadata": {
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/jei_recipes/GoldenLassoRTRecipe.java",
+          "src/main/java/net/wavedk/extrautilitiesreutilized/jei_recipes/GoldenLassoRTRecipeCategory.java"
+        ]
+      },
+      "path": "~/Items/JEI"
+    },
+    {
+      "name": "GLChicken",
+      "type": "jeirecipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "gl_chicken",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/euru/recipe/gl_chicken.json"
+        ]
+      },
+      "path": "~/Items/JEI"
+    },
+    {
+      "name": "GLSquid",
+      "type": "jeirecipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "gl_squid",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/euru/recipe/gl_squid.json"
+        ]
+      },
+      "path": "~/Items/JEI"
+    },
+    {
+      "name": "BatRTShow",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "bat_rt_show",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "strings",
+            "type": "stringlist"
+          }
+        ],
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/BatRTShowProcedure.java"
+        ]
+      },
+      "path": "~/Items/JEI/Procedures"
+    },
+    {
+      "name": "GLBat",
+      "type": "jeirecipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "gl_bat",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/euru/recipe/gl_bat.json"
+        ]
+      },
+      "path": "~/Items/JEI"
+    },
+    {
+      "name": "CursedLassoRT",
+      "type": "jeirecipetype",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "cursed_lasso_rt",
+      "metadata": {
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/jei_recipes/CursedLassoRTRecipeCategory.java",
+          "src/main/java/net/wavedk/extrautilitiesreutilized/jei_recipes/CursedLassoRTRecipe.java"
+        ]
+      },
+      "path": "~/Items/JEI"
+    },
+    {
+      "name": "GhastRTShow",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ghast_rt_show",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "strings",
+            "type": "stringlist"
+          }
+        ],
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/GhastRTShowProcedure.java"
+        ]
+      },
+      "path": "~/Items/JEI/Procedures"
+    },
+    {
+      "name": "CLGhast",
+      "type": "jeirecipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cl_ghast",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/euru/recipe/cl_ghast.json"
+        ]
+      },
+      "path": "~/Items/JEI"
     }
   ],
   "variable_elements": [
@@ -7801,7 +7961,12 @@
           },
           {
             "name": "JEI",
-            "children": []
+            "children": [
+              {
+                "name": "Procedures",
+                "children": []
+              }
+            ]
           },
           {
             "name": "SpecialItems",

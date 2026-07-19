@@ -38,6 +38,10 @@ public class EuruModRecipeTypes {
 			SERIALIZERS.register("o_gen_recipe_type", () -> OGenRecipeTypeRecipe.Serializer.INSTANCE);
 			RECIPE_TYPES.register("ns_gen_recipe_type", () -> NSGenRecipeTypeRecipe.Type.INSTANCE);
 			SERIALIZERS.register("ns_gen_recipe_type", () -> NSGenRecipeTypeRecipe.Serializer.INSTANCE);
+			RECIPE_TYPES.register("golden_lasso_rt", () -> GoldenLassoRTRecipe.Type.INSTANCE);
+			SERIALIZERS.register("golden_lasso_rt", () -> GoldenLassoRTRecipe.Serializer.INSTANCE);
+			RECIPE_TYPES.register("cursed_lasso_rt", () -> CursedLassoRTRecipe.Type.INSTANCE);
+			SERIALIZERS.register("cursed_lasso_rt", () -> CursedLassoRTRecipe.Serializer.INSTANCE);
 		});
 	}
 }

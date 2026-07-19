@@ -32,40 +32,44 @@ public class SpecialGenFeatureProcedure {
 		double nX = 0;
 		double nY = 0;
 		double nZ = 0;
+		double foundBlocks = 0;
 		if ((gen).equals(BuiltInRegistries.ITEM.getKey(EuruModBlocks.NETHERSTAR_GENERATOR.get().asItem()).toString())) {
-			radius = 2;
-			xOffset = 0 - radius;
-			yOffset = 0 - radius;
-			zOffset = 0 - radius;
-			while (xOffset <= radius) {
-				nX = x + xOffset;
-				while (yOffset <= radius) {
-					nY = y + yOffset;
-					while (zOffset <= radius) {
-						nZ = z + zOffset;
-						if ((world.getBlockState(BlockPos.containing(nX, nY, nZ))).getBlock() == EuruModBlocks.NETHERSTAR_GENERATOR.get()) {
-							if (nX != x && nY != y && nZ != z) {
-								foundBlock = getPropertyByName((world.getBlockState(BlockPos.containing(nX, nY, nZ))), "on") instanceof BooleanProperty _getbp4 && (world.getBlockState(BlockPos.containing(nX, nY, nZ))).getValue(_getbp4);
+			if (!foundBlock) {
+				foundBlocks = 1;
+				{
+					final int _radiusLoopCenterX5 = (int) Math.floor(x);
+					final int _radiusLoopCenterY5 = (int) Math.floor(y);
+					final int _radiusLoopCenterZ5 = (int) Math.floor(z);
+					final int _radiusLoopRadius5 = Math.max(0, (int) Math.floor(1));
+					final int _radiusLoopMinX5 = _radiusLoopCenterX5 - _radiusLoopRadius5;
+					final int _radiusLoopMaxX5 = _radiusLoopCenterX5 + _radiusLoopRadius5;
+					final int _radiusLoopMinY5 = _radiusLoopCenterY5 - _radiusLoopRadius5;
+					final int _radiusLoopMaxY5 = _radiusLoopCenterY5 + _radiusLoopRadius5;
+					final int _radiusLoopMinZ5 = _radiusLoopCenterZ5 - _radiusLoopRadius5;
+					final int _radiusLoopMaxZ5 = _radiusLoopCenterZ5 + _radiusLoopRadius5;
+					for (int _radiusLoopX5 = _radiusLoopMinX5; _radiusLoopX5 <= _radiusLoopMaxX5; _radiusLoopX5++) {
+						for (int _radiusLoopY5 = _radiusLoopMinY5; _radiusLoopY5 <= _radiusLoopMaxY5; _radiusLoopY5++) {
+							for (int _radiusLoopZ5 = _radiusLoopMinZ5; _radiusLoopZ5 <= _radiusLoopMaxZ5; _radiusLoopZ5++) {
+								nX = _radiusLoopX5;
+								nY = _radiusLoopY5;
+								nZ = _radiusLoopZ5;
+								if (!((nX + ",") + "" + (nY + ",") + nZ).equals((x + ",") + "" + (y + ",") + z)) {
+									if ((getPropertyByName((world.getBlockState(BlockPos.containing(nX, nY, nZ))), "on") instanceof BooleanProperty _getbp2 && (world.getBlockState(BlockPos.containing(nX, nY, nZ))).getValue(_getbp2)) == true
+											&& (world.getBlockState(BlockPos.containing(nX, nY, nZ))).getBlock() == EuruModBlocks.NETHERSTAR_GENERATOR.get()) {
+										foundBlocks = foundBlocks + 1;
+									}
+								}
 							}
 						}
-						zOffset = zOffset + 1;
-						if (foundBlock) {
-							break;
-						}
-					}
-					yOffset = yOffset + 1;
-					if (foundBlock) {
-						break;
 					}
 				}
-				xOffset = xOffset + 1;
-				if (foundBlock) {
-					break;
+				if (foundBlocks == 1) {
+					if (world instanceof ServerLevel _level)
+						_level.sendParticles(ParticleTypes.SQUID_INK, x, y, z, 10, 2, 2, 2, 0.05);
+				} else {
+					if (world instanceof ServerLevel _level)
+						_level.sendParticles(ParticleTypes.SQUID_INK, x, y, z, (int) (10 / foundBlocks), 2, 2, 2, 0.05);
 				}
-			}
-			if (!foundBlock) {
-				if (world instanceof ServerLevel _level)
-					_level.sendParticles(ParticleTypes.SQUID_INK, x, y, z, 10, 2, 2, 2, 0.05);
 				{
 					final Vec3 _center = new Vec3(x, y, z);
 					for (Entity entityiterator : world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(8 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList()) {

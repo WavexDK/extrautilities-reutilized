@@ -254,7 +254,7 @@ public class GeneratorTickHandlerProcedure {
 								fuelList = blockOBJ.get("listFuel").getAsJsonArray();
 								cNum = 0;
 								if (!fuelList.isEmpty()) {
-									for (int index90 = 0; index90 < (int) fuelList.size(); index90++) {
+									for (int index189 = 0; index189 < (int) fuelList.size(); index189++) {
 										if ((fuelList.get((int) cNum).getAsString()).equals(BuiltInRegistries.ITEM.getKey((itemFromBlockInventory(world, BlockPos.containing(x, y, z), 0).copy()).getItem()).toString())
 												|| (itemFromBlockInventory(world, BlockPos.containing(x, y, z), 0).copy()).is(ItemTags.create(ResourceLocation.parse((fuelList.get((int) cNum).getAsString()).toLowerCase(java.util.Locale.ENGLISH))))) {
 											if (player.getData(EuruModVariables.PLAYER_VARIABLES).playerGP_Total >= player.getData(EuruModVariables.PLAYER_VARIABLES).playerGP_Used
@@ -438,6 +438,12 @@ public class GeneratorTickHandlerProcedure {
 									_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 							}
 						}
+						{
+							BlockPos _pos = BlockPos.containing(x, y, z);
+							BlockState _bs = world.getBlockState(_pos);
+							if (_bs.getBlock().getStateDefinition().getProperty("on") instanceof BooleanProperty _booleanProp)
+								world.setBlock(_pos, _bs.setValue(_booleanProp, true), 3);
+						}
 						SpecialGenFeatureProcedure.execute(world, x, y, z, BuiltInRegistries.ITEM.getKey((new ItemStack((world.getBlockState(BlockPos.containing(x, y, z))).getBlock())).getItem()).toString());
 						if (world.getBlockEntity(new BlockPos((int) x, (int) y, (int) z)) instanceof IEnergyReceiver be) {
 							be.addEnergy((int) feSpeed);
@@ -483,7 +489,7 @@ public class GeneratorTickHandlerProcedure {
 				}
 			}
 			if (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "wait_time") == 0) {
-				if (getPropertyByName(blockstate, "on") instanceof BooleanProperty _getbp134 && blockstate.getValue(_getbp134)) {
+				if (getPropertyByName(blockstate, "on") instanceof BooleanProperty _getbp135 && blockstate.getValue(_getbp135)) {
 					if (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "offCounter") > 2) {
 						if (!world.isClientSide()) {
 							BlockPos _bp = BlockPos.containing(x, y, z);

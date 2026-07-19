@@ -68,7 +68,7 @@ public class LassoRCOEProcedure {
 						lobj = mobj.get("lasso_entities").getAsJsonObject();
 						array = lobj.get("golden").getAsJsonArray();
 						cNum = 0;
-						for (int index9 = 0; index9 < (int) array.size(); index9++) {
+						for (int index104 = 0; index104 < (int) array.size(); index104++) {
 							cEntity = array.get((int) cNum).getAsString();
 							if ((BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString()).equals(cEntity)) {
 								foundEntity = true;
@@ -80,12 +80,12 @@ public class LassoRCOEProcedure {
 						e.printStackTrace();
 					}
 				}
-				if (foundEntity) {
+				if ((BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString()).equals("minecraft:chicken")) {
 					if (true == false) {
 						if (sourceentity instanceof LivingEntity _entity) {
-							ItemStack _setstack12 = new ItemStack(EuruModItems.GOLDEN_LASSO_CW.get()).copy();
-							_setstack12.setCount(1);
-							_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack12);
+							ItemStack _setstack13 = new ItemStack(EuruModItems.GOLDEN_LASSO_CW.get()).copy();
+							_setstack13.setCount(1);
+							_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack13);
 							if (_entity instanceof Player _player)
 								_player.getInventory().setChanged();
 						}
@@ -114,9 +114,9 @@ public class LassoRCOEProcedure {
 							entity.discard();
 					} else if ((BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString()).equals("minecraft:bat")) {
 						if (sourceentity instanceof LivingEntity _entity) {
-							ItemStack _setstack32 = new ItemStack(EuruModItems.GOLDEN_LASSO_AR.get()).copy();
-							_setstack32.setCount(1);
-							_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack32);
+							ItemStack _setstack33 = new ItemStack(EuruModItems.GOLDEN_LASSO_AR.get()).copy();
+							_setstack33.setCount(1);
+							_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack33);
 							if (_entity instanceof Player _player)
 								_player.getInventory().setChanged();
 						}
@@ -145,9 +145,9 @@ public class LassoRCOEProcedure {
 							entity.discard();
 					} else if ((BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString()).equals("minecraft:squid") || (BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString()).equals("minecraft:glow_squid")) {
 						if (sourceentity instanceof LivingEntity _entity) {
-							ItemStack _setstack53 = new ItemStack(EuruModItems.GOLDEN_LASSO_SW.get()).copy();
-							_setstack53.setCount(1);
-							_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack53);
+							ItemStack _setstack54 = new ItemStack(EuruModItems.GOLDEN_LASSO_SW.get()).copy();
+							_setstack54.setCount(1);
+							_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack54);
 							if (_entity instanceof Player _player)
 								_player.getInventory().setChanged();
 						}
@@ -220,7 +220,7 @@ public class LassoRCOEProcedure {
 						lobj = mobj.get("lasso_entities").getAsJsonObject();
 						array = lobj.get("golden").getAsJsonArray();
 						cNum = 0;
-						for (int index10 = 0; index10 < (int) array.size(); index10++) {
+						for (int index105 = 0; index105 < (int) array.size(); index105++) {
 							cEntity = array.get((int) cNum).getAsString();
 							if ((BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString()).equals(cEntity)) {
 								foundEntity = true;
@@ -234,9 +234,9 @@ public class LassoRCOEProcedure {
 				}
 				if ((BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString()).equals("minecraft:chicken")) {
 					if (sourceentity instanceof LivingEntity _entity) {
-						ItemStack _setstack104 = new ItemStack(EuruModItems.GOLDEN_LASSO_CW.get()).copy();
-						_setstack104.setCount(1);
-						_entity.setItemInHand(InteractionHand.OFF_HAND, _setstack104);
+						ItemStack _setstack105 = new ItemStack(EuruModItems.GOLDEN_LASSO_CW.get()).copy();
+						_setstack105.setCount(1);
+						_entity.setItemInHand(InteractionHand.OFF_HAND, _setstack105);
 						if (_entity instanceof Player _player)
 							_player.getInventory().setChanged();
 					}
@@ -265,9 +265,9 @@ public class LassoRCOEProcedure {
 						entity.discard();
 				} else if ((BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString()).equals("minecraft:bat")) {
 					if (sourceentity instanceof LivingEntity _entity) {
-						ItemStack _setstack124 = new ItemStack(EuruModItems.GOLDEN_LASSO_AR.get()).copy();
-						_setstack124.setCount(1);
-						_entity.setItemInHand(InteractionHand.OFF_HAND, _setstack124);
+						ItemStack _setstack125 = new ItemStack(EuruModItems.GOLDEN_LASSO_AR.get()).copy();
+						_setstack125.setCount(1);
+						_entity.setItemInHand(InteractionHand.OFF_HAND, _setstack125);
 						if (_entity instanceof Player _player)
 							_player.getInventory().setChanged();
 					}
@@ -296,9 +296,9 @@ public class LassoRCOEProcedure {
 						entity.discard();
 				} else if ((BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString()).equals("minecraft:squid") || (BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString()).equals("minecraft:glow_squid")) {
 					if (sourceentity instanceof LivingEntity _entity) {
-						ItemStack _setstack145 = new ItemStack(EuruModItems.GOLDEN_LASSO_SW.get()).copy();
-						_setstack145.setCount(1);
-						_entity.setItemInHand(InteractionHand.OFF_HAND, _setstack145);
+						ItemStack _setstack146 = new ItemStack(EuruModItems.GOLDEN_LASSO_SW.get()).copy();
+						_setstack146.setCount(1);
+						_entity.setItemInHand(InteractionHand.OFF_HAND, _setstack146);
 						if (_entity instanceof Player _player)
 							_player.getInventory().setChanged();
 					}
@@ -367,7 +367,7 @@ public class LassoRCOEProcedure {
 						lobj = mobj.get("lasso_entities").getAsJsonObject();
 						array = lobj.get("cursed").getAsJsonArray();
 						cNum = 0;
-						for (int index11 = 0; index11 < (int) array.size(); index11++) {
+						for (int index106 = 0; index106 < (int) array.size(); index106++) {
 							cEntity = array.get((int) cNum).getAsString();
 							if ((BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString()).equals(cEntity)) {
 								foundEntity = true;
@@ -382,9 +382,9 @@ public class LassoRCOEProcedure {
 				if (foundEntity) {
 					if ((BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString()).equals("minecraft:ghast")) {
 						if (sourceentity instanceof LivingEntity _entity) {
-							ItemStack _setstack195 = new ItemStack(EuruModItems.CURSED_LASSO_AR.get()).copy();
-							_setstack195.setCount(1);
-							_entity.setItemInHand(InteractionHand.OFF_HAND, _setstack195);
+							ItemStack _setstack196 = new ItemStack(EuruModItems.CURSED_LASSO_AR.get()).copy();
+							_setstack196.setCount(1);
+							_entity.setItemInHand(InteractionHand.OFF_HAND, _setstack196);
 							if (_entity instanceof Player _player)
 								_player.getInventory().setChanged();
 						}
@@ -457,7 +457,7 @@ public class LassoRCOEProcedure {
 						lobj = mobj.get("lasso_entities").getAsJsonObject();
 						array = lobj.get("cursed").getAsJsonArray();
 						cNum = 0;
-						for (int index12 = 0; index12 < (int) array.size(); index12++) {
+						for (int index107 = 0; index107 < (int) array.size(); index107++) {
 							cEntity = array.get((int) cNum).getAsString();
 							if ((BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString()).equals(cEntity)) {
 								foundEntity = true;
@@ -474,9 +474,9 @@ public class LassoRCOEProcedure {
 						_player.displayClientMessage(Component.literal((BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString())), false);
 					if ((BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString()).equals("minecraft:ghast")) {
 						if (sourceentity instanceof LivingEntity _entity) {
-							ItemStack _setstack248 = new ItemStack(EuruModItems.CURSED_LASSO_AR.get()).copy();
-							_setstack248.setCount(1);
-							_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack248);
+							ItemStack _setstack249 = new ItemStack(EuruModItems.CURSED_LASSO_AR.get()).copy();
+							_setstack249.setCount(1);
+							_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack249);
 							if (_entity instanceof Player _player)
 								_player.getInventory().setChanged();
 						}

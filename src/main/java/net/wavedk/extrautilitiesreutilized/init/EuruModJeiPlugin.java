@@ -27,6 +27,8 @@ public class EuruModJeiPlugin implements IModPlugin {
 	public static mezz.jei.api.recipe.RecipeType<EGenRecipeTypeRecipe> EGenRecipeType_Type = new mezz.jei.api.recipe.RecipeType<>(EGenRecipeTypeRecipeCategory.UID, EGenRecipeTypeRecipe.class);
 	public static mezz.jei.api.recipe.RecipeType<OGenRecipeTypeRecipe> OGenRecipeType_Type = new mezz.jei.api.recipe.RecipeType<>(OGenRecipeTypeRecipeCategory.UID, OGenRecipeTypeRecipe.class);
 	public static mezz.jei.api.recipe.RecipeType<NSGenRecipeTypeRecipe> NSGenRecipeType_Type = new mezz.jei.api.recipe.RecipeType<>(NSGenRecipeTypeRecipeCategory.UID, NSGenRecipeTypeRecipe.class);
+	public static mezz.jei.api.recipe.RecipeType<GoldenLassoRTRecipe> GoldenLassoRT_Type = new mezz.jei.api.recipe.RecipeType<>(GoldenLassoRTRecipeCategory.UID, GoldenLassoRTRecipe.class);
+	public static mezz.jei.api.recipe.RecipeType<CursedLassoRTRecipe> CursedLassoRT_Type = new mezz.jei.api.recipe.RecipeType<>(CursedLassoRTRecipeCategory.UID, CursedLassoRTRecipe.class);
 
 	@Override
 	public ResourceLocation getPluginUid() {
@@ -42,6 +44,8 @@ public class EuruModJeiPlugin implements IModPlugin {
 		registration.addRecipeCategories(new EGenRecipeTypeRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
 		registration.addRecipeCategories(new OGenRecipeTypeRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
 		registration.addRecipeCategories(new NSGenRecipeTypeRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
+		registration.addRecipeCategories(new GoldenLassoRTRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
+		registration.addRecipeCategories(new CursedLassoRTRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
 	}
 
 	@Override
@@ -61,6 +65,10 @@ public class EuruModJeiPlugin implements IModPlugin {
 		registration.addRecipes(OGenRecipeType_Type, OGenRecipeTypeRecipes);
 		List<NSGenRecipeTypeRecipe> NSGenRecipeTypeRecipes = recipeManager.getAllRecipesFor(NSGenRecipeTypeRecipe.Type.INSTANCE).stream().map(RecipeHolder::value).collect(Collectors.toList());
 		registration.addRecipes(NSGenRecipeType_Type, NSGenRecipeTypeRecipes);
+		List<GoldenLassoRTRecipe> GoldenLassoRTRecipes = recipeManager.getAllRecipesFor(GoldenLassoRTRecipe.Type.INSTANCE).stream().map(RecipeHolder::value).collect(Collectors.toList());
+		registration.addRecipes(GoldenLassoRT_Type, GoldenLassoRTRecipes);
+		List<CursedLassoRTRecipe> CursedLassoRTRecipes = recipeManager.getAllRecipesFor(CursedLassoRTRecipe.Type.INSTANCE).stream().map(RecipeHolder::value).collect(Collectors.toList());
+		registration.addRecipes(CursedLassoRT_Type, CursedLassoRTRecipes);
 	}
 
 	@Override
@@ -72,5 +80,7 @@ public class EuruModJeiPlugin implements IModPlugin {
 		registration.addRecipeCatalyst(new ItemStack(EuruModBlocks.ENDER_GENERATOR.get().asItem()), EGenRecipeType_Type);
 		registration.addRecipeCatalyst(new ItemStack(EuruModBlocks.OVERCLOCKED_GENERATOR.get().asItem()), OGenRecipeType_Type);
 		registration.addRecipeCatalyst(new ItemStack(EuruModBlocks.NETHERSTAR_GENERATOR.get().asItem()), NSGenRecipeType_Type);
+		registration.addRecipeCatalyst(new ItemStack(EuruModItems.GOLDEN_LASSO.get()), GoldenLassoRT_Type);
+		registration.addRecipeCatalyst(new ItemStack(EuruModItems.CURSED_LASSO.get()), CursedLassoRT_Type);
 	}
 }

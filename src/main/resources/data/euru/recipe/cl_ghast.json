@@ -1,0 +1,17 @@
+{
+  "type": "euru:cursed_lasso_rt",
+  "ingredients": [
+    {
+      "item": "euru:cursed_lasso"
+    }
+  ],
+  "strings": [
+    "ghast"
+  ],
+  "outputs": [
+    {
+      "id": "euru:cursed_lasso_ar",
+      "count": 1
+    }
+  ]
+}

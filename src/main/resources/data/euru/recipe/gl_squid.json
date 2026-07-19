@@ -1,0 +1,17 @@
+{
+  "type": "euru:golden_lasso_rt",
+  "ingredients": [
+    {
+      "item": "euru:golden_lasso"
+    }
+  ],
+  "strings": [
+    "squid"
+  ],
+  "outputs": [
+    {
+      "id": "euru:golden_lasso_sw",
+      "count": 1
+    }
+  ]
+}
