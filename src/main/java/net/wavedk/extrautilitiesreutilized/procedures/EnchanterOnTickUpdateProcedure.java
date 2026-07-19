@@ -68,27 +68,90 @@ public class EnchanterOnTickUpdateProcedure {
 			}
 			world = _origWorld;
 		}
-		if (player instanceof Player || player instanceof ServerPlayer) {// redstoneMode
+		if (player instanceof Player || player instanceof ServerPlayer) {
 			if (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "redstoneMode") == 0) {
-				setBlockNBTLogic(world, x, y, z, "redstoneModeOn", true);
+				if (!world.isClientSide()) {
+					BlockPos _bp = BlockPos.containing(x, y, z);
+					BlockEntity _blockEntity = world.getBlockEntity(_bp);
+					BlockState _bs = world.getBlockState(_bp);
+					if (_blockEntity != null) {
+						_blockEntity.getPersistentData().putBoolean("redstoneModeOn", true);
+					}
+					if (world instanceof Level _level)
+						_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+				}
 			} else if (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "redstoneMode") == 1) {
 				if (world instanceof Level _level13 && _level13.hasNeighborSignal(BlockPos.containing(x, y, z))) {
-					setBlockNBTLogic(world, x, y, z, "redstoneModeOn", true);
+					if (!world.isClientSide()) {
+						BlockPos _bp = BlockPos.containing(x, y, z);
+						BlockEntity _blockEntity = world.getBlockEntity(_bp);
+						BlockState _bs = world.getBlockState(_bp);
+						if (_blockEntity != null) {
+							_blockEntity.getPersistentData().putBoolean("redstoneModeOn", true);
+						}
+						if (world instanceof Level _level)
+							_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+					}
 				} else {
-					setBlockNBTLogic(world, x, y, z, "redstoneModeOn", false);
+					if (!world.isClientSide()) {
+						BlockPos _bp = BlockPos.containing(x, y, z);
+						BlockEntity _blockEntity = world.getBlockEntity(_bp);
+						BlockState _bs = world.getBlockState(_bp);
+						if (_blockEntity != null) {
+							_blockEntity.getPersistentData().putBoolean("redstoneModeOn", false);
+						}
+						if (world instanceof Level _level)
+							_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+					}
 				}
 			} else if (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "redstoneMode") == 2) {
 				if (world instanceof Level _level17 && _level17.hasNeighborSignal(BlockPos.containing(x, y, z))) {
-					setBlockNBTLogic(world, x, y, z, "redstoneModeOn", false);
+					if (!world.isClientSide()) {
+						BlockPos _bp = BlockPos.containing(x, y, z);
+						BlockEntity _blockEntity = world.getBlockEntity(_bp);
+						BlockState _bs = world.getBlockState(_bp);
+						if (_blockEntity != null) {
+							_blockEntity.getPersistentData().putBoolean("redstoneModeOn", false);
+						}
+						if (world instanceof Level _level)
+							_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+					}
 				} else {
-					setBlockNBTLogic(world, x, y, z, "redstoneModeOn", true);
+					if (!world.isClientSide()) {
+						BlockPos _bp = BlockPos.containing(x, y, z);
+						BlockEntity _blockEntity = world.getBlockEntity(_bp);
+						BlockState _bs = world.getBlockState(_bp);
+						if (_blockEntity != null) {
+							_blockEntity.getPersistentData().putBoolean("redstoneModeOn", true);
+						}
+						if (world instanceof Level _level)
+							_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+					}
 				}
 			} else if (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "redstoneMode") == 3) {
-				setBlockNBTLogic(world, x, y, z, "redstoneModeOn", false);
+				if (!world.isClientSide()) {
+					BlockPos _bp = BlockPos.containing(x, y, z);
+					BlockEntity _blockEntity = world.getBlockEntity(_bp);
+					BlockState _bs = world.getBlockState(_bp);
+					if (_blockEntity != null) {
+						_blockEntity.getPersistentData().putBoolean("redstoneModeOn", false);
+					}
+					if (world instanceof Level _level)
+						_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+				}
 			} else {
-				setBlockNBTLogic(world, x, y, z, "redstoneModeOn", true);
+				if (!world.isClientSide()) {
+					BlockPos _bp = BlockPos.containing(x, y, z);
+					BlockEntity _blockEntity = world.getBlockEntity(_bp);
+					BlockState _bs = world.getBlockState(_bp);
+					if (_blockEntity != null) {
+						_blockEntity.getPersistentData().putBoolean("redstoneModeOn", true);
+					}
+					if (world instanceof Level _level)
+						_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+				}
 			}
-			if (getBlockNBTLogic(world, BlockPos.containing(x, y, z), "redstoneModeOn")) {// multCalc
+			if (getBlockNBTLogic(world, BlockPos.containing(x, y, z), "redstoneModeOn")) {
 				mult = 1;
 				if ((itemFromBlockInventory(world, BlockPos.containing(x, y, z), 3).copy()).getItem() == EuruModItems.SPEED_UPGRADE.get()) {
 					mult = 1 + itemFromBlockInventory(world, BlockPos.containing(x, y, z), 3).getCount() / 4d;
@@ -99,13 +162,13 @@ public class EnchanterOnTickUpdateProcedure {
 				} else if ((itemFromBlockInventory(world, BlockPos.containing(x, y, z), 3).copy()).getItem() == EuruModItems.ULTIMATE_SPEED_UPGRADE.get()) {
 					mult = 1 + itemFromBlockInventory(world, BlockPos.containing(x, y, z), 3).getCount() / 1.25;
 					cost = itemFromBlockInventory(world, BlockPos.containing(x, y, z), 3).getCount();
-				} // getItem
+				}
 				on = false;
 				if (itemFromBlockInventory(world, BlockPos.containing(x, y, z), 0).getCount() > 0) {
 					if ((getBlockNBTString(world, BlockPos.containing(x, y, z), "output")).equals("") || (getBlockNBTString(world, BlockPos.containing(x, y, z), "cItem")).equals("")
 							|| getBlockNBTNumber(world, BlockPos.containing(x, y, z), "wait_time") == 0 || getBlockNBTNumber(world, BlockPos.containing(x, y, z), "lapis_required") == 0
 							|| getBlockNBTNumber(world, BlockPos.containing(x, y, z), "fe_required") == 0 || getBlockNBTNumber(world, BlockPos.containing(x, y, z), "gp_required") == 0) {
-						configFile = new File((FMLPaths.GAMEDIR.get().toString() + "/config/euru/"), File.separator + "euru_unified_config.json");// readConfig
+						configFile = new File((FMLPaths.GAMEDIR.get().toString() + "/config/euru/"), File.separator + "euru_unified_config.json");
 						{
 							try {
 								BufferedReader bufferedReader = new BufferedReader(new FileReader(configFile));
@@ -116,23 +179,31 @@ public class EnchanterOnTickUpdateProcedure {
 								}
 								bufferedReader.close();
 								configOBJ = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
-								// getOBJs
 								catOBJ = configOBJ.get("recipes").getAsJsonObject();
 								blockOBJ = catOBJ.get((BuiltInRegistries.BLOCK.getKey((world.getBlockState(BlockPos.containing(x, y, z))).getBlock()).toString())).getAsJsonObject();
-								rlArray = blockOBJ.get("recipeList").getAsJsonArray();// loopRL
+								rlArray = blockOBJ.get("recipeList").getAsJsonArray();
 								rlNum = 0;
 								for (int index8 = 0; index8 < (int) rlArray.size(); index8++) {
 									rl_cItem = rlArray.get((int) rlNum).getAsString();
 									if ((BuiltInRegistries.ITEM.getKey((itemFromBlockInventory(world, BlockPos.containing(x, y, z), 0).copy()).getItem()).toString()).equals(rl_cItem)
-											|| (itemFromBlockInventory(world, BlockPos.containing(x, y, z), 0).copy()).is(ItemTags.create(ResourceLocation.parse((rl_cItem).toLowerCase(java.util.Locale.ENGLISH))))) {// foundItem-SettingNBT
+											|| (itemFromBlockInventory(world, BlockPos.containing(x, y, z), 0).copy()).is(ItemTags.create(ResourceLocation.parse((rl_cItem).toLowerCase(java.util.Locale.ENGLISH))))) {
 										recipeOBJ = blockOBJ.get(rl_cItem).getAsJsonObject();
-										setBlockNBTText(world, x, y, z, "output", recipeOBJ.get("output").getAsString());
-										setBlockNBTText(world, x, y, z, "lapis_input", recipeOBJ.get("lapis_input").getAsString());
-										setBlockNBTText(world, x, y, z, "cItem", rl_cItem);
-										setBlockNBTNumber(world, x, y, z, "gp_required", recipeOBJ.get("gp_required").getAsDouble());
-										setBlockNBTNumber(world, x, y, z, "wait_time", recipeOBJ.get("wait_time").getAsDouble());
-										setBlockNBTNumber(world, x, y, z, "lapis_required", recipeOBJ.get("lapis_required").getAsDouble());
-										setBlockNBTNumber(world, x, y, z, "fe_required", recipeOBJ.get("fe_required").getAsDouble());
+										if (!world.isClientSide()) {
+											BlockPos _bp = BlockPos.containing(x, y, z);
+											BlockEntity _blockEntity = world.getBlockEntity(_bp);
+											BlockState _bs = world.getBlockState(_bp);
+											if (_blockEntity != null) {
+												_blockEntity.getPersistentData().putString("output", recipeOBJ.get("output").getAsString());
+												_blockEntity.getPersistentData().putString("lapis_input", recipeOBJ.get("lapis_input").getAsString());
+												_blockEntity.getPersistentData().putString("cItem", rl_cItem);
+												_blockEntity.getPersistentData().putDouble("gp_required", recipeOBJ.get("gp_required").getAsDouble());
+												_blockEntity.getPersistentData().putDouble("wait_time", recipeOBJ.get("wait_time").getAsDouble());
+												_blockEntity.getPersistentData().putDouble("lapis_required", recipeOBJ.get("lapis_required").getAsDouble());
+												_blockEntity.getPersistentData().putDouble("fe_required", recipeOBJ.get("fe_required").getAsDouble());
+											}
+											if (world instanceof Level _level)
+												_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+										}
 										break;
 									}
 									rlNum = rlNum + 1;
@@ -163,28 +234,82 @@ public class EnchanterOnTickUpdateProcedure {
 										feStep = getBlockNBTNumber(world, BlockPos.containing(x, y, z), "fe_required") / getBlockNBTNumber(world, BlockPos.containing(x, y, z), "wait_time");
 										if (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "cProgress") == 0) {
 											if (getEnergyStored(world, BlockPos.containing(x, y, z), null) >= getBlockNBTNumber(world, BlockPos.containing(x, y, z), "fe_required")) {
-												setBlockNBTNumber(world, x, y, z, "cProgress", (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "cProgress") + 1 * mult));
+												if (!world.isClientSide()) {
+													BlockPos _bp = BlockPos.containing(x, y, z);
+													BlockEntity _blockEntity = world.getBlockEntity(_bp);
+													BlockState _bs = world.getBlockState(_bp);
+													if (_blockEntity != null) {
+														_blockEntity.getPersistentData().putDouble("cProgress", (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "cProgress") + 1 * mult));
+													}
+													if (world instanceof Level _level)
+														_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+												}
 												energyRemove = feStep * mult;
 												on = true;
 												if (world.getBlockEntity(new BlockPos((int) x, (int) y, (int) z)) instanceof EnchanterBlockEntity be) {
 													be.removeEnergy((int) energyRemove);
 												}
-												setBlockNBTText(world, x, y, z, "errorMessage", "");
+												if (!world.isClientSide()) {
+													BlockPos _bp = BlockPos.containing(x, y, z);
+													BlockEntity _blockEntity = world.getBlockEntity(_bp);
+													BlockState _bs = world.getBlockState(_bp);
+													if (_blockEntity != null) {
+														_blockEntity.getPersistentData().putString("errorMessage", "");
+													}
+													if (world instanceof Level _level)
+														_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+												}
 											} else {
-												setBlockNBTText(world, x, y, z, "errorMessage", "notEnoughFE");
+												if (!world.isClientSide()) {
+													BlockPos _bp = BlockPos.containing(x, y, z);
+													BlockEntity _blockEntity = world.getBlockEntity(_bp);
+													BlockState _bs = world.getBlockState(_bp);
+													if (_blockEntity != null) {
+														_blockEntity.getPersistentData().putString("errorMessage", "notEnoughFE");
+													}
+													if (world instanceof Level _level)
+														_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+												}
 											}
 										} else if (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "cProgress") < getBlockNBTNumber(world, BlockPos.containing(x, y, z), "wait_time")) {
 											if (getEnergyStored(world, BlockPos.containing(x, y, z), null) >= getBlockNBTNumber(world, BlockPos.containing(x, y, z), "fe_required")
 													- feStep * getBlockNBTNumber(world, BlockPos.containing(x, y, z), "cProgress")) {
-												setBlockNBTNumber(world, x, y, z, "cProgress", (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "cProgress") + 1 * mult));
+												if (!world.isClientSide()) {
+													BlockPos _bp = BlockPos.containing(x, y, z);
+													BlockEntity _blockEntity = world.getBlockEntity(_bp);
+													BlockState _bs = world.getBlockState(_bp);
+													if (_blockEntity != null) {
+														_blockEntity.getPersistentData().putDouble("cProgress", (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "cProgress") + 1 * mult));
+													}
+													if (world instanceof Level _level)
+														_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+												}
 												on = true;
 												energyRemove = feStep * mult;
 												if (world.getBlockEntity(new BlockPos((int) x, (int) y, (int) z)) instanceof EnchanterBlockEntity be) {
 													be.removeEnergy((int) energyRemove);
 												}
-												setBlockNBTText(world, x, y, z, "errorMessage", "");
+												if (!world.isClientSide()) {
+													BlockPos _bp = BlockPos.containing(x, y, z);
+													BlockEntity _blockEntity = world.getBlockEntity(_bp);
+													BlockState _bs = world.getBlockState(_bp);
+													if (_blockEntity != null) {
+														_blockEntity.getPersistentData().putString("errorMessage", "");
+													}
+													if (world instanceof Level _level)
+														_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+												}
 											} else {
-												setBlockNBTText(world, x, y, z, "errorMessage", "notEnoughFE");
+												if (!world.isClientSide()) {
+													BlockPos _bp = BlockPos.containing(x, y, z);
+													BlockEntity _blockEntity = world.getBlockEntity(_bp);
+													BlockState _bs = world.getBlockState(_bp);
+													if (_blockEntity != null) {
+														_blockEntity.getPersistentData().putString("errorMessage", "notEnoughFE");
+													}
+													if (world instanceof Level _level)
+														_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+												}
 											}
 										} else {
 											if (world instanceof ILevelExtension _ext && _ext.getCapability(Capabilities.ItemHandler.BLOCK, BlockPos.containing(x, y, z), null) instanceof IItemHandlerModifiable _itemHandlerModifiable) {
@@ -204,43 +329,143 @@ public class EnchanterOnTickUpdateProcedure {
 												_setstack.setCount(itemFromBlockInventory(world, BlockPos.containing(x, y, z), 0).getCount() - 1);
 												_itemHandlerModifiable.setStackInSlot(0, _setstack);
 											}
-											setBlockNBTNumber(world, x, y, z, "cProgress", 0);
-											setBlockNBTText(world, x, y, z, "output", "");
+											if (!world.isClientSide()) {
+												BlockPos _bp = BlockPos.containing(x, y, z);
+												BlockEntity _blockEntity = world.getBlockEntity(_bp);
+												BlockState _bs = world.getBlockState(_bp);
+												if (_blockEntity != null) {
+													_blockEntity.getPersistentData().putDouble("cProgress", 0);
+													_blockEntity.getPersistentData().putString("output", "");
+												}
+												if (world instanceof Level _level)
+													_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+											}
 										}
 									} else {
-										setBlockNBTText(world, x, y, z, "errorMessage", "tmGP");
+										if (!world.isClientSide()) {
+											BlockPos _bp = BlockPos.containing(x, y, z);
+											BlockEntity _blockEntity = world.getBlockEntity(_bp);
+											BlockState _bs = world.getBlockState(_bp);
+											if (_blockEntity != null) {
+												_blockEntity.getPersistentData().putString("errorMessage", "tmGP");
+											}
+											if (world instanceof Level _level)
+												_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+										}
 									}
 								} else {
-									setBlockNBTText(world, x, y, z, "output", "");
-									setBlockNBTText(world, x, y, z, "errorMessage", "notEnoughLapis");
+									if (!world.isClientSide()) {
+										BlockPos _bp = BlockPos.containing(x, y, z);
+										BlockEntity _blockEntity = world.getBlockEntity(_bp);
+										BlockState _bs = world.getBlockState(_bp);
+										if (_blockEntity != null) {
+											_blockEntity.getPersistentData().putString("output", "");
+											_blockEntity.getPersistentData().putString("errorMessage", "notEnoughLapis");
+										}
+										if (world instanceof Level _level)
+											_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+									}
 								}
 							} else {
-								setBlockNBTText(world, x, y, z, "output", "");
-								setBlockNBTText(world, x, y, z, "errorMessage", "outputFilled");
+								if (!world.isClientSide()) {
+									BlockPos _bp = BlockPos.containing(x, y, z);
+									BlockEntity _blockEntity = world.getBlockEntity(_bp);
+									BlockState _bs = world.getBlockState(_bp);
+									if (_blockEntity != null) {
+										_blockEntity.getPersistentData().putString("output", "");
+										_blockEntity.getPersistentData().putString("errorMessage", "outputFilled");
+									}
+									if (world instanceof Level _level)
+										_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+								}
 							}
 						} else {
-							setBlockNBTText(world, x, y, z, "output", "");
-							setBlockNBTText(world, x, y, z, "errorMessage", "noInput");
+							if (!world.isClientSide()) {
+								BlockPos _bp = BlockPos.containing(x, y, z);
+								BlockEntity _blockEntity = world.getBlockEntity(_bp);
+								BlockState _bs = world.getBlockState(_bp);
+								if (_blockEntity != null) {
+									_blockEntity.getPersistentData().putString("output", "");
+									_blockEntity.getPersistentData().putString("errorMessage", "noInput");
+								}
+								if (world instanceof Level _level)
+									_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+							}
 						}
 						if (!(getBlockNBTString(world, BlockPos.containing(x, y, z), "errorMessage")).equals("") && !(getBlockNBTString(world, BlockPos.containing(x, y, z), "errorMessage")).equals("notEnoughFE")) {
-							setBlockNBTNumber(world, x, y, z, "cProgress", 0);
+							if (!world.isClientSide()) {
+								BlockPos _bp = BlockPos.containing(x, y, z);
+								BlockEntity _blockEntity = world.getBlockEntity(_bp);
+								BlockState _bs = world.getBlockState(_bp);
+								if (_blockEntity != null) {
+									_blockEntity.getPersistentData().putDouble("cProgress", 0);
+								}
+								if (world instanceof Level _level)
+									_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+							}
 						}
 					}
 				} else {
-					setBlockNBTNumber(world, x, y, z, "cProgress", 0);
-					setBlockNBTText(world, x, y, z, "output", "");
-					setBlockNBTText(world, x, y, z, "errorMessage", "noInput");
+					if (!world.isClientSide()) {
+						BlockPos _bp = BlockPos.containing(x, y, z);
+						BlockEntity _blockEntity = world.getBlockEntity(_bp);
+						BlockState _bs = world.getBlockState(_bp);
+						if (_blockEntity != null) {
+							_blockEntity.getPersistentData().putDouble("cProgress", 0);
+							_blockEntity.getPersistentData().putString("output", "");
+							_blockEntity.getPersistentData().putString("errorMessage", "noInput");
+						}
+						if (world instanceof Level _level)
+							_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+					}
 				}
 				if (!on) {
 					if (3 < getBlockNBTNumber(world, BlockPos.containing(x, y, z), "onCounter")) {
-						setBlockNBTNumber(world, x, y, z, "onCounter", 0);
-						setBooleanBlockState(world, x, y, z, "on", on);
+						if (!world.isClientSide()) {
+							BlockPos _bp = BlockPos.containing(x, y, z);
+							BlockEntity _blockEntity = world.getBlockEntity(_bp);
+							BlockState _bs = world.getBlockState(_bp);
+							if (_blockEntity != null) {
+								_blockEntity.getPersistentData().putDouble("onCounter", 0);
+							}
+							if (world instanceof Level _level)
+								_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+						}
+						{
+							BlockPos _pos = BlockPos.containing(x, y, z);
+							BlockState _bs = world.getBlockState(_pos);
+							if (_bs.getBlock().getStateDefinition().getProperty("on") instanceof BooleanProperty _booleanProp)
+								world.setBlock(_pos, _bs.setValue(_booleanProp, on), 3);
+						}
 					} else {
-						setBlockNBTNumber(world, x, y, z, "onCounter", (1 + getBlockNBTNumber(world, BlockPos.containing(x, y, z), "onCounter")));
+						if (!world.isClientSide()) {
+							BlockPos _bp = BlockPos.containing(x, y, z);
+							BlockEntity _blockEntity = world.getBlockEntity(_bp);
+							BlockState _bs = world.getBlockState(_bp);
+							if (_blockEntity != null) {
+								_blockEntity.getPersistentData().putDouble("onCounter", (1 + getBlockNBTNumber(world, BlockPos.containing(x, y, z), "onCounter")));
+							}
+							if (world instanceof Level _level)
+								_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+						}
 					}
 				} else {
-					setBooleanBlockState(world, x, y, z, "on", true);
-					setBlockNBTNumber(world, x, y, z, "onCounter", 0);
+					{
+						BlockPos _pos = BlockPos.containing(x, y, z);
+						BlockState _bs = world.getBlockState(_pos);
+						if (_bs.getBlock().getStateDefinition().getProperty("on") instanceof BooleanProperty _booleanProp)
+							world.setBlock(_pos, _bs.setValue(_booleanProp, true), 3);
+					}
+					if (!world.isClientSide()) {
+						BlockPos _bp = BlockPos.containing(x, y, z);
+						BlockEntity _blockEntity = world.getBlockEntity(_bp);
+						BlockState _bs = world.getBlockState(_bp);
+						if (_blockEntity != null) {
+							_blockEntity.getPersistentData().putDouble("onCounter", 0);
+						}
+						if (world instanceof Level _level)
+							_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+					}
 				}
 			}
 		}
@@ -268,20 +493,6 @@ public class EnchanterOnTickUpdateProcedure {
 		return -1;
 	}
 
-	private static void setBlockNBTLogic(LevelAccessor world, double x, double y, double z, String tag, boolean value) {
-		if (!world.isClientSide()) {
-			BlockPos pos = BlockPos.containing(x, y, z);
-			BlockEntity blockEntity = world.getBlockEntity(pos);
-			BlockState blockState = world.getBlockState(pos);
-			if (blockEntity != null) {
-				blockEntity.getPersistentData().putBoolean(tag, value);
-			}
-			if (world instanceof Level level) {
-				level.sendBlockUpdated(pos, blockState, blockState, 3);
-			}
-		}
-	}
-
 	private static boolean getBlockNBTLogic(LevelAccessor world, BlockPos pos, String tag) {
 		BlockEntity blockEntity = world.getBlockEntity(pos);
 		if (blockEntity != null)
@@ -298,34 +509,6 @@ public class EnchanterOnTickUpdateProcedure {
 		return ItemStack.EMPTY;
 	}
 
-	private static void setBlockNBTText(LevelAccessor world, double x, double y, double z, String tag, String value) {
-		if (!world.isClientSide()) {
-			BlockPos pos = BlockPos.containing(x, y, z);
-			BlockEntity blockEntity = world.getBlockEntity(pos);
-			BlockState blockState = world.getBlockState(pos);
-			if (blockEntity != null) {
-				blockEntity.getPersistentData().putString(tag, value);
-			}
-			if (world instanceof Level level) {
-				level.sendBlockUpdated(pos, blockState, blockState, 3);
-			}
-		}
-	}
-
-	private static void setBlockNBTNumber(LevelAccessor world, double x, double y, double z, String tag, double value) {
-		if (!world.isClientSide()) {
-			BlockPos pos = BlockPos.containing(x, y, z);
-			BlockEntity blockEntity = world.getBlockEntity(pos);
-			BlockState blockState = world.getBlockState(pos);
-			if (blockEntity != null) {
-				blockEntity.getPersistentData().putDouble(tag, value);
-			}
-			if (world instanceof Level level) {
-				level.sendBlockUpdated(pos, blockState, blockState, 3);
-			}
-		}
-	}
-
 	public static int getEnergyStored(LevelAccessor level, BlockPos pos, Direction direction) {
 		if (level instanceof ILevelExtension levelExtension) {
 			IEnergyStorage energyStorage = levelExtension.getCapability(Capabilities.EnergyStorage.BLOCK, pos, direction);
@@ -333,13 +516,5 @@ public class EnchanterOnTickUpdateProcedure {
 				return energyStorage.getEnergyStored();
 		}
 		return 0;
-	}
-
-	private static void setBooleanBlockState(LevelAccessor world, double x, double y, double z, String property, boolean value) {
-		BlockPos pos = BlockPos.containing(x, y, z);
-		BlockState state = world.getBlockState(pos);
-		if (state.getBlock().getStateDefinition().getProperty(property) instanceof BooleanProperty booleanProperty) {
-			world.setBlock(pos, state.setValue(booleanProperty, value), 3);
-		}
 	}
 }

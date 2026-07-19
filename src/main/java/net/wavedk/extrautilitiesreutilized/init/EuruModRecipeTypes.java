@@ -36,6 +36,8 @@ public class EuruModRecipeTypes {
 			SERIALIZERS.register("e_gen_recipe_type", () -> EGenRecipeTypeRecipe.Serializer.INSTANCE);
 			RECIPE_TYPES.register("o_gen_recipe_type", () -> OGenRecipeTypeRecipe.Type.INSTANCE);
 			SERIALIZERS.register("o_gen_recipe_type", () -> OGenRecipeTypeRecipe.Serializer.INSTANCE);
+			RECIPE_TYPES.register("ns_gen_recipe_type", () -> NSGenRecipeTypeRecipe.Type.INSTANCE);
+			SERIALIZERS.register("ns_gen_recipe_type", () -> NSGenRecipeTypeRecipe.Serializer.INSTANCE);
 		});
 	}
 }

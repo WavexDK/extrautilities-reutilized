@@ -26,6 +26,7 @@ public class EuruModJeiPlugin implements IModPlugin {
 	public static mezz.jei.api.recipe.RecipeType<EnchanterRecipeTypeRecipe> EnchanterRecipeType_Type = new mezz.jei.api.recipe.RecipeType<>(EnchanterRecipeTypeRecipeCategory.UID, EnchanterRecipeTypeRecipe.class);
 	public static mezz.jei.api.recipe.RecipeType<EGenRecipeTypeRecipe> EGenRecipeType_Type = new mezz.jei.api.recipe.RecipeType<>(EGenRecipeTypeRecipeCategory.UID, EGenRecipeTypeRecipe.class);
 	public static mezz.jei.api.recipe.RecipeType<OGenRecipeTypeRecipe> OGenRecipeType_Type = new mezz.jei.api.recipe.RecipeType<>(OGenRecipeTypeRecipeCategory.UID, OGenRecipeTypeRecipe.class);
+	public static mezz.jei.api.recipe.RecipeType<NSGenRecipeTypeRecipe> NSGenRecipeType_Type = new mezz.jei.api.recipe.RecipeType<>(NSGenRecipeTypeRecipeCategory.UID, NSGenRecipeTypeRecipe.class);
 
 	@Override
 	public ResourceLocation getPluginUid() {
@@ -40,6 +41,7 @@ public class EuruModJeiPlugin implements IModPlugin {
 		registration.addRecipeCategories(new EnchanterRecipeTypeRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
 		registration.addRecipeCategories(new EGenRecipeTypeRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
 		registration.addRecipeCategories(new OGenRecipeTypeRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
+		registration.addRecipeCategories(new NSGenRecipeTypeRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
 	}
 
 	@Override
@@ -57,6 +59,8 @@ public class EuruModJeiPlugin implements IModPlugin {
 		registration.addRecipes(EGenRecipeType_Type, EGenRecipeTypeRecipes);
 		List<OGenRecipeTypeRecipe> OGenRecipeTypeRecipes = recipeManager.getAllRecipesFor(OGenRecipeTypeRecipe.Type.INSTANCE).stream().map(RecipeHolder::value).collect(Collectors.toList());
 		registration.addRecipes(OGenRecipeType_Type, OGenRecipeTypeRecipes);
+		List<NSGenRecipeTypeRecipe> NSGenRecipeTypeRecipes = recipeManager.getAllRecipesFor(NSGenRecipeTypeRecipe.Type.INSTANCE).stream().map(RecipeHolder::value).collect(Collectors.toList());
+		registration.addRecipes(NSGenRecipeType_Type, NSGenRecipeTypeRecipes);
 	}
 
 	@Override
@@ -67,5 +71,6 @@ public class EuruModJeiPlugin implements IModPlugin {
 		registration.addRecipeCatalyst(new ItemStack(EuruModBlocks.ENCHANTER.get().asItem()), EnchanterRecipeType_Type);
 		registration.addRecipeCatalyst(new ItemStack(EuruModBlocks.ENDER_GENERATOR.get().asItem()), EGenRecipeType_Type);
 		registration.addRecipeCatalyst(new ItemStack(EuruModBlocks.OVERCLOCKED_GENERATOR.get().asItem()), OGenRecipeType_Type);
+		registration.addRecipeCatalyst(new ItemStack(EuruModBlocks.NETHERSTAR_GENERATOR.get().asItem()), NSGenRecipeType_Type);
 	}
 }

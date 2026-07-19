@@ -44,7 +44,7 @@ public class NetherstarGeneratorBlock extends Block implements EntityBlock {
 	public static final BooleanProperty ON = BooleanProperty.create("on");
 
 	public NetherstarGeneratorBlock() {
-		super(BlockBehaviour.Properties.of().strength(2f, 10f).lightLevel(blockstate -> (int) NetherstarGeneratorLuminanceProcedure.execute(blockstate)).requiresCorrectToolForDrops().hasPostProcess((bs, br, bp) -> true)
+		super(BlockBehaviour.Properties.of().strength(20f, 60f).lightLevel(blockstate -> (int) NetherstarGeneratorLuminanceProcedure.execute(blockstate)).requiresCorrectToolForDrops().hasPostProcess((bs, br, bp) -> true)
 				.emissiveRendering((bs, br, bp) -> true).instrument(NoteBlockInstrument.BASEDRUM));
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(ON, false));
 	}

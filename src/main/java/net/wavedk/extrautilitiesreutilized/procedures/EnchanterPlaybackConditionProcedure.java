@@ -6,11 +6,15 @@ import net.minecraft.world.level.block.state.BlockState;
 
 public class EnchanterPlaybackConditionProcedure {
 	public static boolean execute(BlockState blockstate) {
-		return getBooleanFromBlockState(blockstate, "on");
+		return getPropertyByName(blockstate, "on") instanceof BooleanProperty _getbp1 && blockstate.getValue(_getbp1);
 	}
 
-	private static boolean getBooleanFromBlockState(BlockState blockState, String property) {
-		Property<?> prop = blockState.getBlock().getStateDefinition().getProperty(property);
-		return prop instanceof BooleanProperty bp && blockState.getValue(bp);
+	private static Property<?> getPropertyByName(BlockState state, String name) {
+		for (Property<?> property : state.getProperties()) {
+			if (property.getName().equals(name)) {
+				return property;
+			}
+		}
+		return null;
 	}
 }

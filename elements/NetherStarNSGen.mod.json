@@ -1,0 +1,23 @@
+{
+  "_fv": 89,
+  "_type": "jeirecipe",
+  "definition": {
+    "category": "ns_gen_recipe_type",
+    "ingredients": [
+      "Items.NETHER_STAR"
+    ],
+    "integers": [],
+    "strings": [
+      "euru:netherstar_generator",
+      "minecraft:nether_star"
+    ],
+    "recipetype": "NSGenRecipeType",
+    "results": [
+      "Blocks.POLISHED_TUFF"
+    ],
+    "resultCounts": [
+      0
+    ],
+    "count": 0
+  }
+}

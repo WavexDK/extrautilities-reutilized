@@ -363,9 +363,9 @@
         "data": {
           "name": "tooltip_not_enough_grid_power_available",
           "text": {
-            "fixedValue": "Not enough Grid Power available!"
+            "fixedValue": "",
+            "name": "NEGPAProcedure"
           },
-          "displayCondition": "TooMuchGP",
           "width": 24,
           "height": 24,
           "x": 215,
@@ -488,6 +488,34 @@
           "displayCondition": "SGenIsOn",
           "x": 182,
           "y": 46,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_empty1",
+          "text": "",
+          "isUndecorated": true,
+          "onClick": "RedstoneGearRightclicked",
+          "width": 24,
+          "height": 20,
+          "x": 215,
+          "y": 72,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_empty",
+          "text": "",
+          "isUndecorated": true,
+          "onClick": "RedstoneGearRightclicked",
+          "width": 24,
+          "height": 20,
+          "x": 215,
+          "y": 68,
           "locked": false
         }
       }

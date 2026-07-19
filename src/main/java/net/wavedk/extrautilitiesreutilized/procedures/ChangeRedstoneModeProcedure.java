@@ -9,15 +9,60 @@ import net.minecraft.core.BlockPos;
 public class ChangeRedstoneModeProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z) {
 		if (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "redstoneMode") == 0) {
-			setBlockNBTNumber(world, x, y, z, "redstoneMode", 1);
+			if (!world.isClientSide()) {
+				BlockPos _bp = BlockPos.containing(x, y, z);
+				BlockEntity _blockEntity = world.getBlockEntity(_bp);
+				BlockState _bs = world.getBlockState(_bp);
+				if (_blockEntity != null) {
+					_blockEntity.getPersistentData().putDouble("redstoneMode", 1);
+				}
+				if (world instanceof Level _level)
+					_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+			}
 		} else if (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "redstoneMode") == 1) {
-			setBlockNBTNumber(world, x, y, z, "redstoneMode", 2);
+			if (!world.isClientSide()) {
+				BlockPos _bp = BlockPos.containing(x, y, z);
+				BlockEntity _blockEntity = world.getBlockEntity(_bp);
+				BlockState _bs = world.getBlockState(_bp);
+				if (_blockEntity != null) {
+					_blockEntity.getPersistentData().putDouble("redstoneMode", 2);
+				}
+				if (world instanceof Level _level)
+					_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+			}
 		} else if (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "redstoneMode") == 2) {
-			setBlockNBTNumber(world, x, y, z, "redstoneMode", 3);
+			if (!world.isClientSide()) {
+				BlockPos _bp = BlockPos.containing(x, y, z);
+				BlockEntity _blockEntity = world.getBlockEntity(_bp);
+				BlockState _bs = world.getBlockState(_bp);
+				if (_blockEntity != null) {
+					_blockEntity.getPersistentData().putDouble("redstoneMode", 3);
+				}
+				if (world instanceof Level _level)
+					_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+			}
 		} else if (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "redstoneMode") == 3) {
-			setBlockNBTNumber(world, x, y, z, "redstoneMode", 0);
+			if (!world.isClientSide()) {
+				BlockPos _bp = BlockPos.containing(x, y, z);
+				BlockEntity _blockEntity = world.getBlockEntity(_bp);
+				BlockState _bs = world.getBlockState(_bp);
+				if (_blockEntity != null) {
+					_blockEntity.getPersistentData().putDouble("redstoneMode", 0);
+				}
+				if (world instanceof Level _level)
+					_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+			}
 		} else {
-			setBlockNBTNumber(world, x, y, z, "redstoneMode", 0);
+			if (!world.isClientSide()) {
+				BlockPos _bp = BlockPos.containing(x, y, z);
+				BlockEntity _blockEntity = world.getBlockEntity(_bp);
+				BlockState _bs = world.getBlockState(_bp);
+				if (_blockEntity != null) {
+					_blockEntity.getPersistentData().putDouble("redstoneMode", 0);
+				}
+				if (world instanceof Level _level)
+					_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+			}
 		}
 	}
 
@@ -26,19 +71,5 @@ public class ChangeRedstoneModeProcedure {
 		if (blockEntity != null)
 			return blockEntity.getPersistentData().getDouble(tag);
 		return -1;
-	}
-
-	private static void setBlockNBTNumber(LevelAccessor world, double x, double y, double z, String tag, double value) {
-		if (!world.isClientSide()) {
-			BlockPos pos = BlockPos.containing(x, y, z);
-			BlockEntity blockEntity = world.getBlockEntity(pos);
-			BlockState blockState = world.getBlockState(pos);
-			if (blockEntity != null) {
-				blockEntity.getPersistentData().putDouble(tag, value);
-			}
-			if (world instanceof Level level) {
-				level.sendBlockUpdated(pos, blockState, blockState, 3);
-			}
-		}
 	}
 }

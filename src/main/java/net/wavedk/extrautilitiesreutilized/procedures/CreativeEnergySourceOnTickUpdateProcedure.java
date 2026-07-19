@@ -35,15 +35,24 @@ public class CreativeEnergySourceOnTickUpdateProcedure {
 		player = world instanceof ServerLevel _serverGetEntityUUID ? _serverGetEntityUUID.getEntity(tryOrDefault((getBlockNBTString(world, BlockPos.containing(x, y, z), "placedBy")), UUID::fromString, () -> new UUID(0, 0))) : null;
 		if (player instanceof ServerPlayer || player instanceof Player) {
 			if (player instanceof Player _plr5 && _plr5.containerMenu instanceof CreativeGenGUIMenu) {
-				setBlockNBTNumber(world, x, y, z, "energySend", new Object() {
-					double convert(String s) {
-						try {
-							return Double.parseDouble(s.trim());
-						} catch (Exception e) {
-						}
-						return 0;
+				if (!world.isClientSide()) {
+					BlockPos _bp = BlockPos.containing(x, y, z);
+					BlockEntity _blockEntity = world.getBlockEntity(_bp);
+					BlockState _bs = world.getBlockState(_bp);
+					if (_blockEntity != null) {
+						_blockEntity.getPersistentData().putDouble("energySend", new Object() {
+							double convert(String s) {
+								try {
+									return Double.parseDouble(s.trim());
+								} catch (Exception e) {
+								}
+								return 0;
+							}
+						}.convert((player instanceof Player _entity6 && _entity6.containerMenu instanceof EuruModMenus.MenuAccessor _menu6) ? _menu6.getMenuState(0, "energySend", "") : ""));
 					}
-				}.convert((player instanceof Player _entity6 && _entity6.containerMenu instanceof EuruModMenus.MenuAccessor _menu6) ? _menu6.getMenuState(0, "energySend", "") : ""));
+					if (world instanceof Level _level)
+						_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+				}
 			}
 		}
 		getDep = x + "" + y + z + (world instanceof Level _lvl ? _lvl.dimension() : (world instanceof WorldGenLevel _wgl ? _wgl.getLevel().dimension() : Level.OVERWORLD));
@@ -98,20 +107,6 @@ public class CreativeEnergySourceOnTickUpdateProcedure {
 			return func.apply(funcArg);
 		} catch (Exception e) {
 			return fallback.get();
-		}
-	}
-
-	private static void setBlockNBTNumber(LevelAccessor world, double x, double y, double z, String tag, double value) {
-		if (!world.isClientSide()) {
-			BlockPos pos = BlockPos.containing(x, y, z);
-			BlockEntity blockEntity = world.getBlockEntity(pos);
-			BlockState blockState = world.getBlockState(pos);
-			if (blockEntity != null) {
-				blockEntity.getPersistentData().putDouble(tag, value);
-			}
-			if (world instanceof Level level) {
-				level.sendBlockUpdated(pos, blockState, blockState, 3);
-			}
 		}
 	}
 

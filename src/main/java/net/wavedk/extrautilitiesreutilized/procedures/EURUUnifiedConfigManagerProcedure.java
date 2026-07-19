@@ -77,19 +77,16 @@ public class EURUUnifiedConfigManagerProcedure {
 				configFile.createNewFile();
 			} catch (IOException exception) {
 				exception.printStackTrace();
-			} // gp-man
-				// solarpanels
+			}
 			itemobj = new com.google.gson.JsonObject();
 			itemobj.addProperty("efficiency", 0.95);
 			itemobj.addProperty("efficiency_cutoff", 80);
-			gobj.add("solarpanels", itemobj);// mills
+			gobj.add("solarpanels", itemobj);
 			itemobj = new com.google.gson.JsonObject();
 			itemobj.addProperty("efficiency", 0.75);
 			itemobj.addProperty("efficiency_cutoff", 16);
 			gobj.add("mills", itemobj);
-			configJsonObject.add("group_man", gobj);// recipes
-			// enchanter
-			// evilblock
+			configJsonObject.add("group_man", gobj);
 			itemobj = new com.google.gson.JsonObject();
 			itemobj.addProperty("gp_required", 16);
 			itemobj.addProperty("fe_required", 4000);
@@ -98,7 +95,7 @@ public class EURUUnifiedConfigManagerProcedure {
 			itemobj.addProperty("lapis_input", (BuiltInRegistries.ITEM.getKey(Items.NETHER_STAR).toString()));
 			itemobj.addProperty("output", (BuiltInRegistries.ITEM.getKey(EuruModBlocks.BLOCK_OF_EVIL_INFUSED_INGOT.get().asItem()).toString()));
 			eobj.add((BuiltInRegistries.ITEM.getKey(Blocks.IRON_BLOCK.asItem()).toString()), itemobj);
-			erlArray.add((BuiltInRegistries.ITEM.getKey(Blocks.IRON_BLOCK.asItem()).toString()));// LD
+			erlArray.add((BuiltInRegistries.ITEM.getKey(Blocks.IRON_BLOCK.asItem()).toString()));
 			itemobj = new com.google.gson.JsonObject();
 			itemobj.addProperty("gp_required", 4);
 			itemobj.addProperty("fe_required", 1000);
@@ -107,7 +104,7 @@ public class EURUUnifiedConfigManagerProcedure {
 			itemobj.addProperty("lapis_input", (BuiltInRegistries.ITEM.getKey(Items.LAPIS_LAZULI).toString()));
 			itemobj.addProperty("output", (BuiltInRegistries.ITEM.getKey(EuruModItems.ENCHANTED_APPLE.get()).toString()));
 			eobj.add((BuiltInRegistries.ITEM.getKey(Items.APPLE).toString()), itemobj);
-			erlArray.add((BuiltInRegistries.ITEM.getKey(Items.APPLE).toString()));// LD
+			erlArray.add((BuiltInRegistries.ITEM.getKey(Items.APPLE).toString()));
 			itemobj = new com.google.gson.JsonObject();
 			itemobj.addProperty("gp_required", 4);
 			itemobj.addProperty("fe_required", 1000);
@@ -118,20 +115,19 @@ public class EURUUnifiedConfigManagerProcedure {
 			eobj.add((BuiltInRegistries.ITEM.getKey(EuruModItems.NUGGETO_EXPERIENCE.get()).toString()), itemobj);
 			erlArray.add((BuiltInRegistries.ITEM.getKey(EuruModItems.NUGGETO_EXPERIENCE.get()).toString()));
 			eobj.add("recipeList", erlArray);
-			recipesOBJ.add((BuiltInRegistries.ITEM.getKey(EuruModBlocks.ENCHANTER.get().asItem()).toString()), eobj);// resonator
-			// LD
+			recipesOBJ.add((BuiltInRegistries.ITEM.getKey(EuruModBlocks.ENCHANTER.get().asItem()).toString()), eobj);
 			itemobj = new com.google.gson.JsonObject();
 			itemobj.addProperty("gp_required", 8);
 			itemobj.addProperty("wait_time", 400);
 			itemobj.addProperty("output", (BuiltInRegistries.ITEM.getKey(EuruModItems.LUNAR_REACTIVE_DUST.get()).toString()));
 			bobj.add((BuiltInRegistries.ITEM.getKey(Items.LAPIS_LAZULI).toString()), itemobj);
-			rlArray.add((BuiltInRegistries.ITEM.getKey(Items.LAPIS_LAZULI).toString()));// SB
+			rlArray.add((BuiltInRegistries.ITEM.getKey(Items.LAPIS_LAZULI).toString()));
 			itemobj = new com.google.gson.JsonObject();
 			itemobj.addProperty("gp_required", 8);
 			itemobj.addProperty("wait_time", 200);
 			itemobj.addProperty("output", (BuiltInRegistries.ITEM.getKey(EuruModBlocks.STONE_BURNT.get().asItem()).toString()));
 			bobj.add((BuiltInRegistries.ITEM.getKey(Blocks.SMOOTH_STONE.asItem()).toString()), itemobj);
-			rlArray.add((BuiltInRegistries.ITEM.getKey(Blocks.SMOOTH_STONE.asItem()).toString()));// UB
+			rlArray.add((BuiltInRegistries.ITEM.getKey(Blocks.SMOOTH_STONE.asItem()).toString()));
 			itemobj = new com.google.gson.JsonObject();
 			itemobj.addProperty("gp_required", 8);
 			itemobj.addProperty("wait_time", 200);
@@ -140,8 +136,7 @@ public class EURUUnifiedConfigManagerProcedure {
 			rlArray.add((BuiltInRegistries.ITEM.getKey(Blocks.LIGHT_WEIGHTED_PRESSURE_PLATE.asItem()).toString()));
 			bobj.add("recipeList", rlArray);
 			recipesOBJ.add((BuiltInRegistries.ITEM.getKey(EuruModBlocks.RESONATOR.get().asItem()).toString()), bobj);
-			configJsonObject.add("recipes", recipesOBJ);// gp_generation
-			// cmill
+			configJsonObject.add("recipes", recipesOBJ);
 			itemobj = new com.google.gson.JsonObject();
 			itemobj.addProperty("gp_generated", 9999);
 			itemobj.addProperty("needs_sky", false);
@@ -150,7 +145,7 @@ public class EURUUnifiedConfigManagerProcedure {
 			itemobj.addProperty("needs_water", 0);
 			itemobj.addProperty("needs_lava", 0);
 			itemobj.addProperty("needs_fire", 0);
-			gpGenerators.add((BuiltInRegistries.ITEM.getKey(EuruModBlocks.CREATIVE_MILL.get().asItem()).toString()), itemobj);// firemill
+			gpGenerators.add((BuiltInRegistries.ITEM.getKey(EuruModBlocks.CREATIVE_MILL.get().asItem()).toString()), itemobj);
 			itemobj = new com.google.gson.JsonObject();
 			itemobj.addProperty("gp_generated", 6);
 			itemobj.addProperty("needs_sky", false);
@@ -159,7 +154,7 @@ public class EURUUnifiedConfigManagerProcedure {
 			itemobj.addProperty("needs_water", 0);
 			itemobj.addProperty("needs_lava", 0);
 			itemobj.addProperty("needs_fire", 1);
-			gpGenerators.add((BuiltInRegistries.ITEM.getKey(EuruModBlocks.FIRE_MILL.get().asItem()).toString()), itemobj);// lavamill
+			gpGenerators.add((BuiltInRegistries.ITEM.getKey(EuruModBlocks.FIRE_MILL.get().asItem()).toString()), itemobj);
 			itemobj = new com.google.gson.JsonObject();
 			itemobj.addProperty("gp_generated", 4);
 			itemobj.addProperty("needs_sky", false);
@@ -168,7 +163,7 @@ public class EURUUnifiedConfigManagerProcedure {
 			itemobj.addProperty("needs_water", 0);
 			itemobj.addProperty("needs_lava", 1);
 			itemobj.addProperty("needs_fire", 0);
-			gpGenerators.add((BuiltInRegistries.ITEM.getKey(EuruModBlocks.LAVA_MILL.get().asItem()).toString()), itemobj);// watermill
+			gpGenerators.add((BuiltInRegistries.ITEM.getKey(EuruModBlocks.LAVA_MILL.get().asItem()).toString()), itemobj);
 			itemobj = new com.google.gson.JsonObject();
 			itemobj.addProperty("gp_generated", 4);
 			itemobj.addProperty("needs_sky", false);
@@ -177,7 +172,7 @@ public class EURUUnifiedConfigManagerProcedure {
 			itemobj.addProperty("needs_water", 1);
 			itemobj.addProperty("needs_lava", 0);
 			itemobj.addProperty("needs_fire", 0);
-			gpGenerators.add((BuiltInRegistries.ITEM.getKey(EuruModBlocks.WATER_MILL.get().asItem()).toString()), itemobj);// manualmill
+			gpGenerators.add((BuiltInRegistries.ITEM.getKey(EuruModBlocks.WATER_MILL.get().asItem()).toString()), itemobj);
 			itemobj = new com.google.gson.JsonObject();
 			itemobj.addProperty("gp_generated", 16);
 			itemobj.addProperty("needs_sky", false);
@@ -186,7 +181,7 @@ public class EURUUnifiedConfigManagerProcedure {
 			itemobj.addProperty("needs_water", 0);
 			itemobj.addProperty("needs_lava", 0);
 			itemobj.addProperty("needs_fire", 0);
-			gpGenerators.add((BuiltInRegistries.ITEM.getKey(EuruModBlocks.MANUAL_MILL.get().asItem()).toString()), itemobj);// solarpanel
+			gpGenerators.add((BuiltInRegistries.ITEM.getKey(EuruModBlocks.MANUAL_MILL.get().asItem()).toString()), itemobj);
 			solarpanelObject.addProperty("gp_generated", 1);
 			solarpanelObject.addProperty("needs_sky", true);
 			solarpanelObject.addProperty("needs_day", true);
@@ -194,7 +189,7 @@ public class EURUUnifiedConfigManagerProcedure {
 			solarpanelObject.addProperty("needs_water", 0);
 			solarpanelObject.addProperty("needs_lava", 0);
 			solarpanelObject.addProperty("needs_fire", 0);
-			gpGenerators.add((BuiltInRegistries.ITEM.getKey(EuruModBlocks.SOLAR_PANEL.get().asItem()).toString()), solarpanelObject);// lunarpanel
+			gpGenerators.add((BuiltInRegistries.ITEM.getKey(EuruModBlocks.SOLAR_PANEL.get().asItem()).toString()), solarpanelObject);
 			lunarobj.addProperty("gp_generated", 0.7);
 			lunarobj.addProperty("needs_sky", true);
 			lunarobj.addProperty("needs_day", false);
@@ -203,10 +198,7 @@ public class EURUUnifiedConfigManagerProcedure {
 			lunarobj.addProperty("needs_lava", 0);
 			lunarobj.addProperty("needs_fire", 0);
 			gpGenerators.add((BuiltInRegistries.ITEM.getKey(EuruModBlocks.LUNAR_PANEL.get().asItem()).toString()), lunarobj);
-			configJsonObject.add("gp_generation", gpGenerators);// machines
-			// crusher
-			// recipeinfo
-			// blaze
+			configJsonObject.add("gp_generation", gpGenerators);
 			cItem = BuiltInRegistries.ITEM.getKey(Blocks.GRAVEL.asItem()).toString();
 			coutput = BuiltInRegistries.ITEM.getKey(Blocks.SAND.asItem()).toString();
 			newJson = new com.google.gson.JsonObject();
@@ -217,35 +209,32 @@ public class EURUUnifiedConfigManagerProcedure {
 			crushobj.add(cItem, newJson);
 			crusherrl.add(cItem);
 			crushobj.add("recipeList", crusherrl);
-			machinesobj.add((BuiltInRegistries.ITEM.getKey(EuruModBlocks.CRUSHER.get().asItem()).toString()), crushobj);// furnace
+			machinesobj.add((BuiltInRegistries.ITEM.getKey(EuruModBlocks.CRUSHER.get().asItem()).toString()), crushobj);
 			ef.addProperty("wait_time", 160);
 			ef.addProperty("gp_needed", 8);
 			ef.addProperty("fe_needed", 4000);
 			machinesobj.add((BuiltInRegistries.ITEM.getKey(EuruModBlocks.ELECTRIC_FURNACE.get().asItem()).toString()), ef);
-			configJsonObject.add("machines", machinesobj);// general
-			// doe
-			// drop of evil drops from
+			configJsonObject.add("machines", machinesobj);
 			dropsfrom_evil.add("minecraft:wither_skeleton");
 			doeobj.add("drops_from", dropsfrom_evil);
 			doeobj.addProperty("dropchance", 3);
 			doeobj.addProperty("dropchance_multiplywithlooting", true);
-			generalOBJ.add((BuiltInRegistries.ITEM.getKey(EuruModItems.DROP_OF_EVIL.get()).toString()), doeobj);// glasscutter
+			generalOBJ.add((BuiltInRegistries.ITEM.getKey(EuruModItems.DROP_OF_EVIL.get()).toString()), doeobj);
 			gcobj.addProperty("breaks_glass", true);
-			generalOBJ.add((BuiltInRegistries.ITEM.getKey(EuruModItems.GLASS_CUTTER.get()).toString()), gcobj);// squidring
+			generalOBJ.add((BuiltInRegistries.ITEM.getKey(EuruModItems.GLASS_CUTTER.get()).toString()), gcobj);
 			srobj.addProperty("gp_needed", 16);
-			generalOBJ.add((BuiltInRegistries.ITEM.getKey(EuruModItems.SQUID_RING.get()).toString()), srobj);// chickring
+			generalOBJ.add((BuiltInRegistries.ITEM.getKey(EuruModItems.SQUID_RING.get()).toString()), srobj);
 			cwobj.addProperty("gp_needed", 4);
-			generalOBJ.add((BuiltInRegistries.ITEM.getKey(EuruModItems.CHICKEN_RING.get()).toString()), cwobj);// angring
+			generalOBJ.add((BuiltInRegistries.ITEM.getKey(EuruModItems.CHICKEN_RING.get()).toString()), cwobj);
 			arobj.addProperty("gp_needed", 32);
-			generalOBJ.add((BuiltInRegistries.ITEM.getKey(EuruModItems.ANGEL_RING.get()).toString()), arobj);// general
+			generalOBJ.add((BuiltInRegistries.ITEM.getKey(EuruModItems.ANGEL_RING.get()).toString()), arobj);
 			generalOBJ.addProperty("range-configUpdate-min", 3000);
-			generalOBJ.addProperty("range-configUpdate-max", 3600);// chunkloader
+			generalOBJ.addProperty("range-configUpdate-max", 3600);
 			clOBJ.addProperty("gp_needed", 8);
-			generalOBJ.add((BuiltInRegistries.ITEM.getKey(EuruModBlocks.CHUNK_LOADING_WARD.get().asItem()).toString()), clOBJ);// clt
+			generalOBJ.add((BuiltInRegistries.ITEM.getKey(EuruModBlocks.CHUNK_LOADING_WARD.get().asItem()).toString()), clOBJ);
 			clt.addProperty("enabled", true);
 			generalOBJ.add((BuiltInRegistries.ITEM.getKey(EuruModBlocks.CHUNK_LOADER_TESTER.get().asItem()).toString()), clt);
-			configJsonObject.add("general", generalOBJ);// group
-			// golden
+			configJsonObject.add("general", generalOBJ);
 			gLassoArray.add("minecraft:allay");
 			gLassoArray.add("minecraft:bat");
 			gLassoArray.add("minecraft:armadillo");
@@ -287,7 +276,7 @@ public class EURUUnifiedConfigManagerProcedure {
 			gLassoArray.add("minecraft:pufferfish");
 			gLassoArray.add("minecraft:polar_bear");
 			gLassoArray.add("minecraft:rabbit");
-			gLassoArray.add("minecraft:salmon");// cursed
+			gLassoArray.add("minecraft:salmon");
 			eArray.add("minecraft:frog");
 			eArray.add("minecraft:creaking");
 			eArray.add("minecraft:breeze");

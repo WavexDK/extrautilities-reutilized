@@ -8,20 +8,15 @@ import net.minecraft.core.BlockPos;
 
 public class ManualMillOnBlockRightclickedProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z) {
-		setBlockNBTLogic(world, x, y, z, "clicked", true);
-	}
-
-	private static void setBlockNBTLogic(LevelAccessor world, double x, double y, double z, String tag, boolean value) {
 		if (!world.isClientSide()) {
-			BlockPos pos = BlockPos.containing(x, y, z);
-			BlockEntity blockEntity = world.getBlockEntity(pos);
-			BlockState blockState = world.getBlockState(pos);
-			if (blockEntity != null) {
-				blockEntity.getPersistentData().putBoolean(tag, value);
+			BlockPos _bp = BlockPos.containing(x, y, z);
+			BlockEntity _blockEntity = world.getBlockEntity(_bp);
+			BlockState _bs = world.getBlockState(_bp);
+			if (_blockEntity != null) {
+				_blockEntity.getPersistentData().putBoolean("clicked", true);
 			}
-			if (world instanceof Level level) {
-				level.sendBlockUpdated(pos, blockState, blockState, 3);
-			}
+			if (world instanceof Level _level)
+				_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 		}
 	}
 }

@@ -8,11 +8,15 @@ import net.minecraft.core.BlockPos;
 
 public class SGenIsOffProcedure {
 	public static boolean execute(LevelAccessor world, double x, double y, double z) {
-		return !getBooleanFromBlockState((world.getBlockState(BlockPos.containing(x, y, z))), "on");
+		return !(getPropertyByName((world.getBlockState(BlockPos.containing(x, y, z))), "on") instanceof BooleanProperty _getbp1 && (world.getBlockState(BlockPos.containing(x, y, z))).getValue(_getbp1));
 	}
 
-	private static boolean getBooleanFromBlockState(BlockState blockState, String property) {
-		Property<?> prop = blockState.getBlock().getStateDefinition().getProperty(property);
-		return prop instanceof BooleanProperty bp && blockState.getValue(bp);
+	private static Property<?> getPropertyByName(BlockState state, String name) {
+		for (Property<?> property : state.getProperties()) {
+			if (property.getName().equals(name)) {
+				return property;
+			}
+		}
+		return null;
 	}
 }

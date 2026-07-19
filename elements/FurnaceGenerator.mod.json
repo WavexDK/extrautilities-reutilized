@@ -81,7 +81,7 @@
     "specialInformation": {
       "fixedValue": []
     },
-    "hardness": 8.0,
+    "hardness": 4.0,
     "resistance": 20.0,
     "hasGravity": false,
     "isWaterloggable": false,
@@ -138,7 +138,7 @@
       "name": "NetherstarGeneratorLuminance"
     },
     "unbreakable": false,
-    "vanillaToolTier": "STONE",
+    "vanillaToolTier": "NONE",
     "isBonemealable": false,
     "sensitiveToVibration": false,
     "vibrationalEvents": [],

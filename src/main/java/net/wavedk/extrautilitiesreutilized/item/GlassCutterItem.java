@@ -1,11 +1,17 @@
 package net.wavedk.extrautilitiesreutilized.item;
 
+import net.wavedk.extrautilitiesreutilized.procedures.GlassCutterRightclickedProcedure;
+
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.tags.TagKey;
 import net.minecraft.tags.BlockTags;
 
@@ -44,6 +50,13 @@ public class GlassCutterItem extends SwordItem {
 
 	public GlassCutterItem() {
 		super(TOOL_TIER, new Item.Properties().attributes(SwordItem.createAttributes(TOOL_TIER, 3f, -2f)));
+	}
+
+	@Override
+	public InteractionResultHolder<ItemStack> use(Level world, Player entity, InteractionHand hand) {
+		InteractionResultHolder<ItemStack> ar = super.use(world, entity, hand);
+		GlassCutterRightclickedProcedure.execute(entity, ar.getObject());
+		return ar;
 	}
 
 	@Override

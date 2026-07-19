@@ -164,5 +164,15 @@
   "gui.euru.o_gen_gui.tooltip_speed_upgrade": "Speed Upgrade",
   "gui.euru.o_gen_gui.tooltip_not_enough_grid_power_available": "Not enough Grid Power available!",
   "gui.euru.ns_gen_gui.tooltip_speed_upgrade": "Speed Upgrade",
-  "gui.euru.ns_gen_gui.tooltip_not_enough_grid_power_available": "Not enough Grid Power available!"
+  "gui.euru.ns_gen_gui.tooltip_not_enough_grid_power_available": "Not enough Grid Power available!",
+  "gui.euru.s_gen_gui.button_empty1": "",
+  "gui.euru.f_gen_gui.button_empty": "",
+  "gui.euru.f_gen_gui.button_empty1": "",
+  "gui.euru.s_gen_gui.button_empty": "",
+  "gui.euru.e_gen_gui.button_empty": "",
+  "gui.euru.e_gen_gui.button_empty1": "",
+  "gui.euru.o_gen_gui.button_empty": "",
+  "gui.euru.o_gen_gui.button_empty1": "",
+  "gui.euru.ns_gen_gui.button_empty1": "",
+  "gui.euru.ns_gen_gui.button_empty": ""
 }

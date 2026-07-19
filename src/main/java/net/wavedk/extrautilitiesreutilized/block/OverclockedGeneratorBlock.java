@@ -44,7 +44,7 @@ public class OverclockedGeneratorBlock extends Block implements EntityBlock {
 	public static final BooleanProperty ON = BooleanProperty.create("on");
 
 	public OverclockedGeneratorBlock() {
-		super(BlockBehaviour.Properties.of().strength(2f, 10f).lightLevel(blockstate -> (int) NetherstarGeneratorLuminanceProcedure.execute(blockstate)).requiresCorrectToolForDrops().instrument(NoteBlockInstrument.BASEDRUM));
+		super(BlockBehaviour.Properties.of().strength(6f, 20f).lightLevel(blockstate -> (int) NetherstarGeneratorLuminanceProcedure.execute(blockstate)).requiresCorrectToolForDrops().instrument(NoteBlockInstrument.BASEDRUM));
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(ON, false));
 	}
 

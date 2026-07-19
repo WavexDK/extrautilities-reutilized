@@ -49,14 +49,32 @@ public class GPOverlayTickProcedure {
 				if (!entity.getData(EuruModVariables.PLAYER_VARIABLES).playerGPChecking) {
 					if (getBlockNBTLogic(world, BlockPos.containing(c_x, c_y, c_z), "generating")) {
 						if (Math.floor((fGUpdate / fgCount) * 100) / 100 <= 0 || ("" + Math.floor((fGUpdate / fgCount) * 100) / 100).equals("NaN") || Math.floor((fGUpdate / fgCount) * 100) / 100 > 9999) {
-							setBlockNBTNumber(world, c_x, c_y, c_z, "old_calculated", (getBlockNBTNumber(world, BlockPos.containing(c_x, c_y, c_z), "gp_generated")));
+							if (!world.isClientSide()) {
+								BlockPos _bp = BlockPos.containing(c_x, c_y, c_z);
+								BlockEntity _blockEntity = world.getBlockEntity(_bp);
+								BlockState _bs = world.getBlockState(_bp);
+								if (_blockEntity != null) {
+									_blockEntity.getPersistentData().putDouble("old_calculated", (getBlockNBTNumber(world, BlockPos.containing(c_x, c_y, c_z), "gp_generated")));
+								}
+								if (world instanceof Level _level)
+									_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+							}
 							{
 								EuruModVariables.PlayerVariables _vars = entity.getData(EuruModVariables.PLAYER_VARIABLES);
 								_vars.changingAB2 = "Producing: " + getBlockNBTNumber(world, BlockPos.containing(c_x, c_y, c_z), "gp_generated") + " GP";
 								_vars.markSyncDirty();
 							}
 						} else {
-							setBlockNBTNumber(world, c_x, c_y, c_z, "old_calculated", (Math.floor((fGUpdate / fgCount) * 100) / 100));
+							if (!world.isClientSide()) {
+								BlockPos _bp = BlockPos.containing(c_x, c_y, c_z);
+								BlockEntity _blockEntity = world.getBlockEntity(_bp);
+								BlockState _bs = world.getBlockState(_bp);
+								if (_blockEntity != null) {
+									_blockEntity.getPersistentData().putDouble("old_calculated", (Math.floor((fGUpdate / fgCount) * 100) / 100));
+								}
+								if (world instanceof Level _level)
+									_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+							}
 							{
 								EuruModVariables.PlayerVariables _vars = entity.getData(EuruModVariables.PLAYER_VARIABLES);
 								_vars.changingAB2 = "Producing: " + Math.floor((fGUpdate / fgCount) * 100) / 100 + " GP";
@@ -174,19 +192,5 @@ public class GPOverlayTickProcedure {
 		if (blockEntity != null)
 			return blockEntity.getPersistentData().getDouble(tag);
 		return -1;
-	}
-
-	private static void setBlockNBTNumber(LevelAccessor world, double x, double y, double z, String tag, double value) {
-		if (!world.isClientSide()) {
-			BlockPos pos = BlockPos.containing(x, y, z);
-			BlockEntity blockEntity = world.getBlockEntity(pos);
-			BlockState blockState = world.getBlockState(pos);
-			if (blockEntity != null) {
-				blockEntity.getPersistentData().putDouble(tag, value);
-			}
-			if (world instanceof Level level) {
-				level.sendBlockUpdated(pos, blockState, blockState, 3);
-			}
-		}
 	}
 }

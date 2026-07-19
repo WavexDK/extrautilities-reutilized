@@ -35,10 +35,28 @@ public class ManualMillOnTickUpdateProcedure {
 		}
 		if (player instanceof Player || player instanceof ServerPlayer) {
 			if (getBlockNBTLogic(world, BlockPos.containing(x, y, z), "clicked")) {
-				setBlockNBTLogic(world, x, y, z, "generating", true);
-				setBlockNBTNumber(world, x, y, z, "generatingLogicCounter", 0);
+				if (!world.isClientSide()) {
+					BlockPos _bp = BlockPos.containing(x, y, z);
+					BlockEntity _blockEntity = world.getBlockEntity(_bp);
+					BlockState _bs = world.getBlockState(_bp);
+					if (_blockEntity != null) {
+						_blockEntity.getPersistentData().putBoolean("generating", true);
+						_blockEntity.getPersistentData().putDouble("generatingLogicCounter", 0);
+					}
+					if (world instanceof Level _level)
+						_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+				}
 				if (player.getData(EuruModVariables.PLAYER_VARIABLES).playerGPChecking) {
-					setBlockNBTLogic(world, x, y, z, "clicked", false);
+					if (!world.isClientSide()) {
+						BlockPos _bp = BlockPos.containing(x, y, z);
+						BlockEntity _blockEntity = world.getBlockEntity(_bp);
+						BlockState _bs = world.getBlockState(_bp);
+						if (_blockEntity != null) {
+							_blockEntity.getPersistentData().putBoolean("clicked", false);
+						}
+						if (world instanceof Level _level)
+							_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+					}
 					{
 						EuruModVariables.PlayerVariables _vars = player.getData(EuruModVariables.PLAYER_VARIABLES);
 						_vars.group_count_mills = player.getData(EuruModVariables.PLAYER_VARIABLES).group_count_mills + 1;
@@ -49,13 +67,40 @@ public class ManualMillOnTickUpdateProcedure {
 			} else {
 				if (getBlockNBTLogic(world, BlockPos.containing(x, y, z), "generating")) {
 					if (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "generatingLogicCounter") > 1 && !player.getData(EuruModVariables.PLAYER_VARIABLES).playerGPChecking) {
-						setBlockNBTLogic(world, x, y, z, "generating", false);
-						setBlockNBTNumber(world, x, y, z, "generatingLogicCounter", 0);
+						if (!world.isClientSide()) {
+							BlockPos _bp = BlockPos.containing(x, y, z);
+							BlockEntity _blockEntity = world.getBlockEntity(_bp);
+							BlockState _bs = world.getBlockState(_bp);
+							if (_blockEntity != null) {
+								_blockEntity.getPersistentData().putBoolean("generating", false);
+								_blockEntity.getPersistentData().putDouble("generatingLogicCounter", 0);
+							}
+							if (world instanceof Level _level)
+								_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+						}
 					} else {
-						setBlockNBTNumber(world, x, y, z, "generatingLogicCounter", (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "generatingLogicCounter") + 1));
+						if (!world.isClientSide()) {
+							BlockPos _bp = BlockPos.containing(x, y, z);
+							BlockEntity _blockEntity = world.getBlockEntity(_bp);
+							BlockState _bs = world.getBlockState(_bp);
+							if (_blockEntity != null) {
+								_blockEntity.getPersistentData().putDouble("generatingLogicCounter", (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "generatingLogicCounter") + 1));
+							}
+							if (world instanceof Level _level)
+								_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+						}
 					}
 				} else {
-					setBlockNBTNumber(world, x, y, z, "generatingLogicCounter", 0);
+					if (!world.isClientSide()) {
+						BlockPos _bp = BlockPos.containing(x, y, z);
+						BlockEntity _blockEntity = world.getBlockEntity(_bp);
+						BlockState _bs = world.getBlockState(_bp);
+						if (_blockEntity != null) {
+							_blockEntity.getPersistentData().putDouble("generatingLogicCounter", 0);
+						}
+						if (world instanceof Level _level)
+							_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+					}
 				}
 			}
 		}
@@ -81,34 +126,6 @@ public class ManualMillOnTickUpdateProcedure {
 		if (blockEntity != null)
 			return blockEntity.getPersistentData().getBoolean(tag);
 		return false;
-	}
-
-	private static void setBlockNBTLogic(LevelAccessor world, double x, double y, double z, String tag, boolean value) {
-		if (!world.isClientSide()) {
-			BlockPos pos = BlockPos.containing(x, y, z);
-			BlockEntity blockEntity = world.getBlockEntity(pos);
-			BlockState blockState = world.getBlockState(pos);
-			if (blockEntity != null) {
-				blockEntity.getPersistentData().putBoolean(tag, value);
-			}
-			if (world instanceof Level level) {
-				level.sendBlockUpdated(pos, blockState, blockState, 3);
-			}
-		}
-	}
-
-	private static void setBlockNBTNumber(LevelAccessor world, double x, double y, double z, String tag, double value) {
-		if (!world.isClientSide()) {
-			BlockPos pos = BlockPos.containing(x, y, z);
-			BlockEntity blockEntity = world.getBlockEntity(pos);
-			BlockState blockState = world.getBlockState(pos);
-			if (blockEntity != null) {
-				blockEntity.getPersistentData().putDouble(tag, value);
-			}
-			if (world instanceof Level level) {
-				level.sendBlockUpdated(pos, blockState, blockState, 3);
-			}
-		}
 	}
 
 	private static double getBlockNBTNumber(LevelAccessor world, BlockPos pos, String tag) {

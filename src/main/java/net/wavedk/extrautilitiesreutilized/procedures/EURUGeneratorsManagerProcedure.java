@@ -107,326 +107,325 @@ public class EURUGeneratorsManagerProcedure {
 				configFile.createNewFile();
 			} catch (IOException exception) {
 				exception.printStackTrace();
-			} // furnaceGen
-				// ladder
+			}
 			cItem = BuiltInRegistries.ITEM.getKey(Blocks.LADDER.asItem()).toString();
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 180);
 			cItemOBJ.addProperty("feSpeed", 20);
 			fgenFP.add(cItem, cItemOBJ);
-			fgenarray.add(cItem);// glowitemframe
+			fgenarray.add(cItem);
 			cItem = BuiltInRegistries.ITEM.getKey(Items.GLOW_ITEM_FRAME).toString();
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 180);
 			cItemOBJ.addProperty("feSpeed", 20);
 			fgenFP.add(cItem, cItemOBJ);
-			fgenarray.add(cItem);// itemframe
+			fgenarray.add(cItem);
 			cItem = BuiltInRegistries.ITEM.getKey(Items.ITEM_FRAME).toString();
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 180);
 			cItemOBJ.addProperty("feSpeed", 20);
 			fgenFP.add(cItem, cItemOBJ);
-			fgenarray.add(cItem);// paint
+			fgenarray.add(cItem);
 			cItem = BuiltInRegistries.ITEM.getKey(Items.PAINTING).toString();
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 180);
 			cItemOBJ.addProperty("feSpeed", 20);
 			fgenFP.add(cItem, cItemOBJ);
-			fgenarray.add(cItem);// armorstand
+			fgenarray.add(cItem);
 			cItem = BuiltInRegistries.ITEM.getKey(Items.ARMOR_STAND).toString();
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 180);
 			cItemOBJ.addProperty("feSpeed", 20);
 			fgenFP.add(cItem, cItemOBJ);
-			fgenarray.add(cItem);// fences
+			fgenarray.add(cItem);
 			cItem = "minecraft:wooden_fences";
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 250);
 			cItemOBJ.addProperty("feSpeed", 20);
 			fgenFP.add(cItem, cItemOBJ);
-			fgenarray.add(cItem);// fence_gates
+			fgenarray.add(cItem);
 			cItem = "minecraft:fence_gates";
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 250);
 			cItemOBJ.addProperty("feSpeed", 20);
 			fgenFP.add(cItem, cItemOBJ);
-			fgenarray.add(cItem);// wooden_trapdoors
+			fgenarray.add(cItem);
 			cItem = "minecraft:wooden_trapdoors";
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 250);
 			cItemOBJ.addProperty("feSpeed", 20);
 			fgenFP.add(cItem, cItemOBJ);
-			fgenarray.add(cItem);// wooden_pressure_plates
+			fgenarray.add(cItem);
 			cItem = "minecraft:wooden_pressure_plates";
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 180);
 			cItemOBJ.addProperty("feSpeed", 20);
 			fgenFP.add(cItem, cItemOBJ);
-			fgenarray.add(cItem);// hangsigns
+			fgenarray.add(cItem);
 			cItem = "minecraft:hanging_signs";
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 300);
 			cItemOBJ.addProperty("feSpeed", 20);
 			fgenFP.add(cItem, cItemOBJ);
-			fgenarray.add(cItem);// signs
+			fgenarray.add(cItem);
 			cItem = "minecraft:signs";
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 300);
 			cItemOBJ.addProperty("feSpeed", 20);
 			fgenFP.add(cItem, cItemOBJ);
-			fgenarray.add(cItem);// door
+			fgenarray.add(cItem);
 			cItem = "minecraft:wooden_doors";
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 800);
 			cItemOBJ.addProperty("feSpeed", 20);
 			fgenFP.add(cItem, cItemOBJ);
-			fgenarray.add(cItem);// bow
+			fgenarray.add(cItem);
 			cItem = BuiltInRegistries.ITEM.getKey(Items.CROSSBOW).toString();
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 200);
 			cItemOBJ.addProperty("feSpeed", 20);
 			fgenFP.add(cItem, cItemOBJ);
-			fgenarray.add(cItem);// bow
+			fgenarray.add(cItem);
 			cItem = BuiltInRegistries.ITEM.getKey(Items.BOW).toString();
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 200);
 			cItemOBJ.addProperty("feSpeed", 20);
 			fgenFP.add(cItem, cItemOBJ);
-			fgenarray.add(cItem);// hoe
+			fgenarray.add(cItem);
 			cItem = BuiltInRegistries.ITEM.getKey(Items.WOODEN_HOE).toString();
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 500);
 			cItemOBJ.addProperty("feSpeed", 20);
 			fgenFP.add(cItem, cItemOBJ);
-			fgenarray.add(cItem);// axe
+			fgenarray.add(cItem);
 			cItem = BuiltInRegistries.ITEM.getKey(Items.WOODEN_AXE).toString();
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 500);
 			cItemOBJ.addProperty("feSpeed", 20);
 			fgenFP.add(cItem, cItemOBJ);
-			fgenarray.add(cItem);// shovel
+			fgenarray.add(cItem);
 			cItem = BuiltInRegistries.ITEM.getKey(Items.WOODEN_SHOVEL).toString();
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 500);
 			cItemOBJ.addProperty("feSpeed", 20);
 			fgenFP.add(cItem, cItemOBJ);
-			fgenarray.add(cItem);// pick
+			fgenarray.add(cItem);
 			cItem = BuiltInRegistries.ITEM.getKey(Items.WOODEN_PICKAXE).toString();
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 500);
 			cItemOBJ.addProperty("feSpeed", 20);
 			fgenFP.add(cItem, cItemOBJ);
-			fgenarray.add(cItem);// sword
+			fgenarray.add(cItem);
 			cItem = BuiltInRegistries.ITEM.getKey(Items.WOODEN_SWORD).toString();
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 500);
 			cItemOBJ.addProperty("feSpeed", 20);
 			fgenFP.add(cItem, cItemOBJ);
-			fgenarray.add(cItem);// banners
+			fgenarray.add(cItem);
 			cItem = "minecraft:banners";
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 250);
 			cItemOBJ.addProperty("feSpeed", 20);
 			fgenFP.add(cItem, cItemOBJ);
-			fgenarray.add(cItem);// slabs
+			fgenarray.add(cItem);
 			cItem = "minecraft:wooden_slabs";
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 250);
 			cItemOBJ.addProperty("feSpeed", 20);
 			fgenFP.add(cItem, cItemOBJ);
-			fgenarray.add(cItem);// flowers
+			fgenarray.add(cItem);
 			cItem = "minecraft:leaves";
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 120);
 			cItemOBJ.addProperty("feSpeed", 20);
 			fgenFP.add(cItem, cItemOBJ);
-			fgenarray.add(cItem);// flowers
+			fgenarray.add(cItem);
 			cItem = "minecraft:flowers";
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 80);
 			cItemOBJ.addProperty("feSpeed", 20);
 			fgenFP.add(cItem, cItemOBJ);
-			fgenarray.add(cItem);// beds
+			fgenarray.add(cItem);
 			cItem = "minecraft:beds";
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 400);
 			cItemOBJ.addProperty("feSpeed", 20);
 			fgenFP.add(cItem, cItemOBJ);
-			fgenarray.add(cItem);// chiseledbook
+			fgenarray.add(cItem);
 			cItem = BuiltInRegistries.ITEM.getKey(Blocks.SCAFFOLDING.asItem()).toString();
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 300);
 			cItemOBJ.addProperty("feSpeed", 20);
 			fgenFP.add(cItem, cItemOBJ);
-			fgenarray.add(cItem);// chiseledbook
+			fgenarray.add(cItem);
 			cItem = BuiltInRegistries.ITEM.getKey(Blocks.CHISELED_BOOKSHELF.asItem()).toString();
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 300);
 			cItemOBJ.addProperty("feSpeed", 20);
 			fgenFP.add(cItem, cItemOBJ);
-			fgenarray.add(cItem);// book
+			fgenarray.add(cItem);
 			cItem = BuiltInRegistries.ITEM.getKey(Blocks.BOOKSHELF.asItem()).toString();
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 300);
 			cItemOBJ.addProperty("feSpeed", 20);
 			fgenFP.add(cItem, cItemOBJ);
-			fgenarray.add(cItem);// cart
+			fgenarray.add(cItem);
 			cItem = BuiltInRegistries.ITEM.getKey(Blocks.CARTOGRAPHY_TABLE.asItem()).toString();
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 300);
 			cItemOBJ.addProperty("feSpeed", 20);
 			fgenFP.add(cItem, cItemOBJ);
-			fgenarray.add(cItem);// fletch
+			fgenarray.add(cItem);
 			cItem = BuiltInRegistries.ITEM.getKey(Blocks.FLETCHING_TABLE.asItem()).toString();
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 300);
 			cItemOBJ.addProperty("feSpeed", 20);
 			fgenFP.add(cItem, cItemOBJ);
-			fgenarray.add(cItem);// smith
+			fgenarray.add(cItem);
 			cItem = BuiltInRegistries.ITEM.getKey(Blocks.SMITHING_TABLE.asItem()).toString();
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 300);
 			cItemOBJ.addProperty("feSpeed", 20);
 			fgenFP.add(cItem, cItemOBJ);
-			fgenarray.add(cItem);// loom
+			fgenarray.add(cItem);
 			cItem = BuiltInRegistries.ITEM.getKey(Blocks.LOOM.asItem()).toString();
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 300);
 			cItemOBJ.addProperty("feSpeed", 20);
 			fgenFP.add(cItem, cItemOBJ);
-			fgenarray.add(cItem);// craft
+			fgenarray.add(cItem);
 			cItem = BuiltInRegistries.ITEM.getKey(Blocks.CRAFTING_TABLE.asItem()).toString();
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 300);
 			cItemOBJ.addProperty("feSpeed", 20);
 			fgenFP.add(cItem, cItemOBJ);
-			fgenarray.add(cItem);// logs
+			fgenarray.add(cItem);
 			cItem = "minecraft:logs";
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 300);
 			cItemOBJ.addProperty("feSpeed", 20);
 			fgenFP.add(cItem, cItemOBJ);
-			fgenarray.add(cItem);// wooden_stairs
+			fgenarray.add(cItem);
 			cItem = "minecraft:wooden_stairs";
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 300);
 			cItemOBJ.addProperty("feSpeed", 20);
 			fgenFP.add(cItem, cItemOBJ);
-			fgenarray.add(cItem);// boats
+			fgenarray.add(cItem);
 			cItem = "minecraft:boats";
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 600);
 			cItemOBJ.addProperty("feSpeed", 20);
 			fgenFP.add(cItem, cItemOBJ);
-			fgenarray.add(cItem);// coalblock
+			fgenarray.add(cItem);
 			cItem = BuiltInRegistries.ITEM.getKey(Blocks.COAL_BLOCK.asItem()).toString();
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 14000);
 			cItemOBJ.addProperty("feSpeed", 20);
 			fgenFP.add(cItem, cItemOBJ);
-			fgenarray.add(cItem);// barrel
+			fgenarray.add(cItem);
 			cItem = BuiltInRegistries.ITEM.getKey(Blocks.BARREL.asItem()).toString();
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 300);
 			cItemOBJ.addProperty("feSpeed", 20);
 			fgenFP.add(cItem, cItemOBJ);
-			fgenarray.add(cItem);// lectern
+			fgenarray.add(cItem);
 			cItem = BuiltInRegistries.ITEM.getKey(Blocks.LECTERN.asItem()).toString();
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 300);
 			cItemOBJ.addProperty("feSpeed", 20);
 			fgenFP.add(cItem, cItemOBJ);
-			fgenarray.add(cItem);// compost
+			fgenarray.add(cItem);
 			cItem = BuiltInRegistries.ITEM.getKey(Blocks.COMPOSTER.asItem()).toString();
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 300);
 			cItemOBJ.addProperty("feSpeed", 20);
 			fgenFP.add(cItem, cItemOBJ);
-			fgenarray.add(cItem);// tchest
+			fgenarray.add(cItem);
 			cItem = BuiltInRegistries.ITEM.getKey(Blocks.TRAPPED_CHEST.asItem()).toString();
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 300);
 			cItemOBJ.addProperty("feSpeed", 20);
 			fgenFP.add(cItem, cItemOBJ);
-			fgenarray.add(cItem);// chest
+			fgenarray.add(cItem);
 			cItem = BuiltInRegistries.ITEM.getKey(Blocks.CHEST.asItem()).toString();
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 300);
 			cItemOBJ.addProperty("feSpeed", 20);
 			fgenFP.add(cItem, cItemOBJ);
-			fgenarray.add(cItem);// planks
+			fgenarray.add(cItem);
 			cItem = "minecraft:planks";
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 300);
 			cItemOBJ.addProperty("feSpeed", 20);
 			fgenFP.add(cItem, cItemOBJ);
-			fgenarray.add(cItem);// wooden_buttons
+			fgenarray.add(cItem);
 			cItem = "minecraft:wooden_buttons";
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 150);
 			cItemOBJ.addProperty("feSpeed", 20);
 			fgenFP.add(cItem, cItemOBJ);
-			fgenarray.add(cItem);// bowl
+			fgenarray.add(cItem);
 			cItem = BuiltInRegistries.ITEM.getKey(Items.BOWL).toString();
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 150);
 			cItemOBJ.addProperty("feSpeed", 20);
 			fgenFP.add(cItem, cItemOBJ);
-			fgenarray.add(cItem);// carrotrod
+			fgenarray.add(cItem);
 			cItem = BuiltInRegistries.ITEM.getKey(Items.CARROT_ON_A_STICK).toString();
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 300);
 			cItemOBJ.addProperty("feSpeed", 20);
 			fgenFP.add(cItem, cItemOBJ);
-			fgenarray.add(cItem);// warprod
+			fgenarray.add(cItem);
 			cItem = BuiltInRegistries.ITEM.getKey(Items.WARPED_FUNGUS_ON_A_STICK).toString();
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 300);
 			cItemOBJ.addProperty("feSpeed", 20);
 			fgenFP.add(cItem, cItemOBJ);
-			fgenarray.add(cItem);// fishrod
+			fgenarray.add(cItem);
 			cItem = BuiltInRegistries.ITEM.getKey(Items.FISHING_ROD).toString();
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 300);
 			cItemOBJ.addProperty("feSpeed", 20);
 			fgenFP.add(cItem, cItemOBJ);
-			fgenarray.add(cItem);// bamboo
+			fgenarray.add(cItem);
 			cItem = BuiltInRegistries.ITEM.getKey(Blocks.BAMBOO.asItem()).toString();
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 100);
 			cItemOBJ.addProperty("feSpeed", 20);
 			fgenFP.add(cItem, cItemOBJ);
-			fgenarray.add(cItem);// stick
+			fgenarray.add(cItem);
 			cItem = BuiltInRegistries.ITEM.getKey(Items.STICK).toString();
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 100);
 			cItemOBJ.addProperty("feSpeed", 20);
 			fgenFP.add(cItem, cItemOBJ);
-			fgenarray.add(cItem);// saplings
+			fgenarray.add(cItem);
 			cItem = "minecraft:saplings";
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 200);
 			cItemOBJ.addProperty("feSpeed", 20);
 			fgenFP.add(cItem, cItemOBJ);
-			fgenarray.add(cItem);// wool
+			fgenarray.add(cItem);
 			cItem = "minecraft:wool";
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 260);
 			cItemOBJ.addProperty("feSpeed", 20);
 			fgenFP.add(cItem, cItemOBJ);
-			fgenarray.add(cItem);// wool_carpets
+			fgenarray.add(cItem);
 			cItem = "minecraft:wool_carpets";
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 150);
 			cItemOBJ.addProperty("feSpeed", 20);
 			fgenFP.add(cItem, cItemOBJ);
-			fgenarray.add(cItem);// coals
+			fgenarray.add(cItem);
 			cItem = "minecraft:coals";
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 1500);
 			cItemOBJ.addProperty("feSpeed", 20);
 			fgenFP.add(cItem, cItemOBJ);
-			fgenarray.add(cItem);// blaze
+			fgenarray.add(cItem);
 			cItem = BuiltInRegistries.ITEM.getKey(Items.BLAZE_ROD).toString();
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 16000);
@@ -435,44 +434,43 @@ public class EURUGeneratorsManagerProcedure {
 			fgenarray.add(cItem);
 			furnaceGenOBJ.add("listFuel", fgenarray);
 			furnaceGenOBJ.add("fuelProperties", fgenFP);
-			configJsonObject.add((BuiltInRegistries.ITEM.getKey(EuruModBlocks.FURNACE_GENERATOR.get().asItem()).toString()), furnaceGenOBJ);// surGen
-			// barrel
+			configJsonObject.add((BuiltInRegistries.ITEM.getKey(EuruModBlocks.FURNACE_GENERATOR.get().asItem()).toString()), furnaceGenOBJ);
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItem = BuiltInRegistries.ITEM.getKey(Blocks.BARREL.asItem()).toString();
 			cItemOBJ.addProperty("feGenerated", 600);
 			cItemOBJ.addProperty("feSpeed", 5);
 			fuelPropertiesOBJ.add(cItem, cItemOBJ);
-			sArray.add(cItem);// blaze
+			sArray.add(cItem);
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItem = "minecraft:fence_gates";
 			cItemOBJ.addProperty("feGenerated", 450);
 			cItemOBJ.addProperty("feSpeed", 5);
 			fuelPropertiesOBJ.add(cItem, cItemOBJ);
-			sArray.add(cItem);// blaze
+			sArray.add(cItem);
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItem = "minecraft:banners";
 			cItemOBJ.addProperty("feGenerated", 300);
 			cItemOBJ.addProperty("feSpeed", 5);
 			fuelPropertiesOBJ.add(cItem, cItemOBJ);
-			sArray.add(cItem);// blaze
+			sArray.add(cItem);
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItem = BuiltInRegistries.ITEM.getKey(Items.FISHING_ROD).toString();
 			cItemOBJ.addProperty("feGenerated", 200);
 			cItemOBJ.addProperty("feSpeed", 5);
 			fuelPropertiesOBJ.add(cItem, cItemOBJ);
-			sArray.add(cItem);// blaze
+			sArray.add(cItem);
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItem = BuiltInRegistries.ITEM.getKey(Blocks.BAMBOO.asItem()).toString();
 			cItemOBJ.addProperty("feGenerated", 100);
 			cItemOBJ.addProperty("feSpeed", 5);
 			fuelPropertiesOBJ.add(cItem, cItemOBJ);
-			sArray.add(cItem);// blaze
+			sArray.add(cItem);
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItem = BuiltInRegistries.ITEM.getKey(Items.BLAZE_ROD).toString();
 			cItemOBJ.addProperty("feGenerated", 20000);
 			cItemOBJ.addProperty("feSpeed", 5);
 			fuelPropertiesOBJ.add(cItem, cItemOBJ);
-			sArray.add(cItem);// listFuel
+			sArray.add(cItem);
 			sArray.add("minecraft:coals");
 			sArray.add("minecraft:saplings");
 			sArray.add("minecraft:logs");
@@ -529,183 +527,181 @@ public class EURUGeneratorsManagerProcedure {
 			sArray.add((BuiltInRegistries.ITEM.getKey(Items.PAINTING).toString()));
 			sArray.add((BuiltInRegistries.ITEM.getKey(Blocks.LECTERN.asItem()).toString()));
 			sArray.add("minecraft:flowers");
-			sArray.add("minecraft:leaves");// fuelProperties
-			// leaves
+			sArray.add("minecraft:leaves");
 			leaves.addProperty("feGenerated", 80);
 			leaves.addProperty("feSpeed", 5);
-			fuelPropertiesOBJ.add("minecraft:leaves", leaves);// flowers
+			fuelPropertiesOBJ.add("minecraft:leaves", leaves);
 			hangingsignsobj.addProperty("feGenerated", 350);
 			hangingsignsobj.addProperty("feSpeed", 5);
-			fuelPropertiesOBJ.add("minecraft:hanging_signs", hangingsignsobj);// flowers
+			fuelPropertiesOBJ.add("minecraft:hanging_signs", hangingsignsobj);
 			flowers.addProperty("feGenerated", 80);
 			flowers.addProperty("feSpeed", 5);
-			fuelPropertiesOBJ.add("minecraft:flowers", flowers);// lectern
+			fuelPropertiesOBJ.add("minecraft:flowers", flowers);
 			lect.addProperty("feGenerated", 350);
 			lect.addProperty("feSpeed", 5);
-			fuelPropertiesOBJ.add((BuiltInRegistries.ITEM.getKey(Blocks.LECTERN.asItem()).toString()), lect);// painting
+			fuelPropertiesOBJ.add((BuiltInRegistries.ITEM.getKey(Blocks.LECTERN.asItem()).toString()), lect);
 			paint.addProperty("feGenerated", 200);
 			paint.addProperty("feSpeed", 5);
-			fuelPropertiesOBJ.add((BuiltInRegistries.ITEM.getKey(Items.PAINTING).toString()), paint);// frame
+			fuelPropertiesOBJ.add((BuiltInRegistries.ITEM.getKey(Items.PAINTING).toString()), paint);
 			frame.addProperty("feGenerated", 200);
 			frame.addProperty("feSpeed", 5);
-			fuelPropertiesOBJ.add((BuiltInRegistries.ITEM.getKey(Items.ITEM_FRAME).toString()), frame);// glowframe
+			fuelPropertiesOBJ.add((BuiltInRegistries.ITEM.getKey(Items.ITEM_FRAME).toString()), frame);
 			glowframe.addProperty("feGenerated", 200);
 			glowframe.addProperty("feSpeed", 5);
-			fuelPropertiesOBJ.add((BuiltInRegistries.ITEM.getKey(Items.GLOW_ITEM_FRAME).toString()), glowframe);// armorstand
+			fuelPropertiesOBJ.add((BuiltInRegistries.ITEM.getKey(Items.GLOW_ITEM_FRAME).toString()), glowframe);
 			astand.addProperty("feGenerated", 200);
 			astand.addProperty("feSpeed", 5);
-			fuelPropertiesOBJ.add((BuiltInRegistries.ITEM.getKey(Items.ARMOR_STAND).toString()), astand);// composter
+			fuelPropertiesOBJ.add((BuiltInRegistries.ITEM.getKey(Items.ARMOR_STAND).toString()), astand);
 			compostor.addProperty("feGenerated", 350);
 			compostor.addProperty("feSpeed", 5);
-			fuelPropertiesOBJ.add((BuiltInRegistries.ITEM.getKey(Blocks.COMPOSTER.asItem()).toString()), compostor);// scaffolding
+			fuelPropertiesOBJ.add((BuiltInRegistries.ITEM.getKey(Blocks.COMPOSTER.asItem()).toString()), compostor);
 			scaff.addProperty("feGenerated", 350);
 			scaff.addProperty("feSpeed", 5);
-			fuelPropertiesOBJ.add((BuiltInRegistries.ITEM.getKey(Blocks.SCAFFOLDING.asItem()).toString()), scaff);// soulcamp
+			fuelPropertiesOBJ.add((BuiltInRegistries.ITEM.getKey(Blocks.SCAFFOLDING.asItem()).toString()), scaff);
 			soulcampo.addProperty("feGenerated", 350);
 			soulcampo.addProperty("feSpeed", 5);
-			fuelPropertiesOBJ.add((BuiltInRegistries.ITEM.getKey(Blocks.SOUL_CAMPFIRE.asItem()).toString()), soulcampo);// campfire
+			fuelPropertiesOBJ.add((BuiltInRegistries.ITEM.getKey(Blocks.SOUL_CAMPFIRE.asItem()).toString()), soulcampo);
 			camp.addProperty("feGenerated", 350);
 			camp.addProperty("feSpeed", 5);
-			fuelPropertiesOBJ.add((BuiltInRegistries.ITEM.getKey(Blocks.CAMPFIRE.asItem()).toString()), camp);// smith
+			fuelPropertiesOBJ.add((BuiltInRegistries.ITEM.getKey(Blocks.CAMPFIRE.asItem()).toString()), camp);
 			loom.addProperty("feGenerated", 350);
 			loom.addProperty("feSpeed", 5);
-			fuelPropertiesOBJ.add((BuiltInRegistries.ITEM.getKey(Blocks.LOOM.asItem()).toString()), loom);// smith
+			fuelPropertiesOBJ.add((BuiltInRegistries.ITEM.getKey(Blocks.LOOM.asItem()).toString()), loom);
 			smith.addProperty("feGenerated", 350);
 			smith.addProperty("feSpeed", 5);
-			fuelPropertiesOBJ.add((BuiltInRegistries.ITEM.getKey(Blocks.SMITHING_TABLE.asItem()).toString()), smith);// fletch
+			fuelPropertiesOBJ.add((BuiltInRegistries.ITEM.getKey(Blocks.SMITHING_TABLE.asItem()).toString()), smith);
 			fletch.addProperty("feGenerated", 350);
 			fletch.addProperty("feSpeed", 5);
-			fuelPropertiesOBJ.add((BuiltInRegistries.ITEM.getKey(Blocks.FLETCHING_TABLE.asItem()).toString()), fletch);// cart
+			fuelPropertiesOBJ.add((BuiltInRegistries.ITEM.getKey(Blocks.FLETCHING_TABLE.asItem()).toString()), fletch);
 			cart.addProperty("feGenerated", 350);
 			cart.addProperty("feSpeed", 5);
-			fuelPropertiesOBJ.add((BuiltInRegistries.ITEM.getKey(Blocks.CARTOGRAPHY_TABLE.asItem()).toString()), cart);// torch
+			fuelPropertiesOBJ.add((BuiltInRegistries.ITEM.getKey(Blocks.CARTOGRAPHY_TABLE.asItem()).toString()), cart);
 			torch.addProperty("feGenerated", 100);
 			torch.addProperty("feSpeed", 5);
-			fuelPropertiesOBJ.add((BuiltInRegistries.ITEM.getKey(Items.TORCH).toString()), torch);// redtorch
+			fuelPropertiesOBJ.add((BuiltInRegistries.ITEM.getKey(Items.TORCH).toString()), torch);
 			torchred.addProperty("feGenerated", 100);
 			torchred.addProperty("feSpeed", 5);
-			fuelPropertiesOBJ.add((BuiltInRegistries.ITEM.getKey(Items.REDSTONE_TORCH).toString()), torchred);// soultorch
+			fuelPropertiesOBJ.add((BuiltInRegistries.ITEM.getKey(Items.REDSTONE_TORCH).toString()), torchred);
 			torchsoul.addProperty("feGenerated", 100);
 			torchsoul.addProperty("feSpeed", 5);
-			fuelPropertiesOBJ.add((BuiltInRegistries.ITEM.getKey(Items.SOUL_TORCH).toString()), torchsoul);// beehive
+			fuelPropertiesOBJ.add((BuiltInRegistries.ITEM.getKey(Items.SOUL_TORCH).toString()), torchsoul);
 			beehive.addProperty("feGenerated", 400);
 			beehive.addProperty("feSpeed", 5);
-			fuelPropertiesOBJ.add((BuiltInRegistries.ITEM.getKey(Blocks.BEEHIVE.asItem()).toString()), beehive);// minecraft:beds
+			fuelPropertiesOBJ.add((BuiltInRegistries.ITEM.getKey(Blocks.BEEHIVE.asItem()).toString()), beehive);
 			beds.addProperty("feGenerated", 600);
 			beds.addProperty("feSpeed", 5);
-			fuelPropertiesOBJ.add("minecraft:beds", beds);// cbow
+			fuelPropertiesOBJ.add("minecraft:beds", beds);
 			cbow.addProperty("feGenerated", 200);
 			cbow.addProperty("feSpeed", 5);
-			fuelPropertiesOBJ.add((BuiltInRegistries.ITEM.getKey(Items.CROSSBOW).toString()), cbow);// bow
+			fuelPropertiesOBJ.add((BuiltInRegistries.ITEM.getKey(Items.CROSSBOW).toString()), cbow);
 			bow.addProperty("feGenerated", 200);
 			bow.addProperty("feSpeed", 5);
-			fuelPropertiesOBJ.add((BuiltInRegistries.ITEM.getKey(Items.BOW).toString()), bow);// boats
+			fuelPropertiesOBJ.add((BuiltInRegistries.ITEM.getKey(Items.BOW).toString()), bow);
 			boats.addProperty("feGenerated", 600);
 			boats.addProperty("feSpeed", 5);
-			fuelPropertiesOBJ.add("minecraft:boats", boats);// minecraft:signs
+			fuelPropertiesOBJ.add("minecraft:boats", boats);
 			signs.addProperty("feGenerated", 350);
 			signs.addProperty("feSpeed", 5);
-			fuelPropertiesOBJ.add("minecraft:signs", signs);// bowl
+			fuelPropertiesOBJ.add("minecraft:signs", signs);
 			bowl.addProperty("feGenerated", 200);
 			bowl.addProperty("feSpeed", 5);
-			fuelPropertiesOBJ.add((BuiltInRegistries.ITEM.getKey(Items.BOWL).toString()), bowl);// juke
+			fuelPropertiesOBJ.add((BuiltInRegistries.ITEM.getKey(Items.BOWL).toString()), bowl);
 			juke.addProperty("feGenerated", 350);
 			juke.addProperty("feSpeed", 5);
-			fuelPropertiesOBJ.add((BuiltInRegistries.ITEM.getKey(Blocks.JUKEBOX.asItem()).toString()), juke);// ladder
+			fuelPropertiesOBJ.add((BuiltInRegistries.ITEM.getKey(Blocks.JUKEBOX.asItem()).toString()), juke);
 			ladder.addProperty("feGenerated", 350);
 			ladder.addProperty("feSpeed", 5);
-			fuelPropertiesOBJ.add((BuiltInRegistries.ITEM.getKey(Blocks.LADDER.asItem()).toString()), ladder);// tchest
+			fuelPropertiesOBJ.add((BuiltInRegistries.ITEM.getKey(Blocks.LADDER.asItem()).toString()), ladder);
 			tchest.addProperty("feGenerated", 700);
 			tchest.addProperty("feSpeed", 5);
-			fuelPropertiesOBJ.add((BuiltInRegistries.ITEM.getKey(Blocks.TRAPPED_CHEST.asItem()).toString()), tchest);// chest
+			fuelPropertiesOBJ.add((BuiltInRegistries.ITEM.getKey(Blocks.TRAPPED_CHEST.asItem()).toString()), tchest);
 			chest.addProperty("feGenerated", 700);
 			chest.addProperty("feSpeed", 5);
-			fuelPropertiesOBJ.add((BuiltInRegistries.ITEM.getKey(Blocks.CHEST.asItem()).toString()), chest);// craft
+			fuelPropertiesOBJ.add((BuiltInRegistries.ITEM.getKey(Blocks.CHEST.asItem()).toString()), chest);
 			craft.addProperty("feGenerated", 350);
 			craft.addProperty("feSpeed", 5);
-			fuelPropertiesOBJ.add((BuiltInRegistries.ITEM.getKey(Blocks.CRAFTING_TABLE.asItem()).toString()), craft);// coalblock
+			fuelPropertiesOBJ.add((BuiltInRegistries.ITEM.getKey(Blocks.CRAFTING_TABLE.asItem()).toString()), craft);
 			coalblock.addProperty("feGenerated", 23000);
 			coalblock.addProperty("feSpeed", 5);
-			fuelPropertiesOBJ.add((BuiltInRegistries.ITEM.getKey(Blocks.COAL_BLOCK.asItem()).toString()), coalblock);// minecraft:wooden_trapdoors
+			fuelPropertiesOBJ.add((BuiltInRegistries.ITEM.getKey(Blocks.COAL_BLOCK.asItem()).toString()), coalblock);
 			wooden_trapdoors.addProperty("feGenerated", 350);
 			wooden_trapdoors.addProperty("feSpeed", 5);
-			fuelPropertiesOBJ.add("minecraft:wooden_trapdoors", wooden_trapdoors);// minecraft:wooden_stairs
+			fuelPropertiesOBJ.add("minecraft:wooden_trapdoors", wooden_trapdoors);
 			wooden_stairs.addProperty("feGenerated", 350);
 			wooden_stairs.addProperty("feSpeed", 5);
-			fuelPropertiesOBJ.add("minecraft:wooden_stairs", wooden_stairs);// minecraft:wooden_slabs
+			fuelPropertiesOBJ.add("minecraft:wooden_stairs", wooden_stairs);
 			wooden_slabs.addProperty("feGenerated", 175);
 			wooden_slabs.addProperty("feSpeed", 5);
-			fuelPropertiesOBJ.add("minecraft:wooden_slabs", wooden_slabs);// wooden_pressure_plates
+			fuelPropertiesOBJ.add("minecraft:wooden_slabs", wooden_slabs);
 			wooden_pressure_plates.addProperty("feGenerated", 200);
 			wooden_pressure_plates.addProperty("feSpeed", 5);
-			fuelPropertiesOBJ.add("minecraft:wooden_pressure_plates", wooden_pressure_plates);// minecraft:wooden_fences
+			fuelPropertiesOBJ.add("minecraft:wooden_pressure_plates", wooden_pressure_plates);
 			wooden_fences.addProperty("feGenerated", 450);
 			wooden_fences.addProperty("feSpeed", 5);
-			fuelPropertiesOBJ.add("minecraft:wooden_fences", wooden_fences);// minecraft:wooden_doors
+			fuelPropertiesOBJ.add("minecraft:wooden_fences", wooden_fences);
 			wooden_doors.addProperty("feGenerated", 800);
 			wooden_doors.addProperty("feSpeed", 5);
-			fuelPropertiesOBJ.add("minecraft:wooden_doors", wooden_doors);// minecraft:wooden_buttons
+			fuelPropertiesOBJ.add("minecraft:wooden_doors", wooden_doors);
 			button.addProperty("feGenerated", 80);
 			button.addProperty("feSpeed", 5);
-			fuelPropertiesOBJ.add("minecraft:wooden_buttons", button);// cbookshelf
+			fuelPropertiesOBJ.add("minecraft:wooden_buttons", button);
 			cbookshelf.addProperty("feGenerated", 200);
 			cbookshelf.addProperty("feSpeed", 5);
-			fuelPropertiesOBJ.add((BuiltInRegistries.ITEM.getKey(Blocks.CHISELED_BOOKSHELF.asItem()).toString()), cbookshelf);// bookshelf
+			fuelPropertiesOBJ.add((BuiltInRegistries.ITEM.getKey(Blocks.CHISELED_BOOKSHELF.asItem()).toString()), cbookshelf);
 			bookshelf.addProperty("feGenerated", 200);
 			bookshelf.addProperty("feSpeed", 5);
-			fuelPropertiesOBJ.add((BuiltInRegistries.ITEM.getKey(Blocks.BOOKSHELF.asItem()).toString()), bookshelf);// stickwarp
+			fuelPropertiesOBJ.add((BuiltInRegistries.ITEM.getKey(Blocks.BOOKSHELF.asItem()).toString()), bookshelf);
 			warpstick.addProperty("feGenerated", 200);
 			warpstick.addProperty("feSpeed", 5);
-			fuelPropertiesOBJ.add((BuiltInRegistries.ITEM.getKey(Items.WARPED_FUNGUS_ON_A_STICK).toString()), warpstick);// stickcarrot
+			fuelPropertiesOBJ.add((BuiltInRegistries.ITEM.getKey(Items.WARPED_FUNGUS_ON_A_STICK).toString()), warpstick);
 			stickcarrot.addProperty("feGenerated", 200);
 			stickcarrot.addProperty("feSpeed", 5);
-			fuelPropertiesOBJ.add((BuiltInRegistries.ITEM.getKey(Items.CARROT_ON_A_STICK).toString()), stickcarrot);// shield
+			fuelPropertiesOBJ.add((BuiltInRegistries.ITEM.getKey(Items.CARROT_ON_A_STICK).toString()), stickcarrot);
 			shield.addProperty("feGenerated", 1200);
 			shield.addProperty("feSpeed", 5);
-			fuelPropertiesOBJ.add((BuiltInRegistries.ITEM.getKey(Items.SHIELD).toString()), shield);// whoe
+			fuelPropertiesOBJ.add((BuiltInRegistries.ITEM.getKey(Items.SHIELD).toString()), shield);
 			whoe.addProperty("feGenerated", 400);
 			whoe.addProperty("feSpeed", 5);
-			fuelPropertiesOBJ.add((BuiltInRegistries.ITEM.getKey(Items.WOODEN_HOE).toString()), whoe);// wsho
+			fuelPropertiesOBJ.add((BuiltInRegistries.ITEM.getKey(Items.WOODEN_HOE).toString()), whoe);
 			wsho.addProperty("feGenerated", 400);
 			wsho.addProperty("feSpeed", 5);
-			fuelPropertiesOBJ.add((BuiltInRegistries.ITEM.getKey(Items.WOODEN_SHOVEL).toString()), wsho);// wpick
+			fuelPropertiesOBJ.add((BuiltInRegistries.ITEM.getKey(Items.WOODEN_SHOVEL).toString()), wsho);
 			wpick.addProperty("feGenerated", 400);
 			wpick.addProperty("feSpeed", 5);
-			fuelPropertiesOBJ.add((BuiltInRegistries.ITEM.getKey(Items.WOODEN_PICKAXE).toString()), wpick);// waxe
+			fuelPropertiesOBJ.add((BuiltInRegistries.ITEM.getKey(Items.WOODEN_PICKAXE).toString()), wpick);
 			waxe.addProperty("feGenerated", 400);
 			waxe.addProperty("feSpeed", 5);
-			fuelPropertiesOBJ.add((BuiltInRegistries.ITEM.getKey(Items.WOODEN_AXE).toString()), waxe);// wsword
+			fuelPropertiesOBJ.add((BuiltInRegistries.ITEM.getKey(Items.WOODEN_AXE).toString()), waxe);
 			wsword.addProperty("feGenerated", 400);
 			wsword.addProperty("feSpeed", 5);
-			fuelPropertiesOBJ.add((BuiltInRegistries.ITEM.getKey(Items.WOODEN_SWORD).toString()), wsword);// daylight
+			fuelPropertiesOBJ.add((BuiltInRegistries.ITEM.getKey(Items.WOODEN_SWORD).toString()), wsword);
 			day.addProperty("feGenerated", 400);
 			day.addProperty("feSpeed", 5);
-			fuelPropertiesOBJ.add((BuiltInRegistries.ITEM.getKey(Blocks.DAYLIGHT_DETECTOR.asItem()).toString()), day);// minecraft:wool_carpets
+			fuelPropertiesOBJ.add((BuiltInRegistries.ITEM.getKey(Blocks.DAYLIGHT_DETECTOR.asItem()).toString()), day);
 			carpet.addProperty("feGenerated", 100);
 			carpet.addProperty("feSpeed", 5);
-			fuelPropertiesOBJ.add("minecraft:wool_carpets", carpet);// minecraft:wool
+			fuelPropertiesOBJ.add("minecraft:wool_carpets", carpet);
 			wool.addProperty("feGenerated", 200);
 			wool.addProperty("feSpeed", 5);
-			fuelPropertiesOBJ.add("minecraft:wool", wool);// stick
+			fuelPropertiesOBJ.add("minecraft:wool", wool);
 			stickobj.addProperty("feGenerated", 100);
 			stickobj.addProperty("feSpeed", 5);
-			fuelPropertiesOBJ.add((BuiltInRegistries.ITEM.getKey(Items.STICK).toString()), stickobj);// planks
+			fuelPropertiesOBJ.add((BuiltInRegistries.ITEM.getKey(Items.STICK).toString()), stickobj);
 			planksobj.addProperty("feGenerated", 350);
 			planksobj.addProperty("feSpeed", 5);
-			fuelPropertiesOBJ.add("minecraft:planks", planksobj);// Logs
+			fuelPropertiesOBJ.add("minecraft:planks", planksobj);
 			logsobj.addProperty("feGenerated", 350);
 			logsobj.addProperty("feSpeed", 5);
-			fuelPropertiesOBJ.add("minecraft:logs", logsobj);// Coal
+			fuelPropertiesOBJ.add("minecraft:logs", logsobj);
 			coalOBJ.addProperty("feGenerated", 2500);
 			coalOBJ.addProperty("feSpeed", 5);
-			fuelPropertiesOBJ.add("minecraft:coals", coalOBJ);// Saplings
+			fuelPropertiesOBJ.add("minecraft:coals", coalOBJ);
 			saplingsobj.addProperty("feGenerated", 175);
 			saplingsobj.addProperty("feSpeed", 5);
 			fuelPropertiesOBJ.add("minecraft:saplings", saplingsobj);
 			configSubJsonObjest.add("listFuel", sArray);
 			configSubJsonObjest.add("fuelProperties", fuelPropertiesOBJ);
-			configJsonObject.add((BuiltInRegistries.ITEM.getKey(EuruModBlocks.SURVIVAL_GENERATOR.get().asItem()).toString()), configSubJsonObjest);// egen
-			// blaze
+			configJsonObject.add((BuiltInRegistries.ITEM.getKey(EuruModBlocks.SURVIVAL_GENERATOR.get().asItem()).toString()), configSubJsonObjest);
 			cItem = BuiltInRegistries.ITEM.getKey(Items.NETHER_STAR).toString();
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 480000);
@@ -714,20 +710,19 @@ public class EURUGeneratorsManagerProcedure {
 			nsarray.add(cItem);
 			nsgenobj.add("listFuel", nsarray);
 			nsgenobj.add("fuelProperties", nsgenfp);
-			configJsonObject.add((BuiltInRegistries.ITEM.getKey(EuruModBlocks.NETHERSTAR_GENERATOR.get().asItem()).toString()), nsgenobj);// egen
-			// blaze
+			configJsonObject.add((BuiltInRegistries.ITEM.getKey(EuruModBlocks.NETHERSTAR_GENERATOR.get().asItem()).toString()), nsgenobj);
 			cItem = BuiltInRegistries.ITEM.getKey(EuruModItems.ENDER_SHARD.get()).toString();
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 1000);
 			cItemOBJ.addProperty("feSpeed", 80);
 			egenfp.add(cItem, cItemOBJ);
-			earray.add(cItem);// blaze
+			earray.add(cItem);
 			cItem = BuiltInRegistries.ITEM.getKey(Items.ENDER_EYE).toString();
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 12000);
 			cItemOBJ.addProperty("feSpeed", 120);
 			egenfp.add(cItem, cItemOBJ);
-			earray.add(cItem);// blaze
+			earray.add(cItem);
 			cItem = BuiltInRegistries.ITEM.getKey(Items.ENDER_PEARL).toString();
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 8000);
@@ -736,338 +731,337 @@ public class EURUGeneratorsManagerProcedure {
 			earray.add(cItem);
 			egenobj.add("listFuel", earray);
 			egenobj.add("fuelProperties", egenfp);
-			configJsonObject.add((BuiltInRegistries.ITEM.getKey(EuruModBlocks.ENDER_GENERATOR.get().asItem()).toString()), egenobj);// ogen
-			// blaze
+			configJsonObject.add((BuiltInRegistries.ITEM.getKey(EuruModBlocks.ENDER_GENERATOR.get().asItem()).toString()), egenobj);
 			cItem = "minecraft:wooden_trapdoors";
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 200);
 			cItemOBJ.addProperty("feSpeed", 200);
 			ogenfp.add(cItem, cItemOBJ);
-			oarray.add(cItem);// blaze
+			oarray.add(cItem);
 			cItem = "minecraft:wooden_pressure_plates";
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 200);
 			cItemOBJ.addProperty("feSpeed", 200);
 			ogenfp.add(cItem, cItemOBJ);
-			oarray.add(cItem);// blaze
+			oarray.add(cItem);
 			cItem = "minecraft:wooden_doors";
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 200);
 			cItemOBJ.addProperty("feSpeed", 200);
 			ogenfp.add(cItem, cItemOBJ);
-			oarray.add(cItem);// blaze
+			oarray.add(cItem);
 			cItem = "minecraft:wooden_stairs";
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 300);
 			cItemOBJ.addProperty("feSpeed", 300);
 			ogenfp.add(cItem, cItemOBJ);
-			oarray.add(cItem);// blaze
+			oarray.add(cItem);
 			cItem = BuiltInRegistries.ITEM.getKey(Items.WOODEN_SWORD).toString();
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 200);
 			cItemOBJ.addProperty("feSpeed", 200);
 			ogenfp.add(cItem, cItemOBJ);
-			oarray.add(cItem);// blaze
+			oarray.add(cItem);
 			cItem = BuiltInRegistries.ITEM.getKey(Items.WOODEN_SHOVEL).toString();
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 200);
 			cItemOBJ.addProperty("feSpeed", 200);
 			ogenfp.add(cItem, cItemOBJ);
-			oarray.add(cItem);// blaze
+			oarray.add(cItem);
 			cItem = BuiltInRegistries.ITEM.getKey(Items.WOODEN_PICKAXE).toString();
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 200);
 			cItemOBJ.addProperty("feSpeed", 200);
 			ogenfp.add(cItem, cItemOBJ);
-			oarray.add(cItem);// blaze
+			oarray.add(cItem);
 			cItem = BuiltInRegistries.ITEM.getKey(Items.WOODEN_HOE).toString();
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 200);
 			cItemOBJ.addProperty("feSpeed", 200);
 			ogenfp.add(cItem, cItemOBJ);
-			oarray.add(cItem);// blaze
+			oarray.add(cItem);
 			cItem = BuiltInRegistries.ITEM.getKey(Items.WOODEN_AXE).toString();
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 200);
 			cItemOBJ.addProperty("feSpeed", 200);
 			ogenfp.add(cItem, cItemOBJ);
-			oarray.add(cItem);// blaze
+			oarray.add(cItem);
 			cItem = BuiltInRegistries.ITEM.getKey(Items.WARPED_FUNGUS_ON_A_STICK).toString();
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 300);
 			cItemOBJ.addProperty("feSpeed", 300);
 			ogenfp.add(cItem, cItemOBJ);
-			oarray.add(cItem);// blaze
+			oarray.add(cItem);
 			cItem = BuiltInRegistries.ITEM.getKey(Blocks.SMITHING_TABLE.asItem()).toString();
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 300);
 			cItemOBJ.addProperty("feSpeed", 300);
 			ogenfp.add(cItem, cItemOBJ);
-			oarray.add(cItem);// blaze
+			oarray.add(cItem);
 			cItem = BuiltInRegistries.ITEM.getKey(Blocks.SCAFFOLDING.asItem()).toString();
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 100);
 			cItemOBJ.addProperty("feSpeed", 100);
 			ogenfp.add(cItem, cItemOBJ);
-			oarray.add(cItem);// blaze
+			oarray.add(cItem);
 			cItem = BuiltInRegistries.ITEM.getKey(Items.PAINTING).toString();
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 100);
 			cItemOBJ.addProperty("feSpeed", 100);
 			ogenfp.add(cItem, cItemOBJ);
-			oarray.add(cItem);// blaze
+			oarray.add(cItem);
 			cItem = BuiltInRegistries.ITEM.getKey(Blocks.NOTE_BLOCK.asItem()).toString();
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 300);
 			cItemOBJ.addProperty("feSpeed", 300);
 			ogenfp.add(cItem, cItemOBJ);
-			oarray.add(cItem);// blaze
+			oarray.add(cItem);
 			cItem = BuiltInRegistries.ITEM.getKey(Blocks.LOOM.asItem()).toString();
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 300);
 			cItemOBJ.addProperty("feSpeed", 300);
 			ogenfp.add(cItem, cItemOBJ);
-			oarray.add(cItem);// blaze
+			oarray.add(cItem);
 			cItem = BuiltInRegistries.ITEM.getKey(Blocks.LECTERN.asItem()).toString();
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 300);
 			cItemOBJ.addProperty("feSpeed", 300);
 			ogenfp.add(cItem, cItemOBJ);
-			oarray.add(cItem);// blaze
+			oarray.add(cItem);
 			cItem = BuiltInRegistries.ITEM.getKey(Blocks.LADDER.asItem()).toString();
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 300);
 			cItemOBJ.addProperty("feSpeed", 300);
 			ogenfp.add(cItem, cItemOBJ);
-			oarray.add(cItem);// blaze
+			oarray.add(cItem);
 			cItem = BuiltInRegistries.ITEM.getKey(Blocks.JUKEBOX.asItem()).toString();
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 300);
 			cItemOBJ.addProperty("feSpeed", 300);
 			ogenfp.add(cItem, cItemOBJ);
-			oarray.add(cItem);// blaze
+			oarray.add(cItem);
 			cItem = "minecraft:hanging_signs";
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 200);
 			cItemOBJ.addProperty("feSpeed", 200);
 			ogenfp.add(cItem, cItemOBJ);
-			oarray.add(cItem);// blaze
+			oarray.add(cItem);
 			cItem = "minecraft:signs";
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 200);
 			cItemOBJ.addProperty("feSpeed", 200);
 			ogenfp.add(cItem, cItemOBJ);
-			oarray.add(cItem);// blaze
+			oarray.add(cItem);
 			cItem = BuiltInRegistries.ITEM.getKey(Items.ITEM_FRAME).toString();
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 100);
 			cItemOBJ.addProperty("feSpeed", 100);
 			ogenfp.add(cItem, cItemOBJ);
-			oarray.add(cItem);// blaze
+			oarray.add(cItem);
 			cItem = BuiltInRegistries.ITEM.getKey(Items.GLOW_ITEM_FRAME).toString();
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 100);
 			cItemOBJ.addProperty("feSpeed", 100);
 			ogenfp.add(cItem, cItemOBJ);
-			oarray.add(cItem);// blaze
+			oarray.add(cItem);
 			cItem = "minecraft:flowers";
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 60);
 			cItemOBJ.addProperty("feSpeed", 60);
 			ogenfp.add(cItem, cItemOBJ);
-			oarray.add(cItem);// blaze
+			oarray.add(cItem);
 			cItem = BuiltInRegistries.ITEM.getKey(Blocks.FLETCHING_TABLE.asItem()).toString();
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 300);
 			cItemOBJ.addProperty("feSpeed", 300);
 			ogenfp.add(cItem, cItemOBJ);
-			oarray.add(cItem);// blaze
+			oarray.add(cItem);
 			cItem = BuiltInRegistries.ITEM.getKey(Items.FISHING_ROD).toString();
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 300);
 			cItemOBJ.addProperty("feSpeed", 300);
 			ogenfp.add(cItem, cItemOBJ);
-			oarray.add(cItem);// blaze
+			oarray.add(cItem);
 			cItem = BuiltInRegistries.ITEM.getKey(Items.CROSSBOW).toString();
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 300);
 			cItemOBJ.addProperty("feSpeed", 300);
 			ogenfp.add(cItem, cItemOBJ);
-			oarray.add(cItem);// blaze
+			oarray.add(cItem);
 			cItem = BuiltInRegistries.ITEM.getKey(Blocks.CRAFTING_TABLE.asItem()).toString();
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 300);
 			cItemOBJ.addProperty("feSpeed", 300);
 			ogenfp.add(cItem, cItemOBJ);
-			oarray.add(cItem);// blaze
+			oarray.add(cItem);
 			cItem = BuiltInRegistries.ITEM.getKey(Blocks.COMPOSTER.asItem()).toString();
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 300);
 			cItemOBJ.addProperty("feSpeed", 300);
 			ogenfp.add(cItem, cItemOBJ);
-			oarray.add(cItem);// blaze
+			oarray.add(cItem);
 			cItem = BuiltInRegistries.ITEM.getKey(Blocks.CHISELED_BOOKSHELF.asItem()).toString();
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 300);
 			cItemOBJ.addProperty("feSpeed", 300);
 			ogenfp.add(cItem, cItemOBJ);
-			oarray.add(cItem);// blaze
+			oarray.add(cItem);
 			cItem = BuiltInRegistries.ITEM.getKey(Blocks.CHEST.asItem()).toString();
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 300);
 			cItemOBJ.addProperty("feSpeed", 300);
 			ogenfp.add(cItem, cItemOBJ);
-			oarray.add(cItem);// blaze
+			oarray.add(cItem);
 			cItem = "minecraft:coals";
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 1200);
 			cItemOBJ.addProperty("feSpeed", 1200);
 			ogenfp.add(cItem, cItemOBJ);
-			oarray.add(cItem);// blaze
+			oarray.add(cItem);
 			cItem = BuiltInRegistries.ITEM.getKey(Blocks.CARTOGRAPHY_TABLE.asItem()).toString();
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 300);
 			cItemOBJ.addProperty("feSpeed", 300);
 			ogenfp.add(cItem, cItemOBJ);
-			oarray.add(cItem);// blaze
+			oarray.add(cItem);
 			cItem = BuiltInRegistries.ITEM.getKey(Items.CARROT_ON_A_STICK).toString();
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 300);
 			cItemOBJ.addProperty("feSpeed", 300);
 			ogenfp.add(cItem, cItemOBJ);
-			oarray.add(cItem);// blaze
+			oarray.add(cItem);
 			cItem = "minecraft:wooden_buttons";
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 100);
 			cItemOBJ.addProperty("feSpeed", 100);
 			ogenfp.add(cItem, cItemOBJ);
-			oarray.add(cItem);// blaze
+			oarray.add(cItem);
 			cItem = BuiltInRegistries.ITEM.getKey(Items.BOWL).toString();
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 100);
 			cItemOBJ.addProperty("feSpeed", 100);
 			ogenfp.add(cItem, cItemOBJ);
-			oarray.add(cItem);// blaze
+			oarray.add(cItem);
 			cItem = BuiltInRegistries.ITEM.getKey(Items.BOW).toString();
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 300);
 			cItemOBJ.addProperty("feSpeed", 300);
 			ogenfp.add(cItem, cItemOBJ);
-			oarray.add(cItem);// blaze
+			oarray.add(cItem);
 			cItem = BuiltInRegistries.ITEM.getKey(Blocks.BOOKSHELF.asItem()).toString();
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 300);
 			cItemOBJ.addProperty("feSpeed", 300);
 			ogenfp.add(cItem, cItemOBJ);
-			oarray.add(cItem);// blaze
+			oarray.add(cItem);
 			cItem = "minecraft:boats";
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 400);
 			cItemOBJ.addProperty("feSpeed", 400);
 			ogenfp.add(cItem, cItemOBJ);
-			oarray.add(cItem);// blaze
+			oarray.add(cItem);
 			cItem = BuiltInRegistries.ITEM.getKey(Items.BLAZE_ROD).toString();
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 2000);
 			cItemOBJ.addProperty("feSpeed", 2000);
 			ogenfp.add(cItem, cItemOBJ);
-			oarray.add(cItem);// blaze
+			oarray.add(cItem);
 			cItem = "minecraft:beds";
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 400);
 			cItemOBJ.addProperty("feSpeed", 400);
 			ogenfp.add(cItem, cItemOBJ);
-			oarray.add(cItem);// blaze
+			oarray.add(cItem);
 			cItem = BuiltInRegistries.ITEM.getKey(Blocks.BARREL.asItem()).toString();
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 300);
 			cItemOBJ.addProperty("feSpeed", 300);
 			ogenfp.add(cItem, cItemOBJ);
-			oarray.add(cItem);// blaze
+			oarray.add(cItem);
 			cItem = "minecraft:banners";
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 300);
 			cItemOBJ.addProperty("feSpeed", 300);
 			ogenfp.add(cItem, cItemOBJ);
-			oarray.add(cItem);// blaze
+			oarray.add(cItem);
 			cItem = BuiltInRegistries.ITEM.getKey(Items.STICK).toString();
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 60);
 			cItemOBJ.addProperty("feSpeed", 60);
 			ogenfp.add(cItem, cItemOBJ);
-			oarray.add(cItem);// blaze
+			oarray.add(cItem);
 			cItem = BuiltInRegistries.ITEM.getKey(Blocks.BAMBOO.asItem()).toString();
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 60);
 			cItemOBJ.addProperty("feSpeed", 60);
 			ogenfp.add(cItem, cItemOBJ);
-			oarray.add(cItem);// blaze
+			oarray.add(cItem);
 			cItem = BuiltInRegistries.ITEM.getKey(Items.ARMOR_STAND).toString();
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 300);
 			cItemOBJ.addProperty("feSpeed", 300);
 			ogenfp.add(cItem, cItemOBJ);
-			oarray.add(cItem);// blaze
+			oarray.add(cItem);
 			cItem = "minecraft:wool";
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 100);
 			cItemOBJ.addProperty("feSpeed", 100);
 			ogenfp.add(cItem, cItemOBJ);
-			oarray.add(cItem);// blaze
+			oarray.add(cItem);
 			cItem = "minecraft:wooden_slabs";
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 300);
 			cItemOBJ.addProperty("feSpeed", 300);
 			ogenfp.add(cItem, cItemOBJ);
-			oarray.add(cItem);// blaze
+			oarray.add(cItem);
 			cItem = "minecraft:planks";
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 300);
 			cItemOBJ.addProperty("feSpeed", 300);
 			ogenfp.add(cItem, cItemOBJ);
-			oarray.add(cItem);// blaze
+			oarray.add(cItem);
 			cItem = "minecraft:saplings";
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 100);
 			cItemOBJ.addProperty("feSpeed", 100);
 			ogenfp.add(cItem, cItemOBJ);
-			oarray.add(cItem);// blaze
+			oarray.add(cItem);
 			cItem = "minecraft:logs";
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 300);
 			cItemOBJ.addProperty("feSpeed", 300);
 			ogenfp.add(cItem, cItemOBJ);
-			oarray.add(cItem);// blaze
+			oarray.add(cItem);
 			cItem = BuiltInRegistries.ITEM.getKey(Blocks.TRAPPED_CHEST.asItem()).toString();
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 300);
 			cItemOBJ.addProperty("feSpeed", 300);
 			ogenfp.add(cItem, cItemOBJ);
-			oarray.add(cItem);// blaze
+			oarray.add(cItem);
 			cItem = BuiltInRegistries.ITEM.getKey(Blocks.DAYLIGHT_DETECTOR.asItem()).toString();
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 300);
 			cItemOBJ.addProperty("feSpeed", 300);
 			ogenfp.add(cItem, cItemOBJ);
-			oarray.add(cItem);// blaze
+			oarray.add(cItem);
 			cItem = "minecraft:wool_carpets";
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 60);
 			cItemOBJ.addProperty("feSpeed", 60);
 			ogenfp.add(cItem, cItemOBJ);
-			oarray.add(cItem);// blaze
+			oarray.add(cItem);
 			cItem = "minecraft:fence_gates";
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 300);
 			cItemOBJ.addProperty("feSpeed", 300);
 			ogenfp.add(cItem, cItemOBJ);
-			oarray.add(cItem);// blaze
+			oarray.add(cItem);
 			cItem = "minecraft:wooden_fences";
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 300);
 			cItemOBJ.addProperty("feSpeed", 300);
 			ogenfp.add(cItem, cItemOBJ);
-			oarray.add(cItem);// blaze
+			oarray.add(cItem);
 			cItem = BuiltInRegistries.ITEM.getKey(Blocks.COAL_BLOCK.asItem()).toString();
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 8000);

@@ -1,0 +1,18 @@
+{
+  "type": "euru:ns_gen_recipe_type",
+  "ingredients": [
+    {
+      "item": "minecraft:nether_star"
+    }
+  ],
+  "strings": [
+    "euru:netherstar_generator",
+    "minecraft:nether_star"
+  ],
+  "outputs": [
+    {
+      "id": "minecraft:polished_tuff",
+      "count": 0
+    }
+  ]
+}

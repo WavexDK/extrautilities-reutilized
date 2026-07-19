@@ -3585,7 +3585,7 @@
           "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/ReturnNameOfMachineProcedure.java"
         ]
       },
-      "path": "~/Blocks/Generators/FE/GUI"
+      "path": "~/Blocks/Generators/FE/GUI/Procedures"
     },
     {
       "name": "FGenGUI",
@@ -7141,6 +7141,123 @@
         ]
       },
       "path": "~/Blocks/Generators/FE/Procedures"
+    },
+    {
+      "name": "RedstoneGearRightclicked",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "redstone_gear_rightclicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/RedstoneGearRightclickedProcedure.java"
+        ]
+      },
+      "path": "~/Items"
+    },
+    {
+      "name": "NEGPAProcedure",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "negpa_procedure",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/NEGPAProcedureProcedure.java"
+        ]
+      },
+      "path": "~/Blocks/Generators/FE/GUI/Procedures"
+    },
+    {
+      "name": "NSGenRecipeType",
+      "type": "jeirecipetype",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ns_gen_recipe_type",
+      "metadata": {
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/jei_recipes/NSGenRecipeTypeRecipeCategory.java",
+          "src/main/java/net/wavedk/extrautilitiesreutilized/jei_recipes/NSGenRecipeTypeRecipe.java"
+        ]
+      },
+      "path": "~/Blocks/Generators/FE/JEI"
+    },
+    {
+      "name": "NetherStarNSGen",
+      "type": "jeirecipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "nether_star_ns_gen",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/euru/recipe/nether_star_ns_gen.json"
+        ]
+      },
+      "path": "~/Blocks/Generators/FE/JEI/Recipes/NSGen"
+    },
+    {
+      "name": "GlassCutterRightclicked",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "glass_cutter_rightclicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ],
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/GlassCutterRightclickedProcedure.java"
+        ]
+      },
+      "path": "~/Items"
     }
   ],
   "variable_elements": [
@@ -7346,16 +7463,15 @@
   "sound_elements": [],
   "tag_elements": {
     "BLOCKS:minecraft:mineable/pickaxe": [
-      "~OverclockedGenerator@CUSTOM:OverclockedGenerator",
-      "~EnderGenerator@CUSTOM:EnderGenerator",
-      "~FurnaceGenerator@CUSTOM:FurnaceGenerator",
-      "~SurvivalGenerator@CUSTOM:SurvivalGenerator",
       "~NetherstarGenerator@CUSTOM:NetherstarGenerator",
       "~Crusher@CUSTOM:Crusher",
+      "~OverclockedGenerator@CUSTOM:OverclockedGenerator",
       "~CreativeEnergySource@CUSTOM:CreativeEnergySource",
+      "~EnderGenerator@CUSTOM:EnderGenerator",
       "~ElectricFurnace@CUSTOM:ElectricFurnace",
       "~CreativeMill@CUSTOM:CreativeMill",
       "~BlockOfEvilInfusedIngot@CUSTOM:BlockOfEvilInfusedIngot",
+      "~FurnaceGenerator@CUSTOM:FurnaceGenerator",
       "~Enchanter@CUSTOM:Enchanter",
       "~FireMill@CUSTOM:FireMill",
       "~StoneBurnt@CUSTOM:StoneBurnt",
@@ -7371,17 +7487,13 @@
       "~CompressedCobblestone@CUSTOM:CompressedCobblestone",
       "~AngelBlock@CUSTOM:AngelBlock",
       "~GildedObsidian@CUSTOM:GildedObsidian",
+      "~SurvivalGenerator@CUSTOM:SurvivalGenerator",
       "~MachineBlock@CUSTOM:MachineBlock",
       "~Resonator@CUSTOM:Resonator",
       "~LunarPanel@CUSTOM:LunarPanel",
       "~SolarPanel@CUSTOM:SolarPanel"
     ],
     "BLOCKS:minecraft:needs_stone_tool": [
-      "~OverclockedGenerator@CUSTOM:OverclockedGenerator",
-      "~EnderGenerator@CUSTOM:EnderGenerator",
-      "~FurnaceGenerator@CUSTOM:FurnaceGenerator",
-      "~SurvivalGenerator@CUSTOM:SurvivalGenerator",
-      "~NetherstarGenerator@CUSTOM:NetherstarGenerator",
       "~Crusher@CUSTOM:Crusher",
       "~ElectricFurnace@CUSTOM:ElectricFurnace",
       "~BlockOfEvilInfusedIngot@CUSTOM:BlockOfEvilInfusedIngot",
@@ -7637,7 +7749,17 @@
       "gui.euru.o_gen_gui.tooltip_speed_upgrade": "Speed Upgrade",
       "gui.euru.o_gen_gui.tooltip_not_enough_grid_power_available": "Not enough Grid Power available!",
       "gui.euru.ns_gen_gui.tooltip_speed_upgrade": "Speed Upgrade",
-      "gui.euru.ns_gen_gui.tooltip_not_enough_grid_power_available": "Not enough Grid Power available!"
+      "gui.euru.ns_gen_gui.tooltip_not_enough_grid_power_available": "Not enough Grid Power available!",
+      "gui.euru.s_gen_gui.button_empty1": "",
+      "gui.euru.f_gen_gui.button_empty": "",
+      "gui.euru.f_gen_gui.button_empty1": "",
+      "gui.euru.s_gen_gui.button_empty": "",
+      "gui.euru.e_gen_gui.button_empty": "",
+      "gui.euru.e_gen_gui.button_empty1": "",
+      "gui.euru.o_gen_gui.button_empty": "",
+      "gui.euru.o_gen_gui.button_empty1": "",
+      "gui.euru.ns_gen_gui.button_empty1": "",
+      "gui.euru.ns_gen_gui.button_empty": ""
     }
   },
   "metadata": {
@@ -7654,10 +7776,7 @@
       "src/main/resources/data/euru/tags/item/jei_empty_tag.json",
       "src/main/java/net/wavedk/extrautilitiesreutilized/init/EuruModRecipeTypes.java",
       "src/main/java/net/wavedk/extrautilitiesreutilized/init/EuruModJeiPlugin.java",
-      "src/main/java/net/wavedk/extrautilitiesreutilized/init/EuruModOpenUsesPayload.java",
-      "src/main/java/net/wavedk/extrautilitiesreutilized/init/EuruModJeiRuntimeHolder.java",
       "src/main/java/net/wavedk/extrautilitiesreutilized/init/EuruModBrewingRecipes.java",
-      "src/main/java/net/wavedk/extrautilitiesreutilized/init/EuruModOpenUsesNetworking.java",
       "src/main/java/net/wavedk/extrautilitiesreutilized/init/EuruModBlocks.java",
       "src/main/java/net/wavedk/extrautilitiesreutilized/init/EuruModBlockEntities.java",
       "src/main/java/net/wavedk/extrautilitiesreutilized/init/EuruModItems.java",
@@ -7667,6 +7786,7 @@
       "src/main/resources/META-INF/neoforge.mods.toml",
       "src/main/java/net/wavedk/extrautilitiesreutilized/EuruMod.java",
       "src/main/resources/pack.mcmeta",
+      "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/EuruModJerIntegration.java",
       "src/main/java/net/wavedk/extrautilitiesreutilized/init/EuruModTabs.java",
       "src/main/java/net/wavedk/extrautilitiesreutilized/network/EuruModVariables.java"
     ]
@@ -7780,7 +7900,12 @@
                   },
                   {
                     "name": "GUI",
-                    "children": []
+                    "children": [
+                      {
+                        "name": "Procedures",
+                        "children": []
+                      }
+                    ]
                   },
                   {
                     "name": "JEI",
@@ -7802,6 +7927,10 @@
                           },
                           {
                             "name": "EGen",
+                            "children": []
+                          },
+                          {
+                            "name": "NSGen",
                             "children": []
                           }
                         ]

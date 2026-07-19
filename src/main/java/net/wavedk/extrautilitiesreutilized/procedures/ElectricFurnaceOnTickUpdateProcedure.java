@@ -67,7 +67,7 @@ public class ElectricFurnaceOnTickUpdateProcedure {
 				}
 			}
 			world = _origWorld;
-		} // multiplier
+		}
 		mult = 1;
 		if ((itemFromBlockInventory(world, BlockPos.containing(x, y, z), 2).copy()).getItem() == EuruModItems.SPEED_UPGRADE.get()) {
 			mult = mult + itemFromBlockInventory(world, BlockPos.containing(x, y, z), 2).getCount() / 4d;
@@ -91,9 +91,18 @@ public class ElectricFurnaceOnTickUpdateProcedure {
 					obj = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
 					catobj = obj.get("machines").getAsJsonObject();
 					bobj = catobj.get((BuiltInRegistries.ITEM.getKey(EuruModBlocks.ELECTRIC_FURNACE.get().asItem()).toString())).getAsJsonObject();
-					setBlockNBTNumber(world, x, y, z, "fe_needed", bobj.get("fe_needed").getAsDouble());
-					setBlockNBTNumber(world, x, y, z, "gp_needed", bobj.get("gp_needed").getAsDouble());
-					setBlockNBTNumber(world, x, y, z, "wait_time", bobj.get("wait_time").getAsDouble());
+					if (!world.isClientSide()) {
+						BlockPos _bp = BlockPos.containing(x, y, z);
+						BlockEntity _blockEntity = world.getBlockEntity(_bp);
+						BlockState _bs = world.getBlockState(_bp);
+						if (_blockEntity != null) {
+							_blockEntity.getPersistentData().putDouble("fe_needed", bobj.get("fe_needed").getAsDouble());
+							_blockEntity.getPersistentData().putDouble("gp_needed", bobj.get("gp_needed").getAsDouble());
+							_blockEntity.getPersistentData().putDouble("wait_time", bobj.get("wait_time").getAsDouble());
+						}
+						if (world instanceof Level _level)
+							_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+					}
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
@@ -109,23 +118,42 @@ public class ElectricFurnaceOnTickUpdateProcedure {
 					if (!(player.getData(EuruModVariables.PLAYER_VARIABLES).playerGP_Used > player.getData(EuruModVariables.PLAYER_VARIABLES).playerGP_Total)) {
 						if (player.getData(EuruModVariables.PLAYER_VARIABLES).playerGPChecking) {
 							updateGP = updateGP + gpNeeded;
-							setBlockNBTText(world, x, y, z, "currentItem", (BuiltInRegistries.ITEM.getKey((itemFromBlockInventory(world, BlockPos.containing(x, y, z), 0).copy()).getItem()).toString()));
-							setBlockNBTText(world, x, y, z, "currentOutput",
-									(BuiltInRegistries.ITEM.getKey((world instanceof Level _lvlSmeltResult
-											? _lvlSmeltResult.getRecipeManager().getRecipeFor(RecipeType.SMELTING, new SingleRecipeInput((itemFromBlockInventory(world, BlockPos.containing(x, y, z), 0).copy())), _lvlSmeltResult)
-													.map(recipe -> recipe.value().getResultItem(_lvlSmeltResult.registryAccess()).copy()).orElse(ItemStack.EMPTY)
-											: ItemStack.EMPTY).getItem()).toString()));
-							setBlockNBTNumber(world, x, y, z, "cProgress", (1 * mult));
+							if (!world.isClientSide()) {
+								BlockPos _bp = BlockPos.containing(x, y, z);
+								BlockEntity _blockEntity = world.getBlockEntity(_bp);
+								BlockState _bs = world.getBlockState(_bp);
+								if (_blockEntity != null) {
+									_blockEntity.getPersistentData().putString("currentItem", (BuiltInRegistries.ITEM.getKey((itemFromBlockInventory(world, BlockPos.containing(x, y, z), 0).copy()).getItem()).toString()));
+									_blockEntity.getPersistentData().putString("currentOutput",
+											(BuiltInRegistries.ITEM.getKey((world instanceof Level _lvlSmeltResult
+													? _lvlSmeltResult.getRecipeManager().getRecipeFor(RecipeType.SMELTING, new SingleRecipeInput((itemFromBlockInventory(world, BlockPos.containing(x, y, z), 0).copy())), _lvlSmeltResult)
+															.map(recipe -> recipe.value().getResultItem(_lvlSmeltResult.registryAccess()).copy()).orElse(ItemStack.EMPTY)
+													: ItemStack.EMPTY).getItem()).toString()));
+									_blockEntity.getPersistentData().putDouble("cProgress", (1 * mult));
+								}
+								if (world instanceof Level _level)
+									_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+							}
 							if (world.getBlockEntity(new BlockPos((int) x, (int) y, (int) z)) instanceof ElectricFurnaceBlockEntity be) {
 								be.removeEnergy((int) energyRemove);
 							}
 							if (player.getData(EuruModVariables.PLAYER_VARIABLES).playerGPChecking) {
 								updateGP = updateGP + gpNeeded;
 							}
-							setBooleanBlockState(world, x, y, z, "on", true);
+							{
+								BlockPos _pos = BlockPos.containing(x, y, z);
+								BlockState _bs = world.getBlockState(_pos);
+								if (_bs.getBlock().getStateDefinition().getProperty("on") instanceof BooleanProperty _booleanProp)
+									world.setBlock(_pos, _bs.setValue(_booleanProp, true), 3);
+							}
 						}
 					} else {
-						setBooleanBlockState(world, x, y, z, "on", false);
+						{
+							BlockPos _pos = BlockPos.containing(x, y, z);
+							BlockState _bs = world.getBlockState(_pos);
+							if (_bs.getBlock().getStateDefinition().getProperty("on") instanceof BooleanProperty _booleanProp)
+								world.setBlock(_pos, _bs.setValue(_booleanProp, false), 3);
+						}
 					}
 				}
 			}
@@ -159,32 +187,78 @@ public class ElectricFurnaceOnTickUpdateProcedure {
 														: ItemStack.EMPTY).getCount());
 								_itemHandlerModifiable.setStackInSlot(1, _setstack);
 							}
-							setBlockNBTNumber(world, x, y, z, "cProgress", 0);
-							setBlockNBTText(world, x, y, z, "currentOutput", "");
-							setBlockNBTText(world, x, y, z, "currentItem", "");
+							if (!world.isClientSide()) {
+								BlockPos _bp = BlockPos.containing(x, y, z);
+								BlockEntity _blockEntity = world.getBlockEntity(_bp);
+								BlockState _bs = world.getBlockState(_bp);
+								if (_blockEntity != null) {
+									_blockEntity.getPersistentData().putDouble("cProgress", 0);
+									_blockEntity.getPersistentData().putString("currentOutput", "");
+									_blockEntity.getPersistentData().putString("currentItem", "");
+								}
+								if (world instanceof Level _level)
+									_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+							}
 							if (world.getBlockEntity(new BlockPos((int) x, (int) y, (int) z)) instanceof ElectricFurnaceBlockEntity be) {
 								be.removeEnergy((int) energyRemove);
 							}
 						} else {
-							setBooleanBlockState(world, x, y, z, "on", true);
+							{
+								BlockPos _pos = BlockPos.containing(x, y, z);
+								BlockState _bs = world.getBlockState(_pos);
+								if (_bs.getBlock().getStateDefinition().getProperty("on") instanceof BooleanProperty _booleanProp)
+									world.setBlock(_pos, _bs.setValue(_booleanProp, true), 3);
+							}
 							if (world.getBlockEntity(new BlockPos((int) x, (int) y, (int) z)) instanceof ElectricFurnaceBlockEntity be) {
 								be.removeEnergy((int) energyRemove);
 							}
-							setBlockNBTNumber(world, x, y, z, "cProgress", (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "cProgress") + 1 * mult));
+							if (!world.isClientSide()) {
+								BlockPos _bp = BlockPos.containing(x, y, z);
+								BlockEntity _blockEntity = world.getBlockEntity(_bp);
+								BlockState _bs = world.getBlockState(_bp);
+								if (_blockEntity != null) {
+									_blockEntity.getPersistentData().putDouble("cProgress", (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "cProgress") + 1 * mult));
+								}
+								if (world instanceof Level _level)
+									_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+							}
 						}
 					} else {
-						setBooleanBlockState(world, x, y, z, "on", false);
+						{
+							BlockPos _pos = BlockPos.containing(x, y, z);
+							BlockState _bs = world.getBlockState(_pos);
+							if (_bs.getBlock().getStateDefinition().getProperty("on") instanceof BooleanProperty _booleanProp)
+								world.setBlock(_pos, _bs.setValue(_booleanProp, false), 3);
+						}
 					}
 				} else {
-					setBlockNBTNumber(world, x, y, z, "cProgress", 0);
+					if (!world.isClientSide()) {
+						BlockPos _bp = BlockPos.containing(x, y, z);
+						BlockEntity _blockEntity = world.getBlockEntity(_bp);
+						BlockState _bs = world.getBlockState(_bp);
+						if (_blockEntity != null) {
+							_blockEntity.getPersistentData().putDouble("cProgress", 0);
+						}
+						if (world instanceof Level _level)
+							_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+					}
 				}
 			}
 			if (player.getData(EuruModVariables.PLAYER_VARIABLES).playerGPChecking) {
 				updateGP = updateGP + gpNeeded;
 			}
 		} else {
-			setBlockNBTNumber(world, x, y, z, "cProgress", 0);
-			setBlockNBTText(world, x, y, z, "currentItem", "");
+			if (!world.isClientSide()) {
+				BlockPos _bp = BlockPos.containing(x, y, z);
+				BlockEntity _blockEntity = world.getBlockEntity(_bp);
+				BlockState _bs = world.getBlockState(_bp);
+				if (_blockEntity != null) {
+					_blockEntity.getPersistentData().putDouble("cProgress", 0);
+					_blockEntity.getPersistentData().putString("currentItem", "");
+				}
+				if (world instanceof Level _level)
+					_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+			}
 		}
 		if (player.getData(EuruModVariables.PLAYER_VARIABLES).playerGPChecking) {
 			{
@@ -193,15 +267,47 @@ public class ElectricFurnaceOnTickUpdateProcedure {
 				_vars.markSyncDirty();
 			}
 		}
-		if (getBooleanFromBlockState(blockstate, "on") && getBlockNBTNumber(world, BlockPos.containing(x, y, z), "cProgress") == 0) {
+		if (getPropertyByName(blockstate, "on") instanceof BooleanProperty _getbp98 && blockstate.getValue(_getbp98) && getBlockNBTNumber(world, BlockPos.containing(x, y, z), "cProgress") == 0) {
 			if (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "onCounter") > 4) {
-				setBooleanBlockState(world, x, y, z, "on", false);
-				setBlockNBTNumber(world, x, y, z, "onCounter", 0);
+				{
+					BlockPos _pos = BlockPos.containing(x, y, z);
+					BlockState _bs = world.getBlockState(_pos);
+					if (_bs.getBlock().getStateDefinition().getProperty("on") instanceof BooleanProperty _booleanProp)
+						world.setBlock(_pos, _bs.setValue(_booleanProp, false), 3);
+				}
+				if (!world.isClientSide()) {
+					BlockPos _bp = BlockPos.containing(x, y, z);
+					BlockEntity _blockEntity = world.getBlockEntity(_bp);
+					BlockState _bs = world.getBlockState(_bp);
+					if (_blockEntity != null) {
+						_blockEntity.getPersistentData().putDouble("onCounter", 0);
+					}
+					if (world instanceof Level _level)
+						_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+				}
 			} else {
-				setBlockNBTNumber(world, x, y, z, "onCounter", (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "onCounter") + 1));
+				if (!world.isClientSide()) {
+					BlockPos _bp = BlockPos.containing(x, y, z);
+					BlockEntity _blockEntity = world.getBlockEntity(_bp);
+					BlockState _bs = world.getBlockState(_bp);
+					if (_blockEntity != null) {
+						_blockEntity.getPersistentData().putDouble("onCounter", (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "onCounter") + 1));
+					}
+					if (world instanceof Level _level)
+						_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+				}
 			}
 		} else {
-			setBlockNBTNumber(world, x, y, z, "onCounter", 0);
+			if (!world.isClientSide()) {
+				BlockPos _bp = BlockPos.containing(x, y, z);
+				BlockEntity _blockEntity = world.getBlockEntity(_bp);
+				BlockState _bs = world.getBlockState(_bp);
+				if (_blockEntity != null) {
+					_blockEntity.getPersistentData().putDouble("onCounter", 0);
+				}
+				if (world instanceof Level _level)
+					_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+			}
 		}
 	}
 
@@ -236,20 +342,6 @@ public class ElectricFurnaceOnTickUpdateProcedure {
 		return -1;
 	}
 
-	private static void setBlockNBTNumber(LevelAccessor world, double x, double y, double z, String tag, double value) {
-		if (!world.isClientSide()) {
-			BlockPos pos = BlockPos.containing(x, y, z);
-			BlockEntity blockEntity = world.getBlockEntity(pos);
-			BlockState blockState = world.getBlockState(pos);
-			if (blockEntity != null) {
-				blockEntity.getPersistentData().putDouble(tag, value);
-			}
-			if (world instanceof Level level) {
-				level.sendBlockUpdated(pos, blockState, blockState, 3);
-			}
-		}
-	}
-
 	public static int getEnergyStored(LevelAccessor level, BlockPos pos, Direction direction) {
 		if (level instanceof ILevelExtension levelExtension) {
 			IEnergyStorage energyStorage = levelExtension.getCapability(Capabilities.EnergyStorage.BLOCK, pos, direction);
@@ -259,30 +351,12 @@ public class ElectricFurnaceOnTickUpdateProcedure {
 		return 0;
 	}
 
-	private static void setBlockNBTText(LevelAccessor world, double x, double y, double z, String tag, String value) {
-		if (!world.isClientSide()) {
-			BlockPos pos = BlockPos.containing(x, y, z);
-			BlockEntity blockEntity = world.getBlockEntity(pos);
-			BlockState blockState = world.getBlockState(pos);
-			if (blockEntity != null) {
-				blockEntity.getPersistentData().putString(tag, value);
-			}
-			if (world instanceof Level level) {
-				level.sendBlockUpdated(pos, blockState, blockState, 3);
+	private static Property<?> getPropertyByName(BlockState state, String name) {
+		for (Property<?> property : state.getProperties()) {
+			if (property.getName().equals(name)) {
+				return property;
 			}
 		}
-	}
-
-	private static void setBooleanBlockState(LevelAccessor world, double x, double y, double z, String property, boolean value) {
-		BlockPos pos = BlockPos.containing(x, y, z);
-		BlockState state = world.getBlockState(pos);
-		if (state.getBlock().getStateDefinition().getProperty(property) instanceof BooleanProperty booleanProperty) {
-			world.setBlock(pos, state.setValue(booleanProperty, value), 3);
-		}
-	}
-
-	private static boolean getBooleanFromBlockState(BlockState blockState, String property) {
-		Property<?> prop = blockState.getBlock().getStateDefinition().getProperty(property);
-		return prop instanceof BooleanProperty bp && blockState.getValue(bp);
+		return null;
 	}
 }

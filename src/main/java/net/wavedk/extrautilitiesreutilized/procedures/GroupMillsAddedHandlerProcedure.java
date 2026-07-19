@@ -33,8 +33,17 @@ public class GroupMillsAddedHandlerProcedure {
 		com.google.gson.JsonObject itemOBJ = new com.google.gson.JsonObject();
 		com.google.gson.JsonObject gp_gen_obj = new com.google.gson.JsonObject();
 		com.google.gson.JsonObject generalobj = new com.google.gson.JsonObject();
-		setBlockNBTText(world, x, y, z, "placedBy", (entity.getStringUUID()));
-		setBlockNBTText(world, x, y, z, "gp_group", "mills");
+		if (!world.isClientSide()) {
+			BlockPos _bp = BlockPos.containing(x, y, z);
+			BlockEntity _blockEntity = world.getBlockEntity(_bp);
+			BlockState _bs = world.getBlockState(_bp);
+			if (_blockEntity != null) {
+				_blockEntity.getPersistentData().putString("placedBy", (entity.getStringUUID()));
+				_blockEntity.getPersistentData().putString("gp_group", "mills");
+			}
+			if (world instanceof Level _level)
+				_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+		}
 		if (!getBlockNBTLogic(world, BlockPos.containing(x, y, z), "been_json_checked")) {
 			configFile = new File((FMLPaths.GAMEDIR.get().toString() + "/config/euru/"), File.separator + "euru_unified_config.json");
 			if (configFile.exists()) {
@@ -51,37 +60,41 @@ public class GroupMillsAddedHandlerProcedure {
 						gp_gen_obj = cOBJ.get("gp_generation").getAsJsonObject();
 						generalobj = cOBJ.get("general").getAsJsonObject();
 						itemOBJ = gp_gen_obj.get((BuiltInRegistries.BLOCK.getKey((world.getBlockState(BlockPos.containing(x, y, z))).getBlock()).toString())).getAsJsonObject();
-						setBlockNBTLogic(world, x, y, z, "needs_day", itemOBJ.get("needs_day").getAsBoolean());
-						setBlockNBTLogic(world, x, y, z, "needs_night", itemOBJ.get("needs_night").getAsBoolean());
-						setBlockNBTLogic(world, x, y, z, "needs_sky", itemOBJ.get("needs_sky").getAsBoolean());
-						setBlockNBTNumber(world, x, y, z, "needs_water", itemOBJ.get("needs_water").getAsDouble());
-						setBlockNBTNumber(world, x, y, z, "needs_lava", itemOBJ.get("needs_lava").getAsDouble());
-						setBlockNBTNumber(world, x, y, z, "needs_fire", itemOBJ.get("needs_fire").getAsDouble());
-						setBlockNBTNumber(world, x, y, z, "nominal_generated", itemOBJ.get("gp_generated").getAsDouble());
-						setBlockNBTNumber(world, x, y, z, "gp_generated", itemOBJ.get("gp_generated").getAsDouble());
-						setBlockNBTNumber(world, x, y, z, "range-configUpdate-max", generalobj.get("range-configUpdate-max").getAsDouble());
-						setBlockNBTNumber(world, x, y, z, "range-configUpdate-min", generalobj.get("range-configUpdate-min").getAsDouble());
-						setBlockNBTLogic(world, x, y, z, "been_json_checked", true);
+						if (!world.isClientSide()) {
+							BlockPos _bp = BlockPos.containing(x, y, z);
+							BlockEntity _blockEntity = world.getBlockEntity(_bp);
+							BlockState _bs = world.getBlockState(_bp);
+							if (_blockEntity != null) {
+								_blockEntity.getPersistentData().putBoolean("needs_day", itemOBJ.get("needs_day").getAsBoolean());
+								_blockEntity.getPersistentData().putBoolean("needs_night", itemOBJ.get("needs_night").getAsBoolean());
+								_blockEntity.getPersistentData().putBoolean("needs_sky", itemOBJ.get("needs_sky").getAsBoolean());
+								_blockEntity.getPersistentData().putDouble("needs_water", itemOBJ.get("needs_water").getAsDouble());
+								_blockEntity.getPersistentData().putDouble("needs_lava", itemOBJ.get("needs_lava").getAsDouble());
+								_blockEntity.getPersistentData().putDouble("needs_fire", itemOBJ.get("needs_fire").getAsDouble());
+								_blockEntity.getPersistentData().putDouble("nominal_generated", itemOBJ.get("gp_generated").getAsDouble());
+								_blockEntity.getPersistentData().putDouble("gp_generated", itemOBJ.get("gp_generated").getAsDouble());
+								_blockEntity.getPersistentData().putDouble("range-configUpdate-max", generalobj.get("range-configUpdate-max").getAsDouble());
+								_blockEntity.getPersistentData().putDouble("range-configUpdate-min", generalobj.get("range-configUpdate-min").getAsDouble());
+								_blockEntity.getPersistentData().putBoolean("been_json_checked", true);
+							}
+							if (world instanceof Level _level)
+								_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+						}
 					} catch (IOException e) {
 						e.printStackTrace();
 					}
 				}
 			}
 		}
-		setBlockNBTNumber(world, x, y, z, "old_calculated", (Math.floor((entity.getData(EuruModVariables.PLAYER_VARIABLES).group_update_mills / entity.getData(EuruModVariables.PLAYER_VARIABLES).group_count_mills) * 100) / 100));
-	}
-
-	private static void setBlockNBTText(LevelAccessor world, double x, double y, double z, String tag, String value) {
 		if (!world.isClientSide()) {
-			BlockPos pos = BlockPos.containing(x, y, z);
-			BlockEntity blockEntity = world.getBlockEntity(pos);
-			BlockState blockState = world.getBlockState(pos);
-			if (blockEntity != null) {
-				blockEntity.getPersistentData().putString(tag, value);
+			BlockPos _bp = BlockPos.containing(x, y, z);
+			BlockEntity _blockEntity = world.getBlockEntity(_bp);
+			BlockState _bs = world.getBlockState(_bp);
+			if (_blockEntity != null) {
+				_blockEntity.getPersistentData().putDouble("old_calculated", (Math.floor((entity.getData(EuruModVariables.PLAYER_VARIABLES).group_update_mills / entity.getData(EuruModVariables.PLAYER_VARIABLES).group_count_mills) * 100) / 100));
 			}
-			if (world instanceof Level level) {
-				level.sendBlockUpdated(pos, blockState, blockState, 3);
-			}
+			if (world instanceof Level _level)
+				_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 		}
 	}
 
@@ -90,33 +103,5 @@ public class GroupMillsAddedHandlerProcedure {
 		if (blockEntity != null)
 			return blockEntity.getPersistentData().getBoolean(tag);
 		return false;
-	}
-
-	private static void setBlockNBTLogic(LevelAccessor world, double x, double y, double z, String tag, boolean value) {
-		if (!world.isClientSide()) {
-			BlockPos pos = BlockPos.containing(x, y, z);
-			BlockEntity blockEntity = world.getBlockEntity(pos);
-			BlockState blockState = world.getBlockState(pos);
-			if (blockEntity != null) {
-				blockEntity.getPersistentData().putBoolean(tag, value);
-			}
-			if (world instanceof Level level) {
-				level.sendBlockUpdated(pos, blockState, blockState, 3);
-			}
-		}
-	}
-
-	private static void setBlockNBTNumber(LevelAccessor world, double x, double y, double z, String tag, double value) {
-		if (!world.isClientSide()) {
-			BlockPos pos = BlockPos.containing(x, y, z);
-			BlockEntity blockEntity = world.getBlockEntity(pos);
-			BlockState blockState = world.getBlockState(pos);
-			if (blockEntity != null) {
-				blockEntity.getPersistentData().putDouble(tag, value);
-			}
-			if (world instanceof Level level) {
-				level.sendBlockUpdated(pos, blockState, blockState, 3);
-			}
-		}
 	}
 }

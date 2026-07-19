@@ -7,14 +7,12 @@ import net.minecraft.core.BlockPos;
 
 public class EnderLillyCanBoneMealBeUsedOnThisBlockProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z) {
-		setIntegerBlockState(world, x, y, z, "stage", 0);
-	}
-
-	private static void setIntegerBlockState(LevelAccessor world, double x, double y, double z, String property, int value) {
-		BlockPos pos = BlockPos.containing(x, y, z);
-		BlockState state = world.getBlockState(pos);
-		if (state.getBlock().getStateDefinition().getProperty(property) instanceof IntegerProperty integerProperty && integerProperty.getPossibleValues().contains(value)) {
-			world.setBlock(pos, state.setValue(integerProperty, value), 3);
+		{
+			int _value = 0;
+			BlockPos _pos = BlockPos.containing(x, y, z);
+			BlockState _bs = world.getBlockState(_pos);
+			if (_bs.getBlock().getStateDefinition().getProperty("stage") instanceof IntegerProperty _integerProp && _integerProp.getPossibleValues().contains(_value))
+				world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
 		}
 	}
 }

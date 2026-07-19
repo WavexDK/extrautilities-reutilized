@@ -77,42 +77,150 @@ public class GeneratorTickHandlerProcedure {
 			}
 			world = _origWorld;
 		}
-		if (player instanceof ServerPlayer || player instanceof Player) {// redstoneMode
+		if (player instanceof ServerPlayer || player instanceof Player) {
 			if (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "redstoneMode") == 0) {
-				setBlockNBTLogic(world, x, y, z, "redstoneModeOn", true);
+				if (!world.isClientSide()) {
+					BlockPos _bp = BlockPos.containing(x, y, z);
+					BlockEntity _blockEntity = world.getBlockEntity(_bp);
+					BlockState _bs = world.getBlockState(_bp);
+					if (_blockEntity != null) {
+						_blockEntity.getPersistentData().putBoolean("redstoneModeOn", true);
+					}
+					if (world instanceof Level _level)
+						_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+				}
 			} else if (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "redstoneMode") == 1) {
 				if (world instanceof Level _level11 && _level11.hasNeighborSignal(BlockPos.containing(x, y, z))) {
-					setBlockNBTLogic(world, x, y, z, "redstoneModeOn", true);
+					if (!world.isClientSide()) {
+						BlockPos _bp = BlockPos.containing(x, y, z);
+						BlockEntity _blockEntity = world.getBlockEntity(_bp);
+						BlockState _bs = world.getBlockState(_bp);
+						if (_blockEntity != null) {
+							_blockEntity.getPersistentData().putBoolean("redstoneModeOn", true);
+						}
+						if (world instanceof Level _level)
+							_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+					}
 				} else {
-					setBlockNBTLogic(world, x, y, z, "redstoneModeOn", false);
+					if (!world.isClientSide()) {
+						BlockPos _bp = BlockPos.containing(x, y, z);
+						BlockEntity _blockEntity = world.getBlockEntity(_bp);
+						BlockState _bs = world.getBlockState(_bp);
+						if (_blockEntity != null) {
+							_blockEntity.getPersistentData().putBoolean("redstoneModeOn", false);
+						}
+						if (world instanceof Level _level)
+							_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+					}
 				}
 			} else if (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "redstoneMode") == 2) {
 				if (world instanceof Level _level15 && _level15.hasNeighborSignal(BlockPos.containing(x, y, z))) {
-					setBlockNBTLogic(world, x, y, z, "redstoneModeOn", false);
+					if (!world.isClientSide()) {
+						BlockPos _bp = BlockPos.containing(x, y, z);
+						BlockEntity _blockEntity = world.getBlockEntity(_bp);
+						BlockState _bs = world.getBlockState(_bp);
+						if (_blockEntity != null) {
+							_blockEntity.getPersistentData().putBoolean("redstoneModeOn", false);
+						}
+						if (world instanceof Level _level)
+							_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+					}
 				} else {
-					setBlockNBTLogic(world, x, y, z, "redstoneModeOn", true);
+					if (!world.isClientSide()) {
+						BlockPos _bp = BlockPos.containing(x, y, z);
+						BlockEntity _blockEntity = world.getBlockEntity(_bp);
+						BlockState _bs = world.getBlockState(_bp);
+						if (_blockEntity != null) {
+							_blockEntity.getPersistentData().putBoolean("redstoneModeOn", true);
+						}
+						if (world instanceof Level _level)
+							_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+					}
 				}
 			} else if (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "redstoneMode") == 3) {
-				setBlockNBTLogic(world, x, y, z, "redstoneModeOn", false);
+				if (!world.isClientSide()) {
+					BlockPos _bp = BlockPos.containing(x, y, z);
+					BlockEntity _blockEntity = world.getBlockEntity(_bp);
+					BlockState _bs = world.getBlockState(_bp);
+					if (_blockEntity != null) {
+						_blockEntity.getPersistentData().putBoolean("redstoneModeOn", false);
+					}
+					if (world instanceof Level _level)
+						_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+				}
 			} else {
-				setBlockNBTLogic(world, x, y, z, "redstoneModeOn", true);
-			} // multiplier
+				if (!world.isClientSide()) {
+					BlockPos _bp = BlockPos.containing(x, y, z);
+					BlockEntity _blockEntity = world.getBlockEntity(_bp);
+					BlockState _bs = world.getBlockState(_bp);
+					if (_blockEntity != null) {
+						_blockEntity.getPersistentData().putBoolean("redstoneModeOn", true);
+					}
+					if (world instanceof Level _level)
+						_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+				}
+			}
 			mult = 1;
 			if ((itemFromBlockInventory(world, BlockPos.containing(x, y, z), 1).copy()).getItem() == EuruModItems.SPEED_UPGRADE.get()) {
-				setBlockNBTNumber(world, x, y, z, "updateMult", (mult + itemFromBlockInventory(world, BlockPos.containing(x, y, z), 1).getCount() / 4d));
+				if (!world.isClientSide()) {
+					BlockPos _bp = BlockPos.containing(x, y, z);
+					BlockEntity _blockEntity = world.getBlockEntity(_bp);
+					BlockState _bs = world.getBlockState(_bp);
+					if (_blockEntity != null) {
+						_blockEntity.getPersistentData().putDouble("updateMult", (mult + itemFromBlockInventory(world, BlockPos.containing(x, y, z), 1).getCount() / 4d));
+					}
+					if (world instanceof Level _level)
+						_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+				}
 			} else if ((itemFromBlockInventory(world, BlockPos.containing(x, y, z), 1).copy()).getItem() == EuruModItems.MAGICAL_SPEED_UPGRADE.get()) {
-				setBlockNBTNumber(world, x, y, z, "updateMult", (mult + itemFromBlockInventory(world, BlockPos.containing(x, y, z), 1).getCount() / 2d));
+				if (!world.isClientSide()) {
+					BlockPos _bp = BlockPos.containing(x, y, z);
+					BlockEntity _blockEntity = world.getBlockEntity(_bp);
+					BlockState _bs = world.getBlockState(_bp);
+					if (_blockEntity != null) {
+						_blockEntity.getPersistentData().putDouble("updateMult", (mult + itemFromBlockInventory(world, BlockPos.containing(x, y, z), 1).getCount() / 2d));
+					}
+					if (world instanceof Level _level)
+						_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+				}
 			} else if ((itemFromBlockInventory(world, BlockPos.containing(x, y, z), 1).copy()).getItem() == EuruModItems.ULTIMATE_SPEED_UPGRADE.get()) {
-				setBlockNBTNumber(world, x, y, z, "updateMult", (mult + itemFromBlockInventory(world, BlockPos.containing(x, y, z), 1).getCount() / 1.25));
+				if (!world.isClientSide()) {
+					BlockPos _bp = BlockPos.containing(x, y, z);
+					BlockEntity _blockEntity = world.getBlockEntity(_bp);
+					BlockState _bs = world.getBlockState(_bp);
+					if (_blockEntity != null) {
+						_blockEntity.getPersistentData().putDouble("updateMult", (mult + itemFromBlockInventory(world, BlockPos.containing(x, y, z), 1).getCount() / 1.25));
+					}
+					if (world instanceof Level _level)
+						_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+				}
 			} else {
-				setBlockNBTNumber(world, x, y, z, "updateMult", 1);
+				if (!world.isClientSide()) {
+					BlockPos _bp = BlockPos.containing(x, y, z);
+					BlockEntity _blockEntity = world.getBlockEntity(_bp);
+					BlockState _bs = world.getBlockState(_bp);
+					if (_blockEntity != null) {
+						_blockEntity.getPersistentData().putDouble("updateMult", 1);
+					}
+					if (world instanceof Level _level)
+						_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+				}
 			}
 			if (player.getData(EuruModVariables.PLAYER_VARIABLES).updateMultipliers) {
 				mult = getBlockNBTNumber(world, BlockPos.containing(x, y, z), "updateMult");
-				setBlockNBTNumber(world, x, y, z, "oldMult", (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "updateMult")));
+				if (!world.isClientSide()) {
+					BlockPos _bp = BlockPos.containing(x, y, z);
+					BlockEntity _blockEntity = world.getBlockEntity(_bp);
+					BlockState _bs = world.getBlockState(_bp);
+					if (_blockEntity != null) {
+						_blockEntity.getPersistentData().putDouble("oldMult", (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "updateMult")));
+					}
+					if (world instanceof Level _level)
+						_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+				}
 			} else {
 				mult = getBlockNBTNumber(world, BlockPos.containing(x, y, z), "oldMult");
-			} // fe gen
+			}
 			if (getBlockNBTLogic(world, BlockPos.containing(x, y, z), "redstoneModeOn")) {
 				feConfig = new File((FMLPaths.GAMEDIR.get().toString() + "/config/euru/"), File.separator + "euru_fe_config.json");
 				if ((getBlockNBTString(world, BlockPos.containing(x, y, z), "currentItem")).equals("")) {
@@ -121,7 +229,16 @@ public class GeneratorTickHandlerProcedure {
 				}
 				if ((getBlockNBTString(world, BlockPos.containing(x, y, z), "currentItem")).equals("") && itemFromBlockInventory(world, BlockPos.containing(x, y, z), 0).getCount() != 0) {
 					if (!(getBlockNBTString(world, BlockPos.containing(x, y, z), "lastCheckedItem")).equals(BuiltInRegistries.ITEM.getKey((itemFromBlockInventory(world, BlockPos.containing(x, y, z), 0).copy()).getItem()).toString())) {
-						setBlockNBTText(world, x, y, z, "lastCheckedItem", (BuiltInRegistries.ITEM.getKey((itemFromBlockInventory(world, BlockPos.containing(x, y, z), 0).copy()).getItem()).toString()));
+						if (!world.isClientSide()) {
+							BlockPos _bp = BlockPos.containing(x, y, z);
+							BlockEntity _blockEntity = world.getBlockEntity(_bp);
+							BlockState _bs = world.getBlockState(_bp);
+							if (_blockEntity != null) {
+								_blockEntity.getPersistentData().putString("lastCheckedItem", (BuiltInRegistries.ITEM.getKey((itemFromBlockInventory(world, BlockPos.containing(x, y, z), 0).copy()).getItem()).toString()));
+							}
+							if (world instanceof Level _level)
+								_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+						}
 						{
 							try {
 								BufferedReader bufferedReader = new BufferedReader(new FileReader(feConfig));
@@ -136,7 +253,7 @@ public class GeneratorTickHandlerProcedure {
 								fuelList = blockOBJ.get("listFuel").getAsJsonArray();
 								cNum = 0;
 								if (!fuelList.isEmpty()) {
-									for (int index3397 = 0; index3397 < (int) fuelList.size(); index3397++) {
+									for (int index15 = 0; index15 < (int) fuelList.size(); index15++) {
 										if ((fuelList.get((int) cNum).getAsString()).equals(BuiltInRegistries.ITEM.getKey((itemFromBlockInventory(world, BlockPos.containing(x, y, z), 0).copy()).getItem()).toString())
 												|| (itemFromBlockInventory(world, BlockPos.containing(x, y, z), 0).copy()).is(ItemTags.create(ResourceLocation.parse((fuelList.get((int) cNum).getAsString()).toLowerCase(java.util.Locale.ENGLISH))))) {
 											if (player.getData(EuruModVariables.PLAYER_VARIABLES).playerGP_Total >= player.getData(EuruModVariables.PLAYER_VARIABLES).playerGP_Used
@@ -146,14 +263,32 @@ public class GeneratorTickHandlerProcedure {
 													&& player.getData(EuruModVariables.PLAYER_VARIABLES).playerGPChecking) {
 												canPass = true;
 											}
-											setBlockNBTText(world, x, y, z, "lastCheckedItem", "");
+											if (!world.isClientSide()) {
+												BlockPos _bp = BlockPos.containing(x, y, z);
+												BlockEntity _blockEntity = world.getBlockEntity(_bp);
+												BlockState _bs = world.getBlockState(_bp);
+												if (_blockEntity != null) {
+													_blockEntity.getPersistentData().putString("lastCheckedItem", "");
+												}
+												if (world instanceof Level _level)
+													_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+											}
 											if (canPass) {
 												fuelPropertiesOBJ = blockOBJ.get("fuelProperties").getAsJsonObject();
 												itemOBJ = fuelPropertiesOBJ.get(fuelList.get((int) cNum).getAsString()).getAsJsonObject();
-												setBlockNBTText(world, x, y, z, "currentItem", (BuiltInRegistries.ITEM.getKey((itemFromBlockInventory(world, BlockPos.containing(x, y, z), 0).copy()).getItem()).toString()));
-												setBlockNBTNumber(world, x, y, z, "wait_time", itemOBJ.get("feGenerated").getAsDouble());
-												setBlockNBTNumber(world, x, y, z, "feSpeed", itemOBJ.get("feSpeed").getAsDouble());
-												setBlockNBTNumber(world, x, y, z, "cProgress", 0);
+												if (!world.isClientSide()) {
+													BlockPos _bp = BlockPos.containing(x, y, z);
+													BlockEntity _blockEntity = world.getBlockEntity(_bp);
+													BlockState _bs = world.getBlockState(_bp);
+													if (_blockEntity != null) {
+														_blockEntity.getPersistentData().putString("currentItem", (BuiltInRegistries.ITEM.getKey((itemFromBlockInventory(world, BlockPos.containing(x, y, z), 0).copy()).getItem()).toString()));
+														_blockEntity.getPersistentData().putDouble("wait_time", itemOBJ.get("feGenerated").getAsDouble());
+														_blockEntity.getPersistentData().putDouble("feSpeed", itemOBJ.get("feSpeed").getAsDouble());
+														_blockEntity.getPersistentData().putDouble("cProgress", 0);
+													}
+													if (world instanceof Level _level)
+														_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+												}
 												canGenerate = true;
 												if (world instanceof ILevelExtension _ext && _ext.getCapability(Capabilities.ItemHandler.BLOCK, BlockPos.containing(x, y, z), null) instanceof IItemHandlerModifiable _itemHandlerModifiable) {
 													int _slotid = 0;
@@ -161,7 +296,12 @@ public class GeneratorTickHandlerProcedure {
 													_stk.shrink(1);
 													_itemHandlerModifiable.setStackInSlot(_slotid, _stk);
 												}
-												setBooleanBlockState(world, x, y, z, "on", true);
+												{
+													BlockPos _pos = BlockPos.containing(x, y, z);
+													BlockState _bs = world.getBlockState(_pos);
+													if (_bs.getBlock().getStateDefinition().getProperty("on") instanceof BooleanProperty _booleanProp)
+														world.setBlock(_pos, _bs.setValue(_booleanProp, true), 3);
+												}
 											}
 											break;
 										}
@@ -169,14 +309,24 @@ public class GeneratorTickHandlerProcedure {
 									}
 								}
 								if ((getBlockNBTString(world, BlockPos.containing(x, y, z), "currentItem")).equals("")) {
-									setBooleanBlockState(world, x, y, z, "on", false);
+									{
+										BlockPos _pos = BlockPos.containing(x, y, z);
+										BlockState _bs = world.getBlockState(_pos);
+										if (_bs.getBlock().getStateDefinition().getProperty("on") instanceof BooleanProperty _booleanProp)
+											world.setBlock(_pos, _bs.setValue(_booleanProp, false), 3);
+									}
 								}
 							} catch (IOException e) {
 								e.printStackTrace();
 							}
 						}
 					} else {
-						setBooleanBlockState(world, x, y, z, "on", false);
+						{
+							BlockPos _pos = BlockPos.containing(x, y, z);
+							BlockState _bs = world.getBlockState(_pos);
+							if (_bs.getBlock().getStateDefinition().getProperty("on") instanceof BooleanProperty _booleanProp)
+								world.setBlock(_pos, _bs.setValue(_booleanProp, false), 3);
+						}
 					}
 				} else {
 					canGenerate = true;
@@ -185,21 +335,66 @@ public class GeneratorTickHandlerProcedure {
 					canGenerate = false;
 				}
 				if (player.getData(EuruModVariables.PLAYER_VARIABLES).playerGP_Total < player.getData(EuruModVariables.PLAYER_VARIABLES).playerGP_Used && !player.getData(EuruModVariables.PLAYER_VARIABLES).playerGPChecking) {
-					setBlockNBTLogic(world, x, y, z, "tmGP", true);
-					setBlockNBTNumber(world, x, y, z, "oldGPTotal", player.getData(EuruModVariables.PLAYER_VARIABLES).playerGP_Total);
-					setBlockNBTNumber(world, x, y, z, "oldGPUsed", player.getData(EuruModVariables.PLAYER_VARIABLES).playerGP_Used);
+					if (!world.isClientSide()) {
+						BlockPos _bp = BlockPos.containing(x, y, z);
+						BlockEntity _blockEntity = world.getBlockEntity(_bp);
+						BlockState _bs = world.getBlockState(_bp);
+						if (_blockEntity != null) {
+							_blockEntity.getPersistentData().putBoolean("tmGP", true);
+							_blockEntity.getPersistentData().putDouble("oldGPTotal", player.getData(EuruModVariables.PLAYER_VARIABLES).playerGP_Total);
+							_blockEntity.getPersistentData().putDouble("oldGPUsed", player.getData(EuruModVariables.PLAYER_VARIABLES).playerGP_Used);
+						}
+						if (world instanceof Level _level)
+							_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+					}
 					canGenerate = false;
 				} else if (!player.getData(EuruModVariables.PLAYER_VARIABLES).playerGPChecking) {
-					setBlockNBTNumber(world, x, y, z, "oldGPUsed", player.getData(EuruModVariables.PLAYER_VARIABLES).playerGP_Used);
-					setBlockNBTNumber(world, x, y, z, "oldGPTotal", player.getData(EuruModVariables.PLAYER_VARIABLES).playerGP_Total);
+					if (!world.isClientSide()) {
+						BlockPos _bp = BlockPos.containing(x, y, z);
+						BlockEntity _blockEntity = world.getBlockEntity(_bp);
+						BlockState _bs = world.getBlockState(_bp);
+						if (_blockEntity != null) {
+							_blockEntity.getPersistentData().putDouble("oldGPUsed", player.getData(EuruModVariables.PLAYER_VARIABLES).playerGP_Used);
+							_blockEntity.getPersistentData().putDouble("oldGPTotal", player.getData(EuruModVariables.PLAYER_VARIABLES).playerGP_Total);
+						}
+						if (world instanceof Level _level)
+							_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+					}
 				} else if (player.getData(EuruModVariables.PLAYER_VARIABLES).playerGP_Total >= player.getData(EuruModVariables.PLAYER_VARIABLES).playerGP_Used && !player.getData(EuruModVariables.PLAYER_VARIABLES).playerGPChecking) {
-					setBlockNBTLogic(world, x, y, z, "tmGP", false);
+					if (!world.isClientSide()) {
+						BlockPos _bp = BlockPos.containing(x, y, z);
+						BlockEntity _blockEntity = world.getBlockEntity(_bp);
+						BlockState _bs = world.getBlockState(_bp);
+						if (_blockEntity != null) {
+							_blockEntity.getPersistentData().putBoolean("tmGP", false);
+						}
+						if (world instanceof Level _level)
+							_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+					}
 				}
 				if (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "oldGPTotal") < getBlockNBTNumber(world, BlockPos.containing(x, y, z), "oldGPUsed") && player.getData(EuruModVariables.PLAYER_VARIABLES).playerGPChecking) {
-					setBlockNBTLogic(world, x, y, z, "tmGP", true);
+					if (!world.isClientSide()) {
+						BlockPos _bp = BlockPos.containing(x, y, z);
+						BlockEntity _blockEntity = world.getBlockEntity(_bp);
+						BlockState _bs = world.getBlockState(_bp);
+						if (_blockEntity != null) {
+							_blockEntity.getPersistentData().putBoolean("tmGP", true);
+						}
+						if (world instanceof Level _level)
+							_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+					}
 					canGenerate = false;
 				} else if (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "oldGPTotal") >= getBlockNBTNumber(world, BlockPos.containing(x, y, z), "oldGPUsed") && player.getData(EuruModVariables.PLAYER_VARIABLES).playerGPChecking) {
-					setBlockNBTLogic(world, x, y, z, "tmGP", false);
+					if (!world.isClientSide()) {
+						BlockPos _bp = BlockPos.containing(x, y, z);
+						BlockEntity _blockEntity = world.getBlockEntity(_bp);
+						BlockState _bs = world.getBlockState(_bp);
+						if (_blockEntity != null) {
+							_blockEntity.getPersistentData().putBoolean("tmGP", false);
+						}
+						if (world instanceof Level _level)
+							_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+					}
 				}
 				if (canGenerate) {
 					feSpeed = getBlockNBTNumber(world, BlockPos.containing(x, y, z), "feSpeed") * mult;
@@ -220,9 +415,27 @@ public class GeneratorTickHandlerProcedure {
 					if (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "wait_time") > getBlockNBTNumber(world, BlockPos.containing(x, y, z), "cProgress")) {
 						if (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "cProgress") + feSpeed > getBlockNBTNumber(world, BlockPos.containing(x, y, z), "wait_time")) {
 							feSpeed = getBlockNBTNumber(world, BlockPos.containing(x, y, z), "wait_time") - getBlockNBTNumber(world, BlockPos.containing(x, y, z), "cProgress");
-							setBlockNBTNumber(world, x, y, z, "cProgress", (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "wait_time")));
+							if (!world.isClientSide()) {
+								BlockPos _bp = BlockPos.containing(x, y, z);
+								BlockEntity _blockEntity = world.getBlockEntity(_bp);
+								BlockState _bs = world.getBlockState(_bp);
+								if (_blockEntity != null) {
+									_blockEntity.getPersistentData().putDouble("cProgress", (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "wait_time")));
+								}
+								if (world instanceof Level _level)
+									_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+							}
 						} else {
-							setBlockNBTNumber(world, x, y, z, "cProgress", (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "cProgress") + feSpeed));
+							if (!world.isClientSide()) {
+								BlockPos _bp = BlockPos.containing(x, y, z);
+								BlockEntity _blockEntity = world.getBlockEntity(_bp);
+								BlockState _bs = world.getBlockState(_bp);
+								if (_blockEntity != null) {
+									_blockEntity.getPersistentData().putDouble("cProgress", (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "cProgress") + feSpeed));
+								}
+								if (world instanceof Level _level)
+									_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+							}
 						}
 						SpecialGenFeatureProcedure.execute(world, x, y, z, BuiltInRegistries.ITEM.getKey((new ItemStack((world.getBlockState(BlockPos.containing(x, y, z))).getBlock())).getItem()).toString());
 						if (world.getBlockEntity(new BlockPos((int) x, (int) y, (int) z)) instanceof IEnergyReceiver be) {
@@ -231,15 +444,33 @@ public class GeneratorTickHandlerProcedure {
 					}
 				} else if (canSlowBurn) {
 					if (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "wait_time") > getBlockNBTNumber(world, BlockPos.containing(x, y, z), "cProgress")) {
-						setBlockNBTNumber(world, x, y, z, "cProgress", (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "cProgress") + feSpeed / 32));
+						if (!world.isClientSide()) {
+							BlockPos _bp = BlockPos.containing(x, y, z);
+							BlockEntity _blockEntity = world.getBlockEntity(_bp);
+							BlockState _bs = world.getBlockState(_bp);
+							if (_blockEntity != null) {
+								_blockEntity.getPersistentData().putDouble("cProgress", (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "cProgress") + feSpeed / 32));
+							}
+							if (world instanceof Level _level)
+								_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+						}
 					}
 				}
 				if (canGenerate || canSlowBurn) {
 					if (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "wait_time") <= getBlockNBTNumber(world, BlockPos.containing(x, y, z), "cProgress")) {
-						setBlockNBTNumber(world, x, y, z, "cProgress", 0);
-						setBlockNBTNumber(world, x, y, z, "wait_time", 0);
-						setBlockNBTNumber(world, x, y, z, "feSpeed", 0);
-						setBlockNBTText(world, x, y, z, "currentItem", "");
+						if (!world.isClientSide()) {
+							BlockPos _bp = BlockPos.containing(x, y, z);
+							BlockEntity _blockEntity = world.getBlockEntity(_bp);
+							BlockState _bs = world.getBlockState(_bp);
+							if (_blockEntity != null) {
+								_blockEntity.getPersistentData().putDouble("cProgress", 0);
+								_blockEntity.getPersistentData().putDouble("wait_time", 0);
+								_blockEntity.getPersistentData().putDouble("feSpeed", 0);
+								_blockEntity.getPersistentData().putString("currentItem", "");
+							}
+							if (world instanceof Level _level)
+								_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+						}
 					}
 				}
 			}
@@ -251,20 +482,51 @@ public class GeneratorTickHandlerProcedure {
 				}
 			}
 			if (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "wait_time") == 0) {
-				if (getBooleanFromBlockState(blockstate, "on")) {
+				if (getPropertyByName(blockstate, "on") instanceof BooleanProperty _getbp134 && blockstate.getValue(_getbp134)) {
 					if (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "offCounter") > 2) {
-						setBlockNBTNumber(world, x, y, z, "offCounter", 0);
-						setBooleanBlockState(world, x, y, z, "on", false);
+						if (!world.isClientSide()) {
+							BlockPos _bp = BlockPos.containing(x, y, z);
+							BlockEntity _blockEntity = world.getBlockEntity(_bp);
+							BlockState _bs = world.getBlockState(_bp);
+							if (_blockEntity != null) {
+								_blockEntity.getPersistentData().putDouble("offCounter", 0);
+							}
+							if (world instanceof Level _level)
+								_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+						}
+						{
+							BlockPos _pos = BlockPos.containing(x, y, z);
+							BlockState _bs = world.getBlockState(_pos);
+							if (_bs.getBlock().getStateDefinition().getProperty("on") instanceof BooleanProperty _booleanProp)
+								world.setBlock(_pos, _bs.setValue(_booleanProp, false), 3);
+						}
 					} else {
-						setBlockNBTNumber(world, x, y, z, "offCounter", (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "offCounter") + 1));
+						if (!world.isClientSide()) {
+							BlockPos _bp = BlockPos.containing(x, y, z);
+							BlockEntity _blockEntity = world.getBlockEntity(_bp);
+							BlockState _bs = world.getBlockState(_bp);
+							if (_blockEntity != null) {
+								_blockEntity.getPersistentData().putDouble("offCounter", (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "offCounter") + 1));
+							}
+							if (world instanceof Level _level)
+								_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+						}
 					}
 				}
 			} else {
 				if (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "offCounter") > 0) {
-					setBlockNBTNumber(world, x, y, z, "offCounter", 0);
+					if (!world.isClientSide()) {
+						BlockPos _bp = BlockPos.containing(x, y, z);
+						BlockEntity _blockEntity = world.getBlockEntity(_bp);
+						BlockState _bs = world.getBlockState(_bp);
+						if (_blockEntity != null) {
+							_blockEntity.getPersistentData().putDouble("offCounter", 0);
+						}
+						if (world instanceof Level _level)
+							_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+					}
 				}
-			} // energyHandling
-			//
+			}
 			for (Direction directioniterator : Direction.values()) {
 				oX = x + directioniterator.getStepX();
 				oY = y + directioniterator.getStepY();
@@ -290,7 +552,7 @@ public class GeneratorTickHandlerProcedure {
 					} else {
 						canSendEnergy = true;
 					}
-					if (canSendEnergy) {// group
+					if (canSendEnergy) {
 						loopdiloop = true;
 						cSendNum = sentSouth;
 						while (loopdiloop) {
@@ -341,20 +603,6 @@ public class GeneratorTickHandlerProcedure {
 		return -1;
 	}
 
-	private static void setBlockNBTLogic(LevelAccessor world, double x, double y, double z, String tag, boolean value) {
-		if (!world.isClientSide()) {
-			BlockPos pos = BlockPos.containing(x, y, z);
-			BlockEntity blockEntity = world.getBlockEntity(pos);
-			BlockState blockState = world.getBlockState(pos);
-			if (blockEntity != null) {
-				blockEntity.getPersistentData().putBoolean(tag, value);
-			}
-			if (world instanceof Level level) {
-				level.sendBlockUpdated(pos, blockState, blockState, 3);
-			}
-		}
-	}
-
 	private static ItemStack itemFromBlockInventory(LevelAccessor world, BlockPos pos, int slot) {
 		if (world instanceof ILevelExtension ext) {
 			IItemHandler itemHandler = ext.getCapability(Capabilities.ItemHandler.BLOCK, pos, null);
@@ -364,47 +612,11 @@ public class GeneratorTickHandlerProcedure {
 		return ItemStack.EMPTY;
 	}
 
-	private static void setBlockNBTNumber(LevelAccessor world, double x, double y, double z, String tag, double value) {
-		if (!world.isClientSide()) {
-			BlockPos pos = BlockPos.containing(x, y, z);
-			BlockEntity blockEntity = world.getBlockEntity(pos);
-			BlockState blockState = world.getBlockState(pos);
-			if (blockEntity != null) {
-				blockEntity.getPersistentData().putDouble(tag, value);
-			}
-			if (world instanceof Level level) {
-				level.sendBlockUpdated(pos, blockState, blockState, 3);
-			}
-		}
-	}
-
 	private static boolean getBlockNBTLogic(LevelAccessor world, BlockPos pos, String tag) {
 		BlockEntity blockEntity = world.getBlockEntity(pos);
 		if (blockEntity != null)
 			return blockEntity.getPersistentData().getBoolean(tag);
 		return false;
-	}
-
-	private static void setBlockNBTText(LevelAccessor world, double x, double y, double z, String tag, String value) {
-		if (!world.isClientSide()) {
-			BlockPos pos = BlockPos.containing(x, y, z);
-			BlockEntity blockEntity = world.getBlockEntity(pos);
-			BlockState blockState = world.getBlockState(pos);
-			if (blockEntity != null) {
-				blockEntity.getPersistentData().putString(tag, value);
-			}
-			if (world instanceof Level level) {
-				level.sendBlockUpdated(pos, blockState, blockState, 3);
-			}
-		}
-	}
-
-	private static void setBooleanBlockState(LevelAccessor world, double x, double y, double z, String property, boolean value) {
-		BlockPos pos = BlockPos.containing(x, y, z);
-		BlockState state = world.getBlockState(pos);
-		if (state.getBlock().getStateDefinition().getProperty(property) instanceof BooleanProperty booleanProperty) {
-			world.setBlock(pos, state.setValue(booleanProperty, value), 3);
-		}
 	}
 
 	public static int getEnergyStored(LevelAccessor level, BlockPos pos, Direction direction) {
@@ -425,9 +637,13 @@ public class GeneratorTickHandlerProcedure {
 		return 0;
 	}
 
-	private static boolean getBooleanFromBlockState(BlockState blockState, String property) {
-		Property<?> prop = blockState.getBlock().getStateDefinition().getProperty(property);
-		return prop instanceof BooleanProperty bp && blockState.getValue(bp);
+	private static Property<?> getPropertyByName(BlockState state, String name) {
+		for (Property<?> property : state.getProperties()) {
+			if (property.getName().equals(name)) {
+				return property;
+			}
+		}
+		return null;
 	}
 
 	private static int receiveEnergySimulate(LevelAccessor level, BlockPos pos, int amount, Direction direction) {

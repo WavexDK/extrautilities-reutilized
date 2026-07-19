@@ -14,7 +14,9 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.chat.Component;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.gui.components.WidgetSprites;
+import net.minecraft.client.gui.components.PlainTextButton;
 import net.minecraft.client.gui.components.ImageButton;
+import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.GuiGraphics;
 
 import java.util.stream.Collectors;
@@ -27,6 +29,8 @@ public class EGenGUIScreen extends AbstractContainerScreen<EGenGUIMenu> implemen
 	private final int x, y, z;
 	private final Player entity;
 	private boolean menuStateUpdateActive = false;
+	private Button button_empty;
+	private Button button_empty1;
 	private ImageButton imagebutton_blank_x20;
 	private static final ResourceLocation BACKGROUND = ResourceLocation.parse("euru:textures/screens/e_gen_gui.png");
 	private static final ResourceLocation IMAGE_0 = ResourceLocation.parse("euru:textures/screens/arrow-empty.png");
@@ -90,11 +94,13 @@ public class EGenGUIScreen extends AbstractContainerScreen<EGenGUIMenu> implemen
 			}
 			customTooltipShown = true;
 		}
-		if (TooMuchGPProcedure.execute(world, x, y, z))
-			if (mouseX > leftPos + 89 && mouseX < leftPos + 113 && mouseY > topPos + 31 && mouseY < topPos + 55) {
-				guiGraphics.renderTooltip(font, Component.translatable("gui.euru.e_gen_gui.tooltip_not_enough_grid_power_available"), mouseX, mouseY);
-				customTooltipShown = true;
+		if (mouseX > leftPos + 89 && mouseX < leftPos + 113 && mouseY > topPos + 31 && mouseY < topPos + 55) {
+			String hoverText = NEGPAProcedureProcedure.execute(world, x, y, z);
+			if (hoverText != null) {
+				guiGraphics.renderComponentTooltip(font, Arrays.stream(hoverText.split("\n")).map(Component::literal).collect(Collectors.toList()), mouseX, mouseY);
 			}
+			customTooltipShown = true;
+		}
 		if (SUTooltipGenProcedure.execute(world, x, y, z))
 			if (mouseX > leftPos + 2 && mouseX < leftPos + 26 && mouseY > topPos + 38 && mouseY < topPos + 62) {
 				guiGraphics.renderTooltip(font, Component.translatable("gui.euru.e_gen_gui.tooltip_speed_upgrade"), mouseX, mouseY);
@@ -231,13 +237,31 @@ public class EGenGUIScreen extends AbstractContainerScreen<EGenGUIMenu> implemen
 	@Override
 	public void init() {
 		super.init();
+		button_empty = new PlainTextButton(this.leftPos + 89, this.topPos + 31, 24, 20, Component.translatable("gui.euru.e_gen_gui.button_empty"), e -> {
+			int x = EGenGUIScreen.this.x;
+			int y = EGenGUIScreen.this.y;
+			if (true) {
+				PacketDistributor.sendToServer(new EGenGUIButtonMessage(0, x, y, z));
+				EGenGUIButtonMessage.handleButtonAction(entity, 0, x, y, z);
+			}
+		}, this.font);
+		this.addRenderableWidget(button_empty);
+		button_empty1 = new PlainTextButton(this.leftPos + 89, this.topPos + 35, 24, 20, Component.translatable("gui.euru.e_gen_gui.button_empty1"), e -> {
+			int x = EGenGUIScreen.this.x;
+			int y = EGenGUIScreen.this.y;
+			if (true) {
+				PacketDistributor.sendToServer(new EGenGUIButtonMessage(1, x, y, z));
+				EGenGUIButtonMessage.handleButtonAction(entity, 1, x, y, z);
+			}
+		}, this.font);
+		this.addRenderableWidget(button_empty1);
 		imagebutton_blank_x20 = new ImageButton(this.leftPos + 4, this.topPos + 16, 20, 20, new WidgetSprites(ResourceLocation.parse("euru:textures/screens/blank_x20.png"), ResourceLocation.parse("euru:textures/screens/blank_whiteborder_x20.png")),
 				e -> {
 					int x = EGenGUIScreen.this.x;
 					int y = EGenGUIScreen.this.y;
 					if (true) {
-						PacketDistributor.sendToServer(new EGenGUIButtonMessage(0, x, y, z));
-						EGenGUIButtonMessage.handleButtonAction(entity, 0, x, y, z);
+						PacketDistributor.sendToServer(new EGenGUIButtonMessage(2, x, y, z));
+						EGenGUIButtonMessage.handleButtonAction(entity, 2, x, y, z);
 					}
 				}) {
 			@Override

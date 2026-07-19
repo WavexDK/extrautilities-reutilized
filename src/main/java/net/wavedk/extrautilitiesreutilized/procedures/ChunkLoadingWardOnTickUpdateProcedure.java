@@ -43,9 +43,27 @@ public class ChunkLoadingWardOnTickUpdateProcedure {
 		if (!player.getData(EuruModVariables.PLAYER_VARIABLES).playerGPChecking) {
 			if (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "tickCounter") > 29) {
 				canPass = true;
-				setBlockNBTNumber(world, x, y, z, "tickCounter", 0);
+				if (!world.isClientSide()) {
+					BlockPos _bp = BlockPos.containing(x, y, z);
+					BlockEntity _blockEntity = world.getBlockEntity(_bp);
+					BlockState _bs = world.getBlockState(_bp);
+					if (_blockEntity != null) {
+						_blockEntity.getPersistentData().putDouble("tickCounter", 0);
+					}
+					if (world instanceof Level _level)
+						_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+				}
 			} else {
-				setBlockNBTNumber(world, x, y, z, "tickCounter", (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "tickCounter") + 1));
+				if (!world.isClientSide()) {
+					BlockPos _bp = BlockPos.containing(x, y, z);
+					BlockEntity _blockEntity = world.getBlockEntity(_bp);
+					BlockState _bs = world.getBlockState(_bp);
+					if (_blockEntity != null) {
+						_blockEntity.getPersistentData().putDouble("tickCounter", (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "tickCounter") + 1));
+					}
+					if (world instanceof Level _level)
+						_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+				}
 			}
 		}
 		if (canPass) {
@@ -54,7 +72,16 @@ public class ChunkLoadingWardOnTickUpdateProcedure {
 					if (world instanceof ServerLevel _level)
 						_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
 								("forceload add " + (("" + x).substring(0, ("" + x).indexOf(".", 0)) + " ") + ("" + z).substring(0, ("" + z).indexOf(".", 0))));
-					setBlockNBTLogic(world, x, y, z, "chunkLoaded", true);
+					if (!world.isClientSide()) {
+						BlockPos _bp = BlockPos.containing(x, y, z);
+						BlockEntity _blockEntity = world.getBlockEntity(_bp);
+						BlockState _bs = world.getBlockState(_bp);
+						if (_blockEntity != null) {
+							_blockEntity.getPersistentData().putBoolean("chunkLoaded", true);
+						}
+						if (world instanceof Level _level)
+							_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+					}
 				}
 			} else {
 				if (!player.getData(EuruModVariables.PLAYER_VARIABLES).playerGPChecking) {
@@ -62,7 +89,16 @@ public class ChunkLoadingWardOnTickUpdateProcedure {
 						if (world instanceof ServerLevel _level)
 							_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
 									("forceload remove " + (("" + x).substring(0, ("" + x).indexOf(".", 0)) + " ") + ("" + z).substring(0, ("" + z).indexOf(".", 0))));
-						setBlockNBTLogic(world, x, y, z, "chunkLoaded", false);
+						if (!world.isClientSide()) {
+							BlockPos _bp = BlockPos.containing(x, y, z);
+							BlockEntity _blockEntity = world.getBlockEntity(_bp);
+							BlockState _bs = world.getBlockState(_bp);
+							if (_blockEntity != null) {
+								_blockEntity.getPersistentData().putBoolean("chunkLoaded", false);
+							}
+							if (world instanceof Level _level)
+								_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+						}
 					} else if ((executeCommandGetResult(world, new Vec3(x, y, z), ("forceload query " + (("" + x).substring(0, ("" + x).indexOf(".", 0)) + " ") + ("" + z).substring(0, ("" + z).indexOf(".", 0)))))
 							.contains("is not marked for force loading")) {
 						if (world instanceof ServerLevel _level)
@@ -103,39 +139,11 @@ public class ChunkLoadingWardOnTickUpdateProcedure {
 		return -1;
 	}
 
-	private static void setBlockNBTNumber(LevelAccessor world, double x, double y, double z, String tag, double value) {
-		if (!world.isClientSide()) {
-			BlockPos pos = BlockPos.containing(x, y, z);
-			BlockEntity blockEntity = world.getBlockEntity(pos);
-			BlockState blockState = world.getBlockState(pos);
-			if (blockEntity != null) {
-				blockEntity.getPersistentData().putDouble(tag, value);
-			}
-			if (world instanceof Level level) {
-				level.sendBlockUpdated(pos, blockState, blockState, 3);
-			}
-		}
-	}
-
 	private static boolean getBlockNBTLogic(LevelAccessor world, BlockPos pos, String tag) {
 		BlockEntity blockEntity = world.getBlockEntity(pos);
 		if (blockEntity != null)
 			return blockEntity.getPersistentData().getBoolean(tag);
 		return false;
-	}
-
-	private static void setBlockNBTLogic(LevelAccessor world, double x, double y, double z, String tag, boolean value) {
-		if (!world.isClientSide()) {
-			BlockPos pos = BlockPos.containing(x, y, z);
-			BlockEntity blockEntity = world.getBlockEntity(pos);
-			BlockState blockState = world.getBlockState(pos);
-			if (blockEntity != null) {
-				blockEntity.getPersistentData().putBoolean(tag, value);
-			}
-			if (world instanceof Level level) {
-				level.sendBlockUpdated(pos, blockState, blockState, 3);
-			}
-		}
 	}
 
 	private static String executeCommandGetResult(LevelAccessor world, Vec3 pos, String command) {
