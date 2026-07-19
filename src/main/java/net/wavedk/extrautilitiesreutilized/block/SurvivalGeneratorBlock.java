@@ -2,8 +2,8 @@ package net.wavedk.extrautilitiesreutilized.block;
 
 import net.wavedk.extrautilitiesreutilized.world.inventory.SGenGUIMenu;
 import net.wavedk.extrautilitiesreutilized.procedures.SGenAddedHandlerProcedure;
-import net.wavedk.extrautilitiesreutilized.procedures.NetherstarGeneratorLuminanceProcedure;
 import net.wavedk.extrautilitiesreutilized.procedures.GeneratorTickHandlerProcedure;
+import net.wavedk.extrautilitiesreutilized.procedures.GeneratorLuminanceProcedure;
 import net.wavedk.extrautilitiesreutilized.block.entity.SurvivalGeneratorBlockEntity;
 
 import net.minecraft.world.phys.BlockHitResult;
@@ -44,7 +44,7 @@ public class SurvivalGeneratorBlock extends Block implements EntityBlock {
 	public static final BooleanProperty ON = BooleanProperty.create("on");
 
 	public SurvivalGeneratorBlock() {
-		super(BlockBehaviour.Properties.of().strength(2f, 10f).lightLevel(blockstate -> (int) NetherstarGeneratorLuminanceProcedure.execute(blockstate)).requiresCorrectToolForDrops().instrument(NoteBlockInstrument.BASEDRUM));
+		super(BlockBehaviour.Properties.of().strength(2f, 10f).lightLevel(blockstate -> (int) GeneratorLuminanceProcedure.execute(blockstate)).requiresCorrectToolForDrops().instrument(NoteBlockInstrument.BASEDRUM));
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(ON, false));
 	}
 

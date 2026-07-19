@@ -135,7 +135,7 @@
     "stepSound": "",
     "luminance": {
       "fixedValue": 0.0,
-      "name": "NetherstarGeneratorLuminance"
+      "name": "GeneratorLuminance"
     },
     "unbreakable": false,
     "vanillaToolTier": "NONE",

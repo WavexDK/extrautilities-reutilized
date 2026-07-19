@@ -44,6 +44,7 @@ public class GeneratorTickHandlerProcedure {
 		File feConfig = new File("");
 		com.google.gson.JsonArray fuelList = new com.google.gson.JsonArray();
 		String currentItem = "";
+		String getDependencies = "";
 		com.google.gson.JsonObject configOBJ = new com.google.gson.JsonObject();
 		com.google.gson.JsonObject fuelPropertiesOBJ = new com.google.gson.JsonObject();
 		com.google.gson.JsonObject itemOBJ = new com.google.gson.JsonObject();
@@ -253,7 +254,7 @@ public class GeneratorTickHandlerProcedure {
 								fuelList = blockOBJ.get("listFuel").getAsJsonArray();
 								cNum = 0;
 								if (!fuelList.isEmpty()) {
-									for (int index15 = 0; index15 < (int) fuelList.size(); index15++) {
+									for (int index90 = 0; index90 < (int) fuelList.size(); index90++) {
 										if ((fuelList.get((int) cNum).getAsString()).equals(BuiltInRegistries.ITEM.getKey((itemFromBlockInventory(world, BlockPos.containing(x, y, z), 0).copy()).getItem()).toString())
 												|| (itemFromBlockInventory(world, BlockPos.containing(x, y, z), 0).copy()).is(ItemTags.create(ResourceLocation.parse((fuelList.get((int) cNum).getAsString()).toLowerCase(java.util.Locale.ENGLISH))))) {
 											if (player.getData(EuruModVariables.PLAYER_VARIABLES).playerGP_Total >= player.getData(EuruModVariables.PLAYER_VARIABLES).playerGP_Used

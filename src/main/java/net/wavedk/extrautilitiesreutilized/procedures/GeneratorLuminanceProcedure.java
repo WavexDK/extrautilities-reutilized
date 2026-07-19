@@ -4,7 +4,7 @@ import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class NetherstarGeneratorLuminanceProcedure {
+public class GeneratorLuminanceProcedure {
 	public static double execute(BlockState blockstate) {
 		if (getPropertyByName(blockstate, "on") instanceof BooleanProperty _getbp1 && blockstate.getValue(_getbp1)) {
 			return 10;

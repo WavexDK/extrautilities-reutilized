@@ -1,6 +1,6 @@
 package net.wavedk.extrautilitiesreutilized.network;
 
-import net.wavedk.extrautilitiesreutilized.procedures.RedstoneGearRightclickedProcedure;
+import net.wavedk.extrautilitiesreutilized.procedures.OpenCraftingBlockJEIProcedure;
 import net.wavedk.extrautilitiesreutilized.procedures.ChangeRedstoneModeProcedure;
 import net.wavedk.extrautilitiesreutilized.EuruMod;
 
@@ -50,11 +50,11 @@ public record EGenGUIButtonMessage(int buttonID, int x, int y, int z) implements
 			return;
 		if (buttonID == 0) {
 
-			RedstoneGearRightclickedProcedure.execute(world, x, y, z, entity);
+			OpenCraftingBlockJEIProcedure.execute(world, x, y, z, entity);
 		}
 		if (buttonID == 1) {
 
-			RedstoneGearRightclickedProcedure.execute(world, x, y, z, entity);
+			OpenCraftingBlockJEIProcedure.execute(world, x, y, z, entity);
 		}
 		if (buttonID == 2) {
 

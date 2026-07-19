@@ -7123,61 +7123,6 @@
       "path": "~/Blocks/Generators/FE/Procedures"
     },
     {
-      "name": "NetherstarGeneratorLuminance",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "netherstar_generator_luminance",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "blockstate",
-            "type": "blockstate"
-          }
-        ],
-        "return_type": "number",
-        "files": [
-          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/NetherstarGeneratorLuminanceProcedure.java"
-        ]
-      },
-      "path": "~/Blocks/Generators/FE/Procedures"
-    },
-    {
-      "name": "RedstoneGearRightclicked",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "redstone_gear_rightclicked",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ],
-        "files": [
-          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/RedstoneGearRightclickedProcedure.java"
-        ]
-      },
-      "path": "~/Items"
-    },
-    {
       "name": "NEGPAProcedure",
       "type": "procedure",
       "compiles": true,
@@ -7237,11 +7182,11 @@
       "path": "~/Blocks/Generators/FE/JEI/Recipes/NSGen"
     },
     {
-      "name": "GlassCutterRightclicked",
+      "name": "OpenCraftingBlockJEI",
       "type": "procedure",
       "compiles": true,
       "locked_code": false,
-      "registry_name": "glass_cutter_rightclicked",
+      "registry_name": "open_crafting_block_jei",
       "metadata": {
         "dependencies": [
           {
@@ -7249,15 +7194,47 @@
             "type": "entity"
           },
           {
-            "name": "itemstack",
-            "type": "itemstack"
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ],
         "files": [
-          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/GlassCutterRightclickedProcedure.java"
+          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/OpenCraftingBlockJEIProcedure.java"
         ]
       },
       "path": "~/Items"
+    },
+    {
+      "name": "GeneratorLuminance",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "generator_luminance",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "blockstate",
+            "type": "blockstate"
+          }
+        ],
+        "return_type": "number",
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/GeneratorLuminanceProcedure.java"
+        ]
+      },
+      "path": "~/Blocks/Generators/FE/Procedures"
     }
   ],
   "variable_elements": [
@@ -7464,14 +7441,15 @@
   "tag_elements": {
     "BLOCKS:minecraft:mineable/pickaxe": [
       "~NetherstarGenerator@CUSTOM:NetherstarGenerator",
-      "~Crusher@CUSTOM:Crusher",
       "~OverclockedGenerator@CUSTOM:OverclockedGenerator",
-      "~CreativeEnergySource@CUSTOM:CreativeEnergySource",
       "~EnderGenerator@CUSTOM:EnderGenerator",
+      "~FurnaceGenerator@CUSTOM:FurnaceGenerator",
+      "~SurvivalGenerator@CUSTOM:SurvivalGenerator",
+      "~Crusher@CUSTOM:Crusher",
+      "~CreativeEnergySource@CUSTOM:CreativeEnergySource",
       "~ElectricFurnace@CUSTOM:ElectricFurnace",
       "~CreativeMill@CUSTOM:CreativeMill",
       "~BlockOfEvilInfusedIngot@CUSTOM:BlockOfEvilInfusedIngot",
-      "~FurnaceGenerator@CUSTOM:FurnaceGenerator",
       "~Enchanter@CUSTOM:Enchanter",
       "~FireMill@CUSTOM:FireMill",
       "~StoneBurnt@CUSTOM:StoneBurnt",
@@ -7487,7 +7465,6 @@
       "~CompressedCobblestone@CUSTOM:CompressedCobblestone",
       "~AngelBlock@CUSTOM:AngelBlock",
       "~GildedObsidian@CUSTOM:GildedObsidian",
-      "~SurvivalGenerator@CUSTOM:SurvivalGenerator",
       "~MachineBlock@CUSTOM:MachineBlock",
       "~Resonator@CUSTOM:Resonator",
       "~LunarPanel@CUSTOM:LunarPanel",
@@ -7514,9 +7491,6 @@
       "~LunarPanel@CUSTOM:LunarPanel",
       "~SolarPanel@CUSTOM:SolarPanel"
     ],
-    "ITEMS:minecraft:swords": [
-      "~GlassCutter@CUSTOM:GlassCutter"
-    ],
     "BLOCKS:minecraft:needs_diamond_tool": [
       "~CreativeEnergySource@CUSTOM:CreativeEnergySource",
       "~AngelBlock@CUSTOM:AngelBlock",
@@ -7527,6 +7501,9 @@
       "~SlightlyLargerChest@CUSTOM:SlightlyLargerChest",
       "~MiniChest@CUSTOM:MiniChest",
       "~ManualMill@CUSTOM:ManualMill"
+    ],
+    "ITEMS:minecraft:swords": [
+      "~GlassCutter@CUSTOM:GlassCutter"
     ]
   },
   "tab_element_order": {
