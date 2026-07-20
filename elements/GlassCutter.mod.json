@@ -31,7 +31,6 @@
     "blocksAffected": [],
     "attributeModifiers": [],
     "stayInGridWhenCrafting": true,
-    "damageOnCrafting": true,
-    "onRightClickedInAir": "GlassCutterRightclicked"
+    "damageOnCrafting": true
   }
 }

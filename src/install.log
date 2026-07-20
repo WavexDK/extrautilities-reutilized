@@ -1,0 +1,9 @@
+[01:20:36 2026-07-20] FETCHING Version 2.44.0
+[01:20:36 2026-07-20] DOWNLOADING https://github.com/spicetify/cli/releases/download/v2.44.0/spicetify-2.44.0-linux-amd64.tar.gz
+[01:20:37 2026-07-20] EXTRACTING /home/wave/.spicetify/spicetify.tar.gz
+[01:20:37 2026-07-20] SETTING EXECUTABLE PERMISSIONS TO /home/wave/.spicetify/spicetify
+[01:20:37 2026-07-20] REMOVING /home/wave/.spicetify/spicetify.tar.gz
+[01:20:37 2026-07-20] spicetify path already set in /home/wave/.bashrc, continuing...
+[01:20:37 2026-07-20] spicetify path already set in /home/wave/.bash_profile, continuing...
+[01:20:37 2026-07-20] spicetify v2.44.0 was installed successfully to /home/wave/.spicetify
+[01:20:37 2026-07-20] Run 'spicetify --help' to get started

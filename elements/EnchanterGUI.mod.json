@@ -398,7 +398,6 @@
             "fixedValue": "",
             "name": "ReturnEnchanterErrror"
           },
-          "displayCondition": "ErrorShow",
           "width": 24,
           "height": 24,
           "x": 199,
@@ -414,7 +413,6 @@
             "fixedValue": "",
             "name": "ReturnEnchanterErrror"
           },
-          "displayCondition": "ErrorShow",
           "width": 24,
           "height": 24,
           "x": 195,
@@ -430,7 +428,6 @@
             "fixedValue": "",
             "name": "ReturnEnchanterErrror"
           },
-          "displayCondition": "ErrorShow",
           "width": 24,
           "height": 24,
           "x": 241,
@@ -446,7 +443,6 @@
             "fixedValue": "",
             "name": "ReturnEnchanterErrror"
           },
-          "displayCondition": "ErrorShow",
           "width": 24,
           "height": 24,
           "x": 245,
@@ -523,6 +519,54 @@
           "dropItemsWhenNotBound": true,
           "x": 277,
           "y": 99,
+          "locked": false
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_blank_22x22",
+          "image": "blankx24.png",
+          "hoveredImage": "",
+          "onClick": "OpenCraftingBlockJEI",
+          "x": 195,
+          "y": 71,
+          "locked": false
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_blankx24",
+          "image": "blankx24.png",
+          "hoveredImage": "",
+          "onClick": "OpenCraftingBlockJEI",
+          "x": 199,
+          "y": 95,
+          "locked": false
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_blankx241",
+          "image": "blankx24.png",
+          "hoveredImage": "",
+          "onClick": "OpenCraftingBlockJEI",
+          "x": 241,
+          "y": 95,
+          "locked": false
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_blankx242",
+          "image": "blankx24.png",
+          "hoveredImage": "",
+          "onClick": "OpenCraftingBlockJEI",
+          "x": 245,
+          "y": 71,
           "locked": false
         }
       }

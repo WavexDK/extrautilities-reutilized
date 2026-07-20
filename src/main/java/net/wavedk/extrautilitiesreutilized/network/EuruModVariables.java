@@ -105,6 +105,7 @@ public class EuruModVariables {
 		clone.oldAB2 = original.oldAB2;
 		clone.oldAB1 = original.oldAB1;
 		clone.updateMultipliers = original.updateMultipliers;
+		clone.GPOverlay = original.GPOverlay;
 		if (!event.isWasDeath()) {
 		}
 		event.getEntity().setData(PLAYER_VARIABLES, clone);
@@ -295,6 +296,7 @@ public class EuruModVariables {
 		public String oldAB2 = "\"\"";
 		public String oldAB1 = "\"\"";
 		public boolean updateMultipliers = true;
+		public boolean GPOverlay = true;
 
 		@Override
 		public CompoundTag serializeNBT(HolderLookup.Provider lookupProvider) {
@@ -328,6 +330,7 @@ public class EuruModVariables {
 			nbt.putString("oldAB2", oldAB2);
 			nbt.putString("oldAB1", oldAB1);
 			nbt.putBoolean("updateMultipliers", updateMultipliers);
+			nbt.putBoolean("GPOverlay", GPOverlay);
 			return nbt;
 		}
 
@@ -362,6 +365,7 @@ public class EuruModVariables {
 			oldAB2 = nbt.getString("oldAB2");
 			oldAB1 = nbt.getString("oldAB1");
 			updateMultipliers = nbt.getBoolean("updateMultipliers");
+			GPOverlay = nbt.getBoolean("GPOverlay");
 		}
 
 		public void markSyncDirty() {

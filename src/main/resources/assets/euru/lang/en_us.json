@@ -174,5 +174,9 @@
   "gui.euru.o_gen_gui.button_empty": "",
   "gui.euru.o_gen_gui.button_empty1": "",
   "gui.euru.ns_gen_gui.button_empty1": "",
-  "gui.euru.ns_gen_gui.button_empty": ""
+  "gui.euru.ns_gen_gui.button_empty": "",
+  "block.euru.creative_mill.description_0": "§7Generates 9999.0GP, indefinitely.",
+  "gui.euru.resonator_gui.button_empty": "",
+  "gui.euru.resonator_gui.button_empty1": "",
+  "block.euru.muffler": "Muffler"
 }

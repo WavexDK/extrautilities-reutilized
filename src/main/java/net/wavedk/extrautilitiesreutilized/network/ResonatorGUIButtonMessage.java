@@ -1,5 +1,6 @@
 package net.wavedk.extrautilitiesreutilized.network;
 
+import net.wavedk.extrautilitiesreutilized.procedures.OpenCraftingBlockJEIProcedure;
 import net.wavedk.extrautilitiesreutilized.procedures.ChangeRedstoneModeProcedure;
 import net.wavedk.extrautilitiesreutilized.EuruMod;
 
@@ -48,6 +49,14 @@ public record ResonatorGUIButtonMessage(int buttonID, int x, int y, int z) imple
 		if (!world.getChunkSource().hasChunk(SectionPos.blockToSectionCoord(x), SectionPos.blockToSectionCoord(z)))
 			return;
 		if (buttonID == 0) {
+
+			OpenCraftingBlockJEIProcedure.execute(world, x, y, z, entity);
+		}
+		if (buttonID == 1) {
+
+			OpenCraftingBlockJEIProcedure.execute(world, x, y, z, entity);
+		}
+		if (buttonID == 2) {
 
 			ChangeRedstoneModeProcedure.execute(world, x, y, z);
 		}

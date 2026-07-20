@@ -33,7 +33,7 @@ public class EnchanterGUIMenu extends AbstractContainerMenu implements EuruModMe
 	public final Map<String, Object> menuState = new HashMap<>() {
 		@Override
 		public Object put(String key, Object value) {
-			if (!this.containsKey(key) && this.size() >= 41)
+			if (!this.containsKey(key) && this.size() >= 45)
 				return null;
 			return super.put(key, value);
 		}

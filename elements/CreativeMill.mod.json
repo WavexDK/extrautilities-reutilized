@@ -40,8 +40,9 @@
     "customProperties": [],
     "name": "Creative Mill",
     "specialInformation": {
-      "fixedValue": [],
-      "name": "ManualMillSpecialInformation"
+      "fixedValue": [
+        "§7Generates 9999.0GP, indefinitely."
+      ]
     },
     "hardness": 1.0,
     "resistance": 10.0,

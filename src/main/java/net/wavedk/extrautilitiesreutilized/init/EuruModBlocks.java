@@ -49,6 +49,7 @@ public class EuruModBlocks {
 	public static final DeferredBlock<Block> NETHERSTAR_GENERATOR;
 	public static final DeferredBlock<Block> ENDER_LILLY;
 	public static final DeferredBlock<Block> ENDER_LILLY_PLANT;
+	public static final DeferredBlock<Block> MUFFLER;
 	static {
 		SOLAR_PANEL = REGISTRY.register("solar_panel", SolarPanelBlock::new);
 		LUNAR_PANEL = REGISTRY.register("lunar_panel", LunarPanelBlock::new);
@@ -86,6 +87,7 @@ public class EuruModBlocks {
 		NETHERSTAR_GENERATOR = REGISTRY.register("netherstar_generator", NetherstarGeneratorBlock::new);
 		ENDER_LILLY = REGISTRY.register("ender_lilly", EnderLillyBlock::new);
 		ENDER_LILLY_PLANT = REGISTRY.register("ender_lilly_plant", EnderLillyPlantBlock::new);
+		MUFFLER = REGISTRY.register("muffler", MufflerBlock::new);
 	}
 	// Start of user code block custom blocks
 	// End of user code block custom blocks

@@ -254,7 +254,7 @@ public class GeneratorTickHandlerProcedure {
 								fuelList = blockOBJ.get("listFuel").getAsJsonArray();
 								cNum = 0;
 								if (!fuelList.isEmpty()) {
-									for (int index189 = 0; index189 < (int) fuelList.size(); index189++) {
+									for (int index15 = 0; index15 < (int) fuelList.size(); index15++) {
 										if ((fuelList.get((int) cNum).getAsString()).equals(BuiltInRegistries.ITEM.getKey((itemFromBlockInventory(world, BlockPos.containing(x, y, z), 0).copy()).getItem()).toString())
 												|| (itemFromBlockInventory(world, BlockPos.containing(x, y, z), 0).copy()).is(ItemTags.create(ResourceLocation.parse((fuelList.get((int) cNum).getAsString()).toLowerCase(java.util.Locale.ENGLISH))))) {
 											if (player.getData(EuruModVariables.PLAYER_VARIABLES).playerGP_Total >= player.getData(EuruModVariables.PLAYER_VARIABLES).playerGP_Used

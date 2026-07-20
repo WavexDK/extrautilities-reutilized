@@ -8,6 +8,7 @@ import net.wavedk.extrautilitiesreutilized.block.entity.CrusherBlockEntity;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -39,16 +40,17 @@ import io.netty.buffer.Unpooled;
 
 public class CrusherBlock extends Block implements EntityBlock {
 	public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
+	public static final BooleanProperty ON = BooleanProperty.create("on");
 
 	public CrusherBlock() {
 		super(BlockBehaviour.Properties.of().strength(4f, 12f).requiresCorrectToolForDrops().instrument(NoteBlockInstrument.BASEDRUM));
-		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
+		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(ON, false));
 	}
 
 	@Override
 	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
 		super.createBlockStateDefinition(builder);
-		builder.add(FACING);
+		builder.add(FACING, ON);
 	}
 
 	@Override
@@ -56,7 +58,7 @@ public class CrusherBlock extends Block implements EntityBlock {
 		BlockState state = super.getStateForPlacement(context);
 		if (state == null)
 			return null;
-		return state.setValue(FACING, context.getHorizontalDirection().getOpposite());
+		return state.setValue(FACING, context.getHorizontalDirection().getOpposite()).setValue(ON, false);
 	}
 
 	public BlockState rotate(BlockState state, Rotation rot) {
@@ -76,7 +78,7 @@ public class CrusherBlock extends Block implements EntityBlock {
 	@Override
 	public void tick(BlockState blockstate, ServerLevel world, BlockPos pos, RandomSource random) {
 		super.tick(blockstate, world, pos, random);
-		CrusherOnTickUpdateProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ());
+		CrusherOnTickUpdateProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ(), blockstate);
 		world.scheduleTick(pos, this, 1);
 	}
 

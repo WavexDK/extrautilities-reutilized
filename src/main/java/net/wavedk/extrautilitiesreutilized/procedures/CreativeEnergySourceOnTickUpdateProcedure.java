@@ -74,14 +74,14 @@ public class CreativeEnergySourceOnTickUpdateProcedure {
 				_entityStorage.receiveEnergy(receiveEnergySimulate(world, BlockPos.containing(x - 1, y, z), (int) testSend, Direction.EAST), false);
 		}
 		if (world instanceof ILevelExtension _ext) {
-			IEnergyStorage _entityStorage = _ext.getCapability(Capabilities.EnergyStorage.BLOCK, BlockPos.containing(x, y, z - 1), Direction.NORTH);
+			IEnergyStorage _entityStorage = _ext.getCapability(Capabilities.EnergyStorage.BLOCK, BlockPos.containing(x, y, z - 1), Direction.SOUTH);
 			if (_entityStorage != null)
-				_entityStorage.receiveEnergy(receiveEnergySimulate(world, BlockPos.containing(x, y, z - 1), (int) testSend, Direction.NORTH), false);
+				_entityStorage.receiveEnergy(receiveEnergySimulate(world, BlockPos.containing(x, y, z - 1), (int) testSend, Direction.SOUTH), false);
 		}
 		if (world instanceof ILevelExtension _ext) {
-			IEnergyStorage _entityStorage = _ext.getCapability(Capabilities.EnergyStorage.BLOCK, BlockPos.containing(x, y, z + 1), Direction.SOUTH);
+			IEnergyStorage _entityStorage = _ext.getCapability(Capabilities.EnergyStorage.BLOCK, BlockPos.containing(x, y, z + 1), Direction.NORTH);
 			if (_entityStorage != null)
-				_entityStorage.receiveEnergy(receiveEnergySimulate(world, BlockPos.containing(x, y, z + 1), (int) testSend, Direction.SOUTH), false);
+				_entityStorage.receiveEnergy(receiveEnergySimulate(world, BlockPos.containing(x, y, z + 1), (int) testSend, Direction.NORTH), false);
 		}
 		if (world instanceof ILevelExtension _ext) {
 			IEnergyStorage _entityStorage = _ext.getCapability(Capabilities.EnergyStorage.BLOCK, BlockPos.containing(x, y + 1, z), Direction.DOWN);

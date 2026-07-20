@@ -31,11 +31,11 @@ public class EuruModTabs {
 				tabData.accept(EuruModBlocks.ANGEL_BLOCK.get().asItem());
 				tabData.accept(EuruModBlocks.GILDED_OBSIDIAN.get().asItem());
 				tabData.accept(EuruModBlocks.STONE_BURNT.get().asItem());
+				tabData.accept(EuruModBlocks.CREATIVE_MILL.get().asItem());
 				tabData.accept(EuruModBlocks.WATER_MILL.get().asItem());
 				tabData.accept(EuruModBlocks.LAVA_MILL.get().asItem());
 				tabData.accept(EuruModBlocks.MANUAL_MILL.get().asItem());
 				tabData.accept(EuruModBlocks.FIRE_MILL.get().asItem());
-				tabData.accept(EuruModBlocks.CREATIVE_MILL.get().asItem());
 				tabData.accept(EuruModBlocks.ENCHANTER.get().asItem());
 				tabData.accept(EuruModBlocks.BLOCK_OF_EVIL_INFUSED_INGOT.get().asItem());
 				tabData.accept(EuruModBlocks.SLIGHTLY_LARGER_CHEST.get().asItem());

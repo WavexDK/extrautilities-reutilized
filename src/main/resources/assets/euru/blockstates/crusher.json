@@ -1,17 +1,32 @@
 {
   "variants": {
-    "facing=north": {
+    "facing=north,on=true": {
+      "model": "euru:block/crusher_0"
+    },
+    "facing=north,on=false": {
       "model": "euru:block/crusher"
     },
-    "facing=east": {
+    "facing=east,on=true": {
+      "model": "euru:block/crusher_0",
+      "y": 90
+    },
+    "facing=east,on=false": {
       "model": "euru:block/crusher",
       "y": 90
     },
-    "facing=south": {
+    "facing=south,on=true": {
+      "model": "euru:block/crusher_0",
+      "y": 180
+    },
+    "facing=south,on=false": {
       "model": "euru:block/crusher",
       "y": 180
     },
-    "facing=west": {
+    "facing=west,on=true": {
+      "model": "euru:block/crusher_0",
+      "y": 270
+    },
+    "facing=west,on=false": {
       "model": "euru:block/crusher",
       "y": 270
     }

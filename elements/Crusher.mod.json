@@ -5,7 +5,7 @@
     "texture": "machine_block_bottom",
     "textureTop": "machine_block_top",
     "textureLeft": "machine_block_side",
-    "textureFront": "crushertemp",
+    "textureFront": "onidle",
     "textureRight": "machine_block_side",
     "textureBack": "machine_block_side",
     "renderType": 10,
@@ -14,7 +14,40 @@
     "enablePitch": false,
     "emissiveRendering": false,
     "displayFluidOverlay": false,
-    "states": [],
+    "states": [
+      {
+        "texture": "machine_block_bottom",
+        "textureTop": "machine_block_top",
+        "textureLeft": "machine_block_side",
+        "textureFront": "crusherfront",
+        "textureRight": "machine_block_side",
+        "textureBack": "machine_block_side",
+        "renderType": 10,
+        "customModelName": "Normal",
+        "particleTexture": "",
+        "hasCustomBoundingBox": false,
+        "boundingBoxes": [
+          {
+            "mx": 0.0,
+            "my": 0.0,
+            "mz": 0.0,
+            "Mx": 16.0,
+            "My": 16.0,
+            "Mz": 16.0,
+            "subtract": false
+          }
+        ],
+        "stateMap": [
+          {
+            "property": {
+              "name": "CUSTOM:on",
+              "type": "logic"
+            },
+            "value": true
+          }
+        ]
+      }
+    ],
     "animations": [],
     "itemTexture": "",
     "particleTexture": "",
@@ -37,7 +70,13 @@
         "subtract": false
       }
     ],
-    "customProperties": [],
+    "customProperties": [
+      {
+        "name": "CUSTOM:on",
+        "type": "logic",
+        "value": false
+      }
+    ],
     "name": "Crusher",
     "specialInformation": {
       "fixedValue": []

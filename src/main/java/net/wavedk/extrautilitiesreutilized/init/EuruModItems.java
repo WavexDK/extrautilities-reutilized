@@ -91,6 +91,7 @@ public class EuruModItems {
 	public static final DeferredItem<Item> CHUNK_LOADING_WARD = REGISTRY.register(EuruModBlocks.CHUNK_LOADING_WARD.getId().getPath(), () -> new ChunkLoadingWardDisplayItem(EuruModBlocks.CHUNK_LOADING_WARD.get(), new Item.Properties()));
 	public static final DeferredItem<Item> NETHERSTAR_GENERATOR = block(EuruModBlocks.NETHERSTAR_GENERATOR);
 	public static final DeferredItem<Item> ENDER_LILLY = block(EuruModBlocks.ENDER_LILLY);
+	public static final DeferredItem<Item> MUFFLER = block(EuruModBlocks.MUFFLER);
 
 	// Start of user code block custom items
 	// End of user code block custom items

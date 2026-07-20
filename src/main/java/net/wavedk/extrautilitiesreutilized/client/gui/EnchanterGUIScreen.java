@@ -28,6 +28,10 @@ public class EnchanterGUIScreen extends AbstractContainerScreen<EnchanterGUIMenu
 	private final Player entity;
 	private boolean menuStateUpdateActive = false;
 	private ImageButton imagebutton_blank_x20;
+	private ImageButton imagebutton_blank_22x22;
+	private ImageButton imagebutton_blankx24;
+	private ImageButton imagebutton_blankx241;
+	private ImageButton imagebutton_blankx242;
 	private static final ResourceLocation BACKGROUND = ResourceLocation.parse("euru:textures/screens/enchanter_gui.png");
 	private static final ResourceLocation IMAGE_0 = ResourceLocation.parse("euru:textures/screens/book5.png");
 	private static final ResourceLocation IMAGE_1 = ResourceLocation.parse("euru:textures/screens/0.png");
@@ -98,38 +102,34 @@ public class EnchanterGUIScreen extends AbstractContainerScreen<EnchanterGUIMenu
 			}
 			customTooltipShown = true;
 		}
-		if (ErrorShowProcedure.execute(world, x, y, z))
-			if (mouseX > leftPos + 73 && mouseX < leftPos + 97 && mouseY > topPos + 58 && mouseY < topPos + 82) {
-				String hoverText = ReturnEnchanterErrrorProcedure.execute(world, x, y, z);
-				if (hoverText != null) {
-					guiGraphics.renderComponentTooltip(font, Arrays.stream(hoverText.split("\n")).map(Component::literal).collect(Collectors.toList()), mouseX, mouseY);
-				}
-				customTooltipShown = true;
+		if (mouseX > leftPos + 73 && mouseX < leftPos + 97 && mouseY > topPos + 58 && mouseY < topPos + 82) {
+			String hoverText = ReturnEnchanterErrrorProcedure.execute(world, x, y, z);
+			if (hoverText != null) {
+				guiGraphics.renderComponentTooltip(font, Arrays.stream(hoverText.split("\n")).map(Component::literal).collect(Collectors.toList()), mouseX, mouseY);
 			}
-		if (ErrorShowProcedure.execute(world, x, y, z))
-			if (mouseX > leftPos + 69 && mouseX < leftPos + 93 && mouseY > topPos + 34 && mouseY < topPos + 58) {
-				String hoverText = ReturnEnchanterErrrorProcedure.execute(world, x, y, z);
-				if (hoverText != null) {
-					guiGraphics.renderComponentTooltip(font, Arrays.stream(hoverText.split("\n")).map(Component::literal).collect(Collectors.toList()), mouseX, mouseY);
-				}
-				customTooltipShown = true;
+			customTooltipShown = true;
+		}
+		if (mouseX > leftPos + 69 && mouseX < leftPos + 93 && mouseY > topPos + 34 && mouseY < topPos + 58) {
+			String hoverText = ReturnEnchanterErrrorProcedure.execute(world, x, y, z);
+			if (hoverText != null) {
+				guiGraphics.renderComponentTooltip(font, Arrays.stream(hoverText.split("\n")).map(Component::literal).collect(Collectors.toList()), mouseX, mouseY);
 			}
-		if (ErrorShowProcedure.execute(world, x, y, z))
-			if (mouseX > leftPos + 115 && mouseX < leftPos + 139 && mouseY > topPos + 58 && mouseY < topPos + 82) {
-				String hoverText = ReturnEnchanterErrrorProcedure.execute(world, x, y, z);
-				if (hoverText != null) {
-					guiGraphics.renderComponentTooltip(font, Arrays.stream(hoverText.split("\n")).map(Component::literal).collect(Collectors.toList()), mouseX, mouseY);
-				}
-				customTooltipShown = true;
+			customTooltipShown = true;
+		}
+		if (mouseX > leftPos + 115 && mouseX < leftPos + 139 && mouseY > topPos + 58 && mouseY < topPos + 82) {
+			String hoverText = ReturnEnchanterErrrorProcedure.execute(world, x, y, z);
+			if (hoverText != null) {
+				guiGraphics.renderComponentTooltip(font, Arrays.stream(hoverText.split("\n")).map(Component::literal).collect(Collectors.toList()), mouseX, mouseY);
 			}
-		if (ErrorShowProcedure.execute(world, x, y, z))
-			if (mouseX > leftPos + 119 && mouseX < leftPos + 143 && mouseY > topPos + 34 && mouseY < topPos + 58) {
-				String hoverText = ReturnEnchanterErrrorProcedure.execute(world, x, y, z);
-				if (hoverText != null) {
-					guiGraphics.renderComponentTooltip(font, Arrays.stream(hoverText.split("\n")).map(Component::literal).collect(Collectors.toList()), mouseX, mouseY);
-				}
-				customTooltipShown = true;
+			customTooltipShown = true;
+		}
+		if (mouseX > leftPos + 119 && mouseX < leftPos + 143 && mouseY > topPos + 34 && mouseY < topPos + 58) {
+			String hoverText = ReturnEnchanterErrrorProcedure.execute(world, x, y, z);
+			if (hoverText != null) {
+				guiGraphics.renderComponentTooltip(font, Arrays.stream(hoverText.split("\n")).map(Component::literal).collect(Collectors.toList()), mouseX, mouseY);
 			}
+			customTooltipShown = true;
+		}
 		if (!customTooltipShown)
 			this.renderTooltip(guiGraphics, mouseX, mouseY);
 	}
@@ -255,5 +255,61 @@ public class EnchanterGUIScreen extends AbstractContainerScreen<EnchanterGUIMenu
 			}
 		};
 		this.addRenderableWidget(imagebutton_blank_x20);
+		imagebutton_blank_22x22 = new ImageButton(this.leftPos + 69, this.topPos + 34, 24, 24, new WidgetSprites(ResourceLocation.parse("euru:textures/screens/blankx24.png"), ResourceLocation.parse("euru:textures/screens/blankx24.png")), e -> {
+			int x = EnchanterGUIScreen.this.x;
+			int y = EnchanterGUIScreen.this.y;
+			if (true) {
+				PacketDistributor.sendToServer(new EnchanterGUIButtonMessage(1, x, y, z));
+				EnchanterGUIButtonMessage.handleButtonAction(entity, 1, x, y, z);
+			}
+		}) {
+			@Override
+			public void renderWidget(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTicks) {
+				guiGraphics.blit(sprites.get(isActive(), isHoveredOrFocused()), getX(), getY(), 0, 0, width, height, width, height);
+			}
+		};
+		this.addRenderableWidget(imagebutton_blank_22x22);
+		imagebutton_blankx24 = new ImageButton(this.leftPos + 73, this.topPos + 58, 24, 24, new WidgetSprites(ResourceLocation.parse("euru:textures/screens/blankx24.png"), ResourceLocation.parse("euru:textures/screens/blankx24.png")), e -> {
+			int x = EnchanterGUIScreen.this.x;
+			int y = EnchanterGUIScreen.this.y;
+			if (true) {
+				PacketDistributor.sendToServer(new EnchanterGUIButtonMessage(2, x, y, z));
+				EnchanterGUIButtonMessage.handleButtonAction(entity, 2, x, y, z);
+			}
+		}) {
+			@Override
+			public void renderWidget(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTicks) {
+				guiGraphics.blit(sprites.get(isActive(), isHoveredOrFocused()), getX(), getY(), 0, 0, width, height, width, height);
+			}
+		};
+		this.addRenderableWidget(imagebutton_blankx24);
+		imagebutton_blankx241 = new ImageButton(this.leftPos + 115, this.topPos + 58, 24, 24, new WidgetSprites(ResourceLocation.parse("euru:textures/screens/blankx24.png"), ResourceLocation.parse("euru:textures/screens/blankx24.png")), e -> {
+			int x = EnchanterGUIScreen.this.x;
+			int y = EnchanterGUIScreen.this.y;
+			if (true) {
+				PacketDistributor.sendToServer(new EnchanterGUIButtonMessage(3, x, y, z));
+				EnchanterGUIButtonMessage.handleButtonAction(entity, 3, x, y, z);
+			}
+		}) {
+			@Override
+			public void renderWidget(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTicks) {
+				guiGraphics.blit(sprites.get(isActive(), isHoveredOrFocused()), getX(), getY(), 0, 0, width, height, width, height);
+			}
+		};
+		this.addRenderableWidget(imagebutton_blankx241);
+		imagebutton_blankx242 = new ImageButton(this.leftPos + 119, this.topPos + 34, 24, 24, new WidgetSprites(ResourceLocation.parse("euru:textures/screens/blankx24.png"), ResourceLocation.parse("euru:textures/screens/blankx24.png")), e -> {
+			int x = EnchanterGUIScreen.this.x;
+			int y = EnchanterGUIScreen.this.y;
+			if (true) {
+				PacketDistributor.sendToServer(new EnchanterGUIButtonMessage(4, x, y, z));
+				EnchanterGUIButtonMessage.handleButtonAction(entity, 4, x, y, z);
+			}
+		}) {
+			@Override
+			public void renderWidget(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTicks) {
+				guiGraphics.blit(sprites.get(isActive(), isHoveredOrFocused()), getX(), getY(), 0, 0, width, height, width, height);
+			}
+		};
+		this.addRenderableWidget(imagebutton_blankx242);
 	}
 }

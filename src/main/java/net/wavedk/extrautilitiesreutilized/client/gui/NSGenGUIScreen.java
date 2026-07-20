@@ -56,15 +56,62 @@ public class NSGenGUIScreen extends AbstractContainerScreen<NSGenGUIMenu> implem
 	private static final ResourceLocation IMAGE_20 = ResourceLocation.parse("euru:textures/screens/arrow-20.png");
 	private static final ResourceLocation IMAGE_21 = ResourceLocation.parse("euru:textures/screens/arrow-21.png");
 	private static final ResourceLocation IMAGE_22 = ResourceLocation.parse("euru:textures/screens/arrow-full.png");
-	private static final ResourceLocation IMAGE_23 = ResourceLocation.parse("euru:textures/screens/subackdrop.png");
-	private static final ResourceLocation IMAGE_24 = ResourceLocation.parse("euru:textures/screens/symbol_cross.png");
-	private static final ResourceLocation IMAGE_25 = ResourceLocation.parse("euru:textures/screens/button-gun.png");
-	private static final ResourceLocation IMAGE_26 = ResourceLocation.parse("euru:textures/screens/button-always-off.png");
-	private static final ResourceLocation IMAGE_27 = ResourceLocation.parse("euru:textures/screens/button-red-off.png");
-	private static final ResourceLocation IMAGE_28 = ResourceLocation.parse("euru:textures/screens/button-red.png");
-	private static final ResourceLocation IMAGE_29 = ResourceLocation.parse("euru:textures/screens/button.png");
-	private static final ResourceLocation IMAGE_30 = ResourceLocation.parse("euru:textures/screens/ns-backdrop-off.png");
-	private static final ResourceLocation IMAGE_31 = ResourceLocation.parse("euru:textures/screens/ns-backdrop.png");
+	private static final ResourceLocation IMAGE_23 = ResourceLocation.parse("euru:textures/screens/ns-backdrop-off.png");
+	private static final ResourceLocation IMAGE_24 = ResourceLocation.parse("euru:textures/screens/ns-backdrop.png");
+	private static final ResourceLocation IMAGE_25 = ResourceLocation.parse("euru:textures/screens/subackdrop.png");
+	private static final ResourceLocation IMAGE_26 = ResourceLocation.parse("euru:textures/screens/symbol_cross.png");
+	private static final ResourceLocation IMAGE_27 = ResourceLocation.parse("euru:textures/screens/button-gun.png");
+	private static final ResourceLocation IMAGE_28 = ResourceLocation.parse("euru:textures/screens/button-always-off.png");
+	private static final ResourceLocation IMAGE_29 = ResourceLocation.parse("euru:textures/screens/button-red-off.png");
+	private static final ResourceLocation IMAGE_30 = ResourceLocation.parse("euru:textures/screens/button-red.png");
+	private static final ResourceLocation IMAGE_31 = ResourceLocation.parse("euru:textures/screens/s1.png");
+	private static final ResourceLocation IMAGE_32 = ResourceLocation.parse("euru:textures/screens/s2.png");
+	private static final ResourceLocation IMAGE_33 = ResourceLocation.parse("euru:textures/screens/s3.png");
+	private static final ResourceLocation IMAGE_34 = ResourceLocation.parse("euru:textures/screens/s4.png");
+	private static final ResourceLocation IMAGE_35 = ResourceLocation.parse("euru:textures/screens/s5.png");
+	private static final ResourceLocation IMAGE_36 = ResourceLocation.parse("euru:textures/screens/s6.png");
+	private static final ResourceLocation IMAGE_37 = ResourceLocation.parse("euru:textures/screens/s7.png");
+	private static final ResourceLocation IMAGE_38 = ResourceLocation.parse("euru:textures/screens/s8.png");
+	private static final ResourceLocation IMAGE_39 = ResourceLocation.parse("euru:textures/screens/s9.png");
+	private static final ResourceLocation IMAGE_40 = ResourceLocation.parse("euru:textures/screens/s10.png");
+	private static final ResourceLocation IMAGE_41 = ResourceLocation.parse("euru:textures/screens/s11.png");
+	private static final ResourceLocation IMAGE_42 = ResourceLocation.parse("euru:textures/screens/s12.png");
+	private static final ResourceLocation IMAGE_43 = ResourceLocation.parse("euru:textures/screens/s13.png");
+	private static final ResourceLocation IMAGE_44 = ResourceLocation.parse("euru:textures/screens/s14.png");
+	private static final ResourceLocation IMAGE_45 = ResourceLocation.parse("euru:textures/screens/s15.png");
+	private static final ResourceLocation IMAGE_46 = ResourceLocation.parse("euru:textures/screens/s16.png");
+	private static final ResourceLocation IMAGE_47 = ResourceLocation.parse("euru:textures/screens/s17.png");
+	private static final ResourceLocation IMAGE_48 = ResourceLocation.parse("euru:textures/screens/s18.png");
+	private static final ResourceLocation IMAGE_49 = ResourceLocation.parse("euru:textures/screens/s19.png");
+	private static final ResourceLocation IMAGE_50 = ResourceLocation.parse("euru:textures/screens/s20.png");
+	private static final ResourceLocation IMAGE_51 = ResourceLocation.parse("euru:textures/screens/s21.png");
+	private static final ResourceLocation IMAGE_52 = ResourceLocation.parse("euru:textures/screens/s22.png");
+	private static final ResourceLocation IMAGE_53 = ResourceLocation.parse("euru:textures/screens/s23.png");
+	private static final ResourceLocation IMAGE_54 = ResourceLocation.parse("euru:textures/screens/s24.png");
+	private static final ResourceLocation IMAGE_55 = ResourceLocation.parse("euru:textures/screens/s25.png");
+	private static final ResourceLocation IMAGE_56 = ResourceLocation.parse("euru:textures/screens/s26.png");
+	private static final ResourceLocation IMAGE_57 = ResourceLocation.parse("euru:textures/screens/s27.png");
+	private static final ResourceLocation IMAGE_58 = ResourceLocation.parse("euru:textures/screens/s28.png");
+	private static final ResourceLocation IMAGE_59 = ResourceLocation.parse("euru:textures/screens/s29.png");
+	private static final ResourceLocation IMAGE_60 = ResourceLocation.parse("euru:textures/screens/s30.png");
+	private static final ResourceLocation IMAGE_61 = ResourceLocation.parse("euru:textures/screens/s31.png");
+	private static final ResourceLocation IMAGE_62 = ResourceLocation.parse("euru:textures/screens/s32.png");
+	private static final ResourceLocation IMAGE_63 = ResourceLocation.parse("euru:textures/screens/s33.png");
+	private static final ResourceLocation IMAGE_64 = ResourceLocation.parse("euru:textures/screens/s34.png");
+	private static final ResourceLocation IMAGE_65 = ResourceLocation.parse("euru:textures/screens/s35.png");
+	private static final ResourceLocation IMAGE_66 = ResourceLocation.parse("euru:textures/screens/s36.png");
+	private static final ResourceLocation IMAGE_67 = ResourceLocation.parse("euru:textures/screens/s37.png");
+	private static final ResourceLocation IMAGE_68 = ResourceLocation.parse("euru:textures/screens/s38.png");
+	private static final ResourceLocation IMAGE_69 = ResourceLocation.parse("euru:textures/screens/s39.png");
+	private static final ResourceLocation IMAGE_70 = ResourceLocation.parse("euru:textures/screens/s40.png");
+	private static final ResourceLocation IMAGE_71 = ResourceLocation.parse("euru:textures/screens/s41.png");
+	private static final ResourceLocation IMAGE_72 = ResourceLocation.parse("euru:textures/screens/s42.png");
+	private static final ResourceLocation IMAGE_73 = ResourceLocation.parse("euru:textures/screens/s43.png");
+	private static final ResourceLocation IMAGE_74 = ResourceLocation.parse("euru:textures/screens/s44.png");
+	private static final ResourceLocation IMAGE_75 = ResourceLocation.parse("euru:textures/screens/s45.png");
+	private static final ResourceLocation IMAGE_76 = ResourceLocation.parse("euru:textures/screens/s46.png");
+	private static final ResourceLocation IMAGE_77 = ResourceLocation.parse("euru:textures/screens/bbbattery.png");
+	private static final ResourceLocation IMAGE_78 = ResourceLocation.parse("euru:textures/screens/bbbatteryoff.png");
 
 	public NSGenGUIScreen(NSGenGUIMenu container, Inventory inventory, Component text) {
 		super(container, inventory, text);
@@ -106,7 +153,21 @@ public class NSGenGUIScreen extends AbstractContainerScreen<NSGenGUIMenu> implem
 				guiGraphics.renderTooltip(font, Component.translatable("gui.euru.ns_gen_gui.tooltip_speed_upgrade"), mouseX, mouseY);
 				customTooltipShown = true;
 			}
-		if (mouseX > leftPos + 145 && mouseX < leftPos + 169 && mouseY > topPos + 31 && mouseY < topPos + 55) {
+		if (mouseX > leftPos + 140 && mouseX < leftPos + 164 && mouseY > topPos + 6 && mouseY < topPos + 30) {
+			String hoverText = ReturnFEStorageProcedure.execute(world, x, y, z);
+			if (hoverText != null) {
+				guiGraphics.renderComponentTooltip(font, Arrays.stream(hoverText.split("\n")).map(Component::literal).collect(Collectors.toList()), mouseX, mouseY);
+			}
+			customTooltipShown = true;
+		}
+		if (mouseX > leftPos + 140 && mouseX < leftPos + 164 && mouseY > topPos + 29 && mouseY < topPos + 53) {
+			String hoverText = ReturnFEStorageProcedure.execute(world, x, y, z);
+			if (hoverText != null) {
+				guiGraphics.renderComponentTooltip(font, Arrays.stream(hoverText.split("\n")).map(Component::literal).collect(Collectors.toList()), mouseX, mouseY);
+			}
+			customTooltipShown = true;
+		}
+		if (mouseX > leftPos + 140 && mouseX < leftPos + 164 && mouseY > topPos + 52 && mouseY < topPos + 76) {
 			String hoverText = ReturnFEStorageProcedure.execute(world, x, y, z);
 			if (hoverText != null) {
 				guiGraphics.renderComponentTooltip(font, Arrays.stream(hoverText.split("\n")).map(Component::literal).collect(Collectors.toList()), mouseX, mouseY);
@@ -192,30 +253,173 @@ public class NSGenGUIScreen extends AbstractContainerScreen<NSGenGUIMenu> implem
 		if (ArrowFullProcedure.execute(world, x, y, z)) {
 			guiGraphics.blit(IMAGE_22, this.leftPos + 90, this.topPos + 33, 0, 0, 22, 22, 22, 22);
 		}
-		if (SUTooltipGenProcedure.execute(world, x, y, z)) {
-			guiGraphics.blit(IMAGE_23, this.leftPos + 6, this.topPos + 41, 0, 0, 16, 16, 16, 16);
-		}
-		if (TooMuchGPProcedure.execute(world, x, y, z)) {
-			guiGraphics.blit(IMAGE_24, this.leftPos + 92, this.topPos + 34, 0, 0, 16, 16, 16, 16);
-		}
-		if (AlwaysOnProcedureProcedure.execute(world, x, y, z)) {
-			guiGraphics.blit(IMAGE_25, this.leftPos + 4, this.topPos + 16, 0, 0, 20, 20, 20, 20);
-		}
-		if (AlwaysOffProcedureProcedure.execute(world, x, y, z)) {
-			guiGraphics.blit(IMAGE_26, this.leftPos + 4, this.topPos + 16, 0, 0, 20, 20, 20, 20);
-		}
-		if (RedstoneOffProcedureProcedure.execute(world, x, y, z)) {
-			guiGraphics.blit(IMAGE_27, this.leftPos + 4, this.topPos + 16, 0, 0, 20, 20, 20, 20);
-		}
-		if (RedstoneOnProcedureProcedure.execute(world, x, y, z)) {
-			guiGraphics.blit(IMAGE_28, this.leftPos + 4, this.topPos + 16, 0, 0, 20, 20, 20, 20);
-		}
-		guiGraphics.blit(IMAGE_29, this.leftPos + 147, this.topPos + 33, 0, 0, 20, 20, 20, 20);
 		if (SGenIsOffProcedure.execute(world, x, y, z)) {
-			guiGraphics.blit(IMAGE_30, this.leftPos + 56, this.topPos + 9, 0, 0, 64, 64, 64, 64);
+			guiGraphics.blit(IMAGE_23, this.leftPos + 56, this.topPos + 9, 0, 0, 64, 64, 64, 64);
 		}
 		if (SGenIsOnProcedure.execute(world, x, y, z)) {
-			guiGraphics.blit(IMAGE_31, this.leftPos + 56, this.topPos + 9, 0, 0, 64, 64, 64, 64);
+			guiGraphics.blit(IMAGE_24, this.leftPos + 56, this.topPos + 9, 0, 0, 64, 64, 64, 64);
+		}
+		if (SUTooltipGenProcedure.execute(world, x, y, z)) {
+			guiGraphics.blit(IMAGE_25, this.leftPos + 6, this.topPos + 41, 0, 0, 16, 16, 16, 16);
+		}
+		if (TooMuchGPProcedure.execute(world, x, y, z)) {
+			guiGraphics.blit(IMAGE_26, this.leftPos + 92, this.topPos + 34, 0, 0, 16, 16, 16, 16);
+		}
+		if (AlwaysOnProcedureProcedure.execute(world, x, y, z)) {
+			guiGraphics.blit(IMAGE_27, this.leftPos + 4, this.topPos + 16, 0, 0, 20, 20, 20, 20);
+		}
+		if (AlwaysOffProcedureProcedure.execute(world, x, y, z)) {
+			guiGraphics.blit(IMAGE_28, this.leftPos + 4, this.topPos + 16, 0, 0, 20, 20, 20, 20);
+		}
+		if (RedstoneOffProcedureProcedure.execute(world, x, y, z)) {
+			guiGraphics.blit(IMAGE_29, this.leftPos + 4, this.topPos + 16, 0, 0, 20, 20, 20, 20);
+		}
+		if (RedstoneOnProcedureProcedure.execute(world, x, y, z)) {
+			guiGraphics.blit(IMAGE_30, this.leftPos + 4, this.topPos + 16, 0, 0, 20, 20, 20, 20);
+		}
+		if (Bl2Procedure.execute(world, x, y, z)) {
+			guiGraphics.blit(IMAGE_31, this.leftPos + 140, this.topPos + 7, 0, 0, 24, 64, 24, 64);
+		}
+		if (Bl3Procedure.execute(world, x, y, z)) {
+			guiGraphics.blit(IMAGE_32, this.leftPos + 140, this.topPos + 7, 0, 0, 24, 64, 24, 64);
+		}
+		if (Bl4Procedure.execute(world, x, y, z)) {
+			guiGraphics.blit(IMAGE_33, this.leftPos + 140, this.topPos + 7, 0, 0, 24, 64, 24, 64);
+		}
+		if (Bl5Procedure.execute(world, x, y, z)) {
+			guiGraphics.blit(IMAGE_34, this.leftPos + 140, this.topPos + 7, 0, 0, 24, 64, 24, 64);
+		}
+		if (Bl6Procedure.execute(world, x, y, z)) {
+			guiGraphics.blit(IMAGE_35, this.leftPos + 140, this.topPos + 7, 0, 0, 24, 64, 24, 64);
+		}
+		if (Bl7Procedure.execute(world, x, y, z)) {
+			guiGraphics.blit(IMAGE_36, this.leftPos + 140, this.topPos + 7, 0, 0, 24, 64, 24, 64);
+		}
+		if (Bl8Procedure.execute(world, x, y, z)) {
+			guiGraphics.blit(IMAGE_37, this.leftPos + 140, this.topPos + 7, 0, 0, 24, 64, 24, 64);
+		}
+		if (Bl9Procedure.execute(world, x, y, z)) {
+			guiGraphics.blit(IMAGE_38, this.leftPos + 140, this.topPos + 7, 0, 0, 24, 64, 24, 64);
+		}
+		if (Bl10Procedure.execute(world, x, y, z)) {
+			guiGraphics.blit(IMAGE_39, this.leftPos + 140, this.topPos + 7, 0, 0, 24, 64, 24, 64);
+		}
+		if (Bl11Procedure.execute(world, x, y, z)) {
+			guiGraphics.blit(IMAGE_40, this.leftPos + 140, this.topPos + 7, 0, 0, 24, 64, 24, 64);
+		}
+		if (Bl12Procedure.execute(world, x, y, z)) {
+			guiGraphics.blit(IMAGE_41, this.leftPos + 140, this.topPos + 7, 0, 0, 24, 64, 24, 64);
+		}
+		if (Bl13Procedure.execute(world, x, y, z)) {
+			guiGraphics.blit(IMAGE_42, this.leftPos + 140, this.topPos + 7, 0, 0, 24, 64, 24, 64);
+		}
+		if (Bl14Procedure.execute(world, x, y, z)) {
+			guiGraphics.blit(IMAGE_43, this.leftPos + 140, this.topPos + 7, 0, 0, 24, 64, 24, 64);
+		}
+		if (Bl15Procedure.execute(world, x, y, z)) {
+			guiGraphics.blit(IMAGE_44, this.leftPos + 140, this.topPos + 7, 0, 0, 24, 64, 24, 64);
+		}
+		if (Bl16Procedure.execute(world, x, y, z)) {
+			guiGraphics.blit(IMAGE_45, this.leftPos + 140, this.topPos + 7, 0, 0, 24, 64, 24, 64);
+		}
+		if (Bl17Procedure.execute(world, x, y, z)) {
+			guiGraphics.blit(IMAGE_46, this.leftPos + 140, this.topPos + 7, 0, 0, 24, 64, 24, 64);
+		}
+		if (Bl18Procedure.execute(world, x, y, z)) {
+			guiGraphics.blit(IMAGE_47, this.leftPos + 140, this.topPos + 7, 0, 0, 24, 64, 24, 64);
+		}
+		if (Bl19Procedure.execute(world, x, y, z)) {
+			guiGraphics.blit(IMAGE_48, this.leftPos + 140, this.topPos + 7, 0, 0, 24, 64, 24, 64);
+		}
+		if (Bl20Procedure.execute(world, x, y, z)) {
+			guiGraphics.blit(IMAGE_49, this.leftPos + 140, this.topPos + 7, 0, 0, 24, 64, 24, 64);
+		}
+		if (Bl21Procedure.execute(world, x, y, z)) {
+			guiGraphics.blit(IMAGE_50, this.leftPos + 140, this.topPos + 7, 0, 0, 24, 64, 24, 64);
+		}
+		if (Bl22Procedure.execute(world, x, y, z)) {
+			guiGraphics.blit(IMAGE_51, this.leftPos + 140, this.topPos + 7, 0, 0, 24, 64, 24, 64);
+		}
+		if (Bl23Procedure.execute(world, x, y, z)) {
+			guiGraphics.blit(IMAGE_52, this.leftPos + 140, this.topPos + 7, 0, 0, 24, 64, 24, 64);
+		}
+		if (Bl24Procedure.execute(world, x, y, z)) {
+			guiGraphics.blit(IMAGE_53, this.leftPos + 140, this.topPos + 7, 0, 0, 24, 64, 24, 64);
+		}
+		if (Bl25Procedure.execute(world, x, y, z)) {
+			guiGraphics.blit(IMAGE_54, this.leftPos + 140, this.topPos + 7, 0, 0, 24, 64, 24, 64);
+		}
+		if (Bl26Procedure.execute(world, x, y, z)) {
+			guiGraphics.blit(IMAGE_55, this.leftPos + 140, this.topPos + 7, 0, 0, 24, 64, 24, 64);
+		}
+		if (Bl27Procedure.execute(world, x, y, z)) {
+			guiGraphics.blit(IMAGE_56, this.leftPos + 140, this.topPos + 7, 0, 0, 24, 64, 24, 64);
+		}
+		if (Bl28Procedure.execute(world, x, y, z)) {
+			guiGraphics.blit(IMAGE_57, this.leftPos + 140, this.topPos + 7, 0, 0, 24, 64, 24, 64);
+		}
+		if (Bl29Procedure.execute(world, x, y, z)) {
+			guiGraphics.blit(IMAGE_58, this.leftPos + 140, this.topPos + 7, 0, 0, 24, 64, 24, 64);
+		}
+		if (Bl30Procedure.execute(world, x, y, z)) {
+			guiGraphics.blit(IMAGE_59, this.leftPos + 140, this.topPos + 7, 0, 0, 24, 64, 24, 64);
+		}
+		if (Bl31Procedure.execute(world, x, y, z)) {
+			guiGraphics.blit(IMAGE_60, this.leftPos + 140, this.topPos + 7, 0, 0, 24, 64, 24, 64);
+		}
+		if (Bl32Procedure.execute(world, x, y, z)) {
+			guiGraphics.blit(IMAGE_61, this.leftPos + 140, this.topPos + 7, 0, 0, 24, 64, 24, 64);
+		}
+		if (Bl33Procedure.execute(world, x, y, z)) {
+			guiGraphics.blit(IMAGE_62, this.leftPos + 140, this.topPos + 7, 0, 0, 24, 64, 24, 64);
+		}
+		if (Bl34Procedure.execute(world, x, y, z)) {
+			guiGraphics.blit(IMAGE_63, this.leftPos + 140, this.topPos + 7, 0, 0, 24, 64, 24, 64);
+		}
+		if (Bl35Procedure.execute(world, x, y, z)) {
+			guiGraphics.blit(IMAGE_64, this.leftPos + 140, this.topPos + 7, 0, 0, 24, 64, 24, 64);
+		}
+		if (Bl36Procedure.execute(world, x, y, z)) {
+			guiGraphics.blit(IMAGE_65, this.leftPos + 140, this.topPos + 7, 0, 0, 24, 64, 24, 64);
+		}
+		if (Bl37Procedure.execute(world, x, y, z)) {
+			guiGraphics.blit(IMAGE_66, this.leftPos + 140, this.topPos + 7, 0, 0, 24, 64, 24, 64);
+		}
+		if (Bl38Procedure.execute(world, x, y, z)) {
+			guiGraphics.blit(IMAGE_67, this.leftPos + 140, this.topPos + 7, 0, 0, 24, 64, 24, 64);
+		}
+		if (Bl39Procedure.execute(world, x, y, z)) {
+			guiGraphics.blit(IMAGE_68, this.leftPos + 140, this.topPos + 7, 0, 0, 24, 64, 24, 64);
+		}
+		if (Bl40Procedure.execute(world, x, y, z)) {
+			guiGraphics.blit(IMAGE_69, this.leftPos + 140, this.topPos + 7, 0, 0, 24, 64, 24, 64);
+		}
+		if (Bl41Procedure.execute(world, x, y, z)) {
+			guiGraphics.blit(IMAGE_70, this.leftPos + 140, this.topPos + 7, 0, 0, 24, 64, 24, 64);
+		}
+		if (Bl42Procedure.execute(world, x, y, z)) {
+			guiGraphics.blit(IMAGE_71, this.leftPos + 140, this.topPos + 7, 0, 0, 24, 64, 24, 64);
+		}
+		if (Bl43Procedure.execute(world, x, y, z)) {
+			guiGraphics.blit(IMAGE_72, this.leftPos + 140, this.topPos + 7, 0, 0, 24, 64, 24, 64);
+		}
+		if (Bl44Procedure.execute(world, x, y, z)) {
+			guiGraphics.blit(IMAGE_73, this.leftPos + 140, this.topPos + 7, 0, 0, 24, 64, 24, 64);
+		}
+		if (Bl45Procedure.execute(world, x, y, z)) {
+			guiGraphics.blit(IMAGE_74, this.leftPos + 140, this.topPos + 7, 0, 0, 24, 64, 24, 64);
+		}
+		if (Bl46Procedure.execute(world, x, y, z)) {
+			guiGraphics.blit(IMAGE_75, this.leftPos + 140, this.topPos + 7, 0, 0, 24, 64, 24, 64);
+		}
+		if (Bl47Procedure.execute(world, x, y, z)) {
+			guiGraphics.blit(IMAGE_76, this.leftPos + 140, this.topPos + 7, 0, 0, 24, 64, 24, 64);
+		}
+		if (Bl48Procedure.execute(world, x, y, z)) {
+			guiGraphics.blit(IMAGE_77, this.leftPos + 140, this.topPos + 7, 0, 0, 24, 64, 24, 64);
+		}
+		if (Bl1Procedure.execute(world, x, y, z)) {
+			guiGraphics.blit(IMAGE_78, this.leftPos + 140, this.topPos + 7, 0, 0, 24, 64, 24, 64);
 		}
 		RenderSystem.disableBlend();
 	}

@@ -14,7 +14,9 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.chat.Component;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.gui.components.WidgetSprites;
+import net.minecraft.client.gui.components.PlainTextButton;
 import net.minecraft.client.gui.components.ImageButton;
+import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.GuiGraphics;
 
 import java.util.stream.Collectors;
@@ -27,6 +29,8 @@ public class ResonatorGUIScreen extends AbstractContainerScreen<ResonatorGUIMenu
 	private final int x, y, z;
 	private final Player entity;
 	private boolean menuStateUpdateActive = false;
+	private Button button_empty;
+	private Button button_empty1;
 	private ImageButton imagebutton_blank_x20;
 	private static final ResourceLocation BACKGROUND = ResourceLocation.parse("euru:textures/screens/resonator_gui.png");
 	private static final ResourceLocation IMAGE_0 = ResourceLocation.parse("euru:textures/screens/resbackdrop.png");
@@ -93,14 +97,13 @@ public class ResonatorGUIScreen extends AbstractContainerScreen<ResonatorGUIMenu
 				guiGraphics.renderTooltip(font, Component.translatable("gui.euru.resonator_gui.tooltip_speed_upgrades"), mouseX, mouseY);
 				customTooltipShown = true;
 			}
-		if (TooMuchGPProcedure.execute(world, x, y, z))
-			if (mouseX > leftPos + 76 && mouseX < leftPos + 100 && mouseY > topPos + 31 && mouseY < topPos + 55) {
-				String hoverText = ReturnGPErrorProcedure.execute(world, x, y, z);
-				if (hoverText != null) {
-					guiGraphics.renderComponentTooltip(font, Arrays.stream(hoverText.split("\n")).map(Component::literal).collect(Collectors.toList()), mouseX, mouseY);
-				}
-				customTooltipShown = true;
+		if (mouseX > leftPos + 76 && mouseX < leftPos + 100 && mouseY > topPos + 31 && mouseY < topPos + 55) {
+			String hoverText = ReturnGPErrorProcedure.execute(world, x, y, z);
+			if (hoverText != null) {
+				guiGraphics.renderComponentTooltip(font, Arrays.stream(hoverText.split("\n")).map(Component::literal).collect(Collectors.toList()), mouseX, mouseY);
 			}
+			customTooltipShown = true;
+		}
 		if (!customTooltipShown)
 			this.renderTooltip(guiGraphics, mouseX, mouseY);
 	}
@@ -219,13 +222,31 @@ public class ResonatorGUIScreen extends AbstractContainerScreen<ResonatorGUIMenu
 	@Override
 	public void init() {
 		super.init();
+		button_empty = new PlainTextButton(this.leftPos + 76, this.topPos + 31, 24, 20, Component.translatable("gui.euru.resonator_gui.button_empty"), e -> {
+			int x = ResonatorGUIScreen.this.x;
+			int y = ResonatorGUIScreen.this.y;
+			if (true) {
+				PacketDistributor.sendToServer(new ResonatorGUIButtonMessage(0, x, y, z));
+				ResonatorGUIButtonMessage.handleButtonAction(entity, 0, x, y, z);
+			}
+		}, this.font);
+		this.addRenderableWidget(button_empty);
+		button_empty1 = new PlainTextButton(this.leftPos + 76, this.topPos + 35, 24, 20, Component.translatable("gui.euru.resonator_gui.button_empty1"), e -> {
+			int x = ResonatorGUIScreen.this.x;
+			int y = ResonatorGUIScreen.this.y;
+			if (true) {
+				PacketDistributor.sendToServer(new ResonatorGUIButtonMessage(1, x, y, z));
+				ResonatorGUIButtonMessage.handleButtonAction(entity, 1, x, y, z);
+			}
+		}, this.font);
+		this.addRenderableWidget(button_empty1);
 		imagebutton_blank_x20 = new ImageButton(this.leftPos + 4, this.topPos + 16, 20, 20, new WidgetSprites(ResourceLocation.parse("euru:textures/screens/blank_x20.png"), ResourceLocation.parse("euru:textures/screens/blank_whiteborder_x20.png")),
 				e -> {
 					int x = ResonatorGUIScreen.this.x;
 					int y = ResonatorGUIScreen.this.y;
 					if (true) {
-						PacketDistributor.sendToServer(new ResonatorGUIButtonMessage(0, x, y, z));
-						ResonatorGUIButtonMessage.handleButtonAction(entity, 0, x, y, z);
+						PacketDistributor.sendToServer(new ResonatorGUIButtonMessage(2, x, y, z));
+						ResonatorGUIButtonMessage.handleButtonAction(entity, 2, x, y, z);
 					}
 				}) {
 			@Override

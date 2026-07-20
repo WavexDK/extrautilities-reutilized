@@ -400,10 +400,9 @@
         "data": {
           "name": "tooltip_not_enough_grid_power_available",
           "text": {
-            "fixedValue": "Not enough Grid Power available!",
+            "fixedValue": "",
             "name": "ReturnGPError"
           },
-          "displayCondition": "TooMuchGP",
           "width": 24,
           "height": 24,
           "x": 202,
@@ -464,6 +463,34 @@
           "onClick": "ChangeRedstoneMode",
           "x": 130,
           "y": 53,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_empty",
+          "text": "",
+          "isUndecorated": true,
+          "onClick": "OpenCraftingBlockJEI",
+          "width": 24,
+          "height": 20,
+          "x": 202,
+          "y": 68,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_empty1",
+          "text": "",
+          "isUndecorated": true,
+          "onClick": "OpenCraftingBlockJEI",
+          "width": 24,
+          "height": 20,
+          "x": 202,
+          "y": 72,
           "locked": false
         }
       }

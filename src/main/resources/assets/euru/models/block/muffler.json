@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "euru:block/mufflertemp",
+    "up": "euru:block/mufflertemp",
+    "north": "euru:block/mufflertemp",
+    "east": "euru:block/mufflertemp",
+    "south": "euru:block/mufflertemp",
+    "west": "euru:block/mufflertemp",
+    "particle": "euru:block/mufflertemp"
+  },
+  "render_type": "solid"
+}

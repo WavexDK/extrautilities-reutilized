@@ -3,7 +3,7 @@
   "textures": {
     "down": "euru:block/machine_block_bottom",
     "up": "euru:block/machine_block_top",
-    "north": "euru:block/crushertemp",
+    "north": "euru:block/onidle",
     "east": "euru:block/machine_block_side",
     "south": "euru:block/machine_block_side",
     "west": "euru:block/machine_block_side",

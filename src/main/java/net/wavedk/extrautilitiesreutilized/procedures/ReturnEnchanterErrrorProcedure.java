@@ -24,7 +24,7 @@ public class ReturnEnchanterErrrorProcedure {
 		} else if ((getBlockNBTString(world, BlockPos.containing(x, y, z), "errorMessage")).equals("outputFilled")) {
 			return "The output slot is filled!";
 		}
-		return "";
+		return "\u00A79Click to view recipes";
 	}
 
 	private static String getBlockNBTString(LevelAccessor world, BlockPos pos, String tag) {

@@ -4,7 +4,7 @@ license="GNU General Public License version 3 (GPLv3)"
 
 [[mods]]
 modId="euru"
-version="0.1.01"
+version="0.1.2"
 displayName="Extra Utilities: Reutilized"
 displayURL="https://buymeacoffee.com/wavedk"
 logoFile="logo.png"
