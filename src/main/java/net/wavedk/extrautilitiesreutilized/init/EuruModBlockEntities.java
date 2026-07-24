@@ -44,6 +44,7 @@ public class EuruModBlockEntities {
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> NETHERSTAR_GENERATOR = register("netherstar_generator", EuruModBlocks.NETHERSTAR_GENERATOR, NetherstarGeneratorBlockEntity::new);
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> ENDER_LILLY = register("ender_lilly", EuruModBlocks.ENDER_LILLY, EnderLillyBlockEntity::new);
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> ENDER_LILLY_PLANT = register("ender_lilly_plant", EuruModBlocks.ENDER_LILLY_PLANT, EnderLillyPlantBlockEntity::new);
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> CULINARY_GENERATOR = register("culinary_generator", EuruModBlocks.CULINARY_GENERATOR, CulinaryGeneratorBlockEntity::new);
 
 	// Start of user code block custom block entities
 	// End of user code block custom block entities
@@ -58,6 +59,8 @@ public class EuruModBlockEntities {
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, LAVA_MILL.get(), (blockEntity, side) -> new SidedInvWrapper((WorldlyContainer) blockEntity, side));
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, CREATIVE_ENERGY_SOURCE.get(), (blockEntity, side) -> new SidedInvWrapper((WorldlyContainer) blockEntity, side));
 		event.registerBlockEntity(Capabilities.EnergyStorage.BLOCK, CREATIVE_ENERGY_SOURCE.get(), (blockEntity, side) -> ((CreativeEnergySourceBlockEntity) blockEntity).getEnergyStorage());
+		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, CULINARY_GENERATOR.get(), (blockEntity, side) -> new SidedInvWrapper((WorldlyContainer) blockEntity, side));
+		event.registerBlockEntity(Capabilities.EnergyStorage.BLOCK, CULINARY_GENERATOR.get(), (blockEntity, side) -> ((CulinaryGeneratorBlockEntity) blockEntity).getEnergyStorage());
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, WATER_MILL.get(), (blockEntity, side) -> new SidedInvWrapper((WorldlyContainer) blockEntity, side));
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, ENCHANTER.get(), (blockEntity, side) -> new SidedInvWrapper((WorldlyContainer) blockEntity, side));
 		event.registerBlockEntity(Capabilities.EnergyStorage.BLOCK, ENCHANTER.get(), (blockEntity, side) -> ((EnchanterBlockEntity) blockEntity).getEnergyStorage());

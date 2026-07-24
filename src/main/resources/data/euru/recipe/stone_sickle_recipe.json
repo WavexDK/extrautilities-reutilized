@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " aa",
+    "  a",
+    "baa"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:cobblestone"
+    },
+    "b": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "id": "euru:stone_sickle",
+    "count": 1
+  }
+}

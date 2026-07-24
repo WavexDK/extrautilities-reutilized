@@ -33,7 +33,7 @@ public class EnchanterGUIMenu extends AbstractContainerMenu implements EuruModMe
 	public final Map<String, Object> menuState = new HashMap<>() {
 		@Override
 		public Object put(String key, Object value) {
-			if (!this.containsKey(key) && this.size() >= 45)
+			if (!this.containsKey(key) && this.size() >= 92)
 				return null;
 			return super.put(key, value);
 		}
@@ -120,7 +120,7 @@ public class EnchanterGUIMenu extends AbstractContainerMenu implements EuruModMe
 				return false;
 			}
 		}));
-		this.customSlots.put(3, this.addSlot(new SlotItemHandler(internal, 3, 152, 63) {
+		this.customSlots.put(3, this.addSlot(new SlotItemHandler(internal, 3, 98, 8) {
 			private final int slot = 3;
 			private int x = EnchanterGUIMenu.this.x;
 			private int y = EnchanterGUIMenu.this.y;

@@ -69,7 +69,7 @@ public class EURUUnifiedConfigManagerProcedure {
 		String cItem = "";
 		String coutput = "";
 		configFile = new File((FMLPaths.GAMEDIR.get().toString() + "/config/euru/"), File.separator + "euru_unified_config.json");
-		EuruModVariables.cVer = 2.2;
+		EuruModVariables.cVer = 2;
 		cVer = EuruModVariables.cVer;
 		if (!configFile.exists()) {
 			try {

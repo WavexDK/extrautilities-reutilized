@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " aa",
+    "  a",
+    "baa"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:gold_ingot"
+    },
+    "b": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "id": "euru:golden_sickle",
+    "count": 1
+  }
+}

@@ -22,7 +22,7 @@ public class NSGenAddedHandlerProcedure {
 				_blockEntity.getPersistentData().putString("placedBy", ("" + entity.getUUID()));
 				_blockEntity.getPersistentData().putDouble("redstoneMode", 0);
 				_blockEntity.getPersistentData().putDouble("steps", 22);
-				_blockEntity.getPersistentData().putDouble("sendEnergyCapability", 38000);
+				_blockEntity.getPersistentData().putDouble("sendEnergyCapability", 80000);
 			}
 			if (world instanceof Level _level)
 				_level.sendBlockUpdated(_bp, _bs, _bs, 3);

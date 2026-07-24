@@ -1,0 +1,31 @@
+{
+  "_fv": 89,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "unlockingItems": [
+      "Blocks.PLANKS"
+    ],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      "",
+      "Blocks.PLANKS",
+      "Blocks.PLANKS",
+      "",
+      "",
+      "Blocks.PLANKS",
+      "Items.STICK",
+      "Blocks.PLANKS",
+      "Blocks.PLANKS"
+    ],
+    "recipeReturnStack": "CUSTOM:WoodenSickle",
+    "name": "wooden_sickle_recipe",
+    "namespace": "mod"
+  }
+}

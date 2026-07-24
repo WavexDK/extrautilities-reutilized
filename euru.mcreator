@@ -9016,6 +9016,516 @@
         ]
       },
       "path": "~/Blocks/Other"
+    },
+    {
+      "name": "BEIsNotOn",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "be_is_not_on",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/BEIsNotOnProcedure.java"
+        ]
+      },
+      "path": "~/Blocks/Machines/Procedures"
+    },
+    {
+      "name": "LoopSprites32",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "loop_sprites_32",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "return_type": "number",
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/LoopSprites32Procedure.java"
+        ]
+      },
+      "path": "~/Blocks/Machines/GUI/Procedures"
+    },
+    {
+      "name": "CrusherMainGUIWhileThisGUIIsOpenTick",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "crusher_main_gui_while_this_gui_is_open_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/CrusherMainGUIWhileThisGUIIsOpenTickProcedure.java"
+        ]
+      },
+      "path": "~/Blocks/Machines/GUI/Procedures"
+    },
+    {
+      "name": "CrusherMainGUIThisGUIIsOpened",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "crusher_main_gui_this_gui_is_opened",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/CrusherMainGUIThisGUIIsOpenedProcedure.java"
+        ]
+      },
+      "path": "~/Blocks/Machines/GUI/Procedures"
+    },
+    {
+      "name": "BatteryLevelReturn",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "battery_level_return",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "return_type": "number",
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/BatteryLevelReturnProcedure.java"
+        ]
+      },
+      "path": "~/Blocks/Machines/GUI"
+    },
+    {
+      "name": "DiamondSickleBlockDestroyedWithTool",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "diamond_sickle_block_destroyed_with_tool",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/DiamondSickleBlockDestroyedWithToolProcedure.java"
+        ]
+      },
+      "path": "~/Items/Procedures/Sickles"
+    },
+    {
+      "name": "DiamondSickle",
+      "type": "tool",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "diamond_sickle",
+      "metadata": {
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/item/DiamondSickleItem.java",
+          "src/main/resources/assets/euru/models/item/diamond_sickle.json"
+        ]
+      },
+      "path": "~/Items"
+    },
+    {
+      "name": "DiamondSickleItemIsCraftedsmelted",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "diamond_sickle_item_is_craftedsmelted",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ],
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/DiamondSickleItemIsCraftedsmeltedProcedure.java"
+        ]
+      },
+      "path": "~/Items/Procedures/Sickles"
+    },
+    {
+      "name": "NetheriteSickle",
+      "type": "tool",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "netherite_sickle",
+      "metadata": {
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/item/NetheriteSickleItem.java",
+          "src/main/resources/assets/euru/models/item/netherite_sickle.json"
+        ]
+      },
+      "path": "~/Items"
+    },
+    {
+      "name": "NethSickleItemIsCraftedsmelted",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "neth_sickle_item_is_craftedsmelted",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ],
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/NethSickleItemIsCraftedsmeltedProcedure.java"
+        ]
+      },
+      "path": "~/Items/Procedures/Sickles"
+    },
+    {
+      "name": "IronSickle",
+      "type": "tool",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "iron_sickle",
+      "metadata": {
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/item/IronSickleItem.java",
+          "src/main/resources/assets/euru/models/item/iron_sickle.json"
+        ]
+      },
+      "path": "~/Items"
+    },
+    {
+      "name": "IronSickleItemIsCraftedsmelted",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "iron_sickle_item_is_craftedsmelted",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ],
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/IronSickleItemIsCraftedsmeltedProcedure.java"
+        ]
+      },
+      "path": "~/Items/Procedures/Sickles"
+    },
+    {
+      "name": "StoneSickle",
+      "type": "tool",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "stone_sickle",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/euru/models/item/stone_sickle.json",
+          "src/main/java/net/wavedk/extrautilitiesreutilized/item/StoneSickleItem.java"
+        ]
+      },
+      "path": "~/Items"
+    },
+    {
+      "name": "StoneSickleItemIsCraftedsmelted",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "stone_sickle_item_is_craftedsmelted",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ],
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/StoneSickleItemIsCraftedsmeltedProcedure.java"
+        ]
+      },
+      "path": "~/Items/Procedures/Sickles"
+    },
+    {
+      "name": "WoodenSickleItemIsCraftedsmelted",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "wooden_sickle_item_is_craftedsmelted",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ],
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/WoodenSickleItemIsCraftedsmeltedProcedure.java"
+        ]
+      },
+      "path": "~/Items/Procedures/Sickles"
+    },
+    {
+      "name": "WoodenSickle",
+      "type": "tool",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "wooden_sickle",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/euru/models/item/wooden_sickle.json",
+          "src/main/java/net/wavedk/extrautilitiesreutilized/item/WoodenSickleItem.java"
+        ]
+      },
+      "path": "~/Items"
+    },
+    {
+      "name": "GoldenSickle",
+      "type": "tool",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "golden_sickle",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/euru/models/item/golden_sickle.json",
+          "src/main/java/net/wavedk/extrautilitiesreutilized/item/GoldenSickleItem.java"
+        ]
+      },
+      "path": "~/Items"
+    },
+    {
+      "name": "NetheriteSickleRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "netherite_sickle_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/euru/recipe/netherite_sickle_recipe.json",
+          "src/main/resources/data/euru/advancement/recipes/netherite_sickle_recipe.json"
+        ]
+      },
+      "path": "~/Items/Recipes"
+    },
+    {
+      "name": "DiamondSickleRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "diamond_sickle_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/euru/recipe/diamond_sickle_recipe.json",
+          "src/main/resources/data/euru/advancement/recipes/diamond_sickle_recipe.json"
+        ]
+      },
+      "path": "~/Items/Recipes"
+    },
+    {
+      "name": "IronSickleRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "iron_sickle_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/euru/advancement/recipes/iron_sickle_recipe.json",
+          "src/main/resources/data/euru/recipe/iron_sickle_recipe.json"
+        ]
+      },
+      "path": "~/Items/Recipes"
+    },
+    {
+      "name": "GoldenSickleRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "golden_sickle_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/euru/recipe/golden_sickle_recipe.json",
+          "src/main/resources/data/euru/advancement/recipes/golden_sickle_recipe.json"
+        ]
+      },
+      "path": "~/Items/Recipes"
+    },
+    {
+      "name": "WoodenSickleRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "wooden_sickle_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/euru/recipe/wooden_sickle_recipe.json",
+          "src/main/resources/data/euru/advancement/recipes/wooden_sickle_recipe.json"
+        ]
+      },
+      "path": "~/Items/Recipes"
+    },
+    {
+      "name": "StoneSickleRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "stone_sickle_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/euru/recipe/stone_sickle_recipe.json",
+          "src/main/resources/data/euru/advancement/recipes/stone_sickle_recipe.json"
+        ]
+      },
+      "path": "~/Items/Recipes"
+    },
+    {
+      "name": "CulinaryGenerator",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "culinary_generator",
+      "metadata": {
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/block/CulinaryGeneratorBlock.java",
+          "src/main/resources/data/euru/loot_table/blocks/culinary_generator.json",
+          "src/main/resources/assets/euru/models/item/culinary_generator.json",
+          "src/main/java/net/wavedk/extrautilitiesreutilized/block/entity/CulinaryGeneratorBlockEntity.java",
+          "src/main/resources/assets/euru/models/block/culinary_generator_0.json",
+          "src/main/resources/assets/euru/models/block/culinary_generator.json",
+          "src/main/resources/assets/euru/blockstates/culinary_generator.json"
+        ]
+      },
+      "path": "~/Blocks/Generators/FE"
+    },
+    {
+      "name": "CGenAddedHandler",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "c_gen_added_handler",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/CGenAddedHandlerProcedure.java"
+        ]
+      },
+      "path": "~/Blocks/Generators/FE/Procedures"
     }
   ],
   "variable_elements": [
@@ -9227,6 +9737,8 @@
   "sound_elements": [],
   "tag_elements": {
     "BLOCKS:minecraft:mineable/pickaxe": [
+      "~CulinaryGenerator@CUSTOM:CulinaryGenerator",
+      "~Enchanter@CUSTOM:Enchanter",
       "~Crusher@CUSTOM:Crusher",
       "~NetherstarGenerator@CUSTOM:NetherstarGenerator",
       "~OverclockedGenerator@CUSTOM:OverclockedGenerator",
@@ -9236,7 +9748,6 @@
       "~CreativeMill@CUSTOM:CreativeMill",
       "~BlockOfEvilInfusedIngot@CUSTOM:BlockOfEvilInfusedIngot",
       "~FurnaceGenerator@CUSTOM:FurnaceGenerator",
-      "~Enchanter@CUSTOM:Enchanter",
       "~FireMill@CUSTOM:FireMill",
       "~StoneBurnt@CUSTOM:StoneBurnt",
       "~LavaMill@CUSTOM:LavaMill",
@@ -9258,9 +9769,9 @@
       "~SolarPanel@CUSTOM:SolarPanel"
     ],
     "BLOCKS:minecraft:needs_stone_tool": [
+      "~Enchanter@CUSTOM:Enchanter",
       "~ElectricFurnace@CUSTOM:ElectricFurnace",
       "~BlockOfEvilInfusedIngot@CUSTOM:BlockOfEvilInfusedIngot",
-      "~Enchanter@CUSTOM:Enchanter",
       "~FireMill@CUSTOM:FireMill",
       "~StoneBurnt@CUSTOM:StoneBurnt",
       "~LavaMill@CUSTOM:LavaMill",
@@ -9290,6 +9801,14 @@
     ],
     "ITEMS:minecraft:swords": [
       "~GlassCutter@CUSTOM:GlassCutter"
+    ],
+    "ITEMS:minecraft:hoes": [
+      "~StoneSickle@CUSTOM:StoneSickle",
+      "~IronSickle@CUSTOM:IronSickle",
+      "~WoodenSickle@CUSTOM:WoodenSickle",
+      "~GoldenSickle@CUSTOM:GoldenSickle",
+      "~DiamondSickle@CUSTOM:DiamondSickle",
+      "~NetheriteSickle@CUSTOM:NetheriteSickle"
     ]
   },
   "tab_element_order": {
@@ -9342,7 +9861,14 @@
       "NuggetoExperience",
       "ResonatingRedstoneCrystal",
       "GlassCutter",
-      "EnderShard"
+      "EnderShard",
+      "IronSickle",
+      "NetheriteSickle",
+      "DiamondSickle",
+      "StoneSickle",
+      "WoodenSickle",
+      "GoldenSickle",
+      "CulinaryGenerator"
     ]
   },
   "language_map": {
@@ -9526,7 +10052,14 @@
       "block.euru.creative_mill.description_0": "§7Generates 9999.0GP, indefinitely.",
       "gui.euru.resonator_gui.button_empty": "",
       "gui.euru.resonator_gui.button_empty1": "",
-      "block.euru.muffler": "Muffler"
+      "block.euru.muffler": "Muffler",
+      "item.euru.diamond_sickle": "Diamond Sickle",
+      "item.euru.netherite_sickle": "Netherite Sickle",
+      "item.euru.iron_sickle": "Iron Sickle",
+      "item.euru.stone_sickle": "Stone Sickle",
+      "item.euru.wooden_sickle": "Wooden Sickle",
+      "item.euru.golden_sickle": "Golden Sickle",
+      "block.euru.culinary_generator": "Culinary Generator"
     }
   },
   "metadata": {
@@ -9583,7 +10116,12 @@
           },
           {
             "name": "Procedures",
-            "children": []
+            "children": [
+              {
+                "name": "Sickles",
+                "children": []
+              }
+            ]
           },
           {
             "name": "Recipes",

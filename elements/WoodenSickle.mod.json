@@ -1,0 +1,41 @@
+{
+  "_fv": 89,
+  "_type": "tool",
+  "definition": {
+    "toolType": "Hoe",
+    "renderType": 0,
+    "blockingRenderType": 0,
+    "texture": "woodsickletemp",
+    "customModelName": "Normal",
+    "blockingModelName": "Normal blocking",
+    "guiTexture": "",
+    "name": "Wooden Sickle",
+    "rarity": "COMMON",
+    "specialInformation": {
+      "fixedValue": []
+    },
+    "creativeTabs": [
+      "CUSTOM:Euru"
+    ],
+    "efficiency": 2.0,
+    "attackSpeed": 1.0,
+    "enchantability": 2,
+    "damageVsEntity": 3.0,
+    "usageCount": 800,
+    "glowCondition": {
+      "fixedValue": false
+    },
+    "repairItems": [
+      "Blocks.PLANKS"
+    ],
+    "immuneToFire": false,
+    "blockDropsTier": "WOOD",
+    "blocksAffected": [],
+    "attributeModifiers": [],
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false,
+    "onCrafted": "WoodenSickleItemIsCraftedsmelted",
+    "onItemInInventoryTick": "WoodenSickleItemIsCraftedsmelted",
+    "onBlockDestroyedWithTool": "DiamondSickleBlockDestroyedWithTool"
+  }
+}

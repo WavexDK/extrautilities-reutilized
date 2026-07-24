@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " aa",
+    "  a",
+    "baa"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:diamond"
+    },
+    "b": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "id": "euru:diamond_sickle",
+    "count": 1
+  }
+}

@@ -178,5 +178,12 @@
   "block.euru.creative_mill.description_0": "§7Generates 9999.0GP, indefinitely.",
   "gui.euru.resonator_gui.button_empty": "",
   "gui.euru.resonator_gui.button_empty1": "",
-  "block.euru.muffler": "Muffler"
+  "block.euru.muffler": "Muffler",
+  "item.euru.diamond_sickle": "Diamond Sickle",
+  "item.euru.netherite_sickle": "Netherite Sickle",
+  "item.euru.iron_sickle": "Iron Sickle",
+  "item.euru.stone_sickle": "Stone Sickle",
+  "item.euru.wooden_sickle": "Wooden Sickle",
+  "item.euru.golden_sickle": "Golden Sickle",
+  "block.euru.culinary_generator": "Culinary Generator"
 }

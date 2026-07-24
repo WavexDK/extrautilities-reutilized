@@ -1,0 +1,24 @@
+{
+  "_fv": 89,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Smithing",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "unlockingItems": [
+      "Items.NETHERITE_INGOT",
+      "CUSTOM:DiamondSickle"
+    ],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "smithingInputStack": "Items.NETHERITE_INGOT",
+    "smithingInputAdditionStack": "Items.NETHERITE_UPGRADE",
+    "smithingInputTemplateStack": "CUSTOM:DiamondSickle",
+    "smithingReturnStack": "CUSTOM:NetheriteSickle",
+    "name": "netherite_sickle_recipe",
+    "namespace": "mod"
+  }
+}

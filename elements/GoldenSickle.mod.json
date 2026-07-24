@@ -1,0 +1,41 @@
+{
+  "_fv": 89,
+  "_type": "tool",
+  "definition": {
+    "toolType": "Hoe",
+    "renderType": 0,
+    "blockingRenderType": 0,
+    "texture": "goldsickletempo",
+    "customModelName": "Normal",
+    "blockingModelName": "Normal blocking",
+    "guiTexture": "",
+    "name": "Golden Sickle",
+    "rarity": "COMMON",
+    "specialInformation": {
+      "fixedValue": []
+    },
+    "creativeTabs": [
+      "CUSTOM:Euru"
+    ],
+    "efficiency": 8.0,
+    "attackSpeed": 1.0,
+    "enchantability": 2,
+    "damageVsEntity": 4.0,
+    "usageCount": 500,
+    "glowCondition": {
+      "fixedValue": false
+    },
+    "repairItems": [
+      "Items.GOLD_INGOT"
+    ],
+    "immuneToFire": false,
+    "blockDropsTier": "GOLD",
+    "blocksAffected": [],
+    "attributeModifiers": [],
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false,
+    "onCrafted": "DiamondSickleItemIsCraftedsmelted",
+    "onItemInInventoryTick": "DiamondSickleItemIsCraftedsmelted",
+    "onBlockDestroyedWithTool": "DiamondSickleBlockDestroyedWithTool"
+  }
+}

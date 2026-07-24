@@ -2,6 +2,8 @@ package net.wavedk.extrautilitiesreutilized.world.inventory;
 
 import net.wavedk.extrautilitiesreutilized.procedures.OnlySpeedUpgradesProcedure;
 import net.wavedk.extrautilitiesreutilized.procedures.IfNotSpeedUpgradesProcedure;
+import net.wavedk.extrautilitiesreutilized.procedures.CrusherMainGUIWhileThisGUIIsOpenTickProcedure;
+import net.wavedk.extrautilitiesreutilized.procedures.CrusherMainGUIThisGUIIsOpenedProcedure;
 import net.wavedk.extrautilitiesreutilized.init.EuruModMenus;
 
 import net.neoforged.neoforge.items.wrapper.InvWrapper;
@@ -9,7 +11,11 @@ import net.neoforged.neoforge.items.SlotItemHandler;
 import net.neoforged.neoforge.items.ItemStackHandler;
 import net.neoforged.neoforge.items.IItemHandlerModifiable;
 import net.neoforged.neoforge.items.IItemHandler;
+import net.neoforged.neoforge.event.tick.PlayerTickEvent;
+import net.neoforged.neoforge.event.entity.player.PlayerContainerEvent;
 import net.neoforged.neoforge.capabilities.Capabilities;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.bus.api.SubscribeEvent;
 
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BaseContainerBlockEntity;
@@ -30,11 +36,12 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.Collections;
 
+@EventBusSubscriber
 public class CrusherMainGUIMenu extends AbstractContainerMenu implements EuruModMenus.MenuAccessor {
 	public final Map<String, Object> menuState = new HashMap<>() {
 		@Override
 		public Object put(String key, Object value) {
-			if (!this.containsKey(key) && this.size() >= 39)
+			if (!this.containsKey(key) && this.size() >= 90)
 				return null;
 			return super.put(key, value);
 		}
@@ -237,6 +244,7 @@ public class CrusherMainGUIMenu extends AbstractContainerMenu implements EuruMod
 	@Override
 	public void removed(Player playerIn) {
 		super.removed(playerIn);
+		CrusherMainGUIThisGUIIsOpenedProcedure.execute(world, x, y, z);
 		if (!bound && playerIn instanceof ServerPlayer serverPlayer) {
 			if (!serverPlayer.isAlive() || serverPlayer.hasDisconnected()) {
 				for (int j = 0; j < internal.getSlots(); ++j) {
@@ -262,5 +270,29 @@ public class CrusherMainGUIMenu extends AbstractContainerMenu implements EuruMod
 	@Override
 	public Map<String, Object> getMenuState() {
 		return menuState;
+	}
+
+	@SubscribeEvent
+	public static void onPlayerTick(PlayerTickEvent.Post event) {
+		Player entity = event.getEntity();
+		if (entity.containerMenu instanceof CrusherMainGUIMenu menu) {
+			Level world = menu.world;
+			double x = menu.x;
+			double y = menu.y;
+			double z = menu.z;
+			CrusherMainGUIWhileThisGUIIsOpenTickProcedure.execute(world, x, y, z);
+		}
+	}
+
+	@SubscribeEvent
+	public static void onContainerOpen(PlayerContainerEvent.Open event) {
+		Player entity = event.getEntity();
+		if (event.getContainer() instanceof CrusherMainGUIMenu menu) {
+			Level world = menu.world;
+			double x = menu.x;
+			double y = menu.y;
+			double z = menu.z;
+			CrusherMainGUIThisGUIIsOpenedProcedure.execute(world, x, y, z);
+		}
 	}
 }

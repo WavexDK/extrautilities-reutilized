@@ -1,0 +1,41 @@
+{
+  "_fv": 89,
+  "_type": "tool",
+  "definition": {
+    "toolType": "Hoe",
+    "renderType": 0,
+    "blockingRenderType": 0,
+    "texture": "ironsickletemp",
+    "customModelName": "Normal",
+    "blockingModelName": "Normal blocking",
+    "guiTexture": "",
+    "name": "Iron Sickle",
+    "rarity": "COMMON",
+    "specialInformation": {
+      "fixedValue": []
+    },
+    "creativeTabs": [
+      "CUSTOM:Euru"
+    ],
+    "efficiency": 5.0,
+    "attackSpeed": 1.0,
+    "enchantability": 2,
+    "damageVsEntity": 6.0,
+    "usageCount": 4000,
+    "glowCondition": {
+      "fixedValue": false
+    },
+    "repairItems": [
+      "Items.IRON_INGOT"
+    ],
+    "immuneToFire": false,
+    "blockDropsTier": "IRON",
+    "blocksAffected": [],
+    "attributeModifiers": [],
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false,
+    "onCrafted": "IronSickleItemIsCraftedsmelted",
+    "onItemInInventoryTick": "IronSickleItemIsCraftedsmelted",
+    "onBlockDestroyedWithTool": "DiamondSickleBlockDestroyedWithTool"
+  }
+}

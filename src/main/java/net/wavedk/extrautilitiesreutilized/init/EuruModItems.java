@@ -92,6 +92,13 @@ public class EuruModItems {
 	public static final DeferredItem<Item> NETHERSTAR_GENERATOR = block(EuruModBlocks.NETHERSTAR_GENERATOR);
 	public static final DeferredItem<Item> ENDER_LILLY = block(EuruModBlocks.ENDER_LILLY);
 	public static final DeferredItem<Item> MUFFLER = block(EuruModBlocks.MUFFLER);
+	public static final DeferredItem<Item> DIAMOND_SICKLE = REGISTRY.register("diamond_sickle", DiamondSickleItem::new);
+	public static final DeferredItem<Item> NETHERITE_SICKLE = REGISTRY.register("netherite_sickle", NetheriteSickleItem::new);
+	public static final DeferredItem<Item> IRON_SICKLE = REGISTRY.register("iron_sickle", IronSickleItem::new);
+	public static final DeferredItem<Item> STONE_SICKLE = REGISTRY.register("stone_sickle", StoneSickleItem::new);
+	public static final DeferredItem<Item> WOODEN_SICKLE = REGISTRY.register("wooden_sickle", WoodenSickleItem::new);
+	public static final DeferredItem<Item> GOLDEN_SICKLE = REGISTRY.register("golden_sickle", GoldenSickleItem::new);
+	public static final DeferredItem<Item> CULINARY_GENERATOR = block(EuruModBlocks.CULINARY_GENERATOR);
 
 	// Start of user code block custom items
 	// End of user code block custom items

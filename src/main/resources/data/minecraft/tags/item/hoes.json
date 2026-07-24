@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "euru:stone_sickle",
+    "euru:iron_sickle",
+    "euru:diamond_sickle",
+    "euru:wooden_sickle",
+    "euru:golden_sickle",
+    "euru:netherite_sickle"
+  ]
+}

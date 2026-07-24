@@ -191,7 +191,7 @@ public class CrusherOnTickUpdateProcedure {
 											_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 									}
 									cNum = 0;
-									for (int index52 = 0; index52 < (int) rlist.size(); index52++) {
+									for (int index96 = 0; index96 < (int) rlist.size(); index96++) {
 										if ((BuiltInRegistries.ITEM.getKey((itemFromBlockInventory(world, BlockPos.containing(x, y, z), 0).copy()).getItem()).toString()).equals(rlist.get((int) cNum).getAsString())) {
 											iobj = bobj.get(rlist.get((int) cNum).getAsString()).getAsJsonObject();
 											if (getEnergyStored(world, BlockPos.containing(x, y, z), null) >= iobj.get("fe_required").getAsDouble()) {
@@ -317,6 +317,7 @@ public class CrusherOnTickUpdateProcedure {
 							BlockEntity _blockEntity = world.getBlockEntity(_bp);
 							BlockState _bs = world.getBlockState(_bp);
 							if (_blockEntity != null) {
+								_blockEntity.getPersistentData().putBoolean("tmGP", false);
 								_blockEntity.getPersistentData().putBoolean("stoppedForGP", false);
 							}
 							if (world instanceof Level _level)
@@ -329,6 +330,7 @@ public class CrusherOnTickUpdateProcedure {
 							BlockState _bs = world.getBlockState(_bp);
 							if (_blockEntity != null) {
 								_blockEntity.getPersistentData().putBoolean("stoppedForGP", true);
+								_blockEntity.getPersistentData().putBoolean("tmGP", true);
 							}
 							if (world instanceof Level _level)
 								_level.sendBlockUpdated(_bp, _bs, _bs, 3);
@@ -337,9 +339,19 @@ public class CrusherOnTickUpdateProcedure {
 				}
 			}
 		}
-		if (getPropertyByName(blockstate, "on") instanceof BooleanProperty _getbp109 && blockstate.getValue(_getbp109)) {
+		if (getPropertyByName(blockstate, "on") instanceof BooleanProperty _getbp111 && blockstate.getValue(_getbp111)) {
 			if ((getBlockNBTString(world, BlockPos.containing(x, y, z), "currentItem")).equals("") || getBlockNBTLogic(world, BlockPos.containing(x, y, z), "stoppedForGP")) {
 				if (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "onCounter") > 2) {
+					if (!world.isClientSide()) {
+						BlockPos _bp = BlockPos.containing(x, y, z);
+						BlockEntity _blockEntity = world.getBlockEntity(_bp);
+						BlockState _bs = world.getBlockState(_bp);
+						if (_blockEntity != null) {
+							_blockEntity.getPersistentData().putBoolean("tmGP", false);
+						}
+						if (world instanceof Level _level)
+							_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+					}
 					{
 						BlockPos _pos = BlockPos.containing(x, y, z);
 						BlockState _bs = world.getBlockState(_pos);

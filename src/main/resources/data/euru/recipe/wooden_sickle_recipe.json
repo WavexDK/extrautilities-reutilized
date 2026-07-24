@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " aa",
+    "  a",
+    "baa"
+  ],
+  "key": {
+    "a": {
+      "tag": "minecraft:planks"
+    },
+    "b": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "id": "euru:wooden_sickle",
+    "count": 1
+  }
+}
