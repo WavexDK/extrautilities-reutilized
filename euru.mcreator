@@ -9738,9 +9738,8 @@
   "tag_elements": {
     "BLOCKS:minecraft:mineable/pickaxe": [
       "~CulinaryGenerator@CUSTOM:CulinaryGenerator",
-      "~Enchanter@CUSTOM:Enchanter",
-      "~Crusher@CUSTOM:Crusher",
       "~NetherstarGenerator@CUSTOM:NetherstarGenerator",
+      "~Crusher@CUSTOM:Crusher",
       "~OverclockedGenerator@CUSTOM:OverclockedGenerator",
       "~CreativeEnergySource@CUSTOM:CreativeEnergySource",
       "~EnderGenerator@CUSTOM:EnderGenerator",
@@ -9748,6 +9747,7 @@
       "~CreativeMill@CUSTOM:CreativeMill",
       "~BlockOfEvilInfusedIngot@CUSTOM:BlockOfEvilInfusedIngot",
       "~FurnaceGenerator@CUSTOM:FurnaceGenerator",
+      "~Enchanter@CUSTOM:Enchanter",
       "~FireMill@CUSTOM:FireMill",
       "~StoneBurnt@CUSTOM:StoneBurnt",
       "~LavaMill@CUSTOM:LavaMill",
@@ -9769,9 +9769,9 @@
       "~SolarPanel@CUSTOM:SolarPanel"
     ],
     "BLOCKS:minecraft:needs_stone_tool": [
-      "~Enchanter@CUSTOM:Enchanter",
       "~ElectricFurnace@CUSTOM:ElectricFurnace",
       "~BlockOfEvilInfusedIngot@CUSTOM:BlockOfEvilInfusedIngot",
+      "~Enchanter@CUSTOM:Enchanter",
       "~FireMill@CUSTOM:FireMill",
       "~StoneBurnt@CUSTOM:StoneBurnt",
       "~LavaMill@CUSTOM:LavaMill",
@@ -9788,6 +9788,9 @@
       "~LunarPanel@CUSTOM:LunarPanel",
       "~SolarPanel@CUSTOM:SolarPanel"
     ],
+    "ITEMS:minecraft:swords": [
+      "~GlassCutter@CUSTOM:GlassCutter"
+    ],
     "BLOCKS:minecraft:needs_diamond_tool": [
       "~CreativeEnergySource@CUSTOM:CreativeEnergySource",
       "~AngelBlock@CUSTOM:AngelBlock",
@@ -9799,16 +9802,13 @@
       "~MiniChest@CUSTOM:MiniChest",
       "~ManualMill@CUSTOM:ManualMill"
     ],
-    "ITEMS:minecraft:swords": [
-      "~GlassCutter@CUSTOM:GlassCutter"
-    ],
     "ITEMS:minecraft:hoes": [
+      "~GoldenSickle@CUSTOM:GoldenSickle",
+      "~WoodenSickle@CUSTOM:WoodenSickle",
       "~StoneSickle@CUSTOM:StoneSickle",
       "~IronSickle@CUSTOM:IronSickle",
-      "~WoodenSickle@CUSTOM:WoodenSickle",
-      "~GoldenSickle@CUSTOM:GoldenSickle",
-      "~DiamondSickle@CUSTOM:DiamondSickle",
-      "~NetheriteSickle@CUSTOM:NetheriteSickle"
+      "~NetheriteSickle@CUSTOM:NetheriteSickle",
+      "~DiamondSickle@CUSTOM:DiamondSickle"
     ]
   },
   "tab_element_order": {
@@ -10307,5 +10307,5 @@
     "credits": "Made with ❤️ by WaveDK using MCreator. Textures by @batzorig and @quotat1on.",
     "modElementsPackage": "net.wavedk.extrautilitiesreutilized"
   },
-  "mcreatorVersion": 202600229418
+  "mcreatorVersion": 202600230420
 }

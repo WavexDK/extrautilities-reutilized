@@ -1,0 +1,29 @@
+{
+  "required": true,
+  "package": "net.wavedk.extrautilitiesreutilized.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "CneStructureBlockLimitMixin",
+    "CneFlyingDebrisMixin",
+    "CneHitZoneCollisionMixin",
+    "CneHitZonePickMixin",
+    "CneMovableGroupCollisionMixin"
+  ],
+  "client": [
+    "CneCameraMixin",
+    "CneAudioOptionsMixin",
+    "CneStructureScreenMixin",
+    "CneEntityTextureMixin",
+    "CneInventoryScreenMixin",
+    "CneHoldMineMixin",
+    "CneItemInHandTrailMixin",
+    "CneViewBobMixin",
+        "CneItemFrameMixin",
+        "CneItemScaleMixin",
+        "CneFirstPersonSkinMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "minVersion": "0.8.4"
+}
