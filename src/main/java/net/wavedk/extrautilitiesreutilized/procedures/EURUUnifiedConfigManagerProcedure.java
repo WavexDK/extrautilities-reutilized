@@ -66,10 +66,11 @@ public class EURUUnifiedConfigManagerProcedure {
 		com.google.gson.JsonObject machinesobj = new com.google.gson.JsonObject();
 		com.google.gson.JsonObject crushobj = new com.google.gson.JsonObject();
 		com.google.gson.JsonObject newJson = new com.google.gson.JsonObject();
+		com.google.gson.JsonObject wc = new com.google.gson.JsonObject();
 		String cItem = "";
 		String coutput = "";
 		configFile = new File((FMLPaths.GAMEDIR.get().toString() + "/config/euru/"), File.separator + "euru_unified_config.json");
-		EuruModVariables.cVer = 2;
+		EuruModVariables.cVer = 4;
 		cVer = EuruModVariables.cVer;
 		if (!configFile.exists()) {
 			try {
@@ -220,6 +221,11 @@ public class EURUUnifiedConfigManagerProcedure {
 			doeobj.addProperty("dropchance", 3);
 			doeobj.addProperty("dropchance_multiplywithlooting", true);
 			generalOBJ.add((BuiltInRegistries.ITEM.getKey(EuruModItems.DROP_OF_EVIL.get()).toString()), doeobj);
+			wc.addProperty("chance_for_growtick", 40);
+			wc.addProperty("chance_for_plant_growth", 30);
+			wc.addProperty("number_of_plants_grown", 2);
+			wc.addProperty("info", "(!) NEVER Set the above values to 0, or your TPS will drop dramatically when using the Watering Can, and the item will not work (!)");
+			generalOBJ.add((BuiltInRegistries.ITEM.getKey(EuruModItems.WATERING_CAN.get()).toString()), wc);
 			gcobj.addProperty("breaks_glass", true);
 			generalOBJ.add((BuiltInRegistries.ITEM.getKey(EuruModItems.GLASS_CUTTER.get()).toString()), gcobj);
 			srobj.addProperty("gp_needed", 16);

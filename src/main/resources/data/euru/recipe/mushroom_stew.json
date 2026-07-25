@@ -1,0 +1,18 @@
+{
+  "type": "euru:c_gen_recipe_type",
+  "ingredients": [
+    {
+      "item": "minecraft:mushroom_stew"
+    }
+  ],
+  "strings": [
+    "euru:culinary_generator",
+    "minecraft:mushroom_stew"
+  ],
+  "outputs": [
+    {
+      "id": "minecraft:polished_tuff",
+      "count": 1
+    }
+  ]
+}

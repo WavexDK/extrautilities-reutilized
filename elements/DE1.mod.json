@@ -1,0 +1,27 @@
+{
+  "_fv": 89,
+  "_type": "jeirecipe",
+  "definition": {
+    "category": "de_gen_recipe_type",
+    "ingredients": [
+      "Items.ENCHANTED_BOOK",
+      "Blocks.AIR",
+      "Blocks.AIR",
+      "Blocks.AIR",
+      "Blocks.AIR"
+    ],
+    "integers": [],
+    "strings": [
+      "[ NATURAL MAX: 1 ]",
+      "1"
+    ],
+    "recipetype": "DEGenRecipeType",
+    "results": [
+      "Blocks.POLISHED_TUFF"
+    ],
+    "resultCounts": [
+      1
+    ],
+    "count": 0
+  }
+}

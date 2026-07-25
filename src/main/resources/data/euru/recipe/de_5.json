@@ -1,0 +1,30 @@
+{
+  "type": "euru:de_gen_recipe_type",
+  "ingredients": [
+    {
+      "item": "minecraft:enchanted_book"
+    },
+    {
+      "item": "minecraft:enchanted_book"
+    },
+    {
+      "item": "minecraft:enchanted_book"
+    },
+    {
+      "item": "minecraft:enchanted_book"
+    },
+    {
+      "item": "minecraft:enchanted_book"
+    }
+  ],
+  "strings": [
+    "[ NATURAL MAX: 5 ]",
+    "5"
+  ],
+  "outputs": [
+    {
+      "id": "minecraft:polished_tuff",
+      "count": 1
+    }
+  ]
+}

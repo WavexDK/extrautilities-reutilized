@@ -42,6 +42,10 @@ public class EuruModRecipeTypes {
 			SERIALIZERS.register("golden_lasso_rt", () -> GoldenLassoRTRecipe.Serializer.INSTANCE);
 			RECIPE_TYPES.register("cursed_lasso_rt", () -> CursedLassoRTRecipe.Type.INSTANCE);
 			SERIALIZERS.register("cursed_lasso_rt", () -> CursedLassoRTRecipe.Serializer.INSTANCE);
+			RECIPE_TYPES.register("c_gen_recipe_type", () -> CGenRecipeTypeRecipe.Type.INSTANCE);
+			SERIALIZERS.register("c_gen_recipe_type", () -> CGenRecipeTypeRecipe.Serializer.INSTANCE);
+			RECIPE_TYPES.register("de_gen_recipe_type", () -> DEGenRecipeTypeRecipe.Type.INSTANCE);
+			SERIALIZERS.register("de_gen_recipe_type", () -> DEGenRecipeTypeRecipe.Serializer.INSTANCE);
 		});
 	}
 }

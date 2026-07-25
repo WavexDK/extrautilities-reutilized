@@ -45,6 +45,7 @@ public class EuruModBlockEntities {
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> ENDER_LILLY = register("ender_lilly", EuruModBlocks.ENDER_LILLY, EnderLillyBlockEntity::new);
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> ENDER_LILLY_PLANT = register("ender_lilly_plant", EuruModBlocks.ENDER_LILLY_PLANT, EnderLillyPlantBlockEntity::new);
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> CULINARY_GENERATOR = register("culinary_generator", EuruModBlocks.CULINARY_GENERATOR, CulinaryGeneratorBlockEntity::new);
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> DISENCHANTMENT_GENERATOR = register("disenchantment_generator", EuruModBlocks.DISENCHANTMENT_GENERATOR, DisenchantmentGeneratorBlockEntity::new);
 
 	// Start of user code block custom block entities
 	// End of user code block custom block entities
@@ -85,5 +86,7 @@ public class EuruModBlockEntities {
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, ENDER_LILLY.get(), (blockEntity, side) -> new SidedInvWrapper((WorldlyContainer) blockEntity, side));
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, CULINARY_GENERATOR.get(), (blockEntity, side) -> new SidedInvWrapper((WorldlyContainer) blockEntity, side));
 		event.registerBlockEntity(Capabilities.EnergyStorage.BLOCK, CULINARY_GENERATOR.get(), (blockEntity, side) -> ((CulinaryGeneratorBlockEntity) blockEntity).getEnergyStorage());
+		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, DISENCHANTMENT_GENERATOR.get(), (blockEntity, side) -> new SidedInvWrapper((WorldlyContainer) blockEntity, side));
+		event.registerBlockEntity(Capabilities.EnergyStorage.BLOCK, DISENCHANTMENT_GENERATOR.get(), (blockEntity, side) -> ((DisenchantmentGeneratorBlockEntity) blockEntity).getEnergyStorage());
 	}
 }

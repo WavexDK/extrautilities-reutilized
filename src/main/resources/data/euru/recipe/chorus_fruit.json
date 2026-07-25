@@ -1,0 +1,18 @@
+{
+  "type": "euru:c_gen_recipe_type",
+  "ingredients": [
+    {
+      "item": "minecraft:chorus_fruit"
+    }
+  ],
+  "strings": [
+    "euru:culinary_generator",
+    "minecraft:chorus_fruit"
+  ],
+  "outputs": [
+    {
+      "id": "minecraft:polished_tuff",
+      "count": 1
+    }
+  ]
+}

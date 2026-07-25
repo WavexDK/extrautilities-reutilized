@@ -1,0 +1,18 @@
+{
+  "type": "euru:c_gen_recipe_type",
+  "ingredients": [
+    {
+      "item": "minecraft:bread"
+    }
+  ],
+  "strings": [
+    "euru:culinary_generator",
+    "minecraft:bread"
+  ],
+  "outputs": [
+    {
+      "id": "minecraft:polished_tuff",
+      "count": 1
+    }
+  ]
+}

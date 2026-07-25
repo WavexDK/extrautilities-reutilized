@@ -1,0 +1,18 @@
+{
+  "type": "euru:c_gen_recipe_type",
+  "ingredients": [
+    {
+      "item": "minecraft:suspicious_stew"
+    }
+  ],
+  "strings": [
+    "euru:culinary_generator",
+    "minecraft:suspicious_stew"
+  ],
+  "outputs": [
+    {
+      "id": "minecraft:polished_tuff",
+      "count": 1
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "type": "euru:c_gen_recipe_type",
+  "ingredients": [
+    {
+      "item": "minecraft:carrot"
+    }
+  ],
+  "strings": [
+    "euru:culinary_generator",
+    "minecraft:carrot"
+  ],
+  "outputs": [
+    {
+      "id": "minecraft:polished_tuff",
+      "count": 1
+    }
+  ]
+}

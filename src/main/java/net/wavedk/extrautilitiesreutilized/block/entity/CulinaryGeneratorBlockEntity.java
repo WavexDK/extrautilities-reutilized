@@ -131,7 +131,7 @@ public class CulinaryGeneratorBlockEntity extends RandomizableContainerBlockEnti
 		return true;
 	}
 
-	private final EnergyStorage energyStorage = new EnergyStorage(120000, 0, 80000, 0) {
+	private final EnergyStorage energyStorage = new EnergyStorage(48000, 0, 32000, 0) {
 		@Override
 		public int receiveEnergy(int maxReceive, boolean simulate) {
 			int retval = super.receiveEnergy(maxReceive, simulate);

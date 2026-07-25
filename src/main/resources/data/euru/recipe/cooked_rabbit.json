@@ -1,0 +1,18 @@
+{
+  "type": "euru:c_gen_recipe_type",
+  "ingredients": [
+    {
+      "item": "minecraft:cooked_rabbit"
+    }
+  ],
+  "strings": [
+    "euru:culinary_generator",
+    "minecraft:cooked_rabbit"
+  ],
+  "outputs": [
+    {
+      "id": "minecraft:polished_tuff",
+      "count": 1
+    }
+  ]
+}

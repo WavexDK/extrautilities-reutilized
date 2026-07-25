@@ -9526,6 +9526,445 @@
         ]
       },
       "path": "~/Blocks/Generators/FE/Procedures"
+    },
+    {
+      "name": "CGenRecipeType",
+      "type": "jeirecipetype",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "c_gen_recipe_type",
+      "metadata": {
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/jei_recipes/CGenRecipeTypeRecipe.java",
+          "src/main/java/net/wavedk/extrautilitiesreutilized/jei_recipes/CGenRecipeTypeRecipeCategory.java"
+        ]
+      },
+      "path": "~/Blocks/Generators/FE/JEI"
+    },
+    {
+      "name": "DisenchantmentGenerator",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "disenchantment_generator",
+      "metadata": {
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/block/entity/DisenchantmentGeneratorBlockEntity.java",
+          "src/main/resources/assets/euru/models/block/disenchantment_generator_0.json",
+          "src/main/resources/assets/euru/models/item/disenchantment_generator.json",
+          "src/main/resources/assets/euru/models/block/disenchantment_generator.json",
+          "src/main/resources/data/euru/loot_table/blocks/disenchantment_generator.json",
+          "src/main/resources/assets/euru/blockstates/disenchantment_generator.json",
+          "src/main/java/net/wavedk/extrautilitiesreutilized/block/DisenchantmentGeneratorBlock.java"
+        ]
+      },
+      "path": "~/Blocks/Generators/FE"
+    },
+    {
+      "name": "DEGenAddedHandler",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "de_gen_added_handler",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/DEGenAddedHandlerProcedure.java"
+        ]
+      },
+      "path": "~/Blocks/Generators/FE/Procedures"
+    },
+    {
+      "name": "DEGenRecipeType",
+      "type": "jeirecipetype",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "de_gen_recipe_type",
+      "metadata": {
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/jei_recipes/DEGenRecipeTypeRecipeCategory.java",
+          "src/main/java/net/wavedk/extrautilitiesreutilized/jei_recipes/DEGenRecipeTypeRecipe.java"
+        ]
+      },
+      "path": "~/Blocks/Generators/FE/JEI"
+    },
+    {
+      "name": "MAXt",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ma_xt",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "strings",
+            "type": "stringlist"
+          }
+        ],
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/MAXtProcedure.java"
+        ]
+      },
+      "path": "~/Blocks/Generators/FE/JEI/Procedures"
+    },
+    {
+      "name": "ReturnDE1",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_de_1",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "strings",
+            "type": "stringlist"
+          }
+        ],
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/ReturnDE1Procedure.java"
+        ]
+      },
+      "path": "~/Blocks/Generators/FE/JEI/Procedures"
+    },
+    {
+      "name": "ReturnDE2",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_de_2",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "strings",
+            "type": "stringlist"
+          }
+        ],
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/ReturnDE2Procedure.java"
+        ]
+      },
+      "path": "~/Blocks/Generators/FE/JEI/Procedures"
+    },
+    {
+      "name": "ReturnDE3",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_de_3",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "strings",
+            "type": "stringlist"
+          }
+        ],
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/ReturnDE3Procedure.java"
+        ]
+      },
+      "path": "~/Blocks/Generators/FE/JEI/Procedures"
+    },
+    {
+      "name": "ReturnDE4",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_de_4",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "strings",
+            "type": "stringlist"
+          }
+        ],
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/ReturnDE4Procedure.java"
+        ]
+      },
+      "path": "~/Blocks/Generators/FE/JEI/Procedures"
+    },
+    {
+      "name": "ReturnDE5",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_de_5",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "strings",
+            "type": "stringlist"
+          }
+        ],
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/ReturnDE5Procedure.java"
+        ]
+      },
+      "path": "~/Blocks/Generators/FE/JEI/Procedures"
+    },
+    {
+      "name": "ShowDE5",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "show_de_5",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "strings",
+            "type": "stringlist"
+          }
+        ],
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/ShowDE5Procedure.java"
+        ]
+      },
+      "path": "~/Blocks/Generators/FE/JEI/Procedures"
+    },
+    {
+      "name": "ShowDE4",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "show_de_4",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "strings",
+            "type": "stringlist"
+          }
+        ],
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/ShowDE4Procedure.java"
+        ]
+      },
+      "path": "~/Blocks/Generators/FE/JEI/Procedures"
+    },
+    {
+      "name": "ShowDE3",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "show_de_3",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "strings",
+            "type": "stringlist"
+          }
+        ],
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/ShowDE3Procedure.java"
+        ]
+      },
+      "path": "~/Blocks/Generators/FE/JEI/Procedures"
+    },
+    {
+      "name": "ShowDE2",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "show_de_2",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "strings",
+            "type": "stringlist"
+          }
+        ],
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/ShowDE2Procedure.java"
+        ]
+      },
+      "path": "~/Blocks/Generators/FE/JEI/Procedures"
+    },
+    {
+      "name": "ShowDE1",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "show_de_1",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "strings",
+            "type": "stringlist"
+          }
+        ],
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/ShowDE1Procedure.java"
+        ]
+      },
+      "path": "~/Blocks/Generators/FE/JEI/Procedures"
+    },
+    {
+      "name": "DE1",
+      "type": "jeirecipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "de_1",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/euru/recipe/de_1.json"
+        ]
+      },
+      "path": "~/Blocks/Generators/FE/JEI"
+    },
+    {
+      "name": "DE2",
+      "type": "jeirecipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "de_2",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/euru/recipe/de_2.json"
+        ]
+      },
+      "path": "~/Blocks/Generators/FE/JEI"
+    },
+    {
+      "name": "DE3",
+      "type": "jeirecipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "de_3",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/euru/recipe/de_3.json"
+        ]
+      },
+      "path": "~/Blocks/Generators/FE/JEI"
+    },
+    {
+      "name": "DE4",
+      "type": "jeirecipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "de_4",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/euru/recipe/de_4.json"
+        ]
+      },
+      "path": "~/Blocks/Generators/FE/JEI"
+    },
+    {
+      "name": "DE5",
+      "type": "jeirecipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "de_5",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/euru/recipe/de_5.json"
+        ]
+      },
+      "path": "~/Blocks/Generators/FE/JEI"
+    },
+    {
+      "name": "WateringCan",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "watering_can",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/euru/models/item/watering_can.json",
+          "src/main/java/net/wavedk/extrautilitiesreutilized/item/WateringCanItem.java"
+        ]
+      },
+      "path": "~/Items"
+    },
+    {
+      "name": "WateringCanItemInHandTick",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "watering_can_item_in_hand_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/WateringCanItemInHandTickProcedure.java"
+        ]
+      },
+      "path": "~/Items/Procedures"
+    },
+    {
+      "name": "WateringCanItemIsCraftedsmelted",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "watering_can_item_is_craftedsmelted",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ],
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/WateringCanItemIsCraftedsmeltedProcedure.java"
+        ]
+      },
+      "path": "~/Items/Procedures"
     }
   ],
   "variable_elements": [
@@ -9737,6 +10176,7 @@
   "sound_elements": [],
   "tag_elements": {
     "BLOCKS:minecraft:mineable/pickaxe": [
+      "~DisenchantmentGenerator@CUSTOM:DisenchantmentGenerator",
       "~CulinaryGenerator@CUSTOM:CulinaryGenerator",
       "~NetherstarGenerator@CUSTOM:NetherstarGenerator",
       "~Crusher@CUSTOM:Crusher",
@@ -9809,6 +10249,9 @@
       "~IronSickle@CUSTOM:IronSickle",
       "~NetheriteSickle@CUSTOM:NetheriteSickle",
       "~DiamondSickle@CUSTOM:DiamondSickle"
+    ],
+    "ITEMS:minecraft:enchantable/durability": [
+      "~WateringCan@CUSTOM:WateringCan"
     ]
   },
   "tab_element_order": {
@@ -9817,6 +10260,8 @@
       "NetherstarGenerator",
       "EnderGenerator",
       "OverclockedGenerator",
+      "DisenchantmentGenerator",
+      "CulinaryGenerator",
       "FurnaceGenerator",
       "SurvivalGenerator",
       "Resonator",
@@ -9850,6 +10295,7 @@
       "EvilInfusedIngot",
       "EnchantedApple",
       "EnchantedIngot",
+      "WateringCan",
       "MagicalNugget",
       "GoldenLasso",
       "CursedLasso",
@@ -9867,8 +10313,7 @@
       "DiamondSickle",
       "StoneSickle",
       "WoodenSickle",
-      "GoldenSickle",
-      "CulinaryGenerator"
+      "GoldenSickle"
     ]
   },
   "language_map": {
@@ -10059,7 +10504,9 @@
       "item.euru.stone_sickle": "Stone Sickle",
       "item.euru.wooden_sickle": "Wooden Sickle",
       "item.euru.golden_sickle": "Golden Sickle",
-      "block.euru.culinary_generator": "Culinary Generator"
+      "block.euru.culinary_generator": "Culinary Generator",
+      "block.euru.disenchantment_generator": "Disenchantment Generator",
+      "item.euru.watering_can": "Watering Can"
     }
   },
   "metadata": {

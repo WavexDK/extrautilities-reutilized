@@ -99,6 +99,8 @@ public class EuruModItems {
 	public static final DeferredItem<Item> WOODEN_SICKLE = REGISTRY.register("wooden_sickle", WoodenSickleItem::new);
 	public static final DeferredItem<Item> GOLDEN_SICKLE = REGISTRY.register("golden_sickle", GoldenSickleItem::new);
 	public static final DeferredItem<Item> CULINARY_GENERATOR = block(EuruModBlocks.CULINARY_GENERATOR);
+	public static final DeferredItem<Item> DISENCHANTMENT_GENERATOR = block(EuruModBlocks.DISENCHANTMENT_GENERATOR);
+	public static final DeferredItem<Item> WATERING_CAN = REGISTRY.register("watering_can", WateringCanItem::new);
 
 	// Start of user code block custom items
 	// End of user code block custom items

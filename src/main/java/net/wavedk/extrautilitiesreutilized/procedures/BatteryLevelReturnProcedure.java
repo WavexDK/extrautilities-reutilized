@@ -11,7 +11,7 @@ import net.minecraft.core.BlockPos;
 public class BatteryLevelReturnProcedure {
 	public static double execute(LevelAccessor world, double x, double y, double z) {
 		double cNum = 0;
-		for (int index17 = 0; index17 < 48; index17++) {
+		for (int index1823 = 0; index1823 < 48; index1823++) {
 			if (getEnergyStored(world, BlockPos.containing(x, y, z), null) < (getMaxEnergyStored(world, BlockPos.containing(x, y, z), null) / 47d) * cNum
 					&& getEnergyStored(world, BlockPos.containing(x, y, z), null) >= (getMaxEnergyStored(world, BlockPos.containing(x, y, z), null) / 47d) * (cNum - 1)) {
 				return cNum;

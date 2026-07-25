@@ -4,6 +4,7 @@ import org.apache.commons.lang3.function.FailableFunction;
 
 import net.wavedk.extrautilitiesreutilized.network.EuruModVariables;
 import net.wavedk.extrautilitiesreutilized.init.EuruModItems;
+import net.wavedk.extrautilitiesreutilized.init.EuruModBlocks;
 import net.wavedk.extrautilitiesreutilized.block.entity.IEnergyReceiver;
 
 import net.neoforged.neoforge.items.IItemHandlerModifiable;
@@ -19,6 +20,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Entity;
@@ -26,9 +28,11 @@ import net.minecraft.tags.ItemTags;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.network.chat.Component;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
+import net.minecraft.ChatFormatting;
 
 import java.util.function.Supplier;
 import java.util.UUID;
@@ -45,10 +49,13 @@ public class GeneratorTickHandlerProcedure {
 		com.google.gson.JsonArray fuelList = new com.google.gson.JsonArray();
 		String currentItem = "";
 		String getDependencies = "";
+		String eNumString = "";
+		String eMaxNumString = "";
 		com.google.gson.JsonObject configOBJ = new com.google.gson.JsonObject();
 		com.google.gson.JsonObject fuelPropertiesOBJ = new com.google.gson.JsonObject();
 		com.google.gson.JsonObject itemOBJ = new com.google.gson.JsonObject();
 		com.google.gson.JsonObject blockOBJ = new com.google.gson.JsonObject();
+		com.google.gson.JsonObject deobj = new com.google.gson.JsonObject();
 		double feGen = 0;
 		double feSpeed = 0;
 		double sentSouth = 0;
@@ -62,11 +69,15 @@ public class GeneratorTickHandlerProcedure {
 		double oX = 0;
 		double oY = 0;
 		double oZ = 0;
+		double eNum = 0;
+		double eMaxNum = 0;
+		double soFL = 0;
 		boolean canGenerate = false;
 		boolean canSlowBurn = false;
 		boolean canPass = false;
 		boolean loopdiloop = false;
 		boolean canSendEnergy = false;
+		ItemStack eItem = ItemStack.EMPTY;
 		if (world.getServer() != null) {
 			LevelAccessor _origWorld = world;
 			for (ServerLevel worlditerator : world.getServer().getAllLevels()) {
@@ -251,31 +262,98 @@ public class GeneratorTickHandlerProcedure {
 								bufferedReader.close();
 								configOBJ = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
 								blockOBJ = configOBJ.get((BuiltInRegistries.ITEM.getKey((new ItemStack((world.getBlockState(BlockPos.containing(x, y, z))).getBlock())).getItem()).toString())).getAsJsonObject();
-								fuelList = blockOBJ.get("listFuel").getAsJsonArray();
+								if (blockOBJ.has("listFuel") && blockOBJ.get("listFuel").isJsonArray()) {
+									fuelList = blockOBJ.getAsJsonArray("listFuel");
+								}
 								cNum = 0;
-								if (!fuelList.isEmpty()) {
-									for (int index15 = 0; index15 < (int) fuelList.size(); index15++) {
-										if ((fuelList.get((int) cNum).getAsString()).equals(BuiltInRegistries.ITEM.getKey((itemFromBlockInventory(world, BlockPos.containing(x, y, z), 0).copy()).getItem()).toString())
-												|| (itemFromBlockInventory(world, BlockPos.containing(x, y, z), 0).copy()).is(ItemTags.create(ResourceLocation.parse((fuelList.get((int) cNum).getAsString()).toLowerCase(java.util.Locale.ENGLISH))))) {
-											if (player.getData(EuruModVariables.PLAYER_VARIABLES).playerGP_Total >= player.getData(EuruModVariables.PLAYER_VARIABLES).playerGP_Used
-													&& !player.getData(EuruModVariables.PLAYER_VARIABLES).playerGPChecking) {
-												canPass = true;
-											} else if (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "oldGPTotal") >= getBlockNBTNumber(world, BlockPos.containing(x, y, z), "oldGPUsed")
-													&& player.getData(EuruModVariables.PLAYER_VARIABLES).playerGPChecking) {
-												canPass = true;
+								for (int index2088 = 0; index2088 < (int) fuelList.size(); index2088++) {
+									if ((fuelList.get((int) cNum).getAsString()).equals(BuiltInRegistries.ITEM.getKey((itemFromBlockInventory(world, BlockPos.containing(x, y, z), 0).copy()).getItem()).toString())
+											|| (itemFromBlockInventory(world, BlockPos.containing(x, y, z), 0).copy()).is(ItemTags.create(ResourceLocation.parse((fuelList.get((int) cNum).getAsString()).toLowerCase(java.util.Locale.ENGLISH))))
+											|| (world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == EuruModBlocks.DISENCHANTMENT_GENERATOR.get()
+													&& (itemFromBlockInventory(world, BlockPos.containing(x, y, z), 0).copy()).getItem() == Items.ENCHANTED_BOOK) {
+										if (player.getData(EuruModVariables.PLAYER_VARIABLES).playerGP_Total >= player.getData(EuruModVariables.PLAYER_VARIABLES).playerGP_Used && !player.getData(EuruModVariables.PLAYER_VARIABLES).playerGPChecking) {
+											canPass = true;
+										} else if (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "oldGPTotal") >= getBlockNBTNumber(world, BlockPos.containing(x, y, z), "oldGPUsed")
+												&& player.getData(EuruModVariables.PLAYER_VARIABLES).playerGPChecking) {
+											canPass = true;
+										}
+										if (!world.isClientSide()) {
+											BlockPos _bp = BlockPos.containing(x, y, z);
+											BlockEntity _blockEntity = world.getBlockEntity(_bp);
+											BlockState _bs = world.getBlockState(_bp);
+											if (_blockEntity != null) {
+												_blockEntity.getPersistentData().putString("lastCheckedItem", "");
 											}
-											if (!world.isClientSide()) {
-												BlockPos _bp = BlockPos.containing(x, y, z);
-												BlockEntity _blockEntity = world.getBlockEntity(_bp);
-												BlockState _bs = world.getBlockState(_bp);
-												if (_blockEntity != null) {
-													_blockEntity.getPersistentData().putString("lastCheckedItem", "");
-												}
-												if (world instanceof Level _level)
-													_level.sendBlockUpdated(_bp, _bs, _bs, 3);
-											}
-											if (canPass) {
+											if (world instanceof Level _level)
+												_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+										}
+										if (canPass) {
+											if ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == EuruModBlocks.DISENCHANTMENT_GENERATOR.get()) {
 												fuelPropertiesOBJ = blockOBJ.get("fuelProperties").getAsJsonObject();
+												eItem = (itemFromBlockInventory(world, BlockPos.containing(x, y, z), 0).copy()).copy();
+												eMaxNum = (net.minecraft.world.item.enchantment.EnchantmentHelper.getEnchantmentsForCrafting(eItem)).keySet().stream().findFirst().map(enchantment -> enchantment.value().getMaxLevel()).orElse(0);
+												eMaxNumString = ("" + eNum).substring(0, ("" + eNum).indexOf(".", 0));
+												if (eMaxNum != 0) {
+													deobj = fuelPropertiesOBJ.get("math_-Dont_touch_this_if_you_dont_know_what_youre_doing").getAsJsonObject();
+													if (deobj.get("currentWeight").getAsDouble() > 0) {
+														if (!world.isClientSide()) {
+															BlockPos _bp = BlockPos.containing(x, y, z);
+															BlockEntity _blockEntity = world.getBlockEntity(_bp);
+															BlockState _bs = world.getBlockState(_bp);
+															if (_blockEntity != null) {
+																_blockEntity.getPersistentData().putString("currentItem", (BuiltInRegistries.ITEM.getKey((itemFromBlockInventory(world, BlockPos.containing(x, y, z), 0).copy()).getItem()).toString()));
+															}
+															if (world instanceof Level _level)
+																_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+														}
+														eNum = (net.minecraft.world.item.enchantment.EnchantmentHelper.getEnchantmentsForCrafting(eItem)).entrySet().stream().findFirst().map(entry -> entry.getIntValue()).orElse(0);
+														eNumString = ("" + eNum).substring(0, ("" + eNum).indexOf(".", 0));
+														if (!world.isClientSide()) {
+															BlockPos _bp = BlockPos.containing(x, y, z);
+															BlockEntity _blockEntity = world.getBlockEntity(_bp);
+															BlockState _bs = world.getBlockState(_bp);
+															if (_blockEntity != null) {
+																_blockEntity.getPersistentData().putDouble("wait_time", (Math.round(deobj.get("totalFEGenerated").getAsDouble() * Math.pow(eNum / eMaxNum, deobj.get("currentWeight").getAsDouble()))
+																		- Math.round(deobj.get("totalFEGenerated").getAsDouble() * Math.pow((eNum - 1) / eMaxNum, deobj.get("currentWeight").getAsDouble()))));
+																_blockEntity.getPersistentData().putDouble("feSpeed", (fuelPropertiesOBJ.get("feSpeed").getAsDouble() + fuelPropertiesOBJ.get("feIncrement").getAsDouble() * eMaxNum));
+																_blockEntity.getPersistentData().putDouble("cProgress", 0);
+															}
+															if (world instanceof Level _level)
+																_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+														}
+														canGenerate = true;
+														if (world instanceof ILevelExtension _ext && _ext.getCapability(Capabilities.ItemHandler.BLOCK, BlockPos.containing(x, y, z), null) instanceof IItemHandlerModifiable _itemHandlerModifiable) {
+															int _slotid = 0;
+															ItemStack _stk = _itemHandlerModifiable.getStackInSlot(_slotid).copy();
+															_stk.shrink(1);
+															_itemHandlerModifiable.setStackInSlot(_slotid, _stk);
+														}
+														{
+															BlockPos _pos = BlockPos.containing(x, y, z);
+															BlockState _bs = world.getBlockState(_pos);
+															if (_bs.getBlock().getStateDefinition().getProperty("on") instanceof BooleanProperty _booleanProp)
+																world.setBlock(_pos, _bs.setValue(_booleanProp, true), 3);
+														}
+													} else {
+														if (world instanceof ServerLevel _level) {
+															_level.getServer().getPlayerList().broadcastSystemMessage(Component.literal(
+																	"A mod-breaking error has occurred. The 'currentWeight' value in the \"euru_fe_config.json\" file under \"euru:disenchantment_generator\" is not higher than 0, this causes all math related to the Disenchantment Generator to fail. Go into your config and set this value to a number above 0, or contact your server admins for help.")
+																	.withColor(0xff0000).withStyle(ChatFormatting.BOLD), false);
+														}
+													}
+												} else {
+													if (!world.isClientSide()) {
+														BlockPos _bp = BlockPos.containing(x, y, z);
+														BlockEntity _blockEntity = world.getBlockEntity(_bp);
+														BlockState _bs = world.getBlockState(_bp);
+														if (_blockEntity != null) {
+															_blockEntity.getPersistentData().putString("lastCheckedItem", (BuiltInRegistries.ITEM.getKey((itemFromBlockInventory(world, BlockPos.containing(x, y, z), 0).copy()).getItem()).toString()));
+														}
+														if (world instanceof Level _level)
+															_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+													}
+												}
+											} else {
 												itemOBJ = fuelPropertiesOBJ.get(fuelList.get((int) cNum).getAsString()).getAsJsonObject();
 												if (!world.isClientSide()) {
 													BlockPos _bp = BlockPos.containing(x, y, z);
@@ -304,10 +382,10 @@ public class GeneratorTickHandlerProcedure {
 														world.setBlock(_pos, _bs.setValue(_booleanProp, true), 3);
 												}
 											}
-											break;
 										}
-										cNum = cNum + 1;
+										break;
 									}
+									cNum = cNum + 1;
 								}
 								if ((getBlockNBTString(world, BlockPos.containing(x, y, z), "currentItem")).equals("")) {
 									{
@@ -489,7 +567,7 @@ public class GeneratorTickHandlerProcedure {
 				}
 			}
 			if (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "wait_time") == 0) {
-				if (getPropertyByName(blockstate, "on") instanceof BooleanProperty _getbp135 && blockstate.getValue(_getbp135)) {
+				if (getPropertyByName(blockstate, "on") instanceof BooleanProperty _getbp160 && blockstate.getValue(_getbp160)) {
 					if (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "offCounter") > 2) {
 						if (!world.isClientSide()) {
 							BlockPos _bp = BlockPos.containing(x, y, z);

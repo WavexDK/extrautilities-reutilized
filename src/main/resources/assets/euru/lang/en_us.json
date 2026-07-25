@@ -185,5 +185,7 @@
   "item.euru.stone_sickle": "Stone Sickle",
   "item.euru.wooden_sickle": "Wooden Sickle",
   "item.euru.golden_sickle": "Golden Sickle",
-  "block.euru.culinary_generator": "Culinary Generator"
+  "block.euru.culinary_generator": "Culinary Generator",
+  "block.euru.disenchantment_generator": "Disenchantment Generator",
+  "item.euru.watering_can": "Watering Can"
 }

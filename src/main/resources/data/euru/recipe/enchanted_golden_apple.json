@@ -1,0 +1,18 @@
+{
+  "type": "euru:c_gen_recipe_type",
+  "ingredients": [
+    {
+      "item": "minecraft:enchanted_golden_apple"
+    }
+  ],
+  "strings": [
+    "euru:culinary_generator",
+    "minecraft:enchanted_golden_apple"
+  ],
+  "outputs": [
+    {
+      "id": "minecraft:polished_tuff",
+      "count": 1
+    }
+  ]
+}

@@ -21,6 +21,8 @@ public class EuruModTabs {
 				tabData.accept(EuruModBlocks.NETHERSTAR_GENERATOR.get().asItem());
 				tabData.accept(EuruModBlocks.ENDER_GENERATOR.get().asItem());
 				tabData.accept(EuruModBlocks.OVERCLOCKED_GENERATOR.get().asItem());
+				tabData.accept(EuruModBlocks.DISENCHANTMENT_GENERATOR.get().asItem());
+				tabData.accept(EuruModBlocks.CULINARY_GENERATOR.get().asItem());
 				tabData.accept(EuruModBlocks.FURNACE_GENERATOR.get().asItem());
 				tabData.accept(EuruModBlocks.SURVIVAL_GENERATOR.get().asItem());
 				tabData.accept(EuruModBlocks.RESONATOR.get().asItem());
@@ -54,6 +56,7 @@ public class EuruModTabs {
 				tabData.accept(EuruModItems.EVIL_INFUSED_INGOT.get());
 				tabData.accept(EuruModItems.ENCHANTED_APPLE.get());
 				tabData.accept(EuruModItems.ENCHANTED_INGOT.get());
+				tabData.accept(EuruModItems.WATERING_CAN.get());
 				tabData.accept(EuruModItems.MAGICAL_NUGGET.get());
 				tabData.accept(EuruModItems.GOLDEN_LASSO.get());
 				tabData.accept(EuruModItems.CURSED_LASSO.get());
@@ -72,7 +75,6 @@ public class EuruModTabs {
 				tabData.accept(EuruModItems.STONE_SICKLE.get());
 				tabData.accept(EuruModItems.WOODEN_SICKLE.get());
 				tabData.accept(EuruModItems.GOLDEN_SICKLE.get());
-				tabData.accept(EuruModBlocks.CULINARY_GENERATOR.get().asItem());
 			}).build());
 	public static final DeferredHolder<CreativeModeTab, CreativeModeTab> EURU_COMPRESSED = REGISTRY.register("euru_compressed",
 			() -> CreativeModeTab.builder().title(Component.translatable("item_group.euru.euru_compressed")).icon(() -> new ItemStack(EuruModBlocks.DOUBLE_COMPRESSED_COBBLESTONE.get())).displayItems((parameters, tabData) -> {
