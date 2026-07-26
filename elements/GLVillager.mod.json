@@ -1,0 +1,22 @@
+{
+  "_fv": 89,
+  "_type": "jeirecipe",
+  "definition": {
+    "category": "golden_lasso_rt",
+    "ingredients": [
+      "CUSTOM:GoldenLasso"
+    ],
+    "integers": [],
+    "strings": [
+      "villager"
+    ],
+    "recipetype": "GoldenLassoRT",
+    "results": [
+      "CUSTOM:GoldenLassoCLW"
+    ],
+    "resultCounts": [
+      1
+    ],
+    "count": 0
+  }
+}

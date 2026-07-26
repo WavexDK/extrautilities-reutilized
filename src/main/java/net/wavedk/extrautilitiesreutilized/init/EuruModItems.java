@@ -101,6 +101,9 @@ public class EuruModItems {
 	public static final DeferredItem<Item> CULINARY_GENERATOR = block(EuruModBlocks.CULINARY_GENERATOR);
 	public static final DeferredItem<Item> DISENCHANTMENT_GENERATOR = block(EuruModBlocks.DISENCHANTMENT_GENERATOR);
 	public static final DeferredItem<Item> WATERING_CAN = REGISTRY.register("watering_can", WateringCanItem::new);
+	public static final DeferredItem<Item> EXPLOSIVE_GENERATOR = block(EuruModBlocks.EXPLOSIVE_GENERATOR);
+	public static final DeferredItem<Item> GOLDEN_LASSO_CLW = REGISTRY.register("golden_lasso_clw", GoldenLassoCLWItem::new);
+	public static final DeferredItem<Item> EYE_OF_REDSTONE = REGISTRY.register("eye_of_redstone", EyeOfRedstoneItem::new);
 
 	// Start of user code block custom items
 	// End of user code block custom items

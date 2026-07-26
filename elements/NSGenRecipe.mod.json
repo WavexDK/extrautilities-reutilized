@@ -1,0 +1,29 @@
+{
+  "_fv": 89,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "unlockingItems": [],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      "Blocks.SKULL#1",
+      "Blocks.WITHER_ROSE",
+      "Blocks.SKULL#1",
+      "Blocks.SKULL#1",
+      "Items.NETHER_STAR",
+      "Blocks.SKULL#1",
+      "Items.REDSTONE",
+      "CUSTOM:FurnaceGenerator",
+      "Items.REDSTONE"
+    ],
+    "recipeReturnStack": "CUSTOM:NetherstarGenerator",
+    "name": "ns_gen_recipe",
+    "namespace": "mod"
+  }
+}

@@ -3,6 +3,7 @@ package net.wavedk.extrautilitiesreutilized.jei_recipes;
 import net.wavedk.extrautilitiesreutilized.procedures.SquidRTShowProcedure;
 import net.wavedk.extrautilitiesreutilized.procedures.ChickenRTShowProcedure;
 import net.wavedk.extrautilitiesreutilized.procedures.BatRTShowProcedure;
+import net.wavedk.extrautilitiesreutilized.procedures.VillagerRTShowProcedure;
 
 import net.wavedk.extrautilitiesreutilized.init.EuruModJeiPlugin;
 import net.wavedk.extrautilitiesreutilized.init.EuruModItems;
@@ -80,6 +81,9 @@ public class GoldenLassoRTRecipeCategory implements IRecipeCategory<GoldenLassoR
 		}
 		if (BatRTShowProcedure.execute(recipe.strings())) {
 			guiGraphics.blit(ResourceLocation.parse("euru:textures/screens/bat.png"), 75, 24, 28, 28, 0, 0, 280, 280, 280, 280);
+		}
+		if (VillagerRTShowProcedure.execute(recipe.strings())) {
+			guiGraphics.blit(ResourceLocation.parse("euru:textures/screens/villager.png"), 75, 24, 28, 28, 0, 0, 280, 280, 280, 280);
 		}
 
 	}

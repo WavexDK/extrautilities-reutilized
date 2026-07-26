@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aba",
+    "aca",
+    "ded"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:wither_skeleton_skull"
+    },
+    "b": {
+      "item": "minecraft:wither_rose"
+    },
+    "c": {
+      "item": "minecraft:nether_star"
+    },
+    "d": {
+      "item": "minecraft:redstone"
+    },
+    "e": {
+      "item": "euru:furnace_generator"
+    }
+  },
+  "result": {
+    "id": "euru:netherstar_generator",
+    "count": 1
+  }
+}

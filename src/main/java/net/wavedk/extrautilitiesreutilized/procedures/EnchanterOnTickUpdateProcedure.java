@@ -183,7 +183,7 @@ public class EnchanterOnTickUpdateProcedure {
 								blockOBJ = catOBJ.get((BuiltInRegistries.BLOCK.getKey((world.getBlockState(BlockPos.containing(x, y, z))).getBlock()).toString())).getAsJsonObject();
 								rlArray = blockOBJ.get("recipeList").getAsJsonArray();
 								rlNum = 0;
-								for (int index1814 = 0; index1814 < (int) rlArray.size(); index1814++) {
+								for (int index8 = 0; index8 < (int) rlArray.size(); index8++) {
 									rl_cItem = rlArray.get((int) rlNum).getAsString();
 									if ((BuiltInRegistries.ITEM.getKey((itemFromBlockInventory(world, BlockPos.containing(x, y, z), 0).copy()).getItem()).toString()).equals(rl_cItem)
 											|| (itemFromBlockInventory(world, BlockPos.containing(x, y, z), 0).copy()).is(ItemTags.create(ResourceLocation.parse((rl_cItem).toLowerCase(java.util.Locale.ENGLISH))))) {

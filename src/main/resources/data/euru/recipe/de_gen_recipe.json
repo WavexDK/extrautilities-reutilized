@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aba",
+    "bcb",
+    "ded"
+  ],
+  "key": {
+    "a": {
+      "item": "euru:nuggeto_experience"
+    },
+    "b": {
+      "tag": "minecraft:logs"
+    },
+    "c": {
+      "item": "minecraft:enchanting_table"
+    },
+    "d": {
+      "item": "minecraft:redstone"
+    },
+    "e": {
+      "item": "euru:furnace_generator"
+    }
+  },
+  "result": {
+    "id": "euru:disenchantment_generator",
+    "count": 1
+  }
+}

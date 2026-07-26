@@ -22,6 +22,7 @@ public class EuruModTabs {
 				tabData.accept(EuruModBlocks.ENDER_GENERATOR.get().asItem());
 				tabData.accept(EuruModBlocks.OVERCLOCKED_GENERATOR.get().asItem());
 				tabData.accept(EuruModBlocks.DISENCHANTMENT_GENERATOR.get().asItem());
+				tabData.accept(EuruModBlocks.EXPLOSIVE_GENERATOR.get().asItem());
 				tabData.accept(EuruModBlocks.CULINARY_GENERATOR.get().asItem());
 				tabData.accept(EuruModBlocks.FURNACE_GENERATOR.get().asItem());
 				tabData.accept(EuruModBlocks.SURVIVAL_GENERATOR.get().asItem());
@@ -45,6 +46,7 @@ public class EuruModTabs {
 				tabData.accept(EuruModBlocks.SOLAR_PANEL.get().asItem());
 				tabData.accept(EuruModBlocks.LUNAR_PANEL.get().asItem());
 				tabData.accept(EuruModBlocks.MINI_CHEST.get().asItem());
+				tabData.accept(EuruModItems.EYE_OF_REDSTONE.get());
 				tabData.accept(EuruModItems.ULTIMATE_SPEED_UPGRADE.get());
 				tabData.accept(EuruModItems.MAGICAL_SPEED_UPGRADE.get());
 				tabData.accept(EuruModItems.SPEED_UPGRADE.get());
@@ -67,14 +69,14 @@ public class EuruModTabs {
 				tabData.accept(EuruModItems.DROP_OF_EVIL.get());
 				tabData.accept(EuruModItems.NUGGETO_EXPERIENCE.get());
 				tabData.accept(EuruModItems.RESONATING_REDSTONE_CRYSTAL.get());
-				tabData.accept(EuruModItems.GLASS_CUTTER.get());
-				tabData.accept(EuruModItems.ENDER_SHARD.get());
-				tabData.accept(EuruModItems.IRON_SICKLE.get());
 				tabData.accept(EuruModItems.NETHERITE_SICKLE.get());
 				tabData.accept(EuruModItems.DIAMOND_SICKLE.get());
+				tabData.accept(EuruModItems.IRON_SICKLE.get());
 				tabData.accept(EuruModItems.STONE_SICKLE.get());
-				tabData.accept(EuruModItems.WOODEN_SICKLE.get());
 				tabData.accept(EuruModItems.GOLDEN_SICKLE.get());
+				tabData.accept(EuruModItems.WOODEN_SICKLE.get());
+				tabData.accept(EuruModItems.GLASS_CUTTER.get());
+				tabData.accept(EuruModItems.ENDER_SHARD.get());
 			}).build());
 	public static final DeferredHolder<CreativeModeTab, CreativeModeTab> EURU_COMPRESSED = REGISTRY.register("euru_compressed",
 			() -> CreativeModeTab.builder().title(Component.translatable("item_group.euru.euru_compressed")).icon(() -> new ItemStack(EuruModBlocks.DOUBLE_COMPRESSED_COBBLESTONE.get())).displayItems((parameters, tabData) -> {

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aba",
+    "aca",
+    " a "
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:stick"
+    },
+    "b": {
+      "item": "euru:eye_of_redstone"
+    },
+    "c": {
+      "item": "euru:golden_lasso_clw"
+    }
+  },
+  "result": {
+    "id": "euru:chunk_loading_ward",
+    "count": 1
+  }
+}

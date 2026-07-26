@@ -187,5 +187,8 @@
   "item.euru.golden_sickle": "Golden Sickle",
   "block.euru.culinary_generator": "Culinary Generator",
   "block.euru.disenchantment_generator": "Disenchantment Generator",
-  "item.euru.watering_can": "Watering Can"
+  "item.euru.watering_can": "Watering Can",
+  "block.euru.explosive_generator": "Explosive Generator",
+  "item.euru.golden_lasso_clw": "Golden Lasso",
+  "item.euru.eye_of_redstone": "Eye Of Redstone"
 }

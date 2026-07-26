@@ -266,7 +266,7 @@ public class GeneratorTickHandlerProcedure {
 									fuelList = blockOBJ.getAsJsonArray("listFuel");
 								}
 								cNum = 0;
-								for (int index2088 = 0; index2088 < (int) fuelList.size(); index2088++) {
+								for (int index186 = 0; index186 < (int) fuelList.size(); index186++) {
 									if ((fuelList.get((int) cNum).getAsString()).equals(BuiltInRegistries.ITEM.getKey((itemFromBlockInventory(world, BlockPos.containing(x, y, z), 0).copy()).getItem()).toString())
 											|| (itemFromBlockInventory(world, BlockPos.containing(x, y, z), 0).copy()).is(ItemTags.create(ResourceLocation.parse((fuelList.get((int) cNum).getAsString()).toLowerCase(java.util.Locale.ENGLISH))))
 											|| (world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == EuruModBlocks.DISENCHANTMENT_GENERATOR.get()
@@ -354,6 +354,7 @@ public class GeneratorTickHandlerProcedure {
 													}
 												}
 											} else {
+												fuelPropertiesOBJ = blockOBJ.get("fuelProperties").getAsJsonObject();
 												itemOBJ = fuelPropertiesOBJ.get(fuelList.get((int) cNum).getAsString()).getAsJsonObject();
 												if (!world.isClientSide()) {
 													BlockPos _bp = BlockPos.containing(x, y, z);
@@ -552,6 +553,7 @@ public class GeneratorTickHandlerProcedure {
 								_blockEntity.getPersistentData().putDouble("wait_time", 0);
 								_blockEntity.getPersistentData().putDouble("feSpeed", 0);
 								_blockEntity.getPersistentData().putString("currentItem", "");
+								_blockEntity.getPersistentData().putDouble("offCounter", 0);
 							}
 							if (world instanceof Level _level)
 								_level.sendBlockUpdated(_bp, _bs, _bs, 3);
@@ -566,8 +568,8 @@ public class GeneratorTickHandlerProcedure {
 					_vars.markSyncDirty();
 				}
 			}
-			if (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "wait_time") == 0) {
-				if (getPropertyByName(blockstate, "on") instanceof BooleanProperty _getbp160 && blockstate.getValue(_getbp160)) {
+			if (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "wait_time") == 0 && (getBlockNBTString(world, BlockPos.containing(x, y, z), "currentItem")).equals("")) {
+				if (getPropertyByName(blockstate, "on") instanceof BooleanProperty _getbp163 && blockstate.getValue(_getbp163)) {
 					if (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "offCounter") > 2) {
 						if (!world.isClientSide()) {
 							BlockPos _bp = BlockPos.containing(x, y, z);

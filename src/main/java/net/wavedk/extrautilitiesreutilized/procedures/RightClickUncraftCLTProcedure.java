@@ -36,7 +36,7 @@ public class RightClickUncraftCLTProcedure {
 		if (entity == null)
 			return;
 		if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == EuruModBlocks.CHUNK_LOADER_TESTER.get().asItem()) {
-			for (int index1807 = 0; index1807 < (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getCount(); index1807++) {
+			for (int index1 = 0; index1 < (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getCount(); index1++) {
 				if (world instanceof ServerLevel _level) {
 					ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EuruModBlocks.MACHINE_BLOCK.get()));
 					entityToSpawn.setPickUpDelay(0);
@@ -56,7 +56,7 @@ public class RightClickUncraftCLTProcedure {
 					_player.getInventory().setChanged();
 			}
 		} else if ((entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getItem() == EuruModBlocks.CHUNK_LOADER_TESTER.get().asItem()) {
-			for (int index1808 = 0; index1808 < (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getCount(); index1808++) {
+			for (int index2 = 0; index2 < (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getCount(); index2++) {
 				if (world instanceof ServerLevel _level) {
 					ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EuruModBlocks.MACHINE_BLOCK.get()));
 					entityToSpawn.setPickUpDelay(0);

@@ -68,7 +68,7 @@ public class LassoRCOEProcedure {
 						lobj = mobj.get("lasso_entities").getAsJsonObject();
 						array = lobj.get("golden").getAsJsonArray();
 						cNum = 0;
-						for (int index1815 = 0; index1815 < (int) array.size(); index1815++) {
+						for (int index444 = 0; index444 < (int) array.size(); index444++) {
 							cEntity = array.get((int) cNum).getAsString();
 							if ((BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString()).equals(cEntity)) {
 								foundEntity = true;
@@ -80,8 +80,8 @@ public class LassoRCOEProcedure {
 						e.printStackTrace();
 					}
 				}
-				if ((BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString()).equals("minecraft:chicken")) {
-					if (true == false) {
+				if (foundEntity) {
+					if ((BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString()).equals("minecraft:chicken")) {
 						if (sourceentity instanceof LivingEntity _entity) {
 							ItemStack _setstack13 = new ItemStack(EuruModItems.GOLDEN_LASSO_CW.get()).copy();
 							_setstack13.setCount(1);
@@ -112,11 +112,42 @@ public class LassoRCOEProcedure {
 						}
 						if (!entity.level().isClientSide())
 							entity.discard();
-					} else if ((BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString()).equals("minecraft:bat")) {
+					} else if ((BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString()).equals("minecraft:villager")) {
 						if (sourceentity instanceof LivingEntity _entity) {
-							ItemStack _setstack33 = new ItemStack(EuruModItems.GOLDEN_LASSO_AR.get()).copy();
+							ItemStack _setstack33 = new ItemStack(EuruModItems.GOLDEN_LASSO_CLW.get()).copy();
 							_setstack33.setCount(1);
 							_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack33);
+							if (_entity instanceof Player _player)
+								_player.getInventory().setChanged();
+						}
+						getOrCreateCustomData((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)).put("entityNBT", saveWithId(entity).copy());
+						{
+							final String _tagName = "healthMax";
+							final double _tagValue = (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1);
+							CustomData.update(DataComponents.CUSTOM_DATA, (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY), tag -> tag.putDouble(_tagName, _tagValue));
+						}
+						{
+							final String _tagName = "healthMin";
+							final double _tagValue = (entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1);
+							CustomData.update(DataComponents.CUSTOM_DATA, (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY), tag -> tag.putDouble(_tagName, _tagValue));
+						}
+						{
+							final String _tagName = "entityType";
+							final String _tagValue = (entity.getDisplayName().getString());
+							CustomData.update(DataComponents.CUSTOM_DATA, (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY), tag -> tag.putString(_tagName, _tagValue));
+						}
+						{
+							final String _tagName = "entityReg";
+							final String _tagValue = (BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString());
+							CustomData.update(DataComponents.CUSTOM_DATA, (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY), tag -> tag.putString(_tagName, _tagValue));
+						}
+						if (!entity.level().isClientSide())
+							entity.discard();
+					} else if ((BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString()).equals("minecraft:bat")) {
+						if (sourceentity instanceof LivingEntity _entity) {
+							ItemStack _setstack53 = new ItemStack(EuruModItems.GOLDEN_LASSO_AR.get()).copy();
+							_setstack53.setCount(1);
+							_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack53);
 							if (_entity instanceof Player _player)
 								_player.getInventory().setChanged();
 						}
@@ -145,9 +176,9 @@ public class LassoRCOEProcedure {
 							entity.discard();
 					} else if ((BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString()).equals("minecraft:squid") || (BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString()).equals("minecraft:glow_squid")) {
 						if (sourceentity instanceof LivingEntity _entity) {
-							ItemStack _setstack54 = new ItemStack(EuruModItems.GOLDEN_LASSO_SW.get()).copy();
-							_setstack54.setCount(1);
-							_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack54);
+							ItemStack _setstack74 = new ItemStack(EuruModItems.GOLDEN_LASSO_SW.get()).copy();
+							_setstack74.setCount(1);
+							_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack74);
 							if (_entity instanceof Player _player)
 								_player.getInventory().setChanged();
 						}
@@ -220,7 +251,7 @@ public class LassoRCOEProcedure {
 						lobj = mobj.get("lasso_entities").getAsJsonObject();
 						array = lobj.get("golden").getAsJsonArray();
 						cNum = 0;
-						for (int index1816 = 0; index1816 < (int) array.size(); index1816++) {
+						for (int index445 = 0; index445 < (int) array.size(); index445++) {
 							cEntity = array.get((int) cNum).getAsString();
 							if ((BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString()).equals(cEntity)) {
 								foundEntity = true;
@@ -234,9 +265,9 @@ public class LassoRCOEProcedure {
 				}
 				if ((BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString()).equals("minecraft:chicken")) {
 					if (sourceentity instanceof LivingEntity _entity) {
-						ItemStack _setstack105 = new ItemStack(EuruModItems.GOLDEN_LASSO_CW.get()).copy();
-						_setstack105.setCount(1);
-						_entity.setItemInHand(InteractionHand.OFF_HAND, _setstack105);
+						ItemStack _setstack125 = new ItemStack(EuruModItems.GOLDEN_LASSO_CW.get()).copy();
+						_setstack125.setCount(1);
+						_entity.setItemInHand(InteractionHand.OFF_HAND, _setstack125);
 						if (_entity instanceof Player _player)
 							_player.getInventory().setChanged();
 					}
@@ -265,9 +296,9 @@ public class LassoRCOEProcedure {
 						entity.discard();
 				} else if ((BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString()).equals("minecraft:bat")) {
 					if (sourceentity instanceof LivingEntity _entity) {
-						ItemStack _setstack125 = new ItemStack(EuruModItems.GOLDEN_LASSO_AR.get()).copy();
-						_setstack125.setCount(1);
-						_entity.setItemInHand(InteractionHand.OFF_HAND, _setstack125);
+						ItemStack _setstack145 = new ItemStack(EuruModItems.GOLDEN_LASSO_AR.get()).copy();
+						_setstack145.setCount(1);
+						_entity.setItemInHand(InteractionHand.OFF_HAND, _setstack145);
 						if (_entity instanceof Player _player)
 							_player.getInventory().setChanged();
 					}
@@ -296,9 +327,9 @@ public class LassoRCOEProcedure {
 						entity.discard();
 				} else if ((BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString()).equals("minecraft:squid") || (BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString()).equals("minecraft:glow_squid")) {
 					if (sourceentity instanceof LivingEntity _entity) {
-						ItemStack _setstack146 = new ItemStack(EuruModItems.GOLDEN_LASSO_SW.get()).copy();
-						_setstack146.setCount(1);
-						_entity.setItemInHand(InteractionHand.OFF_HAND, _setstack146);
+						ItemStack _setstack166 = new ItemStack(EuruModItems.GOLDEN_LASSO_SW.get()).copy();
+						_setstack166.setCount(1);
+						_entity.setItemInHand(InteractionHand.OFF_HAND, _setstack166);
 						if (_entity instanceof Player _player)
 							_player.getInventory().setChanged();
 					}
@@ -367,7 +398,7 @@ public class LassoRCOEProcedure {
 						lobj = mobj.get("lasso_entities").getAsJsonObject();
 						array = lobj.get("cursed").getAsJsonArray();
 						cNum = 0;
-						for (int index1817 = 0; index1817 < (int) array.size(); index1817++) {
+						for (int index446 = 0; index446 < (int) array.size(); index446++) {
 							cEntity = array.get((int) cNum).getAsString();
 							if ((BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString()).equals(cEntity)) {
 								foundEntity = true;
@@ -382,9 +413,9 @@ public class LassoRCOEProcedure {
 				if (foundEntity) {
 					if ((BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString()).equals("minecraft:ghast")) {
 						if (sourceentity instanceof LivingEntity _entity) {
-							ItemStack _setstack196 = new ItemStack(EuruModItems.CURSED_LASSO_AR.get()).copy();
-							_setstack196.setCount(1);
-							_entity.setItemInHand(InteractionHand.OFF_HAND, _setstack196);
+							ItemStack _setstack216 = new ItemStack(EuruModItems.CURSED_LASSO_AR.get()).copy();
+							_setstack216.setCount(1);
+							_entity.setItemInHand(InteractionHand.OFF_HAND, _setstack216);
 							if (_entity instanceof Player _player)
 								_player.getInventory().setChanged();
 						}
@@ -457,7 +488,7 @@ public class LassoRCOEProcedure {
 						lobj = mobj.get("lasso_entities").getAsJsonObject();
 						array = lobj.get("cursed").getAsJsonArray();
 						cNum = 0;
-						for (int index1818 = 0; index1818 < (int) array.size(); index1818++) {
+						for (int index447 = 0; index447 < (int) array.size(); index447++) {
 							cEntity = array.get((int) cNum).getAsString();
 							if ((BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString()).equals(cEntity)) {
 								foundEntity = true;
@@ -474,9 +505,9 @@ public class LassoRCOEProcedure {
 						_player.displayClientMessage(Component.literal((BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString())), false);
 					if ((BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString()).equals("minecraft:ghast")) {
 						if (sourceentity instanceof LivingEntity _entity) {
-							ItemStack _setstack249 = new ItemStack(EuruModItems.CURSED_LASSO_AR.get()).copy();
-							_setstack249.setCount(1);
-							_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack249);
+							ItemStack _setstack269 = new ItemStack(EuruModItems.CURSED_LASSO_AR.get()).copy();
+							_setstack269.setCount(1);
+							_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack269);
 							if (_entity instanceof Player _player)
 								_player.getInventory().setChanged();
 						}

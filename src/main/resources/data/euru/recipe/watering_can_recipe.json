@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "a  ",
+    "aba",
+    " a "
+  ],
+  "key": {
+    "a": {
+      "tag": "c:stones"
+    },
+    "b": {
+      "item": "minecraft:bowl"
+    }
+  },
+  "result": {
+    "id": "euru:watering_can",
+    "count": 1
+  }
+}

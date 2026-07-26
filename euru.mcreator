@@ -9965,6 +9965,242 @@
         ]
       },
       "path": "~/Items/Procedures"
+    },
+    {
+      "name": "FGenCFGManager",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "f_gen_cfg_manager",
+      "metadata": {
+        "dependencies": [],
+        "return_type": "jsonobject",
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/FGenCFGManagerProcedure.java"
+        ]
+      },
+      "path": "~/Configs/GeneratorsConfig"
+    },
+    {
+      "name": "CGenCFGManager",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "c_gen_cfg_manager",
+      "metadata": {
+        "dependencies": [],
+        "return_type": "jsonobject",
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/CGenCFGManagerProcedure.java"
+        ]
+      },
+      "path": "~/Configs/GeneratorsConfig"
+    },
+    {
+      "name": "OGenCFGManager",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "o_gen_cfg_manager",
+      "metadata": {
+        "dependencies": [],
+        "return_type": "jsonobject",
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/OGenCFGManagerProcedure.java"
+        ]
+      },
+      "path": "~/Configs/GeneratorsConfig"
+    },
+    {
+      "name": "ExplosiveGenerator",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "explosive_generator",
+      "metadata": {
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/block/ExplosiveGeneratorBlock.java",
+          "src/main/resources/assets/euru/models/block/explosive_generator.json",
+          "src/main/resources/assets/euru/blockstates/explosive_generator.json",
+          "src/main/resources/data/euru/loot_table/blocks/explosive_generator.json",
+          "src/main/resources/assets/euru/models/item/explosive_generator.json",
+          "src/main/resources/assets/euru/models/block/explosive_generator_0.json",
+          "src/main/java/net/wavedk/extrautilitiesreutilized/block/entity/ExplosiveGeneratorBlockEntity.java"
+        ]
+      },
+      "path": "~/Blocks/Generators/FE"
+    },
+    {
+      "name": "CGenRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "c_gen_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/euru/recipe/c_gen_recipe.json"
+        ]
+      },
+      "path": "~/Blocks/Generators/FE/Recipes"
+    },
+    {
+      "name": "EXGenRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ex_gen_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/euru/recipe/ex_gen_recipe.json"
+        ]
+      },
+      "path": "~/Blocks/Generators/FE/Recipes"
+    },
+    {
+      "name": "DEGenRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "de_gen_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/euru/recipe/de_gen_recipe.json"
+        ]
+      },
+      "path": "~/Blocks/Generators/FE/Recipes"
+    },
+    {
+      "name": "NSGenRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ns_gen_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/euru/recipe/ns_gen_recipe.json"
+        ]
+      },
+      "path": "~/Blocks/Generators/FE/Recipes"
+    },
+    {
+      "name": "GoldenLassoCLW",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "golden_lasso_clw",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/euru/models/item/golden_lasso_clw.json",
+          "src/main/java/net/wavedk/extrautilitiesreutilized/item/GoldenLassoCLWItem.java"
+        ]
+      },
+      "path": "~/Items/SpecialItems"
+    },
+    {
+      "name": "GoldenLassoVillagerSpecialInformation",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "golden_lasso_villager_special_information",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ],
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/GoldenLassoVillagerSpecialInformationProcedure.java"
+        ]
+      },
+      "path": "~/Items/Procedures"
+    },
+    {
+      "name": "GLVillager",
+      "type": "jeirecipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "gl_villager",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/euru/recipe/gl_villager.json"
+        ]
+      },
+      "path": "~/Items/JEI"
+    },
+    {
+      "name": "VillagerRTShow",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "villager_rt_show",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "strings",
+            "type": "stringlist"
+          }
+        ],
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/VillagerRTShowProcedure.java"
+        ]
+      },
+      "path": "~/Items/JEI/Procedures"
+    },
+    {
+      "name": "EyeOfRedstone",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "eye_of_redstone",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/euru/models/item/eye_of_redstone.json",
+          "src/main/java/net/wavedk/extrautilitiesreutilized/item/EyeOfRedstoneItem.java"
+        ]
+      },
+      "path": "~/Items"
+    },
+    {
+      "name": "CLWRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "clw_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/euru/recipe/clw_recipe.json"
+        ]
+      },
+      "path": "~/Blocks/Other/Recipes"
+    },
+    {
+      "name": "EORRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "eor_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/euru/recipe/eor_recipe.json"
+        ]
+      },
+      "path": "~/Items/Recipes"
+    },
+    {
+      "name": "WateringCanRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "watering_can_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/euru/recipe/watering_can_recipe.json"
+        ]
+      },
+      "path": "~/Items/Recipes"
     }
   ],
   "variable_elements": [
@@ -10176,6 +10412,7 @@
   "sound_elements": [],
   "tag_elements": {
     "BLOCKS:minecraft:mineable/pickaxe": [
+      "~ExplosiveGenerator@CUSTOM:ExplosiveGenerator",
       "~DisenchantmentGenerator@CUSTOM:DisenchantmentGenerator",
       "~CulinaryGenerator@CUSTOM:CulinaryGenerator",
       "~NetherstarGenerator@CUSTOM:NetherstarGenerator",
@@ -10237,10 +10474,10 @@
       "~GildedObsidian@CUSTOM:GildedObsidian"
     ],
     "BLOCKS:minecraft:mineable/axe": [
+      "~ManualMill@CUSTOM:ManualMill",
       "~ChunkLoadingWard@CUSTOM:ChunkLoadingWard",
       "~SlightlyLargerChest@CUSTOM:SlightlyLargerChest",
-      "~MiniChest@CUSTOM:MiniChest",
-      "~ManualMill@CUSTOM:ManualMill"
+      "~MiniChest@CUSTOM:MiniChest"
     ],
     "ITEMS:minecraft:hoes": [
       "~GoldenSickle@CUSTOM:GoldenSickle",
@@ -10261,6 +10498,7 @@
       "EnderGenerator",
       "OverclockedGenerator",
       "DisenchantmentGenerator",
+      "ExplosiveGenerator",
       "CulinaryGenerator",
       "FurnaceGenerator",
       "SurvivalGenerator",
@@ -10284,6 +10522,7 @@
       "SolarPanel",
       "LunarPanel",
       "MiniChest",
+      "EyeOfRedstone",
       "UltimateSpeedUpgrade",
       "MagicalSpeedUpgrade",
       "SpeedUpgrade",
@@ -10306,14 +10545,14 @@
       "DropOfEvil",
       "NuggetoExperience",
       "ResonatingRedstoneCrystal",
-      "GlassCutter",
-      "EnderShard",
-      "IronSickle",
       "NetheriteSickle",
       "DiamondSickle",
+      "IronSickle",
       "StoneSickle",
+      "GoldenSickle",
       "WoodenSickle",
-      "GoldenSickle"
+      "GlassCutter",
+      "EnderShard"
     ]
   },
   "language_map": {
@@ -10506,7 +10745,10 @@
       "item.euru.golden_sickle": "Golden Sickle",
       "block.euru.culinary_generator": "Culinary Generator",
       "block.euru.disenchantment_generator": "Disenchantment Generator",
-      "item.euru.watering_can": "Watering Can"
+      "item.euru.watering_can": "Watering Can",
+      "block.euru.explosive_generator": "Explosive Generator",
+      "item.euru.golden_lasso_clw": "Golden Lasso",
+      "item.euru.eye_of_redstone": "Eye Of Redstone"
     }
   },
   "metadata": {
@@ -10543,7 +10785,12 @@
     "children": [
       {
         "name": "Configs",
-        "children": []
+        "children": [
+          {
+            "name": "GeneratorsConfig",
+            "children": []
+          }
+        ]
       },
       {
         "name": "GP Procedures",
@@ -10751,7 +10998,7 @@
       "jei"
     ],
     "currentGenerator": "neoforge-1.21.1",
-    "credits": "Made with ❤️ by WaveDK using MCreator. Textures by @batzorig and @quotat1on.",
+    "credits": "Made with ❤️ by WaveDK using MCreator. Textures by @sethyn_, @batzorig and @quotat1on.",
     "modElementsPackage": "net.wavedk.extrautilitiesreutilized"
   },
   "mcreatorVersion": 202600230420
