@@ -1,7 +1,16 @@
 {
   "variants": {
-    "": {
-      "model": "euru:block/fire_mill"
+    "animation=0": {
+      "model": "euru:block/fire_mill_0"
+    },
+    "animation=1": {
+      "model": "euru:block/fire_mill_1"
+    },
+    "animation=2": {
+      "model": "euru:block/fire_mill_2"
+    },
+    "animation=3": {
+      "model": "euru:block/fire_mill_3"
     }
   }
 }

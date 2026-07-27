@@ -8,13 +8,21 @@ import net.wavedk.extrautilitiesreutilized.block.entity.FireMillBlockEntity;
 import net.neoforged.api.distmarker.OnlyIn;
 import net.neoforged.api.distmarker.Dist;
 
+import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraft.world.phys.shapes.Shapes;
+import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
+import net.minecraft.world.level.block.state.properties.IntegerProperty;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
+import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.EntityBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
@@ -32,8 +40,12 @@ import net.minecraft.client.Minecraft;
 import java.util.List;
 
 public class FireMillBlock extends Block implements EntityBlock {
+	public static final BooleanProperty ON = BooleanProperty.create("on");
+	public static final IntegerProperty ANIMATION = IntegerProperty.create("animation", 0, 3);
+
 	public FireMillBlock() {
-		super(BlockBehaviour.Properties.of().strength(4f, 20f).requiresCorrectToolForDrops().instrument(NoteBlockInstrument.BASEDRUM));
+		super(BlockBehaviour.Properties.of().strength(4f, 20f).requiresCorrectToolForDrops().noOcclusion().isRedstoneConductor((bs, br, bp) -> false).instrument(NoteBlockInstrument.BASEDRUM));
+		this.registerDefaultState(this.stateDefinition.any().setValue(ON, false).setValue(ANIMATION, 0));
 	}
 
 	@Override
@@ -47,6 +59,25 @@ public class FireMillBlock extends Block implements EntityBlock {
 				list.add(Component.literal(line));
 			}
 		}
+	}
+
+	@Override
+	public VoxelShape getVisualShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+		return Shapes.empty();
+	}
+
+	@Override
+	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
+		super.createBlockStateDefinition(builder);
+		builder.add(ON, ANIMATION);
+	}
+
+	@Override
+	public BlockState getStateForPlacement(BlockPlaceContext context) {
+		BlockState state = super.getStateForPlacement(context);
+		if (state == null)
+			return null;
+		return state.setValue(ON, false).setValue(ANIMATION, 0);
 	}
 
 	@Override

@@ -1,0 +1,9 @@
+{
+  "parent": "euru:custom/firemill2",
+  "textures": {
+    "all": "euru:block/frame2",
+    "particle": "euru:block/smoothburnstone",
+    "0": "euru:block/frame2"
+  },
+  "render_type": "cutout"
+}

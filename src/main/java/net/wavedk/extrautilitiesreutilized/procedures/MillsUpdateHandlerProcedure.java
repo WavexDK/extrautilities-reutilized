@@ -6,6 +6,8 @@ import net.wavedk.extrautilitiesreutilized.network.EuruModVariables;
 
 import net.neoforged.fml.loading.FMLPaths;
 
+import net.minecraft.world.level.block.state.properties.Property;
+import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -395,8 +397,8 @@ public class MillsUpdateHandlerProcedure {
 								_blockEntity.getPersistentData().putDouble("needs_lava", iitemobj.get("needs_lava").getAsDouble());
 								_blockEntity.getPersistentData().putDouble("needs_fire", iitemobj.get("needs_fire").getAsDouble());
 								_blockEntity.getPersistentData().putDouble("gp_generated", iitemobj.get("gp_generated").getAsDouble());
-								_blockEntity.getPersistentData().putDouble("range-configUpdate-min", generalobj.get("range-configUpdate-min").getAsDouble());
-								_blockEntity.getPersistentData().putDouble("range-configUpdate-max", generalobj.get("range-configUpdate-max").getAsDouble());
+								_blockEntity.getPersistentData().putDouble("range-configUpdate-min", cobj.get("range-configUpdate-min").getAsDouble());
+								_blockEntity.getPersistentData().putDouble("range-configUpdate-max", cobj.get("range-configUpdate-max").getAsDouble());
 								_blockEntity.getPersistentData().putBoolean("been_json_checked", true);
 							}
 							if (world instanceof Level _level)
@@ -436,12 +438,59 @@ public class MillsUpdateHandlerProcedure {
 				if (_bs.getBlock().getStateDefinition().getProperty("anim") instanceof BooleanProperty _booleanProp)
 					world.setBlock(_pos, _bs.setValue(_booleanProp, true), 3);
 			}
+			if (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "animWait") == 1) {
+				if (!world.isClientSide()) {
+					BlockPos _bp = BlockPos.containing(x, y, z);
+					BlockEntity _blockEntity = world.getBlockEntity(_bp);
+					BlockState _bs = world.getBlockState(_bp);
+					if (_blockEntity != null) {
+						_blockEntity.getPersistentData().putDouble("animWait", 0);
+					}
+					if (world instanceof Level _level)
+						_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+				}
+				if ((getPropertyByName((world.getBlockState(BlockPos.containing(x, y, z))), "animation") instanceof IntegerProperty _getip168 ? (world.getBlockState(BlockPos.containing(x, y, z))).getValue(_getip168) : -1) == 3) {
+					{
+						int _value = 0;
+						BlockPos _pos = BlockPos.containing(x, y, z);
+						BlockState _bs = world.getBlockState(_pos);
+						if (_bs.getBlock().getStateDefinition().getProperty("animation") instanceof IntegerProperty _integerProp && _integerProp.getPossibleValues().contains(_value))
+							world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
+					}
+				} else {
+					{
+						int _value = (getPropertyByName((world.getBlockState(BlockPos.containing(x, y, z))), "animation") instanceof IntegerProperty _getip171 ? (world.getBlockState(BlockPos.containing(x, y, z))).getValue(_getip171) : -1) + 1;
+						BlockPos _pos = BlockPos.containing(x, y, z);
+						BlockState _bs = world.getBlockState(_pos);
+						if (_bs.getBlock().getStateDefinition().getProperty("animation") instanceof IntegerProperty _integerProp && _integerProp.getPossibleValues().contains(_value))
+							world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
+					}
+				}
+			} else {
+				if (!world.isClientSide()) {
+					BlockPos _bp = BlockPos.containing(x, y, z);
+					BlockEntity _blockEntity = world.getBlockEntity(_bp);
+					BlockState _bs = world.getBlockState(_bp);
+					if (_blockEntity != null) {
+						_blockEntity.getPersistentData().putDouble("animWait", 1);
+					}
+					if (world instanceof Level _level)
+						_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+				}
+			}
 		} else {
 			{
 				BlockPos _pos = BlockPos.containing(x, y, z);
 				BlockState _bs = world.getBlockState(_pos);
 				if (_bs.getBlock().getStateDefinition().getProperty("anim") instanceof BooleanProperty _booleanProp)
 					world.setBlock(_pos, _bs.setValue(_booleanProp, false), 3);
+			}
+			{
+				int _value = 0;
+				BlockPos _pos = BlockPos.containing(x, y, z);
+				BlockState _bs = world.getBlockState(_pos);
+				if (_bs.getBlock().getStateDefinition().getProperty("animation") instanceof IntegerProperty _integerProp && _integerProp.getPossibleValues().contains(_value))
+					world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
 			}
 		}
 	}
@@ -473,5 +522,14 @@ public class MillsUpdateHandlerProcedure {
 		if (blockEntity != null)
 			return blockEntity.getPersistentData().getDouble(tag);
 		return -1;
+	}
+
+	private static Property<?> getPropertyByName(BlockState state, String name) {
+		for (Property<?> property : state.getProperties()) {
+			if (property.getName().equals(name)) {
+				return property;
+			}
+		}
+		return null;
 	}
 }

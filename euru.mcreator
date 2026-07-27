@@ -3117,10 +3117,14 @@
       "registry_name": "fire_mill",
       "metadata": {
         "files": [
+          "src/main/resources/assets/euru/models/block/fire_mill_1.json",
           "src/main/java/net/wavedk/extrautilitiesreutilized/block/FireMillBlock.java",
           "src/main/resources/assets/euru/models/item/fire_mill.json",
+          "src/main/resources/assets/euru/models/block/fire_mill_0.json",
           "src/main/resources/data/euru/loot_table/blocks/fire_mill.json",
+          "src/main/resources/assets/euru/models/block/fire_mill_3.json",
           "src/main/resources/assets/euru/blockstates/fire_mill.json",
+          "src/main/resources/assets/euru/models/block/fire_mill_2.json",
           "src/main/resources/assets/euru/models/block/fire_mill.json",
           "src/main/java/net/wavedk/extrautilitiesreutilized/block/entity/FireMillBlockEntity.java"
         ]
@@ -10256,6 +10260,8 @@
   "sound_elements": [],
   "tag_elements": {
     "BLOCKS:minecraft:mineable/pickaxe": [
+      "~FireMill@CUSTOM:FireMill",
+      "~WaterMill@CUSTOM:WaterMill",
       "~NetherstarGenerator@CUSTOM:NetherstarGenerator",
       "~ExplosiveGenerator@CUSTOM:ExplosiveGenerator",
       "~DisenchantmentGenerator@CUSTOM:DisenchantmentGenerator",
@@ -10270,10 +10276,8 @@
       "~CreativeMill@CUSTOM:CreativeMill",
       "~BlockOfEvilInfusedIngot@CUSTOM:BlockOfEvilInfusedIngot",
       "~Enchanter@CUSTOM:Enchanter",
-      "~FireMill@CUSTOM:FireMill",
       "~StoneBurnt@CUSTOM:StoneBurnt",
       "~LavaMill@CUSTOM:LavaMill",
-      "~WaterMill@CUSTOM:WaterMill",
       "~OctupleCompressedCobblestone@CUSTOM:OctupleCompressedCobblestone",
       "~SeptupleCompressedCobblestone@CUSTOM:SeptupleCompressedCobblestone",
       "~SextupleCompressedCobblestone@CUSTOM:SextupleCompressedCobblestone",
@@ -10290,13 +10294,13 @@
       "~SolarPanel@CUSTOM:SolarPanel"
     ],
     "BLOCKS:minecraft:needs_stone_tool": [
+      "~FireMill@CUSTOM:FireMill",
+      "~WaterMill@CUSTOM:WaterMill",
       "~ElectricFurnace@CUSTOM:ElectricFurnace",
       "~BlockOfEvilInfusedIngot@CUSTOM:BlockOfEvilInfusedIngot",
       "~Enchanter@CUSTOM:Enchanter",
-      "~FireMill@CUSTOM:FireMill",
       "~StoneBurnt@CUSTOM:StoneBurnt",
       "~LavaMill@CUSTOM:LavaMill",
-      "~WaterMill@CUSTOM:WaterMill",
       "~OctupleCompressedCobblestone@CUSTOM:OctupleCompressedCobblestone",
       "~SextupleCompressedCobblestone@CUSTOM:SextupleCompressedCobblestone",
       "~QuintupleCompressedCobblestone@CUSTOM:QuintupleCompressedCobblestone",

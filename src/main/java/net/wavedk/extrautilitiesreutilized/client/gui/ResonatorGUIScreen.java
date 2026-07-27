@@ -10,6 +10,7 @@ import net.neoforged.neoforge.network.PacketDistributor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.util.Mth;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.chat.Component;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
@@ -33,36 +34,14 @@ public class ResonatorGUIScreen extends AbstractContainerScreen<ResonatorGUIMenu
 	private Button button_empty1;
 	private ImageButton imagebutton_blank_x20;
 	private static final ResourceLocation BACKGROUND = ResourceLocation.parse("euru:textures/screens/resonator_gui.png");
+	private static final ResourceLocation SPRITE_0 = ResourceLocation.parse("euru:textures/screens/arrowstrip.png");
 	private static final ResourceLocation IMAGE_0 = ResourceLocation.parse("euru:textures/screens/resbackdrop.png");
-	private static final ResourceLocation IMAGE_1 = ResourceLocation.parse("euru:textures/screens/arrow-empty.png");
-	private static final ResourceLocation IMAGE_2 = ResourceLocation.parse("euru:textures/screens/arrow-1.png");
-	private static final ResourceLocation IMAGE_3 = ResourceLocation.parse("euru:textures/screens/arrow-2.png");
-	private static final ResourceLocation IMAGE_4 = ResourceLocation.parse("euru:textures/screens/arrow-3.png");
-	private static final ResourceLocation IMAGE_5 = ResourceLocation.parse("euru:textures/screens/arrow-4.png");
-	private static final ResourceLocation IMAGE_6 = ResourceLocation.parse("euru:textures/screens/arrow-5.png");
-	private static final ResourceLocation IMAGE_7 = ResourceLocation.parse("euru:textures/screens/arrow-6.png");
-	private static final ResourceLocation IMAGE_8 = ResourceLocation.parse("euru:textures/screens/arrow-7.png");
-	private static final ResourceLocation IMAGE_9 = ResourceLocation.parse("euru:textures/screens/arrow-8.png");
-	private static final ResourceLocation IMAGE_10 = ResourceLocation.parse("euru:textures/screens/arrow-9.png");
-	private static final ResourceLocation IMAGE_11 = ResourceLocation.parse("euru:textures/screens/arrow-10.png");
-	private static final ResourceLocation IMAGE_12 = ResourceLocation.parse("euru:textures/screens/arrow-11.png");
-	private static final ResourceLocation IMAGE_13 = ResourceLocation.parse("euru:textures/screens/arrow-12.png");
-	private static final ResourceLocation IMAGE_14 = ResourceLocation.parse("euru:textures/screens/arrow-13.png");
-	private static final ResourceLocation IMAGE_15 = ResourceLocation.parse("euru:textures/screens/arrow-14.png");
-	private static final ResourceLocation IMAGE_16 = ResourceLocation.parse("euru:textures/screens/arrow-15.png");
-	private static final ResourceLocation IMAGE_17 = ResourceLocation.parse("euru:textures/screens/arrow-16.png");
-	private static final ResourceLocation IMAGE_18 = ResourceLocation.parse("euru:textures/screens/arrow-17.png");
-	private static final ResourceLocation IMAGE_19 = ResourceLocation.parse("euru:textures/screens/arrow-18.png");
-	private static final ResourceLocation IMAGE_20 = ResourceLocation.parse("euru:textures/screens/arrow-19.png");
-	private static final ResourceLocation IMAGE_21 = ResourceLocation.parse("euru:textures/screens/arrow-20.png");
-	private static final ResourceLocation IMAGE_22 = ResourceLocation.parse("euru:textures/screens/arrow-21.png");
-	private static final ResourceLocation IMAGE_23 = ResourceLocation.parse("euru:textures/screens/arrow-full.png");
-	private static final ResourceLocation IMAGE_24 = ResourceLocation.parse("euru:textures/screens/subackdrop.png");
-	private static final ResourceLocation IMAGE_25 = ResourceLocation.parse("euru:textures/screens/symbol_cross.png");
-	private static final ResourceLocation IMAGE_26 = ResourceLocation.parse("euru:textures/screens/button-gun.png");
-	private static final ResourceLocation IMAGE_27 = ResourceLocation.parse("euru:textures/screens/button-always-off.png");
-	private static final ResourceLocation IMAGE_28 = ResourceLocation.parse("euru:textures/screens/button-red-off.png");
-	private static final ResourceLocation IMAGE_29 = ResourceLocation.parse("euru:textures/screens/button-red.png");
+	private static final ResourceLocation IMAGE_1 = ResourceLocation.parse("euru:textures/screens/subackdrop.png");
+	private static final ResourceLocation IMAGE_2 = ResourceLocation.parse("euru:textures/screens/symbol_cross.png");
+	private static final ResourceLocation IMAGE_3 = ResourceLocation.parse("euru:textures/screens/button-gun.png");
+	private static final ResourceLocation IMAGE_4 = ResourceLocation.parse("euru:textures/screens/button-always-off.png");
+	private static final ResourceLocation IMAGE_5 = ResourceLocation.parse("euru:textures/screens/button-red-off.png");
+	private static final ResourceLocation IMAGE_6 = ResourceLocation.parse("euru:textures/screens/button-red.png");
 
 	public ResonatorGUIScreen(ResonatorGUIMenu container, Inventory inventory, Component text) {
 		super(container, inventory, text);
@@ -114,93 +93,25 @@ public class ResonatorGUIScreen extends AbstractContainerScreen<ResonatorGUIMenu
 		RenderSystem.enableBlend();
 		RenderSystem.defaultBlendFunc();
 		guiGraphics.blit(BACKGROUND, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
+		guiGraphics.blit(SPRITE_0, this.leftPos + 77, this.topPos + 32, 0, Mth.clamp((int) ReturnArrowStripProcedure.execute(world, x, y, z) * 22, 0, 484), 22, 22, 22, 506);
 		guiGraphics.blit(IMAGE_0, this.leftPos + 56, this.topPos + 9, 0, 0, 64, 64, 64, 64);
-		if (ArrowEmptyProcedure.execute(world, x, y, z)) {
-			guiGraphics.blit(IMAGE_1, this.leftPos + 77, this.topPos + 32, 0, 0, 22, 22, 22, 22);
-		}
-		if (Arrow1Procedure.execute(world, x, y, z)) {
-			guiGraphics.blit(IMAGE_2, this.leftPos + 77, this.topPos + 32, 0, 0, 22, 22, 22, 22);
-		}
-		if (Arrow2Procedure.execute(world, x, y, z)) {
-			guiGraphics.blit(IMAGE_3, this.leftPos + 77, this.topPos + 32, 0, 0, 22, 22, 22, 22);
-		}
-		if (Arrow3Procedure.execute(world, x, y, z)) {
-			guiGraphics.blit(IMAGE_4, this.leftPos + 77, this.topPos + 32, 0, 0, 22, 22, 22, 22);
-		}
-		if (Arrow4Procedure.execute(world, x, y, z)) {
-			guiGraphics.blit(IMAGE_5, this.leftPos + 77, this.topPos + 32, 0, 0, 22, 22, 22, 22);
-		}
-		if (Arrow5Procedure.execute(world, x, y, z)) {
-			guiGraphics.blit(IMAGE_6, this.leftPos + 77, this.topPos + 32, 0, 0, 22, 22, 22, 22);
-		}
-		if (Arrow6Procedure.execute(world, x, y, z)) {
-			guiGraphics.blit(IMAGE_7, this.leftPos + 77, this.topPos + 32, 0, 0, 22, 22, 22, 22);
-		}
-		if (Arrow7Procedure.execute(world, x, y, z)) {
-			guiGraphics.blit(IMAGE_8, this.leftPos + 77, this.topPos + 32, 0, 0, 22, 22, 22, 22);
-		}
-		if (Arrow8Procedure.execute(world, x, y, z)) {
-			guiGraphics.blit(IMAGE_9, this.leftPos + 77, this.topPos + 32, 0, 0, 22, 22, 22, 22);
-		}
-		if (Arrow9Procedure.execute(world, x, y, z)) {
-			guiGraphics.blit(IMAGE_10, this.leftPos + 77, this.topPos + 32, 0, 0, 22, 22, 22, 22);
-		}
-		if (Arrow10Procedure.execute(world, x, y, z)) {
-			guiGraphics.blit(IMAGE_11, this.leftPos + 77, this.topPos + 32, 0, 0, 22, 22, 22, 22);
-		}
-		if (Arrow11Procedure.execute(world, x, y, z)) {
-			guiGraphics.blit(IMAGE_12, this.leftPos + 77, this.topPos + 32, 0, 0, 22, 22, 22, 22);
-		}
-		if (Arrow12Procedure.execute(world, x, y, z)) {
-			guiGraphics.blit(IMAGE_13, this.leftPos + 77, this.topPos + 32, 0, 0, 22, 22, 22, 22);
-		}
-		if (Arrow13Procedure.execute(world, x, y, z)) {
-			guiGraphics.blit(IMAGE_14, this.leftPos + 77, this.topPos + 32, 0, 0, 22, 22, 22, 22);
-		}
-		if (Arrow14Procedure.execute(world, x, y, z)) {
-			guiGraphics.blit(IMAGE_15, this.leftPos + 77, this.topPos + 32, 0, 0, 22, 22, 22, 22);
-		}
-		if (Arrow15Procedure.execute(world, x, y, z)) {
-			guiGraphics.blit(IMAGE_16, this.leftPos + 77, this.topPos + 32, 0, 0, 22, 22, 22, 22);
-		}
-		if (Arrow16Procedure.execute(world, x, y, z)) {
-			guiGraphics.blit(IMAGE_17, this.leftPos + 77, this.topPos + 32, 0, 0, 22, 22, 22, 22);
-		}
-		if (Arrow17Procedure.execute(world, x, y, z)) {
-			guiGraphics.blit(IMAGE_18, this.leftPos + 77, this.topPos + 32, 0, 0, 22, 22, 22, 22);
-		}
-		if (Arrow18Procedure.execute(world, x, y, z)) {
-			guiGraphics.blit(IMAGE_19, this.leftPos + 77, this.topPos + 32, 0, 0, 22, 22, 22, 22);
-		}
-		if (Arrow19Procedure.execute(world, x, y, z)) {
-			guiGraphics.blit(IMAGE_20, this.leftPos + 77, this.topPos + 32, 0, 0, 22, 22, 22, 22);
-		}
-		if (Arrow20Procedure.execute(world, x, y, z)) {
-			guiGraphics.blit(IMAGE_21, this.leftPos + 77, this.topPos + 32, 0, 0, 22, 22, 22, 22);
-		}
-		if (Arrow21Procedure.execute(world, x, y, z)) {
-			guiGraphics.blit(IMAGE_22, this.leftPos + 77, this.topPos + 32, 0, 0, 22, 22, 22, 22);
-		}
-		if (ArrowFullProcedure.execute(world, x, y, z)) {
-			guiGraphics.blit(IMAGE_23, this.leftPos + 77, this.topPos + 33, 0, 0, 22, 22, 22, 22);
-		}
 		if (SUTooltipProcedure.execute(world, x, y, z)) {
-			guiGraphics.blit(IMAGE_24, this.leftPos + 6, this.topPos + 41, 0, 0, 16, 16, 16, 16);
+			guiGraphics.blit(IMAGE_1, this.leftPos + 6, this.topPos + 41, 0, 0, 16, 16, 16, 16);
 		}
 		if (TooMuchGPProcedure.execute(world, x, y, z)) {
-			guiGraphics.blit(IMAGE_25, this.leftPos + 80, this.topPos + 35, 0, 0, 16, 16, 16, 16);
+			guiGraphics.blit(IMAGE_2, this.leftPos + 80, this.topPos + 35, 0, 0, 16, 16, 16, 16);
 		}
 		if (AlwaysOnProcedureProcedure.execute(world, x, y, z)) {
-			guiGraphics.blit(IMAGE_26, this.leftPos + 4, this.topPos + 16, 0, 0, 20, 20, 20, 20);
+			guiGraphics.blit(IMAGE_3, this.leftPos + 4, this.topPos + 16, 0, 0, 20, 20, 20, 20);
 		}
 		if (AlwaysOffProcedureProcedure.execute(world, x, y, z)) {
-			guiGraphics.blit(IMAGE_27, this.leftPos + 4, this.topPos + 16, 0, 0, 20, 20, 20, 20);
+			guiGraphics.blit(IMAGE_4, this.leftPos + 4, this.topPos + 16, 0, 0, 20, 20, 20, 20);
 		}
 		if (RedstoneOffProcedureProcedure.execute(world, x, y, z)) {
-			guiGraphics.blit(IMAGE_28, this.leftPos + 4, this.topPos + 16, 0, 0, 20, 20, 20, 20);
+			guiGraphics.blit(IMAGE_5, this.leftPos + 4, this.topPos + 16, 0, 0, 20, 20, 20, 20);
 		}
 		if (RedstoneOnProcedureProcedure.execute(world, x, y, z)) {
-			guiGraphics.blit(IMAGE_29, this.leftPos + 4, this.topPos + 16, 0, 0, 20, 20, 20, 20);
+			guiGraphics.blit(IMAGE_6, this.leftPos + 4, this.topPos + 16, 0, 0, 20, 20, 20, 20);
 		}
 		RenderSystem.disableBlend();
 	}
