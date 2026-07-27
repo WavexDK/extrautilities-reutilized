@@ -118,6 +118,7 @@ public class EURUGeneratorsManagerProcedure {
 				exception.printStackTrace();
 			}
 			furnaceGenOBJ = FGenCFGManagerProcedure.execute();
+			furnaceGenOBJ.addProperty("sendEnergyCapability", 4000);
 			configJsonObject.add((BuiltInRegistries.ITEM.getKey(EuruModBlocks.FURNACE_GENERATOR.get().asItem()).toString()), furnaceGenOBJ);
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItem = BuiltInRegistries.ITEM.getKey(Blocks.BARREL.asItem()).toString();
@@ -385,8 +386,10 @@ public class EURUGeneratorsManagerProcedure {
 			fuelPropertiesOBJ.add("minecraft:saplings", saplingsobj);
 			configSubJsonObjest.add("listFuel", sArray);
 			configSubJsonObjest.add("fuelProperties", fuelPropertiesOBJ);
+			configSubJsonObjest.addProperty("sendEnergyCapability", 2000);
 			configJsonObject.add((BuiltInRegistries.ITEM.getKey(EuruModBlocks.SURVIVAL_GENERATOR.get().asItem()).toString()), configSubJsonObjest);
 			cgenobj = CGenCFGManagerProcedure.execute();
+			cgenobj.addProperty("sendEnergyCapability", 8000);
 			configJsonObject.add((BuiltInRegistries.ITEM.getKey(EuruModBlocks.CULINARY_GENERATOR.get().asItem()).toString()), cgenobj);
 			cItem = BuiltInRegistries.ITEM.getKey(Items.NETHER_STAR).toString();
 			cItemOBJ = new com.google.gson.JsonObject();
@@ -396,6 +399,7 @@ public class EURUGeneratorsManagerProcedure {
 			nsarray.add(cItem);
 			nsgenobj.add("listFuel", nsarray);
 			nsgenobj.add("fuelProperties", nsgenfp);
+			nsgenobj.addProperty("sendEnergyCapability", 80000);
 			configJsonObject.add((BuiltInRegistries.ITEM.getKey(EuruModBlocks.NETHERSTAR_GENERATOR.get().asItem()).toString()), nsgenobj);
 			cItem = BuiltInRegistries.ITEM.getKey(Items.GUNPOWDER).toString();
 			cItemOBJ = new com.google.gson.JsonObject();
@@ -415,9 +419,10 @@ public class EURUGeneratorsManagerProcedure {
 			cItemOBJ.addProperty("feSpeed", 160);
 			exgenfp.add(cItem, cItemOBJ);
 			exarray.add(cItem);
-			exgen.addProperty("explosion_chance", 2.5);
 			exgen.add("listFuel", exarray);
 			exgen.add("fuelProperties", exgenfp);
+			exgen.addProperty("explosion_chance", 2.5);
+			exgen.addProperty("sendEnergyCapability", 8000);
 			configJsonObject.add((BuiltInRegistries.ITEM.getKey(EuruModBlocks.EXPLOSIVE_GENERATOR.get().asItem()).toString()), exgen);
 			cItem = "math_-Dont_touch_this_if_you_dont_know_what_youre_doing";
 			cItemOBJ = new com.google.gson.JsonObject();
@@ -429,6 +434,7 @@ public class EURUGeneratorsManagerProcedure {
 			degenobj.add("listFuel", dearray);
 			degenfp.addProperty("feIncrement", 20);
 			degenobj.add("fuelProperties", degenfp);
+			degenobj.addProperty("sendEnergyCapability", 8000);
 			configJsonObject.add((BuiltInRegistries.ITEM.getKey(EuruModBlocks.DISENCHANTMENT_GENERATOR.get().asItem()).toString()), degenobj);
 			cItem = BuiltInRegistries.ITEM.getKey(EuruModItems.ENDER_SHARD.get()).toString();
 			cItemOBJ = new com.google.gson.JsonObject();
@@ -450,8 +456,10 @@ public class EURUGeneratorsManagerProcedure {
 			earray.add(cItem);
 			egenobj.add("listFuel", earray);
 			egenobj.add("fuelProperties", egenfp);
+			egenobj.addProperty("sendEnergyCapability", 8000);
 			configJsonObject.add((BuiltInRegistries.ITEM.getKey(EuruModBlocks.ENDER_GENERATOR.get().asItem()).toString()), egenobj);
 			ogenobj = OGenCFGManagerProcedure.execute();
+			ogenobj.addProperty("sendEnergyCapability", 20000);
 			configJsonObject.add((BuiltInRegistries.ITEM.getKey(EuruModBlocks.OVERCLOCKED_GENERATOR.get().asItem()).toString()), ogenobj);
 			configJsonObject.addProperty("config_version", cVer);
 			{

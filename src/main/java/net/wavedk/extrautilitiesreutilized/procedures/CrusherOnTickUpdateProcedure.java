@@ -23,6 +23,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
@@ -176,7 +177,7 @@ public class CrusherOnTickUpdateProcedure {
 								}
 								bufferedReader.close();
 								obj = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
-								cobj = obj.get("machines").getAsJsonObject();
+								cobj = obj.get("recipes").getAsJsonObject();
 								bobj = cobj.get((BuiltInRegistries.ITEM.getKey(EuruModBlocks.CRUSHER.get().asItem()).toString())).getAsJsonObject();
 								rlist = bobj.get("recipeList").getAsJsonArray();
 								if (!(getBlockNBTString(world, BlockPos.containing(x, y, z), "lastCheckedItemID")).equals(BuiltInRegistries.ITEM.getKey((itemFromBlockInventory(world, BlockPos.containing(x, y, z), 0).copy()).getItem()).toString())) {
@@ -192,7 +193,8 @@ public class CrusherOnTickUpdateProcedure {
 									}
 									cNum = 0;
 									for (int index14 = 0; index14 < (int) rlist.size(); index14++) {
-										if ((BuiltInRegistries.ITEM.getKey((itemFromBlockInventory(world, BlockPos.containing(x, y, z), 0).copy()).getItem()).toString()).equals(rlist.get((int) cNum).getAsString())) {
+										if ((BuiltInRegistries.ITEM.getKey((itemFromBlockInventory(world, BlockPos.containing(x, y, z), 0).copy()).getItem()).toString()).equals(rlist.get((int) cNum).getAsString())
+												|| (itemFromBlockInventory(world, BlockPos.containing(x, y, z), 0).copy()).is(ItemTags.create(ResourceLocation.parse((rlist.get((int) cNum).getAsString()).toLowerCase(java.util.Locale.ENGLISH))))) {
 											iobj = bobj.get(rlist.get((int) cNum).getAsString()).getAsJsonObject();
 											if (getEnergyStored(world, BlockPos.containing(x, y, z), null) >= iobj.get("fe_required").getAsDouble()) {
 												if (!world.isClientSide()) {
@@ -339,7 +341,7 @@ public class CrusherOnTickUpdateProcedure {
 				}
 			}
 		}
-		if (getPropertyByName(blockstate, "on") instanceof BooleanProperty _getbp111 && blockstate.getValue(_getbp111)) {
+		if (getPropertyByName(blockstate, "on") instanceof BooleanProperty _getbp114 && blockstate.getValue(_getbp114)) {
 			if ((getBlockNBTString(world, BlockPos.containing(x, y, z), "currentItem")).equals("") || getBlockNBTLogic(world, BlockPos.containing(x, y, z), "stoppedForGP")) {
 				if (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "onCounter") > 2) {
 					if (!world.isClientSide()) {

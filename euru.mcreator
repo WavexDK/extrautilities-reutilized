@@ -3603,76 +3603,6 @@
       "path": "~/Blocks/Generators/FE/GUI"
     },
     {
-      "name": "SGenAddedHandler",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "s_gen_added_handler",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ],
-        "files": [
-          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/SGenAddedHandlerProcedure.java"
-        ]
-      },
-      "path": "~/Blocks/Generators/FE/Procedures"
-    },
-    {
-      "name": "FGenAddedHandler",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "f_gen_added_handler",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ],
-        "files": [
-          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/FGenAddedHandlerProcedure.java"
-        ]
-      },
-      "path": "~/Blocks/Generators/FE/Procedures"
-    },
-    {
       "name": "SGenRecipeType",
       "type": "jeirecipetype",
       "compiles": true,
@@ -5525,41 +5455,6 @@
       "path": "~/Blocks/Generators/FE/GUI"
     },
     {
-      "name": "EGenAddedHandler",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "e_gen_added_handler",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ],
-        "files": [
-          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/EGenAddedHandlerProcedure.java"
-        ]
-      },
-      "path": "~/Blocks/Generators/FE/Procedures"
-    },
-    {
       "name": "EGenRecipeType",
       "type": "jeirecipetype",
       "compiles": true,
@@ -6410,41 +6305,6 @@
       "path": "~/Blocks/Generators/FE"
     },
     {
-      "name": "OGenAddedHandler",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "o_gen_added_handler",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ],
-        "files": [
-          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/OGenAddedHandlerProcedure.java"
-        ]
-      },
-      "path": "~/Blocks/Generators/FE/Procedures"
-    },
-    {
       "name": "GenerateFE",
       "type": "procedure",
       "compiles": true,
@@ -7056,41 +6916,6 @@
         ]
       },
       "path": "~/Blocks/Generators/FE/GUI"
-    },
-    {
-      "name": "NSGenAddedHandler",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "ns_gen_added_handler",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ],
-        "files": [
-          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/NSGenAddedHandlerProcedure.java"
-        ]
-      },
-      "path": "~/Blocks/Generators/FE/Procedures"
     },
     {
       "name": "SpecialGenFeature",
@@ -9493,41 +9318,6 @@
       "path": "~/Blocks/Generators/FE"
     },
     {
-      "name": "CGenAddedHandler",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "c_gen_added_handler",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ],
-        "files": [
-          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/CGenAddedHandlerProcedure.java"
-        ]
-      },
-      "path": "~/Blocks/Generators/FE/Procedures"
-    },
-    {
       "name": "CGenRecipeType",
       "type": "jeirecipetype",
       "compiles": true,
@@ -9559,41 +9349,6 @@
         ]
       },
       "path": "~/Blocks/Generators/FE"
-    },
-    {
-      "name": "DEGenAddedHandler",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "de_gen_added_handler",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ],
-        "files": [
-          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/DEGenAddedHandlerProcedure.java"
-        ]
-      },
-      "path": "~/Blocks/Generators/FE/Procedures"
     },
     {
       "name": "DEGenRecipeType",
@@ -10201,6 +9956,41 @@
         ]
       },
       "path": "~/Items/Recipes"
+    },
+    {
+      "name": "GeneratorAddedHandler",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "generator_added_handler",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/GeneratorAddedHandlerProcedure.java"
+        ]
+      },
+      "path": "~/Blocks/Generators/FE/Procedures"
     }
   ],
   "variable_elements": [
@@ -10474,10 +10264,10 @@
       "~GildedObsidian@CUSTOM:GildedObsidian"
     ],
     "BLOCKS:minecraft:mineable/axe": [
-      "~ManualMill@CUSTOM:ManualMill",
       "~ChunkLoadingWard@CUSTOM:ChunkLoadingWard",
       "~SlightlyLargerChest@CUSTOM:SlightlyLargerChest",
-      "~MiniChest@CUSTOM:MiniChest"
+      "~MiniChest@CUSTOM:MiniChest",
+      "~ManualMill@CUSTOM:ManualMill"
     ],
     "ITEMS:minecraft:hoes": [
       "~GoldenSickle@CUSTOM:GoldenSickle",
@@ -10975,6 +10765,10 @@
       },
       {
         "name": "Bauble",
+        "children": []
+      },
+      {
+        "name": "Tags",
         "children": []
       }
     ]

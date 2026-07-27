@@ -79,6 +79,11 @@ public class EURUUnifiedConfigManagerProcedure {
 			} catch (IOException exception) {
 				exception.printStackTrace();
 			}
+			configJsonObject.addProperty("reload_blocks", false);
+			configJsonObject.addProperty("info", "Changing the above value will make all the blocks in your world pull from the configs again. This can cause severe lag, use with caution.");
+			configJsonObject.addProperty("range-configUpdate-min", 3000);
+			configJsonObject.addProperty("range-configUpdate-max", 3600);
+			configJsonObject.addProperty("info_2", "Changing the above values will change how often all blocks update from config, measured in ticks.");
 			itemobj = new com.google.gson.JsonObject();
 			itemobj.addProperty("efficiency", 0.95);
 			itemobj.addProperty("efficiency_cutoff", 80);
@@ -137,6 +142,17 @@ public class EURUUnifiedConfigManagerProcedure {
 			rlArray.add((BuiltInRegistries.ITEM.getKey(Blocks.LIGHT_WEIGHTED_PRESSURE_PLATE.asItem()).toString()));
 			bobj.add("recipeList", rlArray);
 			recipesOBJ.add((BuiltInRegistries.ITEM.getKey(EuruModBlocks.RESONATOR.get().asItem()).toString()), bobj);
+			cItem = BuiltInRegistries.ITEM.getKey(Blocks.GRAVEL.asItem()).toString();
+			coutput = BuiltInRegistries.ITEM.getKey(Blocks.SAND.asItem()).toString();
+			newJson = new com.google.gson.JsonObject();
+			newJson.addProperty("wait_time", 200);
+			newJson.addProperty("fe_required", 1000);
+			newJson.addProperty("gp_required", 0);
+			newJson.addProperty("result", coutput);
+			crushobj.add(cItem, newJson);
+			crusherrl.add(cItem);
+			crushobj.add("recipeList", crusherrl);
+			recipesOBJ.add((BuiltInRegistries.ITEM.getKey(EuruModBlocks.CRUSHER.get().asItem()).toString()), crushobj);
 			configJsonObject.add("recipes", recipesOBJ);
 			itemobj = new com.google.gson.JsonObject();
 			itemobj.addProperty("gp_generated", 9999);
@@ -200,17 +216,6 @@ public class EURUUnifiedConfigManagerProcedure {
 			lunarobj.addProperty("needs_fire", 0);
 			gpGenerators.add((BuiltInRegistries.ITEM.getKey(EuruModBlocks.LUNAR_PANEL.get().asItem()).toString()), lunarobj);
 			configJsonObject.add("gp_generation", gpGenerators);
-			cItem = BuiltInRegistries.ITEM.getKey(Blocks.GRAVEL.asItem()).toString();
-			coutput = BuiltInRegistries.ITEM.getKey(Blocks.SAND.asItem()).toString();
-			newJson = new com.google.gson.JsonObject();
-			newJson.addProperty("wait_time", 200);
-			newJson.addProperty("fe_required", 1000);
-			newJson.addProperty("gp_required", 8);
-			newJson.addProperty("result", coutput);
-			crushobj.add(cItem, newJson);
-			crusherrl.add(cItem);
-			crushobj.add("recipeList", crusherrl);
-			machinesobj.add((BuiltInRegistries.ITEM.getKey(EuruModBlocks.CRUSHER.get().asItem()).toString()), crushobj);
 			ef.addProperty("wait_time", 160);
 			ef.addProperty("gp_needed", 8);
 			ef.addProperty("fe_needed", 4000);
@@ -228,14 +233,12 @@ public class EURUUnifiedConfigManagerProcedure {
 			generalOBJ.add((BuiltInRegistries.ITEM.getKey(EuruModItems.WATERING_CAN.get()).toString()), wc);
 			gcobj.addProperty("breaks_glass", true);
 			generalOBJ.add((BuiltInRegistries.ITEM.getKey(EuruModItems.GLASS_CUTTER.get()).toString()), gcobj);
-			srobj.addProperty("gp_needed", 16);
-			generalOBJ.add((BuiltInRegistries.ITEM.getKey(EuruModItems.SQUID_RING.get()).toString()), srobj);
 			cwobj.addProperty("gp_needed", 4);
 			generalOBJ.add((BuiltInRegistries.ITEM.getKey(EuruModItems.CHICKEN_RING.get()).toString()), cwobj);
+			srobj.addProperty("gp_needed", 16);
+			generalOBJ.add((BuiltInRegistries.ITEM.getKey(EuruModItems.SQUID_RING.get()).toString()), srobj);
 			arobj.addProperty("gp_needed", 32);
 			generalOBJ.add((BuiltInRegistries.ITEM.getKey(EuruModItems.ANGEL_RING.get()).toString()), arobj);
-			generalOBJ.addProperty("range-configUpdate-min", 3000);
-			generalOBJ.addProperty("range-configUpdate-max", 3600);
 			clOBJ.addProperty("gp_needed", 8);
 			generalOBJ.add((BuiltInRegistries.ITEM.getKey(EuruModBlocks.CHUNK_LOADING_WARD.get().asItem()).toString()), clOBJ);
 			clt.addProperty("enabled", true);
@@ -322,6 +325,7 @@ public class EURUUnifiedConfigManagerProcedure {
 			lobj.add("cursed", eArray);
 			configJsonObject.add("lasso_entities", lobj);
 			configJsonObject.addProperty("config_version", cVer);
+			configJsonObject.addProperty("info_3", "(!) Dont change \"config_version\"! Doing so will make all your configs regenerate. (!)");
 			{
 				com.google.gson.Gson mainGSONBuilderVariable = new com.google.gson.GsonBuilder().setPrettyPrinting().create();
 				try {

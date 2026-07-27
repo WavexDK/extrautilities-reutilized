@@ -167,7 +167,7 @@
     "fluidCapacity": 8000,
     "fluidRestrictions": [],
     "onTickUpdate": "GeneratorTickHandler",
-    "onBlockPlayedBy": "NSGenAddedHandler",
+    "onBlockPlayedBy": "GeneratorAddedHandler",
     "generateFeature": false,
     "restrictionBiomes": [],
     "blocksToReplace": [

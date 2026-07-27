@@ -16,7 +16,7 @@ import java.io.FileReader;
 import java.io.File;
 import java.io.BufferedReader;
 
-public class SGenAddedHandlerProcedure {
+public class GeneratorAddedHandlerProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;

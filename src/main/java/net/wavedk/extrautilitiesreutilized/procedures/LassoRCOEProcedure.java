@@ -68,7 +68,7 @@ public class LassoRCOEProcedure {
 						lobj = mobj.get("lasso_entities").getAsJsonObject();
 						array = lobj.get("golden").getAsJsonArray();
 						cNum = 0;
-						for (int index444 = 0; index444 < (int) array.size(); index444++) {
+						for (int index9 = 0; index9 < (int) array.size(); index9++) {
 							cEntity = array.get((int) cNum).getAsString();
 							if ((BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString()).equals(cEntity)) {
 								foundEntity = true;
@@ -251,7 +251,7 @@ public class LassoRCOEProcedure {
 						lobj = mobj.get("lasso_entities").getAsJsonObject();
 						array = lobj.get("golden").getAsJsonArray();
 						cNum = 0;
-						for (int index445 = 0; index445 < (int) array.size(); index445++) {
+						for (int index10 = 0; index10 < (int) array.size(); index10++) {
 							cEntity = array.get((int) cNum).getAsString();
 							if ((BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString()).equals(cEntity)) {
 								foundEntity = true;
@@ -398,7 +398,7 @@ public class LassoRCOEProcedure {
 						lobj = mobj.get("lasso_entities").getAsJsonObject();
 						array = lobj.get("cursed").getAsJsonArray();
 						cNum = 0;
-						for (int index446 = 0; index446 < (int) array.size(); index446++) {
+						for (int index11 = 0; index11 < (int) array.size(); index11++) {
 							cEntity = array.get((int) cNum).getAsString();
 							if ((BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString()).equals(cEntity)) {
 								foundEntity = true;
@@ -488,7 +488,7 @@ public class LassoRCOEProcedure {
 						lobj = mobj.get("lasso_entities").getAsJsonObject();
 						array = lobj.get("cursed").getAsJsonArray();
 						cNum = 0;
-						for (int index447 = 0; index447 < (int) array.size(); index447++) {
+						for (int index12 = 0; index12 < (int) array.size(); index12++) {
 							cEntity = array.get((int) cNum).getAsString();
 							if ((BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString()).equals(cEntity)) {
 								foundEntity = true;

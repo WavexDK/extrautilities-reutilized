@@ -3,7 +3,7 @@ package net.wavedk.extrautilitiesreutilized.block;
 import net.wavedk.extrautilitiesreutilized.world.inventory.EGenGUIMenu;
 import net.wavedk.extrautilitiesreutilized.procedures.GeneratorTickHandlerProcedure;
 import net.wavedk.extrautilitiesreutilized.procedures.GeneratorLuminanceProcedure;
-import net.wavedk.extrautilitiesreutilized.procedures.CGenAddedHandlerProcedure;
+import net.wavedk.extrautilitiesreutilized.procedures.GeneratorAddedHandlerProcedure;
 import net.wavedk.extrautilitiesreutilized.block.entity.CulinaryGeneratorBlockEntity;
 
 import net.minecraft.world.phys.BlockHitResult;
@@ -86,7 +86,7 @@ public class CulinaryGeneratorBlock extends Block implements EntityBlock {
 	@Override
 	public void setPlacedBy(Level world, BlockPos pos, BlockState blockstate, LivingEntity entity, ItemStack itemstack) {
 		super.setPlacedBy(world, pos, blockstate, entity, itemstack);
-		CGenAddedHandlerProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ(), entity);
+		GeneratorAddedHandlerProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ(), entity);
 	}
 
 	@Override
