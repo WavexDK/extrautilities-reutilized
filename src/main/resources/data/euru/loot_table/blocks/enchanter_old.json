@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:block",
+  "random_sequence": "euru:blocks/enchanter_old",
+  "pools": [
+    {
+      "rolls": 1.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "euru:enchanter_old"
+        }
+      ]
+    }
+  ]
+}

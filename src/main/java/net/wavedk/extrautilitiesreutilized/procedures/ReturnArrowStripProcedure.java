@@ -11,7 +11,7 @@ public class ReturnArrowStripProcedure {
 		double pStep = 0;
 		pStep = 0;
 		currentStep = 23;
-		for (int index18 = 0; index18 < 23; index18++) {
+		for (int index62 = 0; index62 < 23; index62++) {
 			stepNum = Math.floor(getBlockNBTNumber(world, BlockPos.containing(x, y, z), "wait_time") / getBlockNBTNumber(world, BlockPos.containing(x, y, z), "steps"));
 			if (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "cProgress") >= stepNum * pStep && getBlockNBTNumber(world, BlockPos.containing(x, y, z), "cProgress") <= stepNum * (pStep + 1)) {
 				currentStep = pStep;

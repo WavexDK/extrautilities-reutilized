@@ -2,8 +2,8 @@
   "replace": false,
   "values": [
     "euru:angel_block",
-    "euru:fire_mill",
     "euru:creative_energy_source",
+    "euru:fire_mill",
     "euru:disenchantment_generator",
     "euru:culinary_generator",
     "euru:octuple_compressed_cobblestone",
