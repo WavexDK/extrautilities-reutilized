@@ -9,6 +9,8 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.util.RandomSource;
+import net.minecraft.util.Mth;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.BlockPos;
 
@@ -25,13 +27,10 @@ public class GroupSolarPanelsAddedHandlerProcedure {
 		double c_x = 0;
 		double c_z = 0;
 		String group = "";
-		File currentFile = new File("");
-		File cfile = new File("");
 		File configFile = new File("");
-		com.google.gson.JsonObject cOBJ = new com.google.gson.JsonObject();
-		com.google.gson.JsonObject ccobjk = new com.google.gson.JsonObject();
 		com.google.gson.JsonObject itemOBJ = new com.google.gson.JsonObject();
 		com.google.gson.JsonObject gp_gen_obj = new com.google.gson.JsonObject();
+		com.google.gson.JsonObject cOBJ = new com.google.gson.JsonObject();
 		if (!world.isClientSide()) {
 			BlockPos _bp = BlockPos.containing(x, y, z);
 			BlockEntity _blockEntity = world.getBlockEntity(_bp);
@@ -70,6 +69,10 @@ public class GroupSolarPanelsAddedHandlerProcedure {
 								_blockEntity.getPersistentData().putDouble("needs_lava", itemOBJ.get("needs_lava").getAsDouble());
 								_blockEntity.getPersistentData().putDouble("needs_fire", itemOBJ.get("needs_fire").getAsDouble());
 								_blockEntity.getPersistentData().putDouble("gp_generated", itemOBJ.get("gp_generated").getAsDouble());
+								_blockEntity.getPersistentData().putDouble("range-configUpdate-min", cOBJ.get("range-configUpdate-min").getAsDouble());
+								_blockEntity.getPersistentData().putDouble("range-configUpdate-max", cOBJ.get("range-configUpdate-max").getAsDouble());
+								_blockEntity.getPersistentData().putDouble("range-configUpdate", (Mth.nextInt(RandomSource.create(), (int) cOBJ.get("range-configUpdate-min").getAsDouble(), (int) cOBJ.get("range-configUpdate-max").getAsDouble())));
+								_blockEntity.getPersistentData().putDouble("range-configUpdate-counter", 0);
 								_blockEntity.getPersistentData().putBoolean("been_json_checked", true);
 							}
 							if (world instanceof Level _level)

@@ -49,7 +49,6 @@ public class EuruModBlocks {
 	public static final DeferredBlock<Block> NETHERSTAR_GENERATOR;
 	public static final DeferredBlock<Block> ENDER_LILLY;
 	public static final DeferredBlock<Block> ENDER_LILLY_PLANT;
-	public static final DeferredBlock<Block> MUFFLER;
 	public static final DeferredBlock<Block> CULINARY_GENERATOR;
 	public static final DeferredBlock<Block> DISENCHANTMENT_GENERATOR;
 	public static final DeferredBlock<Block> EXPLOSIVE_GENERATOR;
@@ -90,7 +89,6 @@ public class EuruModBlocks {
 		NETHERSTAR_GENERATOR = REGISTRY.register("netherstar_generator", NetherstarGeneratorBlock::new);
 		ENDER_LILLY = REGISTRY.register("ender_lilly", EnderLillyBlock::new);
 		ENDER_LILLY_PLANT = REGISTRY.register("ender_lilly_plant", EnderLillyPlantBlock::new);
-		MUFFLER = REGISTRY.register("muffler", MufflerBlock::new);
 		CULINARY_GENERATOR = REGISTRY.register("culinary_generator", CulinaryGeneratorBlock::new);
 		DISENCHANTMENT_GENERATOR = REGISTRY.register("disenchantment_generator", DisenchantmentGeneratorBlock::new);
 		EXPLOSIVE_GENERATOR = REGISTRY.register("explosive_generator", ExplosiveGeneratorBlock::new);

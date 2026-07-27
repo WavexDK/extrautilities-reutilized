@@ -70,7 +70,7 @@ public class EURUUnifiedConfigManagerProcedure {
 		String cItem = "";
 		String coutput = "";
 		configFile = new File((FMLPaths.GAMEDIR.get().toString() + "/config/euru/"), File.separator + "euru_unified_config.json");
-		EuruModVariables.cVer = 2.2;
+		EuruModVariables.cVer = 3;
 		cVer = EuruModVariables.cVer;
 		if (!configFile.exists()) {
 			try {
@@ -79,8 +79,6 @@ public class EURUUnifiedConfigManagerProcedure {
 			} catch (IOException exception) {
 				exception.printStackTrace();
 			}
-			configJsonObject.addProperty("reload_blocks", false);
-			configJsonObject.addProperty("info", "Changing the above value will make all the blocks in your world pull from the configs again. This can cause severe lag, use with caution.");
 			configJsonObject.addProperty("range-configUpdate-min", 3000);
 			configJsonObject.addProperty("range-configUpdate-max", 3600);
 			configJsonObject.addProperty("info_2", "Changing the above values will change how often all blocks update from config, measured in ticks.");

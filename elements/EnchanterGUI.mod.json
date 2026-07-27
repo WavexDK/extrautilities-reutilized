@@ -23,229 +23,9 @@
       {
         "type": "image",
         "data": {
-          "image": "0.png",
-          "use1Xscale": false,
-          "displayCondition": "ArrowEmpty",
-          "x": 144,
-          "y": 41,
-          "locked": false
-        }
-      },
-      {
-        "type": "image",
-        "data": {
-          "image": "2.png",
-          "use1Xscale": false,
-          "displayCondition": "Arrow1",
-          "x": 144,
-          "y": 41,
-          "locked": false
-        }
-      },
-      {
-        "type": "image",
-        "data": {
-          "image": "3.png",
-          "use1Xscale": false,
-          "displayCondition": "Arrow2",
-          "x": 144,
-          "y": 41,
-          "locked": false
-        }
-      },
-      {
-        "type": "image",
-        "data": {
-          "image": "4.png",
-          "use1Xscale": false,
-          "displayCondition": "Arrow3",
-          "x": 144,
-          "y": 41,
-          "locked": false
-        }
-      },
-      {
-        "type": "image",
-        "data": {
-          "image": "5.png",
-          "use1Xscale": false,
-          "displayCondition": "Arrow4",
-          "x": 144,
-          "y": 41,
-          "locked": false
-        }
-      },
-      {
-        "type": "image",
-        "data": {
-          "image": "6.png",
-          "use1Xscale": false,
-          "displayCondition": "Arrow5",
-          "x": 144,
-          "y": 41,
-          "locked": false
-        }
-      },
-      {
-        "type": "image",
-        "data": {
-          "image": "7.png",
-          "use1Xscale": false,
-          "displayCondition": "Arrow6",
-          "x": 144,
-          "y": 41,
-          "locked": false
-        }
-      },
-      {
-        "type": "image",
-        "data": {
-          "image": "8_.png",
-          "use1Xscale": false,
-          "displayCondition": "Arrow7",
-          "x": 144,
-          "y": 41,
-          "locked": false
-        }
-      },
-      {
-        "type": "image",
-        "data": {
-          "image": "9.png",
-          "use1Xscale": false,
-          "displayCondition": "Arrow8",
-          "x": 144,
-          "y": 41,
-          "locked": false
-        }
-      },
-      {
-        "type": "image",
-        "data": {
-          "image": "10.png",
-          "use1Xscale": false,
-          "displayCondition": "Arrow9",
-          "x": 144,
-          "y": 41,
-          "locked": false
-        }
-      },
-      {
-        "type": "image",
-        "data": {
-          "image": "11.png",
-          "use1Xscale": false,
-          "displayCondition": "Arrow10",
-          "x": 144,
-          "y": 41,
-          "locked": false
-        }
-      },
-      {
-        "type": "image",
-        "data": {
-          "image": "12.png",
-          "use1Xscale": false,
-          "displayCondition": "Arrow11",
-          "x": 144,
-          "y": 41,
-          "locked": false
-        }
-      },
-      {
-        "type": "image",
-        "data": {
-          "image": "13.png",
-          "use1Xscale": false,
-          "displayCondition": "Arrow12",
-          "x": 144,
-          "y": 41,
-          "locked": false
-        }
-      },
-      {
-        "type": "image",
-        "data": {
-          "image": "14.png",
-          "use1Xscale": false,
-          "displayCondition": "Arrow13",
-          "x": 144,
-          "y": 41,
-          "locked": false
-        }
-      },
-      {
-        "type": "image",
-        "data": {
-          "image": "15.png",
-          "use1Xscale": false,
-          "displayCondition": "Arrow14",
-          "x": 144,
-          "y": 41,
-          "locked": false
-        }
-      },
-      {
-        "type": "image",
-        "data": {
-          "image": "16.png",
-          "use1Xscale": false,
-          "displayCondition": "Arrow15",
-          "x": 144,
-          "y": 41,
-          "locked": false
-        }
-      },
-      {
-        "type": "image",
-        "data": {
-          "image": "17.png",
-          "use1Xscale": false,
-          "displayCondition": "Arrow16",
-          "x": 144,
-          "y": 41,
-          "locked": false
-        }
-      },
-      {
-        "type": "image",
-        "data": {
           "image": "crsvwv.png",
           "use1Xscale": false,
           "displayCondition": "ErrorShow",
-          "x": 144,
-          "y": 41,
-          "locked": false
-        }
-      },
-      {
-        "type": "image",
-        "data": {
-          "image": "18.png",
-          "use1Xscale": false,
-          "displayCondition": "Arrow17",
-          "x": 144,
-          "y": 41,
-          "locked": false
-        }
-      },
-      {
-        "type": "image",
-        "data": {
-          "image": "19.png",
-          "use1Xscale": false,
-          "displayCondition": "Arrow18",
-          "x": 144,
-          "y": 41,
-          "locked": false
-        }
-      },
-      {
-        "type": "image",
-        "data": {
-          "image": "20.png",
-          "use1Xscale": false,
-          "displayCondition": "Arrow19",
           "x": 144,
           "y": 41,
           "locked": false
@@ -332,10 +112,10 @@
             "fixedValue": "",
             "name": "ResonatorRedstoneMode"
           },
-          "width": 24,
-          "height": 24,
-          "x": 220,
-          "y": 70,
+          "width": 20,
+          "height": 20,
+          "x": 222,
+          "y": 72,
           "locked": false
         }
       },
@@ -368,45 +148,15 @@
       {
         "type": "tooltip",
         "data": {
-          "name": "tooltip_empty",
-          "text": {
-            "fixedValue": "",
-            "name": "ReturnEnchanterErrror"
-          },
-          "width": 24,
-          "height": 24,
-          "x": 199,
-          "y": 95,
-          "locked": false
-        }
-      },
-      {
-        "type": "tooltip",
-        "data": {
           "name": "tooltip_proc_return_enchanter_errror",
           "text": {
             "fixedValue": "",
             "name": "ReturnEnchanterErrror"
           },
           "width": 24,
-          "height": 24,
-          "x": 195,
+          "height": 46,
+          "x": 198,
           "y": 71,
-          "locked": false
-        }
-      },
-      {
-        "type": "tooltip",
-        "data": {
-          "name": "tooltip_proc_return_enchanter_errror1",
-          "text": {
-            "fixedValue": "",
-            "name": "ReturnEnchanterErrror"
-          },
-          "width": 24,
-          "height": 24,
-          "x": 241,
-          "y": 95,
           "locked": false
         }
       },
@@ -419,8 +169,8 @@
             "name": "ReturnEnchanterErrror"
           },
           "width": 24,
-          "height": 24,
-          "x": 245,
+          "height": 46,
+          "x": 242,
           "y": 71,
           "locked": false
         }
@@ -571,6 +321,20 @@
           "height": 60,
           "x": 269,
           "y": 52,
+          "locked": false
+        }
+      },
+      {
+        "type": "sprite",
+        "data": {
+          "sprite": "enchanter_strip.png",
+          "spritesCount": 21,
+          "spriteIndex": {
+            "fixedValue": 0.0,
+            "name": "ReturnArrowStrip"
+          },
+          "x": 144,
+          "y": 41,
           "locked": false
         }
       }

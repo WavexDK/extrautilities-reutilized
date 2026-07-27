@@ -56,6 +56,7 @@ public class EuruModTabs {
 				tabData.accept(EuruModItems.LUNAR_REACTIVE_DUST.get());
 				tabData.accept(EuruModItems.REDSTONE_GEAR.get());
 				tabData.accept(EuruModItems.EVIL_INFUSED_INGOT.get());
+				tabData.accept(EuruModItems.EVIL_INFUSED_NUGGET.get());
 				tabData.accept(EuruModItems.ENCHANTED_APPLE.get());
 				tabData.accept(EuruModItems.ENCHANTED_INGOT.get());
 				tabData.accept(EuruModItems.WATERING_CAN.get());

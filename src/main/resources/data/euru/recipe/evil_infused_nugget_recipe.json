@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "euru:evil_infused_ingot"
+    }
+  ],
+  "result": {
+    "id": "euru:evil_infused_nugget",
+    "count": 1
+  }
+}

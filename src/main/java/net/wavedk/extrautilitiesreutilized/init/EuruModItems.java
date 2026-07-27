@@ -91,7 +91,6 @@ public class EuruModItems {
 	public static final DeferredItem<Item> CHUNK_LOADING_WARD = REGISTRY.register(EuruModBlocks.CHUNK_LOADING_WARD.getId().getPath(), () -> new ChunkLoadingWardDisplayItem(EuruModBlocks.CHUNK_LOADING_WARD.get(), new Item.Properties()));
 	public static final DeferredItem<Item> NETHERSTAR_GENERATOR = block(EuruModBlocks.NETHERSTAR_GENERATOR);
 	public static final DeferredItem<Item> ENDER_LILLY = block(EuruModBlocks.ENDER_LILLY);
-	public static final DeferredItem<Item> MUFFLER = block(EuruModBlocks.MUFFLER);
 	public static final DeferredItem<Item> DIAMOND_SICKLE = REGISTRY.register("diamond_sickle", DiamondSickleItem::new);
 	public static final DeferredItem<Item> NETHERITE_SICKLE = REGISTRY.register("netherite_sickle", NetheriteSickleItem::new);
 	public static final DeferredItem<Item> IRON_SICKLE = REGISTRY.register("iron_sickle", IronSickleItem::new);
@@ -104,6 +103,7 @@ public class EuruModItems {
 	public static final DeferredItem<Item> EXPLOSIVE_GENERATOR = block(EuruModBlocks.EXPLOSIVE_GENERATOR);
 	public static final DeferredItem<Item> GOLDEN_LASSO_CLW = REGISTRY.register("golden_lasso_clw", GoldenLassoCLWItem::new);
 	public static final DeferredItem<Item> EYE_OF_REDSTONE = REGISTRY.register("eye_of_redstone", EyeOfRedstoneItem::new);
+	public static final DeferredItem<Item> EVIL_INFUSED_NUGGET = REGISTRY.register("evil_infused_nugget", EvilInfusedNuggetItem::new);
 
 	// Start of user code block custom items
 	// End of user code block custom items

@@ -24,6 +24,8 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.util.RandomSource;
+import net.minecraft.util.Mth;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.level.ServerLevel;
@@ -46,6 +48,7 @@ public class GeneratorTickHandlerProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, BlockState blockstate) {
 		Entity player = null;
 		File feConfig = new File("");
+		File cfile = new File("");
 		com.google.gson.JsonArray fuelList = new com.google.gson.JsonArray();
 		String currentItem = "";
 		String getDependencies = "";
@@ -56,6 +59,9 @@ public class GeneratorTickHandlerProcedure {
 		com.google.gson.JsonObject itemOBJ = new com.google.gson.JsonObject();
 		com.google.gson.JsonObject blockOBJ = new com.google.gson.JsonObject();
 		com.google.gson.JsonObject deobj = new com.google.gson.JsonObject();
+		com.google.gson.JsonObject cobj = new com.google.gson.JsonObject();
+		com.google.gson.JsonObject refreshcobj = new com.google.gson.JsonObject();
+		com.google.gson.JsonObject refreshbobj = new com.google.gson.JsonObject();
 		double feGen = 0;
 		double feSpeed = 0;
 		double sentSouth = 0;
@@ -266,7 +272,7 @@ public class GeneratorTickHandlerProcedure {
 									fuelList = blockOBJ.getAsJsonArray("listFuel");
 								}
 								cNum = 0;
-								for (int index15 = 0; index15 < (int) fuelList.size(); index15++) {
+								for (int index401 = 0; index401 < (int) fuelList.size(); index401++) {
 									if ((fuelList.get((int) cNum).getAsString()).equals(BuiltInRegistries.ITEM.getKey((itemFromBlockInventory(world, BlockPos.containing(x, y, z), 0).copy()).getItem()).toString())
 											|| (itemFromBlockInventory(world, BlockPos.containing(x, y, z), 0).copy()).is(ItemTags.create(ResourceLocation.parse((fuelList.get((int) cNum).getAsString()).toLowerCase(java.util.Locale.ENGLISH))))
 											|| (world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == EuruModBlocks.DISENCHANTMENT_GENERATOR.get()
@@ -663,6 +669,82 @@ public class GeneratorTickHandlerProcedure {
 							cSendNum = Math.round(cSendNum / 2);
 						}
 					}
+				}
+			}
+			if (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "range-configUpdate-counter") >= getBlockNBTNumber(world, BlockPos.containing(x, y, z), "range-configUpdate")) {
+				cfile = new File((FMLPaths.GAMEDIR.get().toString() + "/config/euru/"), File.separator + "euru_unified_config.json");
+				feConfig = new File((FMLPaths.GAMEDIR.get().toString() + "/config/euru/"), File.separator + "euru_fe_config.json");
+				{
+					try {
+						BufferedReader bufferedReader = new BufferedReader(new FileReader(feConfig));
+						StringBuilder jsonstringbuilder = new StringBuilder();
+						String line;
+						while ((line = bufferedReader.readLine()) != null) {
+							jsonstringbuilder.append(line);
+						}
+						bufferedReader.close();
+						refreshcobj = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
+						refreshbobj = refreshcobj.get((BuiltInRegistries.ITEM.getKey((new ItemStack((world.getBlockState(BlockPos.containing(x, y, z))).getBlock())).getItem()).toString())).getAsJsonObject();
+						if (!world.isClientSide()) {
+							BlockPos _bp = BlockPos.containing(x, y, z);
+							BlockEntity _blockEntity = world.getBlockEntity(_bp);
+							BlockState _bs = world.getBlockState(_bp);
+							if (_blockEntity != null) {
+								_blockEntity.getPersistentData().putDouble("sendEnergyCapability", refreshbobj.get("sendEnergyCapability").getAsDouble());
+							}
+							if (world instanceof Level _level)
+								_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+						}
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
+				}
+				{
+					try {
+						BufferedReader bufferedReader = new BufferedReader(new FileReader(cfile));
+						StringBuilder jsonstringbuilder = new StringBuilder();
+						String line;
+						while ((line = bufferedReader.readLine()) != null) {
+							jsonstringbuilder.append(line);
+						}
+						bufferedReader.close();
+						cobj = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
+						if (!world.isClientSide()) {
+							BlockPos _bp = BlockPos.containing(x, y, z);
+							BlockEntity _blockEntity = world.getBlockEntity(_bp);
+							BlockState _bs = world.getBlockState(_bp);
+							if (_blockEntity != null) {
+								_blockEntity.getPersistentData().putDouble("range-configUpdate-min", cobj.get("range-configUpdate-min").getAsDouble());
+								_blockEntity.getPersistentData().putDouble("range-configUpdate-max", cobj.get("range-configUpdate-max").getAsDouble());
+								_blockEntity.getPersistentData().putDouble("range-configUpdate", (Mth.nextInt(RandomSource.create(), (int) cobj.get("range-configUpdate-min").getAsDouble(), (int) cobj.get("range-configUpdate-max").getAsDouble())));
+							}
+							if (world instanceof Level _level)
+								_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+						}
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
+				}
+				if (!world.isClientSide()) {
+					BlockPos _bp = BlockPos.containing(x, y, z);
+					BlockEntity _blockEntity = world.getBlockEntity(_bp);
+					BlockState _bs = world.getBlockState(_bp);
+					if (_blockEntity != null) {
+						_blockEntity.getPersistentData().putDouble("range-configUpdate", 0);
+					}
+					if (world instanceof Level _level)
+						_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+				}
+			} else {
+				if (!world.isClientSide()) {
+					BlockPos _bp = BlockPos.containing(x, y, z);
+					BlockEntity _blockEntity = world.getBlockEntity(_bp);
+					BlockState _bs = world.getBlockState(_bp);
+					if (_blockEntity != null) {
+						_blockEntity.getPersistentData().putDouble("range-configUpdate", (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "range-configUpdate-counter") + 1));
+					}
+					if (world instanceof Level _level)
+						_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 				}
 			}
 		}

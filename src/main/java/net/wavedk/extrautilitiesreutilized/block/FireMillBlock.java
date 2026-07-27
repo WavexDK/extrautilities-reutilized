@@ -42,10 +42,16 @@ import java.util.List;
 public class FireMillBlock extends Block implements EntityBlock {
 	public static final BooleanProperty ON = BooleanProperty.create("on");
 	public static final IntegerProperty ANIMATION = IntegerProperty.create("animation", 0, 3);
+	private static final VoxelShape SHAPE = Shapes.or(box(1, 0, 15, 16, 16, 16), box(0, 0, 1, 1, 16, 16), box(15, 0, 0, 16, 16, 15), box(0, 0, 0, 15, 16, 1), box(0, 7.9, 0, 16, 8, 16));
 
 	public FireMillBlock() {
 		super(BlockBehaviour.Properties.of().strength(4f, 20f).requiresCorrectToolForDrops().noOcclusion().isRedstoneConductor((bs, br, bp) -> false).instrument(NoteBlockInstrument.BASEDRUM));
 		this.registerDefaultState(this.stateDefinition.any().setValue(ON, false).setValue(ANIMATION, 0));
+	}
+
+	@Override
+	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+		return SHAPE;
 	}
 
 	@Override

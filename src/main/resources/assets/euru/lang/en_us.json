@@ -163,7 +163,6 @@
   "block.euru.creative_mill.description_0": "§7Generates 9999.0GP, indefinitely.",
   "gui.euru.resonator_gui.button_empty": "",
   "gui.euru.resonator_gui.button_empty1": "",
-  "block.euru.muffler": "Muffler",
   "item.euru.diamond_sickle": "Diamond Sickle",
   "item.euru.netherite_sickle": "Netherite Sickle",
   "item.euru.iron_sickle": "Iron Sickle",
@@ -178,5 +177,6 @@
   "item.euru.eye_of_redstone": "Eye Of Redstone",
   "gui.euru.generator_gui.tooltip_speed_upgrade": "Speed Upgrade",
   "gui.euru.generator_gui.button_empty1": "",
-  "gui.euru.generator_gui.button_empty": ""
+  "gui.euru.generator_gui.button_empty": "",
+  "item.euru.evil_infused_nugget": "Evil Infused Nugget"
 }

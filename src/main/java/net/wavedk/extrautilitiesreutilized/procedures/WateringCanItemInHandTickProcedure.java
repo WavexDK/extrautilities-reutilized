@@ -45,7 +45,11 @@ public class WateringCanItemInHandTickProcedure {
 		com.google.gson.JsonObject obj = new com.google.gson.JsonObject();
 		com.google.gson.JsonObject cobj = new com.google.gson.JsonObject();
 		com.google.gson.JsonObject iobj = new com.google.gson.JsonObject();
-		if (itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("chance_for_growtick") == 0
+		if (itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("range-configUpdate-min") == 0
+				|| itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("range-configUpdate-max") == 0
+				|| itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("range-configUpdate-counter") == 0
+				|| itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("range-configUpdate") == 0
+				|| itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("chance_for_growtick") == 0
 				|| itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("chance_for_plant_growth") == 0
 				|| itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("number_of_plants_grown") == 0) {
 			cfile = new File((FMLPaths.GAMEDIR.get().toString() + "/config/euru/"), File.separator + "euru_unified_config.json");
@@ -76,6 +80,26 @@ public class WateringCanItemInHandTickProcedure {
 						final double _tagValue = iobj.get("number_of_plants_grown").getAsDouble();
 						CustomData.update(DataComponents.CUSTOM_DATA, itemstack, tag -> tag.putDouble(_tagName, _tagValue));
 					}
+					{
+						final String _tagName = "range-configUpdate-min";
+						final double _tagValue = obj.get("range-configUpdate-min").getAsDouble();
+						CustomData.update(DataComponents.CUSTOM_DATA, itemstack, tag -> tag.putDouble(_tagName, _tagValue));
+					}
+					{
+						final String _tagName = "range-configUpdate-max";
+						final double _tagValue = obj.get("range-configUpdate-max").getAsDouble();
+						CustomData.update(DataComponents.CUSTOM_DATA, itemstack, tag -> tag.putDouble(_tagName, _tagValue));
+					}
+					{
+						final String _tagName = "range-configUpdate";
+						final double _tagValue = (Mth.nextInt(RandomSource.create(), (int) obj.get("range-configUpdate-min").getAsDouble(), (int) obj.get("range-configUpdate-max").getAsDouble()));
+						CustomData.update(DataComponents.CUSTOM_DATA, itemstack, tag -> tag.putDouble(_tagName, _tagValue));
+					}
+					{
+						final String _tagName = "range-configUpdate-counter";
+						final double _tagValue = 0;
+						CustomData.update(DataComponents.CUSTOM_DATA, itemstack, tag -> tag.putDouble(_tagName, _tagValue));
+					}
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
@@ -98,26 +122,26 @@ public class WateringCanItemInHandTickProcedure {
 					chanceNum = Mth.nextInt(RandomSource.create(), 1, 100);
 					itemstack.setDamageValue(itemstack.getDamageValue() + 1);
 					if (world instanceof ServerLevel _level)
-						_level.sendParticles(ParticleTypes.SPLASH, cx, cy, cz, 5, 3, 1, 3, 1);
+						_level.sendParticles(ParticleTypes.FALLING_DRIPSTONE_WATER, cx, (cy + 1), cz, 20, 3, 1, 3, 2);
 					if (chanceNum < itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("chance_for_growtick")) {
 						loopNumber = itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("number_of_plants_grown");
 						{
-							final int _radiusLoopCenterX57 = (int) Math.floor(x);
-							final int _radiusLoopCenterY57 = (int) Math.floor(y);
-							final int _radiusLoopCenterZ57 = (int) Math.floor(z);
-							final int _radiusLoopRadius57 = Math.max(0, (int) Math.floor(2));
-							final int _radiusLoopMinX57 = _radiusLoopCenterX57 - _radiusLoopRadius57;
-							final int _radiusLoopMaxX57 = _radiusLoopCenterX57 + _radiusLoopRadius57;
-							final int _radiusLoopMinY57 = _radiusLoopCenterY57 - _radiusLoopRadius57;
-							final int _radiusLoopMaxY57 = _radiusLoopCenterY57 + _radiusLoopRadius57;
-							final int _radiusLoopMinZ57 = _radiusLoopCenterZ57 - _radiusLoopRadius57;
-							final int _radiusLoopMaxZ57 = _radiusLoopCenterZ57 + _radiusLoopRadius57;
-							for (int _radiusLoopX57 = _radiusLoopMinX57; _radiusLoopX57 <= _radiusLoopMaxX57; _radiusLoopX57++) {
-								for (int _radiusLoopY57 = _radiusLoopMinY57; _radiusLoopY57 <= _radiusLoopMaxY57; _radiusLoopY57++) {
-									for (int _radiusLoopZ57 = _radiusLoopMinZ57; _radiusLoopZ57 <= _radiusLoopMaxZ57; _radiusLoopZ57++) {
-										lX = _radiusLoopX57;
-										lY = _radiusLoopY57;
-										lZ = _radiusLoopZ57;
+							final int _radiusLoopCenterX78 = (int) Math.floor(x);
+							final int _radiusLoopCenterY78 = (int) Math.floor(y);
+							final int _radiusLoopCenterZ78 = (int) Math.floor(z);
+							final int _radiusLoopRadius78 = Math.max(0, (int) Math.floor(2));
+							final int _radiusLoopMinX78 = _radiusLoopCenterX78 - _radiusLoopRadius78;
+							final int _radiusLoopMaxX78 = _radiusLoopCenterX78 + _radiusLoopRadius78;
+							final int _radiusLoopMinY78 = _radiusLoopCenterY78 - _radiusLoopRadius78;
+							final int _radiusLoopMaxY78 = _radiusLoopCenterY78 + _radiusLoopRadius78;
+							final int _radiusLoopMinZ78 = _radiusLoopCenterZ78 - _radiusLoopRadius78;
+							final int _radiusLoopMaxZ78 = _radiusLoopCenterZ78 + _radiusLoopRadius78;
+							for (int _radiusLoopX78 = _radiusLoopMinX78; _radiusLoopX78 <= _radiusLoopMaxX78; _radiusLoopX78++) {
+								for (int _radiusLoopY78 = _radiusLoopMinY78; _radiusLoopY78 <= _radiusLoopMaxY78; _radiusLoopY78++) {
+									for (int _radiusLoopZ78 = _radiusLoopMinZ78; _radiusLoopZ78 <= _radiusLoopMaxZ78; _radiusLoopZ78++) {
+										lX = _radiusLoopX78;
+										lY = _radiusLoopY78;
+										lZ = _radiusLoopZ78;
 										if (cy == lY || Math.round(cy + 1) == Math.round(lY) || Math.round(cy - 1) == Math.round(lY)) {
 											if ((world.getBlockState(BlockPos.containing(lX, lY, lZ))).getBlock() instanceof BonemealableBlock) {
 												if (0 < loopNumber) {
@@ -143,6 +167,66 @@ public class WateringCanItemInHandTickProcedure {
 						}
 					}
 				}
+			}
+		}
+		if (itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("range-configUpdate-counter") >= itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("range-configUpdate")) {
+			cfile = new File((FMLPaths.GAMEDIR.get().toString() + "/config/euru/"), File.separator + "euru_unified_config.json");
+			{
+				try {
+					BufferedReader bufferedReader = new BufferedReader(new FileReader(cfile));
+					StringBuilder jsonstringbuilder = new StringBuilder();
+					String line;
+					while ((line = bufferedReader.readLine()) != null) {
+						jsonstringbuilder.append(line);
+					}
+					bufferedReader.close();
+					obj = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
+					cobj = obj.get("general").getAsJsonObject();
+					iobj = cobj.get((BuiltInRegistries.ITEM.getKey(EuruModItems.WATERING_CAN.get()).toString())).getAsJsonObject();
+					{
+						final String _tagName = "chance_for_growtick";
+						final double _tagValue = iobj.get("chance_for_growtick").getAsDouble();
+						CustomData.update(DataComponents.CUSTOM_DATA, itemstack, tag -> tag.putDouble(_tagName, _tagValue));
+					}
+					{
+						final String _tagName = "chance_for_plant_growth";
+						final double _tagValue = iobj.get("chance_for_plant_growth").getAsDouble();
+						CustomData.update(DataComponents.CUSTOM_DATA, itemstack, tag -> tag.putDouble(_tagName, _tagValue));
+					}
+					{
+						final String _tagName = "number_of_plants_grown";
+						final double _tagValue = iobj.get("number_of_plants_grown").getAsDouble();
+						CustomData.update(DataComponents.CUSTOM_DATA, itemstack, tag -> tag.putDouble(_tagName, _tagValue));
+					}
+					{
+						final String _tagName = "range-configUpdate-min";
+						final double _tagValue = obj.get("range-configUpdate-min").getAsDouble();
+						CustomData.update(DataComponents.CUSTOM_DATA, itemstack, tag -> tag.putDouble(_tagName, _tagValue));
+					}
+					{
+						final String _tagName = "range-configUpdate-max";
+						final double _tagValue = obj.get("range-configUpdate-max").getAsDouble();
+						CustomData.update(DataComponents.CUSTOM_DATA, itemstack, tag -> tag.putDouble(_tagName, _tagValue));
+					}
+					{
+						final String _tagName = "range-configUpdate";
+						final double _tagValue = (Mth.nextInt(RandomSource.create(), (int) obj.get("range-configUpdate-min").getAsDouble(), (int) obj.get("range-configUpdate-max").getAsDouble()));
+						CustomData.update(DataComponents.CUSTOM_DATA, itemstack, tag -> tag.putDouble(_tagName, _tagValue));
+					}
+					{
+						final String _tagName = "range-configUpdate-counter";
+						final double _tagValue = 0;
+						CustomData.update(DataComponents.CUSTOM_DATA, itemstack, tag -> tag.putDouble(_tagName, _tagValue));
+					}
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+		} else {
+			{
+				final String _tagName = "range-configUpdate-counter";
+				final double _tagValue = (itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("range-configUpdate-counter") + 1);
+				CustomData.update(DataComponents.CUSTOM_DATA, itemstack, tag -> tag.putDouble(_tagName, _tagValue));
 			}
 		}
 	}
