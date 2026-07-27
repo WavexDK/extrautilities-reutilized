@@ -1,6 +1,6 @@
 package net.wavedk.extrautilitiesreutilized.block.entity;
 
-import net.wavedk.extrautilitiesreutilized.world.inventory.FGenGUIMenu;
+import net.wavedk.extrautilitiesreutilized.world.inventory.GeneratorGUIMenu;
 import net.wavedk.extrautilitiesreutilized.init.EuruModBlockEntities;
 
 import net.neoforged.neoforge.energy.EnergyStorage;
@@ -89,7 +89,7 @@ public class FurnaceGeneratorBlockEntity extends RandomizableContainerBlockEntit
 
 	@Override
 	public AbstractContainerMenu createMenu(int id, Inventory inventory) {
-		return new FGenGUIMenu(id, inventory, new FriendlyByteBuf(Unpooled.buffer()).writeBlockPos(this.worldPosition));
+		return new GeneratorGUIMenu(id, inventory, new FriendlyByteBuf(Unpooled.buffer()).writeBlockPos(this.worldPosition));
 	}
 
 	@Override

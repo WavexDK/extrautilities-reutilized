@@ -20,21 +20,21 @@ import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.core.SectionPos;
 
 @EventBusSubscriber
-public record SGenGUIButtonMessage(int buttonID, int x, int y, int z) implements CustomPacketPayload {
-	public static final Type<SGenGUIButtonMessage> TYPE = new Type<>(ResourceLocation.fromNamespaceAndPath(EuruMod.MODID, "s_gen_gui_buttons"));
-	public static final StreamCodec<RegistryFriendlyByteBuf, SGenGUIButtonMessage> STREAM_CODEC = StreamCodec.of((RegistryFriendlyByteBuf buffer, SGenGUIButtonMessage message) -> {
+public record GeneratorGUIButtonMessage(int buttonID, int x, int y, int z) implements CustomPacketPayload {
+	public static final Type<GeneratorGUIButtonMessage> TYPE = new Type<>(ResourceLocation.fromNamespaceAndPath(EuruMod.MODID, "generator_gui_buttons"));
+	public static final StreamCodec<RegistryFriendlyByteBuf, GeneratorGUIButtonMessage> STREAM_CODEC = StreamCodec.of((RegistryFriendlyByteBuf buffer, GeneratorGUIButtonMessage message) -> {
 		buffer.writeInt(message.buttonID);
 		buffer.writeInt(message.x);
 		buffer.writeInt(message.y);
 		buffer.writeInt(message.z);
-	}, (RegistryFriendlyByteBuf buffer) -> new SGenGUIButtonMessage(buffer.readInt(), buffer.readInt(), buffer.readInt(), buffer.readInt()));
+	}, (RegistryFriendlyByteBuf buffer) -> new GeneratorGUIButtonMessage(buffer.readInt(), buffer.readInt(), buffer.readInt(), buffer.readInt()));
 
 	@Override
-	public Type<SGenGUIButtonMessage> type() {
+	public Type<GeneratorGUIButtonMessage> type() {
 		return TYPE;
 	}
 
-	public static void handleData(final SGenGUIButtonMessage message, final IPayloadContext context) {
+	public static void handleData(final GeneratorGUIButtonMessage message, final IPayloadContext context) {
 		if (context.flow() == PacketFlow.SERVERBOUND) {
 			context.enqueueWork(() -> handleButtonAction(context.player(), message.buttonID, message.x, message.y, message.z)).exceptionally(e -> {
 				context.connection().disconnect(Component.literal(e.getMessage()));
@@ -64,6 +64,6 @@ public record SGenGUIButtonMessage(int buttonID, int x, int y, int z) implements
 
 	@SubscribeEvent
 	public static void registerMessage(FMLCommonSetupEvent event) {
-		EuruMod.addNetworkMessage(SGenGUIButtonMessage.TYPE, SGenGUIButtonMessage.STREAM_CODEC, SGenGUIButtonMessage::handleData);
+		EuruMod.addNetworkMessage(GeneratorGUIButtonMessage.TYPE, GeneratorGUIButtonMessage.STREAM_CODEC, GeneratorGUIButtonMessage::handleData);
 	}
 }

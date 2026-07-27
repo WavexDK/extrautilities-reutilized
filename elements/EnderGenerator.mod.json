@@ -146,7 +146,7 @@
       "fixedValue": 7.0
     },
     "hasInventory": true,
-    "guiBoundTo": "EGenGUI",
+    "guiBoundTo": "GeneratorGUI",
     "openGUIOnRightClick": true,
     "inventorySize": 2,
     "inventoryStackSize": 64,

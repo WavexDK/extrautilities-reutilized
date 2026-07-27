@@ -1,0 +1,316 @@
+{
+  "_fv": 89,
+  "_type": "gui",
+  "definition": {
+    "type": 1,
+    "width": 176,
+    "height": 166,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "label",
+        "data": {
+          "name": "label_resonator",
+          "text": {
+            "fixedValue": "Survival Generator",
+            "name": "ReturnNameOfMachine"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "hasShadow": false,
+          "x": 130,
+          "y": 41,
+          "locked": false
+        }
+      },
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": ""
+          },
+          "disablePlacement": {
+            "fixedValue": false,
+            "name": "IfNotSpeedUpgrades"
+          },
+          "id": 0,
+          "disablePickup": {
+            "fixedValue": false
+          },
+          "dropItemsWhenNotBound": true,
+          "x": 192,
+          "y": 71,
+          "locked": false
+        }
+      },
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": ""
+          },
+          "disablePlacement": {
+            "fixedValue": false,
+            "name": "OnlySpeedUpgrades"
+          },
+          "id": 1,
+          "disablePickup": {
+            "fixedValue": false
+          },
+          "dropItemsWhenNotBound": true,
+          "x": 131,
+          "y": 77,
+          "locked": false
+        }
+      },
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_proc_resonator_redstone_mode",
+          "text": {
+            "fixedValue": "",
+            "name": "ResonatorRedstoneMode"
+          },
+          "width": 24,
+          "height": 24,
+          "x": 128,
+          "y": 51,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "subackdrop.png",
+          "use1Xscale": false,
+          "displayCondition": "SUTooltipGen",
+          "x": 132,
+          "y": 78,
+          "locked": false
+        }
+      },
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_not_enough_grid_power_available",
+          "text": {
+            "fixedValue": "",
+            "name": "NEGPAProcedure"
+          },
+          "width": 24,
+          "height": 24,
+          "x": 215,
+          "y": 68,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "button-gun.png",
+          "use1Xscale": false,
+          "displayCondition": "AlwaysOnProcedure",
+          "x": 130,
+          "y": 53,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "button-always-off.png",
+          "use1Xscale": false,
+          "displayCondition": "AlwaysOffProcedure",
+          "x": 130,
+          "y": 53,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "button-red-off.png",
+          "use1Xscale": false,
+          "displayCondition": "RedstoneOffProcedure",
+          "x": 130,
+          "y": 53,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "button-red.png",
+          "use1Xscale": false,
+          "displayCondition": "RedstoneOnProcedure",
+          "x": 130,
+          "y": 53,
+          "locked": false
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_blank_x20",
+          "image": "blank_x20.png",
+          "hoveredImage": "blank_whiteborder_x20.png",
+          "onClick": "ChangeRedstoneMode",
+          "x": 130,
+          "y": 53,
+          "locked": false
+        }
+      },
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_speed_upgrade",
+          "text": {
+            "fixedValue": "Speed Upgrade"
+          },
+          "displayCondition": "SUTooltipGen",
+          "width": 24,
+          "height": 24,
+          "x": 128,
+          "y": 75,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_empty1",
+          "text": "",
+          "isUndecorated": true,
+          "onClick": "OpenCraftingBlockJEI",
+          "width": 24,
+          "height": 20,
+          "x": 215,
+          "y": 72,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_empty",
+          "text": "",
+          "isUndecorated": true,
+          "onClick": "OpenCraftingBlockJEI",
+          "width": 24,
+          "height": 20,
+          "x": 215,
+          "y": 68,
+          "locked": false
+        }
+      },
+      {
+        "type": "sprite",
+        "data": {
+          "sprite": "strip.png",
+          "spritesCount": 48,
+          "spriteIndex": {
+            "fixedValue": 0.0,
+            "name": "BatteryLevelReturn"
+          },
+          "x": 266,
+          "y": 44,
+          "locked": false
+        }
+      },
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_proc_return_fe_storage",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnFEStorage"
+          },
+          "width": 22,
+          "height": 60,
+          "x": 267,
+          "y": 48,
+          "locked": false
+        }
+      },
+      {
+        "type": "sprite",
+        "data": {
+          "sprite": "sgen_strip.png",
+          "spritesCount": 3,
+          "spriteIndex": {
+            "fixedValue": 0.0,
+            "name": "SGenBackdrop"
+          },
+          "x": 182,
+          "y": 46,
+          "locked": false
+        }
+      },
+      {
+        "type": "sprite",
+        "data": {
+          "sprite": "arrowstrip.png",
+          "spritesCount": 23,
+          "spriteIndex": {
+            "fixedValue": 0.0,
+            "name": "ReturnArrowStrip"
+          },
+          "x": 216,
+          "y": 69,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "symbol_cross.png",
+          "use1Xscale": false,
+          "displayCondition": "TooMuchGP",
+          "x": 219,
+          "y": 72,
+          "locked": false
+        }
+      },
+      {
+        "type": "sprite",
+        "data": {
+          "sprite": "fgen_strip.png",
+          "spritesCount": 3,
+          "spriteIndex": {
+            "fixedValue": 0.0,
+            "name": "FGenBackdrop"
+          },
+          "x": 182,
+          "y": 46,
+          "locked": false
+        }
+      },
+      {
+        "type": "sprite",
+        "data": {
+          "sprite": "nsgen_strip.png",
+          "spritesCount": 3,
+          "spriteIndex": {
+            "fixedValue": 0.0,
+            "name": "NSGenBackdrop"
+          },
+          "x": 182,
+          "y": 46,
+          "locked": false
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}

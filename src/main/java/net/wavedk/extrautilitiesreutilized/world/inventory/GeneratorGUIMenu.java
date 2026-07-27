@@ -30,11 +30,11 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.Collections;
 
-public class NSGenGUIMenu extends AbstractContainerMenu implements EuruModMenus.MenuAccessor {
+public class GeneratorGUIMenu extends AbstractContainerMenu implements EuruModMenus.MenuAccessor {
 	public final Map<String, Object> menuState = new HashMap<>() {
 		@Override
 		public Object put(String key, Object value) {
-			if (!this.containsKey(key) && this.size() >= 91)
+			if (!this.containsKey(key) && this.size() >= 21)
 				return null;
 			return super.put(key, value);
 		}
@@ -50,8 +50,8 @@ public class NSGenGUIMenu extends AbstractContainerMenu implements EuruModMenus.
 	private Entity boundEntity = null;
 	private BlockEntity boundBlockEntity = null;
 
-	public NSGenGUIMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
-		super(EuruModMenus.NS_GEN_GUI.get(), id);
+	public GeneratorGUIMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
+		super(EuruModMenus.GENERATOR_GUI.get(), id);
 		this.entity = inv.player;
 		this.world = inv.player.level();
 		this.internal = new ItemStackHandler(2);
@@ -93,8 +93,8 @@ public class NSGenGUIMenu extends AbstractContainerMenu implements EuruModMenus.
 		}
 		this.customSlots.put(0, this.addSlot(new SlotItemHandler(internal, 0, 67, 35) {
 			private final int slot = 0;
-			private int x = NSGenGUIMenu.this.x;
-			private int y = NSGenGUIMenu.this.y;
+			private int x = GeneratorGUIMenu.this.x;
+			private int y = GeneratorGUIMenu.this.y;
 
 			@Override
 			public boolean mayPlace(ItemStack itemstack) {
@@ -103,8 +103,8 @@ public class NSGenGUIMenu extends AbstractContainerMenu implements EuruModMenus.
 		}));
 		this.customSlots.put(1, this.addSlot(new SlotItemHandler(internal, 1, 6, 41) {
 			private final int slot = 1;
-			private int x = NSGenGUIMenu.this.x;
-			private int y = NSGenGUIMenu.this.y;
+			private int x = GeneratorGUIMenu.this.x;
+			private int y = GeneratorGUIMenu.this.y;
 
 			@Override
 			public boolean mayPlace(ItemStack itemstack) {

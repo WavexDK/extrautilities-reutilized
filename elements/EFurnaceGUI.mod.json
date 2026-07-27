@@ -25,7 +25,7 @@
             "fixedValue": false
           },
           "dropItemsWhenNotBound": true,
-          "x": 178,
+          "x": 179,
           "y": 71,
           "locked": false
         }
@@ -454,6 +454,55 @@
           "onClick": "ChangeRedstoneMode",
           "x": 130,
           "y": 53,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "efurnaceoffbd.png",
+          "use1Xscale": false,
+          "x": 182,
+          "y": 46,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "efurnaceonbd.png",
+          "use1Xscale": false,
+          "x": 182,
+          "y": 46,
+          "locked": false
+        }
+      },
+      {
+        "type": "sprite",
+        "data": {
+          "sprite": "strip.png",
+          "spritesCount": 48,
+          "spriteIndex": {
+            "fixedValue": 0.0,
+            "name": "BatteryLevelReturn"
+          },
+          "x": 268,
+          "y": 46,
+          "locked": false
+        }
+      },
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_proc_return_fe_storage",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnFEStorage"
+          },
+          "width": 22,
+          "height": 60,
+          "x": 269,
+          "y": 50,
           "locked": false
         }
       }

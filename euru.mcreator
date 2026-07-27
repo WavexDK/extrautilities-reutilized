@@ -1750,21 +1750,6 @@
       "path": "~/Blocks/Generators/FE/Procedures"
     },
     {
-      "name": "SGenGUI",
-      "type": "gui",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "s_gen_gui",
-      "metadata": {
-        "files": [
-          "src/main/java/net/wavedk/extrautilitiesreutilized/network/SGenGUIButtonMessage.java",
-          "src/main/java/net/wavedk/extrautilitiesreutilized/world/inventory/SGenGUIMenu.java",
-          "src/main/java/net/wavedk/extrautilitiesreutilized/client/gui/SGenGUIScreen.java"
-        ]
-      },
-      "path": "~/Blocks/Generators/FE/GUI"
-    },
-    {
       "name": "SGenIsOn",
       "type": "procedure",
       "compiles": true,
@@ -3588,21 +3573,6 @@
       "path": "~/Blocks/Generators/FE/GUI/Procedures"
     },
     {
-      "name": "FGenGUI",
-      "type": "gui",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "f_gen_gui",
-      "metadata": {
-        "files": [
-          "src/main/java/net/wavedk/extrautilitiesreutilized/world/inventory/FGenGUIMenu.java",
-          "src/main/java/net/wavedk/extrautilitiesreutilized/network/FGenGUIButtonMessage.java",
-          "src/main/java/net/wavedk/extrautilitiesreutilized/client/gui/FGenGUIScreen.java"
-        ]
-      },
-      "path": "~/Blocks/Generators/FE/GUI"
-    },
-    {
       "name": "SGenRecipeType",
       "type": "jeirecipetype",
       "compiles": true,
@@ -5387,20 +5357,6 @@
       "path": "~/Blocks/Machines/Procedures"
     },
     {
-      "name": "ElectricFurnaceGUI",
-      "type": "gui",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "electric_furnace_gui",
-      "metadata": {
-        "files": [
-          "src/main/java/net/wavedk/extrautilitiesreutilized/client/gui/ElectricFurnaceGUIScreen.java",
-          "src/main/java/net/wavedk/extrautilitiesreutilized/world/inventory/ElectricFurnaceGUIMenu.java"
-        ]
-      },
-      "path": "~/Blocks/Machines/GUI"
-    },
-    {
       "name": "IfNotSpeedUpgrades",
       "type": "procedure",
       "compiles": true,
@@ -5438,21 +5394,6 @@
         ]
       },
       "path": "~/Blocks/Generators/FE"
-    },
-    {
-      "name": "EGenGUI",
-      "type": "gui",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "e_gen_gui",
-      "metadata": {
-        "files": [
-          "src/main/java/net/wavedk/extrautilitiesreutilized/client/gui/EGenGUIScreen.java",
-          "src/main/java/net/wavedk/extrautilitiesreutilized/world/inventory/EGenGUIMenu.java",
-          "src/main/java/net/wavedk/extrautilitiesreutilized/network/EGenGUIButtonMessage.java"
-        ]
-      },
-      "path": "~/Blocks/Generators/FE/GUI"
     },
     {
       "name": "EGenRecipeType",
@@ -6886,36 +6827,6 @@
         ]
       },
       "path": "~/Blocks/Other/Procedures"
-    },
-    {
-      "name": "OGenGUI",
-      "type": "gui",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "o_gen_gui",
-      "metadata": {
-        "files": [
-          "src/main/java/net/wavedk/extrautilitiesreutilized/network/OGenGUIButtonMessage.java",
-          "src/main/java/net/wavedk/extrautilitiesreutilized/client/gui/OGenGUIScreen.java",
-          "src/main/java/net/wavedk/extrautilitiesreutilized/world/inventory/OGenGUIMenu.java"
-        ]
-      },
-      "path": "~/Blocks/Generators/FE/GUI"
-    },
-    {
-      "name": "NSGenGUI",
-      "type": "gui",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "ns_gen_gui",
-      "metadata": {
-        "files": [
-          "src/main/java/net/wavedk/extrautilitiesreutilized/client/gui/NSGenGUIScreen.java",
-          "src/main/java/net/wavedk/extrautilitiesreutilized/world/inventory/NSGenGUIMenu.java",
-          "src/main/java/net/wavedk/extrautilitiesreutilized/network/NSGenGUIButtonMessage.java"
-        ]
-      },
-      "path": "~/Blocks/Generators/FE/GUI"
     },
     {
       "name": "SpecialGenFeature",
@@ -8998,7 +8909,7 @@
           "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/BatteryLevelReturnProcedure.java"
         ]
       },
-      "path": "~/Blocks/Machines/GUI"
+      "path": "~/Blocks/Machines/GUI/Procedures"
     },
     {
       "name": "DiamondSickleBlockDestroyedWithTool",
@@ -9991,6 +9902,149 @@
         ]
       },
       "path": "~/Blocks/Generators/FE/Procedures"
+    },
+    {
+      "name": "ReturnArrowStrip",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_arrow_strip",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "return_type": "number",
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/ReturnArrowStripProcedure.java"
+        ]
+      },
+      "path": "~/Blocks/Generators/FE/GUI/Procedures"
+    },
+    {
+      "name": "SGenBackdrop",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "s_gen_backdrop",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "return_type": "number",
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/SGenBackdropProcedure.java"
+        ]
+      },
+      "path": "~/Blocks/Generators/FE/GUI/Backdrop"
+    },
+    {
+      "name": "FGenBackdrop",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "f_gen_backdrop",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "return_type": "number",
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/FGenBackdropProcedure.java"
+        ]
+      },
+      "path": "~/Blocks/Generators/FE/GUI/Backdrop"
+    },
+    {
+      "name": "GeneratorGUI",
+      "type": "gui",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "generator_gui",
+      "metadata": {
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/network/GeneratorGUIButtonMessage.java",
+          "src/main/java/net/wavedk/extrautilitiesreutilized/world/inventory/GeneratorGUIMenu.java",
+          "src/main/java/net/wavedk/extrautilitiesreutilized/client/gui/GeneratorGUIScreen.java"
+        ]
+      },
+      "path": "~/Blocks/Generators/FE/GUI"
+    },
+    {
+      "name": "NSGenBackdrop",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ns_gen_backdrop",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "return_type": "number",
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/NSGenBackdropProcedure.java"
+        ]
+      },
+      "path": "~/Blocks/Generators/FE/GUI/Backdrop"
     }
   ],
   "variable_elements": [
@@ -10202,18 +10256,19 @@
   "sound_elements": [],
   "tag_elements": {
     "BLOCKS:minecraft:mineable/pickaxe": [
+      "~NetherstarGenerator@CUSTOM:NetherstarGenerator",
       "~ExplosiveGenerator@CUSTOM:ExplosiveGenerator",
       "~DisenchantmentGenerator@CUSTOM:DisenchantmentGenerator",
       "~CulinaryGenerator@CUSTOM:CulinaryGenerator",
-      "~NetherstarGenerator@CUSTOM:NetherstarGenerator",
-      "~Crusher@CUSTOM:Crusher",
       "~OverclockedGenerator@CUSTOM:OverclockedGenerator",
-      "~CreativeEnergySource@CUSTOM:CreativeEnergySource",
       "~EnderGenerator@CUSTOM:EnderGenerator",
+      "~FurnaceGenerator@CUSTOM:FurnaceGenerator",
+      "~SurvivalGenerator@CUSTOM:SurvivalGenerator",
+      "~Crusher@CUSTOM:Crusher",
+      "~CreativeEnergySource@CUSTOM:CreativeEnergySource",
       "~ElectricFurnace@CUSTOM:ElectricFurnace",
       "~CreativeMill@CUSTOM:CreativeMill",
       "~BlockOfEvilInfusedIngot@CUSTOM:BlockOfEvilInfusedIngot",
-      "~FurnaceGenerator@CUSTOM:FurnaceGenerator",
       "~Enchanter@CUSTOM:Enchanter",
       "~FireMill@CUSTOM:FireMill",
       "~StoneBurnt@CUSTOM:StoneBurnt",
@@ -10229,7 +10284,6 @@
       "~CompressedCobblestone@CUSTOM:CompressedCobblestone",
       "~AngelBlock@CUSTOM:AngelBlock",
       "~GildedObsidian@CUSTOM:GildedObsidian",
-      "~SurvivalGenerator@CUSTOM:SurvivalGenerator",
       "~MachineBlock@CUSTOM:MachineBlock",
       "~Resonator@CUSTOM:Resonator",
       "~LunarPanel@CUSTOM:LunarPanel",
@@ -10379,7 +10433,6 @@
       "gui.euru.s_gen_gui.tooltip_speed_upgrades": "Speed Upgrade",
       "gui.euru.s_gen_gui.tooltip_not_enough_grid_power_available": "Not enough Grid Power available!",
       "gui.euru.s_gen_gui.label_resonator": "Survival Generator",
-      "gui.euru.s_gen_gui.tooltip_speed_upgrade": "Speed Upgrade",
       "item.euru.chunk_loader_tester": "Chunk Loader Tester",
       "block.euru.chunk_loader_tester.description_0": "§7Sends a global message every second to test if the chunk is loaded.",
       "item.euru.gilded_obsidian": "Gilded Obsidian",
@@ -10438,7 +10491,6 @@
       "gui.euru.enchanter_gui.tooltip_lapis_lazuli": "Lapis Lazuli",
       "item.euru.furnace_generator": "Furnace Generator",
       "gui.euru.f_gen_gui.tooltip_not_enough_grid_power_available": "Not enough Grid Power available!",
-      "gui.euru.f_gen_gui.tooltip_speed_upgrade": "Speed Upgrade",
       "item.euru.chicken_ring": "Chicken Wing Ring",
       "item.euru.squid_ring": "Ring of the Flying Squid",
       "item.euru.angel_ring": "Angel Ring",
@@ -10491,7 +10543,6 @@
       "block.euru.enchanter": "Enchanter",
       "block.euru.electric_furnace": "Electric Furnace",
       "block.euru.ender_generator": "Ender Generator",
-      "gui.euru.e_gen_gui.tooltip_speed_upgrade": "Speed Upgrade",
       "gui.euru.e_gen_gui.tooltip_not_enough_grid_power_available": "Not enough Grid Power available!",
       "block.euru.creative_energy_source": "Creative Energy Source",
       "item.euru.electric_furnace": "Electric Furnace",
@@ -10509,20 +10560,8 @@
       "block.euru.netherstar_generator": "Netherstar Generator",
       "block.euru.ender_lilly": "Ender Lilly",
       "block.euru.ender_lilly_plant": "Ender Lilly Plant",
-      "gui.euru.o_gen_gui.tooltip_speed_upgrade": "Speed Upgrade",
       "gui.euru.o_gen_gui.tooltip_not_enough_grid_power_available": "Not enough Grid Power available!",
-      "gui.euru.ns_gen_gui.tooltip_speed_upgrade": "Speed Upgrade",
       "gui.euru.ns_gen_gui.tooltip_not_enough_grid_power_available": "Not enough Grid Power available!",
-      "gui.euru.s_gen_gui.button_empty1": "",
-      "gui.euru.f_gen_gui.button_empty": "",
-      "gui.euru.f_gen_gui.button_empty1": "",
-      "gui.euru.s_gen_gui.button_empty": "",
-      "gui.euru.e_gen_gui.button_empty": "",
-      "gui.euru.e_gen_gui.button_empty1": "",
-      "gui.euru.o_gen_gui.button_empty": "",
-      "gui.euru.o_gen_gui.button_empty1": "",
-      "gui.euru.ns_gen_gui.button_empty1": "",
-      "gui.euru.ns_gen_gui.button_empty": "",
       "block.euru.creative_mill.description_0": "§7Generates 9999.0GP, indefinitely.",
       "gui.euru.resonator_gui.button_empty": "",
       "gui.euru.resonator_gui.button_empty1": "",
@@ -10538,7 +10577,10 @@
       "item.euru.watering_can": "Watering Can",
       "block.euru.explosive_generator": "Explosive Generator",
       "item.euru.golden_lasso_clw": "Golden Lasso",
-      "item.euru.eye_of_redstone": "Eye Of Redstone"
+      "item.euru.eye_of_redstone": "Eye Of Redstone",
+      "gui.euru.generator_gui.tooltip_speed_upgrade": "Speed Upgrade",
+      "gui.euru.generator_gui.button_empty1": "",
+      "gui.euru.generator_gui.button_empty": ""
     }
   },
   "metadata": {
@@ -10703,6 +10745,10 @@
                             "children": []
                           }
                         ]
+                      },
+                      {
+                        "name": "Backdrop",
+                        "children": []
                       }
                     ]
                   },
@@ -10765,10 +10811,6 @@
       },
       {
         "name": "Bauble",
-        "children": []
-      },
-      {
-        "name": "Tags",
         "children": []
       }
     ]

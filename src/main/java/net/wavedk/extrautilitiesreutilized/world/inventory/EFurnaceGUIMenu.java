@@ -34,7 +34,7 @@ public class EFurnaceGUIMenu extends AbstractContainerMenu implements EuruModMen
 	public final Map<String, Object> menuState = new HashMap<>() {
 		@Override
 		public Object put(String key, Object value) {
-			if (!this.containsKey(key) && this.size() >= 37)
+			if (!this.containsKey(key) && this.size() >= 41)
 				return null;
 			return super.put(key, value);
 		}
@@ -91,7 +91,7 @@ public class EFurnaceGUIMenu extends AbstractContainerMenu implements EuruModMen
 				}
 			}
 		}
-		this.customSlots.put(0, this.addSlot(new SlotItemHandler(internal, 0, 53, 35) {
+		this.customSlots.put(0, this.addSlot(new SlotItemHandler(internal, 0, 54, 35) {
 			private final int slot = 0;
 			private int x = EFurnaceGUIMenu.this.x;
 			private int y = EFurnaceGUIMenu.this.y;

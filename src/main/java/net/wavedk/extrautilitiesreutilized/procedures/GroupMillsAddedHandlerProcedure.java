@@ -73,8 +73,8 @@ public class GroupMillsAddedHandlerProcedure {
 								_blockEntity.getPersistentData().putDouble("needs_fire", itemOBJ.get("needs_fire").getAsDouble());
 								_blockEntity.getPersistentData().putDouble("nominal_generated", itemOBJ.get("gp_generated").getAsDouble());
 								_blockEntity.getPersistentData().putDouble("gp_generated", itemOBJ.get("gp_generated").getAsDouble());
-								_blockEntity.getPersistentData().putDouble("range-configUpdate-max", generalobj.get("range-configUpdate-max").getAsDouble());
-								_blockEntity.getPersistentData().putDouble("range-configUpdate-min", generalobj.get("range-configUpdate-min").getAsDouble());
+								_blockEntity.getPersistentData().putDouble("range-configUpdate-max", cOBJ.get("range-configUpdate-max").getAsDouble());
+								_blockEntity.getPersistentData().putDouble("range-configUpdate-min", cOBJ.get("range-configUpdate-min").getAsDouble());
 								_blockEntity.getPersistentData().putBoolean("been_json_checked", true);
 							}
 							if (world instanceof Level _level)

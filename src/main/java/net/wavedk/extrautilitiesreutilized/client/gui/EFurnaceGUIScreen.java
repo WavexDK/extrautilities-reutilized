@@ -10,6 +10,7 @@ import net.neoforged.neoforge.network.PacketDistributor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.util.Mth;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.chat.Component;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
@@ -29,6 +30,7 @@ public class EFurnaceGUIScreen extends AbstractContainerScreen<EFurnaceGUIMenu> 
 	private boolean menuStateUpdateActive = false;
 	private ImageButton imagebutton_blank_x20;
 	private static final ResourceLocation BACKGROUND = ResourceLocation.parse("euru:textures/screens/e_furnace_gui.png");
+	private static final ResourceLocation SPRITE_0 = ResourceLocation.parse("euru:textures/screens/strip.png");
 	private static final ResourceLocation IMAGE_0 = ResourceLocation.parse("euru:textures/screens/arrow-empty.png");
 	private static final ResourceLocation IMAGE_1 = ResourceLocation.parse("euru:textures/screens/arrow-1.png");
 	private static final ResourceLocation IMAGE_2 = ResourceLocation.parse("euru:textures/screens/arrow-2.png");
@@ -58,6 +60,8 @@ public class EFurnaceGUIScreen extends AbstractContainerScreen<EFurnaceGUIMenu> 
 	private static final ResourceLocation IMAGE_26 = ResourceLocation.parse("euru:textures/screens/button-always-off.png");
 	private static final ResourceLocation IMAGE_27 = ResourceLocation.parse("euru:textures/screens/button-red-off.png");
 	private static final ResourceLocation IMAGE_28 = ResourceLocation.parse("euru:textures/screens/button-red.png");
+	private static final ResourceLocation IMAGE_29 = ResourceLocation.parse("euru:textures/screens/efurnaceoffbd.png");
+	private static final ResourceLocation IMAGE_30 = ResourceLocation.parse("euru:textures/screens/efurnaceonbd.png");
 
 	public EFurnaceGUIScreen(EFurnaceGUIMenu container, Inventory inventory, Component text) {
 		super(container, inventory, text);
@@ -100,6 +104,13 @@ public class EFurnaceGUIScreen extends AbstractContainerScreen<EFurnaceGUIMenu> 
 				}
 				customTooltipShown = true;
 			}
+		if (mouseX > leftPos + 143 && mouseX < leftPos + 165 && mouseY > topPos + 13 && mouseY < topPos + 73) {
+			String hoverText = ReturnFEStorageProcedure.execute(world, x, y, z);
+			if (hoverText != null) {
+				guiGraphics.renderComponentTooltip(font, Arrays.stream(hoverText.split("\n")).map(Component::literal).collect(Collectors.toList()), mouseX, mouseY);
+			}
+			customTooltipShown = true;
+		}
 		if (!customTooltipShown)
 			this.renderTooltip(guiGraphics, mouseX, mouseY);
 	}
@@ -110,6 +121,7 @@ public class EFurnaceGUIScreen extends AbstractContainerScreen<EFurnaceGUIMenu> 
 		RenderSystem.enableBlend();
 		RenderSystem.defaultBlendFunc();
 		guiGraphics.blit(BACKGROUND, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
+		guiGraphics.blit(SPRITE_0, this.leftPos + 142, this.topPos + 9, 0, Mth.clamp((int) BatteryLevelReturnProcedure.execute(world, x, y, z) * 64, 0, 3008), 24, 64, 24, 3072);
 		if (ArrowEmptyProcedure.execute(world, x, y, z)) {
 			guiGraphics.blit(IMAGE_0, this.leftPos + 77, this.topPos + 32, 0, 0, 22, 22, 22, 22);
 		}
@@ -197,6 +209,8 @@ public class EFurnaceGUIScreen extends AbstractContainerScreen<EFurnaceGUIMenu> 
 		if (RedstoneOnProcedureProcedure.execute(world, x, y, z)) {
 			guiGraphics.blit(IMAGE_28, this.leftPos + 4, this.topPos + 16, 0, 0, 20, 20, 20, 20);
 		}
+		guiGraphics.blit(IMAGE_29, this.leftPos + 56, this.topPos + 9, 0, 0, 64, 64, 64, 64);
+		guiGraphics.blit(IMAGE_30, this.leftPos + 56, this.topPos + 9, 0, 0, 64, 64, 64, 64);
 		RenderSystem.disableBlend();
 	}
 

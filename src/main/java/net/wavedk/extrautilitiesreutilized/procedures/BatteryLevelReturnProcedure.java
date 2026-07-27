@@ -14,11 +14,11 @@ public class BatteryLevelReturnProcedure {
 		for (int index17 = 0; index17 < 48; index17++) {
 			if (getEnergyStored(world, BlockPos.containing(x, y, z), null) < (getMaxEnergyStored(world, BlockPos.containing(x, y, z), null) / 47d) * cNum
 					&& getEnergyStored(world, BlockPos.containing(x, y, z), null) >= (getMaxEnergyStored(world, BlockPos.containing(x, y, z), null) / 47d) * (cNum - 1)) {
-				return cNum;
+				return cNum - 1;
 			}
 			cNum = cNum + 1;
 		}
-		return 0;
+		return 48;
 	}
 
 	public static int getEnergyStored(LevelAccessor level, BlockPos pos, Direction direction) {

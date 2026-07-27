@@ -1,6 +1,6 @@
 package net.wavedk.extrautilitiesreutilized.block;
 
-import net.wavedk.extrautilitiesreutilized.world.inventory.SGenGUIMenu;
+import net.wavedk.extrautilitiesreutilized.world.inventory.GeneratorGUIMenu;
 import net.wavedk.extrautilitiesreutilized.procedures.GeneratorTickHandlerProcedure;
 import net.wavedk.extrautilitiesreutilized.procedures.GeneratorLuminanceProcedure;
 import net.wavedk.extrautilitiesreutilized.procedures.GeneratorAddedHandlerProcedure;
@@ -101,7 +101,7 @@ public class SurvivalGeneratorBlock extends Block implements EntityBlock {
 
 				@Override
 				public AbstractContainerMenu createMenu(int id, Inventory inventory, Player player) {
-					return new SGenGUIMenu(id, inventory, new FriendlyByteBuf(Unpooled.buffer()).writeBlockPos(pos));
+					return new GeneratorGUIMenu(id, inventory, new FriendlyByteBuf(Unpooled.buffer()).writeBlockPos(pos));
 				}
 			}, pos);
 		}
