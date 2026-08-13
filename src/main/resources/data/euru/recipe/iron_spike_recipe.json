@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " a ",
+    "aba",
+    "bcb"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:iron_sword"
+    },
+    "b": {
+      "item": "minecraft:iron_ingot"
+    },
+    "c": {
+      "item": "minecraft:iron_block"
+    }
+  },
+  "result": {
+    "id": "euru:iron_spike",
+    "count": 1
+  }
+}

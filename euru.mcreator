@@ -6406,37 +6406,6 @@
       "path": "~/Items/JEI"
     },
     {
-      "name": "B",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "b",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ],
-        "files": [
-          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/BProcedure.java"
-        ]
-      },
-      "path": "~/Blocks/Generators/FE/GUI/Procedures/BattLevel"
-    },
-    {
       "name": "ToggleGridPowerOverlay",
       "type": "procedure",
       "compiles": true,
@@ -7819,6 +7788,451 @@
         ]
       },
       "path": "~/Items/Recipes"
+    },
+    {
+      "name": "WoodenSpike",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "wooden_spike",
+      "metadata": {
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/block/entity/WoodenSpikeBlockEntity.java",
+          "src/main/resources/assets/euru/blockstates/wooden_spike.json",
+          "src/main/resources/data/euru/loot_table/blocks/wooden_spike.json",
+          "src/main/resources/assets/euru/models/block/wooden_spike.json",
+          "src/main/java/net/wavedk/extrautilitiesreutilized/block/WoodenSpikeBlock.java",
+          "src/main/resources/assets/euru/models/item/wooden_spike.json"
+        ]
+      },
+      "path": "~/Blocks/Other/Spikes"
+    },
+    {
+      "name": "SpikesOnTickUpdate",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "spikes_on_tick_update",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/SpikesOnTickUpdateProcedure.java"
+        ]
+      },
+      "path": "~/Blocks/Other/Spikes/Procedures"
+    },
+    {
+      "name": "SpikesBlockAdded",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "spikes_block_added",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/SpikesBlockAddedProcedure.java"
+        ]
+      },
+      "path": "~/Blocks/Other/Spikes/Procedures"
+    },
+    {
+      "name": "StoneSpike",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "stone_spike",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/euru/models/item/stone_spike.json",
+          "src/main/java/net/wavedk/extrautilitiesreutilized/block/entity/StoneSpikeBlockEntity.java",
+          "src/main/java/net/wavedk/extrautilitiesreutilized/block/StoneSpikeBlock.java",
+          "src/main/resources/assets/euru/models/block/stone_spike.json",
+          "src/main/resources/data/euru/loot_table/blocks/stone_spike.json",
+          "src/main/resources/assets/euru/blockstates/stone_spike.json"
+        ]
+      },
+      "path": "~/Blocks/Other/Spikes"
+    },
+    {
+      "name": "IronSpike",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "iron_spike",
+      "metadata": {
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/block/entity/IronSpikeBlockEntity.java",
+          "src/main/resources/data/euru/loot_table/blocks/iron_spike.json",
+          "src/main/resources/assets/euru/models/block/iron_spike.json",
+          "src/main/resources/assets/euru/models/item/iron_spike.json",
+          "src/main/java/net/wavedk/extrautilitiesreutilized/block/IronSpikeBlock.java",
+          "src/main/resources/assets/euru/blockstates/iron_spike.json"
+        ]
+      },
+      "path": "~/Blocks/Other/Spikes"
+    },
+    {
+      "name": "GoldSpike",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "gold_spike",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/euru/loot_table/blocks/gold_spike.json",
+          "src/main/resources/assets/euru/models/item/gold_spike.json",
+          "src/main/java/net/wavedk/extrautilitiesreutilized/block/GoldSpikeBlock.java",
+          "src/main/resources/assets/euru/models/block/gold_spike.json",
+          "src/main/java/net/wavedk/extrautilitiesreutilized/block/entity/GoldSpikeBlockEntity.java",
+          "src/main/resources/assets/euru/blockstates/gold_spike.json"
+        ]
+      },
+      "path": "~/Blocks/Other/Spikes"
+    },
+    {
+      "name": "DiamondSpike",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "diamond_spike",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/euru/models/block/diamond_spike.json",
+          "src/main/java/net/wavedk/extrautilitiesreutilized/block/entity/DiamondSpikeBlockEntity.java",
+          "src/main/resources/assets/euru/blockstates/diamond_spike.json",
+          "src/main/resources/data/euru/loot_table/blocks/diamond_spike.json",
+          "src/main/java/net/wavedk/extrautilitiesreutilized/block/DiamondSpikeBlock.java",
+          "src/main/resources/assets/euru/models/item/diamond_spike.json"
+        ]
+      },
+      "path": "~/Blocks/Other/Spikes"
+    },
+    {
+      "name": "NetheriteSpike",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "netherite_spike",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/euru/blockstates/netherite_spike.json",
+          "src/main/java/net/wavedk/extrautilitiesreutilized/block/NetheriteSpikeBlock.java",
+          "src/main/resources/assets/euru/models/block/netherite_spike.json",
+          "src/main/java/net/wavedk/extrautilitiesreutilized/block/entity/NetheriteSpikeBlockEntity.java",
+          "src/main/resources/data/euru/loot_table/blocks/netherite_spike.json",
+          "src/main/resources/assets/euru/models/item/netherite_spike.json"
+        ]
+      },
+      "path": "~/Blocks/Other/Spikes"
+    },
+    {
+      "name": "StoneSpikeRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "stone_spike_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/euru/recipe/stone_spike_recipe.json"
+        ]
+      },
+      "path": "~/Blocks/Other/Spikes/Recipes"
+    },
+    {
+      "name": "WoodenSpikeRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "wooden_spike_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/euru/recipe/wooden_spike_recipe.json"
+        ]
+      },
+      "path": "~/Blocks/Other/Spikes/Recipes"
+    },
+    {
+      "name": "IronSpikeRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "iron_spike_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/euru/recipe/iron_spike_recipe.json"
+        ]
+      },
+      "path": "~/Blocks/Other/Spikes/Recipes"
+    },
+    {
+      "name": "GoldenSpikeRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "golden_spike_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/euru/recipe/golden_spike_recipe.json"
+        ]
+      },
+      "path": "~/Blocks/Other/Spikes/Recipes"
+    },
+    {
+      "name": "DiamondSpikeRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "diamond_spike_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/euru/recipe/diamond_spike_recipe.json"
+        ]
+      },
+      "path": "~/Blocks/Other/Spikes/Recipes"
+    },
+    {
+      "name": "NetheriteSpikeRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "netherite_spike_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/euru/recipe/netherite_spike_recipe.json"
+        ]
+      },
+      "path": "~/Blocks/Other/Spikes/Recipes"
+    },
+    {
+      "name": "TransferCableOnTickUpdate",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "transfer_cable_on_tick_update",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "direction",
+            "type": "direction"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/TransferCableOnTickUpdateProcedure.java"
+        ]
+      },
+      "path": "~/Blocks/Other/Cables/Procedures"
+    },
+    {
+      "name": "TransferCableConnectProcedure",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "transfer_cable_connect_procedure",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "direction",
+            "type": "direction"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/TransferCableConnectProcedureProcedure.java"
+        ]
+      },
+      "path": "~/Blocks/Other/Cables/Procedures"
+    },
+    {
+      "name": "TransferCableOnCableConnectToABlock",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "transfer_cable_on_cable_connect_to_a_block",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "direction",
+            "type": "direction"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/TransferCableOnCableConnectToABlockProcedure.java"
+        ]
+      },
+      "path": "~/Blocks/Other/Cables/Procedures"
+    },
+    {
+      "name": "TransferCableOnCableDisconnectFromBlock",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "transfer_cable_on_cable_disconnect_from_block",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "direction",
+            "type": "direction"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/TransferCableOnCableDisconnectFromBlockProcedure.java"
+        ]
+      },
+      "path": "~/Blocks/Other/Cables/Procedures"
+    },
+    {
+      "name": "TransferCable",
+      "type": "cable",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "transfer_cable",
+      "metadata": {
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/init/TransferCableCableCapabilities.java",
+          "src/main/java/net/wavedk/extrautilitiesreutilized/block/entity/TransferCableBlockEntity.java",
+          "src/main/resources/assets/euru/models/block/transfer_cable_center.json",
+          "src/main/resources/assets/euru/models/item/transfer_cable.json",
+          "src/main/resources/data/euru/loot_table/blocks/transfer_cable.json",
+          "src/main/java/net/wavedk/extrautilitiesreutilized/block/TransferCableBlock.java",
+          "src/main/java/net/wavedk/extrautilitiesreutilized/item/TransferCableItem.java",
+          "src/main/resources/assets/euru/blockstates/transfer_cable.json",
+          "src/main/resources/assets/euru/models/block/transfer_cable_arm.json"
+        ]
+      },
+      "path": "~/Blocks/Other/Cables"
+    },
+    {
+      "name": "Awd",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "awd",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/AwdProcedure.java"
+        ]
+      },
+      "path": "~/Blocks/Other/Cables/Procedures"
     }
   ],
   "variable_elements": [
@@ -8025,11 +8439,27 @@
       "type": "logic",
       "scope": "player_persistent",
       "value": "true"
+    },
+    {
+      "name": "ringFlying",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
     }
   ],
   "sound_elements": [],
   "tag_elements": {
+    "BLOCKS:euru:cablesupported": [
+      "CUSTOM:NetherstarGenerator",
+      "CUSTOM:Enchanter"
+    ],
     "BLOCKS:minecraft:mineable/pickaxe": [
+      "~TransferCable@CUSTOM:TransferCable",
+      "~NetheriteSpike@CUSTOM:NetheriteSpike",
+      "~DiamondSpike@CUSTOM:DiamondSpike",
+      "~GoldSpike@CUSTOM:GoldSpike",
+      "~IronSpike@CUSTOM:IronSpike",
+      "~StoneSpike@CUSTOM:StoneSpike",
       "~ExplosiveGenerator@CUSTOM:ExplosiveGenerator",
       "~DisenchantmentGenerator@CUSTOM:DisenchantmentGenerator",
       "~CulinaryGenerator@CUSTOM:CulinaryGenerator",
@@ -8064,6 +8494,7 @@
       "~SolarPanel@CUSTOM:SolarPanel"
     ],
     "BLOCKS:minecraft:needs_stone_tool": [
+      "~IronSpike@CUSTOM:IronSpike",
       "~ElectricFurnace@CUSTOM:ElectricFurnace",
       "~BlockOfEvilInfusedIngot@CUSTOM:BlockOfEvilInfusedIngot",
       "~Enchanter@CUSTOM:Enchanter",
@@ -8087,11 +8518,13 @@
       "~GlassCutter@CUSTOM:GlassCutter"
     ],
     "BLOCKS:minecraft:needs_diamond_tool": [
+      "~NetheriteSpike@CUSTOM:NetheriteSpike",
       "~CreativeEnergySource@CUSTOM:CreativeEnergySource",
       "~AngelBlock@CUSTOM:AngelBlock",
       "~GildedObsidian@CUSTOM:GildedObsidian"
     ],
     "BLOCKS:minecraft:mineable/axe": [
+      "~WoodenSpike@CUSTOM:WoodenSpike",
       "~ChunkLoadingWard@CUSTOM:ChunkLoadingWard",
       "~SlightlyLargerChest@CUSTOM:SlightlyLargerChest",
       "~MiniChest@CUSTOM:MiniChest",
@@ -8107,6 +8540,13 @@
     ],
     "ITEMS:minecraft:enchantable/durability": [
       "~WateringCan@CUSTOM:WateringCan"
+    ],
+    "BLOCKS:minecraft:needs_iron_tool": [
+      "~DiamondSpike@CUSTOM:DiamondSpike",
+      "~GoldSpike@CUSTOM:GoldSpike"
+    ],
+    "BLOCKS:c:cables": [
+      "~TransferCable@CUSTOM:TransferCable"
     ]
   },
   "tab_element_order": {
@@ -8171,7 +8611,13 @@
       "GoldenSickle",
       "WoodenSickle",
       "GlassCutter",
-      "EnderShard"
+      "EnderShard",
+      "WoodenSpike",
+      "StoneSpike",
+      "IronSpike",
+      "GoldSpike",
+      "DiamondSpike",
+      "NetheriteSpike"
     ]
   },
   "language_map": {
@@ -8355,7 +8801,14 @@
       "gui.euru.generator_gui.tooltip_speed_upgrade": "Speed Upgrade",
       "gui.euru.generator_gui.button_empty1": "",
       "gui.euru.generator_gui.button_empty": "",
-      "item.euru.evil_infused_nugget": "Evil Infused Nugget"
+      "item.euru.evil_infused_nugget": "Evil Infused Nugget",
+      "block.euru.wooden_spike": "Wooden Spike",
+      "block.euru.stone_spike": "Stone Spike",
+      "block.euru.iron_spike": "Iron Spike",
+      "block.euru.gold_spike": "Golden Spike",
+      "block.euru.diamond_spike": "Diamond Spike",
+      "block.euru.netherite_spike": "Netherite Spike",
+      "block.euru.transfer_cable": "Transfer Cable"
     }
   },
   "metadata": {
@@ -8379,12 +8832,25 @@
       "src/main/java/net/wavedk/extrautilitiesreutilized/network/NbtArrayLists.java",
       "src/main/java/net/wavedk/extrautilitiesreutilized/client/RenderUtils.java",
       "src/main/resources/euru.mixins.json",
+      "src/main/java/net/wavedk/extrautilitiesreutilized/math/CallCounter.java",
+      "src/main/java/net/wavedk/extrautilitiesreutilized/world/PortalSavedData.java",
       "src/main/resources/META-INF/neoforge.mods.toml",
-      "src/main/java/net/wavedk/extrautilitiesreutilized/EuruMod.java",
       "src/main/resources/pack.mcmeta",
       "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/EuruModJerIntegration.java",
+      "src/main/java/net/wavedk/extrautilitiesreutilized/world/BlockDamageHandler.java",
+      "src/main/java/net/wavedk/extrautilitiesreutilized/ai/MoveToBlockGoal.java",
+      "src/main/java/net/wavedk/extrautilitiesreutilized/ai/OverrideMovementGoal.java",
+      "src/main/java/net/wavedk/extrautilitiesreutilized/network/EuruModVariables.java",
+      "src/main/java/net/wavedk/extrautilitiesreutilized/EuruMod.java",
       "src/main/java/net/wavedk/extrautilitiesreutilized/init/EuruModTabs.java",
-      "src/main/java/net/wavedk/extrautilitiesreutilized/network/EuruModVariables.java"
+      "src/main/java/net/wavedk/extrautilitiesreutilized/client/renderer/SemiAquaticRenderer.java",
+      "src/main/java/net/wavedk/extrautilitiesreutilized/client/renderer/CustomFireballRenderer.java",
+      "src/main/java/net/wavedk/extrautilitiesreutilized/entity/CustomFireballEntity.java",
+      "src/main/java/net/wavedk/extrautilitiesreutilized/client/renderer/CustomEyeOfEnderRenderer.java",
+      "src/main/java/net/wavedk/extrautilitiesreutilized/ai/MoveToStructureGoal.java",
+      "src/main/java/net/wavedk/extrautilitiesreutilized/ai/OrbitPositionGoal.java",
+      "src/main/java/net/wavedk/extrautilitiesreutilized/entity/CustomEyeOfEnderEntity.java",
+      "src/main/java/net/wavedk/extrautilitiesreutilized/world/TeleportBlockHandler.java"
     ]
   },
   "foldersRoot": {
@@ -8574,6 +9040,28 @@
               {
                 "name": "GUI",
                 "children": []
+              },
+              {
+                "name": "Spikes",
+                "children": [
+                  {
+                    "name": "Procedures",
+                    "children": []
+                  },
+                  {
+                    "name": "Recipes",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "Cables",
+                "children": [
+                  {
+                    "name": "Procedures",
+                    "children": []
+                  }
+                ]
               }
             ]
           }
@@ -8607,5 +9095,5 @@
     "credits": "Made with ❤️ by WaveDK using MCreator. Textures by @sethyn_, @batzorig and @quotat1on.",
     "modElementsPackage": "net.wavedk.extrautilitiesreutilized"
   },
-  "mcreatorVersion": 202600230420
+  "mcreatorVersion": 202600233218
 }

@@ -71,7 +71,7 @@ public class DOEDeathFromProcedureProcedure {
 					drop = iobj.get("dropchance").getAsDouble();
 					multiply = iobj.get("dropchance_multiplywithlooting").getAsBoolean();
 					num = 0;
-					for (int index57 = 0; index57 < (int) doelist.size(); index57++) {
+					for (int _i32 = 0; _i32 < (int) doelist.size(); _i32++) {
 						EuruModVariables.WorldVariables.get(world).doe_drops_from.add(doelist.get((int) num).getAsString());
 						EuruModVariables.WorldVariables.get(world).markSyncDirty();
 						num = num + 1;

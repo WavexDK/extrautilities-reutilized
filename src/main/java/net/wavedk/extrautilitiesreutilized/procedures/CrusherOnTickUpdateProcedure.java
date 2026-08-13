@@ -192,7 +192,7 @@ public class CrusherOnTickUpdateProcedure {
 											_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 									}
 									cNum = 0;
-									for (int index58 = 0; index58 < (int) rlist.size(); index58++) {
+									for (int _i258 = 0; _i258 < (int) rlist.size(); _i258++) {
 										if ((BuiltInRegistries.ITEM.getKey((itemFromBlockInventory(world, BlockPos.containing(x, y, z), 0).copy()).getItem()).toString()).equals(rlist.get((int) cNum).getAsString())
 												|| (itemFromBlockInventory(world, BlockPos.containing(x, y, z), 0).copy()).is(ItemTags.create(ResourceLocation.parse((rlist.get((int) cNum).getAsString()).toLowerCase(java.util.Locale.ENGLISH))))) {
 											iobj = bobj.get(rlist.get((int) cNum).getAsString()).getAsJsonObject();

@@ -1,0 +1,9 @@
+{
+  "parent": "euru:custom/netheritespikes",
+  "textures": {
+    "all": "minecraft:block/netherite_block",
+    "particle": "minecraft:block/netherite_block",
+    "0": "minecraft:block/netherite_block"
+  },
+  "render_type": "cutout"
+}

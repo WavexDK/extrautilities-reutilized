@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " a ",
+    "aba",
+    "bcb"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:golden_sword"
+    },
+    "b": {
+      "item": "minecraft:gold_ingot"
+    },
+    "c": {
+      "item": "minecraft:gold_block"
+    }
+  },
+  "result": {
+    "id": "euru:gold_spike",
+    "count": 1
+  }
+}

@@ -22,7 +22,7 @@
     "leavesParticleChance": 0.0,
     "tintType": "No tint",
     "isItemTinted": false,
-    "hasTransparency": true,
+    "hasTransparency": false,
     "connectedSides": false,
     "transparencyType": "SOLID",
     "disableOffset": false,
@@ -32,7 +32,7 @@
         "my": 0.0,
         "mz": 0.0,
         "Mx": 16.0,
-        "My": 4.0,
+        "My": 16.0,
         "Mz": 16.0,
         "subtract": false
       }

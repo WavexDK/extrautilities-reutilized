@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " a ",
+    "aba",
+    "bcb"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:stone_sword"
+    },
+    "b": {
+      "tag": "c:cobblestones"
+    },
+    "c": {
+      "item": "euru:compressed_cobblestone"
+    }
+  },
+  "result": {
+    "id": "euru:stone_spike",
+    "count": 1
+  }
+}

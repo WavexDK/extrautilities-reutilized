@@ -53,7 +53,10 @@ public class LassoRCOBProcedure {
 				if (((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getString("entityReg")).equals("minecraft:chicken")) {
 					{
 						Entity _ent = spawnEntityFromCompoundTag(
-								((Tag) getOrCreateCustomData((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)).get("entityNBT") instanceof CompoundTag _compound8 ? _compound8 : new CompoundTag()), world, true);
+								((Tag) (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().get("entityNBT") instanceof CompoundTag _compound8
+										? _compound8
+										: new CompoundTag()),
+								world, true);
 						double _tx = x;
 						double _ty = (y + 1);
 						double _tz = z;
@@ -71,7 +74,10 @@ public class LassoRCOBProcedure {
 				} else if (((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getString("entityReg")).equals("minecraft:bat")) {
 					{
 						Entity _ent = spawnEntityFromCompoundTag(
-								((Tag) getOrCreateCustomData((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)).get("entityNBT") instanceof CompoundTag _compound17 ? _compound17 : new CompoundTag()), world, true);
+								((Tag) (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().get("entityNBT") instanceof CompoundTag _compound17
+										? _compound17
+										: new CompoundTag()),
+								world, true);
 						double _tx = x;
 						double _ty = (y + 1);
 						double _tz = z;
@@ -89,7 +95,10 @@ public class LassoRCOBProcedure {
 				} else if (((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getString("entityReg")).equals("minecraft:ghast")) {
 					{
 						Entity _ent = spawnEntityFromCompoundTag(
-								((Tag) getOrCreateCustomData((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)).get("entityNBT") instanceof CompoundTag _compound26 ? _compound26 : new CompoundTag()), world, true);
+								((Tag) (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().get("entityNBT") instanceof CompoundTag _compound26
+										? _compound26
+										: new CompoundTag()),
+								world, true);
 						double _tx = x;
 						double _ty = (y + 1);
 						double _tz = z;
@@ -108,7 +117,10 @@ public class LassoRCOBProcedure {
 						|| ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getString("entityReg")).equals("minecraft:glow_squid")) {
 					{
 						Entity _ent = spawnEntityFromCompoundTag(
-								((Tag) getOrCreateCustomData((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)).get("entityNBT") instanceof CompoundTag _compound37 ? _compound37 : new CompoundTag()), world, true);
+								((Tag) (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().get("entityNBT") instanceof CompoundTag _compound37
+										? _compound37
+										: new CompoundTag()),
+								world, true);
 						double _tx = x;
 						double _ty = (y + 1);
 						double _tz = z;
@@ -126,7 +138,10 @@ public class LassoRCOBProcedure {
 				} else {
 					{
 						Entity _ent = spawnEntityFromCompoundTag(
-								((Tag) getOrCreateCustomData((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)).get("entityNBT") instanceof CompoundTag _compound44 ? _compound44 : new CompoundTag()), world, true);
+								((Tag) (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().get("entityNBT") instanceof CompoundTag _compound44
+										? _compound44
+										: new CompoundTag()),
+								world, true);
 						double _tx = x;
 						double _ty = (y + 1);
 						double _tz = z;
@@ -144,7 +159,10 @@ public class LassoRCOBProcedure {
 				if (((entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getString("entityReg")).equals("minecraft:chicken")) {
 					{
 						Entity _ent = spawnEntityFromCompoundTag(
-								((Tag) getOrCreateCustomData((entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY)).get("entityNBT") instanceof CompoundTag _compound56 ? _compound56 : new CompoundTag()), world, true);
+								((Tag) (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().get("entityNBT") instanceof CompoundTag _compound56
+										? _compound56
+										: new CompoundTag()),
+								world, true);
 						double _tx = x;
 						double _ty = (y + 1);
 						double _tz = z;
@@ -160,11 +178,15 @@ public class LassoRCOBProcedure {
 							_player.getInventory().setChanged();
 					}
 				} else if (((entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getString("entityReg")).equals("minecraft:ghast")) {
-					((Tag) getOrCreateCustomData((entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY)).get("entityNBT") instanceof CompoundTag _compound65 ? _compound65 : new CompoundTag()).put("Pos",
-							StringTag.valueOf(("[" + x + "d," + y + "d," + z + "d]")));
+					((Tag) (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().get("entityNBT") instanceof CompoundTag _compound65
+							? _compound65
+							: new CompoundTag()).put("Pos", StringTag.valueOf(("[" + x + "d," + y + "d," + z + "d]")));
 					{
 						Entity _ent = spawnEntityFromCompoundTag(
-								((Tag) getOrCreateCustomData((entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY)).get("entityNBT") instanceof CompoundTag _compound71 ? _compound71 : new CompoundTag()), world, true);
+								((Tag) (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().get("entityNBT") instanceof CompoundTag _compound71
+										? _compound71
+										: new CompoundTag()),
+								world, true);
 						double _tx = x;
 						double _ty = (y + 1);
 						double _tz = z;
@@ -182,7 +204,10 @@ public class LassoRCOBProcedure {
 				} else if (((entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getString("entityReg")).equals("minecraft:bat")) {
 					{
 						Entity _ent = spawnEntityFromCompoundTag(
-								((Tag) getOrCreateCustomData((entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY)).get("entityNBT") instanceof CompoundTag _compound80 ? _compound80 : new CompoundTag()), world, true);
+								((Tag) (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().get("entityNBT") instanceof CompoundTag _compound80
+										? _compound80
+										: new CompoundTag()),
+								world, true);
 						double _tx = x;
 						double _ty = (y + 1);
 						double _tz = z;
@@ -201,7 +226,10 @@ public class LassoRCOBProcedure {
 						|| ((entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getString("entityReg")).equals("minecraft:glow_squid")) {
 					{
 						Entity _ent = spawnEntityFromCompoundTag(
-								((Tag) getOrCreateCustomData((entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY)).get("entityNBT") instanceof CompoundTag _compound91 ? _compound91 : new CompoundTag()), world, true);
+								((Tag) (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().get("entityNBT") instanceof CompoundTag _compound91
+										? _compound91
+										: new CompoundTag()),
+								world, true);
 						double _tx = x;
 						double _ty = (y + 1);
 						double _tz = z;
@@ -219,7 +247,10 @@ public class LassoRCOBProcedure {
 				} else {
 					{
 						Entity _ent = spawnEntityFromCompoundTag(
-								((Tag) getOrCreateCustomData((entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY)).get("entityNBT") instanceof CompoundTag _compound98 ? _compound98 : new CompoundTag()), world, true);
+								((Tag) (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().get("entityNBT") instanceof CompoundTag _compound98
+										? _compound98
+										: new CompoundTag()),
+								world, true);
 						double _tx = x;
 						double _ty = (y + 1);
 						double _tz = z;
@@ -235,12 +266,6 @@ public class LassoRCOBProcedure {
 				}
 			}
 		}
-	}
-
-	private static CompoundTag getOrCreateCustomData(ItemStack itemstack) {
-		if (!itemstack.has(DataComponents.CUSTOM_DATA))
-			itemstack.set(DataComponents.CUSTOM_DATA, CustomData.of(new CompoundTag()));
-		return itemstack.get(DataComponents.CUSTOM_DATA).getUnsafe();
 	}
 
 	private static Entity spawnEntityFromCompoundTag(CompoundTag data, LevelAccessor world, boolean randomizeUUID) {

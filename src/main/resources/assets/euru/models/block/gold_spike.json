@@ -1,0 +1,9 @@
+{
+  "parent": "euru:custom/goldspikes",
+  "textures": {
+    "all": "minecraft:block/gold_block",
+    "particle": "minecraft:block/gold_block",
+    "0": "minecraft:block/gold_block"
+  },
+  "render_type": "cutout"
+}

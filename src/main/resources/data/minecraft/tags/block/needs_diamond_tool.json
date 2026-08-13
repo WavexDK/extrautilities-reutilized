@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "euru:netherite_spike",
     "euru:angel_block",
     "euru:creative_energy_source",
     "euru:gilded_obsidian"

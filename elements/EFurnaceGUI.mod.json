@@ -209,6 +209,7 @@
         "data": {
           "image": "efurnaceoffbd.png",
           "use1Xscale": false,
+          "displayCondition": "SGenIsOff",
           "x": 182,
           "y": 46,
           "locked": false
@@ -219,6 +220,7 @@
         "data": {
           "image": "efurnaceonbd.png",
           "use1Xscale": false,
+          "displayCondition": "SGenIsOn",
           "x": 182,
           "y": 46,
           "locked": false

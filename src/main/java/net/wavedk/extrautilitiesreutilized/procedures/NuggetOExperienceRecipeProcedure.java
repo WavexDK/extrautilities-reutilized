@@ -44,7 +44,7 @@ public class NuggetOExperienceRecipeProcedure {
 				if (entity instanceof Player _player && !_player.level().isClientSide())
 					_player.displayClientMessage(Component.literal("\u00A7cYou do not have enough experience!"), true);
 			} else if (non > (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getCount()) {
-				for (int index48 = 0; index48 < (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getCount(); index48++) {
+				for (int _i28 = 0; _i28 < (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getCount(); _i28++) {
 					if (world instanceof ServerLevel _level) {
 						ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EuruModItems.NUGGETO_EXPERIENCE.get()));
 						entityToSpawn.setPickUpDelay(10);
@@ -61,7 +61,7 @@ public class NuggetOExperienceRecipeProcedure {
 						_player.getInventory().setChanged();
 				}
 			} else {
-				for (int index49 = 0; index49 < (int) non; index49++) {
+				for (int _i46 = 0; _i46 < (int) non; _i46++) {
 					if (world instanceof ServerLevel _level) {
 						ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EuruModItems.NUGGETO_EXPERIENCE.get()));
 						entityToSpawn.setPickUpDelay(10);
@@ -84,7 +84,7 @@ public class NuggetOExperienceRecipeProcedure {
 				if (entity instanceof Player _player && !_player.level().isClientSide())
 					_player.displayClientMessage(Component.literal("\u00A7cYou do not have enough experience!"), true);
 			} else if (non > (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getCount()) {
-				for (int index50 = 0; index50 < (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getCount(); index50++) {
+				for (int _i92 = 0; _i92 < (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getCount(); _i92++) {
 					if (world instanceof ServerLevel _level) {
 						ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EuruModItems.NUGGETO_EXPERIENCE.get()));
 						entityToSpawn.setPickUpDelay(10);
@@ -101,7 +101,7 @@ public class NuggetOExperienceRecipeProcedure {
 						_player.getInventory().setChanged();
 				}
 			} else {
-				for (int index51 = 0; index51 < (int) non; index51++) {
+				for (int _i110 = 0; _i110 < (int) non; _i110++) {
 					if (world instanceof ServerLevel _level) {
 						ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EuruModItems.NUGGETO_EXPERIENCE.get()));
 						entityToSpawn.setPickUpDelay(10);

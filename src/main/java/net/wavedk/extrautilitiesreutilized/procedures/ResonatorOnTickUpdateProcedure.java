@@ -257,7 +257,7 @@ public class ResonatorOnTickUpdateProcedure {
 						}
 						if (rlArray.size() > 0) {
 							cNumber = 0;
-							for (int index44 = 0; index44 < (int) rlArray.size(); index44++) {
+							for (int _i346 = 0; _i346 < (int) rlArray.size(); _i346++) {
 								cItem = rlArray.get((int) cNumber).getAsString();
 								if ((cItem).equals(BuiltInRegistries.ITEM.getKey((itemFromBlockInventory(world, BlockPos.containing(x, y, z), 0).copy()).getItem()).toString())
 										|| (itemFromBlockInventory(world, BlockPos.containing(x, y, z), 0).copy()).is(ItemTags.create(ResourceLocation.parse((cItem).toLowerCase(java.util.Locale.ENGLISH))))) {

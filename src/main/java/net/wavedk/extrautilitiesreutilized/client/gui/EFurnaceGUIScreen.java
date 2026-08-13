@@ -119,8 +119,12 @@ public class EFurnaceGUIScreen extends AbstractContainerScreen<EFurnaceGUIMenu> 
 		if (RedstoneOnProcedureProcedure.execute(world, x, y, z)) {
 			guiGraphics.blit(IMAGE_5, this.leftPos + 4, this.topPos + 16, 0, 0, 20, 20, 20, 20);
 		}
-		guiGraphics.blit(IMAGE_6, this.leftPos + 56, this.topPos + 9, 0, 0, 64, 64, 64, 64);
-		guiGraphics.blit(IMAGE_7, this.leftPos + 56, this.topPos + 9, 0, 0, 64, 64, 64, 64);
+		if (SGenIsOffProcedure.execute(world, x, y, z)) {
+			guiGraphics.blit(IMAGE_6, this.leftPos + 56, this.topPos + 9, 0, 0, 64, 64, 64, 64);
+		}
+		if (SGenIsOnProcedure.execute(world, x, y, z)) {
+			guiGraphics.blit(IMAGE_7, this.leftPos + 56, this.topPos + 9, 0, 0, 64, 64, 64, 64);
+		}
 		RenderSystem.disableBlend();
 	}
 

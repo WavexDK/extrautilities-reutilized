@@ -1,0 +1,29 @@
+{
+  "_fv": 89,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "unlockingItems": [],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      "",
+      "Items.WOODEN_SWORD",
+      "",
+      "Items.WOODEN_SWORD",
+      "Blocks.PLANKS",
+      "Items.WOODEN_SWORD",
+      "Blocks.PLANKS",
+      "Blocks.PLANKS",
+      "Blocks.PLANKS"
+    ],
+    "recipeReturnStack": "CUSTOM:WoodenSpike",
+    "name": "wooden_spike_recipe",
+    "namespace": "mod"
+  }
+}

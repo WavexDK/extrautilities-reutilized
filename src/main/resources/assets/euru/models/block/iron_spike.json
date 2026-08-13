@@ -1,0 +1,9 @@
+{
+  "parent": "euru:custom/ironspikes",
+  "textures": {
+    "all": "minecraft:block/iron_block",
+    "particle": "minecraft:block/iron_block",
+    "0": "minecraft:block/iron_block"
+  },
+  "render_type": "cutout"
+}

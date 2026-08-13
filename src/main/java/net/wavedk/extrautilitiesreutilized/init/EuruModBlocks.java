@@ -52,6 +52,13 @@ public class EuruModBlocks {
 	public static final DeferredBlock<Block> CULINARY_GENERATOR;
 	public static final DeferredBlock<Block> DISENCHANTMENT_GENERATOR;
 	public static final DeferredBlock<Block> EXPLOSIVE_GENERATOR;
+	public static final DeferredBlock<Block> WOODEN_SPIKE;
+	public static final DeferredBlock<Block> STONE_SPIKE;
+	public static final DeferredBlock<Block> IRON_SPIKE;
+	public static final DeferredBlock<Block> GOLD_SPIKE;
+	public static final DeferredBlock<Block> DIAMOND_SPIKE;
+	public static final DeferredBlock<Block> NETHERITE_SPIKE;
+	public static final DeferredBlock<Block> TRANSFER_CABLE;
 	static {
 		SOLAR_PANEL = REGISTRY.register("solar_panel", SolarPanelBlock::new);
 		LUNAR_PANEL = REGISTRY.register("lunar_panel", LunarPanelBlock::new);
@@ -92,6 +99,13 @@ public class EuruModBlocks {
 		CULINARY_GENERATOR = REGISTRY.register("culinary_generator", CulinaryGeneratorBlock::new);
 		DISENCHANTMENT_GENERATOR = REGISTRY.register("disenchantment_generator", DisenchantmentGeneratorBlock::new);
 		EXPLOSIVE_GENERATOR = REGISTRY.register("explosive_generator", ExplosiveGeneratorBlock::new);
+		WOODEN_SPIKE = REGISTRY.register("wooden_spike", WoodenSpikeBlock::new);
+		STONE_SPIKE = REGISTRY.register("stone_spike", StoneSpikeBlock::new);
+		IRON_SPIKE = REGISTRY.register("iron_spike", IronSpikeBlock::new);
+		GOLD_SPIKE = REGISTRY.register("gold_spike", GoldSpikeBlock::new);
+		DIAMOND_SPIKE = REGISTRY.register("diamond_spike", DiamondSpikeBlock::new);
+		NETHERITE_SPIKE = REGISTRY.register("netherite_spike", NetheriteSpikeBlock::new);
+		TRANSFER_CABLE = REGISTRY.register("transfer_cable", TransferCableBlock::new);
 	}
 	// Start of user code block custom blocks
 	// End of user code block custom blocks

@@ -104,6 +104,13 @@ public class EuruModItems {
 	public static final DeferredItem<Item> GOLDEN_LASSO_CLW = REGISTRY.register("golden_lasso_clw", GoldenLassoCLWItem::new);
 	public static final DeferredItem<Item> EYE_OF_REDSTONE = REGISTRY.register("eye_of_redstone", EyeOfRedstoneItem::new);
 	public static final DeferredItem<Item> EVIL_INFUSED_NUGGET = REGISTRY.register("evil_infused_nugget", EvilInfusedNuggetItem::new);
+	public static final DeferredItem<Item> WOODEN_SPIKE = block(EuruModBlocks.WOODEN_SPIKE);
+	public static final DeferredItem<Item> STONE_SPIKE = block(EuruModBlocks.STONE_SPIKE);
+	public static final DeferredItem<Item> IRON_SPIKE = block(EuruModBlocks.IRON_SPIKE);
+	public static final DeferredItem<Item> GOLD_SPIKE = block(EuruModBlocks.GOLD_SPIKE);
+	public static final DeferredItem<Item> DIAMOND_SPIKE = block(EuruModBlocks.DIAMOND_SPIKE);
+	public static final DeferredItem<Item> NETHERITE_SPIKE = block(EuruModBlocks.NETHERITE_SPIKE);
+	public static final DeferredItem<Item> TRANSFER_CABLE = REGISTRY.register("transfer_cable", TransferCableItem::new);
 
 	// Start of user code block custom items
 	// End of user code block custom items

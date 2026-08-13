@@ -47,6 +47,13 @@ public class EuruModBlockEntities {
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> CULINARY_GENERATOR = register("culinary_generator", EuruModBlocks.CULINARY_GENERATOR, CulinaryGeneratorBlockEntity::new);
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> DISENCHANTMENT_GENERATOR = register("disenchantment_generator", EuruModBlocks.DISENCHANTMENT_GENERATOR, DisenchantmentGeneratorBlockEntity::new);
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> EXPLOSIVE_GENERATOR = register("explosive_generator", EuruModBlocks.EXPLOSIVE_GENERATOR, ExplosiveGeneratorBlockEntity::new);
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> WOODEN_SPIKE = register("wooden_spike", EuruModBlocks.WOODEN_SPIKE, WoodenSpikeBlockEntity::new);
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> STONE_SPIKE = register("stone_spike", EuruModBlocks.STONE_SPIKE, StoneSpikeBlockEntity::new);
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> IRON_SPIKE = register("iron_spike", EuruModBlocks.IRON_SPIKE, IronSpikeBlockEntity::new);
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> GOLD_SPIKE = register("gold_spike", EuruModBlocks.GOLD_SPIKE, GoldSpikeBlockEntity::new);
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> DIAMOND_SPIKE = register("diamond_spike", EuruModBlocks.DIAMOND_SPIKE, DiamondSpikeBlockEntity::new);
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> NETHERITE_SPIKE = register("netherite_spike", EuruModBlocks.NETHERITE_SPIKE, NetheriteSpikeBlockEntity::new);
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> TRANSFER_CABLE = register("transfer_cable", EuruModBlocks.TRANSFER_CABLE, TransferCableBlockEntity::new);
 
 	// Start of user code block custom block entities
 	// End of user code block custom block entities
@@ -91,5 +98,11 @@ public class EuruModBlockEntities {
 		event.registerBlockEntity(Capabilities.EnergyStorage.BLOCK, DISENCHANTMENT_GENERATOR.get(), (blockEntity, side) -> ((DisenchantmentGeneratorBlockEntity) blockEntity).getEnergyStorage());
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, EXPLOSIVE_GENERATOR.get(), (blockEntity, side) -> new SidedInvWrapper((WorldlyContainer) blockEntity, side));
 		event.registerBlockEntity(Capabilities.EnergyStorage.BLOCK, EXPLOSIVE_GENERATOR.get(), (blockEntity, side) -> ((ExplosiveGeneratorBlockEntity) blockEntity).getEnergyStorage());
+		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, WOODEN_SPIKE.get(), (blockEntity, side) -> new SidedInvWrapper((WorldlyContainer) blockEntity, side));
+		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, STONE_SPIKE.get(), (blockEntity, side) -> new SidedInvWrapper((WorldlyContainer) blockEntity, side));
+		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, IRON_SPIKE.get(), (blockEntity, side) -> new SidedInvWrapper((WorldlyContainer) blockEntity, side));
+		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, GOLD_SPIKE.get(), (blockEntity, side) -> new SidedInvWrapper((WorldlyContainer) blockEntity, side));
+		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, DIAMOND_SPIKE.get(), (blockEntity, side) -> new SidedInvWrapper((WorldlyContainer) blockEntity, side));
+		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, NETHERITE_SPIKE.get(), (blockEntity, side) -> new SidedInvWrapper((WorldlyContainer) blockEntity, side));
 	}
 }

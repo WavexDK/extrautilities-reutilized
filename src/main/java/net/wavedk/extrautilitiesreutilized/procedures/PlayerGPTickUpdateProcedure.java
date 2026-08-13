@@ -48,6 +48,8 @@ public class PlayerGPTickUpdateProcedure {
 		com.google.gson.JsonObject obj = new com.google.gson.JsonObject();
 		File cfile = new File("");
 		boolean isEquippedCurios = false;
+		boolean isFlying = false;
+		Entity cEntity = null;
 		if (entity.getData(EuruModVariables.PLAYER_VARIABLES).playerGPTickUpdateCounter < 5) {
 			{
 				EuruModVariables.PlayerVariables _vars = entity.getData(EuruModVariables.PLAYER_VARIABLES);
@@ -65,11 +67,15 @@ public class PlayerGPTickUpdateProcedure {
 		} else {
 			UpdateGPProcedure.execute(world, entity);
 		}
-		if (entity instanceof Player player2) {
-			IItemHandler inventory2 = EuruMod.CuriosApiHelper.getCuriosInventory(player2);
-			if (inventory2 != null) {
-				for (int i = 0; i < inventory2.getSlots(); i++) {
-					ItemStack itemstackiterator = inventory2.getStackInSlot(i);
+		isEquippedCurios = false;
+		if (hasEntityInInventory(entity, new ItemStack(EuruModItems.ANGEL_RING.get()))) {
+			isEquippedCurios = true;
+		}
+		if (entity instanceof Player player3) {
+			IItemHandler inventory3 = EuruMod.CuriosApiHelper.getCuriosInventory(player3);
+			if (inventory3 != null) {
+				for (int i = 0; i < inventory3.getSlots(); i++) {
+					ItemStack itemstackiterator = inventory3.getStackInSlot(i);
 					if (itemstackiterator.getItem() == EuruModItems.ANGEL_RING.get()) {
 						isEquippedCurios = true;
 						break;
@@ -77,21 +83,52 @@ public class PlayerGPTickUpdateProcedure {
 				}
 			}
 		}
-		if (!(getEntityGameType(entity) == GameType.SPECTATOR || getEntityGameType(entity) == GameType.CREATIVE)) {
-			entity.getPersistentData().putBoolean("isCFlying", false);
-			if (entity instanceof Player _player) {
-				_player.getAbilities().mayfly = ((hasEntityInInventory(entity, new ItemStack(EuruModItems.ANGEL_RING.get())) || isEquippedCurios)
-						&& entity.getData(EuruModVariables.PLAYER_VARIABLES).playerGP_Total >= entity.getData(EuruModVariables.PLAYER_VARIABLES).playerGP_Used);
-				_player.onUpdateAbilities();
-			}
-		} else if (!entity.getPersistentData().getBoolean("isCFlying")) {
-			entity.getPersistentData().putBoolean("isCFlying", true);
-			if (entity instanceof Player _player) {
-				_player.getAbilities().mayfly = true;
-				_player.onUpdateAbilities();
+		cEntity = entity;
+		isFlying = cEntity instanceof net.minecraft.world.entity.player.Player player && player.getAbilities().mayfly;;
+		if (!entity.getData(EuruModVariables.PLAYER_VARIABLES).playerGPChecking) {
+			if (isEquippedCurios) {
+				if (isFlying) {
+					if (entity.getData(EuruModVariables.PLAYER_VARIABLES).ringFlying) {
+						if (entity.getData(EuruModVariables.PLAYER_VARIABLES).playerGP_Used > entity.getData(EuruModVariables.PLAYER_VARIABLES).playerGP_Total) {
+							if (cEntity instanceof net.minecraft.world.entity.player.Player player) {
+								player.getAbilities().mayfly = false;
+								player.getAbilities().flying = false;
+								player.onUpdateAbilities();
+							}
+							{
+								EuruModVariables.PlayerVariables _vars = entity.getData(EuruModVariables.PLAYER_VARIABLES);
+								_vars.ringFlying = false;
+								_vars.markSyncDirty();
+							}
+						}
+					}
+				} else {
+					if (entity.getData(EuruModVariables.PLAYER_VARIABLES).playerGP_Used <= entity.getData(EuruModVariables.PLAYER_VARIABLES).playerGP_Total) {
+						if (entity instanceof Player _player) {
+							_player.getAbilities().mayfly = true;
+							_player.onUpdateAbilities();
+						}
+						{
+							EuruModVariables.PlayerVariables _vars = entity.getData(EuruModVariables.PLAYER_VARIABLES);
+							_vars.ringFlying = true;
+							_vars.markSyncDirty();
+						}
+					}
+				}
+			} else if (isFlying && entity.getData(EuruModVariables.PLAYER_VARIABLES).ringFlying) {
+				if (cEntity instanceof net.minecraft.world.entity.player.Player player) {
+					player.getAbilities().mayfly = false;
+					player.getAbilities().flying = false;
+					player.onUpdateAbilities();
+				}
+				{
+					EuruModVariables.PlayerVariables _vars = entity.getData(EuruModVariables.PLAYER_VARIABLES);
+					_vars.ringFlying = false;
+					_vars.markSyncDirty();
+				}
 			}
 		}
-		if ((hasEntityInInventory(entity, new ItemStack(EuruModItems.ANGEL_RING.get())) || isEquippedCurios) && entity.getData(EuruModVariables.PLAYER_VARIABLES).playerGPChecking && getEntityGameType(entity) == GameType.SURVIVAL) {
+		if ((isEquippedCurios || isEquippedCurios) && entity.getData(EuruModVariables.PLAYER_VARIABLES).playerGPChecking && getEntityGameType(entity) == GameType.SURVIVAL) {
 			cfile = new File((FMLPaths.GAMEDIR.get().toString() + "/config/euru/"), File.separator + "euru_unified_config.json");
 			{
 				try {
@@ -123,6 +160,12 @@ public class PlayerGPTickUpdateProcedure {
 		}
 	}
 
+	private static boolean hasEntityInInventory(Entity entity, ItemStack itemstack) {
+		if (entity instanceof Player player)
+			return player.getInventory().contains(stack -> !stack.isEmpty() && ItemStack.isSameItem(stack, itemstack));
+		return false;
+	}
+
 	private static GameType getEntityGameType(Entity entity) {
 		if (entity instanceof ServerPlayer serverPlayer) {
 			return serverPlayer.gameMode.getGameModeForPlayer();
@@ -132,11 +175,5 @@ public class PlayerGPTickUpdateProcedure {
 				return playerInfo.getGameMode();
 		}
 		return null;
-	}
-
-	private static boolean hasEntityInInventory(Entity entity, ItemStack itemstack) {
-		if (entity instanceof Player player)
-			return player.getInventory().contains(stack -> !stack.isEmpty() && ItemStack.isSameItem(stack, itemstack));
-		return false;
 	}
 }

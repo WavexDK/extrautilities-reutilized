@@ -68,7 +68,7 @@ public class LassoRCOEProcedure {
 						lobj = mobj.get("lasso_entities").getAsJsonObject();
 						array = lobj.get("golden").getAsJsonArray();
 						cNum = 0;
-						for (int index53 = 0; index53 < (int) array.size(); index53++) {
+						for (int _i28 = 0; _i28 < (int) array.size(); _i28++) {
 							cEntity = array.get((int) cNum).getAsString();
 							if ((BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString()).equals(cEntity)) {
 								foundEntity = true;
@@ -89,7 +89,7 @@ public class LassoRCOEProcedure {
 							if (_entity instanceof Player _player)
 								_player.getInventory().setChanged();
 						}
-						getOrCreateCustomData((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)).put("entityNBT", saveWithId(entity).copy());
+						(sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().put("entityNBT", saveWithId(entity).copy());
 						{
 							final String _tagName = "healthMax";
 							final double _tagValue = (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1);
@@ -120,7 +120,7 @@ public class LassoRCOEProcedure {
 							if (_entity instanceof Player _player)
 								_player.getInventory().setChanged();
 						}
-						getOrCreateCustomData((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)).put("entityNBT", saveWithId(entity).copy());
+						(sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().put("entityNBT", saveWithId(entity).copy());
 						{
 							final String _tagName = "healthMax";
 							final double _tagValue = (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1);
@@ -151,7 +151,7 @@ public class LassoRCOEProcedure {
 							if (_entity instanceof Player _player)
 								_player.getInventory().setChanged();
 						}
-						getOrCreateCustomData((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)).put("entityNBT", saveWithId(entity).copy());
+						(sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().put("entityNBT", saveWithId(entity).copy());
 						{
 							final String _tagName = "healthMax";
 							final double _tagValue = (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1);
@@ -182,7 +182,7 @@ public class LassoRCOEProcedure {
 							if (_entity instanceof Player _player)
 								_player.getInventory().setChanged();
 						}
-						getOrCreateCustomData((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)).put("entityNBT", saveWithId(entity).copy());
+						(sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().put("entityNBT", saveWithId(entity).copy());
 						{
 							final String _tagName = "healthMax";
 							final double _tagValue = (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1);
@@ -206,7 +206,7 @@ public class LassoRCOEProcedure {
 						if (!entity.level().isClientSide())
 							entity.discard();
 					} else {
-						getOrCreateCustomData((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)).put("entityNBT", saveWithId(entity).copy());
+						(sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().put("entityNBT", saveWithId(entity).copy());
 						{
 							final String _tagName = "healthMax";
 							final double _tagValue = (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1);
@@ -251,7 +251,7 @@ public class LassoRCOEProcedure {
 						lobj = mobj.get("lasso_entities").getAsJsonObject();
 						array = lobj.get("golden").getAsJsonArray();
 						cNum = 0;
-						for (int index54 = 0; index54 < (int) array.size(); index54++) {
+						for (int _i285 = 0; _i285 < (int) array.size(); _i285++) {
 							cEntity = array.get((int) cNum).getAsString();
 							if ((BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString()).equals(cEntity)) {
 								foundEntity = true;
@@ -271,7 +271,7 @@ public class LassoRCOEProcedure {
 						if (_entity instanceof Player _player)
 							_player.getInventory().setChanged();
 					}
-					getOrCreateCustomData((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY)).put("entityNBT", saveWithId(entity).copy());
+					(sourceentity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().put("entityNBT", saveWithId(entity).copy());
 					{
 						final String _tagName = "healthMax";
 						final double _tagValue = (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1);
@@ -302,7 +302,7 @@ public class LassoRCOEProcedure {
 						if (_entity instanceof Player _player)
 							_player.getInventory().setChanged();
 					}
-					getOrCreateCustomData((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY)).put("entityNBT", saveWithId(entity).copy());
+					(sourceentity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().put("entityNBT", saveWithId(entity).copy());
 					{
 						final String _tagName = "healthMax";
 						final double _tagValue = (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1);
@@ -333,7 +333,7 @@ public class LassoRCOEProcedure {
 						if (_entity instanceof Player _player)
 							_player.getInventory().setChanged();
 					}
-					getOrCreateCustomData((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY)).put("entityNBT", saveWithId(entity).copy());
+					(sourceentity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().put("entityNBT", saveWithId(entity).copy());
 					{
 						final String _tagName = "healthMax";
 						final double _tagValue = (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1);
@@ -357,7 +357,7 @@ public class LassoRCOEProcedure {
 					if (!entity.level().isClientSide())
 						entity.discard();
 				} else {
-					getOrCreateCustomData((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY)).put("entityNBT", saveWithId(entity).copy());
+					(sourceentity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().put("entityNBT", saveWithId(entity).copy());
 					{
 						final String _tagName = "healthMax";
 						final double _tagValue = (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1);
@@ -398,7 +398,7 @@ public class LassoRCOEProcedure {
 						lobj = mobj.get("lasso_entities").getAsJsonObject();
 						array = lobj.get("cursed").getAsJsonArray();
 						cNum = 0;
-						for (int index55 = 0; index55 < (int) array.size(); index55++) {
+						for (int _i494 = 0; _i494 < (int) array.size(); _i494++) {
 							cEntity = array.get((int) cNum).getAsString();
 							if ((BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString()).equals(cEntity)) {
 								foundEntity = true;
@@ -419,7 +419,7 @@ public class LassoRCOEProcedure {
 							if (_entity instanceof Player _player)
 								_player.getInventory().setChanged();
 						}
-						getOrCreateCustomData((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY)).put("entityNBT", saveWithId(entity).copy());
+						(sourceentity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().put("entityNBT", saveWithId(entity).copy());
 						{
 							final String _tagName = "healthMax";
 							final double _tagValue = (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1);
@@ -443,7 +443,7 @@ public class LassoRCOEProcedure {
 						if (!entity.level().isClientSide())
 							entity.discard();
 					} else {
-						getOrCreateCustomData((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY)).put("entityNBT", saveWithId(entity).copy());
+						(sourceentity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().put("entityNBT", saveWithId(entity).copy());
 						{
 							final String _tagName = "healthMax";
 							final double _tagValue = (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1);
@@ -488,7 +488,7 @@ public class LassoRCOEProcedure {
 						lobj = mobj.get("lasso_entities").getAsJsonObject();
 						array = lobj.get("cursed").getAsJsonArray();
 						cNum = 0;
-						for (int index56 = 0; index56 < (int) array.size(); index56++) {
+						for (int _i620 = 0; _i620 < (int) array.size(); _i620++) {
 							cEntity = array.get((int) cNum).getAsString();
 							if ((BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString()).equals(cEntity)) {
 								foundEntity = true;
@@ -511,7 +511,7 @@ public class LassoRCOEProcedure {
 							if (_entity instanceof Player _player)
 								_player.getInventory().setChanged();
 						}
-						getOrCreateCustomData((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)).put("entityNBT", saveWithId(entity).copy());
+						(sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().put("entityNBT", saveWithId(entity).copy());
 						{
 							final String _tagName = "healthMax";
 							final double _tagValue = (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1);
@@ -535,7 +535,7 @@ public class LassoRCOEProcedure {
 						if (!entity.level().isClientSide())
 							entity.discard();
 					} else {
-						getOrCreateCustomData((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)).put("entityNBT", saveWithId(entity).copy());
+						(sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().put("entityNBT", saveWithId(entity).copy());
 						{
 							final String _tagName = "healthMax";
 							final double _tagValue = (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1);
@@ -565,12 +565,6 @@ public class LassoRCOEProcedure {
 				}
 			}
 		}
-	}
-
-	private static CompoundTag getOrCreateCustomData(ItemStack itemstack) {
-		if (!itemstack.has(DataComponents.CUSTOM_DATA))
-			itemstack.set(DataComponents.CUSTOM_DATA, CustomData.of(new CompoundTag()));
-		return itemstack.get(DataComponents.CUSTOM_DATA).getUnsafe();
 	}
 
 	private static CompoundTag saveWithId(Entity entity) {

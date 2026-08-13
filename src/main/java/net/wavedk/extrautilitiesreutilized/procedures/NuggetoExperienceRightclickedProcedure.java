@@ -13,7 +13,7 @@ public class NuggetoExperienceRightclickedProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity, ItemStack itemstack) {
 		if (entity == null)
 			return;
-		for (int index47 = 0; index47 < itemstack.getCount(); index47++) {
+		for (int _i1 = 0; _i1 < itemstack.getCount(); _i1++) {
 			if (world instanceof ServerLevel _level)
 				_level.addFreshEntity(new ExperienceOrb(_level, x, y, z, 10));
 		}
