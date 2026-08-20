@@ -1,8 +1,8 @@
 {
   "parent": "euru:custom/resonator",
   "textures": {
-    "all": "euru:block/top-reso",
-    "particle": "euru:block/top-reso",
+    "all": "euru:block/reso-new",
+    "particle": "euru:block/reso-new",
     "1": "euru:block/reso-new"
   },
   "render_type": "solid"

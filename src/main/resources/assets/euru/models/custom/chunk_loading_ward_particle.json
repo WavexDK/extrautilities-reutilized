@@ -1,6 +1,6 @@
 {
   "parent": "euru:displaysettings/display-chunkward",
   "textures": {
-    "particle": "minecraft:block/oak_planks"
+    "particle": "euru:block/clparticle"
   }
 }

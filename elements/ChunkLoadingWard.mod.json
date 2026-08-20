@@ -15,7 +15,7 @@
     "displayFluidOverlay": false,
     "animateBlockItem": false,
     "itemTexture": "",
-    "particleTexture": "minecraft:oak_planks",
+    "particleTexture": "clparticle",
     "tintType": "No tint",
     "isItemTinted": false,
     "hasTransparency": true,

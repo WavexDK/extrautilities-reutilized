@@ -72,7 +72,7 @@
           "src/main/java/net/wavedk/extrautilitiesreutilized/item/GPScannerItem.java"
         ]
       },
-      "path": "~/Items"
+      "path": "~/Items/Other"
     },
     {
       "name": "PanelsTickUpdateHandler",
@@ -199,7 +199,7 @@
           "src/main/java/net/wavedk/extrautilitiesreutilized/item/UpgradeBaseItem.java"
         ]
       },
-      "path": "~/Items"
+      "path": "~/Items/Other"
     },
     {
       "name": "SpeedUpgrade",
@@ -213,7 +213,7 @@
           "src/main/resources/assets/euru/models/item/speed_upgrade.json"
         ]
       },
-      "path": "~/Items"
+      "path": "~/Items/Other"
     },
     {
       "name": "Euru",
@@ -276,7 +276,7 @@
           "src/main/java/net/wavedk/extrautilitiesreutilized/client/screens/ActionBarOverlayOverlay.java"
         ]
       },
-      "path": "~/Items/GUI"
+      "path": "~/Items/Other/GUI"
     },
     {
       "name": "ActionBarOverlayDisplayOverlayIngame",
@@ -296,7 +296,7 @@
           "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/ActionBarOverlayDisplayOverlayIngameProcedure.java"
         ]
       },
-      "path": "~/Items/GUI/Procedures"
+      "path": "~/Items/Other/GUI/Procedures"
     },
     {
       "name": "GroupSolarPanelsAddedHandler",
@@ -571,7 +571,7 @@
           "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/ResonatingRedstoneCrystalSpecialInformationProcedure.java"
         ]
       },
-      "path": "~/Items/Procedures"
+      "path": "~/Items/Other/Procedures"
     },
     {
       "name": "ResonatingRedstoneCrystal",
@@ -585,7 +585,7 @@
           "src/main/resources/assets/euru/models/item/resonating_redstone_crystal.json"
         ]
       },
-      "path": "~/Items"
+      "path": "~/Items/Other"
     },
     {
       "name": "EnderShardPropertyValueProvider",
@@ -605,7 +605,7 @@
           "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/EnderShardPropertyValueProviderProcedure.java"
         ]
       },
-      "path": "~/Items/Procedures"
+      "path": "~/Items/Other/Procedures"
     },
     {
       "name": "EnderShard",
@@ -626,7 +626,7 @@
           "src/main/resources/assets/euru/models/item/ender_shard_4.json"
         ]
       },
-      "path": "~/Items"
+      "path": "~/Items/Other"
     },
     {
       "name": "GlassCutter",
@@ -640,7 +640,7 @@
           "src/main/java/net/wavedk/extrautilitiesreutilized/item/GlassCutterItem.java"
         ]
       },
-      "path": "~/Items"
+      "path": "~/Items/Tools"
     },
     {
       "name": "EnderShardRecipe",
@@ -653,7 +653,7 @@
           "src/main/resources/data/euru/recipe/ender_shard_recipe.json"
         ]
       },
-      "path": "~/Items/Recipes"
+      "path": "~/Items/Other/Recipes"
     },
     {
       "name": "RRedstoneCrystalRecipe",
@@ -666,7 +666,7 @@
           "src/main/resources/data/euru/recipe/r_redstone_crystal_recipe.json"
         ]
       },
-      "path": "~/Items/Recipes"
+      "path": "~/Items/Other/Recipes"
     },
     {
       "name": "ChunkLoaderBlockIsPlacedBy",
@@ -874,7 +874,7 @@
           "src/main/resources/assets/euru/models/item/magical_speed_upgrade.json"
         ]
       },
-      "path": "~/Items"
+      "path": "~/Items/Other"
     },
     {
       "name": "MachineBlock",
@@ -932,7 +932,7 @@
           "src/main/resources/assets/euru/models/item/lunar_reactive_dust.json"
         ]
       },
-      "path": "~/Items"
+      "path": "~/Items/Other"
     },
     {
       "name": "LunarPanelRecipe",
@@ -1120,7 +1120,7 @@
           "src/main/resources/data/euru/recipe/su_recipe.json"
         ]
       },
-      "path": "~/Items/Recipes"
+      "path": "~/Items/Other/Recipes"
     },
     {
       "name": "GlassCutterRecipe",
@@ -1133,7 +1133,7 @@
           "src/main/resources/data/euru/recipe/glass_cutter_recipe.json"
         ]
       },
-      "path": "~/Items/Recipes"
+      "path": "~/Items/Other/Recipes"
     },
     {
       "name": "SGenRecipe",
@@ -1364,7 +1364,7 @@
           "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/NuggetoExperienceRightclickedProcedure.java"
         ]
       },
-      "path": "~/Items/Procedures"
+      "path": "~/Items/Other/Procedures"
     },
     {
       "name": "NuggetoExperience",
@@ -1378,7 +1378,7 @@
           "src/main/java/net/wavedk/extrautilitiesreutilized/item/NuggetoExperienceItem.java"
         ]
       },
-      "path": "~/Items"
+      "path": "~/Items/Other"
     },
     {
       "name": "NuggetOExperienceRecipe",
@@ -1413,7 +1413,7 @@
           "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/NuggetOExperienceRecipeProcedure.java"
         ]
       },
-      "path": "~/Items/Procedures"
+      "path": "~/Items/Other/Procedures"
     },
     {
       "name": "NuggetOExperienceJEI",
@@ -1424,7 +1424,7 @@
       "metadata": {
         "files": []
       },
-      "path": "~/Items/JEI"
+      "path": "~/Items/Other/JEI"
     },
     {
       "name": "GildedObsidianRecipe",
@@ -2087,7 +2087,7 @@
           "src/main/java/net/wavedk/extrautilitiesreutilized/item/RedstoneGearItem.java"
         ]
       },
-      "path": "~/Items"
+      "path": "~/Items/Other"
     },
     {
       "name": "RedstoneGearRecipe",
@@ -2100,7 +2100,7 @@
           "src/main/resources/data/euru/recipe/redstone_gear_recipe.json"
         ]
       },
-      "path": "~/Items/Recipes"
+      "path": "~/Items/Other/Recipes"
     },
     {
       "name": "ManualMillRecipe",
@@ -2133,7 +2133,7 @@
           "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/GoldenLassoPropertyValueProviderProcedure.java"
         ]
       },
-      "path": "~/Items/Procedures"
+      "path": "~/Items/Other/Procedures"
     },
     {
       "name": "GoldenLasso",
@@ -2148,7 +2148,7 @@
           "src/main/resources/assets/euru/models/item/golden_lasso.json"
         ]
       },
-      "path": "~/Items"
+      "path": "~/Items/Other"
     },
     {
       "name": "LavaMill",
@@ -2204,7 +2204,7 @@
           "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/GoldenLassoSpecialInformationProcedure.java"
         ]
       },
-      "path": "~/Items/Procedures"
+      "path": "~/Items/Other/Procedures"
     },
     {
       "name": "CursedLasso",
@@ -2219,7 +2219,7 @@
           "src/main/resources/assets/euru/models/item/cursed_lasso.json"
         ]
       },
-      "path": "~/Items"
+      "path": "~/Items/Other"
     },
     {
       "name": "GoldenLassoRecipe",
@@ -2232,7 +2232,7 @@
           "src/main/resources/data/euru/recipe/golden_lasso_recipe.json"
         ]
       },
-      "path": "~/Items/Recipes"
+      "path": "~/Items/Other/Recipes"
     },
     {
       "name": "DropOfEvil",
@@ -2246,7 +2246,7 @@
           "src/main/resources/assets/euru/models/item/drop_of_evil.json"
         ]
       },
-      "path": "~/Items"
+      "path": "~/Items/Other"
     },
     {
       "name": "DropOfEvilRecipe",
@@ -2259,7 +2259,7 @@
           "src/main/resources/data/euru/recipe/drop_of_evil_recipe.json"
         ]
       },
-      "path": "~/Items/Recipes"
+      "path": "~/Items/Other/Recipes"
     },
     {
       "name": "CursedLassoRecipe",
@@ -2272,7 +2272,7 @@
           "src/main/resources/data/euru/recipe/cursed_lasso_recipe.json"
         ]
       },
-      "path": "~/Items/Recipes"
+      "path": "~/Items/Other/Recipes"
     },
     {
       "name": "ResonatorRecipeTypeValue",
@@ -2319,7 +2319,7 @@
           "src/main/resources/data/euru/recipe/upgrade_base_recipe.json"
         ]
       },
-      "path": "~/Items/JEI"
+      "path": "~/Items/Other/JEI"
     },
     {
       "name": "LunarReactiveDustRecipe",
@@ -2332,7 +2332,7 @@
           "src/main/resources/data/euru/recipe/lunar_reactive_dust_recipe.json"
         ]
       },
-      "path": "~/Items/JEI"
+      "path": "~/Items/Other/JEI"
     },
     {
       "name": "StoneBurntRecipe",
@@ -2430,7 +2430,7 @@
           "src/main/java/net/wavedk/extrautilitiesreutilized/world/inventory/BagOfHoldingGUIMenu.java"
         ]
       },
-      "path": "~/Items/GUI"
+      "path": "~/Items/Other/GUI"
     },
     {
       "name": "BagOfHoldingRecipe",
@@ -2443,7 +2443,7 @@
           "src/main/resources/data/euru/recipe/bag_of_holding_recipe.json"
         ]
       },
-      "path": "~/Items/Recipes"
+      "path": "~/Items/Other/Recipes"
     },
     {
       "name": "BagOfHolding",
@@ -2458,7 +2458,7 @@
           "src/main/java/net/wavedk/extrautilitiesreutilized/item/inventory/BagOfHoldingInventoryCapability.java"
         ]
       },
-      "path": "~/Items"
+      "path": "~/Items/Other"
     },
     {
       "name": "Enchanter",
@@ -2701,7 +2701,7 @@
           "src/main/resources/assets/euru/models/item/magical_nugget.json"
         ]
       },
-      "path": "~/Items"
+      "path": "~/Items/Other"
     },
     {
       "name": "EnchantedIngot",
@@ -2715,7 +2715,7 @@
           "src/main/resources/assets/euru/models/item/enchanted_ingot.json"
         ]
       },
-      "path": "~/Items"
+      "path": "~/Items/Other"
     },
     {
       "name": "EnchantedIngotRecipe",
@@ -2728,7 +2728,7 @@
           "src/main/resources/data/euru/recipe/enchanted_ingot_recipe.json"
         ]
       },
-      "path": "~/Items/Recipes"
+      "path": "~/Items/Other/Recipes"
     },
     {
       "name": "EnchantedApple",
@@ -2742,7 +2742,7 @@
           "src/main/resources/assets/euru/models/item/enchanted_apple.json"
         ]
       },
-      "path": "~/Items"
+      "path": "~/Items/Other"
     },
     {
       "name": "MagicalSpeedUpgradeRecipe",
@@ -2755,7 +2755,7 @@
           "src/main/resources/data/euru/recipe/magical_speed_upgrade_recipe.json"
         ]
       },
-      "path": "~/Items/Recipes"
+      "path": "~/Items/Other/Recipes"
     },
     {
       "name": "LapisTooltip",
@@ -3719,7 +3719,7 @@
           "src/main/resources/assets/euru/models/item/chicken_ring.json"
         ]
       },
-      "path": "~/Items"
+      "path": "~/Items/Other"
     },
     {
       "name": "SquidRing",
@@ -3733,7 +3733,7 @@
           "src/main/resources/assets/euru/models/item/squid_ring.json"
         ]
       },
-      "path": "~/Items"
+      "path": "~/Items/Other"
     },
     {
       "name": "SquidRingItemInInventoryTick",
@@ -3756,7 +3756,7 @@
           "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/SquidRingItemInInventoryTickProcedure.java"
         ]
       },
-      "path": "~/Items/Procedures"
+      "path": "~/Items/Other/Procedures"
     },
     {
       "name": "ChickenRingItemInInventoryTick",
@@ -3779,7 +3779,7 @@
           "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/ChickenRingItemInInventoryTickProcedure.java"
         ]
       },
-      "path": "~/Items/Procedures"
+      "path": "~/Items/Other/Procedures"
     },
     {
       "name": "AngelRing",
@@ -3793,7 +3793,7 @@
           "src/main/java/net/wavedk/extrautilitiesreutilized/item/AngelRingItem.java"
         ]
       },
-      "path": "~/Items"
+      "path": "~/Items/Other"
     },
     {
       "name": "LassoRCOB",
@@ -3828,7 +3828,7 @@
           "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/LassoRCOBProcedure.java"
         ]
       },
-      "path": "~/Items/Procedures"
+      "path": "~/Items/Other/Procedures"
     },
     {
       "name": "LassoRCOE",
@@ -3851,7 +3851,7 @@
           "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/LassoRCOEProcedure.java"
         ]
       },
-      "path": "~/Items/Procedures"
+      "path": "~/Items/Other/Procedures"
     },
     {
       "name": "GoldenLassoCW",
@@ -3865,7 +3865,7 @@
           "src/main/java/net/wavedk/extrautilitiesreutilized/item/GoldenLassoCWItem.java"
         ]
       },
-      "path": "~/Items/SpecialItems"
+      "path": "~/Items/Other/SpecialItems"
     },
     {
       "name": "GoldenLassoChickenSpecialInformation",
@@ -3885,7 +3885,7 @@
           "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/GoldenLassoChickenSpecialInformationProcedure.java"
         ]
       },
-      "path": "~/Items/Procedures"
+      "path": "~/Items/Other/Procedures"
     },
     {
       "name": "ChickenWingRingRecipe",
@@ -3898,7 +3898,7 @@
           "src/main/resources/data/euru/recipe/chicken_wing_ring_recipe.json"
         ]
       },
-      "path": "~/Items/Recipes"
+      "path": "~/Items/Other/Recipes"
     },
     {
       "name": "GoldenLassoSW",
@@ -3912,7 +3912,7 @@
           "src/main/resources/assets/euru/models/item/golden_lasso_sw.json"
         ]
       },
-      "path": "~/Items/SpecialItems"
+      "path": "~/Items/Other/SpecialItems"
     },
     {
       "name": "GoldenLassoSquidSpecialInformation",
@@ -3932,7 +3932,7 @@
           "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/GoldenLassoSquidSpecialInformationProcedure.java"
         ]
       },
-      "path": "~/Items/Procedures"
+      "path": "~/Items/Other/Procedures"
     },
     {
       "name": "SquidRingReciperegular",
@@ -3945,7 +3945,7 @@
           "src/main/resources/data/euru/recipe/squid_ring_reciperegular.json"
         ]
       },
-      "path": "~/Items/Recipes"
+      "path": "~/Items/Other/Recipes"
     },
     {
       "name": "SquidRingRecipeGlow",
@@ -3958,7 +3958,7 @@
           "src/main/resources/data/euru/recipe/squid_ring_recipe_glow.json"
         ]
       },
-      "path": "~/Items/Recipes"
+      "path": "~/Items/Other/Recipes"
     },
     {
       "name": "GoldenLassoAR",
@@ -3972,7 +3972,7 @@
           "src/main/java/net/wavedk/extrautilitiesreutilized/item/GoldenLassoARItem.java"
         ]
       },
-      "path": "~/Items/SpecialItems"
+      "path": "~/Items/Other/SpecialItems"
     },
     {
       "name": "GoldenLassoBatSpecialInformation",
@@ -3992,7 +3992,7 @@
           "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/GoldenLassoBatSpecialInformationProcedure.java"
         ]
       },
-      "path": "~/Items/Procedures"
+      "path": "~/Items/Other/Procedures"
     },
     {
       "name": "CursedLassoAR",
@@ -4007,7 +4007,7 @@
           "src/main/java/net/wavedk/extrautilitiesreutilized/item/CursedLassoARItem.java"
         ]
       },
-      "path": "~/Items/SpecialItems"
+      "path": "~/Items/Other/SpecialItems"
     },
     {
       "name": "CursedLassoGhastSpecialInformation",
@@ -4027,7 +4027,7 @@
           "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/CursedLassoGhastSpecialInformationProcedure.java"
         ]
       },
-      "path": "~/Items/Procedures"
+      "path": "~/Items/Other/Procedures"
     },
     {
       "name": "AngelRingRecipe",
@@ -4040,7 +4040,7 @@
           "src/main/resources/data/euru/recipe/angel_ring_recipe.json"
         ]
       },
-      "path": "~/Items/Recipes"
+      "path": "~/Items/Other/Recipes"
     },
     {
       "name": "ChickenRingSpecialInformation",
@@ -4055,7 +4055,7 @@
           "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/ChickenRingSpecialInformationProcedure.java"
         ]
       },
-      "path": "~/Items/Procedures"
+      "path": "~/Items/Other/Procedures"
     },
     {
       "name": "SquidRingSpecialInformation",
@@ -4070,7 +4070,7 @@
           "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/SquidRingSpecialInformationProcedure.java"
         ]
       },
-      "path": "~/Items/Procedures"
+      "path": "~/Items/Other/Procedures"
     },
     {
       "name": "RingItemInHandTick",
@@ -4089,7 +4089,7 @@
           "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/RingItemInHandTickProcedure.java"
         ]
       },
-      "path": "~/Items/Procedures"
+      "path": "~/Items/Other/Procedures"
     },
     {
       "name": "AngelRingItemInInventoryTick",
@@ -4108,7 +4108,7 @@
           "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/AngelRingItemInInventoryTickProcedure.java"
         ]
       },
-      "path": "~/Items/Procedures"
+      "path": "~/Items/Other/Procedures"
     },
     {
       "name": "GlassCutterGlassDrop",
@@ -4143,7 +4143,7 @@
           "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/GlassCutterGlassDropProcedure.java"
         ]
       },
-      "path": "~/Items/Procedures"
+      "path": "~/Items/Other/Procedures"
     },
     {
       "name": "AngelRingBauble",
@@ -4191,7 +4191,7 @@
           "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/AngelRingSpecialInformationProcedure.java"
         ]
       },
-      "path": "~/Items/Procedures"
+      "path": "~/Items/Other/Procedures"
     },
     {
       "name": "LavaMillSpecialInformation",
@@ -4265,7 +4265,7 @@
           "src/main/java/net/wavedk/extrautilitiesreutilized/item/EvilInfusedIngotItem.java"
         ]
       },
-      "path": "~/Items"
+      "path": "~/Items/Other"
     },
     {
       "name": "BlockOfEvilInfusedIngot",
@@ -4295,7 +4295,7 @@
           "src/main/resources/data/euru/recipe/evil_infused_ingot_recipe.json"
         ]
       },
-      "path": "~/Items/Recipes"
+      "path": "~/Items/Other/Recipes"
     },
     {
       "name": "BlockOfEvilInfusedIngotRecipe",
@@ -4430,7 +4430,7 @@
           "src/main/java/net/wavedk/extrautilitiesreutilized/item/UltimateSpeedUpgradeItem.java"
         ]
       },
-      "path": "~/Items"
+      "path": "~/Items/Other"
     },
     {
       "name": "UltimateSpeedUpgradeRecipe",
@@ -4443,7 +4443,7 @@
           "src/main/resources/data/euru/recipe/ultimate_speed_upgrade_recipe.json"
         ]
       },
-      "path": "~/Items/Recipes"
+      "path": "~/Items/Other/Recipes"
     },
     {
       "name": "EnchanterRecipeType",
@@ -4555,7 +4555,7 @@
           "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/DOEDeathFromProcedureProcedure.java"
         ]
       },
-      "path": "~/Items/Procedures"
+      "path": "~/Items/Other/Procedures"
     },
     {
       "name": "ElectricFurnace",
@@ -6223,7 +6223,7 @@
           "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/OpenCraftingBlockJEIProcedure.java"
         ]
       },
-      "path": "~/Items/Procedures"
+      "path": "~/Items/Other/Procedures"
     },
     {
       "name": "GeneratorLuminance",
@@ -6263,7 +6263,7 @@
           "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/SquidRTShowProcedure.java"
         ]
       },
-      "path": "~/Items/JEI/Procedures"
+      "path": "~/Items/Other/JEI/Procedures"
     },
     {
       "name": "ChickenRTShow",
@@ -6283,7 +6283,7 @@
           "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/ChickenRTShowProcedure.java"
         ]
       },
-      "path": "~/Items/JEI/Procedures"
+      "path": "~/Items/Other/JEI/Procedures"
     },
     {
       "name": "GoldenLassoRT",
@@ -6297,7 +6297,7 @@
           "src/main/java/net/wavedk/extrautilitiesreutilized/jei_recipes/GoldenLassoRTRecipeCategory.java"
         ]
       },
-      "path": "~/Items/JEI"
+      "path": "~/Items/Other/JEI"
     },
     {
       "name": "GLChicken",
@@ -6310,7 +6310,7 @@
           "src/main/resources/data/euru/recipe/gl_chicken.json"
         ]
       },
-      "path": "~/Items/JEI"
+      "path": "~/Items/Other/JEI"
     },
     {
       "name": "GLSquid",
@@ -6323,7 +6323,7 @@
           "src/main/resources/data/euru/recipe/gl_squid.json"
         ]
       },
-      "path": "~/Items/JEI"
+      "path": "~/Items/Other/JEI"
     },
     {
       "name": "BatRTShow",
@@ -6343,7 +6343,7 @@
           "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/BatRTShowProcedure.java"
         ]
       },
-      "path": "~/Items/JEI/Procedures"
+      "path": "~/Items/Other/JEI/Procedures"
     },
     {
       "name": "GLBat",
@@ -6356,7 +6356,7 @@
           "src/main/resources/data/euru/recipe/gl_bat.json"
         ]
       },
-      "path": "~/Items/JEI"
+      "path": "~/Items/Other/JEI"
     },
     {
       "name": "CursedLassoRT",
@@ -6370,7 +6370,7 @@
           "src/main/java/net/wavedk/extrautilitiesreutilized/jei_recipes/CursedLassoRTRecipe.java"
         ]
       },
-      "path": "~/Items/JEI"
+      "path": "~/Items/Other/JEI"
     },
     {
       "name": "GhastRTShow",
@@ -6390,7 +6390,7 @@
           "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/GhastRTShowProcedure.java"
         ]
       },
-      "path": "~/Items/JEI/Procedures"
+      "path": "~/Items/Other/JEI/Procedures"
     },
     {
       "name": "CLGhast",
@@ -6403,7 +6403,7 @@
           "src/main/resources/data/euru/recipe/cl_ghast.json"
         ]
       },
-      "path": "~/Items/JEI"
+      "path": "~/Items/Other/JEI"
     },
     {
       "name": "ToggleGridPowerOverlay",
@@ -6628,7 +6628,7 @@
           "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/DiamondSickleBlockDestroyedWithToolProcedure.java"
         ]
       },
-      "path": "~/Items/Procedures/Sickles"
+      "path": "~/Items/Tools/Sickles/Procedures"
     },
     {
       "name": "DiamondSickle",
@@ -6642,7 +6642,7 @@
           "src/main/resources/assets/euru/models/item/diamond_sickle.json"
         ]
       },
-      "path": "~/Items"
+      "path": "~/Items/Tools/Sickles"
     },
     {
       "name": "DiamondSickleItemIsCraftedsmelted",
@@ -6661,7 +6661,7 @@
           "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/DiamondSickleItemIsCraftedsmeltedProcedure.java"
         ]
       },
-      "path": "~/Items/Procedures/Sickles"
+      "path": "~/Items/Tools/Sickles/Procedures"
     },
     {
       "name": "NetheriteSickle",
@@ -6675,7 +6675,7 @@
           "src/main/resources/assets/euru/models/item/netherite_sickle.json"
         ]
       },
-      "path": "~/Items"
+      "path": "~/Items/Tools/Sickles"
     },
     {
       "name": "NethSickleItemIsCraftedsmelted",
@@ -6694,7 +6694,7 @@
           "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/NethSickleItemIsCraftedsmeltedProcedure.java"
         ]
       },
-      "path": "~/Items/Procedures/Sickles"
+      "path": "~/Items/Tools/Sickles/Procedures"
     },
     {
       "name": "IronSickle",
@@ -6708,7 +6708,7 @@
           "src/main/resources/assets/euru/models/item/iron_sickle.json"
         ]
       },
-      "path": "~/Items"
+      "path": "~/Items/Tools/Sickles"
     },
     {
       "name": "IronSickleItemIsCraftedsmelted",
@@ -6727,7 +6727,7 @@
           "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/IronSickleItemIsCraftedsmeltedProcedure.java"
         ]
       },
-      "path": "~/Items/Procedures/Sickles"
+      "path": "~/Items/Tools/Sickles/Procedures"
     },
     {
       "name": "StoneSickle",
@@ -6741,7 +6741,7 @@
           "src/main/java/net/wavedk/extrautilitiesreutilized/item/StoneSickleItem.java"
         ]
       },
-      "path": "~/Items"
+      "path": "~/Items/Tools/Sickles"
     },
     {
       "name": "StoneSickleItemIsCraftedsmelted",
@@ -6760,7 +6760,7 @@
           "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/StoneSickleItemIsCraftedsmeltedProcedure.java"
         ]
       },
-      "path": "~/Items/Procedures/Sickles"
+      "path": "~/Items/Tools/Sickles/Procedures"
     },
     {
       "name": "WoodenSickleItemIsCraftedsmelted",
@@ -6779,7 +6779,7 @@
           "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/WoodenSickleItemIsCraftedsmeltedProcedure.java"
         ]
       },
-      "path": "~/Items/Procedures/Sickles"
+      "path": "~/Items/Tools/Sickles/Procedures"
     },
     {
       "name": "WoodenSickle",
@@ -6793,7 +6793,7 @@
           "src/main/java/net/wavedk/extrautilitiesreutilized/item/WoodenSickleItem.java"
         ]
       },
-      "path": "~/Items"
+      "path": "~/Items/Tools/Sickles"
     },
     {
       "name": "GoldenSickle",
@@ -6807,7 +6807,7 @@
           "src/main/java/net/wavedk/extrautilitiesreutilized/item/GoldenSickleItem.java"
         ]
       },
-      "path": "~/Items"
+      "path": "~/Items/Tools/Sickles"
     },
     {
       "name": "NetheriteSickleRecipe",
@@ -6821,7 +6821,7 @@
           "src/main/resources/data/euru/advancement/recipes/netherite_sickle_recipe.json"
         ]
       },
-      "path": "~/Items/Recipes"
+      "path": "~/Items/Other/Recipes"
     },
     {
       "name": "DiamondSickleRecipe",
@@ -6835,7 +6835,7 @@
           "src/main/resources/data/euru/advancement/recipes/diamond_sickle_recipe.json"
         ]
       },
-      "path": "~/Items/Recipes"
+      "path": "~/Items/Other/Recipes"
     },
     {
       "name": "IronSickleRecipe",
@@ -6849,7 +6849,7 @@
           "src/main/resources/data/euru/recipe/iron_sickle_recipe.json"
         ]
       },
-      "path": "~/Items/Recipes"
+      "path": "~/Items/Other/Recipes"
     },
     {
       "name": "GoldenSickleRecipe",
@@ -6863,7 +6863,7 @@
           "src/main/resources/data/euru/advancement/recipes/golden_sickle_recipe.json"
         ]
       },
-      "path": "~/Items/Recipes"
+      "path": "~/Items/Other/Recipes"
     },
     {
       "name": "WoodenSickleRecipe",
@@ -6877,7 +6877,7 @@
           "src/main/resources/data/euru/advancement/recipes/wooden_sickle_recipe.json"
         ]
       },
-      "path": "~/Items/Recipes"
+      "path": "~/Items/Other/Recipes"
     },
     {
       "name": "StoneSickleRecipe",
@@ -6891,7 +6891,7 @@
           "src/main/resources/data/euru/advancement/recipes/stone_sickle_recipe.json"
         ]
       },
-      "path": "~/Items/Recipes"
+      "path": "~/Items/Other/Recipes"
     },
     {
       "name": "CulinaryGenerator",
@@ -7256,7 +7256,7 @@
           "src/main/java/net/wavedk/extrautilitiesreutilized/item/WateringCanItem.java"
         ]
       },
-      "path": "~/Items"
+      "path": "~/Items/Tools"
     },
     {
       "name": "WateringCanItemInHandTick",
@@ -7295,7 +7295,7 @@
           "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/WateringCanItemInHandTickProcedure.java"
         ]
       },
-      "path": "~/Items/Procedures"
+      "path": "~/Items/Other/Procedures"
     },
     {
       "name": "WateringCanItemIsCraftedsmelted",
@@ -7314,7 +7314,7 @@
           "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/WateringCanItemIsCraftedsmeltedProcedure.java"
         ]
       },
-      "path": "~/Items/Procedures"
+      "path": "~/Items/Other/Procedures"
     },
     {
       "name": "FGenCFGManager",
@@ -7444,7 +7444,7 @@
           "src/main/java/net/wavedk/extrautilitiesreutilized/item/GoldenLassoCLWItem.java"
         ]
       },
-      "path": "~/Items/SpecialItems"
+      "path": "~/Items/Other/SpecialItems"
     },
     {
       "name": "GoldenLassoVillagerSpecialInformation",
@@ -7464,7 +7464,7 @@
           "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/GoldenLassoVillagerSpecialInformationProcedure.java"
         ]
       },
-      "path": "~/Items/Procedures"
+      "path": "~/Items/Other/Procedures"
     },
     {
       "name": "GLVillager",
@@ -7477,7 +7477,7 @@
           "src/main/resources/data/euru/recipe/gl_villager.json"
         ]
       },
-      "path": "~/Items/JEI"
+      "path": "~/Items/Other/JEI"
     },
     {
       "name": "VillagerRTShow",
@@ -7497,7 +7497,7 @@
           "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/VillagerRTShowProcedure.java"
         ]
       },
-      "path": "~/Items/JEI/Procedures"
+      "path": "~/Items/Other/JEI/Procedures"
     },
     {
       "name": "EyeOfRedstone",
@@ -7511,7 +7511,7 @@
           "src/main/java/net/wavedk/extrautilitiesreutilized/item/EyeOfRedstoneItem.java"
         ]
       },
-      "path": "~/Items"
+      "path": "~/Items/Other"
     },
     {
       "name": "CLWRecipe",
@@ -7537,7 +7537,7 @@
           "src/main/resources/data/euru/recipe/eor_recipe.json"
         ]
       },
-      "path": "~/Items/Recipes"
+      "path": "~/Items/Other/Recipes"
     },
     {
       "name": "WateringCanRecipe",
@@ -7550,7 +7550,7 @@
           "src/main/resources/data/euru/recipe/watering_can_recipe.json"
         ]
       },
-      "path": "~/Items/Recipes"
+      "path": "~/Items/Other/Recipes"
     },
     {
       "name": "GeneratorAddedHandler",
@@ -7774,7 +7774,7 @@
           "src/main/java/net/wavedk/extrautilitiesreutilized/item/EvilInfusedNuggetItem.java"
         ]
       },
-      "path": "~/Items"
+      "path": "~/Items/Other"
     },
     {
       "name": "EvilInfusedNuggetRecipe",
@@ -7787,7 +7787,7 @@
           "src/main/resources/data/euru/recipe/evil_infused_nugget_recipe.json"
         ]
       },
-      "path": "~/Items/Recipes"
+      "path": "~/Items/Other/Recipes"
     },
     {
       "name": "WoodenSpike",
@@ -8261,6 +8261,7 @@
       "CUSTOM:Enchanter"
     ],
     "BLOCKS:minecraft:mineable/pickaxe": [
+      "~Resonator@CUSTOM:Resonator",
       "~NetheriteSpike@CUSTOM:NetheriteSpike",
       "~DiamondSpike@CUSTOM:DiamondSpike",
       "~GoldSpike@CUSTOM:GoldSpike",
@@ -8295,11 +8296,11 @@
       "~GildedObsidian@CUSTOM:GildedObsidian",
       "~SurvivalGenerator@CUSTOM:SurvivalGenerator",
       "~MachineBlock@CUSTOM:MachineBlock",
-      "~Resonator@CUSTOM:Resonator",
       "~LunarPanel@CUSTOM:LunarPanel",
       "~SolarPanel@CUSTOM:SolarPanel"
     ],
     "BLOCKS:minecraft:needs_stone_tool": [
+      "~Resonator@CUSTOM:Resonator",
       "~IronSpike@CUSTOM:IronSpike",
       "~ElectricFurnace@CUSTOM:ElectricFurnace",
       "~BlockOfEvilInfusedIngot@CUSTOM:BlockOfEvilInfusedIngot",
@@ -8316,7 +8317,6 @@
       "~DoubleCompressedCobblestone@CUSTOM:DoubleCompressedCobblestone",
       "~CompressedCobblestone@CUSTOM:CompressedCobblestone",
       "~MachineBlock@CUSTOM:MachineBlock",
-      "~Resonator@CUSTOM:Resonator",
       "~LunarPanel@CUSTOM:LunarPanel",
       "~SolarPanel@CUSTOM:SolarPanel"
     ],
@@ -8330,8 +8330,8 @@
       "~GildedObsidian@CUSTOM:GildedObsidian"
     ],
     "BLOCKS:minecraft:mineable/axe": [
-      "~WoodenSpike@CUSTOM:WoodenSpike",
       "~ChunkLoadingWard@CUSTOM:ChunkLoadingWard",
+      "~WoodenSpike@CUSTOM:WoodenSpike",
       "~SlightlyLargerChest@CUSTOM:SlightlyLargerChest",
       "~MiniChest@CUSTOM:MiniChest",
       "~ManualMill@CUSTOM:ManualMill"
@@ -8654,7 +8654,7 @@
       "src/main/java/net/wavedk/extrautilitiesreutilized/entity/CustomEyeOfEnderEntity.java",
       "src/main/java/net/wavedk/extrautilitiesreutilized/world/TeleportBlockHandler.java"
     ],
-    "resource_folders": "{\"sections\":{\"models\":{\"folders\":[],\"resourceFolders\":{}},\"sounds\":{\"folders\":[],\"resourceFolders\":{}},\"textures\":{\"folders\":[{\"id\":\"4f213fb5-b212-4aa7-8738-9de5b9f3727d\",\"name\":\"Blocks\",\"parentId\":\"root\"},{\"id\":\"37e7d51f-177e-4b46-be2e-d39e0e3ddd57\",\"name\":\"Items\",\"parentId\":\"root\"},{\"id\":\"2797b893-354e-49b2-93bf-0bcd8eec97ea\",\"name\":\"Machines\",\"parentId\":\"4f213fb5-b212-4aa7-8738-9de5b9f3727d\"},{\"id\":\"3a6c1954-0f0c-4ff5-94a4-484d94910e50\",\"name\":\"Generators\",\"parentId\":\"4f213fb5-b212-4aa7-8738-9de5b9f3727d\"},{\"id\":\"3cd8600e-6112-4634-b60c-953e32d28ce6\",\"name\":\"Other\",\"parentId\":\"4f213fb5-b212-4aa7-8738-9de5b9f3727d\"},{\"id\":\"587220f5-8636-47bc-b8dc-a6f923c68977\",\"name\":\"GUI\",\"parentId\":\"2797b893-354e-49b2-93bf-0bcd8eec97ea\"}],\"resourceFolders\":{\"file:src/main/resources/assets/euru/textures/block/enchanteron.png\":\"4f213fb5-b212-4aa7-8738-9de5b9f3727d\",\"file:src/main/resources/assets/euru/textures/block/side-reso.png\":\"4f213fb5-b212-4aa7-8738-9de5b9f3727d\",\"file:src/main/resources/assets/euru/textures/block/reso-new.png\":\"4f213fb5-b212-4aa7-8738-9de5b9f3727d\",\"file:src/main/resources/assets/euru/textures/block/enchanteroff.png\":\"4f213fb5-b212-4aa7-8738-9de5b9f3727d\",\"file:src/main/resources/assets/euru/textures/block/crusherfront.png\":\"4f213fb5-b212-4aa7-8738-9de5b9f3727d\",\"file:src/main/resources/assets/euru/textures/block/texture.png\":\"4f213fb5-b212-4aa7-8738-9de5b9f3727d\",\"file:src/main/resources/assets/euru/textures/block/top-reso.png\":\"4f213fb5-b212-4aa7-8738-9de5b9f3727d\"}},\"animations\":{\"folders\":[],\"resourceFolders\":{}},\"structures\":{\"folders\":[],\"resourceFolders\":{}},\"screenshots\":{\"folders\":[],\"resourceFolders\":{}}}}"
+    "resource_folders": "{\"sections\":{\"models\":{\"folders\":[],\"resourceFolders\":{}},\"sounds\":{\"folders\":[],\"resourceFolders\":{}},\"textures\":{\"folders\":[{\"id\":\"4f213fb5-b212-4aa7-8738-9de5b9f3727d\",\"name\":\"Blocks\",\"parentId\":\"root\"},{\"id\":\"37e7d51f-177e-4b46-be2e-d39e0e3ddd57\",\"name\":\"Items\",\"parentId\":\"root\"},{\"id\":\"2797b893-354e-49b2-93bf-0bcd8eec97ea\",\"name\":\"Machines\",\"parentId\":\"4f213fb5-b212-4aa7-8738-9de5b9f3727d\"},{\"id\":\"3a6c1954-0f0c-4ff5-94a4-484d94910e50\",\"name\":\"Generators\",\"parentId\":\"4f213fb5-b212-4aa7-8738-9de5b9f3727d\"},{\"id\":\"3cd8600e-6112-4634-b60c-953e32d28ce6\",\"name\":\"Other\",\"parentId\":\"4f213fb5-b212-4aa7-8738-9de5b9f3727d\"},{\"id\":\"d504de0a-1419-4a03-9331-5d5406bbe31f\",\"name\":\"Compressed\",\"parentId\":\"3cd8600e-6112-4634-b60c-953e32d28ce6\"},{\"id\":\"99495314-1fc6-4358-b3c4-36413672163d\",\"name\":\"Cobblestone\",\"parentId\":\"d504de0a-1419-4a03-9331-5d5406bbe31f\"},{\"id\":\"2670cd62-7c2b-428d-8b56-7d7d0dfdef73\",\"name\":\"Tools\",\"parentId\":\"37e7d51f-177e-4b46-be2e-d39e0e3ddd57\"},{\"id\":\"98413ab5-3511-4770-8db6-2a886f27f94e\",\"name\":\"Materials\",\"parentId\":\"37e7d51f-177e-4b46-be2e-d39e0e3ddd57\"},{\"id\":\"b803b059-abd6-44ea-964b-738ad17c6ab3\",\"name\":\"Utility\",\"parentId\":\"37e7d51f-177e-4b46-be2e-d39e0e3ddd57\"},{\"id\":\"f2f81222-17b0-4378-9e40-f39a5cb6d524\",\"name\":\"GUI\",\"parentId\":\"root\"},{\"id\":\"85e26bcb-1cfd-4acd-9983-e33715e41da7\",\"name\":\"Sprites\",\"parentId\":\"f2f81222-17b0-4378-9e40-f39a5cb6d524\"},{\"id\":\"9415db34-71b2-4aa3-a973-c3e53e0687a0\",\"name\":\"Buttons\",\"parentId\":\"f2f81222-17b0-4378-9e40-f39a5cb6d524\"},{\"id\":\"8f193d83-aaa0-44de-b3fe-56ee138c8fac\",\"name\":\"GUI_BG\",\"parentId\":\"f2f81222-17b0-4378-9e40-f39a5cb6d524\"},{\"id\":\"5d243f44-b659-42e5-b76c-3b3df3143d3b\",\"name\":\"Elements\",\"parentId\":\"f2f81222-17b0-4378-9e40-f39a5cb6d524\"},{\"id\":\"d0436a62-f298-4aad-92c3-b79c18c41b5a\",\"name\":\"BD\",\"parentId\":\"f2f81222-17b0-4378-9e40-f39a5cb6d524\"}],\"resourceFolders\":{\"file:src/main/resources/assets/euru/textures/block/enchanteron.png\":\"2797b893-354e-49b2-93bf-0bcd8eec97ea\",\"file:src/main/resources/assets/euru/textures/block/side-reso.png\":\"4f213fb5-b212-4aa7-8738-9de5b9f3727d\",\"file:src/main/resources/assets/euru/textures/block/reso-new.png\":\"2797b893-354e-49b2-93bf-0bcd8eec97ea\",\"file:src/main/resources/assets/euru/textures/block/enchanteroff.png\":\"2797b893-354e-49b2-93bf-0bcd8eec97ea\",\"file:src/main/resources/assets/euru/textures/block/crusherfront.png\":\"2797b893-354e-49b2-93bf-0bcd8eec97ea\",\"file:src/main/resources/assets/euru/textures/block/texture.png\":\"2797b893-354e-49b2-93bf-0bcd8eec97ea\",\"file:src/main/resources/assets/euru/textures/block/top-reso.png\":\"4f213fb5-b212-4aa7-8738-9de5b9f3727d\",\"file:src/main/resources/assets/euru/textures/block/onidle.png\":\"2797b893-354e-49b2-93bf-0bcd8eec97ea\",\"file:src/main/resources/assets/euru/textures/block/cgen.png\":\"3a6c1954-0f0c-4ff5-94a4-484d94910e50\",\"file:src/main/resources/assets/euru/textures/block/chunkloader.png\":\"3cd8600e-6112-4634-b60c-953e32d28ce6\",\"file:src/main/resources/assets/euru/textures/block/clparticle.png\":\"3cd8600e-6112-4634-b60c-953e32d28ce6\",\"file:src/main/resources/assets/euru/textures/block/creativemill.png\":\"3a6c1954-0f0c-4ff5-94a4-484d94910e50\",\"file:src/main/resources/assets/euru/textures/block/culinarytemp.png\":\"3a6c1954-0f0c-4ff5-94a4-484d94910e50\",\"file:src/main/resources/assets/euru/textures/block/disenchanttemp.png\":\"3a6c1954-0f0c-4ff5-94a4-484d94910e50\",\"file:src/main/resources/assets/euru/textures/block/doublecobble.png\":\"99495314-1fc6-4358-b3c4-36413672163d\",\"file:src/main/resources/assets/euru/textures/block/endergen.png\":\"3a6c1954-0f0c-4ff5-94a4-484d94910e50\",\"file:src/main/resources/assets/euru/textures/block/evilblock.png\":\"3cd8600e-6112-4634-b60c-953e32d28ce6\",\"file:src/main/resources/assets/euru/textures/block/exgentemp.png\":\"3a6c1954-0f0c-4ff5-94a4-484d94910e50\",\"file:src/main/resources/assets/euru/textures/block/fgen-front-off.png\":\"3a6c1954-0f0c-4ff5-94a4-484d94910e50\",\"file:src/main/resources/assets/euru/textures/block/fgen-front.png\":\"3a6c1954-0f0c-4ff5-94a4-484d94910e50\",\"file:src/main/resources/assets/euru/textures/block/firemill.png\":\"3a6c1954-0f0c-4ff5-94a4-484d94910e50\",\"file:src/main/resources/assets/euru/textures/block/frame1.png\":\"3a6c1954-0f0c-4ff5-94a4-484d94910e50\",\"file:src/main/resources/assets/euru/textures/block/frame2.png\":\"3a6c1954-0f0c-4ff5-94a4-484d94910e50\",\"file:src/main/resources/assets/euru/textures/block/frame3.png\":\"3a6c1954-0f0c-4ff5-94a4-484d94910e50\",\"file:src/main/resources/assets/euru/textures/block/frame4.png\":\"3a6c1954-0f0c-4ff5-94a4-484d94910e50\",\"file:src/main/resources/assets/euru/textures/block/furnacetop.png\":\"2797b893-354e-49b2-93bf-0bcd8eec97ea\",\"file:src/main/resources/assets/euru/textures/block/furnace_bottomfinalv1.png\":\"2797b893-354e-49b2-93bf-0bcd8eec97ea\",\"file:src/main/resources/assets/euru/textures/block/furnace_finaloffv1.png\":\"2797b893-354e-49b2-93bf-0bcd8eec97ea\",\"file:src/main/resources/assets/euru/textures/block/furnace_finaloffv1_side.png\":\"2797b893-354e-49b2-93bf-0bcd8eec97ea\",\"file:src/main/resources/assets/euru/textures/block/furnace_finalonv1.png\":\"2797b893-354e-49b2-93bf-0bcd8eec97ea\",\"file:src/main/resources/assets/euru/textures/block/furnace_side.png\":\"3a6c1954-0f0c-4ff5-94a4-484d94910e50\",\"file:src/main/resources/assets/euru/textures/block/furnace_top.png\":\"3a6c1954-0f0c-4ff5-94a4-484d94910e50\",\"file:src/main/resources/assets/euru/textures/block/gilded_obsidian_angel_alt3_finalv1.png\":\"3cd8600e-6112-4634-b60c-953e32d28ce6\",\"file:src/main/resources/assets/euru/textures/block/gilded_obsidian_angel_alt3_finalv1_sidetop.png\":\"3cd8600e-6112-4634-b60c-953e32d28ce6\",\"file:src/main/resources/assets/euru/textures/block/gilded_obsidian_v2final_final_final_dafinaleblahblah.png\":\"3cd8600e-6112-4634-b60c-953e32d28ce6\",\"file:src/main/resources/assets/euru/textures/block/largerchest-bottomtop.png\":\"3cd8600e-6112-4634-b60c-953e32d28ce6\",\"file:src/main/resources/assets/euru/textures/block/largerchest-dront.png\":\"3cd8600e-6112-4634-b60c-953e32d28ce6\",\"file:src/main/resources/assets/euru/textures/block/largerchest-sides.png\":\"3cd8600e-6112-4634-b60c-953e32d28ce6\",\"file:src/main/resources/assets/euru/textures/block/lavamill-default.png\":\"3a6c1954-0f0c-4ff5-94a4-484d94910e50\",\"file:src/main/resources/assets/euru/textures/block/lavamill-side-default.png\":\"3a6c1954-0f0c-4ff5-94a4-484d94910e50\",\"file:src/main/resources/assets/euru/textures/block/lavamill-side.png\":\"3a6c1954-0f0c-4ff5-94a4-484d94910e50\",\"file:src/main/resources/assets/euru/textures/block/lavamill-top.png\":\"3a6c1954-0f0c-4ff5-94a4-484d94910e50\",\"file:src/main/resources/assets/euru/textures/block/machine_block_bottom.png\":\"3cd8600e-6112-4634-b60c-953e32d28ce6\",\"file:src/main/resources/assets/euru/textures/block/machine_block_side.png\":\"3cd8600e-6112-4634-b60c-953e32d28ce6\",\"file:src/main/resources/assets/euru/textures/block/machine_block_top.png\":\"3cd8600e-6112-4634-b60c-953e32d28ce6\",\"file:src/main/resources/assets/euru/textures/block/manualmilltemp.png\":\"3a6c1954-0f0c-4ff5-94a4-484d94910e50\",\"file:src/main/resources/assets/euru/textures/block/minichest.png\":\"3cd8600e-6112-4634-b60c-953e32d28ce6\",\"file:src/main/resources/assets/euru/textures/block/nincobble.png\":\"99495314-1fc6-4358-b3c4-36413672163d\",\"file:src/main/resources/assets/euru/textures/block/nsgeneratordown.png\":\"3a6c1954-0f0c-4ff5-94a4-484d94910e50\",\"file:src/main/resources/assets/euru/textures/block/nsgeneratoroff.png\":\"3a6c1954-0f0c-4ff5-94a4-484d94910e50\",\"file:src/main/resources/assets/euru/textures/block/nsgeneratoron.png\":\"3a6c1954-0f0c-4ff5-94a4-484d94910e50\",\"file:src/main/resources/assets/euru/textures/block/nsgeneratorside.png\":\"3a6c1954-0f0c-4ff5-94a4-484d94910e50\",\"file:src/main/resources/assets/euru/textures/block/nsgeneratorup.png\":\"3a6c1954-0f0c-4ff5-94a4-484d94910e50\",\"file:src/main/resources/assets/euru/textures/block/octcobble.png\":\"99495314-1fc6-4358-b3c4-36413672163d\",\"file:src/main/resources/assets/euru/textures/block/overclocked_temp.png\":\"3a6c1954-0f0c-4ff5-94a4-484d94910e50\",\"file:src/main/resources/assets/euru/textures/block/panel_bottom.png\":\"3a6c1954-0f0c-4ff5-94a4-484d94910e50\",\"file:src/main/resources/assets/euru/textures/block/panel_lunar.png\":\"3a6c1954-0f0c-4ff5-94a4-484d94910e50\",\"file:src/main/resources/assets/euru/textures/block/panel_side.png\":\"3a6c1954-0f0c-4ff5-94a4-484d94910e50\",\"file:src/main/resources/assets/euru/textures/block/panel_solar.png\":\"3a6c1954-0f0c-4ff5-94a4-484d94910e50\",\"file:src/main/resources/assets/euru/textures/block/quadcobble.png\":\"99495314-1fc6-4358-b3c4-36413672163d\",\"file:src/main/resources/assets/euru/textures/block/quidcobble.png\":\"99495314-1fc6-4358-b3c4-36413672163d\",\"file:src/main/resources/assets/euru/textures/block/resonator-bottom.png\":\"99495314-1fc6-4358-b3c4-36413672163d\",\"file:src/main/resources/assets/euru/textures/block/sepcobble.png\":\"99495314-1fc6-4358-b3c4-36413672163d\",\"file:src/main/resources/assets/euru/textures/block/sgen-front-off.png\":\"3a6c1954-0f0c-4ff5-94a4-484d94910e50\",\"file:src/main/resources/assets/euru/textures/block/sgen-front.png\":\"3a6c1954-0f0c-4ff5-94a4-484d94910e50\",\"file:src/main/resources/assets/euru/textures/block/sixcobble.png\":\"99495314-1fc6-4358-b3c4-36413672163d\",\"file:src/main/resources/assets/euru/textures/block/smoothburnstone.png\":\"3cd8600e-6112-4634-b60c-953e32d28ce6\",\"file:src/main/resources/assets/euru/textures/block/stage1.png\":\"3cd8600e-6112-4634-b60c-953e32d28ce6\",\"file:src/main/resources/assets/euru/textures/block/stage2.png\":\"3cd8600e-6112-4634-b60c-953e32d28ce6\",\"file:src/main/resources/assets/euru/textures/block/stage3.png\":\"3cd8600e-6112-4634-b60c-953e32d28ce6\",\"file:src/main/resources/assets/euru/textures/block/stage4.png\":\"3cd8600e-6112-4634-b60c-953e32d28ce6\",\"file:src/main/resources/assets/euru/textures/block/stage5.png\":\"3cd8600e-6112-4634-b60c-953e32d28ce6\",\"file:src/main/resources/assets/euru/textures/block/stage6.png\":\"3cd8600e-6112-4634-b60c-953e32d28ce6\",\"file:src/main/resources/assets/euru/textures/block/stage7.png\":\"3cd8600e-6112-4634-b60c-953e32d28ce6\",\"file:src/main/resources/assets/euru/textures/block/stage8.png\":\"3cd8600e-6112-4634-b60c-953e32d28ce6\",\"file:src/main/resources/assets/euru/textures/block/triplecobble.png\":\"99495314-1fc6-4358-b3c4-36413672163d\",\"file:src/main/resources/assets/euru/textures/block/watermill-default.png\":\"3a6c1954-0f0c-4ff5-94a4-484d94910e50\",\"file:src/main/resources/assets/euru/textures/block/watermill-side.png\":\"3a6c1954-0f0c-4ff5-94a4-484d94910e50\",\"file:src/main/resources/assets/euru/textures/block/watermill-top.png\":\"3a6c1954-0f0c-4ff5-94a4-484d94910e50\",\"file:src/main/resources/assets/euru/textures/block/watermilside.png\":\"3a6c1954-0f0c-4ff5-94a4-484d94910e50\",\"file:src/main/resources/assets/euru/textures/item/4thupgrade.png\":\"b803b059-abd6-44ea-964b-738ad17c6ab3\",\"file:src/main/resources/assets/euru/textures/item/bag_of_holding.png\":\"b803b059-abd6-44ea-964b-738ad17c6ab3\",\"file:src/main/resources/assets/euru/textures/item/chickenwing2.png\":\"b803b059-abd6-44ea-964b-738ad17c6ab3\",\"file:src/main/resources/assets/euru/textures/item/cursed_lasso.png\":\"b803b059-abd6-44ea-964b-738ad17c6ab3\",\"file:src/main/resources/assets/euru/textures/item/cursed_lassofull.png\":\"b803b059-abd6-44ea-964b-738ad17c6ab3\",\"file:src/main/resources/assets/euru/textures/item/diamondsickletemp.png\":\"2670cd62-7c2b-428d-8b56-7d7d0dfdef73\",\"file:src/main/resources/assets/euru/textures/item/drop_of_evil-export.png\":\"98413ab5-3511-4770-8db6-2a886f27f94e\",\"file:src/main/resources/assets/euru/textures/item/evilingot.png\":\"98413ab5-3511-4770-8db6-2a886f27f94e\",\"file:src/main/resources/assets/euru/textures/item/evilnugget.png\":\"98413ab5-3511-4770-8db6-2a886f27f94e\",\"file:src/main/resources/assets/euru/textures/item/expapple.png\":\"b803b059-abd6-44ea-964b-738ad17c6ab3\",\"file:src/main/resources/assets/euru/textures/item/expirienceingot.png\":\"98413ab5-3511-4770-8db6-2a886f27f94e\",\"file:src/main/resources/assets/euru/textures/item/expiriencenugget.png\":\"98413ab5-3511-4770-8db6-2a886f27f94e\",\"file:src/main/resources/assets/euru/textures/item/eye_of_redstone.png\":\"98413ab5-3511-4770-8db6-2a886f27f94e\",\"file:src/main/resources/assets/euru/textures/item/glasscutternew.png\":\"2670cd62-7c2b-428d-8b56-7d7d0dfdef73\",\"file:src/main/resources/assets/euru/textures/item/goldangel.png\":\"b803b059-abd6-44ea-964b-738ad17c6ab3\",\"file:src/main/resources/assets/euru/textures/item/golden_lasso.png\":\"b803b059-abd6-44ea-964b-738ad17c6ab3\",\"file:src/main/resources/assets/euru/textures/item/golden_lassofull.png\":\"b803b059-abd6-44ea-964b-738ad17c6ab3\",\"file:src/main/resources/assets/euru/textures/item/goldringbare.png\":\"b803b059-abd6-44ea-964b-738ad17c6ab3\",\"file:src/main/resources/assets/euru/textures/item/goldsickletempo.png\":\"2670cd62-7c2b-428d-8b56-7d7d0dfdef73\",\"file:src/main/resources/assets/euru/textures/item/gold_nuggetexp.png\":\"98413ab5-3511-4770-8db6-2a886f27f94e\",\"file:src/main/resources/assets/euru/textures/item/ironsickletemp.png\":\"2670cd62-7c2b-428d-8b56-7d7d0dfdef73\",\"file:src/main/resources/assets/euru/textures/item/lunardust.png\":\"98413ab5-3511-4770-8db6-2a886f27f94e\",\"file:src/main/resources/assets/euru/textures/item/nethsickletemp.png\":\"2670cd62-7c2b-428d-8b56-7d7d0dfdef73\",\"file:src/main/resources/assets/euru/textures/item/newrrc.png\":\"98413ab5-3511-4770-8db6-2a886f27f94e\",\"file:src/main/resources/assets/euru/textures/item/redmill.png\":\"98413ab5-3511-4770-8db6-2a886f27f94e\",\"file:src/main/resources/assets/euru/textures/item/scanner-temp.png\":\"2670cd62-7c2b-428d-8b56-7d7d0dfdef73\",\"file:src/main/resources/assets/euru/textures/item/shards-1.png\":\"98413ab5-3511-4770-8db6-2a886f27f94e\",\"file:src/main/resources/assets/euru/textures/item/shards-2.png\":\"98413ab5-3511-4770-8db6-2a886f27f94e\",\"file:src/main/resources/assets/euru/textures/item/shards-3.png\":\"98413ab5-3511-4770-8db6-2a886f27f94e\",\"file:src/main/resources/assets/euru/textures/item/shards-4.png\":\"98413ab5-3511-4770-8db6-2a886f27f94e\",\"file:src/main/resources/assets/euru/textures/item/shards-5.png\":\"98413ab5-3511-4770-8db6-2a886f27f94e\",\"file:src/main/resources/assets/euru/textures/item/shards-6.png\":\"98413ab5-3511-4770-8db6-2a886f27f94e\",\"file:src/main/resources/assets/euru/textures/item/shards-7.png\":\"98413ab5-3511-4770-8db6-2a886f27f94e\",\"file:src/main/resources/assets/euru/textures/item/shards-8.png\":\"98413ab5-3511-4770-8db6-2a886f27f94e\",\"file:src/main/resources/assets/euru/textures/item/squidring.png\":\"b803b059-abd6-44ea-964b-738ad17c6ab3\",\"file:src/main/resources/assets/euru/textures/item/stage-1.png\":\"b803b059-abd6-44ea-964b-738ad17c6ab3\",\"file:src/main/resources/assets/euru/textures/item/stonesickletemp.png\":\"2670cd62-7c2b-428d-8b56-7d7d0dfdef73\",\"file:src/main/resources/assets/euru/textures/item/upgrade_base2.png\":\"98413ab5-3511-4770-8db6-2a886f27f94e\",\"file:src/main/resources/assets/euru/textures/item/upgrade_basebetter.png\":\"b803b059-abd6-44ea-964b-738ad17c6ab3\",\"file:src/main/resources/assets/euru/textures/item/upgrade_basemagic.png\":\"b803b059-abd6-44ea-964b-738ad17c6ab3\",\"file:src/main/resources/assets/euru/textures/item/wateringcan.png\":\"2670cd62-7c2b-428d-8b56-7d7d0dfdef73\",\"file:src/main/resources/assets/euru/textures/item/woodsickletemp.png\":\"2670cd62-7c2b-428d-8b56-7d7d0dfdef73\",\"file:src/main/resources/assets/euru/textures/screens/arrowstrip.png\":\"85e26bcb-1cfd-4acd-9983-e33715e41da7\",\"file:src/main/resources/assets/euru/textures/screens/asprite.png\":\"85e26bcb-1cfd-4acd-9983-e33715e41da7\",\"file:src/main/resources/assets/euru/textures/screens/enchanter_strip.png\":\"85e26bcb-1cfd-4acd-9983-e33715e41da7\",\"file:src/main/resources/assets/euru/textures/screens/strip.png\":\"85e26bcb-1cfd-4acd-9983-e33715e41da7\",\"file:src/main/resources/assets/euru/textures/screens/blank-whiteborder-x22.png\":\"9415db34-71b2-4aa3-a973-c3e53e0687a0\",\"file:src/main/resources/assets/euru/textures/screens/blank_whiteborder_x20.png\":\"9415db34-71b2-4aa3-a973-c3e53e0687a0\",\"file:src/main/resources/assets/euru/textures/screens/button-always-off-high.png\":\"9415db34-71b2-4aa3-a973-c3e53e0687a0\",\"file:src/main/resources/assets/euru/textures/screens/button-always-off.png\":\"9415db34-71b2-4aa3-a973-c3e53e0687a0\",\"file:src/main/resources/assets/euru/textures/screens/button-gun-high.png\":\"9415db34-71b2-4aa3-a973-c3e53e0687a0\",\"file:src/main/resources/assets/euru/textures/screens/button-gun.png\":\"9415db34-71b2-4aa3-a973-c3e53e0687a0\",\"file:src/main/resources/assets/euru/textures/screens/button-highlight.png\":\"9415db34-71b2-4aa3-a973-c3e53e0687a0\",\"file:src/main/resources/assets/euru/textures/screens/button-red-high.png\":\"9415db34-71b2-4aa3-a973-c3e53e0687a0\",\"file:src/main/resources/assets/euru/textures/screens/button-red-off-high.png\":\"9415db34-71b2-4aa3-a973-c3e53e0687a0\",\"file:src/main/resources/assets/euru/textures/screens/button-red-off.png\":\"9415db34-71b2-4aa3-a973-c3e53e0687a0\",\"file:src/main/resources/assets/euru/textures/screens/button-red.png\":\"9415db34-71b2-4aa3-a973-c3e53e0687a0\",\"file:src/main/resources/assets/euru/textures/screens/button.png\":\"9415db34-71b2-4aa3-a973-c3e53e0687a0\",\"file:src/main/resources/assets/euru/textures/screens/bag_of_holding_gui.png\":\"8f193d83-aaa0-44de-b3fe-56ee138c8fac\",\"file:src/main/resources/assets/euru/textures/screens/blankecbd.png\":\"8f193d83-aaa0-44de-b3fe-56ee138c8fac\",\"file:src/main/resources/assets/euru/textures/screens/cgenbg.png\":\"8f193d83-aaa0-44de-b3fe-56ee138c8fac\",\"file:src/main/resources/assets/euru/textures/screens/chickenbd.png\":\"8f193d83-aaa0-44de-b3fe-56ee138c8fac\",\"file:src/main/resources/assets/euru/textures/screens/creative_gen_gui.png\":\"8f193d83-aaa0-44de-b3fe-56ee138c8fac\",\"file:src/main/resources/assets/euru/textures/screens/crusher_gui.png\":\"8f193d83-aaa0-44de-b3fe-56ee138c8fac\",\"file:src/main/resources/assets/euru/textures/screens/crusher_main_gui.png\":\"8f193d83-aaa0-44de-b3fe-56ee138c8fac\",\"file:src/main/resources/assets/euru/textures/screens/degenbd.png\":\"8f193d83-aaa0-44de-b3fe-56ee138c8fac\",\"file:src/main/resources/assets/euru/textures/screens/electric_furnace_gui.png\":\"8f193d83-aaa0-44de-b3fe-56ee138c8fac\",\"file:src/main/resources/assets/euru/textures/screens/enchanterbackdrop.png\":\"8f193d83-aaa0-44de-b3fe-56ee138c8fac\",\"file:src/main/resources/assets/euru/textures/screens/enchanter_gui.png\":\"8f193d83-aaa0-44de-b3fe-56ee138c8fac\",\"file:src/main/resources/assets/euru/textures/screens/endergenbackdrop.png\":\"8f193d83-aaa0-44de-b3fe-56ee138c8fac\",\"file:src/main/resources/assets/euru/textures/screens/e_furnace_gui.png\":\"8f193d83-aaa0-44de-b3fe-56ee138c8fac\",\"file:src/main/resources/assets/euru/textures/screens/e_gen_gui.png\":\"8f193d83-aaa0-44de-b3fe-56ee138c8fac\",\"file:src/main/resources/assets/euru/textures/screens/fgenback-text-net.png\":\"8f193d83-aaa0-44de-b3fe-56ee138c8fac\",\"file:src/main/resources/assets/euru/textures/screens/f_gen_gui.png\":\"8f193d83-aaa0-44de-b3fe-56ee138c8fac\",\"file:src/main/resources/assets/euru/textures/screens/generator_gui.png\":\"8f193d83-aaa0-44de-b3fe-56ee138c8fac\",\"file:src/main/resources/assets/euru/textures/screens/mini_chest_gui.png\":\"8f193d83-aaa0-44de-b3fe-56ee138c8fac\",\"file:src/main/resources/assets/euru/textures/screens/nsgenjeiback.png\":\"8f193d83-aaa0-44de-b3fe-56ee138c8fac\",\"file:src/main/resources/assets/euru/textures/screens/ns_gen_gui.png\":\"8f193d83-aaa0-44de-b3fe-56ee138c8fac\",\"file:src/main/resources/assets/euru/textures/screens/ogenbackdrop.png\":\"8f193d83-aaa0-44de-b3fe-56ee138c8fac\",\"file:src/main/resources/assets/euru/textures/screens/o_gen_gui.png\":\"8f193d83-aaa0-44de-b3fe-56ee138c8fac\",\"file:src/main/resources/assets/euru/textures/screens/resback-text.png\":\"8f193d83-aaa0-44de-b3fe-56ee138c8fac\",\"file:src/main/resources/assets/euru/textures/screens/resonator_gui.png\":\"8f193d83-aaa0-44de-b3fe-56ee138c8fac\",\"file:src/main/resources/assets/euru/textures/screens/sgen.png\":\"8f193d83-aaa0-44de-b3fe-56ee138c8fac\",\"file:src/main/resources/assets/euru/textures/screens/sgenback-text-net.png\":\"8f193d83-aaa0-44de-b3fe-56ee138c8fac\",\"file:src/main/resources/assets/euru/textures/screens/slightly_larger_chest_gui.png\":\"8f193d83-aaa0-44de-b3fe-56ee138c8fac\",\"file:src/main/resources/assets/euru/textures/screens/squidbd.png\":\"8f193d83-aaa0-44de-b3fe-56ee138c8fac\",\"file:src/main/resources/assets/euru/textures/screens/survival_generator_gui.png\":\"8f193d83-aaa0-44de-b3fe-56ee138c8fac\",\"file:src/main/resources/assets/euru/textures/screens/survival_gen_gui.png\":\"8f193d83-aaa0-44de-b3fe-56ee138c8fac\",\"file:src/main/resources/assets/euru/textures/screens/s_2_gen_gui.png\":\"8f193d83-aaa0-44de-b3fe-56ee138c8fac\",\"file:src/main/resources/assets/euru/textures/screens/s_gen_gui.png\":\"8f193d83-aaa0-44de-b3fe-56ee138c8fac\",\"file:src/main/resources/assets/euru/textures/screens/blankx24.png\":\"9415db34-71b2-4aa3-a973-c3e53e0687a0\",\"file:src/main/resources/assets/euru/textures/screens/blank_22x22.png\":\"9415db34-71b2-4aa3-a973-c3e53e0687a0\",\"file:src/main/resources/assets/euru/textures/screens/blank_x20.png\":\"9415db34-71b2-4aa3-a973-c3e53e0687a0\",\"file:src/main/resources/assets/euru/textures/screens/bat.png\":\"5d243f44-b659-42e5-b76c-3b3df3143d3b\",\"file:src/main/resources/assets/euru/textures/screens/book5.png\":\"5d243f44-b659-42e5-b76c-3b3df3143d3b\",\"file:src/main/resources/assets/euru/textures/screens/chicken.png\":\"5d243f44-b659-42e5-b76c-3b3df3143d3b\",\"file:src/main/resources/assets/euru/textures/screens/cross-32x.png\":\"5d243f44-b659-42e5-b76c-3b3df3143d3b\",\"file:src/main/resources/assets/euru/textures/screens/crsvwv.png\":\"5d243f44-b659-42e5-b76c-3b3df3143d3b\",\"file:src/main/resources/assets/euru/textures/screens/ghast.png\":\"5d243f44-b659-42e5-b76c-3b3df3143d3b\",\"file:src/main/resources/assets/euru/textures/screens/lapisoutline.png\":\"5d243f44-b659-42e5-b76c-3b3df3143d3b\",\"file:src/main/resources/assets/euru/textures/screens/squid.png\":\"5d243f44-b659-42e5-b76c-3b3df3143d3b\",\"file:src/main/resources/assets/euru/textures/screens/subackdrop.png\":\"5d243f44-b659-42e5-b76c-3b3df3143d3b\",\"file:src/main/resources/assets/euru/textures/screens/symbol_cross.png\":\"5d243f44-b659-42e5-b76c-3b3df3143d3b\",\"file:src/main/resources/assets/euru/textures/screens/villager.png\":\"5d243f44-b659-42e5-b76c-3b3df3143d3b\",\"file:src/main/resources/assets/euru/textures/screens/efurnaceoffbd.png\":\"d0436a62-f298-4aad-92c3-b79c18c41b5a\",\"file:src/main/resources/assets/euru/textures/screens/efurnaceonbd.png\":\"d0436a62-f298-4aad-92c3-b79c18c41b5a\",\"file:src/main/resources/assets/euru/textures/screens/fgenbackdrop2-off.png\":\"d0436a62-f298-4aad-92c3-b79c18c41b5a\",\"file:src/main/resources/assets/euru/textures/screens/fgenbackdrop2-on.png\":\"d0436a62-f298-4aad-92c3-b79c18c41b5a\",\"file:src/main/resources/assets/euru/textures/screens/fgen_strip.png\":\"d0436a62-f298-4aad-92c3-b79c18c41b5a\",\"file:src/main/resources/assets/euru/textures/screens/ns-backdrop-off.png\":\"d0436a62-f298-4aad-92c3-b79c18c41b5a\",\"file:src/main/resources/assets/euru/textures/screens/ns-backdrop.png\":\"d0436a62-f298-4aad-92c3-b79c18c41b5a\",\"file:src/main/resources/assets/euru/textures/screens/nsgen_strip.png\":\"d0436a62-f298-4aad-92c3-b79c18c41b5a\",\"file:src/main/resources/assets/euru/textures/screens/onbg.png\":\"d0436a62-f298-4aad-92c3-b79c18c41b5a\",\"file:src/main/resources/assets/euru/textures/screens/onbganim.png\":\"d0436a62-f298-4aad-92c3-b79c18c41b5a\",\"file:src/main/resources/assets/euru/textures/screens/resbackdrop.png\":\"d0436a62-f298-4aad-92c3-b79c18c41b5a\",\"file:src/main/resources/assets/euru/textures/screens/sgenback.png\":\"d0436a62-f298-4aad-92c3-b79c18c41b5a\",\"file:src/main/resources/assets/euru/textures/screens/sgenbackdrop2-off.png\":\"d0436a62-f298-4aad-92c3-b79c18c41b5a\",\"file:src/main/resources/assets/euru/textures/screens/sgenbackdrop2-on.png\":\"d0436a62-f298-4aad-92c3-b79c18c41b5a\",\"file:src/main/resources/assets/euru/textures/screens/sgenbackoff.png\":\"d0436a62-f298-4aad-92c3-b79c18c41b5a\",\"file:src/main/resources/assets/euru/textures/screens/sgen_strip.png\":\"d0436a62-f298-4aad-92c3-b79c18c41b5a\",\"file:src/main/resources/assets/euru/textures/screens/cgentext.png\":\"5d243f44-b659-42e5-b76c-3b3df3143d3b\"}},\"animations\":{\"folders\":[],\"resourceFolders\":{}},\"structures\":{\"folders\":[],\"resourceFolders\":{}},\"screenshots\":{\"folders\":[],\"resourceFolders\":{}}}}"
   },
   "foldersRoot": {
     "name": "~",
@@ -8676,39 +8676,53 @@
         "name": "Items",
         "children": [
           {
-            "name": "GUI",
-            "children": [
-              {
-                "name": "Procedures",
-                "children": []
-              }
-            ]
-          },
-          {
-            "name": "Procedures",
+            "name": "Tools",
             "children": [
               {
                 "name": "Sickles",
-                "children": []
+                "children": [
+                  {
+                    "name": "Procedures",
+                    "children": []
+                  }
+                ]
               }
             ]
           },
           {
-            "name": "Recipes",
-            "children": []
-          },
-          {
-            "name": "JEI",
+            "name": "Other",
             "children": [
+              {
+                "name": "GUI",
+                "children": [
+                  {
+                    "name": "Procedures",
+                    "children": []
+                  }
+                ]
+              },
               {
                 "name": "Procedures",
                 "children": []
+              },
+              {
+                "name": "Recipes",
+                "children": []
+              },
+              {
+                "name": "JEI",
+                "children": [
+                  {
+                    "name": "Procedures",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "SpecialItems",
+                "children": []
               }
             ]
-          },
-          {
-            "name": "SpecialItems",
-            "children": []
           }
         ]
       },
