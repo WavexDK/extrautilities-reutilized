@@ -110,7 +110,6 @@ public class EuruModItems {
 	public static final DeferredItem<Item> GOLD_SPIKE = block(EuruModBlocks.GOLD_SPIKE);
 	public static final DeferredItem<Item> DIAMOND_SPIKE = block(EuruModBlocks.DIAMOND_SPIKE);
 	public static final DeferredItem<Item> NETHERITE_SPIKE = block(EuruModBlocks.NETHERITE_SPIKE);
-	public static final DeferredItem<Item> TRANSFER_CABLE = REGISTRY.register("transfer_cable", TransferCableItem::new);
 
 	// Start of user code block custom items
 	// End of user code block custom items

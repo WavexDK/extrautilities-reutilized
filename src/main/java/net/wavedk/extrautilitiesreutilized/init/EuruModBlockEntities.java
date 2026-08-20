@@ -53,7 +53,6 @@ public class EuruModBlockEntities {
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> GOLD_SPIKE = register("gold_spike", EuruModBlocks.GOLD_SPIKE, GoldSpikeBlockEntity::new);
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> DIAMOND_SPIKE = register("diamond_spike", EuruModBlocks.DIAMOND_SPIKE, DiamondSpikeBlockEntity::new);
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> NETHERITE_SPIKE = register("netherite_spike", EuruModBlocks.NETHERITE_SPIKE, NetheriteSpikeBlockEntity::new);
-	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> TRANSFER_CABLE = register("transfer_cable", EuruModBlocks.TRANSFER_CABLE, TransferCableBlockEntity::new);
 
 	// Start of user code block custom block entities
 	// End of user code block custom block entities

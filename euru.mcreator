@@ -8040,199 +8040,6 @@
         ]
       },
       "path": "~/Blocks/Other/Spikes/Recipes"
-    },
-    {
-      "name": "TransferCableOnTickUpdate",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "transfer_cable_on_tick_update",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "direction",
-            "type": "direction"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ],
-        "files": [
-          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/TransferCableOnTickUpdateProcedure.java"
-        ]
-      },
-      "path": "~/Blocks/Other/Cables/Procedures"
-    },
-    {
-      "name": "TransferCableConnectProcedure",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "transfer_cable_connect_procedure",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "direction",
-            "type": "direction"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ],
-        "return_type": "logic",
-        "files": [
-          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/TransferCableConnectProcedureProcedure.java"
-        ]
-      },
-      "path": "~/Blocks/Other/Cables/Procedures"
-    },
-    {
-      "name": "TransferCableOnCableConnectToABlock",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "transfer_cable_on_cable_connect_to_a_block",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "direction",
-            "type": "direction"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ],
-        "files": [
-          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/TransferCableOnCableConnectToABlockProcedure.java"
-        ]
-      },
-      "path": "~/Blocks/Other/Cables/Procedures"
-    },
-    {
-      "name": "TransferCableOnCableDisconnectFromBlock",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "transfer_cable_on_cable_disconnect_from_block",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "direction",
-            "type": "direction"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ],
-        "files": [
-          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/TransferCableOnCableDisconnectFromBlockProcedure.java"
-        ]
-      },
-      "path": "~/Blocks/Other/Cables/Procedures"
-    },
-    {
-      "name": "TransferCable",
-      "type": "cable",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "transfer_cable",
-      "metadata": {
-        "files": [
-          "src/main/java/net/wavedk/extrautilitiesreutilized/init/TransferCableCableCapabilities.java",
-          "src/main/java/net/wavedk/extrautilitiesreutilized/block/entity/TransferCableBlockEntity.java",
-          "src/main/resources/assets/euru/models/block/transfer_cable_center.json",
-          "src/main/resources/assets/euru/models/item/transfer_cable.json",
-          "src/main/resources/data/euru/loot_table/blocks/transfer_cable.json",
-          "src/main/java/net/wavedk/extrautilitiesreutilized/block/TransferCableBlock.java",
-          "src/main/java/net/wavedk/extrautilitiesreutilized/item/TransferCableItem.java",
-          "src/main/resources/assets/euru/blockstates/transfer_cable.json",
-          "src/main/resources/assets/euru/models/block/transfer_cable_arm.json"
-        ]
-      },
-      "path": "~/Blocks/Other/Cables"
-    },
-    {
-      "name": "Awd",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "awd",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ],
-        "files": [
-          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/AwdProcedure.java"
-        ]
-      },
-      "path": "~/Blocks/Other/Cables/Procedures"
     }
   ],
   "variable_elements": [
@@ -8454,7 +8261,6 @@
       "CUSTOM:Enchanter"
     ],
     "BLOCKS:minecraft:mineable/pickaxe": [
-      "~TransferCable@CUSTOM:TransferCable",
       "~NetheriteSpike@CUSTOM:NetheriteSpike",
       "~DiamondSpike@CUSTOM:DiamondSpike",
       "~GoldSpike@CUSTOM:GoldSpike",
@@ -8544,9 +8350,6 @@
     "BLOCKS:minecraft:needs_iron_tool": [
       "~DiamondSpike@CUSTOM:DiamondSpike",
       "~GoldSpike@CUSTOM:GoldSpike"
-    ],
-    "BLOCKS:c:cables": [
-      "~TransferCable@CUSTOM:TransferCable"
     ]
   },
   "tab_element_order": {
@@ -8807,8 +8610,7 @@
       "block.euru.iron_spike": "Iron Spike",
       "block.euru.gold_spike": "Golden Spike",
       "block.euru.diamond_spike": "Diamond Spike",
-      "block.euru.netherite_spike": "Netherite Spike",
-      "block.euru.transfer_cable": "Transfer Cable"
+      "block.euru.netherite_spike": "Netherite Spike"
     }
   },
   "metadata": {
@@ -8851,7 +8653,8 @@
       "src/main/java/net/wavedk/extrautilitiesreutilized/ai/OrbitPositionGoal.java",
       "src/main/java/net/wavedk/extrautilitiesreutilized/entity/CustomEyeOfEnderEntity.java",
       "src/main/java/net/wavedk/extrautilitiesreutilized/world/TeleportBlockHandler.java"
-    ]
+    ],
+    "resource_folders": "{\"sections\":{\"models\":{\"folders\":[],\"resourceFolders\":{}},\"sounds\":{\"folders\":[],\"resourceFolders\":{}},\"textures\":{\"folders\":[{\"id\":\"4f213fb5-b212-4aa7-8738-9de5b9f3727d\",\"name\":\"Blocks\",\"parentId\":\"root\"},{\"id\":\"37e7d51f-177e-4b46-be2e-d39e0e3ddd57\",\"name\":\"Items\",\"parentId\":\"root\"},{\"id\":\"2797b893-354e-49b2-93bf-0bcd8eec97ea\",\"name\":\"Machines\",\"parentId\":\"4f213fb5-b212-4aa7-8738-9de5b9f3727d\"},{\"id\":\"3a6c1954-0f0c-4ff5-94a4-484d94910e50\",\"name\":\"Generators\",\"parentId\":\"4f213fb5-b212-4aa7-8738-9de5b9f3727d\"},{\"id\":\"3cd8600e-6112-4634-b60c-953e32d28ce6\",\"name\":\"Other\",\"parentId\":\"4f213fb5-b212-4aa7-8738-9de5b9f3727d\"},{\"id\":\"587220f5-8636-47bc-b8dc-a6f923c68977\",\"name\":\"GUI\",\"parentId\":\"2797b893-354e-49b2-93bf-0bcd8eec97ea\"}],\"resourceFolders\":{\"file:src/main/resources/assets/euru/textures/block/enchanteron.png\":\"4f213fb5-b212-4aa7-8738-9de5b9f3727d\",\"file:src/main/resources/assets/euru/textures/block/side-reso.png\":\"4f213fb5-b212-4aa7-8738-9de5b9f3727d\",\"file:src/main/resources/assets/euru/textures/block/reso-new.png\":\"4f213fb5-b212-4aa7-8738-9de5b9f3727d\",\"file:src/main/resources/assets/euru/textures/block/enchanteroff.png\":\"4f213fb5-b212-4aa7-8738-9de5b9f3727d\",\"file:src/main/resources/assets/euru/textures/block/crusherfront.png\":\"4f213fb5-b212-4aa7-8738-9de5b9f3727d\",\"file:src/main/resources/assets/euru/textures/block/texture.png\":\"4f213fb5-b212-4aa7-8738-9de5b9f3727d\",\"file:src/main/resources/assets/euru/textures/block/top-reso.png\":\"4f213fb5-b212-4aa7-8738-9de5b9f3727d\"}},\"animations\":{\"folders\":[],\"resourceFolders\":{}},\"structures\":{\"folders\":[],\"resourceFolders\":{}},\"screenshots\":{\"folders\":[],\"resourceFolders\":{}}}}"
   },
   "foldersRoot": {
     "name": "~",
@@ -9056,12 +8859,7 @@
               },
               {
                 "name": "Cables",
-                "children": [
-                  {
-                    "name": "Procedures",
-                    "children": []
-                  }
-                ]
+                "children": []
               }
             ]
           }
@@ -9095,5 +8893,5 @@
     "credits": "Made with ❤️ by WaveDK using MCreator. Textures by @sethyn_, @batzorig and @quotat1on.",
     "modElementsPackage": "net.wavedk.extrautilitiesreutilized"
   },
-  "mcreatorVersion": 202600233218
+  "mcreatorVersion": 202600233518
 }

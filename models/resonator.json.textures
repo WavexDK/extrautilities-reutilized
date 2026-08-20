@@ -3,9 +3,7 @@
     "default": {
       "name": "default",
       "map": {
-        "0": "side-reso",
-        "1": "top-reso",
-        "missing": "bottom-reso"
+        "1": "reso-new"
       }
     }
   }

@@ -272,7 +272,7 @@ public class GeneratorTickHandlerProcedure {
 									fuelList = blockOBJ.getAsJsonArray("listFuel");
 								}
 								cNum = 0;
-								for (int _i281 = 0; _i281 < (int) fuelList.size(); _i281++) {
+								for (int _i1 = 0; _i1 < (int) fuelList.size(); _i1++) {
 									if ((fuelList.get((int) cNum).getAsString()).equals(BuiltInRegistries.ITEM.getKey((itemFromBlockInventory(world, BlockPos.containing(x, y, z), 0).copy()).getItem()).toString())
 											|| (itemFromBlockInventory(world, BlockPos.containing(x, y, z), 0).copy()).is(ItemTags.create(ResourceLocation.parse((fuelList.get((int) cNum).getAsString()).toLowerCase(java.util.Locale.ENGLISH))))
 											|| (world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == EuruModBlocks.DISENCHANTMENT_GENERATOR.get()
