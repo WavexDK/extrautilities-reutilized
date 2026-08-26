@@ -34,7 +34,7 @@ public class GroupMillsAddedHandlerProcedure {
 				BlockState _bs = world.getBlockState(_bp);
 				if (_blockEntity != null) {
 					_blockEntity.getPersistentData().putString("placedBy", (entity.getStringUUID()));
-					_blockEntity.getPersistentData().putString("gp_group", "solarpanels");
+					_blockEntity.getPersistentData().putString("gp_group", "mills");
 					_blockEntity.getPersistentData().putDouble("old_calculated", (Math.floor((entity.getData(EuruModVariables.PLAYER_VARIABLES).group_update_mills / entity.getData(EuruModVariables.PLAYER_VARIABLES).group_count_mills) * 100) / 100));
 				}
 				if (world instanceof Level _level)

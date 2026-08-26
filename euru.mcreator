@@ -8901,7 +8901,7 @@
       "block.euru.gold_spike": "Golden Spike",
       "block.euru.diamond_spike": "Diamond Spike",
       "block.euru.netherite_spike": "Netherite Spike",
-      "item.euru.wireless_rf_heating_coil": "Wireless RF Heating Coil",
+      "item.euru.wireless_rf_heating_coil": "Wireless FE Heating Coil",
       "block.euru.wind_mill": "Wind Mill",
       "item.euru.wireless_rf_heating_coil.description_1": "§7Does not work.",
       "item.euru.wireless_rf_heating_coil.description_0": "§7Work In Progress."
@@ -9177,7 +9177,7 @@
   "workspaceSettings": {
     "modid": "euru",
     "modName": "Extra Utilities: Reutilized",
-    "version": "0.1.2",
+    "version": "0.1.3",
     "description": "A remake of the old-but-gold 1.12.2 mod \"Extra Utilities 2\"",
     "author": "Wave",
     "websiteURL": "https://buymeacoffee.com/wavedk",
