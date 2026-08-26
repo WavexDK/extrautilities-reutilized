@@ -5,7 +5,7 @@
     "toolType": "Hoe",
     "renderType": 0,
     "blockingRenderType": 0,
-    "texture": "stonesickletemp",
+    "texture": "scythestone",
     "customModelName": "Normal",
     "blockingModelName": "Normal blocking",
     "guiTexture": "",

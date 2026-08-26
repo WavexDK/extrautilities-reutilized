@@ -402,12 +402,6 @@ public class EURUGeneratorsManagerProcedure {
 			nsgenobj.add("fuelProperties", nsgenfp);
 			nsgenobj.addProperty("sendEnergyCapability", 80000);
 			configJsonObject.add((BuiltInRegistries.ITEM.getKey(EuruModBlocks.NETHERSTAR_GENERATOR.get().asItem()).toString()), nsgenobj);
-			cItem = BuiltInRegistries.ITEM.getKey(Items.GUNPOWDER).toString();
-			cItemOBJ = new com.google.gson.JsonObject();
-			cItemOBJ.addProperty("feGenerated", 1200);
-			cItemOBJ.addProperty("feSpeed", 60);
-			exgenfp.add(cItem, cItemOBJ);
-			exarray.add(cItem);
 			cItem = "c:gunpowders";
 			cItemOBJ = new com.google.gson.JsonObject();
 			cItemOBJ.addProperty("feGenerated", 1200);

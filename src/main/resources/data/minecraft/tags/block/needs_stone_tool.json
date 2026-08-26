@@ -15,9 +15,10 @@
     "euru:enchanter",
     "euru:water_mill",
     "euru:quintuple_compressed_cobblestone",
-    "euru:machine_block",
-    "euru:lunar_panel",
     "euru:solar_panel",
+    "euru:lunar_panel",
+    "euru:machine_block",
+    "euru:wind_mill",
     "euru:compressed_cobblestone",
     "euru:quadruple_compressed_cobblestone"
   ]

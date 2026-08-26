@@ -53,6 +53,7 @@ public class EuruModBlockEntities {
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> GOLD_SPIKE = register("gold_spike", EuruModBlocks.GOLD_SPIKE, GoldSpikeBlockEntity::new);
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> DIAMOND_SPIKE = register("diamond_spike", EuruModBlocks.DIAMOND_SPIKE, DiamondSpikeBlockEntity::new);
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> NETHERITE_SPIKE = register("netherite_spike", EuruModBlocks.NETHERITE_SPIKE, NetheriteSpikeBlockEntity::new);
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> WIND_MILL = register("wind_mill", EuruModBlocks.WIND_MILL, WindMillBlockEntity::new);
 
 	// Start of user code block custom block entities
 	// End of user code block custom block entities
@@ -103,5 +104,6 @@ public class EuruModBlockEntities {
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, GOLD_SPIKE.get(), (blockEntity, side) -> new SidedInvWrapper((WorldlyContainer) blockEntity, side));
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, DIAMOND_SPIKE.get(), (blockEntity, side) -> new SidedInvWrapper((WorldlyContainer) blockEntity, side));
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, NETHERITE_SPIKE.get(), (blockEntity, side) -> new SidedInvWrapper((WorldlyContainer) blockEntity, side));
+		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, WIND_MILL.get(), (blockEntity, side) -> new SidedInvWrapper((WorldlyContainer) blockEntity, side));
 	}
 }

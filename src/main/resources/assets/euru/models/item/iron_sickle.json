@@ -1,6 +1,6 @@
 {
   "parent": "item/handheld",
   "textures": {
-    "layer0": "euru:item/ironsickletemp"
+    "layer0": "euru:item/scytheiron"
   }
 }

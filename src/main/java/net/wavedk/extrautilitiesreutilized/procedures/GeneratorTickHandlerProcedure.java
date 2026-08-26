@@ -427,6 +427,21 @@ public class GeneratorTickHandlerProcedure {
 						BlockState _bs = world.getBlockState(_bp);
 						if (_blockEntity != null) {
 							_blockEntity.getPersistentData().putBoolean("tmGP", true);
+						}
+						if (world instanceof Level _level)
+							_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+					}
+					{
+						BlockPos _pos = BlockPos.containing(x, y, z);
+						BlockState _bs = world.getBlockState(_pos);
+						if (_bs.getBlock().getStateDefinition().getProperty("on") instanceof BooleanProperty _booleanProp)
+							world.setBlock(_pos, _bs.setValue(_booleanProp, false), 3);
+					}
+					if (!world.isClientSide()) {
+						BlockPos _bp = BlockPos.containing(x, y, z);
+						BlockEntity _blockEntity = world.getBlockEntity(_bp);
+						BlockState _bs = world.getBlockState(_bp);
+						if (_blockEntity != null) {
 							_blockEntity.getPersistentData().putDouble("oldGPTotal", player.getData(EuruModVariables.PLAYER_VARIABLES).playerGP_Total);
 							_blockEntity.getPersistentData().putDouble("oldGPUsed", player.getData(EuruModVariables.PLAYER_VARIABLES).playerGP_Used);
 						}
@@ -459,6 +474,12 @@ public class GeneratorTickHandlerProcedure {
 					}
 				}
 				if (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "oldGPTotal") < getBlockNBTNumber(world, BlockPos.containing(x, y, z), "oldGPUsed") && player.getData(EuruModVariables.PLAYER_VARIABLES).playerGPChecking) {
+					{
+						BlockPos _pos = BlockPos.containing(x, y, z);
+						BlockState _bs = world.getBlockState(_pos);
+						if (_bs.getBlock().getStateDefinition().getProperty("on") instanceof BooleanProperty _booleanProp)
+							world.setBlock(_pos, _bs.setValue(_booleanProp, false), 3);
+					}
 					if (!world.isClientSide()) {
 						BlockPos _bp = BlockPos.containing(x, y, z);
 						BlockEntity _blockEntity = world.getBlockEntity(_bp);
@@ -535,6 +556,12 @@ public class GeneratorTickHandlerProcedure {
 						}
 					}
 				} else if (canSlowBurn) {
+					{
+						BlockPos _pos = BlockPos.containing(x, y, z);
+						BlockState _bs = world.getBlockState(_pos);
+						if (_bs.getBlock().getStateDefinition().getProperty("on") instanceof BooleanProperty _booleanProp)
+							world.setBlock(_pos, _bs.setValue(_booleanProp, false), 3);
+					}
 					if (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "wait_time") > getBlockNBTNumber(world, BlockPos.containing(x, y, z), "cProgress")) {
 						if (!world.isClientSide()) {
 							BlockPos _bp = BlockPos.containing(x, y, z);
@@ -575,7 +602,7 @@ public class GeneratorTickHandlerProcedure {
 				}
 			}
 			if (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "wait_time") == 0 && (getBlockNBTString(world, BlockPos.containing(x, y, z), "currentItem")).equals("")) {
-				if (getPropertyByName(blockstate, "on") instanceof BooleanProperty _getbp163 && blockstate.getValue(_getbp163)) {
+				if (getPropertyByName(blockstate, "on") instanceof BooleanProperty _getbp166 && blockstate.getValue(_getbp166)) {
 					if (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "offCounter") > 2) {
 						if (!world.isClientSide()) {
 							BlockPos _bp = BlockPos.containing(x, y, z);

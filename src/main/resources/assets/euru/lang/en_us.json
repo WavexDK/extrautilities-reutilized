@@ -184,5 +184,9 @@
   "block.euru.iron_spike": "Iron Spike",
   "block.euru.gold_spike": "Golden Spike",
   "block.euru.diamond_spike": "Diamond Spike",
-  "block.euru.netherite_spike": "Netherite Spike"
+  "block.euru.netherite_spike": "Netherite Spike",
+  "item.euru.wireless_rf_heating_coil": "Wireless RF Heating Coil",
+  "block.euru.wind_mill": "Wind Mill",
+  "item.euru.wireless_rf_heating_coil.description_1": "§7Does not work.",
+  "item.euru.wireless_rf_heating_coil.description_0": "§7Work In Progress."
 }

@@ -1,0 +1,9 @@
+{
+  "parent": "euru:custom/windmill",
+  "textures": {
+    "all": "euru:block/f1",
+    "particle": "euru:block/smoothburnstone",
+    "0": "euru:block/f1"
+  },
+  "render_type": "cutout"
+}

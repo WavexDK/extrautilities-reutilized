@@ -303,8 +303,36 @@
           "y": 46,
           "locked": false
         }
+      },
+      {
+        "type": "sprite",
+        "data": {
+          "sprite": "exstripbd.png",
+          "spritesCount": 32,
+          "displayCondition": "EXGenAnimBackdropShow",
+          "spriteIndex": {
+            "fixedValue": 0.0,
+            "name": "EXGenAnimBackdropReturnValue"
+          },
+          "x": 182,
+          "y": 46,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "exbd.png",
+          "use1Xscale": false,
+          "displayCondition": "EXGenBackdrop",
+          "x": 182,
+          "y": 46,
+          "locked": false
+        }
       }
     ],
+    "onOpen": "GeneratorGUIThisGUIIsOpened",
+    "onTick": "GeneratorGUIWhileThisGUIIsOpenTick",
     "gridSettings": {
       "sx": 18,
       "sy": 18,

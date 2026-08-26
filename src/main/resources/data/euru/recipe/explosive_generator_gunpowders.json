@@ -1,0 +1,18 @@
+{
+  "type": "euru:ex_gen_recipe_type",
+  "ingredients": [
+    {
+      "tag": "c:gunpowders"
+    }
+  ],
+  "strings": [
+    "euru:explosive_generator",
+    "c:gunpowders"
+  ],
+  "outputs": [
+    {
+      "id": "minecraft:polished_tuff",
+      "count": 1
+    }
+  ]
+}

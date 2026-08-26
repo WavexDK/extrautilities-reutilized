@@ -1,6 +1,6 @@
 {
   "parent": "item/handheld",
   "textures": {
-    "layer0": "euru:item/diamondsickletemp"
+    "layer0": "euru:item/scythediamon"
   }
 }

@@ -46,6 +46,8 @@ public class EuruModRecipeTypes {
 			SERIALIZERS.register("c_gen_recipe_type", () -> CGenRecipeTypeRecipe.Serializer.INSTANCE);
 			RECIPE_TYPES.register("de_gen_recipe_type", () -> DEGenRecipeTypeRecipe.Type.INSTANCE);
 			SERIALIZERS.register("de_gen_recipe_type", () -> DEGenRecipeTypeRecipe.Serializer.INSTANCE);
+			RECIPE_TYPES.register("ex_gen_recipe_type", () -> EXGenRecipeTypeRecipe.Type.INSTANCE);
+			SERIALIZERS.register("ex_gen_recipe_type", () -> EXGenRecipeTypeRecipe.Serializer.INSTANCE);
 		});
 	}
 }

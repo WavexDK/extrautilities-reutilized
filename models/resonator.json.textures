@@ -3,7 +3,7 @@
     "default": {
       "name": "default",
       "map": {
-        "1": "reso-new"
+        "0": "reso-new"
       }
     }
   }

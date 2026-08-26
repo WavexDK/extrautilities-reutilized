@@ -39,12 +39,14 @@ public class GeneratorGUIScreen extends AbstractContainerScreen<GeneratorGUIMenu
 	private static final ResourceLocation SPRITE_2 = ResourceLocation.parse("euru:textures/screens/arrowstrip.png");
 	private static final ResourceLocation SPRITE_3 = ResourceLocation.parse("euru:textures/screens/fgen_strip.png");
 	private static final ResourceLocation SPRITE_4 = ResourceLocation.parse("euru:textures/screens/nsgen_strip.png");
+	private static final ResourceLocation SPRITE_5 = ResourceLocation.parse("euru:textures/screens/exstripbd.png");
 	private static final ResourceLocation IMAGE_0 = ResourceLocation.parse("euru:textures/screens/subackdrop.png");
 	private static final ResourceLocation IMAGE_1 = ResourceLocation.parse("euru:textures/screens/button-gun.png");
 	private static final ResourceLocation IMAGE_2 = ResourceLocation.parse("euru:textures/screens/button-always-off.png");
 	private static final ResourceLocation IMAGE_3 = ResourceLocation.parse("euru:textures/screens/button-red-off.png");
 	private static final ResourceLocation IMAGE_4 = ResourceLocation.parse("euru:textures/screens/button-red.png");
 	private static final ResourceLocation IMAGE_5 = ResourceLocation.parse("euru:textures/screens/symbol_cross.png");
+	private static final ResourceLocation IMAGE_6 = ResourceLocation.parse("euru:textures/screens/exbd.png");
 
 	public GeneratorGUIScreen(GeneratorGUIMenu container, Inventory inventory, Component text) {
 		super(container, inventory, text);
@@ -108,6 +110,9 @@ public class GeneratorGUIScreen extends AbstractContainerScreen<GeneratorGUIMenu
 		guiGraphics.blit(SPRITE_2, this.leftPos + 90, this.topPos + 32, 0, Mth.clamp((int) ReturnArrowStripProcedure.execute(world, x, y, z) * 22, 0, 484), 22, 22, 22, 506);
 		guiGraphics.blit(SPRITE_3, this.leftPos + 56, this.topPos + 9, 0, Mth.clamp((int) FGenBackdropProcedure.execute(world, x, y, z) * 64, 0, 128), 64, 64, 64, 192);
 		guiGraphics.blit(SPRITE_4, this.leftPos + 56, this.topPos + 9, 0, Mth.clamp((int) NSGenBackdropProcedure.execute(world, x, y, z) * 64, 0, 128), 64, 64, 64, 192);
+		if (EXGenAnimBackdropShowProcedure.execute(world, x, y, z)) {
+			guiGraphics.blit(SPRITE_5, this.leftPos + 56, this.topPos + 9, 0, Mth.clamp((int) EXGenAnimBackdropReturnValueProcedure.execute(world, x, y, z) * 64, 0, 1984), 64, 64, 64, 2048);
+		}
 		if (SUTooltipGenProcedure.execute(world, x, y, z)) {
 			guiGraphics.blit(IMAGE_0, this.leftPos + 6, this.topPos + 41, 0, 0, 16, 16, 16, 16);
 		}
@@ -125,6 +130,9 @@ public class GeneratorGUIScreen extends AbstractContainerScreen<GeneratorGUIMenu
 		}
 		if (TooMuchGPProcedure.execute(world, x, y, z)) {
 			guiGraphics.blit(IMAGE_5, this.leftPos + 93, this.topPos + 35, 0, 0, 16, 16, 16, 16);
+		}
+		if (EXGenBackdropProcedure.execute(world, x, y, z)) {
+			guiGraphics.blit(IMAGE_6, this.leftPos + 56, this.topPos + 9, 0, 0, 64, 64, 64, 64);
 		}
 		RenderSystem.disableBlend();
 	}

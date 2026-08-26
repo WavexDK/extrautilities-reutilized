@@ -110,7 +110,7 @@ public class LunarPanelBlock extends Block implements EntityBlock {
 	@Override
 	public void tick(BlockState blockstate, ServerLevel world, BlockPos pos, RandomSource random) {
 		super.tick(blockstate, world, pos, random);
-		PanelsTickUpdateHandlerProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ());
+		PanelsTickUpdateHandlerProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ(), blockstate);
 		world.scheduleTick(pos, this, 1);
 	}
 

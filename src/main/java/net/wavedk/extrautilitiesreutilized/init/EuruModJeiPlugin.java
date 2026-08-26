@@ -31,6 +31,7 @@ public class EuruModJeiPlugin implements IModPlugin {
 	public static mezz.jei.api.recipe.RecipeType<CursedLassoRTRecipe> CursedLassoRT_Type = new mezz.jei.api.recipe.RecipeType<>(CursedLassoRTRecipeCategory.UID, CursedLassoRTRecipe.class);
 	public static mezz.jei.api.recipe.RecipeType<CGenRecipeTypeRecipe> CGenRecipeType_Type = new mezz.jei.api.recipe.RecipeType<>(CGenRecipeTypeRecipeCategory.UID, CGenRecipeTypeRecipe.class);
 	public static mezz.jei.api.recipe.RecipeType<DEGenRecipeTypeRecipe> DEGenRecipeType_Type = new mezz.jei.api.recipe.RecipeType<>(DEGenRecipeTypeRecipeCategory.UID, DEGenRecipeTypeRecipe.class);
+	public static mezz.jei.api.recipe.RecipeType<EXGenRecipeTypeRecipe> EXGenRecipeType_Type = new mezz.jei.api.recipe.RecipeType<>(EXGenRecipeTypeRecipeCategory.UID, EXGenRecipeTypeRecipe.class);
 
 	@Override
 	public ResourceLocation getPluginUid() {
@@ -50,6 +51,7 @@ public class EuruModJeiPlugin implements IModPlugin {
 		registration.addRecipeCategories(new CursedLassoRTRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
 		registration.addRecipeCategories(new CGenRecipeTypeRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
 		registration.addRecipeCategories(new DEGenRecipeTypeRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
+		registration.addRecipeCategories(new EXGenRecipeTypeRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
 	}
 
 	@Override
@@ -77,6 +79,8 @@ public class EuruModJeiPlugin implements IModPlugin {
 		registration.addRecipes(CGenRecipeType_Type, CGenRecipeTypeRecipes);
 		List<DEGenRecipeTypeRecipe> DEGenRecipeTypeRecipes = recipeManager.getAllRecipesFor(DEGenRecipeTypeRecipe.Type.INSTANCE).stream().map(RecipeHolder::value).collect(Collectors.toList());
 		registration.addRecipes(DEGenRecipeType_Type, DEGenRecipeTypeRecipes);
+		List<EXGenRecipeTypeRecipe> EXGenRecipeTypeRecipes = recipeManager.getAllRecipesFor(EXGenRecipeTypeRecipe.Type.INSTANCE).stream().map(RecipeHolder::value).collect(Collectors.toList());
+		registration.addRecipes(EXGenRecipeType_Type, EXGenRecipeTypeRecipes);
 	}
 
 	@Override
@@ -92,5 +96,6 @@ public class EuruModJeiPlugin implements IModPlugin {
 		registration.addRecipeCatalyst(new ItemStack(EuruModItems.CURSED_LASSO.get()), CursedLassoRT_Type);
 		registration.addRecipeCatalyst(new ItemStack(EuruModBlocks.CULINARY_GENERATOR.get().asItem()), CGenRecipeType_Type);
 		registration.addRecipeCatalyst(new ItemStack(EuruModBlocks.DISENCHANTMENT_GENERATOR.get().asItem()), DEGenRecipeType_Type);
+		registration.addRecipeCatalyst(new ItemStack(EuruModBlocks.EXPLOSIVE_GENERATOR.get().asItem()), EXGenRecipeType_Type);
 	}
 }

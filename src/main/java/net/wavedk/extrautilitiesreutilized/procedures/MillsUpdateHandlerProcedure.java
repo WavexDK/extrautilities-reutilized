@@ -4,14 +4,11 @@ import org.apache.commons.lang3.function.FailableFunction;
 
 import net.wavedk.extrautilitiesreutilized.network.EuruModVariables;
 
-import net.neoforged.fml.loading.FMLPaths;
-
 import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
@@ -20,19 +17,19 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.util.Mth;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 
+import java.util.regex.Pattern;
 import java.util.function.Supplier;
 import java.util.UUID;
 
-import java.io.IOException;
-import java.io.FileReader;
 import java.io.File;
-import java.io.BufferedReader;
 
 public class MillsUpdateHandlerProcedure {
-	public static void execute(LevelAccessor world, double x, double y, double z) {
+	public static void execute(LevelAccessor world, double x, double y, double z, BlockState blockstate) {
 		Entity player = null;
 		boolean canGenerate = false;
 		double mult = 0;
@@ -45,6 +42,7 @@ public class MillsUpdateHandlerProcedure {
 		com.google.gson.JsonObject iitemobj = new com.google.gson.JsonObject();
 		File configFile = new File("");
 		File cfile = new File("");
+		Direction cD = Direction.NORTH;
 		placedBy = getBlockNBTString(world, BlockPos.containing(x, y, z), "placedBy");
 		if (world.getServer() != null) {
 			LevelAccessor _origWorld = world;
@@ -60,222 +58,37 @@ public class MillsUpdateHandlerProcedure {
 		if (player instanceof Player || player instanceof ServerPlayer) {
 			if (player.getData(EuruModVariables.PLAYER_VARIABLES).playerGPChecking) {
 				canGenerate = true;
-				if ((getBlockNBTLogic(world, BlockPos.containing(x, y, z), "needs_day") == true && world.dayTime() <= 12000 || getBlockNBTLogic(world, BlockPos.containing(x, y, z), "needs_night") == true && world.dayTime() > 12000
-						|| getBlockNBTLogic(world, BlockPos.containing(x, y, z), "needs_night") == false && getBlockNBTLogic(world, BlockPos.containing(x, y, z), "needs_day") == false)
+				if (world.dayTime() >= getBlockNBTNumber(world, BlockPos.containing(x, y, z), "needs_time_min") && world.dayTime() <= getBlockNBTNumber(world, BlockPos.containing(x, y, z), "needs_time_max")
 						&& (getBlockNBTLogic(world, BlockPos.containing(x, y, z), "needs_sky") == true && world.canSeeSkyFromBelowWater(BlockPos.containing(x, y + 1, z))
 								|| getBlockNBTLogic(world, BlockPos.containing(x, y, z), "needs_sky") == false)) {
-					canGenerate = true;
+					if (getBlockNBTLogic(world, BlockPos.containing(x, y, z), "needs_block")) {
+						canGenerate = false;
+						String _splitContent25 = Pattern.quote(",");
+						String _toSplit25 = (getBlockNBTString(world, BlockPos.containing(x, y, z), "needs_block_sides"));
+						String[] _array25 = _toSplit25.split(_splitContent25);
+						if (_array25.length != 0) {
+							for (String stringiterator : _array25) {
+								cD = GetDirectionFromTextProcedure.execute(blockstate, stringiterator);
+								if ((world.getBlockState(BlockPos.containing(x + cD.getStepX(), y + cD.getStepY(), z + cD.getStepZ()))).getBlock() == BuiltInRegistries.BLOCK
+										.get(ResourceLocation.parse(((getBlockNBTString(world, BlockPos.containing(x, y, z), "needs_block_id"))).toLowerCase(java.util.Locale.ENGLISH)))) {
+									canGenerate = true;
+									mult = mult + 1;
+								}
+							}
+						} else {
+							String stringiterator = _toSplit25;
+							for (int _yourmother25 = 0; _yourmother25 < 1; _yourmother25++) {
+								cD = GetDirectionFromTextProcedure.execute(blockstate, stringiterator);
+								if ((world.getBlockState(BlockPos.containing(x + cD.getStepX(), y + cD.getStepY(), z + cD.getStepZ()))).getBlock() == BuiltInRegistries.BLOCK
+										.get(ResourceLocation.parse(((getBlockNBTString(world, BlockPos.containing(x, y, z), "needs_block_id"))).toLowerCase(java.util.Locale.ENGLISH)))) {
+									canGenerate = true;
+									mult = mult + 1;
+								}
+							}
+						}
+					}
 				} else {
 					canGenerate = false;
-				}
-				if (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "needs_water") == 1) {
-					canGenerate = false;
-					mult = 0;
-					if ((world.getBlockState(BlockPos.containing(x, y, z + 1))).getBlock() == Blocks.WATER) {
-						levelOfWater = (((("" + world.getBlockState(BlockPos.containing(x, y, z + 1))).substring(("" + world.getBlockState(BlockPos.containing(x, y, z + 1))).indexOf("level=", 0))).replace("]", "")).replace("[", "")).replace("level=",
-								"");
-						if (new Object() {
-							double convert(String s) {
-								try {
-									return Double.parseDouble(s.trim());
-								} catch (Exception e) {
-								}
-								return 0;
-							}
-						}.convert(levelOfWater) > 0) {
-							canGenerate = true;
-							mult = mult + 1;
-						}
-					}
-					if ((world.getBlockState(BlockPos.containing(x, y, z - 1))).getBlock() == Blocks.WATER) {
-						levelOfWater = (((("" + world.getBlockState(BlockPos.containing(x, y, z - 1))).substring(("" + world.getBlockState(BlockPos.containing(x, y, z - 1))).indexOf("level=", 0))).replace("]", "")).replace("[", "")).replace("level=",
-								"");
-						if (new Object() {
-							double convert(String s) {
-								try {
-									return Double.parseDouble(s.trim());
-								} catch (Exception e) {
-								}
-								return 0;
-							}
-						}.convert(levelOfWater) > 0) {
-							canGenerate = true;
-							mult = mult + 1;
-						}
-					}
-					if ((world.getBlockState(BlockPos.containing(x + 1, y, z))).getBlock() == Blocks.WATER) {
-						levelOfWater = (((("" + world.getBlockState(BlockPos.containing(x + 1, y, z))).substring(("" + world.getBlockState(BlockPos.containing(x + 1, y, z))).indexOf("level=", 0))).replace("]", "")).replace("[", "")).replace("level=",
-								"");
-						if (new Object() {
-							double convert(String s) {
-								try {
-									return Double.parseDouble(s.trim());
-								} catch (Exception e) {
-								}
-								return 0;
-							}
-						}.convert(levelOfWater) > 0) {
-							canGenerate = true;
-							mult = mult + 1;
-						}
-					}
-					if ((world.getBlockState(BlockPos.containing(x - 1, y, z))).getBlock() == Blocks.WATER) {
-						levelOfWater = (((("" + world.getBlockState(BlockPos.containing(x - 1, y, z))).substring(("" + world.getBlockState(BlockPos.containing(x - 1, y, z))).indexOf("level=", 0))).replace("]", "")).replace("[", "")).replace("level=",
-								"");
-						if (new Object() {
-							double convert(String s) {
-								try {
-									return Double.parseDouble(s.trim());
-								} catch (Exception e) {
-								}
-								return 0;
-							}
-						}.convert(levelOfWater) > 0) {
-							canGenerate = true;
-							mult = mult + 1;
-						}
-					}
-				} else if (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "needs_water") == 2) {
-					canGenerate = false;
-					mult = 0;
-					if ((world.getBlockState(BlockPos.containing(x, y, z + 1))).getBlock() == Blocks.WATER) {
-						canGenerate = true;
-						mult = mult + 1;
-					}
-					if ((world.getBlockState(BlockPos.containing(x, y, z - 1))).getBlock() == Blocks.WATER) {
-						canGenerate = true;
-						mult = mult + 1;
-					}
-					if ((world.getBlockState(BlockPos.containing(x - 1, y, z))).getBlock() == Blocks.WATER) {
-						canGenerate = true;
-						mult = mult + 1;
-					}
-					if ((world.getBlockState(BlockPos.containing(x + 1, y, z))).getBlock() == Blocks.WATER) {
-						canGenerate = true;
-						mult = mult + 1;
-					}
-				}
-				if (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "needs_lava") == 1) {
-					if (canGenerate) {
-						canGenerate = false;
-						mult = 0;
-						if ((world.getBlockState(BlockPos.containing(x, y, z + 1))).getBlock() == Blocks.LAVA) {
-							levelOfWater = (((("" + world.getBlockState(BlockPos.containing(x, y, z + 1))).substring(("" + world.getBlockState(BlockPos.containing(x, y, z + 1))).indexOf("level=", 0))).replace("]", "")).replace("[", ""))
-									.replace("level=", "");
-							if (new Object() {
-								double convert(String s) {
-									try {
-										return Double.parseDouble(s.trim());
-									} catch (Exception e) {
-									}
-									return 0;
-								}
-							}.convert(levelOfWater) > 0) {
-								canGenerate = true;
-								mult = mult + 1;
-							}
-						}
-						if ((world.getBlockState(BlockPos.containing(x, y, z - 1))).getBlock() == Blocks.LAVA) {
-							levelOfWater = (((("" + world.getBlockState(BlockPos.containing(x, y, z - 1))).substring(("" + world.getBlockState(BlockPos.containing(x, y, z - 1))).indexOf("level=", 0))).replace("]", "")).replace("[", ""))
-									.replace("level=", "");
-							if (new Object() {
-								double convert(String s) {
-									try {
-										return Double.parseDouble(s.trim());
-									} catch (Exception e) {
-									}
-									return 0;
-								}
-							}.convert(levelOfWater) > 0) {
-								canGenerate = true;
-								mult = mult + 1;
-							}
-						}
-						if ((world.getBlockState(BlockPos.containing(x - 1, y, z))).getBlock() == Blocks.LAVA) {
-							levelOfWater = (((("" + world.getBlockState(BlockPos.containing(x - 1, y, z))).substring(("" + world.getBlockState(BlockPos.containing(x - 1, y, z))).indexOf("level=", 0))).replace("]", "")).replace("[", ""))
-									.replace("level=", "");
-							if (new Object() {
-								double convert(String s) {
-									try {
-										return Double.parseDouble(s.trim());
-									} catch (Exception e) {
-									}
-									return 0;
-								}
-							}.convert(levelOfWater) > 0) {
-								canGenerate = true;
-								mult = mult + 1;
-							}
-						}
-						if ((world.getBlockState(BlockPos.containing(x + 1, y, z))).getBlock() == Blocks.LAVA) {
-							levelOfWater = (((("" + world.getBlockState(BlockPos.containing(x + 1, y, z))).substring(("" + world.getBlockState(BlockPos.containing(x + 1, y, z))).indexOf("level=", 0))).replace("]", "")).replace("[", ""))
-									.replace("level=", "");
-							if (new Object() {
-								double convert(String s) {
-									try {
-										return Double.parseDouble(s.trim());
-									} catch (Exception e) {
-									}
-									return 0;
-								}
-							}.convert(levelOfWater) > 0) {
-								canGenerate = true;
-								mult = mult + 1;
-							}
-						}
-					}
-				} else if (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "needs_lava") == 2) {
-					if (canGenerate) {
-						canGenerate = false;
-						mult = 0;
-						if ((world.getBlockState(BlockPos.containing(x, y, z + 1))).getBlock() == Blocks.LAVA) {
-							canGenerate = true;
-							mult = mult + 1;
-						}
-						if ((world.getBlockState(BlockPos.containing(x, y, z - 1))).getBlock() == Blocks.LAVA) {
-							canGenerate = true;
-							mult = mult + 1;
-						}
-						if ((world.getBlockState(BlockPos.containing(x - 1, y, z))).getBlock() == Blocks.LAVA) {
-							canGenerate = true;
-							mult = mult + 1;
-						}
-						if ((world.getBlockState(BlockPos.containing(x + 1, y, z))).getBlock() == Blocks.LAVA) {
-							canGenerate = true;
-							mult = mult + 1;
-						}
-					}
-				}
-				if (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "needs_fire") == 1) {
-					if (canGenerate) {
-						canGenerate = false;
-						mult = 0;
-						if ((world.getBlockState(BlockPos.containing(x, y - 1, z))).getBlock() == Blocks.FIRE || (world.getBlockState(BlockPos.containing(x, y - 1, z))).getBlock() == Blocks.SOUL_FIRE) {
-							canGenerate = true;
-							mult = mult + 1;
-						}
-					}
-				} else if (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "needs_fire") == 2) {
-					if (canGenerate) {
-						canGenerate = false;
-						mult = 0;
-						if ((world.getBlockState(BlockPos.containing(x, y, z + 1))).getBlock() == Blocks.FIRE || (world.getBlockState(BlockPos.containing(x, y, z + 1))).getBlock() == Blocks.SOUL_FIRE) {
-							canGenerate = true;
-							mult = mult + 1;
-						}
-						if ((world.getBlockState(BlockPos.containing(x, y, z - 1))).getBlock() == Blocks.FIRE || (world.getBlockState(BlockPos.containing(x, y, z - 1))).getBlock() == Blocks.SOUL_FIRE) {
-							canGenerate = true;
-							mult = mult + 1;
-						}
-						if ((world.getBlockState(BlockPos.containing(x - 1, y, z))).getBlock() == Blocks.FIRE || (world.getBlockState(BlockPos.containing(x - 1, y, z))).getBlock() == Blocks.SOUL_FIRE) {
-							canGenerate = true;
-							mult = mult + 1;
-						}
-						if ((world.getBlockState(BlockPos.containing(x + 1, y, z))).getBlock() == Blocks.FIRE || (world.getBlockState(BlockPos.containing(x + 1, y, z))).getBlock() == Blocks.SOUL_FIRE) {
-							canGenerate = true;
-							mult = mult + 1;
-						}
-					}
 				}
 				if (canGenerate) {
 					if (!world.isClientSide()) {
@@ -370,45 +183,6 @@ public class MillsUpdateHandlerProcedure {
 					_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 			}
 		} else if (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "configUpdate") < getBlockNBTNumber(world, BlockPos.containing(x, y, z), "configUpdateCounter")) {
-			cfile = new File((FMLPaths.GAMEDIR.get().toString() + "/config/euru/"), File.separator + "euru_unified_config.json");
-			if (cfile.exists()) {
-				{
-					try {
-						BufferedReader bufferedReader = new BufferedReader(new FileReader(cfile));
-						StringBuilder jsonstringbuilder = new StringBuilder();
-						String line;
-						while ((line = bufferedReader.readLine()) != null) {
-							jsonstringbuilder.append(line);
-						}
-						bufferedReader.close();
-						cobj = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
-						gp_gen_obj = cobj.get("gp_generation").getAsJsonObject();
-						generalobj = cobj.get("general").getAsJsonObject();
-						iitemobj = gp_gen_obj.get((BuiltInRegistries.BLOCK.getKey((world.getBlockState(BlockPos.containing(x, y, z))).getBlock()).toString())).getAsJsonObject();
-						if (!world.isClientSide()) {
-							BlockPos _bp = BlockPos.containing(x, y, z);
-							BlockEntity _blockEntity = world.getBlockEntity(_bp);
-							BlockState _bs = world.getBlockState(_bp);
-							if (_blockEntity != null) {
-								_blockEntity.getPersistentData().putBoolean("needs_day", iitemobj.get("needs_day").getAsBoolean());
-								_blockEntity.getPersistentData().putBoolean("needs_night", iitemobj.get("needs_night").getAsBoolean());
-								_blockEntity.getPersistentData().putBoolean("needs_sky", iitemobj.get("needs_sky").getAsBoolean());
-								_blockEntity.getPersistentData().putDouble("needs_water", iitemobj.get("needs_water").getAsDouble());
-								_blockEntity.getPersistentData().putDouble("needs_lava", iitemobj.get("needs_lava").getAsDouble());
-								_blockEntity.getPersistentData().putDouble("needs_fire", iitemobj.get("needs_fire").getAsDouble());
-								_blockEntity.getPersistentData().putDouble("gp_generated", iitemobj.get("gp_generated").getAsDouble());
-								_blockEntity.getPersistentData().putDouble("range-configUpdate-min", cobj.get("range-configUpdate-min").getAsDouble());
-								_blockEntity.getPersistentData().putDouble("range-configUpdate-max", cobj.get("range-configUpdate-max").getAsDouble());
-								_blockEntity.getPersistentData().putBoolean("been_json_checked", true);
-							}
-							if (world instanceof Level _level)
-								_level.sendBlockUpdated(_bp, _bs, _bs, 3);
-						}
-					} catch (IOException e) {
-						e.printStackTrace();
-					}
-				}
-			}
 			if (!world.isClientSide()) {
 				BlockPos _bp = BlockPos.containing(x, y, z);
 				BlockEntity _blockEntity = world.getBlockEntity(_bp);
@@ -419,6 +193,7 @@ public class MillsUpdateHandlerProcedure {
 				if (world instanceof Level _level)
 					_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 			}
+			GroupPanelsConfigHandlerProcedure.execute(world, x, y, z);
 		} else {
 			if (!world.isClientSide()) {
 				BlockPos _bp = BlockPos.containing(x, y, z);
@@ -449,7 +224,7 @@ public class MillsUpdateHandlerProcedure {
 					if (world instanceof Level _level)
 						_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 				}
-				if ((getPropertyByName((world.getBlockState(BlockPos.containing(x, y, z))), "animation") instanceof IntegerProperty _getip168 ? (world.getBlockState(BlockPos.containing(x, y, z))).getValue(_getip168) : -1) == 3) {
+				if ((getPropertyByName((world.getBlockState(BlockPos.containing(x, y, z))), "animation") instanceof IntegerProperty _getip54 ? (world.getBlockState(BlockPos.containing(x, y, z))).getValue(_getip54) : -1) == 3) {
 					{
 						int _value = 0;
 						BlockPos _pos = BlockPos.containing(x, y, z);
@@ -459,7 +234,7 @@ public class MillsUpdateHandlerProcedure {
 					}
 				} else {
 					{
-						int _value = (getPropertyByName((world.getBlockState(BlockPos.containing(x, y, z))), "animation") instanceof IntegerProperty _getip171 ? (world.getBlockState(BlockPos.containing(x, y, z))).getValue(_getip171) : -1) + 1;
+						int _value = (getPropertyByName((world.getBlockState(BlockPos.containing(x, y, z))), "animation") instanceof IntegerProperty _getip57 ? (world.getBlockState(BlockPos.containing(x, y, z))).getValue(_getip57) : -1) + 1;
 						BlockPos _pos = BlockPos.containing(x, y, z);
 						BlockState _bs = world.getBlockState(_pos);
 						if (_bs.getBlock().getStateDefinition().getProperty("animation") instanceof IntegerProperty _integerProp && _integerProp.getPossibleValues().contains(_value))
@@ -510,18 +285,18 @@ public class MillsUpdateHandlerProcedure {
 		}
 	}
 
-	private static boolean getBlockNBTLogic(LevelAccessor world, BlockPos pos, String tag) {
-		BlockEntity blockEntity = world.getBlockEntity(pos);
-		if (blockEntity != null)
-			return blockEntity.getPersistentData().getBoolean(tag);
-		return false;
-	}
-
 	private static double getBlockNBTNumber(LevelAccessor world, BlockPos pos, String tag) {
 		BlockEntity blockEntity = world.getBlockEntity(pos);
 		if (blockEntity != null)
 			return blockEntity.getPersistentData().getDouble(tag);
 		return -1;
+	}
+
+	private static boolean getBlockNBTLogic(LevelAccessor world, BlockPos pos, String tag) {
+		BlockEntity blockEntity = world.getBlockEntity(pos);
+		if (blockEntity != null)
+			return blockEntity.getPersistentData().getBoolean(tag);
+		return false;
 	}
 
 	private static Property<?> getPropertyByName(BlockState state, String name) {

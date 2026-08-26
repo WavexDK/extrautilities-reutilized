@@ -4,32 +4,27 @@ import org.apache.commons.lang3.function.FailableFunction;
 
 import net.wavedk.extrautilitiesreutilized.network.EuruModVariables;
 
-import net.neoforged.fml.loading.FMLPaths;
-
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.util.RandomSource;
-import net.minecraft.util.Mth;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 
+import java.util.regex.Pattern;
 import java.util.function.Supplier;
 import java.util.UUID;
 
-import java.io.IOException;
-import java.io.FileReader;
 import java.io.File;
-import java.io.BufferedReader;
 
 public class PanelsTickUpdateHandlerProcedure {
-	public static void execute(LevelAccessor world, double x, double y, double z) {
+	public static void execute(LevelAccessor world, double x, double y, double z, BlockState blockstate) {
 		com.google.gson.JsonObject itemOBJ = new com.google.gson.JsonObject();
 		com.google.gson.JsonObject gp_gen_obj = new com.google.gson.JsonObject();
 		com.google.gson.JsonObject cOBJ = new com.google.gson.JsonObject();
@@ -39,6 +34,7 @@ public class PanelsTickUpdateHandlerProcedure {
 		double mult = 0;
 		String placedBy = "";
 		String levelOfWater = "";
+		Direction cD = Direction.NORTH;
 		placedBy = getBlockNBTString(world, BlockPos.containing(x, y, z), "placedBy");
 		if (world.getServer() != null) {
 			LevelAccessor _origWorld = world;
@@ -54,229 +50,37 @@ public class PanelsTickUpdateHandlerProcedure {
 		if (player instanceof Player || player instanceof ServerPlayer) {
 			if (player.getData(EuruModVariables.PLAYER_VARIABLES).playerGPChecking) {
 				canGenerate = true;
-				if ((getBlockNBTLogic(world, BlockPos.containing(x, y, z), "needs_day") == true && world.dayTime() <= 12000 || getBlockNBTLogic(world, BlockPos.containing(x, y, z), "needs_night") == true && world.dayTime() > 12000
-						|| getBlockNBTLogic(world, BlockPos.containing(x, y, z), "needs_night") == false && getBlockNBTLogic(world, BlockPos.containing(x, y, z), "needs_day") == false)
+				if (world.dayTime() >= getBlockNBTNumber(world, BlockPos.containing(x, y, z), "needs_time_min") && world.dayTime() <= getBlockNBTNumber(world, BlockPos.containing(x, y, z), "needs_time_max")
 						&& (getBlockNBTLogic(world, BlockPos.containing(x, y, z), "needs_sky") == true && world.canSeeSkyFromBelowWater(BlockPos.containing(x, y + 1, z))
 								|| getBlockNBTLogic(world, BlockPos.containing(x, y, z), "needs_sky") == false)) {
-					canGenerate = true;
-				} else {
-					canGenerate = false;
-				}
-				if (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "needs_water") == 1) {
-					canGenerate = false;
-					mult = 0;
-					if ((world.getBlockState(BlockPos.containing(x, y, z + 1))).getBlock() == Blocks.WATER) {
-						levelOfWater = (((("" + world.getBlockState(BlockPos.containing(x, y, z + 1))).substring(("" + world.getBlockState(BlockPos.containing(x, y, z + 1))).indexOf("level=", 0))).replace("]", "")).replace("[", "")).replace("level=",
-								"");
-						if (new Object() {
-							double convert(String s) {
-								try {
-									return Double.parseDouble(s.trim());
-								} catch (Exception e) {
-								}
-								return 0;
-							}
-						}.convert(levelOfWater) > 0) {
-							canGenerate = true;
-							mult = mult + 1;
-						}
-					}
-					if ((world.getBlockState(BlockPos.containing(x, y, z - 1))).getBlock() == Blocks.WATER) {
-						levelOfWater = (((("" + world.getBlockState(BlockPos.containing(x, y, z - 1))).substring(("" + world.getBlockState(BlockPos.containing(x, y, z - 1))).indexOf("level=", 0))).replace("]", "")).replace("[", "")).replace("level=",
-								"");
-						if (new Object() {
-							double convert(String s) {
-								try {
-									return Double.parseDouble(s.trim());
-								} catch (Exception e) {
-								}
-								return 0;
-							}
-						}.convert(levelOfWater) > 0) {
-							canGenerate = true;
-							mult = mult + 1;
-						}
-					}
-					if ((world.getBlockState(BlockPos.containing(x + 1, y, z))).getBlock() == Blocks.WATER) {
-						levelOfWater = (((("" + world.getBlockState(BlockPos.containing(x + 1, y, z))).substring(("" + world.getBlockState(BlockPos.containing(x + 1, y, z))).indexOf("level=", 0))).replace("]", "")).replace("[", "")).replace("level=",
-								"");
-						if (new Object() {
-							double convert(String s) {
-								try {
-									return Double.parseDouble(s.trim());
-								} catch (Exception e) {
-								}
-								return 0;
-							}
-						}.convert(levelOfWater) > 0) {
-							canGenerate = true;
-							mult = mult + 1;
-						}
-					}
-					if ((world.getBlockState(BlockPos.containing(x - 1, y, z))).getBlock() == Blocks.WATER) {
-						levelOfWater = (((("" + world.getBlockState(BlockPos.containing(x - 1, y, z))).substring(("" + world.getBlockState(BlockPos.containing(x - 1, y, z))).indexOf("level=", 0))).replace("]", "")).replace("[", "")).replace("level=",
-								"");
-						if (new Object() {
-							double convert(String s) {
-								try {
-									return Double.parseDouble(s.trim());
-								} catch (Exception e) {
-								}
-								return 0;
-							}
-						}.convert(levelOfWater) > 0) {
-							canGenerate = true;
-							mult = mult + 1;
-						}
-					}
-				} else if (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "needs_water") == 2) {
-					canGenerate = false;
-					mult = 0;
-					if ((world.getBlockState(BlockPos.containing(x, y, z + 1))).getBlock() == Blocks.WATER) {
-						canGenerate = true;
-						mult = mult + 1;
-					}
-					if ((world.getBlockState(BlockPos.containing(x, y, z - 1))).getBlock() == Blocks.WATER) {
-						canGenerate = true;
-						mult = mult + 1;
-					}
-					if ((world.getBlockState(BlockPos.containing(x - 1, y, z))).getBlock() == Blocks.WATER) {
-						canGenerate = true;
-						mult = mult + 1;
-					}
-					if ((world.getBlockState(BlockPos.containing(x + 1, y, z))).getBlock() == Blocks.WATER) {
-						canGenerate = true;
-						mult = mult + 1;
-					}
-				}
-				if (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "needs_lava") == 1) {
-					if (canGenerate) {
+					if (getBlockNBTLogic(world, BlockPos.containing(x, y, z), "needs_block")) {
 						canGenerate = false;
-						mult = 0;
-						if ((world.getBlockState(BlockPos.containing(x, y, z + 1))).getBlock() == Blocks.LAVA) {
-							levelOfWater = (((("" + world.getBlockState(BlockPos.containing(x, y, z + 1))).substring(("" + world.getBlockState(BlockPos.containing(x, y, z + 1))).indexOf("level=", 0))).replace("]", "")).replace("[", ""))
-									.replace("level=", "");
-							if (new Object() {
-								double convert(String s) {
-									try {
-										return Double.parseDouble(s.trim());
-									} catch (Exception e) {
-									}
-									return 0;
+						String _splitContent25 = Pattern.quote(",");
+						String _toSplit25 = (getBlockNBTString(world, BlockPos.containing(x, y, z), "needs_block_sides"));
+						String[] _array25 = _toSplit25.split(_splitContent25);
+						if (_array25.length != 0) {
+							for (String stringiterator : _array25) {
+								cD = GetDirectionFromTextProcedure.execute(blockstate, stringiterator);
+								if ((world.getBlockState(BlockPos.containing(x + cD.getStepX(), y + cD.getStepY(), z + cD.getStepZ()))).getBlock() == BuiltInRegistries.BLOCK
+										.get(ResourceLocation.parse(((getBlockNBTString(world, BlockPos.containing(x, y, z), "needs_block_id"))).toLowerCase(java.util.Locale.ENGLISH)))) {
+									canGenerate = true;
+									mult = mult + 1;
 								}
-							}.convert(levelOfWater) > 0) {
-								canGenerate = true;
-								mult = mult + 1;
-							}
-						}
-						if ((world.getBlockState(BlockPos.containing(x, y, z - 1))).getBlock() == Blocks.LAVA) {
-							canGenerate = true;
-							mult = mult + 1;
-						}
-						if ((world.getBlockState(BlockPos.containing(x - 1, y, z))).getBlock() == Blocks.LAVA) {
-							canGenerate = true;
-							mult = mult + 1;
-						}
-						if ((world.getBlockState(BlockPos.containing(x + 1, y, z))).getBlock() == Blocks.LAVA) {
-							canGenerate = true;
-							mult = mult + 1;
-						}
-					}
-				} else if (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "needs_lava") == 2) {
-					if (canGenerate) {
-						canGenerate = false;
-						mult = 0;
-						if ((world.getBlockState(BlockPos.containing(x, y, z + 1))).getBlock() == Blocks.LAVA) {
-							canGenerate = true;
-							mult = mult + 1;
-						}
-						if ((world.getBlockState(BlockPos.containing(x, y, z - 1))).getBlock() == Blocks.LAVA) {
-							canGenerate = true;
-							mult = mult + 1;
-						}
-						if ((world.getBlockState(BlockPos.containing(x - 1, y, z))).getBlock() == Blocks.LAVA) {
-							canGenerate = true;
-							mult = mult + 1;
-						}
-						if ((world.getBlockState(BlockPos.containing(x + 1, y, z))).getBlock() == Blocks.LAVA) {
-							canGenerate = true;
-							mult = mult + 1;
-						}
-					}
-				}
-				if (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "needs_fire") == 1) {
-					if (canGenerate) {
-						canGenerate = false;
-						mult = 0;
-						if ((world.getBlockState(BlockPos.containing(x, y + 1, z))).getBlock() == Blocks.FIRE || (world.getBlockState(BlockPos.containing(x, y + 1, z))).getBlock() == Blocks.SOUL_FIRE) {
-							canGenerate = true;
-							mult = mult + 1;
-						}
-					}
-				} else if (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "needs_fire") == 2) {
-					if (canGenerate) {
-						canGenerate = false;
-						mult = 0;
-						if ((world.getBlockState(BlockPos.containing(x, y, z + 1))).getBlock() == Blocks.FIRE || (world.getBlockState(BlockPos.containing(x, y, z + 1))).getBlock() == Blocks.SOUL_FIRE) {
-							canGenerate = true;
-							mult = mult + 1;
-						}
-						if ((world.getBlockState(BlockPos.containing(x, y, z - 1))).getBlock() == Blocks.FIRE || (world.getBlockState(BlockPos.containing(x, y, z - 1))).getBlock() == Blocks.SOUL_FIRE) {
-							canGenerate = true;
-							mult = mult + 1;
-						}
-						if ((world.getBlockState(BlockPos.containing(x - 1, y, z))).getBlock() == Blocks.FIRE || (world.getBlockState(BlockPos.containing(x - 1, y, z))).getBlock() == Blocks.SOUL_FIRE) {
-							canGenerate = true;
-							mult = mult + 1;
-						}
-						if ((world.getBlockState(BlockPos.containing(x + 1, y, z))).getBlock() == Blocks.FIRE || (world.getBlockState(BlockPos.containing(x + 1, y, z))).getBlock() == Blocks.SOUL_FIRE) {
-							canGenerate = true;
-							mult = mult + 1;
-						}
-					}
-				}
-				if (canGenerate) {
-					if (!world.isClientSide()) {
-						BlockPos _bp = BlockPos.containing(x, y, z);
-						BlockEntity _blockEntity = world.getBlockEntity(_bp);
-						BlockState _bs = world.getBlockState(_bp);
-						if (_blockEntity != null) {
-							_blockEntity.getPersistentData().putBoolean("generating", true);
-						}
-						if (world instanceof Level _level)
-							_level.sendBlockUpdated(_bp, _bs, _bs, 3);
-					}
-					if (player.getData(EuruModVariables.PLAYER_VARIABLES).playerGPChecking) {
-						{
-							EuruModVariables.PlayerVariables _vars = player.getData(EuruModVariables.PLAYER_VARIABLES);
-							_vars.group_count_solarpanels = player.getData(EuruModVariables.PLAYER_VARIABLES).group_count_solarpanels + 1;
-							_vars.markSyncDirty();
-						}
-						if (mult > 0) {
-							{
-								EuruModVariables.PlayerVariables _vars = player.getData(EuruModVariables.PLAYER_VARIABLES);
-								_vars.group_raw_solarpanels = player.getData(EuruModVariables.PLAYER_VARIABLES).group_raw_solarpanels + mult * getBlockNBTNumber(world, BlockPos.containing(x, y, z), "gp_generated");
-								_vars.markSyncDirty();
 							}
 						} else {
-							{
-								EuruModVariables.PlayerVariables _vars = player.getData(EuruModVariables.PLAYER_VARIABLES);
-								_vars.group_raw_solarpanels = player.getData(EuruModVariables.PLAYER_VARIABLES).group_raw_solarpanels + getBlockNBTNumber(world, BlockPos.containing(x, y, z), "gp_generated");
-								_vars.markSyncDirty();
+							String stringiterator = _toSplit25;
+							for (int _yourmother25 = 0; _yourmother25 < 1; _yourmother25++) {
+								cD = GetDirectionFromTextProcedure.execute(blockstate, stringiterator);
+								if ((world.getBlockState(BlockPos.containing(x + cD.getStepX(), y + cD.getStepY(), z + cD.getStepZ()))).getBlock() == BuiltInRegistries.BLOCK
+										.get(ResourceLocation.parse(((getBlockNBTString(world, BlockPos.containing(x, y, z), "needs_block_id"))).toLowerCase(java.util.Locale.ENGLISH)))) {
+									canGenerate = true;
+									mult = mult + 1;
+								}
 							}
 						}
 					}
 				} else {
-					if (!world.isClientSide()) {
-						BlockPos _bp = BlockPos.containing(x, y, z);
-						BlockEntity _blockEntity = world.getBlockEntity(_bp);
-						BlockState _bs = world.getBlockState(_bp);
-						if (_blockEntity != null) {
-							_blockEntity.getPersistentData().putBoolean("generating", false);
-						}
-						if (world instanceof Level _level)
-							_level.sendBlockUpdated(_bp, _bs, _bs, 3);
-					}
+					canGenerate = false;
 				}
 			}
 			if (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "gEfficiency") == 0 || getBlockNBTNumber(world, BlockPos.containing(x, y, z), "gCutoff") == 0) {
@@ -304,47 +108,7 @@ public class PanelsTickUpdateHandlerProcedure {
 					_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 			}
 			if (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "range-configUpdate-counter") >= getBlockNBTNumber(world, BlockPos.containing(x, y, z), "range-configUpdate")) {
-				configFile = new File((FMLPaths.GAMEDIR.get().toString() + "/config/euru/"), File.separator + "euru_unified_config.json");
-				if (configFile.exists()) {
-					{
-						try {
-							BufferedReader bufferedReader = new BufferedReader(new FileReader(configFile));
-							StringBuilder jsonstringbuilder = new StringBuilder();
-							String line;
-							while ((line = bufferedReader.readLine()) != null) {
-								jsonstringbuilder.append(line);
-							}
-							bufferedReader.close();
-							cOBJ = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
-							gp_gen_obj = cOBJ.get("gp_generation").getAsJsonObject();
-							itemOBJ = gp_gen_obj.get((BuiltInRegistries.BLOCK.getKey((world.getBlockState(BlockPos.containing(x, y, z))).getBlock()).toString())).getAsJsonObject();
-							if (!world.isClientSide()) {
-								BlockPos _bp = BlockPos.containing(x, y, z);
-								BlockEntity _blockEntity = world.getBlockEntity(_bp);
-								BlockState _bs = world.getBlockState(_bp);
-								if (_blockEntity != null) {
-									_blockEntity.getPersistentData().putBoolean("needs_day", itemOBJ.get("needs_day").getAsBoolean());
-									_blockEntity.getPersistentData().putBoolean("needs_night", itemOBJ.get("needs_night").getAsBoolean());
-									_blockEntity.getPersistentData().putBoolean("needs_sky", itemOBJ.get("needs_sky").getAsBoolean());
-									_blockEntity.getPersistentData().putDouble("needs_water", itemOBJ.get("needs_water").getAsDouble());
-									_blockEntity.getPersistentData().putDouble("needs_lava", itemOBJ.get("needs_lava").getAsDouble());
-									_blockEntity.getPersistentData().putDouble("needs_fire", itemOBJ.get("needs_fire").getAsDouble());
-									_blockEntity.getPersistentData().putDouble("gp_generated", itemOBJ.get("gp_generated").getAsDouble());
-									_blockEntity.getPersistentData().putDouble("range-configUpdate-min", cOBJ.get("range-configUpdate-min").getAsDouble());
-									_blockEntity.getPersistentData().putDouble("range-configUpdate-max", cOBJ.get("range-configUpdate-max").getAsDouble());
-									_blockEntity.getPersistentData().putDouble("range-configUpdate",
-											(Mth.nextInt(RandomSource.create(), (int) cOBJ.get("range-configUpdate-min").getAsDouble(), (int) cOBJ.get("range-configUpdate-max").getAsDouble())));
-									_blockEntity.getPersistentData().putDouble("range-configUpdate-counter", 0);
-									_blockEntity.getPersistentData().putBoolean("been_json_checked", true);
-								}
-								if (world instanceof Level _level)
-									_level.sendBlockUpdated(_bp, _bs, _bs, 3);
-							}
-						} catch (IOException e) {
-							e.printStackTrace();
-						}
-					}
-				}
+				GroupPanelsConfigHandlerProcedure.execute(world, x, y, z);
 			} else {
 				if (!world.isClientSide()) {
 					BlockPos _bp = BlockPos.containing(x, y, z);
@@ -356,6 +120,49 @@ public class PanelsTickUpdateHandlerProcedure {
 					if (world instanceof Level _level)
 						_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 				}
+			}
+		}
+		if (canGenerate) {
+			if (!world.isClientSide()) {
+				BlockPos _bp = BlockPos.containing(x, y, z);
+				BlockEntity _blockEntity = world.getBlockEntity(_bp);
+				BlockState _bs = world.getBlockState(_bp);
+				if (_blockEntity != null) {
+					_blockEntity.getPersistentData().putBoolean("generating", true);
+				}
+				if (world instanceof Level _level)
+					_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+			}
+			if (player.getData(EuruModVariables.PLAYER_VARIABLES).playerGPChecking) {
+				{
+					EuruModVariables.PlayerVariables _vars = player.getData(EuruModVariables.PLAYER_VARIABLES);
+					_vars.group_count_solarpanels = player.getData(EuruModVariables.PLAYER_VARIABLES).group_count_solarpanels + 1;
+					_vars.markSyncDirty();
+				}
+				if (mult > 0) {
+					{
+						EuruModVariables.PlayerVariables _vars = player.getData(EuruModVariables.PLAYER_VARIABLES);
+						_vars.group_raw_solarpanels = player.getData(EuruModVariables.PLAYER_VARIABLES).group_raw_solarpanels + mult * getBlockNBTNumber(world, BlockPos.containing(x, y, z), "gp_generated");
+						_vars.markSyncDirty();
+					}
+				} else {
+					{
+						EuruModVariables.PlayerVariables _vars = player.getData(EuruModVariables.PLAYER_VARIABLES);
+						_vars.group_raw_solarpanels = player.getData(EuruModVariables.PLAYER_VARIABLES).group_raw_solarpanels + getBlockNBTNumber(world, BlockPos.containing(x, y, z), "gp_generated");
+						_vars.markSyncDirty();
+					}
+				}
+			}
+		} else {
+			if (!world.isClientSide()) {
+				BlockPos _bp = BlockPos.containing(x, y, z);
+				BlockEntity _blockEntity = world.getBlockEntity(_bp);
+				BlockState _bs = world.getBlockState(_bp);
+				if (_blockEntity != null) {
+					_blockEntity.getPersistentData().putBoolean("generating", false);
+				}
+				if (world instanceof Level _level)
+					_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 			}
 		}
 	}
@@ -375,17 +182,17 @@ public class PanelsTickUpdateHandlerProcedure {
 		}
 	}
 
-	private static boolean getBlockNBTLogic(LevelAccessor world, BlockPos pos, String tag) {
-		BlockEntity blockEntity = world.getBlockEntity(pos);
-		if (blockEntity != null)
-			return blockEntity.getPersistentData().getBoolean(tag);
-		return false;
-	}
-
 	private static double getBlockNBTNumber(LevelAccessor world, BlockPos pos, String tag) {
 		BlockEntity blockEntity = world.getBlockEntity(pos);
 		if (blockEntity != null)
 			return blockEntity.getPersistentData().getDouble(tag);
 		return -1;
+	}
+
+	private static boolean getBlockNBTLogic(LevelAccessor world, BlockPos pos, String tag) {
+		BlockEntity blockEntity = world.getBlockEntity(pos);
+		if (blockEntity != null)
+			return blockEntity.getPersistentData().getBoolean(tag);
+		return false;
 	}
 }

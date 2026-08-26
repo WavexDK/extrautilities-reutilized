@@ -1,0 +1,18 @@
+{
+  "type": "euru:ex_gen_recipe_type",
+  "ingredients": [
+    {
+      "item": "minecraft:tnt_minecart"
+    }
+  ],
+  "strings": [
+    "euru:explosive_generator",
+    "minecraft:tnt_minecart"
+  ],
+  "outputs": [
+    {
+      "id": "minecraft:polished_tuff",
+      "count": 1
+    }
+  ]
+}

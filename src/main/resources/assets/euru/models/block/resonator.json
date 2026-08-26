@@ -3,7 +3,7 @@
   "textures": {
     "all": "euru:block/reso-new",
     "particle": "euru:block/reso-new",
-    "1": "euru:block/reso-new"
+    "0": "euru:block/reso-new"
   },
   "render_type": "solid"
 }

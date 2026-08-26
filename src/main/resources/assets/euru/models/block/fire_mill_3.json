@@ -3,7 +3,7 @@
   "textures": {
     "all": "euru:block/frame4",
     "particle": "euru:block/smoothburnstone",
-    "0": "euru:block/frame4"
+    "0": "euru:block/f4"
   },
   "render_type": "cutout"
 }

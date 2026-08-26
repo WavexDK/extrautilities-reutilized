@@ -1,0 +1,64 @@
+{
+  "variants": {
+    "facing=north,animation=0": {
+      "model": "euru:block/wind_mill_0"
+    },
+    "facing=north,animation=1": {
+      "model": "euru:block/wind_mill_1"
+    },
+    "facing=north,animation=2": {
+      "model": "euru:block/wind_mill_2"
+    },
+    "facing=north,animation=3": {
+      "model": "euru:block/wind_mill_3"
+    },
+    "facing=east,animation=0": {
+      "model": "euru:block/wind_mill_0",
+      "y": 90
+    },
+    "facing=east,animation=1": {
+      "model": "euru:block/wind_mill_1",
+      "y": 90
+    },
+    "facing=east,animation=2": {
+      "model": "euru:block/wind_mill_2",
+      "y": 90
+    },
+    "facing=east,animation=3": {
+      "model": "euru:block/wind_mill_3",
+      "y": 90
+    },
+    "facing=south,animation=0": {
+      "model": "euru:block/wind_mill_0",
+      "y": 180
+    },
+    "facing=south,animation=1": {
+      "model": "euru:block/wind_mill_1",
+      "y": 180
+    },
+    "facing=south,animation=2": {
+      "model": "euru:block/wind_mill_2",
+      "y": 180
+    },
+    "facing=south,animation=3": {
+      "model": "euru:block/wind_mill_3",
+      "y": 180
+    },
+    "facing=west,animation=0": {
+      "model": "euru:block/wind_mill_0",
+      "y": 270
+    },
+    "facing=west,animation=1": {
+      "model": "euru:block/wind_mill_1",
+      "y": 270
+    },
+    "facing=west,animation=2": {
+      "model": "euru:block/wind_mill_2",
+      "y": 270
+    },
+    "facing=west,animation=3": {
+      "model": "euru:block/wind_mill_3",
+      "y": 270
+    }
+  }
+}
