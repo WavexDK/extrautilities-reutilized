@@ -79,7 +79,7 @@ public class EURUUnifiedConfigManagerProcedure {
 		String cItem = "";
 		String coutput = "";
 		configFile = new File((FMLPaths.GAMEDIR.get().toString() + "/config/euru/"), File.separator + "euru_unified_config.json");
-		EuruModVariables.cVer = 2.3;
+		EuruModVariables.cVer = 2.4;
 		cVer = EuruModVariables.cVer;
 		if (!configFile.exists()) {
 			try {
@@ -301,6 +301,8 @@ public class EURUUnifiedConfigManagerProcedure {
 			wc.addProperty("number_of_plants_grown", 2);
 			wc.addProperty("info", "(!) NEVER Set the above values to 0, or your TPS will drop dramatically when using the Watering Can, and the item will not work (!)");
 			generalOBJ.add((BuiltInRegistries.ITEM.getKey(EuruModItems.WATERING_CAN.get()).toString()), wc);
+			gcobj.addProperty("required_fe_per_tick", 10);
+			generalOBJ.add((BuiltInRegistries.ITEM.getKey(EuruModItems.WIRELESS_RF_HEATING_COIL.get()).toString()), gcobj);
 			gcobj.addProperty("breaks_glass", true);
 			generalOBJ.add((BuiltInRegistries.ITEM.getKey(EuruModItems.GLASS_CUTTER.get()).toString()), gcobj);
 			cwobj.addProperty("gp_needed", 4);

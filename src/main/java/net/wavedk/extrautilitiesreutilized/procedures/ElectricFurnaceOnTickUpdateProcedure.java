@@ -7,6 +7,7 @@ import net.wavedk.extrautilitiesreutilized.init.EuruModItems;
 import net.wavedk.extrautilitiesreutilized.init.EuruModBlocks;
 import net.wavedk.extrautilitiesreutilized.block.entity.ElectricFurnaceBlockEntity;
 
+import net.neoforged.neoforge.server.ServerLifecycleHooks;
 import net.neoforged.neoforge.items.IItemHandlerModifiable;
 import net.neoforged.neoforge.items.IItemHandler;
 import net.neoforged.neoforge.energy.IEnergyStorage;
@@ -55,9 +56,8 @@ public class ElectricFurnaceOnTickUpdateProcedure {
 		double mult = 0;
 		double updateGP = 0;
 		getDep = ((x + "" + y) + "" + z) + "" + (blockstate + "" + (world instanceof Level _lvl ? _lvl.dimension() : (world instanceof WorldGenLevel _wgl ? _wgl.getLevel().dimension() : Level.OVERWORLD)));
-		if (world.getServer() != null) {
-			LevelAccessor _origWorld = world;
-			for (ServerLevel worlditerator : world.getServer().getAllLevels()) {
+		if (ServerLifecycleHooks.getCurrentServer() != null) {
+			for (ServerLevel worlditerator : ServerLifecycleHooks.getCurrentServer().getAllLevels()) {
 				world = worlditerator;
 				if (!(player instanceof Player || player instanceof ServerPlayer)) {
 					player = world instanceof ServerLevel _serverGetEntityUUID ? _serverGetEntityUUID.getEntity(tryOrDefault((getBlockNBTString(world, BlockPos.containing(x, y, z), "placedBy")), UUID::fromString, () -> new UUID(0, 0))) : null;
@@ -66,7 +66,6 @@ public class ElectricFurnaceOnTickUpdateProcedure {
 					}
 				}
 			}
-			world = _origWorld;
 		}
 		if (player instanceof ServerPlayer || player instanceof Player) {
 			mult = 1;

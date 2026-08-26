@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "euru:item/wirelessrfheatingcoil"
+    "layer0": "euru:item/heatingresonator"
   }
 }

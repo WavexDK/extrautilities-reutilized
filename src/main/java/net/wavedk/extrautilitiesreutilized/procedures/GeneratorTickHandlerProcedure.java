@@ -7,6 +7,7 @@ import net.wavedk.extrautilitiesreutilized.init.EuruModItems;
 import net.wavedk.extrautilitiesreutilized.init.EuruModBlocks;
 import net.wavedk.extrautilitiesreutilized.block.entity.IEnergyReceiver;
 
+import net.neoforged.neoforge.server.ServerLifecycleHooks;
 import net.neoforged.neoforge.items.IItemHandlerModifiable;
 import net.neoforged.neoforge.items.IItemHandler;
 import net.neoforged.neoforge.energy.IEnergyStorage;
@@ -84,16 +85,14 @@ public class GeneratorTickHandlerProcedure {
 		boolean loopdiloop = false;
 		boolean canSendEnergy = false;
 		ItemStack eItem = ItemStack.EMPTY;
-		if (world.getServer() != null) {
-			LevelAccessor _origWorld = world;
-			for (ServerLevel worlditerator : world.getServer().getAllLevels()) {
+		if (ServerLifecycleHooks.getCurrentServer() != null) {
+			for (ServerLevel worlditerator : ServerLifecycleHooks.getCurrentServer().getAllLevels()) {
 				world = worlditerator;
 				player = world instanceof ServerLevel _serverGetEntityUUID ? _serverGetEntityUUID.getEntity(tryOrDefault((getBlockNBTString(world, BlockPos.containing(x, y, z), "placedBy")), UUID::fromString, () -> new UUID(0, 0))) : null;
 				if (player instanceof ServerPlayer || player instanceof Player) {
 					break;
 				}
 			}
-			world = _origWorld;
 		}
 		if (player instanceof ServerPlayer || player instanceof Player) {
 			if (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "redstoneMode") == 0) {

@@ -1,0 +1,14 @@
+{
+  "_fv": 89,
+  "_type": "itemextension",
+  "definition": {
+    "item": "CUSTOM:WirelessRFHeatingCoil",
+    "enableFuel": true,
+    "fuelPower": {
+      "fixedValue": 1600.0,
+      "name": "WRFHCItemExtensionValue"
+    },
+    "hasDispenseBehavior": false,
+    "compostLayerChance": 0.0
+  }
+}

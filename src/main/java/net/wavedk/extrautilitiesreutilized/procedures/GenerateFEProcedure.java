@@ -2,6 +2,8 @@ package net.wavedk.extrautilitiesreutilized.procedures;
 
 import net.wavedk.extrautilitiesreutilized.block.entity.IEnergyReceiver;
 
+import net.neoforged.neoforge.server.ServerLifecycleHooks;
+
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
@@ -22,9 +24,8 @@ public class GenerateFEProcedure {
 		gen = (BuiltInRegistries.ITEM.getKey(itemstack.getItem()).toString()).replace(" ", "") + "BlockEntity";
 		feSpeed = feSpeedDep;
 		provWorldID = worldIDDep;
-		if (world.getServer() != null) {
-			LevelAccessor _origWorld = world;
-			for (ServerLevel worlditerator : world.getServer().getAllLevels()) {
+		if (ServerLifecycleHooks.getCurrentServer() != null) {
+			for (ServerLevel worlditerator : ServerLifecycleHooks.getCurrentServer().getAllLevels()) {
 				world = worlditerator;
 				if ((worldIDDep).equals("" + (world instanceof Level _lvl ? _lvl.dimension() : (world instanceof WorldGenLevel _wgl ? _wgl.getLevel().dimension() : Level.OVERWORLD)))) {
 					if (world.getBlockEntity(new BlockPos((int) x, (int) y, (int) z)) instanceof IEnergyReceiver be) {
@@ -32,7 +33,6 @@ public class GenerateFEProcedure {
 					}
 				}
 			}
-			world = _origWorld;
 		}
 	}
 }

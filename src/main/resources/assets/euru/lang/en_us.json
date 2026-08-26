@@ -185,8 +185,11 @@
   "block.euru.gold_spike": "Golden Spike",
   "block.euru.diamond_spike": "Diamond Spike",
   "block.euru.netherite_spike": "Netherite Spike",
-  "item.euru.wireless_rf_heating_coil": "Wireless FE Heating Coil",
+  "item.euru.wireless_rf_heating_coil": "Heating Resonator",
   "block.euru.wind_mill": "Wind Mill",
   "item.euru.wireless_rf_heating_coil.description_1": "§7Does not work.",
-  "item.euru.wireless_rf_heating_coil.description_0": "§7Work In Progress."
+  "item.euru.wireless_rf_heating_coil.description_0": "§7Work In Progress.",
+  "gui.euru.wireless_battery_gui.label_input_wireless_fe_heating_coil_t": "Insert coil to sync",
+  "gui.euru.wireless_battery_gui.label_wireless_battery": "Wireless Battery",
+  "block.euru.wireless_battery": "Wireless Battery"
 }

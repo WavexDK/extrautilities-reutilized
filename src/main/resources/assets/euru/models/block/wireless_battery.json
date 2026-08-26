@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "euru:block/wirelessbatttemp",
+    "up": "euru:block/wirelessbatttemp",
+    "north": "euru:block/wirelessbatttemp",
+    "east": "euru:block/wirelessbatttemp",
+    "south": "euru:block/wirelessbatttemp",
+    "west": "euru:block/wirelessbatttemp",
+    "particle": "euru:block/wirelessbatttemp"
+  },
+  "render_type": "solid"
+}

@@ -41,6 +41,7 @@ public class EuruModTabs {
 				tabData.accept(EuruModBlocks.FIRE_MILL.get().asItem());
 				tabData.accept(EuruModBlocks.WIND_MILL.get().asItem());
 				tabData.accept(EuruModBlocks.ENCHANTER.get().asItem());
+				tabData.accept(EuruModBlocks.WIRELESS_BATTERY.get().asItem());
 				tabData.accept(EuruModBlocks.BLOCK_OF_EVIL_INFUSED_INGOT.get().asItem());
 				tabData.accept(EuruModBlocks.SLIGHTLY_LARGER_CHEST.get().asItem());
 				tabData.accept(EuruModBlocks.CHUNK_LOADING_WARD.get().asItem());

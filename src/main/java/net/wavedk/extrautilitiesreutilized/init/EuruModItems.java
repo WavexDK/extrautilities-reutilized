@@ -112,6 +112,7 @@ public class EuruModItems {
 	public static final DeferredItem<Item> NETHERITE_SPIKE = block(EuruModBlocks.NETHERITE_SPIKE);
 	public static final DeferredItem<Item> WIRELESS_RF_HEATING_COIL = REGISTRY.register("wireless_rf_heating_coil", WirelessRFHeatingCoilItem::new);
 	public static final DeferredItem<Item> WIND_MILL = block(EuruModBlocks.WIND_MILL);
+	public static final DeferredItem<Item> WIRELESS_BATTERY = block(EuruModBlocks.WIRELESS_BATTERY);
 
 	// Start of user code block custom items
 	// End of user code block custom items

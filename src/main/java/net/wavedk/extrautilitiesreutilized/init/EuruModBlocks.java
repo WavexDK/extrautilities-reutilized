@@ -59,6 +59,7 @@ public class EuruModBlocks {
 	public static final DeferredBlock<Block> DIAMOND_SPIKE;
 	public static final DeferredBlock<Block> NETHERITE_SPIKE;
 	public static final DeferredBlock<Block> WIND_MILL;
+	public static final DeferredBlock<Block> WIRELESS_BATTERY;
 	static {
 		SOLAR_PANEL = REGISTRY.register("solar_panel", SolarPanelBlock::new);
 		LUNAR_PANEL = REGISTRY.register("lunar_panel", LunarPanelBlock::new);
@@ -106,6 +107,7 @@ public class EuruModBlocks {
 		DIAMOND_SPIKE = REGISTRY.register("diamond_spike", DiamondSpikeBlock::new);
 		NETHERITE_SPIKE = REGISTRY.register("netherite_spike", NetheriteSpikeBlock::new);
 		WIND_MILL = REGISTRY.register("wind_mill", WindMillBlock::new);
+		WIRELESS_BATTERY = REGISTRY.register("wireless_battery", WirelessBatteryBlock::new);
 	}
 	// Start of user code block custom blocks
 	// End of user code block custom blocks

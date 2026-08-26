@@ -6,6 +6,7 @@ import net.wavedk.extrautilitiesreutilized.network.EuruModVariables;
 import net.wavedk.extrautilitiesreutilized.init.EuruModItems;
 import net.wavedk.extrautilitiesreutilized.block.entity.EnchanterBlockEntity;
 
+import net.neoforged.neoforge.server.ServerLifecycleHooks;
 import net.neoforged.neoforge.items.IItemHandlerModifiable;
 import net.neoforged.neoforge.items.IItemHandler;
 import net.neoforged.neoforge.energy.IEnergyStorage;
@@ -55,9 +56,8 @@ public class EnchanterOnTickUpdateProcedure {
 		double energyRemove = 0;
 		boolean canPass = false;
 		boolean on = false;
-		if (world.getServer() != null) {
-			LevelAccessor _origWorld = world;
-			for (ServerLevel worlditerator : world.getServer().getAllLevels()) {
+		if (ServerLifecycleHooks.getCurrentServer() != null) {
+			for (ServerLevel worlditerator : ServerLifecycleHooks.getCurrentServer().getAllLevels()) {
 				world = worlditerator;
 				if (!(player instanceof Player || player instanceof ServerPlayer)) {
 					player = world instanceof ServerLevel _serverGetEntityUUID ? _serverGetEntityUUID.getEntity(tryOrDefault((getBlockNBTString(world, BlockPos.containing(x, y, z), "placedBy")), UUID::fromString, () -> new UUID(0, 0))) : null;
@@ -66,7 +66,6 @@ public class EnchanterOnTickUpdateProcedure {
 					}
 				}
 			}
-			world = _origWorld;
 		}
 		if (player instanceof Player || player instanceof ServerPlayer) {
 			if (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "redstoneMode") == 0) {

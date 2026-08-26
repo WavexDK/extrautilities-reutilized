@@ -2,6 +2,8 @@ package net.wavedk.extrautilitiesreutilized.procedures;
 
 import org.apache.commons.lang3.function.FailableFunction;
 
+import net.neoforged.neoforge.server.ServerLifecycleHooks;
+
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -29,16 +31,14 @@ import java.util.UUID;
 public class SpikesOnTickUpdateProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z) {
 		Entity player = null;
-		if (world.getServer() != null) {
-			LevelAccessor _origWorld = world;
-			for (ServerLevel worlditerator : world.getServer().getAllLevels()) {
+		if (ServerLifecycleHooks.getCurrentServer() != null) {
+			for (ServerLevel worlditerator : ServerLifecycleHooks.getCurrentServer().getAllLevels()) {
 				world = worlditerator;
 				player = world instanceof ServerLevel _serverGetEntityUUID ? _serverGetEntityUUID.getEntity(tryOrDefault((getBlockNBTString(world, BlockPos.containing(x, y, z), "placedBy")), UUID::fromString, () -> new UUID(0, 0))) : null;
 				if (player instanceof ServerPlayer || player instanceof Player) {
 					break;
 				}
 			}
-			world = _origWorld;
 		}
 		if (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "damage_tickcounter") >= getBlockNBTNumber(world, BlockPos.containing(x, y, z), "damage_tickrate")) {
 			if (!world.isClientSide()) {

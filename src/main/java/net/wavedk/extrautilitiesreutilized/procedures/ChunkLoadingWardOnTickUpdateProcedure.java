@@ -4,6 +4,8 @@ import org.apache.commons.lang3.function.FailableFunction;
 
 import net.wavedk.extrautilitiesreutilized.network.EuruModVariables;
 
+import net.neoforged.neoforge.server.ServerLifecycleHooks;
+
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.Vec2;
 import net.minecraft.world.level.block.state.BlockState;
@@ -28,16 +30,14 @@ public class ChunkLoadingWardOnTickUpdateProcedure {
 		Entity player = null;
 		boolean canPass = false;
 		placedBy = getBlockNBTString(world, BlockPos.containing(x, y, z), "placedBy");
-		if (world.getServer() != null) {
-			LevelAccessor _origWorld = world;
-			for (ServerLevel worlditerator : world.getServer().getAllLevels()) {
+		if (ServerLifecycleHooks.getCurrentServer() != null) {
+			for (ServerLevel worlditerator : ServerLifecycleHooks.getCurrentServer().getAllLevels()) {
 				world = worlditerator;
 				player = world instanceof ServerLevel _serverGetEntityUUID ? _serverGetEntityUUID.getEntity(tryOrDefault(placedBy, UUID::fromString, () -> new UUID(0, 0))) : null;
 				if (player instanceof Player || player instanceof ServerPlayer) {
 					break;
 				}
 			}
-			world = _origWorld;
 		}
 		canPass = false;
 		if (!player.getData(EuruModVariables.PLAYER_VARIABLES).playerGPChecking) {

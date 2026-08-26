@@ -155,6 +155,7 @@
     },
     "inventorySize": 9,
     "inventoryStackSize": 99,
+    "onRightClickedInAir": "EnderShardRightclicked",
     "enableRanged": false,
     "shootConstantly": false,
     "rangedItemChargesPower": false,

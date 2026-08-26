@@ -1,0 +1,128 @@
+{
+  "_fv": 89,
+  "_type": "gui",
+  "definition": {
+    "type": 1,
+    "width": 176,
+    "height": 166,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": "CUSTOM:WirelessRFHeatingCoil"
+          },
+          "disablePlacement": {
+            "fixedValue": false
+          },
+          "id": 0,
+          "disablePickup": {
+            "fixedValue": false
+          },
+          "dropItemsWhenNotBound": true,
+          "onSlotChanged": "WirelessFEHeatingCoilSync",
+          "x": 169,
+          "y": 71,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "arrow-empty.png",
+          "use1Xscale": false,
+          "x": 202,
+          "y": 69,
+          "locked": false
+        }
+      },
+      {
+        "type": "outputslot",
+        "data": {
+          "id": 1,
+          "disablePickup": {
+            "fixedValue": false
+          },
+          "dropItemsWhenNotBound": true,
+          "x": 241,
+          "y": 71,
+          "locked": false
+        }
+      },
+      {
+        "type": "sprite",
+        "data": {
+          "sprite": "strip.png",
+          "spritesCount": 48,
+          "spriteIndex": {
+            "fixedValue": 0.0,
+            "name": "BatteryLevelReturn"
+          },
+          "x": 268,
+          "y": 47,
+          "locked": false
+        }
+      },
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_proc_return_fe_storage",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnFEStorage"
+          },
+          "width": 22,
+          "height": 60,
+          "x": 269,
+          "y": 51,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_wireless_battery",
+          "text": {
+            "fixedValue": "Wireless Battery"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "hasShadow": false,
+          "x": 133,
+          "y": 42,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_input_wireless_fe_heating_coil_t",
+          "text": {
+            "fixedValue": "Insert coil to sync"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "hasShadow": false,
+          "x": 133,
+          "y": 97,
+          "locked": false
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 12,
+      "oy": 14,
+      "snapOnGrid": false
+    }
+  }
+}
