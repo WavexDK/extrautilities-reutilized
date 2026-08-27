@@ -79,7 +79,7 @@ public class EURUUnifiedConfigManagerProcedure {
 		String cItem = "";
 		String coutput = "";
 		configFile = new File((FMLPaths.GAMEDIR.get().toString() + "/config/euru/"), File.separator + "euru_unified_config.json");
-		EuruModVariables.cVer = 2.4;
+		EuruModVariables.cVer = 2;
 		cVer = EuruModVariables.cVer;
 		if (!configFile.exists()) {
 			try {
@@ -129,6 +129,12 @@ public class EURUUnifiedConfigManagerProcedure {
 			erlArray.add((BuiltInRegistries.ITEM.getKey(EuruModItems.NUGGETO_EXPERIENCE.get()).toString()));
 			eobj.add("recipeList", erlArray);
 			recipesOBJ.add((BuiltInRegistries.ITEM.getKey(EuruModBlocks.ENCHANTER.get().asItem()).toString()), eobj);
+			itemobj = new com.google.gson.JsonObject();
+			itemobj.addProperty("gp_required", 16);
+			itemobj.addProperty("wait_time", 800);
+			itemobj.addProperty("output", (BuiltInRegistries.ITEM.getKey(EuruModItems.WIRELESS_RF_HEATING_COIL.get()).toString()));
+			bobj.add((BuiltInRegistries.ITEM.getKey(Blocks.IRON_BARS.asItem()).toString()), itemobj);
+			rlArray.add((BuiltInRegistries.ITEM.getKey(Blocks.IRON_BARS.asItem()).toString()));
 			itemobj = new com.google.gson.JsonObject();
 			itemobj.addProperty("gp_required", 8);
 			itemobj.addProperty("wait_time", 400);

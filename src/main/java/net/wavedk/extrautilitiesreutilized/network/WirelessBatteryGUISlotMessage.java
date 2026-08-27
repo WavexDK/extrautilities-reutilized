@@ -51,7 +51,7 @@ public record WirelessBatteryGUISlotMessage(int slotID, int x, int y, int z, int
 			return;
 		if (slot == 0 && changeType == 0) {
 
-			WirelessFEHeatingCoilSyncProcedure.execute(world, x, y, z, entity, slot);
+			WirelessFEHeatingCoilSyncProcedure.execute(world, x, y, z, slot);
 		}
 	}
 

@@ -13,23 +13,22 @@ import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.item.component.CustomData;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.Mth;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.network.chat.Component;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.BlockPos;
 
 public class WirelessFEHeatingCoilSyncProcedure {
-	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity, double slot) {
-		if (entity == null)
-			return;
+	public static void execute(LevelAccessor world, double x, double y, double z, double slot) {
 		ItemStack cItem = ItemStack.EMPTY;
 		String sbId = "";
 		if ((itemFromBlockInventory(world, BlockPos.containing(x, y, z), (int) slot).copy()).getItem() == EuruModItems.WIRELESS_RF_HEATING_COIL.get()) {
 			cItem = (itemFromBlockInventory(world, BlockPos.containing(x, y, z), (int) slot).copy()).copy();
 			{
 				final String _tagName = "syncedBlock";
-				final String _tagValue = (((x + ",") + "" + (y + ",")) + "" + ((z + ",") + "" + entity.level().dimension().location().toString()));
+				final String _tagValue = (((x + ",") + "" + (y + ",")) + "" + ((z + ",") + "" + ("" + ((Level) world).dimension().location().toString())));
 				CustomData.update(DataComponents.CUSTOM_DATA, cItem, tag -> tag.putString(_tagName, _tagValue));
 			}
 			for (int _i1 = 0; _i1 < 32; _i1++) {
@@ -45,7 +44,7 @@ public class WirelessFEHeatingCoilSyncProcedure {
 				BlockEntity _blockEntity = world.getBlockEntity(_bp);
 				BlockState _bs = world.getBlockState(_bp);
 				if (_blockEntity != null) {
-					_blockEntity.getPersistentData().putString("syncedBlock_id", sbId);
+					_blockEntity.getPersistentData().putString("syncedBlock_id", ((getBlockNBTString(world, BlockPos.containing(x, y, z), "syncedBlock_id") + "" + sbId) + ","));
 				}
 				if (world instanceof Level _level)
 					_level.sendBlockUpdated(_bp, _bs, _bs, 3);
@@ -60,6 +59,12 @@ public class WirelessFEHeatingCoilSyncProcedure {
 				_setstack.setCount(1);
 				_itemHandlerModifiable.setStackInSlot(1, _setstack);
 			}
+			if (world instanceof ServerLevel _level) {
+				_level.getServer().getPlayerList().broadcastSystemMessage(Component.literal(("item " + cItem.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getString("syncedBlock_id"))), false);
+			}
+			if (world instanceof ServerLevel _level) {
+				_level.getServer().getPlayerList().broadcastSystemMessage(Component.literal(("block " + getBlockNBTString(world, BlockPos.containing(x, y, z), "syncedBlock_id"))), false);
+			}
 		}
 	}
 
@@ -70,5 +75,12 @@ public class WirelessFEHeatingCoilSyncProcedure {
 				return itemHandler.getStackInSlot(slot);
 		}
 		return ItemStack.EMPTY;
+	}
+
+	private static String getBlockNBTString(LevelAccessor world, BlockPos pos, String tag) {
+		BlockEntity blockEntity = world.getBlockEntity(pos);
+		if (blockEntity != null)
+			return blockEntity.getPersistentData().getString(tag);
+		return "";
 	}
 }

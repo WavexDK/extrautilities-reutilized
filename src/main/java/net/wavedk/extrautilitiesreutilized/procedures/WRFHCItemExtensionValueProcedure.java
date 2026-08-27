@@ -26,6 +26,8 @@ public class WRFHCItemExtensionValueProcedure {
 		double cN = 0;
 		double returnNumber = 0;
 		InteractionResult dimensionId = InteractionResult.PASS;
+		boolean isLoading = false;
+		boolean foundBlock = false;
 		returnNumber = 0;
 		if (!(itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getString("syncedBlock")).isEmpty()) {
 			cN = 1;
@@ -65,32 +67,42 @@ public class WRFHCItemExtensionValueProcedure {
 							}
 						}.convert(stringiterator);
 					} else if (cN == 4) {
+						foundBlock = false;
 						if (net.neoforged.neoforge.server.ServerLifecycleHooks.getCurrentServer() != null) {
-							for (net.minecraft.server.level.ServerLevel world : net.neoforged.neoforge.server.ServerLifecycleHooks.getCurrentServer().getAllLevels()) {
+							for (net.minecraft.server.level.ServerLevel _serverWorld : net.neoforged.neoforge.server.ServerLifecycleHooks.getCurrentServer().getAllLevels()) {
+								final net.minecraft.world.level.LevelAccessor world = _serverWorld;
+								BlockPos pos = new BlockPos((int) cX, (int) cY, (int) cZ);
+								isLoading = world.hasChunkAt(pos);
 								if ((((Level) world).dimension().location().toString()).equals(stringiterator)) {
-									if ((world.getBlockState(BlockPos.containing(cX, cY, cZ))).getBlock() == EuruModBlocks.WIRELESS_BATTERY.get()
-											&& (getBlockNBTString(world, BlockPos.containing(cX, cY, cZ), "syncedBlock_id")).equals(itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getString("syncedBlock_id"))) {
-										if (getEnergyStored(world, BlockPos.containing(cX, cY, cZ), null) >= itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("required_fe_per_tick")) {
-											if (world instanceof ILevelExtension _ext) {
-												IEnergyStorage _entityStorage = _ext.getCapability(Capabilities.EnergyStorage.BLOCK, BlockPos.containing(cX, cY, cZ), null);
-												if (_entityStorage != null)
-													_entityStorage.extractEnergy((int) itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("required_fe_per_tick"), false);
+									if (isLoading) {
+										if ((world.getBlockState(BlockPos.containing(cX, cY, cZ))).getBlock() == EuruModBlocks.WIRELESS_BATTERY.get()
+												&& (getBlockNBTString(world, BlockPos.containing(cX, cY, cZ), "syncedBlock_id")).contains(itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getString("syncedBlock_id"))) {
+											foundBlock = true;
+											if (getEnergyStored(world, BlockPos.containing(cX, cY, cZ), null) >= itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("required_fe_per_tick")) {
+												if (world instanceof ILevelExtension _ext) {
+													IEnergyStorage _entityStorage = _ext.getCapability(Capabilities.EnergyStorage.BLOCK, BlockPos.containing(cX, cY, cZ), null);
+													if (_entityStorage != null)
+														_entityStorage.extractEnergy((int) itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("required_fe_per_tick"), false);
+												}
+												returnNumber = 1;
 											}
-											returnNumber = 1;
 										}
 									} else {
-										{
-											final String _tagName = "syncedBlock_id";
-											final String _tagValue = "";
-											CustomData.update(DataComponents.CUSTOM_DATA, itemstack, tag -> tag.putString(_tagName, _tagValue));
-										}
-										{
-											final String _tagName = "syncedBlock";
-											final String _tagValue = "";
-											CustomData.update(DataComponents.CUSTOM_DATA, itemstack, tag -> tag.putString(_tagName, _tagValue));
-										}
+										foundBlock = true;
 									}
 								}
+							}
+						}
+						if (!foundBlock) {
+							{
+								final String _tagName = "syncedBlock_id";
+								final String _tagValue = "";
+								CustomData.update(DataComponents.CUSTOM_DATA, itemstack, tag -> tag.putString(_tagName, _tagValue));
+							}
+							{
+								final String _tagName = "syncedBlock";
+								final String _tagValue = "";
+								CustomData.update(DataComponents.CUSTOM_DATA, itemstack, tag -> tag.putString(_tagName, _tagValue));
 							}
 						}
 					}
@@ -130,32 +142,42 @@ public class WRFHCItemExtensionValueProcedure {
 							}
 						}.convert(stringiterator);
 					} else if (cN == 4) {
+						foundBlock = false;
 						if (net.neoforged.neoforge.server.ServerLifecycleHooks.getCurrentServer() != null) {
-							for (net.minecraft.server.level.ServerLevel world : net.neoforged.neoforge.server.ServerLifecycleHooks.getCurrentServer().getAllLevels()) {
+							for (net.minecraft.server.level.ServerLevel _serverWorld : net.neoforged.neoforge.server.ServerLifecycleHooks.getCurrentServer().getAllLevels()) {
+								final net.minecraft.world.level.LevelAccessor world = _serverWorld;
+								BlockPos pos = new BlockPos((int) cX, (int) cY, (int) cZ);
+								isLoading = world.hasChunkAt(pos);
 								if ((((Level) world).dimension().location().toString()).equals(stringiterator)) {
-									if ((world.getBlockState(BlockPos.containing(cX, cY, cZ))).getBlock() == EuruModBlocks.WIRELESS_BATTERY.get()
-											&& (getBlockNBTString(world, BlockPos.containing(cX, cY, cZ), "syncedBlock_id")).equals(itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getString("syncedBlock_id"))) {
-										if (getEnergyStored(world, BlockPos.containing(cX, cY, cZ), null) >= itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("required_fe_per_tick")) {
-											if (world instanceof ILevelExtension _ext) {
-												IEnergyStorage _entityStorage = _ext.getCapability(Capabilities.EnergyStorage.BLOCK, BlockPos.containing(cX, cY, cZ), null);
-												if (_entityStorage != null)
-													_entityStorage.extractEnergy((int) itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("required_fe_per_tick"), false);
+									if (isLoading) {
+										if ((world.getBlockState(BlockPos.containing(cX, cY, cZ))).getBlock() == EuruModBlocks.WIRELESS_BATTERY.get()
+												&& (getBlockNBTString(world, BlockPos.containing(cX, cY, cZ), "syncedBlock_id")).contains(itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getString("syncedBlock_id"))) {
+											foundBlock = true;
+											if (getEnergyStored(world, BlockPos.containing(cX, cY, cZ), null) >= itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("required_fe_per_tick")) {
+												if (world instanceof ILevelExtension _ext) {
+													IEnergyStorage _entityStorage = _ext.getCapability(Capabilities.EnergyStorage.BLOCK, BlockPos.containing(cX, cY, cZ), null);
+													if (_entityStorage != null)
+														_entityStorage.extractEnergy((int) itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("required_fe_per_tick"), false);
+												}
+												returnNumber = 1;
 											}
-											returnNumber = 1;
 										}
 									} else {
-										{
-											final String _tagName = "syncedBlock_id";
-											final String _tagValue = "";
-											CustomData.update(DataComponents.CUSTOM_DATA, itemstack, tag -> tag.putString(_tagName, _tagValue));
-										}
-										{
-											final String _tagName = "syncedBlock";
-											final String _tagValue = "";
-											CustomData.update(DataComponents.CUSTOM_DATA, itemstack, tag -> tag.putString(_tagName, _tagValue));
-										}
+										foundBlock = true;
 									}
 								}
+							}
+						}
+						if (!foundBlock) {
+							{
+								final String _tagName = "syncedBlock_id";
+								final String _tagValue = "";
+								CustomData.update(DataComponents.CUSTOM_DATA, itemstack, tag -> tag.putString(_tagName, _tagValue));
+							}
+							{
+								final String _tagName = "syncedBlock";
+								final String _tagValue = "";
+								CustomData.update(DataComponents.CUSTOM_DATA, itemstack, tag -> tag.putString(_tagName, _tagValue));
 							}
 						}
 					}

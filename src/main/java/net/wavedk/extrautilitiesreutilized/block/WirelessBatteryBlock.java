@@ -1,6 +1,7 @@
 package net.wavedk.extrautilitiesreutilized.block;
 
 import net.wavedk.extrautilitiesreutilized.world.inventory.WirelessBatteryGUIMenu;
+import net.wavedk.extrautilitiesreutilized.procedures.WirelessBatteryOnBlockRightclickedProcedure;
 import net.wavedk.extrautilitiesreutilized.block.entity.WirelessBatteryBlockEntity;
 
 import net.minecraft.world.phys.BlockHitResult;
@@ -77,6 +78,14 @@ public class WirelessBatteryBlock extends Block implements EntityBlock {
 				}
 			}, pos);
 		}
+		int x = pos.getX();
+		int y = pos.getY();
+		int z = pos.getZ();
+		double hitX = hit.getLocation().x;
+		double hitY = hit.getLocation().y;
+		double hitZ = hit.getLocation().z;
+		Direction direction = hit.getDirection();
+		WirelessBatteryOnBlockRightclickedProcedure.execute(world, x, y, z);
 		return InteractionResult.SUCCESS;
 	}
 
