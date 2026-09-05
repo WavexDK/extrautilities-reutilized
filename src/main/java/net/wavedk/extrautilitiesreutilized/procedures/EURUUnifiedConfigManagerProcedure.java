@@ -36,6 +36,8 @@ public class EURUUnifiedConfigManagerProcedure {
 	private static void execute(@Nullable Event event) {
 		File configFile = new File("");
 		File file = new File("");
+		File cfile = new File("");
+		File afile = new File("");
 		double cVer = 0;
 		com.google.gson.JsonArray rlArray = new com.google.gson.JsonArray();
 		com.google.gson.JsonArray eArray = new com.google.gson.JsonArray();
@@ -76,10 +78,13 @@ public class EURUUnifiedConfigManagerProcedure {
 		com.google.gson.JsonObject gs = new com.google.gson.JsonObject();
 		com.google.gson.JsonObject dias = new com.google.gson.JsonObject();
 		com.google.gson.JsonObject nspike = new com.google.gson.JsonObject();
+		com.google.gson.JsonObject unifiedread = new com.google.gson.JsonObject();
+		com.google.gson.JsonObject feread = new com.google.gson.JsonObject();
+		com.google.gson.JsonObject rfh = new com.google.gson.JsonObject();
 		String cItem = "";
 		String coutput = "";
 		configFile = new File((FMLPaths.GAMEDIR.get().toString() + "/config/euru/"), File.separator + "euru_unified_config.json");
-		EuruModVariables.cVer = 2;
+		EuruModVariables.cVer = 2.5;
 		cVer = EuruModVariables.cVer;
 		if (!configFile.exists()) {
 			try {
@@ -88,8 +93,8 @@ public class EURUUnifiedConfigManagerProcedure {
 			} catch (IOException exception) {
 				exception.printStackTrace();
 			}
-			configJsonObject.addProperty("range-configUpdate-min", 3000);
-			configJsonObject.addProperty("range-configUpdate-max", 3600);
+			configJsonObject.addProperty("range-configUpdate-min", 6000);
+			configJsonObject.addProperty("range-configUpdate-max", 8000);
 			configJsonObject.addProperty("info_2", "Changing the above values will change how often all blocks update from config, measured in ticks.");
 			itemobj = new com.google.gson.JsonObject();
 			itemobj.addProperty("efficiency", 0.95);
@@ -240,8 +245,9 @@ public class EURUUnifiedConfigManagerProcedure {
 			variantArray.add("");
 			itemobj.add("needs_block_sides", variantArray);
 			gpGenerators.add((BuiltInRegistries.ITEM.getKey(EuruModBlocks.MANUAL_MILL.get().asItem()).toString()), itemobj);
-			solarpanelObject.addProperty("gp_generated", 1);
-			solarpanelObject.addProperty("needs_sky", true);
+			itemobj = new com.google.gson.JsonObject();
+			itemobj.addProperty("gp_generated", 1);
+			itemobj.addProperty("needs_sky", true);
 			itemobj.addProperty("needs_time_min", 0);
 			itemobj.addProperty("needs_time_max", 13000);
 			itemobj.addProperty("needs_block", false);
@@ -249,9 +255,10 @@ public class EURUUnifiedConfigManagerProcedure {
 			variantArray = new com.google.gson.JsonArray();;
 			variantArray.add("");
 			itemobj.add("needs_block_sides", variantArray);
-			gpGenerators.add((BuiltInRegistries.ITEM.getKey(EuruModBlocks.SOLAR_PANEL.get().asItem()).toString()), solarpanelObject);
-			lunarobj.addProperty("gp_generated", 0.7);
-			lunarobj.addProperty("needs_sky", true);
+			gpGenerators.add((BuiltInRegistries.ITEM.getKey(EuruModBlocks.SOLAR_PANEL.get().asItem()).toString()), itemobj);
+			itemobj = new com.google.gson.JsonObject();
+			itemobj.addProperty("gp_generated", 0.7);
+			itemobj.addProperty("needs_sky", true);
 			itemobj.addProperty("needs_time_min", 13000);
 			itemobj.addProperty("needs_time_max", 24000);
 			itemobj.addProperty("needs_block", false);
@@ -259,7 +266,7 @@ public class EURUUnifiedConfigManagerProcedure {
 			variantArray = new com.google.gson.JsonArray();;
 			variantArray.add("");
 			itemobj.add("needs_block_sides", variantArray);
-			gpGenerators.add((BuiltInRegistries.ITEM.getKey(EuruModBlocks.LUNAR_PANEL.get().asItem()).toString()), lunarobj);
+			gpGenerators.add((BuiltInRegistries.ITEM.getKey(EuruModBlocks.LUNAR_PANEL.get().asItem()).toString()), itemobj);
 			configJsonObject.add("gp_generation", gpGenerators);
 			woodenspike.addProperty("damage_tick", 1);
 			woodenspike.addProperty("damage_tickrate", 15);
@@ -307,8 +314,8 @@ public class EURUUnifiedConfigManagerProcedure {
 			wc.addProperty("number_of_plants_grown", 2);
 			wc.addProperty("info", "(!) NEVER Set the above values to 0, or your TPS will drop dramatically when using the Watering Can, and the item will not work (!)");
 			generalOBJ.add((BuiltInRegistries.ITEM.getKey(EuruModItems.WATERING_CAN.get()).toString()), wc);
-			gcobj.addProperty("required_fe_per_tick", 10);
-			generalOBJ.add((BuiltInRegistries.ITEM.getKey(EuruModItems.WIRELESS_RF_HEATING_COIL.get()).toString()), gcobj);
+			rfh.addProperty("required_fe_per_tick", 10);
+			generalOBJ.add((BuiltInRegistries.ITEM.getKey(EuruModItems.WIRELESS_RF_HEATING_COIL.get()).toString()), rfh);
 			gcobj.addProperty("breaks_glass", true);
 			generalOBJ.add((BuiltInRegistries.ITEM.getKey(EuruModItems.GLASS_CUTTER.get()).toString()), gcobj);
 			cwobj.addProperty("gp_needed", 4);
@@ -440,5 +447,37 @@ public class EURUUnifiedConfigManagerProcedure {
 			}
 		}
 		EURUGeneratorsManagerProcedure.execute();
+		afile = new File((FMLPaths.GAMEDIR.get().toString() + "/config/euru/"), File.separator + "euru_unified_config.json");
+		cfile = new File((FMLPaths.GAMEDIR.get().toString() + "/config/euru/"), File.separator + "euru_fe_config.json");
+		{
+			try {
+				BufferedReader bufferedReader = new BufferedReader(new FileReader(afile));
+				StringBuilder jsonstringbuilder = new StringBuilder();
+				String line;
+				while ((line = bufferedReader.readLine()) != null) {
+					jsonstringbuilder.append(line);
+				}
+				bufferedReader.close();
+				unifiedread = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
+				EuruModVariables.unified_config = unifiedread;
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+		{
+			try {
+				BufferedReader bufferedReader = new BufferedReader(new FileReader(cfile));
+				StringBuilder jsonstringbuilder = new StringBuilder();
+				String line;
+				while ((line = bufferedReader.readLine()) != null) {
+					jsonstringbuilder.append(line);
+				}
+				bufferedReader.close();
+				feread = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
+				EuruModVariables.fe_config = feread;
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
 	}
 }

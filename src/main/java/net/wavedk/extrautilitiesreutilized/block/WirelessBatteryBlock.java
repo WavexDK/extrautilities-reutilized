@@ -2,6 +2,7 @@ package net.wavedk.extrautilitiesreutilized.block;
 
 import net.wavedk.extrautilitiesreutilized.world.inventory.WirelessBatteryGUIMenu;
 import net.wavedk.extrautilitiesreutilized.procedures.WirelessBatteryOnBlockRightclickedProcedure;
+import net.wavedk.extrautilitiesreutilized.procedures.WirelessBatteryBlockAddedProcedure;
 import net.wavedk.extrautilitiesreutilized.block.entity.WirelessBatteryBlockEntity;
 
 import net.minecraft.world.phys.BlockHitResult;
@@ -60,6 +61,12 @@ public class WirelessBatteryBlock extends Block implements EntityBlock {
 
 	public BlockState mirror(BlockState state, Mirror mirrorIn) {
 		return state.rotate(mirrorIn.getRotation(state.getValue(FACING)));
+	}
+
+	@Override
+	public void onPlace(BlockState blockstate, Level world, BlockPos pos, BlockState oldState, boolean moving) {
+		super.onPlace(blockstate, world, pos, oldState, moving);
+		WirelessBatteryBlockAddedProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ());
 	}
 
 	@Override

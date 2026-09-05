@@ -15,8 +15,6 @@ import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.util.RandomSource;
-import net.minecraft.util.Mth;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
@@ -170,42 +168,7 @@ public class MillsUpdateHandlerProcedure {
 					_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 			}
 		}
-		if (0 == getBlockNBTNumber(world, BlockPos.containing(x, y, z), "configUpdate")) {
-			if (!world.isClientSide()) {
-				BlockPos _bp = BlockPos.containing(x, y, z);
-				BlockEntity _blockEntity = world.getBlockEntity(_bp);
-				BlockState _bs = world.getBlockState(_bp);
-				if (_blockEntity != null) {
-					_blockEntity.getPersistentData().putDouble("configUpdate",
-							(Mth.nextInt(RandomSource.create(), (int) getBlockNBTNumber(world, BlockPos.containing(x, y, z), "range-configUpdate-min"), (int) getBlockNBTNumber(world, BlockPos.containing(x, y, z), "range-configUpdate-max"))));
-				}
-				if (world instanceof Level _level)
-					_level.sendBlockUpdated(_bp, _bs, _bs, 3);
-			}
-		} else if (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "configUpdate") < getBlockNBTNumber(world, BlockPos.containing(x, y, z), "configUpdateCounter")) {
-			if (!world.isClientSide()) {
-				BlockPos _bp = BlockPos.containing(x, y, z);
-				BlockEntity _blockEntity = world.getBlockEntity(_bp);
-				BlockState _bs = world.getBlockState(_bp);
-				if (_blockEntity != null) {
-					_blockEntity.getPersistentData().putDouble("configUpdateCounter", 1);
-				}
-				if (world instanceof Level _level)
-					_level.sendBlockUpdated(_bp, _bs, _bs, 3);
-			}
-			GroupPanelsConfigHandlerProcedure.execute(world, x, y, z);
-		} else {
-			if (!world.isClientSide()) {
-				BlockPos _bp = BlockPos.containing(x, y, z);
-				BlockEntity _blockEntity = world.getBlockEntity(_bp);
-				BlockState _bs = world.getBlockState(_bp);
-				if (_blockEntity != null) {
-					_blockEntity.getPersistentData().putDouble("configUpdateCounter", (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "configUpdateCounter") + 1));
-				}
-				if (world instanceof Level _level)
-					_level.sendBlockUpdated(_bp, _bs, _bs, 3);
-			}
-		}
+		GroupPanelsConfigHandlerProcedure.execute(world, x, y, z);
 		if (getBlockNBTLogic(world, BlockPos.containing(x, y, z), "generating")) {
 			{
 				BlockPos _pos = BlockPos.containing(x, y, z);
@@ -224,7 +187,7 @@ public class MillsUpdateHandlerProcedure {
 					if (world instanceof Level _level)
 						_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 				}
-				if ((getPropertyByName((world.getBlockState(BlockPos.containing(x, y, z))), "animation") instanceof IntegerProperty _getip54 ? (world.getBlockState(BlockPos.containing(x, y, z))).getValue(_getip54) : -1) == 3) {
+				if ((getPropertyByName((world.getBlockState(BlockPos.containing(x, y, z))), "animation") instanceof IntegerProperty _getip44 ? (world.getBlockState(BlockPos.containing(x, y, z))).getValue(_getip44) : -1) == 3) {
 					{
 						int _value = 0;
 						BlockPos _pos = BlockPos.containing(x, y, z);
@@ -234,7 +197,7 @@ public class MillsUpdateHandlerProcedure {
 					}
 				} else {
 					{
-						int _value = (getPropertyByName((world.getBlockState(BlockPos.containing(x, y, z))), "animation") instanceof IntegerProperty _getip57 ? (world.getBlockState(BlockPos.containing(x, y, z))).getValue(_getip57) : -1) + 1;
+						int _value = (getPropertyByName((world.getBlockState(BlockPos.containing(x, y, z))), "animation") instanceof IntegerProperty _getip47 ? (world.getBlockState(BlockPos.containing(x, y, z))).getValue(_getip47) : -1) + 1;
 						BlockPos _pos = BlockPos.containing(x, y, z);
 						BlockState _bs = world.getBlockState(_pos);
 						if (_bs.getBlock().getStateDefinition().getProperty("animation") instanceof IntegerProperty _integerProp && _integerProp.getPossibleValues().contains(_value))

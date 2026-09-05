@@ -107,20 +107,7 @@ public class PanelsTickUpdateHandlerProcedure {
 				if (world instanceof Level _level)
 					_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 			}
-			if (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "range-configUpdate-counter") >= getBlockNBTNumber(world, BlockPos.containing(x, y, z), "range-configUpdate")) {
-				GroupPanelsConfigHandlerProcedure.execute(world, x, y, z);
-			} else {
-				if (!world.isClientSide()) {
-					BlockPos _bp = BlockPos.containing(x, y, z);
-					BlockEntity _blockEntity = world.getBlockEntity(_bp);
-					BlockState _bs = world.getBlockState(_bp);
-					if (_blockEntity != null) {
-						_blockEntity.getPersistentData().putDouble("range-configUpdate-counter", (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "range-configUpdate-counter") + 1));
-					}
-					if (world instanceof Level _level)
-						_level.sendBlockUpdated(_bp, _bs, _bs, 3);
-				}
-			}
+			GroupPanelsConfigHandlerProcedure.execute(world, x, y, z);
 		}
 		if (canGenerate) {
 			if (!world.isClientSide()) {

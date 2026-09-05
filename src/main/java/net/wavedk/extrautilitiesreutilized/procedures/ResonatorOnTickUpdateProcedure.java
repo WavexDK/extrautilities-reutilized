@@ -10,7 +10,6 @@ import net.neoforged.neoforge.items.IItemHandlerModifiable;
 import net.neoforged.neoforge.items.IItemHandler;
 import net.neoforged.neoforge.common.extensions.ILevelExtension;
 import net.neoforged.neoforge.capabilities.Capabilities;
-import net.neoforged.fml.loading.FMLPaths;
 
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.Vec2;
@@ -34,10 +33,7 @@ import net.minecraft.commands.CommandSource;
 import java.util.function.Supplier;
 import java.util.UUID;
 
-import java.io.IOException;
-import java.io.FileReader;
 import java.io.File;
-import java.io.BufferedReader;
 
 public class ResonatorOnTickUpdateProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z) {
@@ -179,55 +175,40 @@ public class ResonatorOnTickUpdateProcedure {
 					}
 					cProgress = getBlockNBTNumber(world, BlockPos.containing(x, y, z), "cProgress");
 					if (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "gp_required") == 0 || (getBlockNBTString(world, BlockPos.containing(x, y, z), "currentOutput")).equals("")) {
-						configFile = new File((FMLPaths.GAMEDIR.get().toString() + "/config/euru/"), File.separator + "euru_unified_config.json");
-						{
-							try {
-								BufferedReader bufferedReader = new BufferedReader(new FileReader(configFile));
-								StringBuilder jsonstringbuilder = new StringBuilder();
-								String line;
-								while ((line = bufferedReader.readLine()) != null) {
-									jsonstringbuilder.append(line);
-								}
-								bufferedReader.close();
-								recipeOBJ = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
-								tobj = recipeOBJ.get("recipes").getAsJsonObject();
-								if (tobj.get((BuiltInRegistries.BLOCK.getKey((world.getBlockState(BlockPos.containing(x, y, z))).getBlock()).toString())).isJsonObject()) {
-									resoOBJ = tobj.get((BuiltInRegistries.BLOCK.getKey((world.getBlockState(BlockPos.containing(x, y, z))).getBlock()).toString())).getAsJsonObject();
-									String itemKey = BuiltInRegistries.ITEM.getKey(itemFromBlockInventory(world, BlockPos.containing(x, y, z), 0).copy().getItem()).toString();
-									if (resoOBJ.has(itemKey) && resoOBJ.get(itemKey).isJsonObject()) {
-										itemOBJ = resoOBJ.get(itemKey).getAsJsonObject();
-										hasItem = true;
+						tobj = EuruModVariables.unified_config.get("recipes").getAsJsonObject();
+						if (tobj.get((BuiltInRegistries.BLOCK.getKey((world.getBlockState(BlockPos.containing(x, y, z))).getBlock()).toString())).isJsonObject()) {
+							resoOBJ = tobj.get((BuiltInRegistries.BLOCK.getKey((world.getBlockState(BlockPos.containing(x, y, z))).getBlock()).toString())).getAsJsonObject();
+							String itemKey = BuiltInRegistries.ITEM.getKey(itemFromBlockInventory(world, BlockPos.containing(x, y, z), 0).copy().getItem()).toString();
+							if (resoOBJ.has(itemKey) && resoOBJ.get(itemKey).isJsonObject()) {
+								itemOBJ = resoOBJ.get(itemKey).getAsJsonObject();
+								hasItem = true;
+							}
+							if (hasItem) {
+								itemOBJ = resoOBJ.get((BuiltInRegistries.ITEM.getKey((itemFromBlockInventory(world, BlockPos.containing(x, y, z), 0).copy()).getItem()).toString())).getAsJsonObject();
+								if (itemOBJ.get("gp_required").isJsonPrimitive() ? itemOBJ.get("gp_required").getAsJsonPrimitive().isNumber() : false) {
+									if (!world.isClientSide()) {
+										BlockPos _bp = BlockPos.containing(x, y, z);
+										BlockEntity _blockEntity = world.getBlockEntity(_bp);
+										BlockState _bs = world.getBlockState(_bp);
+										if (_blockEntity != null) {
+											_blockEntity.getPersistentData().putDouble("gp_required", itemOBJ.get("gp_required").getAsDouble());
+										}
+										if (world instanceof Level _level)
+											_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 									}
-									if (hasItem) {
-										itemOBJ = resoOBJ.get((BuiltInRegistries.ITEM.getKey((itemFromBlockInventory(world, BlockPos.containing(x, y, z), 0).copy()).getItem()).toString())).getAsJsonObject();
-										if (itemOBJ.get("gp_required").isJsonPrimitive() ? itemOBJ.get("gp_required").getAsJsonPrimitive().isNumber() : false) {
-											if (!world.isClientSide()) {
-												BlockPos _bp = BlockPos.containing(x, y, z);
-												BlockEntity _blockEntity = world.getBlockEntity(_bp);
-												BlockState _bs = world.getBlockState(_bp);
-												if (_blockEntity != null) {
-													_blockEntity.getPersistentData().putDouble("gp_required", itemOBJ.get("gp_required").getAsDouble());
-												}
-												if (world instanceof Level _level)
-													_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+									if (itemOBJ.get("output").isJsonPrimitive() ? itemOBJ.get("output").getAsJsonPrimitive().isString() : false) {
+										if (!world.isClientSide()) {
+											BlockPos _bp = BlockPos.containing(x, y, z);
+											BlockEntity _blockEntity = world.getBlockEntity(_bp);
+											BlockState _bs = world.getBlockState(_bp);
+											if (_blockEntity != null) {
+												_blockEntity.getPersistentData().putString("currentOutput", itemOBJ.get("output").getAsString());
 											}
-											if (itemOBJ.get("output").isJsonPrimitive() ? itemOBJ.get("output").getAsJsonPrimitive().isString() : false) {
-												if (!world.isClientSide()) {
-													BlockPos _bp = BlockPos.containing(x, y, z);
-													BlockEntity _blockEntity = world.getBlockEntity(_bp);
-													BlockState _bs = world.getBlockState(_bp);
-													if (_blockEntity != null) {
-														_blockEntity.getPersistentData().putString("currentOutput", itemOBJ.get("output").getAsString());
-													}
-													if (world instanceof Level _level)
-														_level.sendBlockUpdated(_bp, _bs, _bs, 3);
-												}
-											}
+											if (world instanceof Level _level)
+												_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 										}
 									}
 								}
-							} catch (IOException e) {
-								e.printStackTrace();
 							}
 						}
 					}
@@ -236,24 +217,9 @@ public class ResonatorOnTickUpdateProcedure {
 					foundItem = false;
 					if (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "wait_time") == 0 || (getBlockNBTString(world, BlockPos.containing(x, y, z), "currentItem")).equals("")
 							|| (getBlockNBTString(world, BlockPos.containing(x, y, z), "currentItem")).equals("N/A")) {
-						configFile = new File((FMLPaths.GAMEDIR.get().toString() + "/config/euru/"), File.separator + "euru_unified_config.json");
-						{
-							try {
-								BufferedReader bufferedReader = new BufferedReader(new FileReader(configFile));
-								StringBuilder jsonstringbuilder = new StringBuilder();
-								String line;
-								while ((line = bufferedReader.readLine()) != null) {
-									jsonstringbuilder.append(line);
-								}
-								bufferedReader.close();
-								recipeOBJ = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
-								tobj = recipeOBJ.get("recipes").getAsJsonObject();
-								resoOBJ = tobj.get((BuiltInRegistries.BLOCK.getKey((world.getBlockState(BlockPos.containing(x, y, z))).getBlock()).toString())).getAsJsonObject();
-								rlArray = resoOBJ.get("recipeList").getAsJsonArray();
-							} catch (IOException e) {
-								e.printStackTrace();
-							}
-						}
+						tobj = EuruModVariables.unified_config.get("recipes").getAsJsonObject();
+						resoOBJ = tobj.get((BuiltInRegistries.BLOCK.getKey((world.getBlockState(BlockPos.containing(x, y, z))).getBlock()).toString())).getAsJsonObject();
+						rlArray = resoOBJ.get("recipeList").getAsJsonArray();
 						if (rlArray.size() > 0) {
 							cNumber = 0;
 							for (int _i1 = 0; _i1 < (int) rlArray.size(); _i1++) {
@@ -270,45 +236,31 @@ public class ResonatorOnTickUpdateProcedure {
 										if (world instanceof Level _level)
 											_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 									}
-									{
-										try {
-											BufferedReader bufferedReader = new BufferedReader(new FileReader(configFile));
-											StringBuilder jsonstringbuilder = new StringBuilder();
-											String line;
-											while ((line = bufferedReader.readLine()) != null) {
-												jsonstringbuilder.append(line);
+									tobj = EuruModVariables.unified_config.get("recipes").getAsJsonObject();
+									recipeOBJ = tobj.get((BuiltInRegistries.BLOCK.getKey((world.getBlockState(BlockPos.containing(x, y, z))).getBlock()).toString())).getAsJsonObject();
+									itemOBJ = recipeOBJ.get(cItem).getAsJsonObject();
+									output = itemOBJ.get("output").getAsString();
+									if (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "wait_time") != itemOBJ.get("wait_time").getAsDouble()) {
+										if (!world.isClientSide()) {
+											BlockPos _bp = BlockPos.containing(x, y, z);
+											BlockEntity _blockEntity = world.getBlockEntity(_bp);
+											BlockState _bs = world.getBlockState(_bp);
+											if (_blockEntity != null) {
+												_blockEntity.getPersistentData().putDouble("cProgress", 0);
 											}
-											bufferedReader.close();
-											resoOBJ = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
-											tobj = resoOBJ.get("recipes").getAsJsonObject();
-											recipeOBJ = tobj.get((BuiltInRegistries.BLOCK.getKey((world.getBlockState(BlockPos.containing(x, y, z))).getBlock()).toString())).getAsJsonObject();
-											itemOBJ = recipeOBJ.get(cItem).getAsJsonObject();
-											output = itemOBJ.get("output").getAsString();
-											if (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "wait_time") != itemOBJ.get("wait_time").getAsDouble()) {
-												if (!world.isClientSide()) {
-													BlockPos _bp = BlockPos.containing(x, y, z);
-													BlockEntity _blockEntity = world.getBlockEntity(_bp);
-													BlockState _bs = world.getBlockState(_bp);
-													if (_blockEntity != null) {
-														_blockEntity.getPersistentData().putDouble("cProgress", 0);
-													}
-													if (world instanceof Level _level)
-														_level.sendBlockUpdated(_bp, _bs, _bs, 3);
-												}
-											}
-											if (!world.isClientSide()) {
-												BlockPos _bp = BlockPos.containing(x, y, z);
-												BlockEntity _blockEntity = world.getBlockEntity(_bp);
-												BlockState _bs = world.getBlockState(_bp);
-												if (_blockEntity != null) {
-													_blockEntity.getPersistentData().putDouble("wait_time", itemOBJ.get("wait_time").getAsDouble());
-												}
-												if (world instanceof Level _level)
-													_level.sendBlockUpdated(_bp, _bs, _bs, 3);
-											}
-										} catch (IOException e) {
-											e.printStackTrace();
+											if (world instanceof Level _level)
+												_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 										}
+									}
+									if (!world.isClientSide()) {
+										BlockPos _bp = BlockPos.containing(x, y, z);
+										BlockEntity _blockEntity = world.getBlockEntity(_bp);
+										BlockState _bs = world.getBlockState(_bp);
+										if (_blockEntity != null) {
+											_blockEntity.getPersistentData().putDouble("wait_time", itemOBJ.get("wait_time").getAsDouble());
+										}
+										if (world instanceof Level _level)
+											_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 									}
 									foundItem = true;
 									break;

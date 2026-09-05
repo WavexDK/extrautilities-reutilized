@@ -13,7 +13,6 @@ import net.neoforged.neoforge.items.IItemHandler;
 import net.neoforged.neoforge.energy.IEnergyStorage;
 import net.neoforged.neoforge.common.extensions.ILevelExtension;
 import net.neoforged.neoforge.capabilities.Capabilities;
-import net.neoforged.fml.loading.FMLPaths;
 
 import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
@@ -37,10 +36,7 @@ import net.minecraft.core.BlockPos;
 import java.util.function.Supplier;
 import java.util.UUID;
 
-import java.io.IOException;
-import java.io.FileReader;
 import java.io.File;
-import java.io.BufferedReader;
 
 public class ElectricFurnaceOnTickUpdateProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, BlockState blockstate) {
@@ -78,34 +74,19 @@ public class ElectricFurnaceOnTickUpdateProcedure {
 			}
 			updateGP = updateGP + itemFromBlockInventory(world, BlockPos.containing(x, y, z), 2).getCount();
 			if (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "fe_needed") == 0 || getBlockNBTNumber(world, BlockPos.containing(x, y, z), "wait_time") == 0 || getBlockNBTNumber(world, BlockPos.containing(x, y, z), "gp_needed") == 0) {
-				cfil = new File((FMLPaths.GAMEDIR.get().toString() + "/config/euru/"), File.separator + "euru_unified_config.json");
-				{
-					try {
-						BufferedReader bufferedReader = new BufferedReader(new FileReader(cfil));
-						StringBuilder jsonstringbuilder = new StringBuilder();
-						String line;
-						while ((line = bufferedReader.readLine()) != null) {
-							jsonstringbuilder.append(line);
-						}
-						bufferedReader.close();
-						obj = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
-						catobj = obj.get("machines").getAsJsonObject();
-						bobj = catobj.get((BuiltInRegistries.ITEM.getKey(EuruModBlocks.ELECTRIC_FURNACE.get().asItem()).toString())).getAsJsonObject();
-						if (!world.isClientSide()) {
-							BlockPos _bp = BlockPos.containing(x, y, z);
-							BlockEntity _blockEntity = world.getBlockEntity(_bp);
-							BlockState _bs = world.getBlockState(_bp);
-							if (_blockEntity != null) {
-								_blockEntity.getPersistentData().putDouble("fe_needed", bobj.get("fe_needed").getAsDouble());
-								_blockEntity.getPersistentData().putDouble("gp_needed", bobj.get("gp_needed").getAsDouble());
-								_blockEntity.getPersistentData().putDouble("wait_time", bobj.get("wait_time").getAsDouble());
-							}
-							if (world instanceof Level _level)
-								_level.sendBlockUpdated(_bp, _bs, _bs, 3);
-						}
-					} catch (IOException e) {
-						e.printStackTrace();
+				catobj = EuruModVariables.unified_config.get("machines").getAsJsonObject();
+				bobj = catobj.get((BuiltInRegistries.ITEM.getKey(EuruModBlocks.ELECTRIC_FURNACE.get().asItem()).toString())).getAsJsonObject();
+				if (!world.isClientSide()) {
+					BlockPos _bp = BlockPos.containing(x, y, z);
+					BlockEntity _blockEntity = world.getBlockEntity(_bp);
+					BlockState _bs = world.getBlockState(_bp);
+					if (_blockEntity != null) {
+						_blockEntity.getPersistentData().putDouble("fe_needed", bobj.get("fe_needed").getAsDouble());
+						_blockEntity.getPersistentData().putDouble("gp_needed", bobj.get("gp_needed").getAsDouble());
+						_blockEntity.getPersistentData().putDouble("wait_time", bobj.get("wait_time").getAsDouble());
 					}
+					if (world instanceof Level _level)
+						_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 				}
 			}
 			feNeeded = getBlockNBTNumber(world, BlockPos.containing(x, y, z), "fe_needed");
@@ -113,7 +94,7 @@ public class ElectricFurnaceOnTickUpdateProcedure {
 			if ((getBlockNBTString(world, BlockPos.containing(x, y, z), "currentItem")).equals("") || getBlockNBTNumber(world, BlockPos.containing(x, y, z), "cProgress") == 0
 					|| (getBlockNBTString(world, BlockPos.containing(x, y, z), "currentOutput")).equals("")) {
 				energyRemove = (feNeeded / getBlockNBTNumber(world, BlockPos.containing(x, y, z), "wait_time")) * mult;
-				if (world instanceof Level _level45 && _level45.getRecipeManager().getRecipeFor(RecipeType.SMELTING, new SingleRecipeInput((itemFromBlockInventory(world, BlockPos.containing(x, y, z), 0).copy())), _level45).isPresent()) {
+				if (world instanceof Level _level42 && _level42.getRecipeManager().getRecipeFor(RecipeType.SMELTING, new SingleRecipeInput((itemFromBlockInventory(world, BlockPos.containing(x, y, z), 0).copy())), _level42).isPresent()) {
 					if (getEnergyStored(world, BlockPos.containing(x, y, z), null) >= energyRemove) {
 						if (!(player.getData(EuruModVariables.PLAYER_VARIABLES).playerGP_Used > player.getData(EuruModVariables.PLAYER_VARIABLES).playerGP_Total)) {
 							if (player.getData(EuruModVariables.PLAYER_VARIABLES).playerGPChecking) {
@@ -268,7 +249,7 @@ public class ElectricFurnaceOnTickUpdateProcedure {
 				}
 			}
 		}
-		if (getPropertyByName(blockstate, "on") instanceof BooleanProperty _getbp100 && blockstate.getValue(_getbp100) && getBlockNBTNumber(world, BlockPos.containing(x, y, z), "cProgress") == 0) {
+		if (getPropertyByName(blockstate, "on") instanceof BooleanProperty _getbp97 && blockstate.getValue(_getbp97) && getBlockNBTNumber(world, BlockPos.containing(x, y, z), "cProgress") == 0) {
 			if (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "onCounter") > 4) {
 				{
 					BlockPos _pos = BlockPos.containing(x, y, z);

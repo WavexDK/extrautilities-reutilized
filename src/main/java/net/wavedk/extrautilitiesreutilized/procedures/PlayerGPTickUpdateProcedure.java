@@ -6,7 +6,6 @@ import net.wavedk.extrautilitiesreutilized.EuruMod;
 
 import net.neoforged.neoforge.items.IItemHandler;
 import net.neoforged.neoforge.event.tick.PlayerTickEvent;
-import net.neoforged.fml.loading.FMLPaths;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.bus.api.Event;
@@ -23,10 +22,7 @@ import net.minecraft.client.Minecraft;
 
 import javax.annotation.Nullable;
 
-import java.io.IOException;
-import java.io.FileReader;
 import java.io.File;
-import java.io.BufferedReader;
 
 @EventBusSubscriber
 public class PlayerGPTickUpdateProcedure {
@@ -129,27 +125,12 @@ public class PlayerGPTickUpdateProcedure {
 			}
 		}
 		if ((isEquippedCurios || isEquippedCurios) && entity.getData(EuruModVariables.PLAYER_VARIABLES).playerGPChecking && getEntityGameType(entity) == GameType.SURVIVAL) {
-			cfile = new File((FMLPaths.GAMEDIR.get().toString() + "/config/euru/"), File.separator + "euru_unified_config.json");
+			catobj = EuruModVariables.unified_config.get("general").getAsJsonObject();
+			cObj = catobj.get((BuiltInRegistries.ITEM.getKey(EuruModItems.ANGEL_RING.get()).toString())).getAsJsonObject();
 			{
-				try {
-					BufferedReader bufferedReader = new BufferedReader(new FileReader(cfile));
-					StringBuilder jsonstringbuilder = new StringBuilder();
-					String line;
-					while ((line = bufferedReader.readLine()) != null) {
-						jsonstringbuilder.append(line);
-					}
-					bufferedReader.close();
-					obj = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
-					catobj = obj.get("general").getAsJsonObject();
-					cObj = catobj.get((BuiltInRegistries.ITEM.getKey(EuruModItems.ANGEL_RING.get()).toString())).getAsJsonObject();
-					{
-						EuruModVariables.PlayerVariables _vars = entity.getData(EuruModVariables.PLAYER_VARIABLES);
-						_vars.playerGP_Used_Update = entity.getData(EuruModVariables.PLAYER_VARIABLES).playerGP_Used_Update + cObj.get("gp_needed").getAsDouble();
-						_vars.markSyncDirty();
-					}
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
+				EuruModVariables.PlayerVariables _vars = entity.getData(EuruModVariables.PLAYER_VARIABLES);
+				_vars.playerGP_Used_Update = entity.getData(EuruModVariables.PLAYER_VARIABLES).playerGP_Used_Update + cObj.get("gp_needed").getAsDouble();
+				_vars.markSyncDirty();
 			}
 		}
 		{

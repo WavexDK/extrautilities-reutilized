@@ -1,8 +1,7 @@
 package net.wavedk.extrautilitiesreutilized.procedures;
 
+import net.wavedk.extrautilitiesreutilized.network.EuruModVariables;
 import net.wavedk.extrautilitiesreutilized.init.EuruModBlocks;
-
-import net.neoforged.fml.loading.FMLPaths;
 
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.AABB;
@@ -27,10 +26,7 @@ import net.minecraft.core.BlockPos;
 
 import java.util.Comparator;
 
-import java.io.IOException;
-import java.io.FileReader;
 import java.io.File;
-import java.io.BufferedReader;
 
 public class SpecialGenFeatureProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, String gen) {
@@ -97,31 +93,16 @@ public class SpecialGenFeatureProcedure {
 			}
 		} else if ((gen).equals(BuiltInRegistries.ITEM.getKey(EuruModBlocks.EXPLOSIVE_GENERATOR.get().asItem()).toString())) {
 			if (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "explosion_chance") == 0) {
-				cfile = new File((FMLPaths.GAMEDIR.get().toString() + "/config/euru/"), File.separator + "euru_fe_config.json");
-				{
-					try {
-						BufferedReader bufferedReader = new BufferedReader(new FileReader(cfile));
-						StringBuilder jsonstringbuilder = new StringBuilder();
-						String line;
-						while ((line = bufferedReader.readLine()) != null) {
-							jsonstringbuilder.append(line);
-						}
-						bufferedReader.close();
-						obj = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
-						bobj = obj.get((BuiltInRegistries.ITEM.getKey(EuruModBlocks.EXPLOSIVE_GENERATOR.get().asItem()).toString())).getAsJsonObject();
-						if (!world.isClientSide()) {
-							BlockPos _bp = BlockPos.containing(x, y, z);
-							BlockEntity _blockEntity = world.getBlockEntity(_bp);
-							BlockState _bs = world.getBlockState(_bp);
-							if (_blockEntity != null) {
-								_blockEntity.getPersistentData().putDouble("explosion_chance", bobj.get("explosion_chance").getAsDouble());
-							}
-							if (world instanceof Level _level)
-								_level.sendBlockUpdated(_bp, _bs, _bs, 3);
-						}
-					} catch (IOException e) {
-						e.printStackTrace();
+				bobj = EuruModVariables.fe_config.get((BuiltInRegistries.ITEM.getKey(EuruModBlocks.EXPLOSIVE_GENERATOR.get().asItem()).toString())).getAsJsonObject();
+				if (!world.isClientSide()) {
+					BlockPos _bp = BlockPos.containing(x, y, z);
+					BlockEntity _blockEntity = world.getBlockEntity(_bp);
+					BlockState _bs = world.getBlockState(_bp);
+					if (_blockEntity != null) {
+						_blockEntity.getPersistentData().putDouble("explosion_chance", bobj.get("explosion_chance").getAsDouble());
 					}
+					if (world instanceof Level _level)
+						_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 				}
 			}
 			if (Mth.nextInt(RandomSource.create(), 1, 1000) <= getBlockNBTNumber(world, BlockPos.containing(x, y, z), "explosion_chance") * 10) {

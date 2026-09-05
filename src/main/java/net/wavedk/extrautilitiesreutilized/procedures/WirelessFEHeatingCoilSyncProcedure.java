@@ -26,28 +26,32 @@ public class WirelessFEHeatingCoilSyncProcedure {
 		String sbId = "";
 		if ((itemFromBlockInventory(world, BlockPos.containing(x, y, z), (int) slot).copy()).getItem() == EuruModItems.WIRELESS_RF_HEATING_COIL.get()) {
 			cItem = (itemFromBlockInventory(world, BlockPos.containing(x, y, z), (int) slot).copy()).copy();
+			if ((getBlockNBTString(world, BlockPos.containing(x, y, z), "syncedBlock_id")).isEmpty()) {
+				for (int _i1 = 0; _i1 < 32; _i1++) {
+					sbId = sbId + "" + Mth.nextInt(RandomSource.create(), 0, 9);
+				}
+				if (!world.isClientSide()) {
+					BlockPos _bp = BlockPos.containing(x, y, z);
+					BlockEntity _blockEntity = world.getBlockEntity(_bp);
+					BlockState _bs = world.getBlockState(_bp);
+					if (_blockEntity != null) {
+						_blockEntity.getPersistentData().putString("syncedBlock_id", sbId);
+					}
+					if (world instanceof Level _level)
+						_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+				}
+			} else {
+				sbId = getBlockNBTString(world, BlockPos.containing(x, y, z), "syncedBlock_id");
+			}
 			{
 				final String _tagName = "syncedBlock";
 				final String _tagValue = (((x + ",") + "" + (y + ",")) + "" + ((z + ",") + "" + ("" + ((Level) world).dimension().location().toString())));
 				CustomData.update(DataComponents.CUSTOM_DATA, cItem, tag -> tag.putString(_tagName, _tagValue));
 			}
-			for (int _i1 = 0; _i1 < 32; _i1++) {
-				sbId = sbId + "" + Mth.nextInt(RandomSource.create(), 0, 9);
-			}
 			{
 				final String _tagName = "syncedBlock_id";
 				final String _tagValue = sbId;
 				CustomData.update(DataComponents.CUSTOM_DATA, cItem, tag -> tag.putString(_tagName, _tagValue));
-			}
-			if (!world.isClientSide()) {
-				BlockPos _bp = BlockPos.containing(x, y, z);
-				BlockEntity _blockEntity = world.getBlockEntity(_bp);
-				BlockState _bs = world.getBlockState(_bp);
-				if (_blockEntity != null) {
-					_blockEntity.getPersistentData().putString("syncedBlock_id", ((getBlockNBTString(world, BlockPos.containing(x, y, z), "syncedBlock_id") + "" + sbId) + ","));
-				}
-				if (world instanceof Level _level)
-					_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 			}
 			if (world instanceof ILevelExtension _ext && _ext.getCapability(Capabilities.ItemHandler.BLOCK, BlockPos.containing(x, y, z), null) instanceof IItemHandlerModifiable _itemHandlerModifiable) {
 				ItemStack _setstack = new ItemStack(EuruModItems.WIRELESS_RF_HEATING_COIL.get()).copy();

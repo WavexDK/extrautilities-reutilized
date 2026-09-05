@@ -13,7 +13,6 @@ import net.neoforged.neoforge.items.IItemHandler;
 import net.neoforged.neoforge.energy.IEnergyStorage;
 import net.neoforged.neoforge.common.extensions.ILevelExtension;
 import net.neoforged.neoforge.capabilities.Capabilities;
-import net.neoforged.fml.loading.FMLPaths;
 
 import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
@@ -25,8 +24,6 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.util.RandomSource;
-import net.minecraft.util.Mth;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.level.ServerLevel;
@@ -40,10 +37,7 @@ import net.minecraft.ChatFormatting;
 import java.util.function.Supplier;
 import java.util.UUID;
 
-import java.io.IOException;
-import java.io.FileReader;
 import java.io.File;
-import java.io.BufferedReader;
 
 public class GeneratorTickHandlerProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, BlockState blockstate) {
@@ -239,7 +233,6 @@ public class GeneratorTickHandlerProcedure {
 				mult = getBlockNBTNumber(world, BlockPos.containing(x, y, z), "oldMult");
 			}
 			if (getBlockNBTLogic(world, BlockPos.containing(x, y, z), "redstoneModeOn")) {
-				feConfig = new File((FMLPaths.GAMEDIR.get().toString() + "/config/euru/"), File.separator + "euru_fe_config.json");
 				if ((getBlockNBTString(world, BlockPos.containing(x, y, z), "currentItem")).equals("")) {
 					canGenerate = false;
 					canSlowBurn = false;
@@ -256,119 +249,61 @@ public class GeneratorTickHandlerProcedure {
 							if (world instanceof Level _level)
 								_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 						}
-						{
-							try {
-								BufferedReader bufferedReader = new BufferedReader(new FileReader(feConfig));
-								StringBuilder jsonstringbuilder = new StringBuilder();
-								String line;
-								while ((line = bufferedReader.readLine()) != null) {
-									jsonstringbuilder.append(line);
+						blockOBJ = EuruModVariables.fe_config.get((BuiltInRegistries.ITEM.getKey((new ItemStack((world.getBlockState(BlockPos.containing(x, y, z))).getBlock())).getItem()).toString())).getAsJsonObject();
+						if (blockOBJ.has("listFuel") && blockOBJ.get("listFuel").isJsonArray()) {
+							fuelList = blockOBJ.getAsJsonArray("listFuel");
+						}
+						cNum = 0;
+						for (int _i1 = 0; _i1 < (int) fuelList.size(); _i1++) {
+							if ((fuelList.get((int) cNum).getAsString()).equals(BuiltInRegistries.ITEM.getKey((itemFromBlockInventory(world, BlockPos.containing(x, y, z), 0).copy()).getItem()).toString())
+									|| (itemFromBlockInventory(world, BlockPos.containing(x, y, z), 0).copy()).is(ItemTags.create(ResourceLocation.parse((fuelList.get((int) cNum).getAsString()).toLowerCase(java.util.Locale.ENGLISH))))
+									|| (world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == EuruModBlocks.DISENCHANTMENT_GENERATOR.get()
+											&& (itemFromBlockInventory(world, BlockPos.containing(x, y, z), 0).copy()).getItem() == Items.ENCHANTED_BOOK) {
+								if (player.getData(EuruModVariables.PLAYER_VARIABLES).playerGP_Total >= player.getData(EuruModVariables.PLAYER_VARIABLES).playerGP_Used && !player.getData(EuruModVariables.PLAYER_VARIABLES).playerGPChecking) {
+									canPass = true;
+								} else if (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "oldGPTotal") >= getBlockNBTNumber(world, BlockPos.containing(x, y, z), "oldGPUsed")
+										&& player.getData(EuruModVariables.PLAYER_VARIABLES).playerGPChecking) {
+									canPass = true;
 								}
-								bufferedReader.close();
-								configOBJ = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
-								blockOBJ = configOBJ.get((BuiltInRegistries.ITEM.getKey((new ItemStack((world.getBlockState(BlockPos.containing(x, y, z))).getBlock())).getItem()).toString())).getAsJsonObject();
-								if (blockOBJ.has("listFuel") && blockOBJ.get("listFuel").isJsonArray()) {
-									fuelList = blockOBJ.getAsJsonArray("listFuel");
+								if (!world.isClientSide()) {
+									BlockPos _bp = BlockPos.containing(x, y, z);
+									BlockEntity _blockEntity = world.getBlockEntity(_bp);
+									BlockState _bs = world.getBlockState(_bp);
+									if (_blockEntity != null) {
+										_blockEntity.getPersistentData().putString("lastCheckedItem", "");
+									}
+									if (world instanceof Level _level)
+										_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 								}
-								cNum = 0;
-								for (int _i1 = 0; _i1 < (int) fuelList.size(); _i1++) {
-									if ((fuelList.get((int) cNum).getAsString()).equals(BuiltInRegistries.ITEM.getKey((itemFromBlockInventory(world, BlockPos.containing(x, y, z), 0).copy()).getItem()).toString())
-											|| (itemFromBlockInventory(world, BlockPos.containing(x, y, z), 0).copy()).is(ItemTags.create(ResourceLocation.parse((fuelList.get((int) cNum).getAsString()).toLowerCase(java.util.Locale.ENGLISH))))
-											|| (world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == EuruModBlocks.DISENCHANTMENT_GENERATOR.get()
-													&& (itemFromBlockInventory(world, BlockPos.containing(x, y, z), 0).copy()).getItem() == Items.ENCHANTED_BOOK) {
-										if (player.getData(EuruModVariables.PLAYER_VARIABLES).playerGP_Total >= player.getData(EuruModVariables.PLAYER_VARIABLES).playerGP_Used && !player.getData(EuruModVariables.PLAYER_VARIABLES).playerGPChecking) {
-											canPass = true;
-										} else if (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "oldGPTotal") >= getBlockNBTNumber(world, BlockPos.containing(x, y, z), "oldGPUsed")
-												&& player.getData(EuruModVariables.PLAYER_VARIABLES).playerGPChecking) {
-											canPass = true;
-										}
-										if (!world.isClientSide()) {
-											BlockPos _bp = BlockPos.containing(x, y, z);
-											BlockEntity _blockEntity = world.getBlockEntity(_bp);
-											BlockState _bs = world.getBlockState(_bp);
-											if (_blockEntity != null) {
-												_blockEntity.getPersistentData().putString("lastCheckedItem", "");
-											}
-											if (world instanceof Level _level)
-												_level.sendBlockUpdated(_bp, _bs, _bs, 3);
-										}
-										if (canPass) {
-											if ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == EuruModBlocks.DISENCHANTMENT_GENERATOR.get()) {
-												fuelPropertiesOBJ = blockOBJ.get("fuelProperties").getAsJsonObject();
-												eItem = (itemFromBlockInventory(world, BlockPos.containing(x, y, z), 0).copy()).copy();
-												eMaxNum = (net.minecraft.world.item.enchantment.EnchantmentHelper.getEnchantmentsForCrafting(eItem)).keySet().stream().findFirst().map(enchantment -> enchantment.value().getMaxLevel()).orElse(0);
-												eMaxNumString = ("" + eNum).substring(0, ("" + eNum).indexOf(".", 0));
-												if (eMaxNum != 0) {
-													deobj = fuelPropertiesOBJ.get("math_-Dont_touch_this_if_you_dont_know_what_youre_doing").getAsJsonObject();
-													if (deobj.get("currentWeight").getAsDouble() > 0) {
-														if (!world.isClientSide()) {
-															BlockPos _bp = BlockPos.containing(x, y, z);
-															BlockEntity _blockEntity = world.getBlockEntity(_bp);
-															BlockState _bs = world.getBlockState(_bp);
-															if (_blockEntity != null) {
-																_blockEntity.getPersistentData().putString("currentItem", (BuiltInRegistries.ITEM.getKey((itemFromBlockInventory(world, BlockPos.containing(x, y, z), 0).copy()).getItem()).toString()));
-															}
-															if (world instanceof Level _level)
-																_level.sendBlockUpdated(_bp, _bs, _bs, 3);
-														}
-														eNum = (net.minecraft.world.item.enchantment.EnchantmentHelper.getEnchantmentsForCrafting(eItem)).entrySet().stream().findFirst().map(entry -> entry.getIntValue()).orElse(0);
-														eNumString = ("" + eNum).substring(0, ("" + eNum).indexOf(".", 0));
-														if (!world.isClientSide()) {
-															BlockPos _bp = BlockPos.containing(x, y, z);
-															BlockEntity _blockEntity = world.getBlockEntity(_bp);
-															BlockState _bs = world.getBlockState(_bp);
-															if (_blockEntity != null) {
-																_blockEntity.getPersistentData().putDouble("wait_time", (Math.round(deobj.get("totalFEGenerated").getAsDouble() * Math.pow(eNum / eMaxNum, deobj.get("currentWeight").getAsDouble()))
-																		- Math.round(deobj.get("totalFEGenerated").getAsDouble() * Math.pow((eNum - 1) / eMaxNum, deobj.get("currentWeight").getAsDouble()))));
-																_blockEntity.getPersistentData().putDouble("feSpeed", (fuelPropertiesOBJ.get("feSpeed").getAsDouble() + fuelPropertiesOBJ.get("feIncrement").getAsDouble() * eMaxNum));
-																_blockEntity.getPersistentData().putDouble("cProgress", 0);
-															}
-															if (world instanceof Level _level)
-																_level.sendBlockUpdated(_bp, _bs, _bs, 3);
-														}
-														canGenerate = true;
-														if (world instanceof ILevelExtension _ext && _ext.getCapability(Capabilities.ItemHandler.BLOCK, BlockPos.containing(x, y, z), null) instanceof IItemHandlerModifiable _itemHandlerModifiable) {
-															int _slotid = 0;
-															ItemStack _stk = _itemHandlerModifiable.getStackInSlot(_slotid).copy();
-															_stk.shrink(1);
-															_itemHandlerModifiable.setStackInSlot(_slotid, _stk);
-														}
-														{
-															BlockPos _pos = BlockPos.containing(x, y, z);
-															BlockState _bs = world.getBlockState(_pos);
-															if (_bs.getBlock().getStateDefinition().getProperty("on") instanceof BooleanProperty _booleanProp)
-																world.setBlock(_pos, _bs.setValue(_booleanProp, true), 3);
-														}
-													} else {
-														if (world instanceof ServerLevel _level) {
-															_level.getServer().getPlayerList().broadcastSystemMessage(Component.literal(
-																	"A mod-breaking error has occurred. The 'currentWeight' value in the \"euru_fe_config.json\" file under \"euru:disenchantment_generator\" is not higher than 0, this causes all math related to the Disenchantment Generator to fail. Go into your config and set this value to a number above 0, or contact your server admins for help.")
-																	.withColor(0xff0000).withStyle(ChatFormatting.BOLD), false);
-														}
-													}
-												} else {
-													if (!world.isClientSide()) {
-														BlockPos _bp = BlockPos.containing(x, y, z);
-														BlockEntity _blockEntity = world.getBlockEntity(_bp);
-														BlockState _bs = world.getBlockState(_bp);
-														if (_blockEntity != null) {
-															_blockEntity.getPersistentData().putString("lastCheckedItem", (BuiltInRegistries.ITEM.getKey((itemFromBlockInventory(world, BlockPos.containing(x, y, z), 0).copy()).getItem()).toString()));
-														}
-														if (world instanceof Level _level)
-															_level.sendBlockUpdated(_bp, _bs, _bs, 3);
-													}
-												}
-											} else {
-												fuelPropertiesOBJ = blockOBJ.get("fuelProperties").getAsJsonObject();
-												itemOBJ = fuelPropertiesOBJ.get(fuelList.get((int) cNum).getAsString()).getAsJsonObject();
+								if (canPass) {
+									if ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == EuruModBlocks.DISENCHANTMENT_GENERATOR.get()) {
+										fuelPropertiesOBJ = blockOBJ.get("fuelProperties").getAsJsonObject();
+										eItem = (itemFromBlockInventory(world, BlockPos.containing(x, y, z), 0).copy()).copy();
+										eMaxNum = (net.minecraft.world.item.enchantment.EnchantmentHelper.getEnchantmentsForCrafting(eItem)).keySet().stream().findFirst().map(enchantment -> enchantment.value().getMaxLevel()).orElse(0);
+										eMaxNumString = ("" + eNum).substring(0, ("" + eNum).indexOf(".", 0));
+										if (eMaxNum != 0) {
+											deobj = fuelPropertiesOBJ.get("math_-Dont_touch_this_if_you_dont_know_what_youre_doing").getAsJsonObject();
+											if (deobj.get("currentWeight").getAsDouble() > 0) {
 												if (!world.isClientSide()) {
 													BlockPos _bp = BlockPos.containing(x, y, z);
 													BlockEntity _blockEntity = world.getBlockEntity(_bp);
 													BlockState _bs = world.getBlockState(_bp);
 													if (_blockEntity != null) {
 														_blockEntity.getPersistentData().putString("currentItem", (BuiltInRegistries.ITEM.getKey((itemFromBlockInventory(world, BlockPos.containing(x, y, z), 0).copy()).getItem()).toString()));
-														_blockEntity.getPersistentData().putDouble("wait_time", itemOBJ.get("feGenerated").getAsDouble());
-														_blockEntity.getPersistentData().putDouble("feSpeed", itemOBJ.get("feSpeed").getAsDouble());
+													}
+													if (world instanceof Level _level)
+														_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+												}
+												eNum = (net.minecraft.world.item.enchantment.EnchantmentHelper.getEnchantmentsForCrafting(eItem)).entrySet().stream().findFirst().map(entry -> entry.getIntValue()).orElse(0);
+												eNumString = ("" + eNum).substring(0, ("" + eNum).indexOf(".", 0));
+												if (!world.isClientSide()) {
+													BlockPos _bp = BlockPos.containing(x, y, z);
+													BlockEntity _blockEntity = world.getBlockEntity(_bp);
+													BlockState _bs = world.getBlockState(_bp);
+													if (_blockEntity != null) {
+														_blockEntity.getPersistentData().putDouble("wait_time", (Math.round(deobj.get("totalFEGenerated").getAsDouble() * Math.pow(eNum / eMaxNum, deobj.get("currentWeight").getAsDouble()))
+																- Math.round(deobj.get("totalFEGenerated").getAsDouble() * Math.pow((eNum - 1) / eMaxNum, deobj.get("currentWeight").getAsDouble()))));
+														_blockEntity.getPersistentData().putDouble("feSpeed", (fuelPropertiesOBJ.get("feSpeed").getAsDouble() + fuelPropertiesOBJ.get("feIncrement").getAsDouble() * eMaxNum));
 														_blockEntity.getPersistentData().putDouble("cProgress", 0);
 													}
 													if (world instanceof Level _level)
@@ -387,22 +322,66 @@ public class GeneratorTickHandlerProcedure {
 													if (_bs.getBlock().getStateDefinition().getProperty("on") instanceof BooleanProperty _booleanProp)
 														world.setBlock(_pos, _bs.setValue(_booleanProp, true), 3);
 												}
+											} else {
+												if (world instanceof ServerLevel _level) {
+													_level.getServer().getPlayerList().broadcastSystemMessage(Component.literal(
+															"A mod-breaking error has occurred. The 'currentWeight' value in the \"euru_fe_config.json\" file under \"euru:disenchantment_generator\" is not higher than 0, this causes all math related to the Disenchantment Generator to fail. Go into your config and set this value to a number above 0, or contact your server admins for help.")
+															.withColor(0xff0000).withStyle(ChatFormatting.BOLD), false);
+												}
+											}
+										} else {
+											if (!world.isClientSide()) {
+												BlockPos _bp = BlockPos.containing(x, y, z);
+												BlockEntity _blockEntity = world.getBlockEntity(_bp);
+												BlockState _bs = world.getBlockState(_bp);
+												if (_blockEntity != null) {
+													_blockEntity.getPersistentData().putString("lastCheckedItem", (BuiltInRegistries.ITEM.getKey((itemFromBlockInventory(world, BlockPos.containing(x, y, z), 0).copy()).getItem()).toString()));
+												}
+												if (world instanceof Level _level)
+													_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 											}
 										}
-										break;
+									} else {
+										fuelPropertiesOBJ = blockOBJ.get("fuelProperties").getAsJsonObject();
+										itemOBJ = fuelPropertiesOBJ.get(fuelList.get((int) cNum).getAsString()).getAsJsonObject();
+										if (!world.isClientSide()) {
+											BlockPos _bp = BlockPos.containing(x, y, z);
+											BlockEntity _blockEntity = world.getBlockEntity(_bp);
+											BlockState _bs = world.getBlockState(_bp);
+											if (_blockEntity != null) {
+												_blockEntity.getPersistentData().putString("currentItem", (BuiltInRegistries.ITEM.getKey((itemFromBlockInventory(world, BlockPos.containing(x, y, z), 0).copy()).getItem()).toString()));
+												_blockEntity.getPersistentData().putDouble("wait_time", itemOBJ.get("feGenerated").getAsDouble());
+												_blockEntity.getPersistentData().putDouble("feSpeed", itemOBJ.get("feSpeed").getAsDouble());
+												_blockEntity.getPersistentData().putDouble("cProgress", 0);
+											}
+											if (world instanceof Level _level)
+												_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+										}
+										canGenerate = true;
+										if (world instanceof ILevelExtension _ext && _ext.getCapability(Capabilities.ItemHandler.BLOCK, BlockPos.containing(x, y, z), null) instanceof IItemHandlerModifiable _itemHandlerModifiable) {
+											int _slotid = 0;
+											ItemStack _stk = _itemHandlerModifiable.getStackInSlot(_slotid).copy();
+											_stk.shrink(1);
+											_itemHandlerModifiable.setStackInSlot(_slotid, _stk);
+										}
+										{
+											BlockPos _pos = BlockPos.containing(x, y, z);
+											BlockState _bs = world.getBlockState(_pos);
+											if (_bs.getBlock().getStateDefinition().getProperty("on") instanceof BooleanProperty _booleanProp)
+												world.setBlock(_pos, _bs.setValue(_booleanProp, true), 3);
+										}
 									}
-									cNum = cNum + 1;
 								}
-								if ((getBlockNBTString(world, BlockPos.containing(x, y, z), "currentItem")).equals("")) {
-									{
-										BlockPos _pos = BlockPos.containing(x, y, z);
-										BlockState _bs = world.getBlockState(_pos);
-										if (_bs.getBlock().getStateDefinition().getProperty("on") instanceof BooleanProperty _booleanProp)
-											world.setBlock(_pos, _bs.setValue(_booleanProp, false), 3);
-									}
-								}
-							} catch (IOException e) {
-								e.printStackTrace();
+								break;
+							}
+							cNum = cNum + 1;
+						}
+						if ((getBlockNBTString(world, BlockPos.containing(x, y, z), "currentItem")).equals("")) {
+							{
+								BlockPos _pos = BlockPos.containing(x, y, z);
+								BlockState _bs = world.getBlockState(_pos);
+								if (_bs.getBlock().getStateDefinition().getProperty("on") instanceof BooleanProperty _booleanProp)
+									world.setBlock(_pos, _bs.setValue(_booleanProp, false), 3);
 							}
 						}
 					} else {
@@ -601,7 +580,7 @@ public class GeneratorTickHandlerProcedure {
 				}
 			}
 			if (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "wait_time") == 0 && (getBlockNBTString(world, BlockPos.containing(x, y, z), "currentItem")).equals("")) {
-				if (getPropertyByName(blockstate, "on") instanceof BooleanProperty _getbp166 && blockstate.getValue(_getbp166)) {
+				if (getPropertyByName(blockstate, "on") instanceof BooleanProperty _getbp163 && blockstate.getValue(_getbp163)) {
 					if (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "offCounter") > 2) {
 						if (!world.isClientSide()) {
 							BlockPos _bp = BlockPos.containing(x, y, z);
@@ -697,81 +676,16 @@ public class GeneratorTickHandlerProcedure {
 					}
 				}
 			}
-			if (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "range-configUpdate-counter") >= getBlockNBTNumber(world, BlockPos.containing(x, y, z), "range-configUpdate")) {
-				cfile = new File((FMLPaths.GAMEDIR.get().toString() + "/config/euru/"), File.separator + "euru_unified_config.json");
-				feConfig = new File((FMLPaths.GAMEDIR.get().toString() + "/config/euru/"), File.separator + "euru_fe_config.json");
-				{
-					try {
-						BufferedReader bufferedReader = new BufferedReader(new FileReader(feConfig));
-						StringBuilder jsonstringbuilder = new StringBuilder();
-						String line;
-						while ((line = bufferedReader.readLine()) != null) {
-							jsonstringbuilder.append(line);
-						}
-						bufferedReader.close();
-						refreshcobj = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
-						refreshbobj = refreshcobj.get((BuiltInRegistries.ITEM.getKey((new ItemStack((world.getBlockState(BlockPos.containing(x, y, z))).getBlock())).getItem()).toString())).getAsJsonObject();
-						if (!world.isClientSide()) {
-							BlockPos _bp = BlockPos.containing(x, y, z);
-							BlockEntity _blockEntity = world.getBlockEntity(_bp);
-							BlockState _bs = world.getBlockState(_bp);
-							if (_blockEntity != null) {
-								_blockEntity.getPersistentData().putDouble("sendEnergyCapability", refreshbobj.get("sendEnergyCapability").getAsDouble());
-							}
-							if (world instanceof Level _level)
-								_level.sendBlockUpdated(_bp, _bs, _bs, 3);
-						}
-					} catch (IOException e) {
-						e.printStackTrace();
-					}
+			refreshbobj = EuruModVariables.fe_config.get((BuiltInRegistries.ITEM.getKey((new ItemStack((world.getBlockState(BlockPos.containing(x, y, z))).getBlock())).getItem()).toString())).getAsJsonObject();
+			if (!world.isClientSide()) {
+				BlockPos _bp = BlockPos.containing(x, y, z);
+				BlockEntity _blockEntity = world.getBlockEntity(_bp);
+				BlockState _bs = world.getBlockState(_bp);
+				if (_blockEntity != null) {
+					_blockEntity.getPersistentData().putDouble("sendEnergyCapability", refreshbobj.get("sendEnergyCapability").getAsDouble());
 				}
-				{
-					try {
-						BufferedReader bufferedReader = new BufferedReader(new FileReader(cfile));
-						StringBuilder jsonstringbuilder = new StringBuilder();
-						String line;
-						while ((line = bufferedReader.readLine()) != null) {
-							jsonstringbuilder.append(line);
-						}
-						bufferedReader.close();
-						cobj = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
-						if (!world.isClientSide()) {
-							BlockPos _bp = BlockPos.containing(x, y, z);
-							BlockEntity _blockEntity = world.getBlockEntity(_bp);
-							BlockState _bs = world.getBlockState(_bp);
-							if (_blockEntity != null) {
-								_blockEntity.getPersistentData().putDouble("range-configUpdate-min", cobj.get("range-configUpdate-min").getAsDouble());
-								_blockEntity.getPersistentData().putDouble("range-configUpdate-max", cobj.get("range-configUpdate-max").getAsDouble());
-								_blockEntity.getPersistentData().putDouble("range-configUpdate", (Mth.nextInt(RandomSource.create(), (int) cobj.get("range-configUpdate-min").getAsDouble(), (int) cobj.get("range-configUpdate-max").getAsDouble())));
-							}
-							if (world instanceof Level _level)
-								_level.sendBlockUpdated(_bp, _bs, _bs, 3);
-						}
-					} catch (IOException e) {
-						e.printStackTrace();
-					}
-				}
-				if (!world.isClientSide()) {
-					BlockPos _bp = BlockPos.containing(x, y, z);
-					BlockEntity _blockEntity = world.getBlockEntity(_bp);
-					BlockState _bs = world.getBlockState(_bp);
-					if (_blockEntity != null) {
-						_blockEntity.getPersistentData().putDouble("range-configUpdate", 0);
-					}
-					if (world instanceof Level _level)
-						_level.sendBlockUpdated(_bp, _bs, _bs, 3);
-				}
-			} else {
-				if (!world.isClientSide()) {
-					BlockPos _bp = BlockPos.containing(x, y, z);
-					BlockEntity _blockEntity = world.getBlockEntity(_bp);
-					BlockState _bs = world.getBlockState(_bp);
-					if (_blockEntity != null) {
-						_blockEntity.getPersistentData().putDouble("range-configUpdate", (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "range-configUpdate-counter") + 1));
-					}
-					if (world instanceof Level _level)
-						_level.sendBlockUpdated(_bp, _bs, _bs, 3);
-				}
+				if (world instanceof Level _level)
+					_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 			}
 		}
 	}

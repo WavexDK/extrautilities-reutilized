@@ -1,9 +1,9 @@
 package net.wavedk.extrautilitiesreutilized.procedures;
 
+import net.wavedk.extrautilitiesreutilized.network.EuruModVariables;
 import net.wavedk.extrautilitiesreutilized.init.EuruModItems;
 
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
-import net.neoforged.fml.loading.FMLPaths;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.bus.api.Event;
@@ -21,10 +21,7 @@ import net.minecraft.core.component.DataComponents;
 
 import javax.annotation.Nullable;
 
-import java.io.IOException;
-import java.io.FileReader;
 import java.io.File;
-import java.io.BufferedReader;
 
 @EventBusSubscriber
 public class LassoRCOEProcedure {
@@ -54,38 +51,23 @@ public class LassoRCOEProcedure {
 		String gDep = "";
 		if ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == EuruModItems.GOLDEN_LASSO.get()) {
 			if (((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getString("entityType")).equals("")) {
-				file = new File((FMLPaths.GAMEDIR.get().toString() + "/config/euru/"), File.separator + "euru_unified_config.json");
-				{
-					try {
-						BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
-						StringBuilder jsonstringbuilder = new StringBuilder();
-						String line;
-						while ((line = bufferedReader.readLine()) != null) {
-							jsonstringbuilder.append(line);
-						}
-						bufferedReader.close();
-						mobj = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
-						lobj = mobj.get("lasso_entities").getAsJsonObject();
-						array = lobj.get("golden").getAsJsonArray();
-						cNum = 0;
-						for (int _i1 = 0; _i1 < (int) array.size(); _i1++) {
-							cEntity = array.get((int) cNum).getAsString();
-							if ((BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString()).equals(cEntity)) {
-								foundEntity = true;
-								break;
-							}
-							cNum = cNum + 1;
-						}
-					} catch (IOException e) {
-						e.printStackTrace();
+				lobj = EuruModVariables.unified_config.get("lasso_entities").getAsJsonObject();
+				array = lobj.get("golden").getAsJsonArray();
+				cNum = 0;
+				for (int _i1 = 0; _i1 < (int) array.size(); _i1++) {
+					cEntity = array.get((int) cNum).getAsString();
+					if ((BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString()).equals(cEntity)) {
+						foundEntity = true;
+						break;
 					}
+					cNum = cNum + 1;
 				}
 				if (foundEntity) {
 					if ((BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString()).equals("minecraft:chicken")) {
 						if (sourceentity instanceof LivingEntity _entity) {
-							ItemStack _setstack13 = new ItemStack(EuruModItems.GOLDEN_LASSO_CW.get()).copy();
-							_setstack13.setCount(1);
-							_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack13);
+							ItemStack _setstack10 = new ItemStack(EuruModItems.GOLDEN_LASSO_CW.get()).copy();
+							_setstack10.setCount(1);
+							_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack10);
 							if (_entity instanceof Player _player)
 								_player.getInventory().setChanged();
 						}
@@ -114,9 +96,9 @@ public class LassoRCOEProcedure {
 							entity.discard();
 					} else if ((BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString()).equals("minecraft:villager")) {
 						if (sourceentity instanceof LivingEntity _entity) {
-							ItemStack _setstack33 = new ItemStack(EuruModItems.GOLDEN_LASSO_CLW.get()).copy();
-							_setstack33.setCount(1);
-							_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack33);
+							ItemStack _setstack30 = new ItemStack(EuruModItems.GOLDEN_LASSO_CLW.get()).copy();
+							_setstack30.setCount(1);
+							_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack30);
 							if (_entity instanceof Player _player)
 								_player.getInventory().setChanged();
 						}
@@ -145,9 +127,9 @@ public class LassoRCOEProcedure {
 							entity.discard();
 					} else if ((BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString()).equals("minecraft:bat")) {
 						if (sourceentity instanceof LivingEntity _entity) {
-							ItemStack _setstack53 = new ItemStack(EuruModItems.GOLDEN_LASSO_AR.get()).copy();
-							_setstack53.setCount(1);
-							_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack53);
+							ItemStack _setstack50 = new ItemStack(EuruModItems.GOLDEN_LASSO_AR.get()).copy();
+							_setstack50.setCount(1);
+							_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack50);
 							if (_entity instanceof Player _player)
 								_player.getInventory().setChanged();
 						}
@@ -176,9 +158,9 @@ public class LassoRCOEProcedure {
 							entity.discard();
 					} else if ((BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString()).equals("minecraft:squid") || (BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString()).equals("minecraft:glow_squid")) {
 						if (sourceentity instanceof LivingEntity _entity) {
-							ItemStack _setstack74 = new ItemStack(EuruModItems.GOLDEN_LASSO_SW.get()).copy();
-							_setstack74.setCount(1);
-							_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack74);
+							ItemStack _setstack71 = new ItemStack(EuruModItems.GOLDEN_LASSO_SW.get()).copy();
+							_setstack71.setCount(1);
+							_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack71);
 							if (_entity instanceof Player _player)
 								_player.getInventory().setChanged();
 						}
@@ -237,37 +219,22 @@ public class LassoRCOEProcedure {
 			}
 		} else if ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getItem() == EuruModItems.GOLDEN_LASSO.get()) {
 			if (((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getString("entityType")).equals("")) {
-				file = new File((FMLPaths.GAMEDIR.get().toString() + "/config/euru/"), File.separator + "euru_unified_config.json");
-				{
-					try {
-						BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
-						StringBuilder jsonstringbuilder = new StringBuilder();
-						String line;
-						while ((line = bufferedReader.readLine()) != null) {
-							jsonstringbuilder.append(line);
-						}
-						bufferedReader.close();
-						mobj = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
-						lobj = mobj.get("lasso_entities").getAsJsonObject();
-						array = lobj.get("golden").getAsJsonArray();
-						cNum = 0;
-						for (int _i1 = 0; _i1 < (int) array.size(); _i1++) {
-							cEntity = array.get((int) cNum).getAsString();
-							if ((BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString()).equals(cEntity)) {
-								foundEntity = true;
-								break;
-							}
-							cNum = cNum + 1;
-						}
-					} catch (IOException e) {
-						e.printStackTrace();
+				lobj = EuruModVariables.unified_config.get("lasso_entities").getAsJsonObject();
+				array = lobj.get("golden").getAsJsonArray();
+				cNum = 0;
+				for (int _i1 = 0; _i1 < (int) array.size(); _i1++) {
+					cEntity = array.get((int) cNum).getAsString();
+					if ((BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString()).equals(cEntity)) {
+						foundEntity = true;
+						break;
 					}
+					cNum = cNum + 1;
 				}
 				if ((BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString()).equals("minecraft:chicken")) {
 					if (sourceentity instanceof LivingEntity _entity) {
-						ItemStack _setstack125 = new ItemStack(EuruModItems.GOLDEN_LASSO_CW.get()).copy();
-						_setstack125.setCount(1);
-						_entity.setItemInHand(InteractionHand.OFF_HAND, _setstack125);
+						ItemStack _setstack119 = new ItemStack(EuruModItems.GOLDEN_LASSO_CW.get()).copy();
+						_setstack119.setCount(1);
+						_entity.setItemInHand(InteractionHand.OFF_HAND, _setstack119);
 						if (_entity instanceof Player _player)
 							_player.getInventory().setChanged();
 					}
@@ -296,9 +263,9 @@ public class LassoRCOEProcedure {
 						entity.discard();
 				} else if ((BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString()).equals("minecraft:bat")) {
 					if (sourceentity instanceof LivingEntity _entity) {
-						ItemStack _setstack145 = new ItemStack(EuruModItems.GOLDEN_LASSO_AR.get()).copy();
-						_setstack145.setCount(1);
-						_entity.setItemInHand(InteractionHand.OFF_HAND, _setstack145);
+						ItemStack _setstack139 = new ItemStack(EuruModItems.GOLDEN_LASSO_AR.get()).copy();
+						_setstack139.setCount(1);
+						_entity.setItemInHand(InteractionHand.OFF_HAND, _setstack139);
 						if (_entity instanceof Player _player)
 							_player.getInventory().setChanged();
 					}
@@ -327,9 +294,9 @@ public class LassoRCOEProcedure {
 						entity.discard();
 				} else if ((BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString()).equals("minecraft:squid") || (BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString()).equals("minecraft:glow_squid")) {
 					if (sourceentity instanceof LivingEntity _entity) {
-						ItemStack _setstack166 = new ItemStack(EuruModItems.GOLDEN_LASSO_SW.get()).copy();
-						_setstack166.setCount(1);
-						_entity.setItemInHand(InteractionHand.OFF_HAND, _setstack166);
+						ItemStack _setstack160 = new ItemStack(EuruModItems.GOLDEN_LASSO_SW.get()).copy();
+						_setstack160.setCount(1);
+						_entity.setItemInHand(InteractionHand.OFF_HAND, _setstack160);
 						if (_entity instanceof Player _player)
 							_player.getInventory().setChanged();
 					}
@@ -384,38 +351,23 @@ public class LassoRCOEProcedure {
 			}
 		} else if ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getItem() == EuruModItems.CURSED_LASSO.get()) {
 			if (((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getString("entityType")).equals("")) {
-				file = new File((FMLPaths.GAMEDIR.get().toString() + "/config/euru/"), File.separator + "euru_unified_config.json");
-				{
-					try {
-						BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
-						StringBuilder jsonstringbuilder = new StringBuilder();
-						String line;
-						while ((line = bufferedReader.readLine()) != null) {
-							jsonstringbuilder.append(line);
-						}
-						bufferedReader.close();
-						mobj = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
-						lobj = mobj.get("lasso_entities").getAsJsonObject();
-						array = lobj.get("cursed").getAsJsonArray();
-						cNum = 0;
-						for (int _i1 = 0; _i1 < (int) array.size(); _i1++) {
-							cEntity = array.get((int) cNum).getAsString();
-							if ((BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString()).equals(cEntity)) {
-								foundEntity = true;
-								break;
-							}
-							cNum = cNum + 1;
-						}
-					} catch (IOException e) {
-						e.printStackTrace();
+				lobj = EuruModVariables.unified_config.get("lasso_entities").getAsJsonObject();
+				array = lobj.get("cursed").getAsJsonArray();
+				cNum = 0;
+				for (int _i1 = 0; _i1 < (int) array.size(); _i1++) {
+					cEntity = array.get((int) cNum).getAsString();
+					if ((BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString()).equals(cEntity)) {
+						foundEntity = true;
+						break;
 					}
+					cNum = cNum + 1;
 				}
 				if (foundEntity) {
 					if ((BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString()).equals("minecraft:ghast")) {
 						if (sourceentity instanceof LivingEntity _entity) {
-							ItemStack _setstack216 = new ItemStack(EuruModItems.CURSED_LASSO_AR.get()).copy();
-							_setstack216.setCount(1);
-							_entity.setItemInHand(InteractionHand.OFF_HAND, _setstack216);
+							ItemStack _setstack207 = new ItemStack(EuruModItems.CURSED_LASSO_AR.get()).copy();
+							_setstack207.setCount(1);
+							_entity.setItemInHand(InteractionHand.OFF_HAND, _setstack207);
 							if (_entity instanceof Player _player)
 								_player.getInventory().setChanged();
 						}
@@ -474,40 +426,25 @@ public class LassoRCOEProcedure {
 			}
 		} else if ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == EuruModItems.CURSED_LASSO.get()) {
 			if (((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getString("entityType")).equals("")) {
-				file = new File((FMLPaths.GAMEDIR.get().toString() + "/config/euru/"), File.separator + "euru_unified_config.json");
-				{
-					try {
-						BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
-						StringBuilder jsonstringbuilder = new StringBuilder();
-						String line;
-						while ((line = bufferedReader.readLine()) != null) {
-							jsonstringbuilder.append(line);
-						}
-						bufferedReader.close();
-						mobj = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
-						lobj = mobj.get("lasso_entities").getAsJsonObject();
-						array = lobj.get("cursed").getAsJsonArray();
-						cNum = 0;
-						for (int _i1 = 0; _i1 < (int) array.size(); _i1++) {
-							cEntity = array.get((int) cNum).getAsString();
-							if ((BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString()).equals(cEntity)) {
-								foundEntity = true;
-								break;
-							}
-							cNum = cNum + 1;
-						}
-					} catch (IOException e) {
-						e.printStackTrace();
+				lobj = EuruModVariables.unified_config.get("lasso_entities").getAsJsonObject();
+				array = lobj.get("cursed").getAsJsonArray();
+				cNum = 0;
+				for (int _i1 = 0; _i1 < (int) array.size(); _i1++) {
+					cEntity = array.get((int) cNum).getAsString();
+					if ((BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString()).equals(cEntity)) {
+						foundEntity = true;
+						break;
 					}
+					cNum = cNum + 1;
 				}
 				if (foundEntity) {
 					if (entity instanceof Player _player && !_player.level().isClientSide())
 						_player.displayClientMessage(Component.literal((BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString())), false);
 					if ((BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString()).equals("minecraft:ghast")) {
 						if (sourceentity instanceof LivingEntity _entity) {
-							ItemStack _setstack269 = new ItemStack(EuruModItems.CURSED_LASSO_AR.get()).copy();
-							_setstack269.setCount(1);
-							_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack269);
+							ItemStack _setstack257 = new ItemStack(EuruModItems.CURSED_LASSO_AR.get()).copy();
+							_setstack257.setCount(1);
+							_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack257);
 							if (_entity instanceof Player _player)
 								_player.getInventory().setChanged();
 						}

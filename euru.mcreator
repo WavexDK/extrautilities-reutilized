@@ -396,38 +396,6 @@
       "path": "~/GP Procedures"
     },
     {
-      "name": "GetWaitTime",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "get_wait_time",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ],
-        "return_type": "number",
-        "files": [
-          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/GetWaitTimeProcedure.java"
-        ]
-      },
-      "path": "~/Blocks/Machines/Procedures"
-    },
-    {
       "name": "ResonatorRedstoneMode",
       "type": "procedure",
       "compiles": true,
@@ -8475,7 +8443,78 @@
           "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/WirelessBatteryOnBlockRightclickedProcedure.java"
         ]
       },
-      "path": "~/Blocks/Other"
+      "path": "~/Blocks/Other/Procedures"
+    },
+    {
+      "name": "UpdateConfig",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "update_config",
+      "metadata": {
+        "dependencies": [],
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/UpdateConfigProcedure.java"
+        ]
+      },
+      "path": "~/Configs"
+    },
+    {
+      "name": "WirelessBatteryBlockAdded",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "wireless_battery_block_added",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/WirelessBatteryBlockAddedProcedure.java"
+        ]
+      },
+      "path": "~/Blocks/Other/Procedures"
+    },
+    {
+      "name": "ExtraUtilitiesSP",
+      "type": "command",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "extra_utilities_sp",
+      "metadata": {
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/command/ExtraUtilitiesSPCommand.java"
+        ]
+      },
+      "path": "~/Configs"
+    },
+    {
+      "name": "ExtraUtilitiesMP",
+      "type": "command",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "extra_utilities_mp",
+      "metadata": {
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/command/ExtraUtilitiesMPCommand.java"
+        ]
+      },
+      "path": "~/Configs"
     }
   ],
   "variable_elements": [
@@ -8688,6 +8727,36 @@
       "type": "logic",
       "scope": "player_persistent",
       "value": "false"
+    },
+    {
+      "name": "unified_config",
+      "type": "jsonobject",
+      "scope": "global",
+      "value": "new com.google.gson.JsonObject()"
+    },
+    {
+      "name": "fe_config",
+      "type": "jsonobject",
+      "scope": "global",
+      "value": "new com.google.gson.JsonObject()"
+    },
+    {
+      "name": "configUpdateCounter",
+      "type": "number",
+      "scope": "global",
+      "value": "0"
+    },
+    {
+      "name": "feconfig",
+      "type": "arraylist",
+      "scope": "global",
+      "value": "new ArrayList\u003c\u003e()"
+    },
+    {
+      "name": "unifiedconfig",
+      "type": "arraylist",
+      "scope": "global",
+      "value": "new ArrayList\u003c\u003e()"
     }
   ],
   "sound_elements": [],
@@ -9338,11 +9407,11 @@
   "workspaceSettings": {
     "modid": "euru",
     "modName": "Extra Utilities: Reutilized",
-    "version": "0.1.3",
+    "version": "0.1.5",
     "description": "A remake of the old-but-gold 1.12.2 mod \"Extra Utilities 2\"",
     "author": "Wave",
     "websiteURL": "https://buymeacoffee.com/wavedk",
-    "license": "GNU General Public License version 3 (GPLv3)",
+    "license": "Custom license",
     "serverSideOnly": false,
     "modPicture": "gilded_obsidian_angel_alt3_finalv1_scaled_20x_pngcrushed",
     "requiredMods": [],

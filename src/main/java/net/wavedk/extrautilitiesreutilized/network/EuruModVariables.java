@@ -39,6 +39,11 @@ public class EuruModVariables {
 	public static final DeferredRegister<AttachmentType<?>> ATTACHMENT_TYPES = DeferredRegister.create(NeoForgeRegistries.Keys.ATTACHMENT_TYPES, EuruMod.MODID);
 	public static final Supplier<AttachmentType<PlayerVariables>> PLAYER_VARIABLES = ATTACHMENT_TYPES.register("player_variables", () -> AttachmentType.serializable(PlayerVariables::new).build());
 	public static double cVer = 1.8;
+	public static com.google.gson.JsonObject unified_config = new com.google.gson.JsonObject();
+	public static com.google.gson.JsonObject fe_config = new com.google.gson.JsonObject();
+	public static double configUpdateCounter = 0;
+	public static ArrayList<Object> feconfig = new ArrayList<>();
+	public static ArrayList<Object> unifiedconfig = new ArrayList<>();
 
 	@SubscribeEvent
 	public static void init(FMLCommonSetupEvent event) {

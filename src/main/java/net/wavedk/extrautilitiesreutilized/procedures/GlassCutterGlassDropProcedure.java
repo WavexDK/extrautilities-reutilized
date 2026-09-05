@@ -1,9 +1,9 @@
 package net.wavedk.extrautilitiesreutilized.procedures;
 
+import net.wavedk.extrautilitiesreutilized.network.EuruModVariables;
 import net.wavedk.extrautilitiesreutilized.init.EuruModItems;
 
 import net.neoforged.neoforge.event.level.BlockEvent;
-import net.neoforged.fml.loading.FMLPaths;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.bus.api.Event;
@@ -21,10 +21,7 @@ import net.minecraft.core.BlockPos;
 
 import javax.annotation.Nullable;
 
-import java.io.IOException;
-import java.io.FileReader;
 import java.io.File;
-import java.io.BufferedReader;
 
 @EventBusSubscriber
 public class GlassCutterGlassDropProcedure {
@@ -45,24 +42,9 @@ public class GlassCutterGlassDropProcedure {
 		com.google.gson.JsonObject catobj = new com.google.gson.JsonObject();
 		com.google.gson.JsonObject ibo = new com.google.gson.JsonObject();
 		boolean canBreak = false;
-		cfile = new File((FMLPaths.GAMEDIR.get().toString() + "/config/euru/"), File.separator + "euru_unified_config.json");
-		{
-			try {
-				BufferedReader bufferedReader = new BufferedReader(new FileReader(cfile));
-				StringBuilder jsonstringbuilder = new StringBuilder();
-				String line;
-				while ((line = bufferedReader.readLine()) != null) {
-					jsonstringbuilder.append(line);
-				}
-				bufferedReader.close();
-				cobj = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
-				catobj = cobj.get("general").getAsJsonObject();
-				ibo = catobj.get((BuiltInRegistries.ITEM.getKey(EuruModItems.GLASS_CUTTER.get()).toString())).getAsJsonObject();
-				canBreak = ibo.get("breaks_glass").getAsBoolean();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		}
+		catobj = EuruModVariables.unified_config.get("general").getAsJsonObject();
+		ibo = catobj.get((BuiltInRegistries.ITEM.getKey(EuruModItems.GLASS_CUTTER.get()).toString())).getAsJsonObject();
+		canBreak = ibo.get("breaks_glass").getAsBoolean();
 		if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == EuruModItems.GLASS_CUTTER.get() && canBreak
 				&& (new ItemStack((world.getBlockState(BlockPos.containing(x, y, z))).getBlock())).is(ItemTags.create(ResourceLocation.parse("minecraft:glass")))) {
 			if (world instanceof ServerLevel _level) {

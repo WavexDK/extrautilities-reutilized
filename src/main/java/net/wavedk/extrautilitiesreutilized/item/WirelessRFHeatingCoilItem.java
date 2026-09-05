@@ -16,7 +16,7 @@ import java.util.List;
 
 public class WirelessRFHeatingCoilItem extends Item {
 	public WirelessRFHeatingCoilItem() {
-		super(new Item.Properties().stacksTo(2));
+		super(new Item.Properties().stacksTo(1));
 	}
 
 	@Override

@@ -12,7 +12,6 @@ import net.neoforged.neoforge.items.IItemHandler;
 import net.neoforged.neoforge.energy.IEnergyStorage;
 import net.neoforged.neoforge.common.extensions.ILevelExtension;
 import net.neoforged.neoforge.capabilities.Capabilities;
-import net.neoforged.fml.loading.FMLPaths;
 
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.BlockState;
@@ -33,10 +32,7 @@ import net.minecraft.core.BlockPos;
 import java.util.function.Supplier;
 import java.util.UUID;
 
-import java.io.IOException;
-import java.io.FileReader;
 import java.io.File;
-import java.io.BufferedReader;
 
 public class EnchanterOnTickUpdateProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z) {
@@ -167,49 +163,34 @@ public class EnchanterOnTickUpdateProcedure {
 					if ((getBlockNBTString(world, BlockPos.containing(x, y, z), "output")).equals("") || (getBlockNBTString(world, BlockPos.containing(x, y, z), "cItem")).equals("")
 							|| getBlockNBTNumber(world, BlockPos.containing(x, y, z), "wait_time") == 0 || getBlockNBTNumber(world, BlockPos.containing(x, y, z), "lapis_required") == 0
 							|| getBlockNBTNumber(world, BlockPos.containing(x, y, z), "fe_required") == 0 || getBlockNBTNumber(world, BlockPos.containing(x, y, z), "gp_required") == 0) {
-						configFile = new File((FMLPaths.GAMEDIR.get().toString() + "/config/euru/"), File.separator + "euru_unified_config.json");
-						{
-							try {
-								BufferedReader bufferedReader = new BufferedReader(new FileReader(configFile));
-								StringBuilder jsonstringbuilder = new StringBuilder();
-								String line;
-								while ((line = bufferedReader.readLine()) != null) {
-									jsonstringbuilder.append(line);
-								}
-								bufferedReader.close();
-								configOBJ = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
-								catOBJ = configOBJ.get("recipes").getAsJsonObject();
-								blockOBJ = catOBJ.get((BuiltInRegistries.BLOCK.getKey((world.getBlockState(BlockPos.containing(x, y, z))).getBlock()).toString())).getAsJsonObject();
-								rlArray = blockOBJ.get("recipeList").getAsJsonArray();
-								rlNum = 0;
-								for (int _i1 = 0; _i1 < (int) rlArray.size(); _i1++) {
-									rl_cItem = rlArray.get((int) rlNum).getAsString();
-									if ((BuiltInRegistries.ITEM.getKey((itemFromBlockInventory(world, BlockPos.containing(x, y, z), 0).copy()).getItem()).toString()).equals(rl_cItem)
-											|| (itemFromBlockInventory(world, BlockPos.containing(x, y, z), 0).copy()).is(ItemTags.create(ResourceLocation.parse((rl_cItem).toLowerCase(java.util.Locale.ENGLISH))))) {
-										recipeOBJ = blockOBJ.get(rl_cItem).getAsJsonObject();
-										if (!world.isClientSide()) {
-											BlockPos _bp = BlockPos.containing(x, y, z);
-											BlockEntity _blockEntity = world.getBlockEntity(_bp);
-											BlockState _bs = world.getBlockState(_bp);
-											if (_blockEntity != null) {
-												_blockEntity.getPersistentData().putString("output", recipeOBJ.get("output").getAsString());
-												_blockEntity.getPersistentData().putString("lapis_input", recipeOBJ.get("lapis_input").getAsString());
-												_blockEntity.getPersistentData().putString("cItem", rl_cItem);
-												_blockEntity.getPersistentData().putDouble("gp_required", recipeOBJ.get("gp_required").getAsDouble());
-												_blockEntity.getPersistentData().putDouble("wait_time", recipeOBJ.get("wait_time").getAsDouble());
-												_blockEntity.getPersistentData().putDouble("lapis_required", recipeOBJ.get("lapis_required").getAsDouble());
-												_blockEntity.getPersistentData().putDouble("fe_required", recipeOBJ.get("fe_required").getAsDouble());
-											}
-											if (world instanceof Level _level)
-												_level.sendBlockUpdated(_bp, _bs, _bs, 3);
-										}
-										break;
+						catOBJ = EuruModVariables.unified_config.get("recipes").getAsJsonObject();
+						blockOBJ = catOBJ.get((BuiltInRegistries.BLOCK.getKey((world.getBlockState(BlockPos.containing(x, y, z))).getBlock()).toString())).getAsJsonObject();
+						rlArray = blockOBJ.get("recipeList").getAsJsonArray();
+						rlNum = 0;
+						for (int _i1 = 0; _i1 < (int) rlArray.size(); _i1++) {
+							rl_cItem = rlArray.get((int) rlNum).getAsString();
+							if ((BuiltInRegistries.ITEM.getKey((itemFromBlockInventory(world, BlockPos.containing(x, y, z), 0).copy()).getItem()).toString()).equals(rl_cItem)
+									|| (itemFromBlockInventory(world, BlockPos.containing(x, y, z), 0).copy()).is(ItemTags.create(ResourceLocation.parse((rl_cItem).toLowerCase(java.util.Locale.ENGLISH))))) {
+								recipeOBJ = blockOBJ.get(rl_cItem).getAsJsonObject();
+								if (!world.isClientSide()) {
+									BlockPos _bp = BlockPos.containing(x, y, z);
+									BlockEntity _blockEntity = world.getBlockEntity(_bp);
+									BlockState _bs = world.getBlockState(_bp);
+									if (_blockEntity != null) {
+										_blockEntity.getPersistentData().putString("output", recipeOBJ.get("output").getAsString());
+										_blockEntity.getPersistentData().putString("lapis_input", recipeOBJ.get("lapis_input").getAsString());
+										_blockEntity.getPersistentData().putString("cItem", rl_cItem);
+										_blockEntity.getPersistentData().putDouble("gp_required", recipeOBJ.get("gp_required").getAsDouble());
+										_blockEntity.getPersistentData().putDouble("wait_time", recipeOBJ.get("wait_time").getAsDouble());
+										_blockEntity.getPersistentData().putDouble("lapis_required", recipeOBJ.get("lapis_required").getAsDouble());
+										_blockEntity.getPersistentData().putDouble("fe_required", recipeOBJ.get("fe_required").getAsDouble());
 									}
-									rlNum = rlNum + 1;
+									if (world instanceof Level _level)
+										_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 								}
-							} catch (IOException e) {
-								e.printStackTrace();
+								break;
 							}
+							rlNum = rlNum + 1;
 						}
 					}
 					if (!(getBlockNBTString(world, BlockPos.containing(x, y, z), "output")).equals("") && !(getBlockNBTString(world, BlockPos.containing(x, y, z), "cItem")).equals("")

@@ -127,6 +127,7 @@
     "fluidCapacity": 8000,
     "fluidRestrictions": [],
     "onRightClicked": "WirelessBatteryOnBlockRightclicked",
+    "onBlockAdded": "WirelessBatteryBlockAdded",
     "generateFeature": false,
     "restrictionBiomes": [],
     "blocksToReplace": [

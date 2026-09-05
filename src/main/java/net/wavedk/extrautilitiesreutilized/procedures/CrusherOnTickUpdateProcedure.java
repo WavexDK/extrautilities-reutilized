@@ -13,7 +13,6 @@ import net.neoforged.neoforge.items.IItemHandler;
 import net.neoforged.neoforge.energy.IEnergyStorage;
 import net.neoforged.neoforge.common.extensions.ILevelExtension;
 import net.neoforged.neoforge.capabilities.Capabilities;
-import net.neoforged.fml.loading.FMLPaths;
 
 import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
@@ -36,10 +35,7 @@ import net.minecraft.core.BlockPos;
 import java.util.function.Supplier;
 import java.util.UUID;
 
-import java.io.IOException;
-import java.io.FileReader;
 import java.io.File;
-import java.io.BufferedReader;
 
 public class CrusherOnTickUpdateProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, BlockState blockstate) {
@@ -165,74 +161,59 @@ public class CrusherOnTickUpdateProcedure {
 						|| (BuiltInRegistries.ITEM.getKey(BuiltInRegistries.ITEM.get(ResourceLocation.parse(((getBlockNBTString(world, BlockPos.containing(x, y, z), "currentItem"))).toLowerCase(java.util.Locale.ENGLISH)))).toString())
 								.equals("minecraft:air")) {
 					if (itemFromBlockInventory(world, BlockPos.containing(x, y, z), 0).getCount() != 0) {
-						cfile = new File((FMLPaths.GAMEDIR.get().toString() + "/config/euru/"), File.separator + "euru_unified_config.json");
-						{
-							try {
-								BufferedReader bufferedReader = new BufferedReader(new FileReader(cfile));
-								StringBuilder jsonstringbuilder = new StringBuilder();
-								String line;
-								while ((line = bufferedReader.readLine()) != null) {
-									jsonstringbuilder.append(line);
+						cobj = EuruModVariables.unified_config.get("recipes").getAsJsonObject();
+						bobj = cobj.get((BuiltInRegistries.ITEM.getKey(EuruModBlocks.CRUSHER.get().asItem()).toString())).getAsJsonObject();
+						rlist = bobj.get("recipeList").getAsJsonArray();
+						if (!(getBlockNBTString(world, BlockPos.containing(x, y, z), "lastCheckedItemID")).equals(BuiltInRegistries.ITEM.getKey((itemFromBlockInventory(world, BlockPos.containing(x, y, z), 0).copy()).getItem()).toString())) {
+							if (!world.isClientSide()) {
+								BlockPos _bp = BlockPos.containing(x, y, z);
+								BlockEntity _blockEntity = world.getBlockEntity(_bp);
+								BlockState _bs = world.getBlockState(_bp);
+								if (_blockEntity != null) {
+									_blockEntity.getPersistentData().putString("lastCheckedItemID", (BuiltInRegistries.ITEM.getKey((itemFromBlockInventory(world, BlockPos.containing(x, y, z), 0).copy()).getItem()).toString()));
 								}
-								bufferedReader.close();
-								obj = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
-								cobj = obj.get("recipes").getAsJsonObject();
-								bobj = cobj.get((BuiltInRegistries.ITEM.getKey(EuruModBlocks.CRUSHER.get().asItem()).toString())).getAsJsonObject();
-								rlist = bobj.get("recipeList").getAsJsonArray();
-								if (!(getBlockNBTString(world, BlockPos.containing(x, y, z), "lastCheckedItemID")).equals(BuiltInRegistries.ITEM.getKey((itemFromBlockInventory(world, BlockPos.containing(x, y, z), 0).copy()).getItem()).toString())) {
-									if (!world.isClientSide()) {
-										BlockPos _bp = BlockPos.containing(x, y, z);
-										BlockEntity _blockEntity = world.getBlockEntity(_bp);
-										BlockState _bs = world.getBlockState(_bp);
-										if (_blockEntity != null) {
-											_blockEntity.getPersistentData().putString("lastCheckedItemID", (BuiltInRegistries.ITEM.getKey((itemFromBlockInventory(world, BlockPos.containing(x, y, z), 0).copy()).getItem()).toString()));
-										}
-										if (world instanceof Level _level)
-											_level.sendBlockUpdated(_bp, _bs, _bs, 3);
-									}
-									cNum = 0;
-									for (int _i1 = 0; _i1 < (int) rlist.size(); _i1++) {
-										if ((BuiltInRegistries.ITEM.getKey((itemFromBlockInventory(world, BlockPos.containing(x, y, z), 0).copy()).getItem()).toString()).equals(rlist.get((int) cNum).getAsString())
-												|| (itemFromBlockInventory(world, BlockPos.containing(x, y, z), 0).copy()).is(ItemTags.create(ResourceLocation.parse((rlist.get((int) cNum).getAsString()).toLowerCase(java.util.Locale.ENGLISH))))) {
-											iobj = bobj.get(rlist.get((int) cNum).getAsString()).getAsJsonObject();
-											if (getEnergyStored(world, BlockPos.containing(x, y, z), null) >= iobj.get("fe_required").getAsDouble()) {
-												if (!world.isClientSide()) {
-													BlockPos _bp = BlockPos.containing(x, y, z);
-													BlockEntity _blockEntity = world.getBlockEntity(_bp);
-													BlockState _bs = world.getBlockState(_bp);
-													if (_blockEntity != null) {
-														_blockEntity.getPersistentData().putString("currentItem", (BuiltInRegistries.ITEM.getKey((itemFromBlockInventory(world, BlockPos.containing(x, y, z), 0).copy()).getItem()).toString()));
-														_blockEntity.getPersistentData().putString("resultItem", iobj.get("result").getAsString());
-														_blockEntity.getPersistentData().putString("lastCheckedItemID", "");
-														_blockEntity.getPersistentData().putDouble("cProgress", 0);
-														_blockEntity.getPersistentData().putDouble("wait_time", iobj.get("wait_time").getAsDouble());
-														_blockEntity.getPersistentData().putDouble("fe_required", iobj.get("fe_required").getAsDouble());
-														_blockEntity.getPersistentData().putDouble("gp_required", iobj.get("gp_required").getAsDouble());
-													}
-													if (world instanceof Level _level)
-														_level.sendBlockUpdated(_bp, _bs, _bs, 3);
-												}
-												canCrush = true;
-												break;
-											} else {
-												if (!world.isClientSide()) {
-													BlockPos _bp = BlockPos.containing(x, y, z);
-													BlockEntity _blockEntity = world.getBlockEntity(_bp);
-													BlockState _bs = world.getBlockState(_bp);
-													if (_blockEntity != null) {
-														_blockEntity.getPersistentData().putString("lastCheckedItemID", "");
-													}
-													if (world instanceof Level _level)
-														_level.sendBlockUpdated(_bp, _bs, _bs, 3);
-												}
-												break;
+								if (world instanceof Level _level)
+									_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+							}
+							cNum = 0;
+							for (int _i1 = 0; _i1 < (int) rlist.size(); _i1++) {
+								if ((BuiltInRegistries.ITEM.getKey((itemFromBlockInventory(world, BlockPos.containing(x, y, z), 0).copy()).getItem()).toString()).equals(rlist.get((int) cNum).getAsString())
+										|| (itemFromBlockInventory(world, BlockPos.containing(x, y, z), 0).copy()).is(ItemTags.create(ResourceLocation.parse((rlist.get((int) cNum).getAsString()).toLowerCase(java.util.Locale.ENGLISH))))) {
+									iobj = bobj.get(rlist.get((int) cNum).getAsString()).getAsJsonObject();
+									if (getEnergyStored(world, BlockPos.containing(x, y, z), null) >= iobj.get("fe_required").getAsDouble()) {
+										if (!world.isClientSide()) {
+											BlockPos _bp = BlockPos.containing(x, y, z);
+											BlockEntity _blockEntity = world.getBlockEntity(_bp);
+											BlockState _bs = world.getBlockState(_bp);
+											if (_blockEntity != null) {
+												_blockEntity.getPersistentData().putString("currentItem", (BuiltInRegistries.ITEM.getKey((itemFromBlockInventory(world, BlockPos.containing(x, y, z), 0).copy()).getItem()).toString()));
+												_blockEntity.getPersistentData().putString("resultItem", iobj.get("result").getAsString());
+												_blockEntity.getPersistentData().putString("lastCheckedItemID", "");
+												_blockEntity.getPersistentData().putDouble("cProgress", 0);
+												_blockEntity.getPersistentData().putDouble("wait_time", iobj.get("wait_time").getAsDouble());
+												_blockEntity.getPersistentData().putDouble("fe_required", iobj.get("fe_required").getAsDouble());
+												_blockEntity.getPersistentData().putDouble("gp_required", iobj.get("gp_required").getAsDouble());
 											}
+											if (world instanceof Level _level)
+												_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 										}
-										cNum = cNum + 1;
+										canCrush = true;
+										break;
+									} else {
+										if (!world.isClientSide()) {
+											BlockPos _bp = BlockPos.containing(x, y, z);
+											BlockEntity _blockEntity = world.getBlockEntity(_bp);
+											BlockState _bs = world.getBlockState(_bp);
+											if (_blockEntity != null) {
+												_blockEntity.getPersistentData().putString("lastCheckedItemID", "");
+											}
+											if (world instanceof Level _level)
+												_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+										}
+										break;
 									}
 								}
-							} catch (IOException e) {
-								e.printStackTrace();
+								cNum = cNum + 1;
 							}
 						}
 					}
@@ -340,7 +321,7 @@ public class CrusherOnTickUpdateProcedure {
 				}
 			}
 		}
-		if (getPropertyByName(blockstate, "on") instanceof BooleanProperty _getbp114 && blockstate.getValue(_getbp114)) {
+		if (getPropertyByName(blockstate, "on") instanceof BooleanProperty _getbp111 && blockstate.getValue(_getbp111)) {
 			if ((getBlockNBTString(world, BlockPos.containing(x, y, z), "currentItem")).equals("") || getBlockNBTLogic(world, BlockPos.containing(x, y, z), "stoppedForGP")) {
 				if (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "onCounter") > 2) {
 					if (!world.isClientSide()) {
