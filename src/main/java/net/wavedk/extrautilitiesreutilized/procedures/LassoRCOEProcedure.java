@@ -49,6 +49,7 @@ public class LassoRCOEProcedure {
 		String entityType = "";
 		String entityNbt = "";
 		String gDep = "";
+		CompoundTag data = new CompoundTag();
 		if ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == EuruModItems.GOLDEN_LASSO.get()) {
 			if (((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getString("entityType")).equals("")) {
 				lobj = EuruModVariables.unified_config.get("lasso_entities").getAsJsonObject();
@@ -71,7 +72,9 @@ public class LassoRCOEProcedure {
 							if (_entity instanceof Player _player)
 								_player.getInventory().setChanged();
 						}
-						(sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().put("entityNBT", saveWithId(entity).copy());
+						data = (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag();
+						data.put("entityNBT", saveWithId(entity).copy());
+						(sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).set(DataComponents.CUSTOM_DATA, CustomData.of(data));
 						{
 							final String _tagName = "healthMax";
 							final double _tagValue = (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1);
@@ -96,13 +99,15 @@ public class LassoRCOEProcedure {
 							entity.discard();
 					} else if ((BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString()).equals("minecraft:villager")) {
 						if (sourceentity instanceof LivingEntity _entity) {
-							ItemStack _setstack30 = new ItemStack(EuruModItems.GOLDEN_LASSO_CLW.get()).copy();
-							_setstack30.setCount(1);
-							_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack30);
+							ItemStack _setstack33 = new ItemStack(EuruModItems.GOLDEN_LASSO_CLW.get()).copy();
+							_setstack33.setCount(1);
+							_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack33);
 							if (_entity instanceof Player _player)
 								_player.getInventory().setChanged();
 						}
-						(sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().put("entityNBT", saveWithId(entity).copy());
+						data = (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag();
+						data.put("entityNBT", saveWithId(entity).copy());
+						(sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).set(DataComponents.CUSTOM_DATA, CustomData.of(data));
 						{
 							final String _tagName = "healthMax";
 							final double _tagValue = (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1);
@@ -127,13 +132,15 @@ public class LassoRCOEProcedure {
 							entity.discard();
 					} else if ((BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString()).equals("minecraft:bat")) {
 						if (sourceentity instanceof LivingEntity _entity) {
-							ItemStack _setstack50 = new ItemStack(EuruModItems.GOLDEN_LASSO_AR.get()).copy();
-							_setstack50.setCount(1);
-							_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack50);
+							ItemStack _setstack56 = new ItemStack(EuruModItems.GOLDEN_LASSO_AR.get()).copy();
+							_setstack56.setCount(1);
+							_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack56);
 							if (_entity instanceof Player _player)
 								_player.getInventory().setChanged();
 						}
-						(sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().put("entityNBT", saveWithId(entity).copy());
+						data = (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag();
+						data.put("entityNBT", saveWithId(entity).copy());
+						(sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).set(DataComponents.CUSTOM_DATA, CustomData.of(data));
 						{
 							final String _tagName = "healthMax";
 							final double _tagValue = (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1);
@@ -158,13 +165,15 @@ public class LassoRCOEProcedure {
 							entity.discard();
 					} else if ((BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString()).equals("minecraft:squid") || (BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString()).equals("minecraft:glow_squid")) {
 						if (sourceentity instanceof LivingEntity _entity) {
-							ItemStack _setstack71 = new ItemStack(EuruModItems.GOLDEN_LASSO_SW.get()).copy();
-							_setstack71.setCount(1);
-							_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack71);
+							ItemStack _setstack80 = new ItemStack(EuruModItems.GOLDEN_LASSO_SW.get()).copy();
+							_setstack80.setCount(1);
+							_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack80);
 							if (_entity instanceof Player _player)
 								_player.getInventory().setChanged();
 						}
-						(sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().put("entityNBT", saveWithId(entity).copy());
+						data = (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag();
+						data.put("entityNBT", saveWithId(entity).copy());
+						(sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).set(DataComponents.CUSTOM_DATA, CustomData.of(data));
 						{
 							final String _tagName = "healthMax";
 							final double _tagValue = (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1);
@@ -188,7 +197,9 @@ public class LassoRCOEProcedure {
 						if (!entity.level().isClientSide())
 							entity.discard();
 					} else {
-						(sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().put("entityNBT", saveWithId(entity).copy());
+						data = (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag();
+						data.put("entityNBT", saveWithId(entity).copy());
+						(sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).set(DataComponents.CUSTOM_DATA, CustomData.of(data));
 						{
 							final String _tagName = "healthMax";
 							final double _tagValue = (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1);
@@ -230,123 +241,169 @@ public class LassoRCOEProcedure {
 					}
 					cNum = cNum + 1;
 				}
-				if ((BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString()).equals("minecraft:chicken")) {
-					if (sourceentity instanceof LivingEntity _entity) {
-						ItemStack _setstack119 = new ItemStack(EuruModItems.GOLDEN_LASSO_CW.get()).copy();
-						_setstack119.setCount(1);
-						_entity.setItemInHand(InteractionHand.OFF_HAND, _setstack119);
-						if (_entity instanceof Player _player)
-							_player.getInventory().setChanged();
+				if (foundEntity) {
+					if ((BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString()).equals("minecraft:chicken")) {
+						if (entity instanceof LivingEntity _entity) {
+							ItemStack _setstack134 = new ItemStack(EuruModItems.GOLDEN_LASSO_CW.get()).copy();
+							_setstack134.setCount(1);
+							_entity.setItemInHand(InteractionHand.OFF_HAND, _setstack134);
+							if (_entity instanceof Player _player)
+								_player.getInventory().setChanged();
+						}
+						data = (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag();
+						data.put("entityNBT", saveWithId(entity).copy());
+						(entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).set(DataComponents.CUSTOM_DATA, CustomData.of(data));
+						{
+							final String _tagName = "healthMax";
+							final double _tagValue = (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1);
+							CustomData.update(DataComponents.CUSTOM_DATA, (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY), tag -> tag.putDouble(_tagName, _tagValue));
+						}
+						{
+							final String _tagName = "healthMin";
+							final double _tagValue = (entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1);
+							CustomData.update(DataComponents.CUSTOM_DATA, (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY), tag -> tag.putDouble(_tagName, _tagValue));
+						}
+						{
+							final String _tagName = "entityType";
+							final String _tagValue = (entity.getDisplayName().getString());
+							CustomData.update(DataComponents.CUSTOM_DATA, (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY), tag -> tag.putString(_tagName, _tagValue));
+						}
+						{
+							final String _tagName = "entityReg";
+							final String _tagValue = (BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString());
+							CustomData.update(DataComponents.CUSTOM_DATA, (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY), tag -> tag.putString(_tagName, _tagValue));
+						}
+						if (!entity.level().isClientSide())
+							entity.discard();
+					} else if ((BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString()).equals("minecraft:villager")) {
+						if (entity instanceof LivingEntity _entity) {
+							ItemStack _setstack157 = new ItemStack(EuruModItems.GOLDEN_LASSO_CLW.get()).copy();
+							_setstack157.setCount(1);
+							_entity.setItemInHand(InteractionHand.OFF_HAND, _setstack157);
+							if (_entity instanceof Player _player)
+								_player.getInventory().setChanged();
+						}
+						data = (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag();
+						data.put("entityNBT", saveWithId(entity).copy());
+						(entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).set(DataComponents.CUSTOM_DATA, CustomData.of(data));
+						{
+							final String _tagName = "healthMax";
+							final double _tagValue = (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1);
+							CustomData.update(DataComponents.CUSTOM_DATA, (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY), tag -> tag.putDouble(_tagName, _tagValue));
+						}
+						{
+							final String _tagName = "healthMin";
+							final double _tagValue = (entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1);
+							CustomData.update(DataComponents.CUSTOM_DATA, (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY), tag -> tag.putDouble(_tagName, _tagValue));
+						}
+						{
+							final String _tagName = "entityType";
+							final String _tagValue = (entity.getDisplayName().getString());
+							CustomData.update(DataComponents.CUSTOM_DATA, (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY), tag -> tag.putString(_tagName, _tagValue));
+						}
+						{
+							final String _tagName = "entityReg";
+							final String _tagValue = (BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString());
+							CustomData.update(DataComponents.CUSTOM_DATA, (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY), tag -> tag.putString(_tagName, _tagValue));
+						}
+						if (!entity.level().isClientSide())
+							entity.discard();
+					} else if ((BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString()).equals("minecraft:bat")) {
+						if (entity instanceof LivingEntity _entity) {
+							ItemStack _setstack180 = new ItemStack(EuruModItems.GOLDEN_LASSO_AR.get()).copy();
+							_setstack180.setCount(1);
+							_entity.setItemInHand(InteractionHand.OFF_HAND, _setstack180);
+							if (_entity instanceof Player _player)
+								_player.getInventory().setChanged();
+						}
+						data = (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag();
+						data.put("entityNBT", saveWithId(entity).copy());
+						(entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).set(DataComponents.CUSTOM_DATA, CustomData.of(data));
+						{
+							final String _tagName = "healthMax";
+							final double _tagValue = (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1);
+							CustomData.update(DataComponents.CUSTOM_DATA, (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY), tag -> tag.putDouble(_tagName, _tagValue));
+						}
+						{
+							final String _tagName = "healthMin";
+							final double _tagValue = (entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1);
+							CustomData.update(DataComponents.CUSTOM_DATA, (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY), tag -> tag.putDouble(_tagName, _tagValue));
+						}
+						{
+							final String _tagName = "entityReg";
+							final String _tagValue = (BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString());
+							CustomData.update(DataComponents.CUSTOM_DATA, (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY), tag -> tag.putString(_tagName, _tagValue));
+						}
+						{
+							final String _tagName = "entityType";
+							final String _tagValue = (entity.getDisplayName().getString());
+							CustomData.update(DataComponents.CUSTOM_DATA, (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY), tag -> tag.putString(_tagName, _tagValue));
+						}
+						if (!entity.level().isClientSide())
+							entity.discard();
+					} else if ((BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString()).equals("minecraft:squid") || (BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString()).equals("minecraft:glow_squid")) {
+						if (entity instanceof LivingEntity _entity) {
+							ItemStack _setstack204 = new ItemStack(EuruModItems.GOLDEN_LASSO_SW.get()).copy();
+							_setstack204.setCount(1);
+							_entity.setItemInHand(InteractionHand.OFF_HAND, _setstack204);
+							if (_entity instanceof Player _player)
+								_player.getInventory().setChanged();
+						}
+						data = (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag();
+						data.put("entityNBT", saveWithId(entity).copy());
+						(entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).set(DataComponents.CUSTOM_DATA, CustomData.of(data));
+						{
+							final String _tagName = "healthMax";
+							final double _tagValue = (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1);
+							CustomData.update(DataComponents.CUSTOM_DATA, (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY), tag -> tag.putDouble(_tagName, _tagValue));
+						}
+						{
+							final String _tagName = "healthMin";
+							final double _tagValue = (entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1);
+							CustomData.update(DataComponents.CUSTOM_DATA, (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY), tag -> tag.putDouble(_tagName, _tagValue));
+						}
+						{
+							final String _tagName = "entityReg";
+							final String _tagValue = (BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString());
+							CustomData.update(DataComponents.CUSTOM_DATA, (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY), tag -> tag.putString(_tagName, _tagValue));
+						}
+						{
+							final String _tagName = "entityType";
+							final String _tagValue = (entity.getDisplayName().getString());
+							CustomData.update(DataComponents.CUSTOM_DATA, (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY), tag -> tag.putString(_tagName, _tagValue));
+						}
+						if (!entity.level().isClientSide())
+							entity.discard();
+					} else {
+						data = (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag();
+						data.put("entityNBT", saveWithId(entity).copy());
+						(entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).set(DataComponents.CUSTOM_DATA, CustomData.of(data));
+						{
+							final String _tagName = "healthMax";
+							final double _tagValue = (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1);
+							CustomData.update(DataComponents.CUSTOM_DATA, (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY), tag -> tag.putDouble(_tagName, _tagValue));
+						}
+						{
+							final String _tagName = "healthMin";
+							final double _tagValue = (entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1);
+							CustomData.update(DataComponents.CUSTOM_DATA, (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY), tag -> tag.putDouble(_tagName, _tagValue));
+						}
+						{
+							final String _tagName = "entityReg";
+							final String _tagValue = (BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString());
+							CustomData.update(DataComponents.CUSTOM_DATA, (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY), tag -> tag.putString(_tagName, _tagValue));
+						}
+						{
+							final String _tagName = "entityType";
+							final String _tagValue = (entity.getDisplayName().getString());
+							CustomData.update(DataComponents.CUSTOM_DATA, (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY), tag -> tag.putString(_tagName, _tagValue));
+						}
+						if (!entity.level().isClientSide())
+							entity.discard();
 					}
-					(sourceentity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().put("entityNBT", saveWithId(entity).copy());
-					{
-						final String _tagName = "healthMax";
-						final double _tagValue = (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1);
-						CustomData.update(DataComponents.CUSTOM_DATA, (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY), tag -> tag.putDouble(_tagName, _tagValue));
-					}
-					{
-						final String _tagName = "healthMin";
-						final double _tagValue = (entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1);
-						CustomData.update(DataComponents.CUSTOM_DATA, (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY), tag -> tag.putDouble(_tagName, _tagValue));
-					}
-					{
-						final String _tagName = "entityReg";
-						final String _tagValue = (BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString());
-						CustomData.update(DataComponents.CUSTOM_DATA, (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY), tag -> tag.putString(_tagName, _tagValue));
-					}
-					{
-						final String _tagName = "entityType";
-						final String _tagValue = (entity.getDisplayName().getString());
-						CustomData.update(DataComponents.CUSTOM_DATA, (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY), tag -> tag.putString(_tagName, _tagValue));
-					}
-					if (!entity.level().isClientSide())
-						entity.discard();
-				} else if ((BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString()).equals("minecraft:bat")) {
-					if (sourceentity instanceof LivingEntity _entity) {
-						ItemStack _setstack139 = new ItemStack(EuruModItems.GOLDEN_LASSO_AR.get()).copy();
-						_setstack139.setCount(1);
-						_entity.setItemInHand(InteractionHand.OFF_HAND, _setstack139);
-						if (_entity instanceof Player _player)
-							_player.getInventory().setChanged();
-					}
-					(sourceentity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().put("entityNBT", saveWithId(entity).copy());
-					{
-						final String _tagName = "healthMax";
-						final double _tagValue = (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1);
-						CustomData.update(DataComponents.CUSTOM_DATA, (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY), tag -> tag.putDouble(_tagName, _tagValue));
-					}
-					{
-						final String _tagName = "healthMin";
-						final double _tagValue = (entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1);
-						CustomData.update(DataComponents.CUSTOM_DATA, (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY), tag -> tag.putDouble(_tagName, _tagValue));
-					}
-					{
-						final String _tagName = "entityType";
-						final String _tagValue = (entity.getDisplayName().getString());
-						CustomData.update(DataComponents.CUSTOM_DATA, (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY), tag -> tag.putString(_tagName, _tagValue));
-					}
-					{
-						final String _tagName = "entityReg";
-						final String _tagValue = (BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString());
-						CustomData.update(DataComponents.CUSTOM_DATA, (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY), tag -> tag.putString(_tagName, _tagValue));
-					}
-					if (!entity.level().isClientSide())
-						entity.discard();
-				} else if ((BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString()).equals("minecraft:squid") || (BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString()).equals("minecraft:glow_squid")) {
-					if (sourceentity instanceof LivingEntity _entity) {
-						ItemStack _setstack160 = new ItemStack(EuruModItems.GOLDEN_LASSO_SW.get()).copy();
-						_setstack160.setCount(1);
-						_entity.setItemInHand(InteractionHand.OFF_HAND, _setstack160);
-						if (_entity instanceof Player _player)
-							_player.getInventory().setChanged();
-					}
-					(sourceentity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().put("entityNBT", saveWithId(entity).copy());
-					{
-						final String _tagName = "healthMax";
-						final double _tagValue = (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1);
-						CustomData.update(DataComponents.CUSTOM_DATA, (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY), tag -> tag.putDouble(_tagName, _tagValue));
-					}
-					{
-						final String _tagName = "healthMin";
-						final double _tagValue = (entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1);
-						CustomData.update(DataComponents.CUSTOM_DATA, (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY), tag -> tag.putDouble(_tagName, _tagValue));
-					}
-					{
-						final String _tagName = "entityType";
-						final String _tagValue = (entity.getDisplayName().getString());
-						CustomData.update(DataComponents.CUSTOM_DATA, (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY), tag -> tag.putString(_tagName, _tagValue));
-					}
-					{
-						final String _tagName = "entityReg";
-						final String _tagValue = (BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString());
-						CustomData.update(DataComponents.CUSTOM_DATA, (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY), tag -> tag.putString(_tagName, _tagValue));
-					}
-					if (!entity.level().isClientSide())
-						entity.discard();
 				} else {
-					(sourceentity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().put("entityNBT", saveWithId(entity).copy());
-					{
-						final String _tagName = "healthMax";
-						final double _tagValue = (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1);
-						CustomData.update(DataComponents.CUSTOM_DATA, (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY), tag -> tag.putDouble(_tagName, _tagValue));
-					}
-					{
-						final String _tagName = "healthMin";
-						final double _tagValue = (entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1);
-						CustomData.update(DataComponents.CUSTOM_DATA, (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY), tag -> tag.putDouble(_tagName, _tagValue));
-					}
-					{
-						final String _tagName = "entityReg";
-						final String _tagValue = (BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString());
-						CustomData.update(DataComponents.CUSTOM_DATA, (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY), tag -> tag.putString(_tagName, _tagValue));
-					}
-					{
-						final String _tagName = "entityType";
-						final String _tagValue = (entity.getDisplayName().getString());
-						CustomData.update(DataComponents.CUSTOM_DATA, (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY), tag -> tag.putString(_tagName, _tagValue));
-					}
-					if (!entity.level().isClientSide())
-						entity.discard();
+					if (sourceentity instanceof Player _player && !_player.level().isClientSide())
+						_player.displayClientMessage(Component.literal("\u00A7cYou cannot use a Golden Lasso on this entity! (try a cursed lasso)"), false);
 				}
 			}
 		} else if ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getItem() == EuruModItems.CURSED_LASSO.get()) {
@@ -365,13 +422,15 @@ public class LassoRCOEProcedure {
 				if (foundEntity) {
 					if ((BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString()).equals("minecraft:ghast")) {
 						if (sourceentity instanceof LivingEntity _entity) {
-							ItemStack _setstack207 = new ItemStack(EuruModItems.CURSED_LASSO_AR.get()).copy();
-							_setstack207.setCount(1);
-							_entity.setItemInHand(InteractionHand.OFF_HAND, _setstack207);
+							ItemStack _setstack258 = new ItemStack(EuruModItems.CURSED_LASSO_AR.get()).copy();
+							_setstack258.setCount(1);
+							_entity.setItemInHand(InteractionHand.OFF_HAND, _setstack258);
 							if (_entity instanceof Player _player)
 								_player.getInventory().setChanged();
 						}
-						(sourceentity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().put("entityNBT", saveWithId(entity).copy());
+						data = (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag();
+						data.put("entityNBT", saveWithId(entity).copy());
+						(entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).set(DataComponents.CUSTOM_DATA, CustomData.of(data));
 						{
 							final String _tagName = "healthMax";
 							final double _tagValue = (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1);
@@ -395,7 +454,9 @@ public class LassoRCOEProcedure {
 						if (!entity.level().isClientSide())
 							entity.discard();
 					} else {
-						(sourceentity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().put("entityNBT", saveWithId(entity).copy());
+						data = (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag();
+						data.put("entityNBT", saveWithId(entity).copy());
+						(entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).set(DataComponents.CUSTOM_DATA, CustomData.of(data));
 						{
 							final String _tagName = "healthMax";
 							final double _tagValue = (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1);
@@ -442,13 +503,15 @@ public class LassoRCOEProcedure {
 						_player.displayClientMessage(Component.literal((BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString())), false);
 					if ((BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString()).equals("minecraft:ghast")) {
 						if (sourceentity instanceof LivingEntity _entity) {
-							ItemStack _setstack257 = new ItemStack(EuruModItems.CURSED_LASSO_AR.get()).copy();
-							_setstack257.setCount(1);
-							_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack257);
+							ItemStack _setstack314 = new ItemStack(EuruModItems.CURSED_LASSO_AR.get()).copy();
+							_setstack314.setCount(1);
+							_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack314);
 							if (_entity instanceof Player _player)
 								_player.getInventory().setChanged();
 						}
-						(sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().put("entityNBT", saveWithId(entity).copy());
+						data = (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag();
+						data.put("entityNBT", saveWithId(entity).copy());
+						(sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).set(DataComponents.CUSTOM_DATA, CustomData.of(data));
 						{
 							final String _tagName = "healthMax";
 							final double _tagValue = (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1);
@@ -472,7 +535,9 @@ public class LassoRCOEProcedure {
 						if (!entity.level().isClientSide())
 							entity.discard();
 					} else {
-						(sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().put("entityNBT", saveWithId(entity).copy());
+						data = (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag();
+						data.put("entityNBT", saveWithId(entity).copy());
+						(sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).set(DataComponents.CUSTOM_DATA, CustomData.of(data));
 						{
 							final String _tagName = "healthMax";
 							final double _tagValue = (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1);
