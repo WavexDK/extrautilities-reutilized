@@ -82,6 +82,60 @@ public class PanelsTickUpdateHandlerProcedure {
 				} else {
 					canGenerate = false;
 				}
+				if (canGenerate) {
+					if (!world.isClientSide()) {
+						BlockPos _bp = BlockPos.containing(x, y, z);
+						BlockEntity _blockEntity = world.getBlockEntity(_bp);
+						BlockState _bs = world.getBlockState(_bp);
+						if (_blockEntity != null) {
+							_blockEntity.getPersistentData().putBoolean("generating", true);
+						}
+						if (world instanceof Level _level)
+							_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+					}
+					if (mult > 0) {
+						if (!world.isClientSide()) {
+							BlockPos _bp = BlockPos.containing(x, y, z);
+							BlockEntity _blockEntity = world.getBlockEntity(_bp);
+							BlockState _bs = world.getBlockState(_bp);
+							if (_blockEntity != null) {
+								_blockEntity.getPersistentData().putDouble("gp_generated", (mult * getBlockNBTNumber(world, BlockPos.containing(x, y, z), "nominal_generated")));
+							}
+							if (world instanceof Level _level)
+								_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+						}
+					} else {
+						if (!world.isClientSide()) {
+							BlockPos _bp = BlockPos.containing(x, y, z);
+							BlockEntity _blockEntity = world.getBlockEntity(_bp);
+							BlockState _bs = world.getBlockState(_bp);
+							if (_blockEntity != null) {
+								_blockEntity.getPersistentData().putDouble("gp_generated", (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "nominal_generated")));
+							}
+							if (world instanceof Level _level)
+								_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+						}
+					}
+					if (player.getData(EuruModVariables.PLAYER_VARIABLES).playerGPChecking) {
+						{
+							EuruModVariables.PlayerVariables _vars = player.getData(EuruModVariables.PLAYER_VARIABLES);
+							_vars.group_count_solarpanels = player.getData(EuruModVariables.PLAYER_VARIABLES).group_count_solarpanels + 1;
+							_vars.group_raw_solarpanels = player.getData(EuruModVariables.PLAYER_VARIABLES).group_raw_solarpanels + getBlockNBTNumber(world, BlockPos.containing(x, y, z), "gp_generated");
+							_vars.markSyncDirty();
+						}
+					}
+				} else {
+					if (!world.isClientSide()) {
+						BlockPos _bp = BlockPos.containing(x, y, z);
+						BlockEntity _blockEntity = world.getBlockEntity(_bp);
+						BlockState _bs = world.getBlockState(_bp);
+						if (_blockEntity != null) {
+							_blockEntity.getPersistentData().putBoolean("generating", false);
+						}
+						if (world instanceof Level _level)
+							_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+					}
+				}
 			}
 			if (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "gEfficiency") == 0 || getBlockNBTNumber(world, BlockPos.containing(x, y, z), "gCutoff") == 0) {
 				if (!world.isClientSide()) {
@@ -107,51 +161,8 @@ public class PanelsTickUpdateHandlerProcedure {
 				if (world instanceof Level _level)
 					_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 			}
-			GroupPanelsConfigHandlerProcedure.execute(world, x, y, z);
 		}
-		if (canGenerate) {
-			if (!world.isClientSide()) {
-				BlockPos _bp = BlockPos.containing(x, y, z);
-				BlockEntity _blockEntity = world.getBlockEntity(_bp);
-				BlockState _bs = world.getBlockState(_bp);
-				if (_blockEntity != null) {
-					_blockEntity.getPersistentData().putBoolean("generating", true);
-				}
-				if (world instanceof Level _level)
-					_level.sendBlockUpdated(_bp, _bs, _bs, 3);
-			}
-			if (player.getData(EuruModVariables.PLAYER_VARIABLES).playerGPChecking) {
-				{
-					EuruModVariables.PlayerVariables _vars = player.getData(EuruModVariables.PLAYER_VARIABLES);
-					_vars.group_count_solarpanels = player.getData(EuruModVariables.PLAYER_VARIABLES).group_count_solarpanels + 1;
-					_vars.markSyncDirty();
-				}
-				if (mult > 0) {
-					{
-						EuruModVariables.PlayerVariables _vars = player.getData(EuruModVariables.PLAYER_VARIABLES);
-						_vars.group_raw_solarpanels = player.getData(EuruModVariables.PLAYER_VARIABLES).group_raw_solarpanels + mult * getBlockNBTNumber(world, BlockPos.containing(x, y, z), "gp_generated");
-						_vars.markSyncDirty();
-					}
-				} else {
-					{
-						EuruModVariables.PlayerVariables _vars = player.getData(EuruModVariables.PLAYER_VARIABLES);
-						_vars.group_raw_solarpanels = player.getData(EuruModVariables.PLAYER_VARIABLES).group_raw_solarpanels + getBlockNBTNumber(world, BlockPos.containing(x, y, z), "gp_generated");
-						_vars.markSyncDirty();
-					}
-				}
-			}
-		} else {
-			if (!world.isClientSide()) {
-				BlockPos _bp = BlockPos.containing(x, y, z);
-				BlockEntity _blockEntity = world.getBlockEntity(_bp);
-				BlockState _bs = world.getBlockState(_bp);
-				if (_blockEntity != null) {
-					_blockEntity.getPersistentData().putBoolean("generating", false);
-				}
-				if (world instanceof Level _level)
-					_level.sendBlockUpdated(_bp, _bs, _bs, 3);
-			}
-		}
+		GroupPanelsConfigHandlerProcedure.execute(world, x, y, z);
 	}
 
 	private static String getBlockNBTString(LevelAccessor world, BlockPos pos, String tag) {

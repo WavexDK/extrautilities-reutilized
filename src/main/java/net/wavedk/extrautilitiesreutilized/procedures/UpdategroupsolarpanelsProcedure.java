@@ -18,7 +18,7 @@ public class UpdategroupsolarpanelsProcedure {
 		com.google.gson.JsonObject fobj = new com.google.gson.JsonObject();
 		if (entity.getData(EuruModVariables.PLAYER_VARIABLES).group_count_solarpanels > 0) {
 			if (entity.getData(EuruModVariables.PLAYER_VARIABLES).group_efficiency_solarpanels == 0 || entity.getData(EuruModVariables.PLAYER_VARIABLES).group_cutoff_solarpanels == 0) {
-				fobj = EuruModVariables.unified_config.get("group_man").getAsJsonObject();
+				fobj = EuruModVariables.unified_config.get("gp_efficiency_manager").getAsJsonObject();
 				obj2 = fobj.get("solarpanels").getAsJsonObject();
 				{
 					EuruModVariables.PlayerVariables _vars = entity.getData(EuruModVariables.PLAYER_VARIABLES);

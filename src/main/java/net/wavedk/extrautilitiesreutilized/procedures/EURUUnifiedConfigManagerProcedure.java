@@ -47,6 +47,8 @@ public class EURUUnifiedConfigManagerProcedure {
 		com.google.gson.JsonArray crusherrl = new com.google.gson.JsonArray();
 		com.google.gson.JsonArray variantArray = new com.google.gson.JsonArray();
 		com.google.gson.JsonArray newArray = new com.google.gson.JsonArray();
+		com.google.gson.JsonArray millsarray = new com.google.gson.JsonArray();
+		com.google.gson.JsonArray garray = new com.google.gson.JsonArray();
 		com.google.gson.JsonObject configJsonObject = new com.google.gson.JsonObject();
 		com.google.gson.JsonObject configSubJsonObjest = new com.google.gson.JsonObject();
 		com.google.gson.JsonObject solarpanelObject = new com.google.gson.JsonObject();
@@ -81,10 +83,14 @@ public class EURUUnifiedConfigManagerProcedure {
 		com.google.gson.JsonObject unifiedread = new com.google.gson.JsonObject();
 		com.google.gson.JsonObject feread = new com.google.gson.JsonObject();
 		com.google.gson.JsonObject rfh = new com.google.gson.JsonObject();
+		com.google.gson.JsonObject gpman = new com.google.gson.JsonObject();
+		com.google.gson.JsonObject groupmills = new com.google.gson.JsonObject();
+		com.google.gson.JsonObject gsolar = new com.google.gson.JsonObject();
+		com.google.gson.JsonObject gallblocks = new com.google.gson.JsonObject();
 		String cItem = "";
 		String coutput = "";
 		configFile = new File((FMLPaths.GAMEDIR.get().toString() + "/config/euru/"), File.separator + "euru_unified_config.json");
-		EuruModVariables.cVer = 2.5;
+		EuruModVariables.cVer = 1;
 		cVer = EuruModVariables.cVer;
 		if (!configFile.exists()) {
 			try {
@@ -96,15 +102,6 @@ public class EURUUnifiedConfigManagerProcedure {
 			configJsonObject.addProperty("range-configUpdate-min", 6000);
 			configJsonObject.addProperty("range-configUpdate-max", 8000);
 			configJsonObject.addProperty("info_2", "Changing the above values will change how often all blocks update from config, measured in ticks.");
-			itemobj = new com.google.gson.JsonObject();
-			itemobj.addProperty("efficiency", 0.95);
-			itemobj.addProperty("efficiency_cutoff", 80);
-			gobj.add("solarpanels", itemobj);
-			itemobj = new com.google.gson.JsonObject();
-			itemobj.addProperty("efficiency", 0.75);
-			itemobj.addProperty("efficiency_cutoff", 16);
-			gobj.add("mills", itemobj);
-			configJsonObject.add("group_man", gobj);
 			itemobj = new com.google.gson.JsonObject();
 			itemobj.addProperty("gp_required", 16);
 			itemobj.addProperty("fe_required", 4000);
@@ -172,6 +169,22 @@ public class EURUUnifiedConfigManagerProcedure {
 			crushobj.add("recipeList", crusherrl);
 			recipesOBJ.add((BuiltInRegistries.ITEM.getKey(EuruModBlocks.CRUSHER.get().asItem()).toString()), crushobj);
 			configJsonObject.add("recipes", recipesOBJ);
+			groupmills.addProperty("efficiency", 0.75);
+			groupmills.addProperty("efficiency_cutoff", 16);
+			gpman.add("mills", groupmills);
+			gsolar.addProperty("efficiency", 0.95);
+			gsolar.addProperty("efficiency_cutoff", 80);
+			gpman.add("solarpanels", gsolar);
+			gallblocks.addProperty((BuiltInRegistries.ITEM.getKey(EuruModBlocks.LUNAR_PANEL.get().asItem()).toString()), "solarpanels");
+			gallblocks.addProperty((BuiltInRegistries.ITEM.getKey(EuruModBlocks.SOLAR_PANEL.get().asItem()).toString()), "solarpanels");
+			gallblocks.addProperty((BuiltInRegistries.ITEM.getKey(EuruModBlocks.MANUAL_MILL.get().asItem()).toString()), "mills");
+			gallblocks.addProperty((BuiltInRegistries.ITEM.getKey(EuruModBlocks.WATER_MILL.get().asItem()).toString()), "mills");
+			gallblocks.addProperty((BuiltInRegistries.ITEM.getKey(EuruModBlocks.LAVA_MILL.get().asItem()).toString()), "mills");
+			gallblocks.addProperty((BuiltInRegistries.ITEM.getKey(EuruModBlocks.FIRE_MILL.get().asItem()).toString()), "mills");
+			gallblocks.addProperty((BuiltInRegistries.ITEM.getKey(EuruModBlocks.WIND_MILL.get().asItem()).toString()), "mills");
+			gallblocks.addProperty((BuiltInRegistries.ITEM.getKey(EuruModBlocks.CREATIVE_MILL.get().asItem()).toString()), "mills");
+			gpman.add("group_allblocks", gallblocks);
+			configJsonObject.add("gp_efficiency_manager", gpman);
 			itemobj = new com.google.gson.JsonObject();
 			itemobj.addProperty("gp_generated", 9999);
 			itemobj.addProperty("needs_sky", false);
