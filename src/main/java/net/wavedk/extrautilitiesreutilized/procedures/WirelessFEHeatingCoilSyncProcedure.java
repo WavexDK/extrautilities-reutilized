@@ -15,8 +15,6 @@ import net.minecraft.world.item.component.CustomData;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.Mth;
-import net.minecraft.server.level.ServerLevel;
-import net.minecraft.network.chat.Component;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.BlockPos;
 
@@ -45,7 +43,7 @@ public class WirelessFEHeatingCoilSyncProcedure {
 			}
 			{
 				final String _tagName = "syncedBlock";
-				final String _tagValue = (((x + ",") + "" + (y + ",")) + "" + ((z + ",") + "" + ("" + ((Level) world).dimension().location().toString())));
+				final String _tagValue = ((x + ",") + "" + (y + ",") + (z + ",") + ((Level) world).dimension().location().toString());
 				CustomData.update(DataComponents.CUSTOM_DATA, cItem, tag -> tag.putString(_tagName, _tagValue));
 			}
 			{
@@ -62,12 +60,6 @@ public class WirelessFEHeatingCoilSyncProcedure {
 				ItemStack _setstack = cItem.copy();
 				_setstack.setCount(1);
 				_itemHandlerModifiable.setStackInSlot(1, _setstack);
-			}
-			if (world instanceof ServerLevel _level) {
-				_level.getServer().getPlayerList().broadcastSystemMessage(Component.literal(("item " + cItem.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getString("syncedBlock_id"))), false);
-			}
-			if (world instanceof ServerLevel _level) {
-				_level.getServer().getPlayerList().broadcastSystemMessage(Component.literal(("block " + getBlockNBTString(world, BlockPos.containing(x, y, z), "syncedBlock_id"))), false);
 			}
 		}
 	}

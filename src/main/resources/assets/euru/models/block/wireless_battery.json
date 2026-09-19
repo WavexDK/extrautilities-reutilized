@@ -1,13 +1,13 @@
 {
   "parent": "block/cube",
   "textures": {
-    "down": "euru:block/wirelessbatttemp",
-    "up": "euru:block/wirelessbatttemp",
-    "north": "euru:block/wirelessbatttemp",
-    "east": "euru:block/wirelessbatttemp",
-    "south": "euru:block/wirelessbatttemp",
-    "west": "euru:block/wirelessbatttemp",
-    "particle": "euru:block/wirelessbatttemp"
+    "down": "euru:block/topbatt",
+    "up": "euru:block/topbatt",
+    "north": "euru:block/sidebatt",
+    "east": "euru:block/sidebatt",
+    "south": "euru:block/sidebatt",
+    "west": "euru:block/sidebatt",
+    "particle": "euru:block/topbatt"
   },
   "render_type": "solid"
 }

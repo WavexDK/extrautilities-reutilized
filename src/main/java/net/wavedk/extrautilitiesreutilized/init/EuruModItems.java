@@ -3,6 +3,7 @@
  */
 package net.wavedk.extrautilitiesreutilized.init;
 
+import net.wavedk.extrautilitiesreutilized.procedures.TapeMeasurePropertyValueProviderProcedure;
 import net.wavedk.extrautilitiesreutilized.procedures.GoldenLassoPropertyValueProviderProcedure;
 import net.wavedk.extrautilitiesreutilized.procedures.EnderShardPropertyValueProviderProcedure;
 import net.wavedk.extrautilitiesreutilized.item.inventory.BagOfHoldingInventoryCapability;
@@ -113,6 +114,7 @@ public class EuruModItems {
 	public static final DeferredItem<Item> WIRELESS_RF_HEATING_COIL = REGISTRY.register("wireless_rf_heating_coil", WirelessRFHeatingCoilItem::new);
 	public static final DeferredItem<Item> WIND_MILL = block(EuruModBlocks.WIND_MILL);
 	public static final DeferredItem<Item> WIRELESS_BATTERY = block(EuruModBlocks.WIRELESS_BATTERY);
+	public static final DeferredItem<Item> TAPE_MEASURE = REGISTRY.register("tape_measure", TapeMeasureItem::new);
 
 	// Start of user code block custom items
 	// End of user code block custom items
@@ -136,6 +138,7 @@ public class EuruModItems {
 				ItemProperties.register(CURSED_LASSO.get(), ResourceLocation.parse("euru:cursed_lasso_full"), (itemStackToRender, clientWorld, entity, itemEntityId) -> (float) GoldenLassoPropertyValueProviderProcedure.execute(itemStackToRender));
 				ItemProperties.register(CURSED_LASSO_AR.get(), ResourceLocation.parse("euru:cursed_lasso_ar_full"),
 						(itemStackToRender, clientWorld, entity, itemEntityId) -> (float) GoldenLassoPropertyValueProviderProcedure.execute(itemStackToRender));
+				ItemProperties.register(TAPE_MEASURE.get(), ResourceLocation.parse("euru:tape_measure_used"), (itemStackToRender, clientWorld, entity, itemEntityId) -> (float) TapeMeasurePropertyValueProviderProcedure.execute(itemStackToRender));
 			});
 		}
 	}

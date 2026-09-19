@@ -191,5 +191,6 @@
   "item.euru.wireless_rf_heating_coil.description_0": "§7Work In Progress.",
   "gui.euru.wireless_battery_gui.label_input_wireless_fe_heating_coil_t": "Insert coil to sync",
   "gui.euru.wireless_battery_gui.label_wireless_battery": "Wireless Battery",
-  "block.euru.wireless_battery": "Wireless Battery"
+  "block.euru.wireless_battery": "Wireless Battery",
+  "item.euru.tape_measure": "Tape Measure"
 }

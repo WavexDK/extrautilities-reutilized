@@ -1,0 +1,20 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "euru:item/tapemeasure"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "euru:tape_measure_used": 0
+      },
+      "model": "euru:item/tape_measure_0"
+    },
+    {
+      "predicate": {
+        "euru:tape_measure_used": 1
+      },
+      "model": "euru:item/tape_measure_1"
+    }
+  ]
+}

@@ -45,6 +45,12 @@ public class EuruModTabs {
 				tabData.accept(EuruModBlocks.BLOCK_OF_EVIL_INFUSED_INGOT.get().asItem());
 				tabData.accept(EuruModBlocks.SLIGHTLY_LARGER_CHEST.get().asItem());
 				tabData.accept(EuruModBlocks.CHUNK_LOADING_WARD.get().asItem());
+				tabData.accept(EuruModBlocks.NETHERITE_SPIKE.get().asItem());
+				tabData.accept(EuruModBlocks.DIAMOND_SPIKE.get().asItem());
+				tabData.accept(EuruModBlocks.IRON_SPIKE.get().asItem());
+				tabData.accept(EuruModBlocks.STONE_SPIKE.get().asItem());
+				tabData.accept(EuruModBlocks.WOODEN_SPIKE.get().asItem());
+				tabData.accept(EuruModBlocks.GOLD_SPIKE.get().asItem());
 				tabData.accept(EuruModBlocks.SOLAR_PANEL.get().asItem());
 				tabData.accept(EuruModBlocks.LUNAR_PANEL.get().asItem());
 				tabData.accept(EuruModBlocks.MINI_CHEST.get().asItem());
@@ -81,12 +87,7 @@ public class EuruModTabs {
 				tabData.accept(EuruModItems.WOODEN_SICKLE.get());
 				tabData.accept(EuruModItems.GLASS_CUTTER.get());
 				tabData.accept(EuruModItems.ENDER_SHARD.get());
-				tabData.accept(EuruModBlocks.WOODEN_SPIKE.get().asItem());
-				tabData.accept(EuruModBlocks.STONE_SPIKE.get().asItem());
-				tabData.accept(EuruModBlocks.IRON_SPIKE.get().asItem());
-				tabData.accept(EuruModBlocks.GOLD_SPIKE.get().asItem());
-				tabData.accept(EuruModBlocks.DIAMOND_SPIKE.get().asItem());
-				tabData.accept(EuruModBlocks.NETHERITE_SPIKE.get().asItem());
+				tabData.accept(EuruModItems.TAPE_MEASURE.get());
 			}).build());
 	public static final DeferredHolder<CreativeModeTab, CreativeModeTab> EURU_COMPRESSED = REGISTRY.register("euru_compressed",
 			() -> CreativeModeTab.builder().title(Component.translatable("item_group.euru.euru_compressed")).icon(() -> new ItemStack(EuruModBlocks.DOUBLE_COMPRESSED_COBBLESTONE.get())).displayItems((parameters, tabData) -> {
