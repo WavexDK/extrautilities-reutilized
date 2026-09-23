@@ -17,7 +17,7 @@
       "item": "minecraft:enchanting_table"
     },
     "d": {
-      "item": "minecraft:redstone"
+      "tag": "c:dusts/redstone"
     },
     "e": {
       "item": "euru:furnace_generator"

@@ -2,6 +2,7 @@ package net.wavedk.extrautilitiesreutilized.block;
 
 import net.wavedk.extrautilitiesreutilized.procedures.SpecialUpdateHandlerProcedure;
 import net.wavedk.extrautilitiesreutilized.procedures.GroupSpecialAddedHandlerProcedure;
+import net.wavedk.extrautilitiesreutilized.procedures.DragonMillSpecialInformationProcedure;
 import net.wavedk.extrautilitiesreutilized.block.entity.DragonEggMillBlockEntity;
 
 import net.neoforged.api.distmarker.OnlyIn;
@@ -25,6 +26,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.Containers;
 import net.minecraft.util.RandomSource;
@@ -32,6 +34,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.network.chat.Component;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
+import net.minecraft.client.Minecraft;
 
 import java.util.List;
 
@@ -47,7 +50,13 @@ public class DragonEggMillBlock extends Block implements EntityBlock {
 	@OnlyIn(Dist.CLIENT)
 	public void appendHoverText(ItemStack itemstack, Item.TooltipContext context, List<Component> list, TooltipFlag flag) {
 		super.appendHoverText(itemstack, context, list, flag);
-		list.add(Component.translatable("block.euru.dragon_egg_mill.description_0"));
+		Entity entity = itemstack.getEntityRepresentation() != null ? itemstack.getEntityRepresentation() : Minecraft.getInstance().player;
+		String hoverText = DragonMillSpecialInformationProcedure.execute();
+		if (hoverText != null) {
+			for (String line : hoverText.split("\n")) {
+				list.add(Component.literal(line));
+			}
+		}
 	}
 
 	@Override

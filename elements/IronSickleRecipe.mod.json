@@ -15,14 +15,14 @@
     "recipeShapeless": false,
     "recipeSlots": [
       "",
-      "Items.IRON_INGOT",
-      "Items.IRON_INGOT",
+      "TAG:c:ingots/iron",
+      "TAG:c:ingots/iron",
       "",
       "",
-      "Items.IRON_INGOT",
-      "Items.STICK",
-      "Items.IRON_INGOT",
-      "Items.IRON_INGOT"
+      "TAG:c:ingots/iron",
+      "TAG:c:rods/wooden",
+      "TAG:c:ingots/iron",
+      "TAG:c:ingots/iron"
     ],
     "recipeReturnStack": "CUSTOM:IronSickle",
     "name": "iron_sickle_recipe",

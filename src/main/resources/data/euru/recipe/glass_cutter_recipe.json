@@ -8,13 +8,13 @@
   ],
   "key": {
     "a": {
-      "item": "minecraft:iron_ingot"
+      "tag": "c:ingots/iron"
     },
     "b": {
-      "item": "minecraft:stick"
+      "tag": "c:rods/wooden"
     },
     "c": {
-      "item": "minecraft:iron_nugget"
+      "tag": "c:nuggets/iron"
     }
   },
   "result": {

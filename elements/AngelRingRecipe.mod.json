@@ -12,9 +12,9 @@
     "craftingBookCategory": "MISC",
     "recipeShapeless": false,
     "recipeSlots": [
-      "Blocks.GLASS",
+      "TAG:c:glass_blocks",
       "CUSTOM:EnchantedIngot",
-      "Blocks.GLASS",
+      "TAG:c:glass_blocks",
       "CUSTOM:EnchantedIngot",
       "CUSTOM:SquidRing",
       "CUSTOM:EnchantedIngot",

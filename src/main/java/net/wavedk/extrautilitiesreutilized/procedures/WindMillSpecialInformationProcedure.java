@@ -15,7 +15,6 @@ public class WindMillSpecialInformationProcedure {
 		com.google.gson.JsonObject iobj = new com.google.gson.JsonObject();
 		catobj = EuruModVariables.unified_config.get("gp_generation").getAsJsonObject();
 		iobj = catobj.get((BuiltInRegistries.ITEM.getKey(EuruModBlocks.WIND_MILL.get().asItem()).toString())).getAsJsonObject();
-		gpr = "" + iobj.get("gp_generated").getAsDouble();
-		return "\u00A77Generates " + gpr + "\u00A77GP there's air in front and behind it.";
+		return "\u00A77Generates " + iobj.get("gp_generated").getAsDouble() * 2 + "\u00A77GP there's air in front and behind it.";
 	}
 }

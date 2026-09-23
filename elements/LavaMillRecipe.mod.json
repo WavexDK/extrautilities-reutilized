@@ -19,7 +19,7 @@
       "CUSTOM:ResonatingRedstoneCrystal",
       "CUSTOM:StoneBurnt",
       "CUSTOM:StoneBurnt",
-      "Items.GOLD_INGOT",
+      "TAG:c:ingots/gold",
       "CUSTOM:StoneBurnt"
     ],
     "recipeReturnStack": "CUSTOM:LavaMill",

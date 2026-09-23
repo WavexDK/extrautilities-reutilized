@@ -15,14 +15,14 @@
     "recipeShapeless": false,
     "recipeSlots": [
       "",
-      "Blocks.PLANKS",
-      "Blocks.PLANKS",
+      "TAG:minecraft:planks",
+      "TAG:minecraft:planks",
       "",
       "",
-      "Blocks.PLANKS",
-      "Items.STICK",
-      "Blocks.PLANKS",
-      "Blocks.PLANKS"
+      "TAG:minecraft:planks",
+      "TAG:c:rods/wooden",
+      "TAG:minecraft:planks",
+      "TAG:minecraft:planks"
     ],
     "recipeReturnStack": "CUSTOM:WoodenSickle",
     "name": "wooden_sickle_recipe",

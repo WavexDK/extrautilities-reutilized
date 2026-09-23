@@ -16,11 +16,11 @@
       "Items.WOODEN_SWORD",
       "",
       "Items.WOODEN_SWORD",
-      "Blocks.PLANKS",
+      "TAG:minecraft:planks",
       "Items.WOODEN_SWORD",
-      "Blocks.PLANKS",
-      "Blocks.PLANKS",
-      "Blocks.PLANKS"
+      "TAG:minecraft:planks",
+      "TAG:minecraft:logs",
+      "TAG:minecraft:planks"
     ],
     "recipeReturnStack": "CUSTOM:WoodenSpike",
     "name": "wooden_spike_recipe",

@@ -14,7 +14,7 @@
       "item": "euru:resonating_redstone_crystal"
     },
     "c": {
-      "item": "minecraft:gold_ingot"
+      "tag": "c:ingots/gold"
     }
   },
   "result": {

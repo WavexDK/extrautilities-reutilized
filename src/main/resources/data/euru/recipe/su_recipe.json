@@ -6,10 +6,10 @@
       "item": "euru:upgrade_base"
     },
     {
-      "item": "minecraft:gold_ingot"
+      "tag": "c:ingots/gold"
     },
     {
-      "item": "minecraft:redstone_block"
+      "tag": "c:storage_blocks/redstone"
     }
   ],
   "result": {

@@ -8,10 +8,10 @@
   ],
   "key": {
     "a": {
-      "item": "minecraft:stick"
+      "tag": "c:rods/wooden"
     },
     "b": {
-      "item": "minecraft:chest"
+      "tag": "c:chests/wooden"
     }
   },
   "result": {

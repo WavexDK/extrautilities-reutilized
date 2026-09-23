@@ -1,0 +1,58 @@
+{
+  "_fv": 89,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 176,
+    "height": 92,
+    "inventoryOffsetX": 5,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "slider",
+        "data": {
+          "name": "tickrate",
+          "min": 1.0,
+          "max": 100.0,
+          "value": 20.0,
+          "step": 1.0,
+          "prefix": "Tick Rate: ",
+          "suffix": "",
+          "whenSliderMoves": "RCWhenSliderMoves",
+          "width": 95,
+          "height": 20,
+          "x": 166,
+          "y": 105,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_redstone_clock",
+          "text": {
+            "fixedValue": "Redstone Clock"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "hasShadow": false,
+          "x": 131,
+          "y": 79,
+          "locked": false
+        }
+      }
+    ],
+    "onOpen": "RCGUIThisGUIIsOpened",
+    "gridSettings": {
+      "sx": 15,
+      "sy": 18,
+      "ox": 11,
+      "oy": 9,
+      "snapOnGrid": false
+    }
+  }
+}

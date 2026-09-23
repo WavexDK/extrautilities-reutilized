@@ -3924,19 +3924,6 @@
       "path": "~/Items/Other/Recipes"
     },
     {
-      "name": "SquidRingRecipeGlow",
-      "type": "recipe",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "squid_ring_recipe_glow",
-      "metadata": {
-        "files": [
-          "src/main/resources/data/euru/recipe/squid_ring_recipe_glow.json"
-        ]
-      },
-      "path": "~/Items/Other/Recipes"
-    },
-    {
       "name": "GoldenLassoAR",
       "type": "item",
       "compiles": true,
@@ -8820,6 +8807,289 @@
         ]
       },
       "path": "~/Configs"
+    },
+    {
+      "name": "RCGUI",
+      "type": "gui",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rcgui",
+      "metadata": {
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/client/gui/RCGUIScreen.java",
+          "src/main/java/net/wavedk/extrautilitiesreutilized/network/RCGUISliderMessage.java",
+          "src/main/java/net/wavedk/extrautilitiesreutilized/world/inventory/RCGUIMenu.java"
+        ]
+      },
+      "path": "~/Blocks/Other/GUI"
+    },
+    {
+      "name": "RedstoneClockBlockAdded",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "redstone_clock_block_added",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/RedstoneClockBlockAddedProcedure.java"
+        ]
+      },
+      "path": "~/Blocks/Other/Procedures"
+    },
+    {
+      "name": "RedstoneClockEmittedRedstonePower",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "redstone_clock_emitted_redstone_power",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "return_type": "number",
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/RedstoneClockEmittedRedstonePowerProcedure.java"
+        ]
+      },
+      "path": "~/Blocks/Other/Procedures"
+    },
+    {
+      "name": "RedstoneClockOnTickUpdate",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "redstone_clock_on_tick_update",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/RedstoneClockOnTickUpdateProcedure.java"
+        ]
+      },
+      "path": "~/Blocks/Other/Procedures"
+    },
+    {
+      "name": "RedstoneClock",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "redstone_clock",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/euru/models/item/redstone_clock.json",
+          "src/main/resources/assets/euru/models/block/redstone_clock.json",
+          "src/main/java/net/wavedk/extrautilitiesreutilized/block/RedstoneClockBlock.java",
+          "src/main/java/net/wavedk/extrautilitiesreutilized/block/entity/RedstoneClockBlockEntity.java",
+          "src/main/resources/assets/euru/blockstates/redstone_clock.json",
+          "src/main/resources/data/euru/loot_table/blocks/redstone_clock.json"
+        ]
+      },
+      "path": "~/Blocks/Other"
+    },
+    {
+      "name": "RCWhenSliderMoves",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rc_when_slider_moves",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "value",
+            "type": "number"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/RCWhenSliderMovesProcedure.java"
+        ]
+      },
+      "path": "~/Blocks/Other/GUI/Procedures"
+    },
+    {
+      "name": "RCGUIThisGUIIsOpened",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rcgui_this_gui_is_opened",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/RCGUIThisGUIIsOpenedProcedure.java"
+        ]
+      },
+      "path": "~/Blocks/Other/GUI/Procedures"
+    },
+    {
+      "name": "CreativeGenGUIThisGUIIsOpened",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "creative_gen_gui_this_gui_is_opened",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/CreativeGenGUIThisGUIIsOpenedProcedure.java"
+        ]
+      },
+      "path": "~/Blocks/Generators/FE/GUI"
+    },
+    {
+      "name": "RedstoneClockRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "redstone_clock_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/euru/recipe/redstone_clock_recipe.json"
+        ]
+      },
+      "path": "~/Blocks/Other/Recipes"
+    },
+    {
+      "name": "WindMillRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "wind_mill_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/euru/recipe/wind_mill_recipe.json"
+        ]
+      },
+      "path": "~/Blocks/Generators/GP/Recipes"
+    },
+    {
+      "name": "WirelessBatteryRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "wireless_battery_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/euru/recipe/wireless_battery_recipe.json"
+        ]
+      },
+      "path": "~/Blocks/Other/Recipes"
+    },
+    {
+      "name": "HeatingResonatorRecipe",
+      "type": "jeirecipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "heating_resonator_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/euru/recipe/heating_resonator_recipe.json"
+        ]
+      },
+      "path": "~/Items/Other/JEI"
+    },
+    {
+      "name": "DragonMillSpecialInformation",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "dragon_mill_special_information",
+      "metadata": {
+        "dependencies": [],
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/DragonMillSpecialInformationProcedure.java"
+        ]
+      },
+      "path": "~/Blocks/Generators/GP/Procedures"
     }
   ],
   "variable_elements": [
@@ -9098,6 +9368,7 @@
   "tag_elements": {
     "BLOCKS:minecraft:mineable/pickaxe": [
       "~DragonEggMill@CUSTOM:DragonEggMill",
+      "~RedstoneClock@CUSTOM:RedstoneClock",
       "~WirelessBattery@CUSTOM:WirelessBattery",
       "~WindMill@CUSTOM:WindMill",
       "~NetheriteSpike@CUSTOM:NetheriteSpike",
@@ -9190,6 +9461,17 @@
     "BLOCKS:minecraft:needs_iron_tool": [
       "~DiamondSpike@CUSTOM:DiamondSpike",
       "~GoldSpike@CUSTOM:GoldSpike"
+    ],
+    "ITEMS:c:inksacs": [
+      "Items.DYE#0",
+      "Items.GLOW_INK_SAC"
+    ],
+    "ITEMS:c:strings": [
+      "Items.STRING"
+    ],
+    "ITEMS:c:pistons": [
+      "Blocks.PISTON",
+      "Blocks.STICKY_PISTON"
     ]
   },
   "tab_element_order": {
@@ -9212,6 +9494,7 @@
       "GildedObsidian",
       "StoneBurnt",
       "CreativeMill",
+      "DragonEggMill",
       "WaterMill",
       "LavaMill",
       "ManualMill",
@@ -9221,6 +9504,7 @@
       "WirelessBattery",
       "BlockOfEvilInfusedIngot",
       "SlightlyLargerChest",
+      "RedstoneClock",
       "ChunkLoadingWard",
       "NetheriteSpike",
       "DiamondSpike",
@@ -9264,8 +9548,7 @@
       "GoldenSickle",
       "WoodenSickle",
       "GlassCutter",
-      "EnderShard",
-      "DragonEggMill"
+      "EnderShard"
     ]
   },
   "language_map": {
@@ -9465,7 +9748,11 @@
       "block.euru.wireless_battery": "Wireless Battery",
       "item.euru.tape_measure": "Tape Measure",
       "block.euru.dragon_egg_mill.description_0": "§7Generates 9999.0GP, indefinitely.",
-      "block.euru.dragon_egg_mill": "Dragon Egg Mill"
+      "block.euru.dragon_egg_mill": "Dragon Egg Mill",
+      "gui.euru.rcgui.tickrate_suffix": "",
+      "gui.euru.rcgui.label_redstone_clock": "Redstone Clock",
+      "gui.euru.rcgui.tickrate_prefix": "Tick Rate: ",
+      "block.euru.redstone_clock": "Redstone Clock"
     }
   },
   "metadata": {

@@ -35,6 +35,7 @@ public class EuruModTabs {
 				tabData.accept(EuruModBlocks.GILDED_OBSIDIAN.get().asItem());
 				tabData.accept(EuruModBlocks.STONE_BURNT.get().asItem());
 				tabData.accept(EuruModBlocks.CREATIVE_MILL.get().asItem());
+				tabData.accept(EuruModBlocks.DRAGON_EGG_MILL.get().asItem());
 				tabData.accept(EuruModBlocks.WATER_MILL.get().asItem());
 				tabData.accept(EuruModBlocks.LAVA_MILL.get().asItem());
 				tabData.accept(EuruModBlocks.MANUAL_MILL.get().asItem());
@@ -44,6 +45,7 @@ public class EuruModTabs {
 				tabData.accept(EuruModBlocks.WIRELESS_BATTERY.get().asItem());
 				tabData.accept(EuruModBlocks.BLOCK_OF_EVIL_INFUSED_INGOT.get().asItem());
 				tabData.accept(EuruModBlocks.SLIGHTLY_LARGER_CHEST.get().asItem());
+				tabData.accept(EuruModBlocks.REDSTONE_CLOCK.get().asItem());
 				tabData.accept(EuruModBlocks.CHUNK_LOADING_WARD.get().asItem());
 				tabData.accept(EuruModBlocks.NETHERITE_SPIKE.get().asItem());
 				tabData.accept(EuruModBlocks.DIAMOND_SPIKE.get().asItem());
@@ -88,7 +90,6 @@ public class EuruModTabs {
 				tabData.accept(EuruModItems.WOODEN_SICKLE.get());
 				tabData.accept(EuruModItems.GLASS_CUTTER.get());
 				tabData.accept(EuruModItems.ENDER_SHARD.get());
-				tabData.accept(EuruModBlocks.DRAGON_EGG_MILL.get().asItem());
 			}).build());
 	public static final DeferredHolder<CreativeModeTab, CreativeModeTab> EURU_COMPRESSED = REGISTRY.register("euru_compressed",
 			() -> CreativeModeTab.builder().title(Component.translatable("item_group.euru.euru_compressed")).icon(() -> new ItemStack(EuruModBlocks.DOUBLE_COMPRESSED_COBBLESTONE.get())).displayItems((parameters, tabData) -> {

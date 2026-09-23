@@ -16,11 +16,11 @@
       "",
       "",
       "",
-      "Items.GOLD_INGOT",
+      "TAG:c:ingots/gold",
       "",
-      "Items.FEATHER",
+      "TAG:c:feathers",
       "CUSTOM:GildedObsidian",
-      "Items.FEATHER"
+      "TAG:c:feathers"
     ],
     "recipeReturnStack": "CUSTOM:AngelBlock",
     "name": "angel_block_recipe",

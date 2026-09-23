@@ -18,9 +18,9 @@
       "Blocks.SKULL#1",
       "Items.NETHER_STAR",
       "Blocks.SKULL#1",
-      "Items.REDSTONE",
+      "TAG:c:dusts/redstone",
       "CUSTOM:FurnaceGenerator",
-      "Items.REDSTONE"
+      "TAG:c:dusts/redstone"
     ],
     "recipeReturnStack": "CUSTOM:NetherstarGenerator",
     "name": "ns_gen_recipe",

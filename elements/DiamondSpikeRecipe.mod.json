@@ -16,13 +16,13 @@
       "Items.DIAMOND_SWORD",
       "",
       "Items.DIAMOND_SWORD",
-      "Items.DIAMOND",
+      "TAG:c:gems/diamond",
       "Items.DIAMOND_SWORD",
-      "Items.DIAMOND",
-      "Blocks.DIAMOND_BLOCK",
-      "Items.DIAMOND"
+      "TAG:c:gems/diamond",
+      "TAG:c:storage_blocks/diamond",
+      "TAG:c:gems/diamond"
     ],
-    "recipeReturnStack": "Blocks.DIAMOND_BLOCK",
+    "recipeReturnStack": "CUSTOM:DiamondSpike",
     "name": "diamond_spike_recipe",
     "namespace": "mod"
   }

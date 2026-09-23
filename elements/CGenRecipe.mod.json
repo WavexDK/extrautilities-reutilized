@@ -12,15 +12,15 @@
     "craftingBookCategory": "MISC",
     "recipeShapeless": false,
     "recipeSlots": [
-      "Items.WHEAT",
-      "Items.WHEAT",
-      "Items.WHEAT",
-      "Items.WHEAT",
-      "Items.COOKED_BEEF",
-      "Items.WHEAT",
-      "Items.REDSTONE",
+      "TAG:c:crops",
+      "TAG:c:crops",
+      "TAG:c:crops",
+      "TAG:c:crops",
+      "TAG:c:foods/cooked_meat",
+      "TAG:c:crops",
+      "TAG:c:dusts/redstone",
       "CUSTOM:FurnaceGenerator",
-      "Items.REDSTONE"
+      "TAG:c:dusts/redstone"
     ],
     "recipeReturnStack": "CUSTOM:CulinaryGenerator",
     "name": "c_gen_recipe",

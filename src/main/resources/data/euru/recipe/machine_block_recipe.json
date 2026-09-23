@@ -8,16 +8,16 @@
   ],
   "key": {
     "a": {
-      "item": "minecraft:iron_ingot"
+      "tag": "c:ingots/iron"
     },
     "b": {
-      "item": "minecraft:redstone"
+      "tag": "c:dusts/redstone"
     },
     "c": {
       "item": "euru:resonating_redstone_crystal"
     },
     "d": {
-      "item": "minecraft:chest"
+      "tag": "c:chests/wooden"
     }
   },
   "result": {

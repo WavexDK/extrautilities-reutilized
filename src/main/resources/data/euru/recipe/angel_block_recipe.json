@@ -7,10 +7,10 @@
   ],
   "key": {
     "a": {
-      "item": "minecraft:gold_ingot"
+      "tag": "c:ingots/gold"
     },
     "b": {
-      "item": "minecraft:feather"
+      "tag": "c:feathers"
     },
     "c": {
       "item": "euru:gilded_obsidian"

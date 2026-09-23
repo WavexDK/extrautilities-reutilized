@@ -14,15 +14,15 @@
     "craftingBookCategory": "MISC",
     "recipeShapeless": false,
     "recipeSlots": [
-      "Items.REDSTONE",
-      "Blocks.COAL_BLOCK",
-      "Items.REDSTONE",
-      "Items.IRON_INGOT",
+      "TAG:c:dusts/redstone",
+      "TAG:c:obsidians",
+      "TAG:c:dusts/redstone",
+      "TAG:c:ingots/iron",
       "CUSTOM:ResonatingRedstoneCrystal",
-      "Items.IRON_INGOT",
-      "Items.IRON_INGOT",
-      "Items.IRON_INGOT",
-      "Items.IRON_INGOT"
+      "TAG:c:ingots/iron",
+      "TAG:c:ingots/iron",
+      "TAG:c:ingots/iron",
+      "TAG:c:ingots/iron"
     ],
     "recipeReturnStack": "CUSTOM:Resonator",
     "name": "resonator_recipe",

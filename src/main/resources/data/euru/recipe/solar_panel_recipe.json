@@ -7,7 +7,7 @@
   ],
   "key": {
     "a": {
-      "item": "minecraft:lapis_lazuli"
+      "tag": "c:gems/lapis"
     },
     "b": {
       "item": "minecraft:smooth_stone"

@@ -8,10 +8,10 @@
   ],
   "key": {
     "a": {
-      "item": "minecraft:diamond"
+      "tag": "c:gems/diamond"
     },
     "b": {
-      "item": "minecraft:stick"
+      "tag": "c:rods/wooden"
     }
   },
   "result": {

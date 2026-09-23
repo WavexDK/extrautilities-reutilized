@@ -8,13 +8,13 @@
   ],
   "key": {
     "a": {
-      "item": "minecraft:redstone"
+      "tag": "c:dusts/redstone"
     },
     "b": {
-      "item": "minecraft:coal_block"
+      "tag": "c:obsidians"
     },
     "c": {
-      "item": "minecraft:iron_ingot"
+      "tag": "c:ingots/iron"
     },
     "d": {
       "item": "euru:resonating_redstone_crystal"

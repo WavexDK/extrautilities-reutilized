@@ -13,13 +13,13 @@
     "recipeShapeless": false,
     "recipeSlots": [
       "CUSTOM:NuggetoExperience",
-      "Items.STRING",
+      "TAG:c:strings",
       "CUSTOM:NuggetoExperience",
-      "Items.STRING",
+      "TAG:c:strings",
       "",
-      "Items.STRING",
+      "TAG:c:strings",
       "CUSTOM:NuggetoExperience",
-      "Items.STRING",
+      "TAG:c:strings",
       "CUSTOM:NuggetoExperience"
     ],
     "recipeReturnStack": "CUSTOM:GoldenLasso",

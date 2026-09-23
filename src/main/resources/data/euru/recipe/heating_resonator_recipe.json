@@ -1,0 +1,18 @@
+{
+  "type": "euru:resonator_recipe_type",
+  "ingredients": [
+    {
+      "item": "minecraft:iron_bars"
+    }
+  ],
+  "strings": [
+    "euru:resonator",
+    "minecraft:iron_bars"
+  ],
+  "outputs": [
+    {
+      "id": "euru:wireless_rf_heating_coil",
+      "count": 1
+    }
+  ]
+}

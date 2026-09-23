@@ -4,7 +4,7 @@
     "item": "euru:diamond_spike"
   },
   "base": {
-    "item": "minecraft:netherite_ingot"
+    "tag": "c:ingots/netherite"
   },
   "addition": {
     "item": "minecraft:netherite_upgrade_smithing_template"

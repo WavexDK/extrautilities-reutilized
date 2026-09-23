@@ -11,10 +11,10 @@
       "item": "minecraft:golden_sword"
     },
     "b": {
-      "item": "minecraft:gold_ingot"
+      "tag": "c:ingots/gold"
     },
     "c": {
-      "item": "minecraft:gold_block"
+      "tag": "c:storage_blocks/gold"
     }
   },
   "result": {

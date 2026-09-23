@@ -12,12 +12,12 @@
     "craftingBookCategory": "MISC",
     "recipeShapeless": false,
     "recipeSlots": [
-      "Items.STRING",
-      "Blocks.WOOL",
+      "TAG:c:strings",
+      "TAG:minecraft:wool",
       "",
       "Blocks.BLACKSTONE",
-      "Items.IRON_INGOT",
-      "Blocks.WOOL",
+      "TAG:c:ingots/iron",
+      "TAG:minecraft:wool",
       "",
       "Blocks.BLACKSTONE",
       ""

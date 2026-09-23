@@ -40,9 +40,8 @@
     "customProperties": [],
     "name": "Dragon Egg Mill",
     "specialInformation": {
-      "fixedValue": [
-        "§7Generates 9999.0GP, indefinitely."
-      ]
+      "fixedValue": [],
+      "name": "DragonMillSpecialInformation"
     },
     "hardness": 4.0,
     "resistance": 20.0,

@@ -12,18 +12,18 @@
     "craftingBookCategory": "MISC",
     "recipeShapeless": false,
     "recipeSlots": [
-      "Items.GLOW_INK_SAC",
-      "Items.DIAMOND",
-      "Items.GLOW_INK_SAC",
-      "CUSTOM:GoldenLassoSW",
-      "CUSTOM:ChickenRing",
-      "Items.ENDER_EYE",
-      "Items.GLOW_INK_SAC",
-      "Items.DIAMOND",
-      "Items.GLOW_INK_SAC"
+      "TAG:c:stones",
+      "TAG:c:dusts/redstone",
+      "TAG:c:stones",
+      "TAG:c:dusts/redstone",
+      "CUSTOM:RedstoneGear",
+      "TAG:c:dusts/redstone",
+      "TAG:c:stones",
+      "TAG:c:dusts/redstone",
+      "TAG:c:stones"
     ],
-    "recipeReturnStack": "CUSTOM:SquidRing",
-    "name": "squid_ring_recipe_glow",
+    "recipeReturnStack": "CUSTOM:RedstoneClock",
+    "name": "redstone_clock_recipe",
     "namespace": "mod"
   }
 }

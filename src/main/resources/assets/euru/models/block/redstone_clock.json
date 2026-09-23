@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "euru:block/redstoneclocktemp",
+    "up": "euru:block/redstoneclocktemp",
+    "north": "euru:block/redstoneclocktemp",
+    "east": "euru:block/redstoneclocktemp",
+    "south": "euru:block/redstoneclocktemp",
+    "west": "euru:block/redstoneclocktemp",
+    "particle": "euru:block/redstoneclocktemp"
+  },
+  "render_type": "solid"
+}

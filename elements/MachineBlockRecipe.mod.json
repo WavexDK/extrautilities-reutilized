@@ -12,15 +12,15 @@
     "craftingBookCategory": "MISC",
     "recipeShapeless": false,
     "recipeSlots": [
-      "Items.IRON_INGOT",
-      "Items.REDSTONE",
-      "Items.IRON_INGOT",
-      "Items.REDSTONE",
+      "TAG:c:ingots/iron",
+      "TAG:c:dusts/redstone",
+      "TAG:c:ingots/iron",
+      "TAG:c:dusts/redstone",
       "CUSTOM:ResonatingRedstoneCrystal",
-      "Items.REDSTONE",
-      "Items.IRON_INGOT",
-      "Blocks.CHEST",
-      "Items.IRON_INGOT"
+      "TAG:c:dusts/redstone",
+      "TAG:c:ingots/iron",
+      "TAG:c:chests/wooden",
+      "TAG:c:ingots/iron"
     ],
     "recipeReturnStack": "CUSTOM:MachineBlock",
     "name": "machine_block_recipe",

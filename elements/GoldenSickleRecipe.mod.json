@@ -15,14 +15,14 @@
     "recipeShapeless": false,
     "recipeSlots": [
       "",
-      "Items.GOLD_INGOT",
-      "Items.GOLD_INGOT",
+      "TAG:c:ingots/gold",
+      "TAG:c:ingots/gold",
       "",
       "",
-      "Items.GOLD_INGOT",
-      "Items.STICK",
-      "Items.GOLD_INGOT",
-      "Items.GOLD_INGOT"
+      "TAG:c:ingots/gold",
+      "TAG:c:rods/wooden",
+      "TAG:c:ingots/gold",
+      "TAG:c:ingots/gold"
     ],
     "recipeReturnStack": "CUSTOM:GoldenSickle",
     "name": "golden_sickle_recipe",

@@ -116,6 +116,7 @@ public class EuruModItems {
 	public static final DeferredItem<Item> WIRELESS_BATTERY = block(EuruModBlocks.WIRELESS_BATTERY);
 	public static final DeferredItem<Item> TAPE_MEASURE = REGISTRY.register("tape_measure", TapeMeasureItem::new);
 	public static final DeferredItem<Item> DRAGON_EGG_MILL = block(EuruModBlocks.DRAGON_EGG_MILL);
+	public static final DeferredItem<Item> REDSTONE_CLOCK = block(EuruModBlocks.REDSTONE_CLOCK);
 
 	// Start of user code block custom items
 	// End of user code block custom items

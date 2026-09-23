@@ -13,7 +13,7 @@
     "recipeShapeless": false,
     "recipeSlots": [
       "CUSTOM:StoneBurnt",
-      "Items.ENDER_PEARL",
+      "TAG:c:ender_pearls",
       "CUSTOM:StoneBurnt",
       "Items.NETHER_STAR",
       "CUSTOM:RedstoneGear",

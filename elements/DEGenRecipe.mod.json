@@ -13,14 +13,14 @@
     "recipeShapeless": false,
     "recipeSlots": [
       "CUSTOM:NuggetoExperience",
-      "Blocks.LOG",
+      "TAG:minecraft:logs",
       "CUSTOM:NuggetoExperience",
-      "Blocks.LOG",
+      "TAG:minecraft:logs",
       "Blocks.ENCHANTING_TABLE",
-      "Blocks.LOG",
-      "Items.REDSTONE",
+      "TAG:minecraft:logs",
+      "TAG:c:dusts/redstone",
       "CUSTOM:FurnaceGenerator",
-      "Items.REDSTONE"
+      "TAG:c:dusts/redstone"
     ],
     "recipeReturnStack": "CUSTOM:DisenchantmentGenerator",
     "name": "de_gen_recipe",

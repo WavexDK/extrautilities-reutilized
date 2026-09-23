@@ -11,14 +11,14 @@
       "item": "minecraft:diamond_sword"
     },
     "b": {
-      "item": "minecraft:diamond"
+      "tag": "c:gems/diamond"
     },
     "c": {
-      "item": "minecraft:diamond_block"
+      "tag": "c:storage_blocks/diamond"
     }
   },
   "result": {
-    "id": "minecraft:diamond_block",
+    "id": "euru:diamond_spike",
     "count": 1
   }
 }

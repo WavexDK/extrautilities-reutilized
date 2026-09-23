@@ -8,10 +8,10 @@
   ],
   "key": {
     "a": {
-      "item": "minecraft:gold_ingot"
+      "tag": "c:ingots/gold"
     },
     "b": {
-      "item": "minecraft:stick"
+      "tag": "c:rods/wooden"
     }
   },
   "result": {

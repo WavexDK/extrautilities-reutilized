@@ -4,7 +4,7 @@
   "pattern": [
     " a ",
     "aba",
-    "bbb"
+    "bcb"
   ],
   "key": {
     "a": {
@@ -12,6 +12,9 @@
     },
     "b": {
       "tag": "minecraft:planks"
+    },
+    "c": {
+      "tag": "minecraft:logs"
     }
   },
   "result": {

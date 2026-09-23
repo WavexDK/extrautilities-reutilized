@@ -15,14 +15,14 @@
     "recipeShapeless": false,
     "recipeSlots": [
       "",
-      "Items.DIAMOND",
-      "Items.DIAMOND",
+      "TAG:c:gems/diamond",
+      "TAG:c:gems/diamond",
       "",
       "",
-      "Items.DIAMOND",
-      "Items.STICK",
-      "Items.DIAMOND",
-      "Items.DIAMOND"
+      "TAG:c:gems/diamond",
+      "TAG:c:rods/wooden",
+      "TAG:c:gems/diamond",
+      "TAG:c:gems/diamond"
     ],
     "recipeReturnStack": "CUSTOM:DiamondSickle",
     "name": "diamond_sickle_recipe",

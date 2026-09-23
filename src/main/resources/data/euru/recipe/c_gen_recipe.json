@@ -8,13 +8,13 @@
   ],
   "key": {
     "a": {
-      "item": "minecraft:wheat"
+      "tag": "c:crops"
     },
     "b": {
-      "item": "minecraft:cooked_beef"
+      "tag": "c:foods/cooked_meat"
     },
     "c": {
-      "item": "minecraft:redstone"
+      "tag": "c:dusts/redstone"
     },
     "d": {
       "item": "euru:furnace_generator"

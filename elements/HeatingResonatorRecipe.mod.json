@@ -1,0 +1,23 @@
+{
+  "_fv": 89,
+  "_type": "jeirecipe",
+  "definition": {
+    "category": "resonator_recipe_type",
+    "ingredients": [
+      "Blocks.IRON_BARS"
+    ],
+    "integers": [],
+    "strings": [
+      "euru:resonator",
+      "minecraft:iron_bars"
+    ],
+    "recipetype": "ResonatorRecipeType",
+    "results": [
+      "CUSTOM:WirelessRFHeatingCoil"
+    ],
+    "resultCounts": [
+      1
+    ],
+    "count": 0
+  }
+}

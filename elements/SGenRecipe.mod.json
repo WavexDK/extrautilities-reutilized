@@ -12,15 +12,15 @@
     "craftingBookCategory": "MISC",
     "recipeShapeless": false,
     "recipeSlots": [
-      "Blocks.COBBLESTONE",
-      "Blocks.COBBLED_DEEPSLATE",
-      "Blocks.COBBLESTONE",
-      "Blocks.COBBLESTONE",
-      "Items.IRON_INGOT",
-      "Blocks.COBBLESTONE",
-      "Items.REDSTONE",
+      "TAG:c:cobblestones",
+      "TAG:c:cobblestones",
+      "TAG:c:cobblestones",
+      "TAG:c:cobblestones",
+      "TAG:c:ingots/iron",
+      "TAG:c:cobblestones",
+      "TAG:c:dusts/redstone",
       "Blocks.FURNACE",
-      "Items.REDSTONE"
+      "TAG:c:dusts/redstone"
     ],
     "recipeReturnStack": "CUSTOM:SurvivalGenerator",
     "name": "s_gen_recipe",

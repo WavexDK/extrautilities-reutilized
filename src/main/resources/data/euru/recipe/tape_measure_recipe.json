@@ -8,7 +8,7 @@
   ],
   "key": {
     "a": {
-      "item": "minecraft:string"
+      "tag": "c:strings"
     },
     "b": {
       "tag": "minecraft:wool"
@@ -17,7 +17,7 @@
       "item": "minecraft:blackstone"
     },
     "d": {
-      "item": "minecraft:iron_ingot"
+      "tag": "c:ingots/iron"
     }
   },
   "result": {

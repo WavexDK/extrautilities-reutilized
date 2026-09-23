@@ -13,9 +13,9 @@
     "recipeShapeless": true,
     "recipeSlots": [
       "CUSTOM:UpgradeBase",
-      "Items.GOLD_INGOT",
+      "TAG:c:ingots/gold",
       "",
-      "Blocks.REDSTONE_BLOCK",
+      "TAG:c:storage_blocks/redstone",
       "",
       "",
       "",

@@ -8,13 +8,13 @@
   ],
   "key": {
     "a": {
-      "item": "minecraft:iron_ingot"
+      "tag": "c:ingots/iron"
     },
     "b": {
       "item": "euru:machine_block"
     },
     "c": {
-      "item": "minecraft:redstone"
+      "tag": "c:dusts/redstone"
     },
     "d": {
       "item": "minecraft:blast_furnace"

@@ -11,7 +11,7 @@
     "cookingTime": 200,
     "craftingBookCategory": "MISC",
     "recipeShapeless": false,
-    "smithingInputStack": "Items.NETHERITE_INGOT",
+    "smithingInputStack": "TAG:c:ingots/netherite",
     "smithingInputAdditionStack": "Items.NETHERITE_UPGRADE",
     "smithingInputTemplateStack": "CUSTOM:DiamondSpike",
     "smithingReturnStack": "CUSTOM:NetheriteSpike",

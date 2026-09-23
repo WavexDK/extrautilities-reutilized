@@ -2,24 +2,21 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "pattern": [
+    "aaa",
     "aba",
-    "aca",
-    "ded"
+    "cdc"
   ],
   "key": {
     "a": {
-      "item": "minecraft:cobblestone"
+      "tag": "c:cobblestones"
     },
     "b": {
-      "item": "minecraft:cobbled_deepslate"
+      "tag": "c:ingots/iron"
     },
     "c": {
-      "item": "minecraft:iron_ingot"
+      "tag": "c:dusts/redstone"
     },
     "d": {
-      "item": "minecraft:redstone"
-    },
-    "e": {
       "item": "minecraft:furnace"
     }
   },

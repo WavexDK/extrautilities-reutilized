@@ -16,11 +16,11 @@
       "Items.GOLDEN_SWORD",
       "",
       "Items.GOLDEN_SWORD",
-      "Items.GOLD_INGOT",
+      "TAG:c:ingots/gold",
       "Items.GOLDEN_SWORD",
-      "Items.GOLD_INGOT",
-      "Blocks.GOLD_BLOCK",
-      "Items.GOLD_INGOT"
+      "TAG:c:ingots/gold",
+      "TAG:c:storage_blocks/gold",
+      "TAG:c:ingots/gold"
     ],
     "recipeReturnStack": "CUSTOM:GoldSpike",
     "name": "golden_spike_recipe",

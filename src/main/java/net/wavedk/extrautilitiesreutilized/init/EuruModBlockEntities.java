@@ -56,6 +56,7 @@ public class EuruModBlockEntities {
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> WIND_MILL = register("wind_mill", EuruModBlocks.WIND_MILL, WindMillBlockEntity::new);
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> WIRELESS_BATTERY = register("wireless_battery", EuruModBlocks.WIRELESS_BATTERY, WirelessBatteryBlockEntity::new);
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> DRAGON_EGG_MILL = register("dragon_egg_mill", EuruModBlocks.DRAGON_EGG_MILL, DragonEggMillBlockEntity::new);
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> REDSTONE_CLOCK = register("redstone_clock", EuruModBlocks.REDSTONE_CLOCK, RedstoneClockBlockEntity::new);
 
 	// Start of user code block custom block entities
 	// End of user code block custom block entities
@@ -110,5 +111,6 @@ public class EuruModBlockEntities {
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, WIRELESS_BATTERY.get(), (blockEntity, side) -> new SidedInvWrapper((WorldlyContainer) blockEntity, side));
 		event.registerBlockEntity(Capabilities.EnergyStorage.BLOCK, WIRELESS_BATTERY.get(), (blockEntity, side) -> ((WirelessBatteryBlockEntity) blockEntity).getEnergyStorage());
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, DRAGON_EGG_MILL.get(), (blockEntity, side) -> new SidedInvWrapper((WorldlyContainer) blockEntity, side));
+		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, REDSTONE_CLOCK.get(), (blockEntity, side) -> new SidedInvWrapper((WorldlyContainer) blockEntity, side));
 	}
 }

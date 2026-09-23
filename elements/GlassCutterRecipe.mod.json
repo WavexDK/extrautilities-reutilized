@@ -14,11 +14,11 @@
     "recipeSlots": [
       "",
       "",
-      "Items.IRON_INGOT",
+      "TAG:c:ingots/iron",
       "",
-      "Items.STICK",
-      "Items.IRON_NUGGET",
-      "Items.IRON_NUGGET",
+      "TAG:c:rods/wooden",
+      "TAG:c:nuggets/iron",
+      "TAG:c:nuggets/iron",
       "",
       ""
     ],

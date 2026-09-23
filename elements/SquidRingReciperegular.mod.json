@@ -12,15 +12,15 @@
     "craftingBookCategory": "MISC",
     "recipeShapeless": false,
     "recipeSlots": [
-      "Items.DYE#0",
-      "Items.DIAMOND",
-      "Items.DYE#0",
+      "TAG:c:inksacs",
+      "TAG:c:gems/diamond",
+      "TAG:c:inksacs",
       "CUSTOM:GoldenLassoSW",
       "CUSTOM:ChickenRing",
       "Items.ENDER_EYE",
-      "Items.DYE#0",
-      "Items.DIAMOND",
-      "Items.DYE#0"
+      "TAG:c:inksacs",
+      "TAG:c:gems/diamond",
+      "TAG:c:inksacs"
     ],
     "recipeReturnStack": "CUSTOM:SquidRing",
     "name": "squid_ring_reciperegular",

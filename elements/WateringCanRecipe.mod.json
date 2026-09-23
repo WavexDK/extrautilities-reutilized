@@ -12,14 +12,14 @@
     "craftingBookCategory": "MISC",
     "recipeShapeless": false,
     "recipeSlots": [
-      "Blocks.STONE",
+      "TAG:c:stones",
       "",
       "",
-      "Blocks.STONE",
+      "TAG:c:stones",
       "Items.BOWL",
-      "Blocks.STONE",
+      "TAG:c:stones",
       "",
-      "Blocks.STONE",
+      "TAG:c:stones",
       ""
     ],
     "recipeReturnStack": "CUSTOM:WateringCan",

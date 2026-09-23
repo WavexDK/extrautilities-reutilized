@@ -14,15 +14,15 @@
     "craftingBookCategory": "MISC",
     "recipeShapeless": false,
     "recipeSlots": [
-      "Items.ENDER_PEARL",
+      "TAG:c:ender_pearls",
       "Items.ENDER_EYE",
-      "Items.ENDER_PEARL",
-      "Items.ENDER_PEARL",
+      "TAG:c:ender_pearls",
+      "TAG:c:ender_pearls",
       "CUSTOM:GildedObsidian",
-      "Items.ENDER_PEARL",
-      "Items.REDSTONE",
+      "TAG:c:ender_pearls",
+      "TAG:c:dusts/redstone",
       "CUSTOM:FurnaceGenerator",
-      "Items.REDSTONE"
+      "TAG:c:dusts/redstone"
     ],
     "recipeReturnStack": "CUSTOM:EnderGenerator",
     "name": "e_gen_recipe",

@@ -12,15 +12,15 @@
     "craftingBookCategory": "MISC",
     "recipeShapeless": false,
     "recipeSlots": [
-      "Items.GUNPOWDER",
-      "Items.GUNPOWDER",
-      "Items.GUNPOWDER",
-      "Items.GUNPOWDER",
+      "TAG:c:gunpowders",
+      "TAG:c:gunpowders",
+      "TAG:c:gunpowders",
+      "TAG:c:gunpowders",
       "Blocks.TNT",
-      "Items.GUNPOWDER",
-      "Items.REDSTONE",
+      "TAG:c:gunpowders",
+      "TAG:c:dusts/redstone",
       "CUSTOM:FurnaceGenerator",
-      "Items.REDSTONE"
+      "TAG:c:dusts/redstone"
     ],
     "recipeReturnStack": "CUSTOM:ExplosiveGenerator",
     "name": "ex_gen_recipe",

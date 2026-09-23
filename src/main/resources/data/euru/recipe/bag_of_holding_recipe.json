@@ -8,13 +8,13 @@
   ],
   "key": {
     "a": {
-      "item": "minecraft:gold_ingot"
+      "tag": "c:ingots/gold"
     },
     "b": {
       "item": "euru:nuggeto_experience"
     },
     "c": {
-      "item": "minecraft:chest"
+      "tag": "c:chests/wooden"
     },
     "d": {
       "item": "minecraft:bookshelf"

@@ -12,8 +12,8 @@
     "craftingBookCategory": "MISC",
     "recipeShapeless": true,
     "recipeSlots": [
-      "Items.ENDER_PEARL",
-      "Items.REDSTONE",
+      "TAG:c:ender_pearls",
+      "TAG:c:dusts/redstone",
       "",
       "CUSTOM:ResonatingRedstoneCrystal",
       "",

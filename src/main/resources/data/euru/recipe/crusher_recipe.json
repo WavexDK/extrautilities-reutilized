@@ -8,10 +8,10 @@
   ],
   "key": {
     "a": {
-      "item": "minecraft:iron_ingot"
+      "tag": "c:ingots/iron"
     },
     "b": {
-      "item": "minecraft:piston"
+      "tag": "c:pistons"
     },
     "c": {
       "item": "euru:machine_block"

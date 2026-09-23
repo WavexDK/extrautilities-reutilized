@@ -8,7 +8,7 @@
   ],
   "key": {
     "a": {
-      "item": "minecraft:glass"
+      "tag": "c:glass_blocks"
     },
     "b": {
       "item": "euru:enchanted_ingot"

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    "bcb",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "euru:stone_burnt"
+    },
+    "b": {
+      "tag": "c:storage_blocks/redstone"
+    },
+    "c": {
+      "item": "euru:resonating_redstone_crystal"
+    }
+  },
+  "result": {
+    "id": "euru:wireless_battery",
+    "count": 1
+  }
+}

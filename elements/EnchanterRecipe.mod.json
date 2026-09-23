@@ -15,12 +15,12 @@
       "",
       "Items.ENCHANTED_BOOK",
       "",
-      "Items.DIAMOND",
+      "TAG:c:gems/diamond",
       "CUSTOM:MachineBlock",
-      "Items.DIAMOND",
-      "Items.IRON_INGOT",
+      "TAG:c:gems/diamond",
+      "TAG:c:ingots/iron",
       "CUSTOM:RedstoneGear",
-      "Items.IRON_INGOT"
+      "TAG:c:ingots/iron"
     ],
     "recipeReturnStack": "CUSTOM:Enchanter",
     "name": "enchanter_recipe",

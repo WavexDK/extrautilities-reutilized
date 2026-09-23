@@ -17,7 +17,7 @@
       "item": "minecraft:nether_star"
     },
     "d": {
-      "item": "minecraft:redstone"
+      "tag": "c:dusts/redstone"
     },
     "e": {
       "item": "euru:furnace_generator"

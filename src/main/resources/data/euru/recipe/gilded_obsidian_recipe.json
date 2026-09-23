@@ -11,7 +11,7 @@
       "item": "euru:nuggeto_experience"
     },
     "b": {
-      "item": "minecraft:obsidian"
+      "tag": "c:obsidians"
     }
   },
   "result": {

@@ -11,13 +11,13 @@
       "item": "minecraft:enchanted_book"
     },
     "b": {
-      "item": "minecraft:diamond"
+      "tag": "c:gems/diamond"
     },
     "c": {
       "item": "euru:machine_block"
     },
     "d": {
-      "item": "minecraft:iron_ingot"
+      "tag": "c:ingots/iron"
     },
     "e": {
       "item": "euru:redstone_gear"

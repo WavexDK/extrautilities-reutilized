@@ -12,15 +12,15 @@
     "craftingBookCategory": "MISC",
     "recipeShapeless": false,
     "recipeSlots": [
-      "Items.GOLD_INGOT",
+      "TAG:c:ingots/gold",
       "CUSTOM:NuggetoExperience",
-      "Items.GOLD_INGOT",
-      "Blocks.CHEST",
+      "TAG:c:ingots/gold",
+      "TAG:c:chests/wooden",
       "Blocks.BOOKSHELF",
-      "Blocks.CHEST",
-      "Items.GOLD_INGOT",
+      "TAG:c:chests/wooden",
+      "TAG:c:ingots/gold",
       "CUSTOM:NuggetoExperience",
-      "Items.GOLD_INGOT"
+      "TAG:c:ingots/gold"
     ],
     "recipeReturnStack": "CUSTOM:BagOfHolding",
     "name": "bag_of_holding_recipe",

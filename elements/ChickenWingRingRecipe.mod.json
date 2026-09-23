@@ -12,14 +12,14 @@
     "craftingBookCategory": "MISC",
     "recipeShapeless": false,
     "recipeSlots": [
-      "Items.FEATHER",
+      "TAG:c:feathers",
       "CUSTOM:EnchantedIngot",
-      "Items.FEATHER",
+      "TAG:c:feathers",
       "CUSTOM:EnchantedIngot",
       "CUSTOM:GoldenLassoCW",
       "CUSTOM:EnchantedIngot",
       "CUSTOM:ResonatingRedstoneCrystal",
-      "Items.IRON_INGOT",
+      "TAG:c:ingots/iron",
       "CUSTOM:ResonatingRedstoneCrystal"
     ],
     "recipeReturnStack": "CUSTOM:ChickenRing",

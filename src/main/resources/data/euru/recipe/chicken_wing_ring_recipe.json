@@ -8,7 +8,7 @@
   ],
   "key": {
     "a": {
-      "item": "minecraft:feather"
+      "tag": "c:feathers"
     },
     "b": {
       "item": "euru:enchanted_ingot"
@@ -20,7 +20,7 @@
       "item": "euru:resonating_redstone_crystal"
     },
     "e": {
-      "item": "minecraft:iron_ingot"
+      "tag": "c:ingots/iron"
     }
   },
   "result": {

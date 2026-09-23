@@ -8,13 +8,13 @@
   ],
   "key": {
     "a": {
-      "item": "minecraft:gunpowder"
+      "tag": "c:gunpowders"
     },
     "b": {
       "item": "minecraft:tnt"
     },
     "c": {
-      "item": "minecraft:redstone"
+      "tag": "c:dusts/redstone"
     },
     "d": {
       "item": "euru:furnace_generator"

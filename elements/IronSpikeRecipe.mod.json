@@ -16,11 +16,11 @@
       "Items.IRON_SWORD",
       "",
       "Items.IRON_SWORD",
-      "Items.IRON_INGOT",
+      "TAG:c:ingots/iron",
       "Items.IRON_SWORD",
-      "Items.IRON_INGOT",
-      "Blocks.IRON_BLOCK",
-      "Items.IRON_INGOT"
+      "TAG:c:ingots/iron",
+      "TAG:c:storage_blocks/iron",
+      "TAG:c:ingots/iron"
     ],
     "recipeReturnStack": "CUSTOM:IronSpike",
     "name": "iron_spike_recipe",

@@ -8,16 +8,16 @@
   ],
   "key": {
     "a": {
-      "item": "minecraft:lapis_lazuli"
+      "tag": "c:gems/lapis"
     },
     "b": {
       "item": "euru:lunar_reactive_dust"
     },
     "c": {
-      "item": "minecraft:gold_block"
+      "tag": "c:storage_blocks/gold"
     },
     "d": {
-      "item": "minecraft:redstone"
+      "tag": "c:dusts/redstone"
     },
     "e": {
       "item": "euru:furnace_generator"

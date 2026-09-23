@@ -8,7 +8,7 @@
   ],
   "key": {
     "a": {
-      "item": "minecraft:ender_pearl"
+      "tag": "c:ender_pearls"
     },
     "b": {
       "item": "minecraft:ender_eye"
@@ -17,7 +17,7 @@
       "item": "euru:gilded_obsidian"
     },
     "d": {
-      "item": "minecraft:redstone"
+      "tag": "c:dusts/redstone"
     },
     "e": {
       "item": "euru:furnace_generator"
