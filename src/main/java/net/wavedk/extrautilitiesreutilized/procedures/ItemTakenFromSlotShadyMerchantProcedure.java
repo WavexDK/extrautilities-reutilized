@@ -118,8 +118,6 @@ public class ItemTakenFromSlotShadyMerchantProcedure {
 					lEntity = entityiterator;
 					isShady = lEntity instanceof net.minecraft.world.entity.npc.Villager villager && villager.getVillagerData().getProfession() == net.wavedk.extrautilitiesreutilized.init.EuruModVillagerProfessions.SHADY_MERCHANT.get();
 					if (isShady) {
-						if (entityiterator instanceof LivingEntity _livingEntity34 && _livingEntity34.getAttributes().hasAttribute(Attributes.MOVEMENT_SPEED))
-							_livingEntity34.getAttribute(Attributes.MOVEMENT_SPEED).setBaseValue(1);
 						if (world instanceof ServerLevel projectileLevel) {
 							Projectile _entityToSpawn = createPotionProjectile(projectileLevel, PotionContents.createItemStack(Items.SPLASH_POTION, Potions.INVISIBILITY), null, new Vec3(0, 0, 0));
 							_entityToSpawn.setPos(x, y, z);
@@ -127,13 +125,15 @@ public class ItemTakenFromSlotShadyMerchantProcedure {
 							projectileLevel.addFreshEntity(_entityToSpawn);
 						}
 						if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
-							_entity.addEffect(new MobEffectInstance(MobEffects.INVISIBILITY, 400, 1));
+							_entity.addEffect(new MobEffectInstance(MobEffects.INVISIBILITY, 60, 1));
 						if (entityiterator instanceof Mob _entity)
-							_entity.getNavigation().moveTo((x + Mth.nextInt(RandomSource.create(), 1, 10)), y, (x + Mth.nextInt(RandomSource.create(), 1, 10)), 3);
+							_entity.getNavigation().moveTo((x + Mth.nextInt(RandomSource.create(), 1, 25)), y, (x + Mth.nextInt(RandomSource.create(), 1, 25)), 3);
 						EuruMod.queueServerWork(10, () -> {
 							if (entity instanceof Player _player)
 								_player.closeContainer();
 						});
+						if (entityiterator instanceof LivingEntity _livingEntity42 && _livingEntity42.getAttributes().hasAttribute(Attributes.MOVEMENT_SPEED))
+							_livingEntity42.getAttribute(Attributes.MOVEMENT_SPEED).setBaseValue(1);
 					}
 				}
 			}
