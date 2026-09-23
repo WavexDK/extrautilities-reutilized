@@ -16,38 +16,38 @@ description="A remake of the old-but-gold 1.12.2 mod \"Extra Utilities 2\""
 # End of user code block mod configuration
 
 [[dependencies.euru]]
-modId="neoforge"
-type="required"
-versionRange="[21.1.232,)"
-ordering="AFTER"
-side="BOTH"
+    modId="neoforge"
+    type="required"
+    versionRange="[21.1.232,)"
+    ordering="AFTER"
+    side="BOTH"
 
 [[dependencies.euru]]
-modId="minecraft"
-type="required"
-versionRange="[1.21.1]"
-ordering="AFTER"
-side="BOTH"
+    modId="minecraft"
+    type="required"
+    versionRange="[1.21.1]"
+    ordering="AFTER"
+    side="BOTH"
 
 
 [[dependencies.euru]]
-modId="curios_api"
-type="optional"
-versionRange="[0,)"
-ordering="NONE"
-side="BOTH"
+    modId="curios_api"
+    type="optional"
+    versionRange="[0,)"
+    ordering="NONE"
+    side="BOTH"
 [[dependencies.euru]]
-modId="geckolib"
-type="optional"
-versionRange="[0,)"
-ordering="NONE"
-side="BOTH"
+    modId="geckolib"
+    type="optional"
+    versionRange="[0,)"
+    ordering="NONE"
+    side="BOTH"
 [[dependencies.euru]]
-modId="jei"
-type="optional"
-versionRange="[0,)"
-ordering="NONE"
-side="BOTH"
+    modId="jei"
+    type="optional"
+    versionRange="[0,)"
+    ordering="NONE"
+    side="BOTH"
 
 
 # Start of user code block dependencies configuration
