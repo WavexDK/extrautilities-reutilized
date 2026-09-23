@@ -34,6 +34,7 @@ public class EuruModMenus {
 	public static final DeferredHolder<MenuType<?>, MenuType<GeneratorGUIMenu>> GENERATOR_GUI = REGISTRY.register("generator_gui", () -> IMenuTypeExtension.create(GeneratorGUIMenu::new));
 	public static final DeferredHolder<MenuType<?>, MenuType<WirelessBatteryGUIMenu>> WIRELESS_BATTERY_GUI = REGISTRY.register("wireless_battery_gui", () -> IMenuTypeExtension.create(WirelessBatteryGUIMenu::new));
 	public static final DeferredHolder<MenuType<?>, MenuType<RCGUIMenu>> RCGUI = REGISTRY.register("rcgui", () -> IMenuTypeExtension.create(RCGUIMenu::new));
+	public static final DeferredHolder<MenuType<?>, MenuType<ShadyMerchantGUIMenu>> SHADY_MERCHANT_GUI = REGISTRY.register("shady_merchant_gui", () -> IMenuTypeExtension.create(ShadyMerchantGUIMenu::new));
 
 	public interface MenuAccessor {
 		Map<String, Object> getMenuState();

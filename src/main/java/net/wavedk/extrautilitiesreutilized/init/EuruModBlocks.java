@@ -62,6 +62,7 @@ public class EuruModBlocks {
 	public static final DeferredBlock<Block> WIRELESS_BATTERY;
 	public static final DeferredBlock<Block> DRAGON_EGG_MILL;
 	public static final DeferredBlock<Block> REDSTONE_CLOCK;
+	public static final DeferredBlock<Block> SHADY_MERCHANT_BLOCK;
 	static {
 		SOLAR_PANEL = REGISTRY.register("solar_panel", SolarPanelBlock::new);
 		LUNAR_PANEL = REGISTRY.register("lunar_panel", LunarPanelBlock::new);
@@ -112,6 +113,7 @@ public class EuruModBlocks {
 		WIRELESS_BATTERY = REGISTRY.register("wireless_battery", WirelessBatteryBlock::new);
 		DRAGON_EGG_MILL = REGISTRY.register("dragon_egg_mill", DragonEggMillBlock::new);
 		REDSTONE_CLOCK = REGISTRY.register("redstone_clock", RedstoneClockBlock::new);
+		SHADY_MERCHANT_BLOCK = REGISTRY.register("shady_merchant_block", ShadyMerchantBlockBlock::new);
 	}
 	// Start of user code block custom blocks
 	// End of user code block custom blocks

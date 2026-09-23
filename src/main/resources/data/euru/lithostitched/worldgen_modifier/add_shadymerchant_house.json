@@ -1,0 +1,15 @@
+{
+  "type": "lithostitched:add_template_pool_elements",
+  "template_pools": "minecraft:village/plains/houses",
+  "elements": [
+    {
+      "weight": 2,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "euru:shadymerchant_house",
+        "processors": "minecraft:empty"
+      }
+    }
+  ]
+}

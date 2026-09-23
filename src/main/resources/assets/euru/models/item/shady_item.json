@@ -1,0 +1,32 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "minecraft:item/nether_star"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "euru:shady_item_item": 0
+      },
+      "model": "euru:item/shady_item_0"
+    },
+    {
+      "predicate": {
+        "euru:shady_item_item": 1
+      },
+      "model": "euru:item/shady_item_1"
+    },
+    {
+      "predicate": {
+        "euru:shady_item_item": 2
+      },
+      "model": "euru:item/shady_item_2"
+    },
+    {
+      "predicate": {
+        "euru:shady_item_item": 3
+      },
+      "model": "euru:item/shady_item_3"
+    }
+  ]
+}

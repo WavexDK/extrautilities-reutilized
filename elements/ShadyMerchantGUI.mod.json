@@ -1,0 +1,204 @@
+{
+  "_fv": 89,
+  "_type": "gui",
+  "definition": {
+    "type": 1,
+    "width": 274,
+    "height": 166,
+    "inventoryOffsetX": 50,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "image",
+        "data": {
+          "image": "villagerbg.png",
+          "use1Xscale": false,
+          "x": 76,
+          "y": 37,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "scrollergui.png",
+          "use1Xscale": false,
+          "x": 170,
+          "y": 55,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_trades",
+          "text": {
+            "fixedValue": "Trades"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "hasShadow": false,
+          "x": 111,
+          "y": 43,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_legit_merchant",
+          "text": {
+            "fixedValue": "Legit Merchant"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "hasShadow": false,
+          "x": 227,
+          "y": 43,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "xpgui.png",
+          "use1Xscale": false,
+          "x": 212,
+          "y": 53,
+          "locked": false
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_fakensbutton",
+          "image": "fakensbutton.png",
+          "hoveredImage": "fakensbuttonhighlight.png",
+          "onClick": "ShadyMerchantNSButtonClicked",
+          "x": 81,
+          "y": 55,
+          "locked": false
+        }
+      },
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": ""
+          },
+          "disablePlacement": {
+            "fixedValue": false
+          },
+          "id": 0,
+          "disablePickup": {
+            "fixedValue": false
+          },
+          "dropItemsWhenNotBound": true,
+          "x": 211,
+          "y": 73,
+          "locked": false
+        }
+      },
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": ""
+          },
+          "disablePlacement": {
+            "fixedValue": false
+          },
+          "id": 1,
+          "disablePickup": {
+            "fixedValue": false
+          },
+          "dropItemsWhenNotBound": true,
+          "x": 237,
+          "y": 73,
+          "locked": false
+        }
+      },
+      {
+        "type": "outputslot",
+        "data": {
+          "id": 2,
+          "disablePickup": {
+            "fixedValue": false
+          },
+          "dropItemsWhenNotBound": false,
+          "onTakenFromSlot": "ItemTakenFromSlotShadyMerchant",
+          "x": 295,
+          "y": 74,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_inventory",
+          "text": {
+            "fixedValue": "Inventory"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "hasShadow": false,
+          "x": 183,
+          "y": 109,
+          "locked": false
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_fakediabutton",
+          "image": "fakediabutton.png",
+          "hoveredImage": "fakediabuttonhighlight.png",
+          "onClick": "ShadyMerchantDiaButtonClicked",
+          "x": 81,
+          "y": 75,
+          "locked": false
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_fakenethbutton",
+          "image": "fakenethbutton.png",
+          "hoveredImage": "fakenethbuttonhighlight.png",
+          "onClick": "ShadyMerchantNethButtonClicked",
+          "x": 81,
+          "y": 95,
+          "locked": false
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_fakenethpickbutton",
+          "image": "fakenethpickbutton.png",
+          "hoveredImage": "fakenethpickbuttonhighlight.png",
+          "onClick": "ShadyMerchantNethPickButtonClicked",
+          "x": 81,
+          "y": 115,
+          "locked": false
+        }
+      }
+    ],
+    "onTick": "ShadyMerchantGUIWhileThisGUIIsOpenTick",
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}

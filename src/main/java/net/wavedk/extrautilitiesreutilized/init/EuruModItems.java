@@ -4,6 +4,7 @@
 package net.wavedk.extrautilitiesreutilized.init;
 
 import net.wavedk.extrautilitiesreutilized.procedures.TapeMeasurePropertyValueProviderProcedure;
+import net.wavedk.extrautilitiesreutilized.procedures.ShadyItemPropertyValueProviderProcedure;
 import net.wavedk.extrautilitiesreutilized.procedures.GoldenLassoPropertyValueProviderProcedure;
 import net.wavedk.extrautilitiesreutilized.procedures.EnderShardPropertyValueProviderProcedure;
 import net.wavedk.extrautilitiesreutilized.item.inventory.BagOfHoldingInventoryCapability;
@@ -117,6 +118,7 @@ public class EuruModItems {
 	public static final DeferredItem<Item> TAPE_MEASURE = REGISTRY.register("tape_measure", TapeMeasureItem::new);
 	public static final DeferredItem<Item> DRAGON_EGG_MILL = block(EuruModBlocks.DRAGON_EGG_MILL);
 	public static final DeferredItem<Item> REDSTONE_CLOCK = block(EuruModBlocks.REDSTONE_CLOCK);
+	public static final DeferredItem<Item> SHADY_ITEM = REGISTRY.register("shady_item", ShadyItemItem::new);
 
 	// Start of user code block custom items
 	// End of user code block custom items
@@ -141,6 +143,7 @@ public class EuruModItems {
 				ItemProperties.register(CURSED_LASSO_AR.get(), ResourceLocation.parse("euru:cursed_lasso_ar_full"),
 						(itemStackToRender, clientWorld, entity, itemEntityId) -> (float) GoldenLassoPropertyValueProviderProcedure.execute(itemStackToRender));
 				ItemProperties.register(TAPE_MEASURE.get(), ResourceLocation.parse("euru:tape_measure_used"), (itemStackToRender, clientWorld, entity, itemEntityId) -> (float) TapeMeasurePropertyValueProviderProcedure.execute(itemStackToRender));
+				ItemProperties.register(SHADY_ITEM.get(), ResourceLocation.parse("euru:shady_item_item"), (itemStackToRender, clientWorld, entity, itemEntityId) -> (float) ShadyItemPropertyValueProviderProcedure.execute(itemStackToRender));
 			});
 		}
 	}

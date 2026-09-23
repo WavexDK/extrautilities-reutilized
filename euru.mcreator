@@ -9090,6 +9090,262 @@
         ]
       },
       "path": "~/Blocks/Generators/GP/Procedures"
+    },
+    {
+      "name": "ShadyMerchant",
+      "type": "villagerprofession",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "shady_merchant",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/euru/textures/entity/villager/profession/shady_merchant.png.mcmeta"
+        ]
+      },
+      "path": "~/Entities/ShadyMerchant"
+    },
+    {
+      "name": "ShadyMerchantBlock",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "shady_merchant_block",
+      "metadata": {
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/block/ShadyMerchantBlockBlock.java",
+          "src/main/resources/assets/euru/models/block/shady_merchant_block.json",
+          "src/main/resources/data/euru/loot_table/blocks/shady_merchant_block.json",
+          "src/main/resources/assets/euru/blockstates/shady_merchant_block.json"
+        ]
+      },
+      "path": "~/Blocks/Other"
+    },
+    {
+      "name": "ShadyMerchantGUI",
+      "type": "gui",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "shady_merchant_gui",
+      "metadata": {
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/world/inventory/ShadyMerchantGUIMenu.java",
+          "src/main/java/net/wavedk/extrautilitiesreutilized/client/gui/ShadyMerchantGUIScreen.java",
+          "src/main/java/net/wavedk/extrautilitiesreutilized/network/ShadyMerchantGUIButtonMessage.java",
+          "src/main/java/net/wavedk/extrautilitiesreutilized/network/ShadyMerchantGUISlotMessage.java"
+        ]
+      },
+      "path": "~/Entities/ShadyMerchant/GUI"
+    },
+    {
+      "name": "ShadyMerchantOnRightClick",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "shady_merchant_on_right_click",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/ShadyMerchantOnRightClickProcedure.java"
+        ]
+      },
+      "path": "~/Entities/ShadyMerchant/Procedures"
+    },
+    {
+      "name": "ShadyMerchantNSButtonClicked",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "shady_merchant_ns_button_clicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/ShadyMerchantNSButtonClickedProcedure.java"
+        ]
+      },
+      "path": "~/Entities/ShadyMerchant/GUI/Procedures"
+    },
+    {
+      "name": "ShadyMerchantGUIWhileThisGUIIsOpenTick",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "shady_merchant_gui_while_this_gui_is_open_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/ShadyMerchantGUIWhileThisGUIIsOpenTickProcedure.java"
+        ]
+      },
+      "path": "~/Entities/ShadyMerchant/GUI/Procedures"
+    },
+    {
+      "name": "ItemTakenFromSlotShadyMerchant",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "item_taken_from_slot_shady_merchant",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "slot",
+            "type": "number"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/ItemTakenFromSlotShadyMerchantProcedure.java"
+        ]
+      },
+      "path": "~/Entities/ShadyMerchant/GUI/Procedures"
+    },
+    {
+      "name": "ShadyItemPropertyValueProvider",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "shady_item_property_value_provider",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ],
+        "return_type": "number",
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/ShadyItemPropertyValueProviderProcedure.java"
+        ]
+      },
+      "path": "~/Items/ScamItems/Procedures"
+    },
+    {
+      "name": "ShadyItem",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "shady_item",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/euru/models/item/shady_item_0.json",
+          "src/main/resources/assets/euru/models/item/shady_item_2.json",
+          "src/main/java/net/wavedk/extrautilitiesreutilized/item/ShadyItemItem.java",
+          "src/main/resources/assets/euru/models/item/shady_item_3.json",
+          "src/main/resources/assets/euru/models/item/shady_item.json",
+          "src/main/resources/assets/euru/models/item/shady_item_1.json"
+        ]
+      },
+      "path": "~/Items/ScamItems"
+    },
+    {
+      "name": "ShadyMerchantDiaButtonClicked",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "shady_merchant_dia_button_clicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/ShadyMerchantDiaButtonClickedProcedure.java"
+        ]
+      },
+      "path": "~/Entities/ShadyMerchant/GUI/Procedures"
+    },
+    {
+      "name": "ShadyMerchantNethButtonClicked",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "shady_merchant_neth_button_clicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/ShadyMerchantNethButtonClickedProcedure.java"
+        ]
+      },
+      "path": "~/Entities/ShadyMerchant/GUI/Procedures"
+    },
+    {
+      "name": "ShadyMerchantNethPickButtonClicked",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "shady_merchant_neth_pick_button_clicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/wavedk/extrautilitiesreutilized/procedures/ShadyMerchantNethPickButtonClickedProcedure.java"
+        ]
+      },
+      "path": "~/Entities/ShadyMerchant/GUI/Procedures"
     }
   ],
   "variable_elements": [
@@ -9367,6 +9623,7 @@
   "sound_elements": [],
   "tag_elements": {
     "BLOCKS:minecraft:mineable/pickaxe": [
+      "~ShadyMerchantBlock@CUSTOM:ShadyMerchantBlock",
       "~DragonEggMill@CUSTOM:DragonEggMill",
       "~RedstoneClock@CUSTOM:RedstoneClock",
       "~WirelessBattery@CUSTOM:WirelessBattery",
@@ -9472,6 +9729,9 @@
     "ITEMS:c:pistons": [
       "Blocks.PISTON",
       "Blocks.STICKY_PISTON"
+    ],
+    "POINTS_OF_INTEREST:minecraft:acquirable_job_site": [
+      "~ShadyMerchant@CUSTOM:ShadyMerchant"
     ]
   },
   "tab_element_order": {
@@ -9752,7 +10012,15 @@
       "gui.euru.rcgui.tickrate_suffix": "",
       "gui.euru.rcgui.label_redstone_clock": "Redstone Clock",
       "gui.euru.rcgui.tickrate_prefix": "Tick Rate: ",
-      "block.euru.redstone_clock": "Redstone Clock"
+      "block.euru.redstone_clock": "Redstone Clock",
+      "entity.minecraft.villager.euru.shady_merchant": "Shady Merchant",
+      "block.euru.shady_merchant_block": "Shady Merchant",
+      "gui.euru.shady_merchant_gui.label_trades": "Trades",
+      "gui.euru.shady_merchant_gui.label_legit_merchant": "Legit Merchant",
+      "gui.euru.shady_merchant_gui.label_inventory": "Inventory",
+      "item.euru.shady_item.description_1": "§7Hope you got a receipt!",
+      "item.euru.shady_item.description_0": "§7Seems like you bought a FAKE!",
+      "item.euru.shady_item": "Shady Item"
     }
   },
   "metadata": {
@@ -9771,6 +10039,7 @@
       "src/main/java/net/wavedk/extrautilitiesreutilized/init/EuruModRecipeTypes.java",
       "src/main/java/net/wavedk/extrautilitiesreutilized/init/EuruModJeiPlugin.java",
       "src/main/java/net/wavedk/extrautilitiesreutilized/init/EuruModBrewingRecipes.java",
+      "src/main/java/net/wavedk/extrautilitiesreutilized/init/EuruModVillagerProfessions.java",
       "src/main/java/net/wavedk/extrautilitiesreutilized/init/EuruModBlocks.java",
       "src/main/java/net/wavedk/extrautilitiesreutilized/init/EuruModBlockEntities.java",
       "src/main/java/net/wavedk/extrautilitiesreutilized/init/EuruModItems.java",
@@ -9863,6 +10132,15 @@
               },
               {
                 "name": "SpecialItems",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "ScamItems",
+            "children": [
+              {
+                "name": "Procedures",
                 "children": []
               }
             ]
@@ -10025,6 +10303,29 @@
       {
         "name": "Bauble",
         "children": []
+      },
+      {
+        "name": "Entities",
+        "children": [
+          {
+            "name": "ShadyMerchant",
+            "children": [
+              {
+                "name": "Procedures",
+                "children": []
+              },
+              {
+                "name": "GUI",
+                "children": [
+                  {
+                    "name": "Procedures",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
       }
     ]
   },

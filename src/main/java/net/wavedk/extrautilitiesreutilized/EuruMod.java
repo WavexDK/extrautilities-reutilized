@@ -57,6 +57,7 @@ public class EuruMod {
 		EuruModTabs.REGISTRY.register(modEventBus);
 		EuruModVariables.ATTACHMENT_TYPES.register(modEventBus);
 		EuruModMenus.REGISTRY.register(modEventBus);
+		EuruModVillagerProfessions.PROFESSIONS.register(modEventBus);
 		// Start of user code block mod init
 		// End of user code block mod init
 	}

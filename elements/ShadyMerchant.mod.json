@@ -1,0 +1,12 @@
+{
+  "_fv": 89,
+  "_type": "villagerprofession",
+  "definition": {
+    "displayName": "Shady Merchant",
+    "pointOfInterest": "CUSTOM:ShadyMerchantBlock",
+    "actionSound": "block.ancient_debris.break",
+    "hat": "Full",
+    "professionTextureFile": "shadymerchant.png",
+    "zombifiedProfessionTextureFile": "shadymerchant.png"
+  }
+}

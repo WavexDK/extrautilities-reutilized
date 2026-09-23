@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "euru:block/shadymerchantbottom",
+    "up": "euru:block/shadymerchanttop",
+    "north": "euru:block/shadymerchantside",
+    "east": "euru:block/shadymerchantside",
+    "south": "euru:block/shadymerchantside",
+    "west": "euru:block/shadymerchantside",
+    "particle": "euru:block/shadymerchantbottom"
+  },
+  "render_type": "solid"
+}

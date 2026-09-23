@@ -25,6 +25,7 @@ public class EuruModScreens {
 		event.register(EuruModMenus.GENERATOR_GUI.get(), GeneratorGUIScreen::new);
 		event.register(EuruModMenus.WIRELESS_BATTERY_GUI.get(), WirelessBatteryGUIScreen::new);
 		event.register(EuruModMenus.RCGUI.get(), RCGUIScreen::new);
+		event.register(EuruModMenus.SHADY_MERCHANT_GUI.get(), ShadyMerchantGUIScreen::new);
 	}
 
 	public interface ScreenAccessor {

@@ -198,5 +198,13 @@
   "gui.euru.rcgui.tickrate_suffix": "",
   "gui.euru.rcgui.label_redstone_clock": "Redstone Clock",
   "gui.euru.rcgui.tickrate_prefix": "Tick Rate: ",
-  "block.euru.redstone_clock": "Redstone Clock"
+  "block.euru.redstone_clock": "Redstone Clock",
+  "entity.minecraft.villager.euru.shady_merchant": "Shady Merchant",
+  "block.euru.shady_merchant_block": "Shady Merchant",
+  "gui.euru.shady_merchant_gui.label_trades": "Trades",
+  "gui.euru.shady_merchant_gui.label_legit_merchant": "Legit Merchant",
+  "gui.euru.shady_merchant_gui.label_inventory": "Inventory",
+  "item.euru.shady_item.description_1": "§7Hope you got a receipt!",
+  "item.euru.shady_item.description_0": "§7Seems like you bought a FAKE!",
+  "item.euru.shady_item": "Shady Item"
 }
