@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aba",
+    "cdc",
+    "aea"
+  ],
+  "key": {
+    "a": {
+      "item": "euru:stone_burnt"
+    },
+    "b": {
+      "item": "minecraft:ender_pearl"
+    },
+    "c": {
+      "item": "minecraft:nether_star"
+    },
+    "d": {
+      "item": "euru:redstone_gear"
+    },
+    "e": {
+      "item": "euru:eye_of_redstone"
+    }
+  },
+  "result": {
+    "id": "euru:dragon_egg_mill",
+    "count": 1
+  }
+}

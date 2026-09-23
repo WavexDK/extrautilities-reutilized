@@ -69,6 +69,7 @@ public class EuruModTabs {
 				tabData.accept(EuruModItems.ENCHANTED_APPLE.get());
 				tabData.accept(EuruModItems.ENCHANTED_INGOT.get());
 				tabData.accept(EuruModItems.WATERING_CAN.get());
+				tabData.accept(EuruModItems.TAPE_MEASURE.get());
 				tabData.accept(EuruModItems.MAGICAL_NUGGET.get());
 				tabData.accept(EuruModItems.GOLDEN_LASSO.get());
 				tabData.accept(EuruModItems.CURSED_LASSO.get());
@@ -87,7 +88,7 @@ public class EuruModTabs {
 				tabData.accept(EuruModItems.WOODEN_SICKLE.get());
 				tabData.accept(EuruModItems.GLASS_CUTTER.get());
 				tabData.accept(EuruModItems.ENDER_SHARD.get());
-				tabData.accept(EuruModItems.TAPE_MEASURE.get());
+				tabData.accept(EuruModBlocks.DRAGON_EGG_MILL.get().asItem());
 			}).build());
 	public static final DeferredHolder<CreativeModeTab, CreativeModeTab> EURU_COMPRESSED = REGISTRY.register("euru_compressed",
 			() -> CreativeModeTab.builder().title(Component.translatable("item_group.euru.euru_compressed")).icon(() -> new ItemStack(EuruModBlocks.DOUBLE_COMPRESSED_COBBLESTONE.get())).displayItems((parameters, tabData) -> {

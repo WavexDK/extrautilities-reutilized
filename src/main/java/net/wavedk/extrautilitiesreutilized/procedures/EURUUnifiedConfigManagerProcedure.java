@@ -87,10 +87,11 @@ public class EURUUnifiedConfigManagerProcedure {
 		com.google.gson.JsonObject groupmills = new com.google.gson.JsonObject();
 		com.google.gson.JsonObject gsolar = new com.google.gson.JsonObject();
 		com.google.gson.JsonObject gallblocks = new com.google.gson.JsonObject();
+		com.google.gson.JsonObject spman = new com.google.gson.JsonObject();
 		String cItem = "";
 		String coutput = "";
 		configFile = new File((FMLPaths.GAMEDIR.get().toString() + "/config/euru/"), File.separator + "euru_unified_config.json");
-		EuruModVariables.cVer = 2.7;
+		EuruModVariables.cVer = 2;
 		cVer = EuruModVariables.cVer;
 		if (!configFile.exists()) {
 			try {
@@ -169,12 +170,16 @@ public class EURUUnifiedConfigManagerProcedure {
 			crushobj.add("recipeList", crusherrl);
 			recipesOBJ.add((BuiltInRegistries.ITEM.getKey(EuruModBlocks.CRUSHER.get().asItem()).toString()), crushobj);
 			configJsonObject.add("recipes", recipesOBJ);
-			groupmills.addProperty("efficiency", 0.75);
-			groupmills.addProperty("efficiency_cutoff", 16);
+			groupmills.addProperty("efficiency", 0.85);
+			groupmills.addProperty("efficiency_cutoff", 4);
 			gpman.add("mills", groupmills);
-			gsolar.addProperty("efficiency", 0.95);
-			gsolar.addProperty("efficiency_cutoff", 80);
+			gsolar.addProperty("efficiency", 0.97);
+			gsolar.addProperty("efficiency_cutoff", 4);
 			gpman.add("solarpanels", gsolar);
+			spman.addProperty("efficiency", 0.75);
+			spman.addProperty("efficiency_cutoff", 1);
+			gpman.add("special", spman);
+			gallblocks.addProperty((BuiltInRegistries.ITEM.getKey(EuruModBlocks.DRAGON_EGG_MILL.get().asItem()).toString()), "special");
 			gallblocks.addProperty((BuiltInRegistries.ITEM.getKey(EuruModBlocks.LUNAR_PANEL.get().asItem()).toString()), "solarpanels");
 			gallblocks.addProperty((BuiltInRegistries.ITEM.getKey(EuruModBlocks.SOLAR_PANEL.get().asItem()).toString()), "solarpanels");
 			gallblocks.addProperty((BuiltInRegistries.ITEM.getKey(EuruModBlocks.MANUAL_MILL.get().asItem()).toString()), "mills");
@@ -208,6 +213,17 @@ public class EURUUnifiedConfigManagerProcedure {
 			variantArray.add("back");
 			itemobj.add("needs_block_sides", variantArray);
 			gpGenerators.add((BuiltInRegistries.ITEM.getKey(EuruModBlocks.WIND_MILL.get().asItem()).toString()), itemobj);
+			itemobj = new com.google.gson.JsonObject();
+			itemobj.addProperty("gp_generated", 500);
+			itemobj.addProperty("needs_sky", false);
+			itemobj.addProperty("needs_time_min", 0);
+			itemobj.addProperty("needs_time_max", 24000);
+			itemobj.addProperty("needs_block", true);
+			itemobj.addProperty("needs_block_id", "minecraft:dragon_egg");
+			variantArray = new com.google.gson.JsonArray();;
+			variantArray.add("up");
+			itemobj.add("needs_block_sides", variantArray);
+			gpGenerators.add((BuiltInRegistries.ITEM.getKey(EuruModBlocks.DRAGON_EGG_MILL.get().asItem()).toString()), itemobj);
 			itemobj = new com.google.gson.JsonObject();
 			itemobj.addProperty("gp_generated", 6);
 			itemobj.addProperty("needs_sky", false);

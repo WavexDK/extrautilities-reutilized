@@ -22,6 +22,8 @@ public class UpdateGPProcedure {
 				_vars.group_count_solarpanels = 0;
 				_vars.group_raw_mills = 0;
 				_vars.group_count_mills = 0;
+				_vars.group_raw_special = 0;
+				_vars.group_count_special = 0;
 				_vars.markSyncDirty();
 			}
 		} else {
@@ -36,6 +38,7 @@ public class UpdateGPProcedure {
 			}
 			UpdategroupmillProcedure.execute(entity);
 			UpdategroupsolarpanelsProcedure.execute(entity);
+			UpdategroupspecialProcedure.execute(entity);
 			{
 				EuruModVariables.PlayerVariables _vars = entity.getData(EuruModVariables.PLAYER_VARIABLES);
 				_vars.playerGP_Total = entity.getData(EuruModVariables.PLAYER_VARIABLES).playerGPUpdateTotal;

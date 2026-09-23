@@ -5,6 +5,6 @@
     "commandName": "extrautilities",
     "type": "SINGLEPLAYER_ONLY",
     "permissionLevel": "No requirement",
-    "argsxml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"args_start\" deletable=\"false\" x=\"81\" y=\"82\"><next><block type=\"literal\"><field name=\"name\">reload</field><statement name=\"args\"><block type=\"call_procedure\"><field name=\"procedure\">EURUUnifiedConfigManager</field></block></statement></block></next></block></xml>"
+    "argsxml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"args_start\" deletable=\"false\" x=\"81\" y=\"82\"><next><block type=\"literal\"><field name=\"name\">reload</field><statement name=\"args\"><block type=\"call_procedure\"><field name=\"procedure\">EURUUnifiedConfigManager</field><next><block type=\"call_procedure\"><field name=\"procedure\">ReturnSuccessReload</field></block></next></block></statement></block></next></block></xml>"
   }
 }

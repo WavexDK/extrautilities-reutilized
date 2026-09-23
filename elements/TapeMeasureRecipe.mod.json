@@ -5,27 +5,25 @@
     "recipeType": "Crafting",
     "recipeRetstackSize": 1,
     "group": "",
-    "unlockingItems": [
-      "Blocks.COBBLESTONE"
-    ],
+    "unlockingItems": [],
     "cookingBookCategory": "MISC",
     "xpReward": 0.0,
     "cookingTime": 200,
     "craftingBookCategory": "MISC",
     "recipeShapeless": false,
     "recipeSlots": [
+      "Items.STRING",
+      "Blocks.WOOL",
       "",
-      "TAG:c:cobblestones",
-      "TAG:c:cobblestones",
+      "Blocks.BLACKSTONE",
+      "Items.IRON_INGOT",
+      "Blocks.WOOL",
       "",
-      "",
-      "TAG:c:cobblestones",
-      "Items.STICK",
-      "TAG:c:cobblestones",
-      "TAG:c:cobblestones"
+      "Blocks.BLACKSTONE",
+      ""
     ],
-    "recipeReturnStack": "CUSTOM:StoneSickle",
-    "name": "stone_sickle_recipe",
+    "recipeReturnStack": "CUSTOM:TapeMeasure",
+    "name": "tape_measure_recipe",
     "namespace": "mod"
   }
 }

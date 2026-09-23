@@ -112,6 +112,11 @@ public class EuruModVariables {
 		clone.updateMultipliers = original.updateMultipliers;
 		clone.GPOverlay = original.GPOverlay;
 		clone.ringFlying = original.ringFlying;
+		clone.group_efficiency_special = original.group_efficiency_special;
+		clone.group_update_special = original.group_update_special;
+		clone.group_raw_special = original.group_raw_special;
+		clone.group_count_special = original.group_count_special;
+		clone.group_cutoff_special = original.group_cutoff_special;
 		if (!event.isWasDeath()) {
 		}
 		event.getEntity().setData(PLAYER_VARIABLES, clone);
@@ -304,6 +309,11 @@ public class EuruModVariables {
 		public boolean updateMultipliers = true;
 		public boolean GPOverlay = true;
 		public boolean ringFlying = false;
+		public double group_efficiency_special = 0;
+		public double group_update_special = 0;
+		public double group_raw_special = 0;
+		public double group_count_special = 0;
+		public double group_cutoff_special = 0;
 
 		@Override
 		public CompoundTag serializeNBT(HolderLookup.Provider lookupProvider) {
@@ -339,6 +349,11 @@ public class EuruModVariables {
 			nbt.putBoolean("updateMultipliers", updateMultipliers);
 			nbt.putBoolean("GPOverlay", GPOverlay);
 			nbt.putBoolean("ringFlying", ringFlying);
+			nbt.putDouble("group_efficiency_special", group_efficiency_special);
+			nbt.putDouble("group_update_special", group_update_special);
+			nbt.putDouble("group_raw_special", group_raw_special);
+			nbt.putDouble("group_count_special", group_count_special);
+			nbt.putDouble("group_cutoff_special", group_cutoff_special);
 			return nbt;
 		}
 
@@ -375,6 +390,11 @@ public class EuruModVariables {
 			updateMultipliers = nbt.getBoolean("updateMultipliers");
 			GPOverlay = nbt.getBoolean("GPOverlay");
 			ringFlying = nbt.getBoolean("ringFlying");
+			group_efficiency_special = nbt.getDouble("group_efficiency_special");
+			group_update_special = nbt.getDouble("group_update_special");
+			group_raw_special = nbt.getDouble("group_raw_special");
+			group_count_special = nbt.getDouble("group_count_special");
+			group_cutoff_special = nbt.getDouble("group_cutoff_special");
 		}
 
 		public void markSyncDirty() {
