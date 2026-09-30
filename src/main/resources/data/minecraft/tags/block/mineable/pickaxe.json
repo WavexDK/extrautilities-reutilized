@@ -23,8 +23,8 @@
     "euru:dragon_egg_mill",
     "euru:septuple_compressed_cobblestone",
     "euru:sextuple_compressed_cobblestone",
-    "euru:netherite_spike",
     "euru:ender_generator",
+    "euru:netherite_spike",
     "euru:creative_mill",
     "euru:furnace_generator",
     "euru:triple_compressed_cobblestone",
@@ -40,7 +40,6 @@
     "euru:water_mill",
     "euru:quintuple_compressed_cobblestone",
     "euru:explosive_generator",
-    "euru:redstone_clock",
     "euru:wireless_battery",
     "euru:compressed_cobblestone"
   ]

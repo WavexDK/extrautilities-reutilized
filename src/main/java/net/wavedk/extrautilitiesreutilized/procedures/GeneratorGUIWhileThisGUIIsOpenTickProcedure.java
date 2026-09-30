@@ -2,6 +2,8 @@ package net.wavedk.extrautilitiesreutilized.procedures;
 
 import net.wavedk.extrautilitiesreutilized.init.EuruModBlocks;
 
+import net.minecraft.world.level.block.state.properties.Property;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.LevelAccessor;
@@ -10,7 +12,8 @@ import net.minecraft.core.BlockPos;
 
 public class GeneratorGUIWhileThisGUIIsOpenTickProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z) {
-		if ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == EuruModBlocks.EXPLOSIVE_GENERATOR.get()) {
+		if (((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == EuruModBlocks.EXPLOSIVE_GENERATOR.get() || (world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == EuruModBlocks.DISENCHANTMENT_GENERATOR.get())
+				&& getPropertyByName((world.getBlockState(BlockPos.containing(x, y, z))), "on") instanceof BooleanProperty _getbp5 && (world.getBlockState(BlockPos.containing(x, y, z))).getValue(_getbp5)) {
 			if (!getBlockNBTLogic(world, BlockPos.containing(x, y, z), "waitATickForExGenBD")) {
 				if (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "exgenbd") == 31) {
 					if (!world.isClientSide()) {
@@ -48,6 +51,15 @@ public class GeneratorGUIWhileThisGUIIsOpenTickProcedure {
 				}
 			}
 		}
+	}
+
+	private static Property<?> getPropertyByName(BlockState state, String name) {
+		for (Property<?> property : state.getProperties()) {
+			if (property.getName().equals(name)) {
+				return property;
+			}
+		}
+		return null;
 	}
 
 	private static boolean getBlockNBTLogic(LevelAccessor world, BlockPos pos, String tag) {

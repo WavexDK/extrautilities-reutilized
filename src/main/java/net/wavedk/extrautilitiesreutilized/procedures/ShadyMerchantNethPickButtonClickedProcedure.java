@@ -42,7 +42,18 @@ public class ShadyMerchantNethPickButtonClickedProcedure {
 				_menu.getSlots().get(0).set(_setstack9);
 				_player.containerMenu.broadcastChanges();
 			}
-			ShadyMerchantNethPickButtonClickedProcedure.execute(entity);
+			if (hasEntityInInventory(entity, cItem) && getAmountInGUISlot(entity, 0) == 0) {
+				if (entity instanceof Player _player) {
+					ItemStack _stktoremove = new ItemStack(Items.EMERALD);
+					_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 4, _player.inventoryMenu.getCraftSlots());
+				}
+				if (entity instanceof Player _player && _player.containerMenu instanceof EuruModMenus.MenuAccessor _menu) {
+					ItemStack _setstack13 = new ItemStack(Items.EMERALD).copy();
+					_setstack13.setCount(4);
+					_menu.getSlots().get(0).set(_setstack13);
+					_player.containerMenu.broadcastChanges();
+				}
+			}
 		}
 	}
 

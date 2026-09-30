@@ -12,15 +12,15 @@
     "craftingBookCategory": "MISC",
     "recipeShapeless": false,
     "recipeSlots": [
-      "TAG:c:stones",
+      "Blocks.PLANKS",
       "TAG:c:dusts/redstone",
-      "TAG:c:stones",
+      "Blocks.PLANKS",
       "TAG:c:dusts/redstone",
       "CUSTOM:RedstoneGear",
       "TAG:c:dusts/redstone",
-      "TAG:c:stones",
-      "TAG:c:dusts/redstone",
-      "TAG:c:stones"
+      "Blocks.PLANKS",
+      "Items.CLOCK",
+      "Blocks.PLANKS"
     ],
     "recipeReturnStack": "CUSTOM:RedstoneClock",
     "name": "redstone_clock_recipe",

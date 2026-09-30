@@ -222,7 +222,7 @@ public class FGenCFGManagerProcedure {
 		cItemOBJ.addProperty("feSpeed", 20);
 		fgenFP.add(cItem, cItemOBJ);
 		fgenarray.add(cItem);
-		cItem = BuiltInRegistries.ITEM.getKey(Blocks.COAL_BLOCK.asItem()).toString();
+		cItem = "c:storage_blocks/coal";
 		cItemOBJ = new com.google.gson.JsonObject();
 		cItemOBJ.addProperty("feGenerated", 14000);
 		cItemOBJ.addProperty("feSpeed", 20);

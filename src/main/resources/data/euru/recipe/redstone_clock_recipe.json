@@ -4,17 +4,20 @@
   "pattern": [
     "aba",
     "bcb",
-    "aba"
+    "ada"
   ],
   "key": {
     "a": {
-      "tag": "c:stones"
+      "tag": "minecraft:planks"
     },
     "b": {
       "tag": "c:dusts/redstone"
     },
     "c": {
       "item": "euru:redstone_gear"
+    },
+    "d": {
+      "item": "minecraft:clock"
     }
   },
   "result": {

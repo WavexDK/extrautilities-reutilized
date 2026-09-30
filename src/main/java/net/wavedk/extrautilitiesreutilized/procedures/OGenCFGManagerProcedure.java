@@ -342,7 +342,7 @@ public class OGenCFGManagerProcedure {
 		cItemOBJ.addProperty("feSpeed", 300);
 		ogenfp.add(cItem, cItemOBJ);
 		oarray.add(cItem);
-		cItem = BuiltInRegistries.ITEM.getKey(Blocks.COAL_BLOCK.asItem()).toString();
+		cItem = "c:storage_blocks/coal";
 		cItemOBJ = new com.google.gson.JsonObject();
 		cItemOBJ.addProperty("feGenerated", 8000);
 		cItemOBJ.addProperty("feSpeed", 2000);

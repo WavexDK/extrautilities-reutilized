@@ -40,6 +40,10 @@ public class GeneratorGUIScreen extends AbstractContainerScreen<GeneratorGUIMenu
 	private static final ResourceLocation SPRITE_3 = ResourceLocation.parse("euru:textures/screens/fgen_strip.png");
 	private static final ResourceLocation SPRITE_4 = ResourceLocation.parse("euru:textures/screens/nsgen_strip.png");
 	private static final ResourceLocation SPRITE_5 = ResourceLocation.parse("euru:textures/screens/exstripbd.png");
+	private static final ResourceLocation SPRITE_6 = ResourceLocation.parse("euru:textures/screens/disenchantmentgeneratorbackdrop.png");
+	private static final ResourceLocation SPRITE_7 = ResourceLocation.parse("euru:textures/screens/overclockedbdstrip.png");
+	private static final ResourceLocation SPRITE_8 = ResourceLocation.parse("euru:textures/screens/endergenbd.png");
+	private static final ResourceLocation SPRITE_9 = ResourceLocation.parse("euru:textures/screens/culinarygenbdstrip.png");
 	private static final ResourceLocation IMAGE_0 = ResourceLocation.parse("euru:textures/screens/subackdrop.png");
 	private static final ResourceLocation IMAGE_1 = ResourceLocation.parse("euru:textures/screens/button-gun.png");
 	private static final ResourceLocation IMAGE_2 = ResourceLocation.parse("euru:textures/screens/button-always-off.png");
@@ -47,6 +51,7 @@ public class GeneratorGUIScreen extends AbstractContainerScreen<GeneratorGUIMenu
 	private static final ResourceLocation IMAGE_4 = ResourceLocation.parse("euru:textures/screens/button-red.png");
 	private static final ResourceLocation IMAGE_5 = ResourceLocation.parse("euru:textures/screens/symbol_cross.png");
 	private static final ResourceLocation IMAGE_6 = ResourceLocation.parse("euru:textures/screens/exbd.png");
+	private static final ResourceLocation IMAGE_7 = ResourceLocation.parse("euru:textures/screens/disenchantgenbdoff.png");
 
 	public GeneratorGUIScreen(GeneratorGUIMenu container, Inventory inventory, Component text) {
 		super(container, inventory, text);
@@ -113,6 +118,12 @@ public class GeneratorGUIScreen extends AbstractContainerScreen<GeneratorGUIMenu
 		if (EXGenAnimBackdropShowProcedure.execute(world, x, y, z)) {
 			guiGraphics.blit(SPRITE_5, this.leftPos + 56, this.topPos + 9, 0, Mth.clamp((int) EXGenAnimBackdropReturnValueProcedure.execute(world, x, y, z) * 64, 0, 1984), 64, 64, 64, 2048);
 		}
+		if (DisGenAnimBackdropProcedure.execute(world, x, y, z)) {
+			guiGraphics.blit(SPRITE_6, this.leftPos + 56, this.topPos + 9, 0, Mth.clamp((int) EXGenAnimBackdropReturnValueProcedure.execute(world, x, y, z) * 64, 0, 1920), 64, 64, 64, 1984);
+		}
+		guiGraphics.blit(SPRITE_7, this.leftPos + 56, this.topPos + 9, 0, Mth.clamp((int) OGenBackdropProcedure.execute(world, x, y, z) * 64, 0, 128), 64, 64, 64, 192);
+		guiGraphics.blit(SPRITE_8, this.leftPos + 56, this.topPos + 9, 0, Mth.clamp((int) EGenBackdropProcedure.execute(world, x, y, z) * 64, 0, 128), 64, 64, 64, 192);
+		guiGraphics.blit(SPRITE_9, this.leftPos + 56, this.topPos + 9, 0, Mth.clamp((int) CulinaryGenBackdropProcedure.execute(world, x, y, z) * 64, 0, 128), 64, 64, 64, 192);
 		if (SUTooltipGenProcedure.execute(world, x, y, z)) {
 			guiGraphics.blit(IMAGE_0, this.leftPos + 6, this.topPos + 41, 0, 0, 16, 16, 16, 16);
 		}
@@ -134,6 +145,9 @@ public class GeneratorGUIScreen extends AbstractContainerScreen<GeneratorGUIMenu
 		if (EXGenBackdropProcedure.execute(world, x, y, z)) {
 			guiGraphics.blit(IMAGE_6, this.leftPos + 56, this.topPos + 9, 0, 0, 64, 64, 64, 64);
 		}
+		if (DisGenBackdropProcedure.execute(world, x, y, z)) {
+			guiGraphics.blit(IMAGE_7, this.leftPos + 56, this.topPos + 9, 0, 0, 64, 64, 64, 64);
+		}
 		RenderSystem.disableBlend();
 	}
 
@@ -148,7 +162,7 @@ public class GeneratorGUIScreen extends AbstractContainerScreen<GeneratorGUIMenu
 
 	@Override
 	protected void renderLabels(GuiGraphics guiGraphics, int mouseX, int mouseY) {
-		guiGraphics.drawString(this.font, ReturnNameOfMachineProcedure.execute(world, x, y, z), 4, 4, -12829636, false);
+		guiGraphics.drawString(this.font, ReturnNameOfMachineProcedure.execute(world, x, y, z), 4, 5, -12829636, false);
 	}
 
 	@Override

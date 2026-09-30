@@ -27,12 +27,10 @@ import net.minecraft.network.protocol.PacketFlow;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.RegistryFriendlyByteBuf;
-import net.minecraft.nbt.Tag;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.core.HolderLookup;
 
 import java.util.function.Supplier;
-import java.util.ArrayList;
 
 @EventBusSubscriber
 public class EuruModVariables {
@@ -42,8 +40,6 @@ public class EuruModVariables {
 	public static com.google.gson.JsonObject unified_config = new com.google.gson.JsonObject();
 	public static com.google.gson.JsonObject fe_config = new com.google.gson.JsonObject();
 	public static double configUpdateCounter = 0;
-	public static ArrayList<Object> feconfig = new ArrayList<>();
-	public static ArrayList<Object> unifiedconfig = new ArrayList<>();
 
 	@SubscribeEvent
 	public static void init(FMLCommonSetupEvent event) {
@@ -162,7 +158,6 @@ public class EuruModVariables {
 	public static class WorldVariables extends SavedData {
 		public static final String DATA_NAME = "euru_worldvars";
 		boolean _syncDirty = false;
-		public ArrayList<Object> doe_drops_from = new ArrayList<>();
 		public boolean doeList_empty = false;
 		public double doeUpdateCounter = 0;
 
@@ -173,14 +168,12 @@ public class EuruModVariables {
 		}
 
 		public void read(CompoundTag nbt, HolderLookup.Provider lookupProvider) {
-			doe_drops_from = NbtArrayLists.loadGlobalWorld(nbt.getList("doe_drops_from", Tag.TAG_COMPOUND), lookupProvider);
 			doeList_empty = nbt.getBoolean("doeList_empty");
 			doeUpdateCounter = nbt.getDouble("doeUpdateCounter");
 		}
 
 		@Override
 		public CompoundTag save(CompoundTag nbt, HolderLookup.Provider lookupProvider) {
-			nbt.put("doe_drops_from", NbtArrayLists.saveGlobalWorld(doe_drops_from, lookupProvider));
 			nbt.putBoolean("doeList_empty", doeList_empty);
 			nbt.putDouble("doeUpdateCounter", doeUpdateCounter);
 			return nbt;

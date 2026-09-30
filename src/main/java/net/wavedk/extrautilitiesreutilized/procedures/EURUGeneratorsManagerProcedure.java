@@ -133,6 +133,12 @@ public class EURUGeneratorsManagerProcedure {
 			fuelPropertiesOBJ.add(cItem, cItemOBJ);
 			sArray.add(cItem);
 			cItemOBJ = new com.google.gson.JsonObject();
+			cItem = "c:storage_blocks/coal";
+			cItemOBJ.addProperty("feGenerated", 23000);
+			cItemOBJ.addProperty("feSpeed", 5);
+			fuelPropertiesOBJ.add(cItem, cItemOBJ);
+			sArray.add(cItem);
+			cItemOBJ = new com.google.gson.JsonObject();
 			cItem = "minecraft:banners";
 			cItemOBJ.addProperty("feGenerated", 300);
 			cItemOBJ.addProperty("feSpeed", 5);
@@ -306,9 +312,6 @@ public class EURUGeneratorsManagerProcedure {
 			craft.addProperty("feGenerated", 350);
 			craft.addProperty("feSpeed", 5);
 			fuelPropertiesOBJ.add((BuiltInRegistries.ITEM.getKey(Blocks.CRAFTING_TABLE.asItem()).toString()), craft);
-			coalblock.addProperty("feGenerated", 23000);
-			coalblock.addProperty("feSpeed", 5);
-			fuelPropertiesOBJ.add((BuiltInRegistries.ITEM.getKey(Blocks.COAL_BLOCK.asItem()).toString()), coalblock);
 			wooden_trapdoors.addProperty("feGenerated", 350);
 			wooden_trapdoors.addProperty("feSpeed", 5);
 			fuelPropertiesOBJ.add("minecraft:wooden_trapdoors", wooden_trapdoors);

@@ -24,7 +24,7 @@
           },
           "hasShadow": false,
           "x": 130,
-          "y": 41,
+          "y": 42,
           "locked": false
         }
       },
@@ -325,6 +325,74 @@
           "image": "exbd.png",
           "use1Xscale": false,
           "displayCondition": "EXGenBackdrop",
+          "x": 182,
+          "y": 46,
+          "locked": false
+        }
+      },
+      {
+        "type": "sprite",
+        "data": {
+          "sprite": "disenchantmentgeneratorbackdrop.png",
+          "spritesCount": 31,
+          "displayCondition": "DisGenAnimBackdrop",
+          "spriteIndex": {
+            "fixedValue": 0.0,
+            "name": "EXGenAnimBackdropReturnValue"
+          },
+          "x": 182,
+          "y": 46,
+          "locked": false
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "disenchantgenbdoff.png",
+          "use1Xscale": false,
+          "displayCondition": "DisGenBackdrop",
+          "x": 182,
+          "y": 46,
+          "locked": false
+        }
+      },
+      {
+        "type": "sprite",
+        "data": {
+          "sprite": "overclockedbdstrip.png",
+          "spritesCount": 3,
+          "spriteIndex": {
+            "fixedValue": 0.0,
+            "name": "OGenBackdrop"
+          },
+          "x": 182,
+          "y": 46,
+          "locked": false
+        }
+      },
+      {
+        "type": "sprite",
+        "data": {
+          "sprite": "endergenbd.png",
+          "spritesCount": 3,
+          "spriteIndex": {
+            "fixedValue": 0.0,
+            "name": "EGenBackdrop"
+          },
+          "x": 182,
+          "y": 46,
+          "locked": false
+        }
+      },
+      {
+        "type": "sprite",
+        "data": {
+          "sprite": "culinarygenbdstrip.png",
+          "spritesCount": 3,
+          "spriteIndex": {
+            "fixedValue": 0.0,
+            "name": "CulinaryGenBackdrop"
+          },
           "x": 182,
           "y": 46,
           "locked": false

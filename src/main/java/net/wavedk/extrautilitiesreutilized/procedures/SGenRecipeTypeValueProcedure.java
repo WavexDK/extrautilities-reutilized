@@ -31,7 +31,7 @@ public class SGenRecipeTypeValueProcedure {
 			}
 		}
 		if ((returnString).length() > 0) {
-			catobj = EuruModVariables.unified_config.get(returnString).getAsJsonObject();
+			catobj = EuruModVariables.fe_config.get(returnString).getAsJsonObject();
 			bobj = catobj.get("fuelProperties").getAsJsonObject();
 			itemobj = bobj.get(itemstring).getAsJsonObject();
 			returnString = "" + itemobj.get("feGenerated").getAsDouble();

@@ -2,7 +2,6 @@ package net.wavedk.extrautilitiesreutilized.procedures;
 
 import net.wavedk.extrautilitiesreutilized.network.EuruModVariables;
 import net.wavedk.extrautilitiesreutilized.init.EuruModItems;
-import net.wavedk.extrautilitiesreutilized.EuruMod;
 
 import net.neoforged.neoforge.event.entity.living.LivingDeathEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
@@ -47,69 +46,49 @@ public class DOEDeathFromProcedureProcedure {
 		com.google.gson.JsonObject iobj = new com.google.gson.JsonObject();
 		com.google.gson.JsonArray doelist = new com.google.gson.JsonArray();
 		boolean multiply = false;
+		boolean dropsFromEntity = false;
 		double num = 0;
 		double drop = 0;
-		if (EuruModVariables.WorldVariables.get(world).doe_drops_from.isEmpty() && !EuruModVariables.WorldVariables.get(world).doeList_empty) {
-			catobj = EuruModVariables.unified_config.get("general").getAsJsonObject();
-			iobj = catobj.get((BuiltInRegistries.ITEM.getKey(EuruModItems.DROP_OF_EVIL.get()).toString())).getAsJsonObject();
-			doelist = iobj.get("drops_from").getAsJsonArray();
-			drop = iobj.get("dropchance").getAsDouble();
-			multiply = iobj.get("dropchance_multiplywithlooting").getAsBoolean();
-			num = 0;
-			for (int _i1 = 0; _i1 < (int) doelist.size(); _i1++) {
-				EuruModVariables.WorldVariables.get(world).doe_drops_from.add(doelist.get((int) num).getAsString());
-				EuruModVariables.WorldVariables.get(world).markSyncDirty();
-				num = num + 1;
+		catobj = EuruModVariables.unified_config.get("general").getAsJsonObject();
+		iobj = catobj.get((BuiltInRegistries.ITEM.getKey(EuruModItems.DROP_OF_EVIL.get()).toString())).getAsJsonObject();
+		doelist = iobj.get("drops_from").getAsJsonArray();
+		drop = iobj.get("dropchance").getAsDouble();
+		multiply = iobj.get("dropchance_multiplywithlooting").getAsBoolean();
+		num = 0;
+		for (int _i1 = 0; _i1 < (int) doelist.size(); _i1++) {
+			if (doelist.get((int) num).getAsString().contains(BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString())) {
+				dropsFromEntity = true;
+				break;
 			}
-		} else {
-			EuruMod.LOGGER.warn("Drop of Evil, \"drops_from\" list is empty, and will therefore no longer be checked. Restart your game to re-check it.");
+			num = num + 1;
 		}
-		if (!EuruModVariables.WorldVariables.get(world).doe_drops_from.isEmpty()) {
-			if (EuruModVariables.WorldVariables.get(world).doe_drops_from.contains((BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString()))) {
-				if (drop == 0) {
-					catobj = EuruModVariables.unified_config.get("general").getAsJsonObject();
-					iobj = catobj.get((BuiltInRegistries.ITEM.getKey(EuruModItems.DROP_OF_EVIL.get()).toString())).getAsJsonObject();
-					doelist = iobj.get("drops_from").getAsJsonArray();
-					drop = iobj.get("dropchance").getAsDouble();
-					multiply = iobj.get("dropchance_multiplywithlooting").getAsBoolean();
-				}
-				if (multiply) {
-					if ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getEnchantmentLevel(world.registryAccess().lookupOrThrow(Registries.ENCHANTMENT).getOrThrow(Enchantments.LOOTING)) != 0) {
-						if (3 * ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getEnchantmentLevel(world.registryAccess().lookupOrThrow(Registries.ENCHANTMENT).getOrThrow(Enchantments.LOOTING))
-								+ 1) >= Mth.nextInt(RandomSource.create(), 1, 100)) {
-							if (world instanceof ServerLevel _level) {
-								ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EuruModItems.DROP_OF_EVIL.get()));
-								entityToSpawn.setPickUpDelay(10);
-								_level.addFreshEntity(entityToSpawn);
-							}
-						}
-					} else if (3 >= Mth.nextInt(RandomSource.create(), 1, 100)) {
+		if (dropsFromEntity) {
+			if (multiply) {
+				if ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getEnchantmentLevel(world.registryAccess().lookupOrThrow(Registries.ENCHANTMENT).getOrThrow(Enchantments.LOOTING)) != 0) {
+					if (3 * ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getEnchantmentLevel(world.registryAccess().lookupOrThrow(Registries.ENCHANTMENT).getOrThrow(Enchantments.LOOTING)) + 1) >= Mth
+							.nextInt(RandomSource.create(), 1, 100)) {
 						if (world instanceof ServerLevel _level) {
 							ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EuruModItems.DROP_OF_EVIL.get()));
 							entityToSpawn.setPickUpDelay(10);
 							_level.addFreshEntity(entityToSpawn);
 						}
 					}
-				} else {
-					if (3 >= Mth.nextInt(RandomSource.create(), 1, 100)) {
-						if (world instanceof ServerLevel _level) {
-							ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EuruModItems.DROP_OF_EVIL.get()));
-							entityToSpawn.setPickUpDelay(10);
-							_level.addFreshEntity(entityToSpawn);
-						}
+				} else if (3 >= Mth.nextInt(RandomSource.create(), 1, 100)) {
+					if (world instanceof ServerLevel _level) {
+						ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EuruModItems.DROP_OF_EVIL.get()));
+						entityToSpawn.setPickUpDelay(10);
+						_level.addFreshEntity(entityToSpawn);
+					}
+				}
+			} else {
+				if (3 >= Mth.nextInt(RandomSource.create(), 1, 100)) {
+					if (world instanceof ServerLevel _level) {
+						ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EuruModItems.DROP_OF_EVIL.get()));
+						entityToSpawn.setPickUpDelay(10);
+						_level.addFreshEntity(entityToSpawn);
 					}
 				}
 			}
-		}
-		if (EuruModVariables.WorldVariables.get(world).doeUpdateCounter >= 80) {
-			if (!EuruModVariables.WorldVariables.get(world).doeList_empty) {
-				EuruModVariables.WorldVariables.get(world).doe_drops_from.clear();
-			}
-			EuruModVariables.WorldVariables.get(world).doeUpdateCounter = 0;
-			EuruModVariables.WorldVariables.get(world).markSyncDirty();
-		} else {
-			EuruModVariables.WorldVariables.get(world).doeUpdateCounter = EuruModVariables.WorldVariables.get(world).doeUpdateCounter + 1;
-			EuruModVariables.WorldVariables.get(world).markSyncDirty();
 		}
 	}
 }

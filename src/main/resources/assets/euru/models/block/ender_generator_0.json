@@ -1,13 +1,13 @@
 {
   "parent": "block/cube",
   "textures": {
-    "down": "euru:block/machine_block_bottom",
-    "up": "euru:block/machine_block_top",
-    "north": "euru:block/endergen",
-    "east": "euru:block/machine_block_side",
-    "south": "euru:block/machine_block_side",
-    "west": "euru:block/machine_block_side",
-    "particle": "euru:block/machine_block_bottom"
+    "down": "euru:block/endergeneratorbottom",
+    "up": "euru:block/endergeneratortop",
+    "north": "euru:block/endergeneratoron",
+    "east": "euru:block/endergeneratorsides",
+    "south": "euru:block/endergeneratorsides",
+    "west": "euru:block/endergeneratorsides",
+    "particle": "euru:block/endergeneratorbottom"
   },
   "render_type": "solid"
 }

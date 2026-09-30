@@ -41,7 +41,7 @@ public class GeneratorGUIMenu extends AbstractContainerMenu implements EuruModMe
 	public final Map<String, Object> menuState = new HashMap<>() {
 		@Override
 		public Object put(String key, Object value) {
-			if (!this.containsKey(key) && this.size() >= 23)
+			if (!this.containsKey(key) && this.size() >= 28)
 				return null;
 			return super.put(key, value);
 		}

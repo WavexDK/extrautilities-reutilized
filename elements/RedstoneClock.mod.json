@@ -2,19 +2,52 @@
   "_fv": 89,
   "_type": "block",
   "definition": {
-    "texture": "redstoneclocktemp",
-    "textureTop": "redstoneclocktemp",
-    "textureLeft": "redstoneclocktemp",
-    "textureFront": "redstoneclocktemp",
-    "textureRight": "redstoneclocktemp",
-    "textureBack": "redstoneclocktemp",
+    "texture": "clockbottom",
+    "textureTop": "clocktop",
+    "textureLeft": "clocksides",
+    "textureFront": "clock_off",
+    "textureRight": "clocksides",
+    "textureBack": "clocksides",
     "renderType": 10,
     "customModelName": "Normal",
-    "rotationMode": 0,
+    "rotationMode": 1,
     "enablePitch": false,
     "emissiveRendering": false,
     "displayFluidOverlay": false,
-    "states": [],
+    "states": [
+      {
+        "texture": "clockbottom",
+        "textureTop": "clocktop",
+        "textureLeft": "clocksides",
+        "textureFront": "clock_on_finished",
+        "textureRight": "clocksides",
+        "textureBack": "clocksides",
+        "renderType": 10,
+        "customModelName": "Normal",
+        "particleTexture": "",
+        "hasCustomBoundingBox": false,
+        "boundingBoxes": [
+          {
+            "mx": 0.0,
+            "my": 0.0,
+            "mz": 0.0,
+            "Mx": 16.0,
+            "My": 16.0,
+            "Mz": 16.0,
+            "subtract": false
+          }
+        ],
+        "stateMap": [
+          {
+            "property": {
+              "name": "CUSTOM:on",
+              "type": "logic"
+            },
+            "value": true
+          }
+        ]
+      }
+    ],
     "animations": [],
     "itemTexture": "",
     "particleTexture": "",
@@ -37,13 +70,19 @@
         "subtract": false
       }
     ],
-    "customProperties": [],
+    "customProperties": [
+      {
+        "name": "CUSTOM:on",
+        "type": "logic",
+        "value": false
+      }
+    ],
     "name": "Redstone Clock",
     "specialInformation": {
       "fixedValue": []
     },
     "hardness": 2.0,
-    "resistance": 16.0,
+    "resistance": 8.0,
     "hasGravity": false,
     "isWaterloggable": false,
     "hasBlockItem": true,
@@ -53,7 +92,7 @@
     "creativeTabs": [
       "CUSTOM:Euru"
     ],
-    "destroyTool": "pickaxe",
+    "destroyTool": "axe",
     "customDrop": "",
     "dropAmount": 1,
     "xpAmountMin": 0,
@@ -74,7 +113,7 @@
       "name": "RedstoneClockEmittedRedstonePower"
     },
     "colorOnMap": "DEFAULT",
-    "noteBlockInstrument": "basedrum",
+    "noteBlockInstrument": "bass",
     "creativePickItem": "",
     "offsetType": "NONE",
     "aiPathNodeType": "DEFAULT",
@@ -88,7 +127,7 @@
     "jumpFactor": 1.0,
     "reactionToPushing": "NORMAL",
     "isNotColidable": false,
-    "soundOnStep": "STONE",
+    "soundOnStep": "WOOD",
     "isCustomSoundType": false,
     "breakSound": "",
     "fallSound": "",

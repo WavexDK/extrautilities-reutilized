@@ -14,15 +14,15 @@
     "craftingBookCategory": "MISC",
     "recipeShapeless": false,
     "recipeSlots": [
-      "TAG:c:gems/lapis",
-      "CUSTOM:LunarReactiveDust",
-      "TAG:c:gems/lapis",
-      "TAG:c:gems/lapis",
-      "TAG:c:storage_blocks/gold",
-      "TAG:c:gems/lapis",
-      "TAG:c:dusts/redstone",
+      "Blocks.DEEPSLATE",
+      "Blocks.DEEPSLATE",
+      "Blocks.DEEPSLATE",
+      "Blocks.DEEPSLATE",
+      "Blocks.AMETHYST_BLOCK",
+      "Blocks.DEEPSLATE",
+      "TAG:c:dusts/blaze",
       "CUSTOM:FurnaceGenerator",
-      "TAG:c:dusts/redstone"
+      "TAG:c:dusts/blaze"
     ],
     "recipeReturnStack": "CUSTOM:OverclockedGenerator",
     "name": "o_gen_recipe",

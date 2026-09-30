@@ -1,13 +1,13 @@
 {
   "parent": "block/cube",
   "textures": {
-    "down": "euru:block/machine_block_bottom",
-    "up": "euru:block/machine_block_top",
-    "north": "euru:block/overclocked_temp",
-    "east": "euru:block/machine_block_side",
-    "south": "euru:block/machine_block_side",
-    "west": "euru:block/machine_block_side",
-    "particle": "euru:block/machine_block_bottom"
+    "down": "euru:block/overclockedgendown",
+    "up": "euru:block/overclockedgenup",
+    "north": "euru:block/overclockedgenf",
+    "east": "euru:block/overclockedgensides",
+    "south": "euru:block/overclockedgensides",
+    "west": "euru:block/overclockedgensides",
+    "particle": "euru:block/overclockedgendown"
   },
   "render_type": "solid"
 }
