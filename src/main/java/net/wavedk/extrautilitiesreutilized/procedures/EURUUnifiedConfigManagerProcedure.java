@@ -91,7 +91,7 @@ public class EURUUnifiedConfigManagerProcedure {
 		String cItem = "";
 		String coutput = "";
 		configFile = new File((FMLPaths.GAMEDIR.get().toString() + "/config/euru/"), File.separator + "euru_unified_config.json");
-		EuruModVariables.cVer = 2.9;
+		EuruModVariables.cVer = 7;
 		cVer = EuruModVariables.cVer;
 		if (!configFile.exists()) {
 			try {
@@ -355,8 +355,6 @@ public class EURUUnifiedConfigManagerProcedure {
 			generalOBJ.add((BuiltInRegistries.ITEM.getKey(EuruModItems.ANGEL_RING.get()).toString()), arobj);
 			clOBJ.addProperty("gp_needed", 8);
 			generalOBJ.add((BuiltInRegistries.ITEM.getKey(EuruModBlocks.CHUNK_LOADING_WARD.get().asItem()).toString()), clOBJ);
-			clt.addProperty("enabled", true);
-			generalOBJ.add((BuiltInRegistries.ITEM.getKey(EuruModBlocks.CHUNK_LOADER_TESTER.get().asItem()).toString()), clt);
 			configJsonObject.add("general", generalOBJ);
 			gLassoArray.add("minecraft:allay");
 			gLassoArray.add("minecraft:bat");

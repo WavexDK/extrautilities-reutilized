@@ -1,0 +1,23 @@
+{
+  "_fv": 89,
+  "_type": "jeirecipe",
+  "definition": {
+    "category": "death_gen_recipe_type",
+    "ingredients": [
+      "Items.SPIDER_EYE"
+    ],
+    "integers": [],
+    "strings": [
+      "euru:death_generator",
+      "minecraft:spider_eye"
+    ],
+    "recipetype": "DeathGenRecipeType",
+    "results": [
+      "Blocks.POLISHED_TUFF"
+    ],
+    "resultCounts": [
+      0
+    ],
+    "count": 0
+  }
+}

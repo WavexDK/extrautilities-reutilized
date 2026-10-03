@@ -1,0 +1,18 @@
+{
+  "type": "euru:frosty_gen_recipe_type",
+  "ingredients": [
+    {
+      "item": "minecraft:snowball"
+    }
+  ],
+  "strings": [
+    "euru:frosty_generator",
+    "minecraft:snowball"
+  ],
+  "outputs": [
+    {
+      "id": "minecraft:polished_tuff",
+      "count": 0
+    }
+  ]
+}

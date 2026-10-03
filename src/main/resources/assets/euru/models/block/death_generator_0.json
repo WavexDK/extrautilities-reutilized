@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "euru:block/deathgenbottom",
+    "up": "euru:block/deathgentop",
+    "north": "euru:block/deathgeneratoron",
+    "east": "euru:block/deathgensides",
+    "south": "euru:block/deathgensides",
+    "west": "euru:block/deathgensides",
+    "particle": "euru:block/deathgenbottom"
+  },
+  "render_type": "solid"
+}

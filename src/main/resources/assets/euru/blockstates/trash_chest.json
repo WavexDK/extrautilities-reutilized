@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "euru:block/trash_chest"
+    },
+    "facing=east": {
+      "model": "euru:block/trash_chest",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "euru:block/trash_chest",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "euru:block/trash_chest",
+      "y": 270
+    }
+  }
+}

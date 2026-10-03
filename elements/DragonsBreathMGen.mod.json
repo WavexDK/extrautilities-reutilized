@@ -1,0 +1,23 @@
+{
+  "_fv": 89,
+  "_type": "jeirecipe",
+  "definition": {
+    "category": "halitosis_gen_recipe_type",
+    "ingredients": [
+      "Items.DRAGON_BREATH"
+    ],
+    "integers": [],
+    "strings": [
+      "euru:halitosis_generator",
+      "minecraft:dragon_breath"
+    ],
+    "recipetype": "HalitosisGenRecipeType",
+    "results": [
+      "Blocks.POLISHED_TUFF"
+    ],
+    "resultCounts": [
+      0
+    ],
+    "count": 0
+  }
+}

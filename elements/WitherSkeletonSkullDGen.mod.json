@@ -1,0 +1,23 @@
+{
+  "_fv": 89,
+  "_type": "jeirecipe",
+  "definition": {
+    "category": "death_gen_recipe_type",
+    "ingredients": [
+      "Blocks.SKULL#1"
+    ],
+    "integers": [],
+    "strings": [
+      "euru:death_generator",
+      "minecraft:wither_skeleton_skull"
+    ],
+    "recipetype": "DeathGenRecipeType",
+    "results": [
+      "Blocks.POLISHED_TUFF"
+    ],
+    "resultCounts": [
+      0
+    ],
+    "count": 0
+  }
+}

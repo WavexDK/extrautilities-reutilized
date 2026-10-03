@@ -45,7 +45,6 @@ public class EuruModItems {
 	public static final DeferredItem<Item> MACHINE_BLOCK = block(EuruModBlocks.MACHINE_BLOCK);
 	public static final DeferredItem<Item> LUNAR_REACTIVE_DUST = REGISTRY.register("lunar_reactive_dust", LunarReactiveDustItem::new);
 	public static final DeferredItem<Item> SURVIVAL_GENERATOR = block(EuruModBlocks.SURVIVAL_GENERATOR);
-	public static final DeferredItem<Item> CHUNK_LOADER_TESTER = block(EuruModBlocks.CHUNK_LOADER_TESTER);
 	public static final DeferredItem<Item> GILDED_OBSIDIAN = block(EuruModBlocks.GILDED_OBSIDIAN);
 	public static final DeferredItem<Item> NUGGETO_EXPERIENCE = REGISTRY.register("nuggeto_experience", NuggetoExperienceItem::new);
 	public static final DeferredItem<Item> ANGEL_BLOCK = block(EuruModBlocks.ANGEL_BLOCK);
@@ -119,6 +118,13 @@ public class EuruModItems {
 	public static final DeferredItem<Item> DRAGON_EGG_MILL = block(EuruModBlocks.DRAGON_EGG_MILL);
 	public static final DeferredItem<Item> REDSTONE_CLOCK = block(EuruModBlocks.REDSTONE_CLOCK);
 	public static final DeferredItem<Item> SHADY_ITEM = REGISTRY.register("shady_item", ShadyItemItem::new);
+	public static final DeferredItem<Item> DEATH_GENERATOR = block(EuruModBlocks.DEATH_GENERATOR);
+	public static final DeferredItem<Item> PINK_GENERATOR = block(EuruModBlocks.PINK_GENERATOR);
+	public static final DeferredItem<Item> FROSTY_GENERATOR = block(EuruModBlocks.FROSTY_GENERATOR);
+	public static final DeferredItem<Item> HALITOSIS_GENERATOR = block(EuruModBlocks.HALITOSIS_GENERATOR);
+	public static final DeferredItem<Item> SLIMEY_GENERATOR = block(EuruModBlocks.SLIMEY_GENERATOR);
+	public static final DeferredItem<Item> TRASH_CAN = block(EuruModBlocks.TRASH_CAN);
+	public static final DeferredItem<Item> TRASH_CHEST = block(EuruModBlocks.TRASH_CHEST);
 
 	// Start of user code block custom items
 	// End of user code block custom items

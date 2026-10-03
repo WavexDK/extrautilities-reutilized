@@ -1,0 +1,12 @@
+{
+  "_fv": 89,
+  "_type": "damagetype",
+  "definition": {
+    "exhaustion": 0.1,
+    "scaling": "never",
+    "effects": "hurt",
+    "normalDeathMessage": "%1$s met their doom.",
+    "itemDeathMessage": "%1$s met their doom.",
+    "playerDeathMessage": "%1$s met their doom."
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "type": "euru:pink_gen_recipe_type",
+  "ingredients": [
+    {
+      "tag": "euru:pink_stuff"
+    }
+  ],
+  "strings": [
+    "euru:pink_generator",
+    "euru:pink_stuff"
+  ],
+  "outputs": [
+    {
+      "id": "minecraft:polished_tuff",
+      "count": 0
+    }
+  ]
+}

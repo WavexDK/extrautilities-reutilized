@@ -1,0 +1,18 @@
+{
+  "type": "euru:death_gen_recipe_type",
+  "ingredients": [
+    {
+      "item": "minecraft:rotten_flesh"
+    }
+  ],
+  "strings": [
+    "euru:death_generator",
+    "minecraft:rotten_flesh"
+  ],
+  "outputs": [
+    {
+      "id": "minecraft:polished_tuff",
+      "count": 0
+    }
+  ]
+}

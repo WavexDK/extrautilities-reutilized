@@ -1,0 +1,23 @@
+{
+  "_fv": 89,
+  "_type": "jeirecipe",
+  "definition": {
+    "category": "death_gen_recipe_type",
+    "ingredients": [
+      "Items.ROTTEN_FLESH"
+    ],
+    "integers": [],
+    "strings": [
+      "euru:death_generator",
+      "minecraft:rotten_flesh"
+    ],
+    "recipetype": "DeathGenRecipeType",
+    "results": [
+      "Blocks.POLISHED_TUFF"
+    ],
+    "resultCounts": [
+      0
+    ],
+    "count": 0
+  }
+}

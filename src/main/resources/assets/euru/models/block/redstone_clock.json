@@ -3,7 +3,7 @@
   "textures": {
     "down": "euru:block/clockbottom",
     "up": "euru:block/clocktop",
-    "north": "euru:block/clock_off",
+    "north": "euru:block/rcon",
     "east": "euru:block/clocksides",
     "south": "euru:block/clocksides",
     "west": "euru:block/clocksides",

@@ -32,6 +32,11 @@ public class EuruModJeiPlugin implements IModPlugin {
 	public static mezz.jei.api.recipe.RecipeType<CGenRecipeTypeRecipe> CGenRecipeType_Type = new mezz.jei.api.recipe.RecipeType<>(CGenRecipeTypeRecipeCategory.UID, CGenRecipeTypeRecipe.class);
 	public static mezz.jei.api.recipe.RecipeType<DEGenRecipeTypeRecipe> DEGenRecipeType_Type = new mezz.jei.api.recipe.RecipeType<>(DEGenRecipeTypeRecipeCategory.UID, DEGenRecipeTypeRecipe.class);
 	public static mezz.jei.api.recipe.RecipeType<EXGenRecipeTypeRecipe> EXGenRecipeType_Type = new mezz.jei.api.recipe.RecipeType<>(EXGenRecipeTypeRecipeCategory.UID, EXGenRecipeTypeRecipe.class);
+	public static mezz.jei.api.recipe.RecipeType<PinkGenRecipeTypeRecipe> PinkGenRecipeType_Type = new mezz.jei.api.recipe.RecipeType<>(PinkGenRecipeTypeRecipeCategory.UID, PinkGenRecipeTypeRecipe.class);
+	public static mezz.jei.api.recipe.RecipeType<DeathGenRecipeTypeRecipe> DeathGenRecipeType_Type = new mezz.jei.api.recipe.RecipeType<>(DeathGenRecipeTypeRecipeCategory.UID, DeathGenRecipeTypeRecipe.class);
+	public static mezz.jei.api.recipe.RecipeType<FrostyGenRecipeTypeRecipe> FrostyGenRecipeType_Type = new mezz.jei.api.recipe.RecipeType<>(FrostyGenRecipeTypeRecipeCategory.UID, FrostyGenRecipeTypeRecipe.class);
+	public static mezz.jei.api.recipe.RecipeType<HalitosisGenRecipeTypeRecipe> HalitosisGenRecipeType_Type = new mezz.jei.api.recipe.RecipeType<>(HalitosisGenRecipeTypeRecipeCategory.UID, HalitosisGenRecipeTypeRecipe.class);
+	public static mezz.jei.api.recipe.RecipeType<SlimeyGenRecipeTypeRecipe> SlimeyGenRecipeType_Type = new mezz.jei.api.recipe.RecipeType<>(SlimeyGenRecipeTypeRecipeCategory.UID, SlimeyGenRecipeTypeRecipe.class);
 
 	@Override
 	public ResourceLocation getPluginUid() {
@@ -52,6 +57,11 @@ public class EuruModJeiPlugin implements IModPlugin {
 		registration.addRecipeCategories(new CGenRecipeTypeRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
 		registration.addRecipeCategories(new DEGenRecipeTypeRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
 		registration.addRecipeCategories(new EXGenRecipeTypeRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
+		registration.addRecipeCategories(new PinkGenRecipeTypeRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
+		registration.addRecipeCategories(new DeathGenRecipeTypeRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
+		registration.addRecipeCategories(new FrostyGenRecipeTypeRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
+		registration.addRecipeCategories(new HalitosisGenRecipeTypeRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
+		registration.addRecipeCategories(new SlimeyGenRecipeTypeRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
 	}
 
 	@Override
@@ -81,6 +91,16 @@ public class EuruModJeiPlugin implements IModPlugin {
 		registration.addRecipes(DEGenRecipeType_Type, DEGenRecipeTypeRecipes);
 		List<EXGenRecipeTypeRecipe> EXGenRecipeTypeRecipes = recipeManager.getAllRecipesFor(EXGenRecipeTypeRecipe.Type.INSTANCE).stream().map(RecipeHolder::value).collect(Collectors.toList());
 		registration.addRecipes(EXGenRecipeType_Type, EXGenRecipeTypeRecipes);
+		List<PinkGenRecipeTypeRecipe> PinkGenRecipeTypeRecipes = recipeManager.getAllRecipesFor(PinkGenRecipeTypeRecipe.Type.INSTANCE).stream().map(RecipeHolder::value).collect(Collectors.toList());
+		registration.addRecipes(PinkGenRecipeType_Type, PinkGenRecipeTypeRecipes);
+		List<DeathGenRecipeTypeRecipe> DeathGenRecipeTypeRecipes = recipeManager.getAllRecipesFor(DeathGenRecipeTypeRecipe.Type.INSTANCE).stream().map(RecipeHolder::value).collect(Collectors.toList());
+		registration.addRecipes(DeathGenRecipeType_Type, DeathGenRecipeTypeRecipes);
+		List<FrostyGenRecipeTypeRecipe> FrostyGenRecipeTypeRecipes = recipeManager.getAllRecipesFor(FrostyGenRecipeTypeRecipe.Type.INSTANCE).stream().map(RecipeHolder::value).collect(Collectors.toList());
+		registration.addRecipes(FrostyGenRecipeType_Type, FrostyGenRecipeTypeRecipes);
+		List<HalitosisGenRecipeTypeRecipe> HalitosisGenRecipeTypeRecipes = recipeManager.getAllRecipesFor(HalitosisGenRecipeTypeRecipe.Type.INSTANCE).stream().map(RecipeHolder::value).collect(Collectors.toList());
+		registration.addRecipes(HalitosisGenRecipeType_Type, HalitosisGenRecipeTypeRecipes);
+		List<SlimeyGenRecipeTypeRecipe> SlimeyGenRecipeTypeRecipes = recipeManager.getAllRecipesFor(SlimeyGenRecipeTypeRecipe.Type.INSTANCE).stream().map(RecipeHolder::value).collect(Collectors.toList());
+		registration.addRecipes(SlimeyGenRecipeType_Type, SlimeyGenRecipeTypeRecipes);
 	}
 
 	@Override
@@ -97,5 +117,10 @@ public class EuruModJeiPlugin implements IModPlugin {
 		registration.addRecipeCatalyst(new ItemStack(EuruModBlocks.CULINARY_GENERATOR.get().asItem()), CGenRecipeType_Type);
 		registration.addRecipeCatalyst(new ItemStack(EuruModBlocks.DISENCHANTMENT_GENERATOR.get().asItem()), DEGenRecipeType_Type);
 		registration.addRecipeCatalyst(new ItemStack(EuruModBlocks.EXPLOSIVE_GENERATOR.get().asItem()), EXGenRecipeType_Type);
+		registration.addRecipeCatalyst(new ItemStack(EuruModBlocks.PINK_GENERATOR.get().asItem()), PinkGenRecipeType_Type);
+		registration.addRecipeCatalyst(new ItemStack(EuruModBlocks.DEATH_GENERATOR.get().asItem()), DeathGenRecipeType_Type);
+		registration.addRecipeCatalyst(new ItemStack(EuruModBlocks.FROSTY_GENERATOR.get().asItem()), FrostyGenRecipeType_Type);
+		registration.addRecipeCatalyst(new ItemStack(EuruModBlocks.HALITOSIS_GENERATOR.get().asItem()), HalitosisGenRecipeType_Type);
+		registration.addRecipeCatalyst(new ItemStack(EuruModBlocks.SLIMEY_GENERATOR.get().asItem()), SlimeyGenRecipeType_Type);
 	}
 }

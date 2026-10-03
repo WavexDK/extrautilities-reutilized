@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    "aba",
+    "cdc"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:purpur_block"
+    },
+    "b": {
+      "item": "minecraft:end_rod"
+    },
+    "c": {
+      "tag": "c:dusts/redstone"
+    },
+    "d": {
+      "item": "euru:furnace_generator"
+    }
+  },
+  "result": {
+    "id": "euru:halitosis_generator",
+    "count": 1
+  }
+}

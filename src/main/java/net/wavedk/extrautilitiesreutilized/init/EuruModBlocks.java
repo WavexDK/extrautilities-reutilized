@@ -18,7 +18,6 @@ public class EuruModBlocks {
 	public static final DeferredBlock<Block> RESONATOR;
 	public static final DeferredBlock<Block> MACHINE_BLOCK;
 	public static final DeferredBlock<Block> SURVIVAL_GENERATOR;
-	public static final DeferredBlock<Block> CHUNK_LOADER_TESTER;
 	public static final DeferredBlock<Block> GILDED_OBSIDIAN;
 	public static final DeferredBlock<Block> ANGEL_BLOCK;
 	public static final DeferredBlock<Block> COMPRESSED_COBBLESTONE;
@@ -63,13 +62,19 @@ public class EuruModBlocks {
 	public static final DeferredBlock<Block> DRAGON_EGG_MILL;
 	public static final DeferredBlock<Block> REDSTONE_CLOCK;
 	public static final DeferredBlock<Block> SHADY_MERCHANT_BLOCK;
+	public static final DeferredBlock<Block> DEATH_GENERATOR;
+	public static final DeferredBlock<Block> PINK_GENERATOR;
+	public static final DeferredBlock<Block> FROSTY_GENERATOR;
+	public static final DeferredBlock<Block> HALITOSIS_GENERATOR;
+	public static final DeferredBlock<Block> SLIMEY_GENERATOR;
+	public static final DeferredBlock<Block> TRASH_CAN;
+	public static final DeferredBlock<Block> TRASH_CHEST;
 	static {
 		SOLAR_PANEL = REGISTRY.register("solar_panel", SolarPanelBlock::new);
 		LUNAR_PANEL = REGISTRY.register("lunar_panel", LunarPanelBlock::new);
 		RESONATOR = REGISTRY.register("resonator", ResonatorBlock::new);
 		MACHINE_BLOCK = REGISTRY.register("machine_block", MachineBlockBlock::new);
 		SURVIVAL_GENERATOR = REGISTRY.register("survival_generator", SurvivalGeneratorBlock::new);
-		CHUNK_LOADER_TESTER = REGISTRY.register("chunk_loader_tester", ChunkLoaderTesterBlock::new);
 		GILDED_OBSIDIAN = REGISTRY.register("gilded_obsidian", GildedObsidianBlock::new);
 		ANGEL_BLOCK = REGISTRY.register("angel_block", AngelBlockBlock::new);
 		COMPRESSED_COBBLESTONE = REGISTRY.register("compressed_cobblestone", CompressedCobblestoneBlock::new);
@@ -114,6 +119,13 @@ public class EuruModBlocks {
 		DRAGON_EGG_MILL = REGISTRY.register("dragon_egg_mill", DragonEggMillBlock::new);
 		REDSTONE_CLOCK = REGISTRY.register("redstone_clock", RedstoneClockBlock::new);
 		SHADY_MERCHANT_BLOCK = REGISTRY.register("shady_merchant_block", ShadyMerchantBlockBlock::new);
+		DEATH_GENERATOR = REGISTRY.register("death_generator", DeathGeneratorBlock::new);
+		PINK_GENERATOR = REGISTRY.register("pink_generator", PinkGeneratorBlock::new);
+		FROSTY_GENERATOR = REGISTRY.register("frosty_generator", FrostyGeneratorBlock::new);
+		HALITOSIS_GENERATOR = REGISTRY.register("halitosis_generator", HalitosisGeneratorBlock::new);
+		SLIMEY_GENERATOR = REGISTRY.register("slimey_generator", SlimeyGeneratorBlock::new);
+		TRASH_CAN = REGISTRY.register("trash_can", TrashCanBlock::new);
+		TRASH_CHEST = REGISTRY.register("trash_chest", TrashChestBlock::new);
 	}
 	// Start of user code block custom blocks
 	// End of user code block custom blocks

@@ -1,0 +1,18 @@
+{
+  "type": "euru:death_gen_recipe_type",
+  "ingredients": [
+    {
+      "item": "minecraft:bone_block"
+    }
+  ],
+  "strings": [
+    "euru:death_generator",
+    "minecraft:bone_block"
+  ],
+  "outputs": [
+    {
+      "id": "minecraft:polished_tuff",
+      "count": 0
+    }
+  ]
+}

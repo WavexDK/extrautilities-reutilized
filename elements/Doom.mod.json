@@ -1,0 +1,21 @@
+{
+  "_fv": 89,
+  "_type": "potioneffect",
+  "definition": {
+    "effectName": "Doom",
+    "icon": "doomeffect",
+    "color": {
+      "value": -10092544,
+      "falpha": 0.0
+    },
+    "onAddedSound": "",
+    "isInstant": false,
+    "mobEffectCategory": "HARMFUL",
+    "renderStatusInInventory": true,
+    "renderStatusInHUD": true,
+    "isCuredbyHoney": false,
+    "modifiers": [],
+    "onStarted": "DoomEffectStartedapplied",
+    "onActiveTick": "DoomOnEffectActiveTick"
+  }
+}

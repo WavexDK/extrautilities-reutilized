@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    "aba",
+    "cdc"
+  ],
+  "key": {
+    "a": {
+      "tag": "c:slime_balls"
+    },
+    "b": {
+      "tag": "c:storage_blocks/slime"
+    },
+    "c": {
+      "tag": "c:dusts/redstone"
+    },
+    "d": {
+      "item": "euru:furnace_generator"
+    }
+  },
+  "result": {
+    "id": "euru:slimey_generator",
+    "count": 1
+  }
+}

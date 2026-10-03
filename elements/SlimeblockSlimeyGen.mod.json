@@ -1,0 +1,23 @@
+{
+  "_fv": 89,
+  "_type": "jeirecipe",
+  "definition": {
+    "category": "slimey_gen_recipe_type",
+    "ingredients": [
+      "TAG:c:storage_blocks/slime"
+    ],
+    "integers": [],
+    "strings": [
+      "euru:slimey_generator",
+      "c:storage_blocks/slime"
+    ],
+    "recipetype": "SlimeyGenRecipeType",
+    "results": [
+      "Blocks.POLISHED_TUFF"
+    ],
+    "resultCounts": [
+      0
+    ],
+    "count": 0
+  }
+}

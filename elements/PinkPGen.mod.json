@@ -1,0 +1,23 @@
+{
+  "_fv": 89,
+  "_type": "jeirecipe",
+  "definition": {
+    "category": "pink_gen_recipe_type",
+    "ingredients": [
+      "TAG:euru:pink_stuff"
+    ],
+    "integers": [],
+    "strings": [
+      "euru:pink_generator",
+      "euru:pink_stuff"
+    ],
+    "recipetype": "PinkGenRecipeType",
+    "results": [
+      "Blocks.POLISHED_TUFF"
+    ],
+    "resultCounts": [
+      0
+    ],
+    "count": 0
+  }
+}

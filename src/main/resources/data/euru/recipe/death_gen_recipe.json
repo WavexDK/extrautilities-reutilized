@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    "aba",
+    "cdc"
+  ],
+  "key": {
+    "a": {
+      "tag": "c:rotten"
+    },
+    "b": {
+      "item": "minecraft:spider_eye"
+    },
+    "c": {
+      "tag": "c:dusts/redstone"
+    },
+    "d": {
+      "item": "euru:furnace_generator"
+    }
+  },
+  "result": {
+    "id": "euru:death_generator",
+    "count": 1
+  }
+}

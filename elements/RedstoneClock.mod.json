@@ -5,7 +5,7 @@
     "texture": "clockbottom",
     "textureTop": "clocktop",
     "textureLeft": "clocksides",
-    "textureFront": "clock_off",
+    "textureFront": "rcon",
     "textureRight": "clocksides",
     "textureBack": "clocksides",
     "renderType": 10,
@@ -14,40 +14,7 @@
     "enablePitch": false,
     "emissiveRendering": false,
     "displayFluidOverlay": false,
-    "states": [
-      {
-        "texture": "clockbottom",
-        "textureTop": "clocktop",
-        "textureLeft": "clocksides",
-        "textureFront": "clock_on_finished",
-        "textureRight": "clocksides",
-        "textureBack": "clocksides",
-        "renderType": 10,
-        "customModelName": "Normal",
-        "particleTexture": "",
-        "hasCustomBoundingBox": false,
-        "boundingBoxes": [
-          {
-            "mx": 0.0,
-            "my": 0.0,
-            "mz": 0.0,
-            "Mx": 16.0,
-            "My": 16.0,
-            "Mz": 16.0,
-            "subtract": false
-          }
-        ],
-        "stateMap": [
-          {
-            "property": {
-              "name": "CUSTOM:on",
-              "type": "logic"
-            },
-            "value": true
-          }
-        ]
-      }
-    ],
+    "states": [],
     "animations": [],
     "itemTexture": "",
     "particleTexture": "",

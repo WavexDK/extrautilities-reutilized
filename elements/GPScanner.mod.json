@@ -11,9 +11,7 @@
     "animations": [],
     "name": "GridPower Scanner",
     "rarity": "COMMON",
-    "creativeTabs": [
-      "CUSTOM:Euru"
-    ],
+    "creativeTabs": [],
     "stackSize": 1,
     "enchantability": 0,
     "useDuration": 0,

@@ -1,0 +1,29 @@
+{
+  "_fv": 89,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "unlockingItems": [],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      "TAG:c:stones",
+      "TAG:c:stones",
+      "TAG:c:stones",
+      "TAG:c:cobblestones",
+      "TAG:c:chests/wooden",
+      "TAG:c:cobblestones",
+      "TAG:c:cobblestones",
+      "TAG:c:cobblestones",
+      "TAG:c:cobblestones"
+    ],
+    "recipeReturnStack": "CUSTOM:TrashCan",
+    "name": "trash_can_recipe",
+    "namespace": "mod"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "type": "euru:death_gen_recipe_type",
+  "ingredients": [
+    {
+      "item": "minecraft:wither_skeleton_skull"
+    }
+  ],
+  "strings": [
+    "euru:death_generator",
+    "minecraft:wither_skeleton_skull"
+  ],
+  "outputs": [
+    {
+      "id": "minecraft:polished_tuff",
+      "count": 0
+    }
+  ]
+}

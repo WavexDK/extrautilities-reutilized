@@ -1,0 +1,23 @@
+{
+  "_fv": 89,
+  "_type": "jeirecipe",
+  "definition": {
+    "category": "frosty_gen_recipe_type",
+    "ingredients": [
+      "Blocks.BLUE_ICE"
+    ],
+    "integers": [],
+    "strings": [
+      "euru:frosty_generator",
+      "minecraft:blue_ice"
+    ],
+    "recipetype": "FrostyGenRecipeType",
+    "results": [
+      "Blocks.POLISHED_TUFF"
+    ],
+    "resultCounts": [
+      0
+    ],
+    "count": 0
+  }
+}

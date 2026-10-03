@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "#c:bones",
+      "required": false
+    },
+    "minecraft:rotten_flesh",
+    "minecraft:poisonous_potato"
+  ]
+}

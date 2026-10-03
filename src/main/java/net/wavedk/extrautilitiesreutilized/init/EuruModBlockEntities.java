@@ -57,6 +57,13 @@ public class EuruModBlockEntities {
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> WIRELESS_BATTERY = register("wireless_battery", EuruModBlocks.WIRELESS_BATTERY, WirelessBatteryBlockEntity::new);
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> DRAGON_EGG_MILL = register("dragon_egg_mill", EuruModBlocks.DRAGON_EGG_MILL, DragonEggMillBlockEntity::new);
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> REDSTONE_CLOCK = register("redstone_clock", EuruModBlocks.REDSTONE_CLOCK, RedstoneClockBlockEntity::new);
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> DEATH_GENERATOR = register("death_generator", EuruModBlocks.DEATH_GENERATOR, DeathGeneratorBlockEntity::new);
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> PINK_GENERATOR = register("pink_generator", EuruModBlocks.PINK_GENERATOR, PinkGeneratorBlockEntity::new);
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> FROSTY_GENERATOR = register("frosty_generator", EuruModBlocks.FROSTY_GENERATOR, FrostyGeneratorBlockEntity::new);
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> HALITOSIS_GENERATOR = register("halitosis_generator", EuruModBlocks.HALITOSIS_GENERATOR, HalitosisGeneratorBlockEntity::new);
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> SLIMEY_GENERATOR = register("slimey_generator", EuruModBlocks.SLIMEY_GENERATOR, SlimeyGeneratorBlockEntity::new);
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> TRASH_CAN = register("trash_can", EuruModBlocks.TRASH_CAN, TrashCanBlockEntity::new);
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> TRASH_CHEST = register("trash_chest", EuruModBlocks.TRASH_CHEST, TrashChestBlockEntity::new);
 
 	// Start of user code block custom block entities
 	// End of user code block custom block entities
@@ -112,5 +119,17 @@ public class EuruModBlockEntities {
 		event.registerBlockEntity(Capabilities.EnergyStorage.BLOCK, WIRELESS_BATTERY.get(), (blockEntity, side) -> ((WirelessBatteryBlockEntity) blockEntity).getEnergyStorage());
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, DRAGON_EGG_MILL.get(), (blockEntity, side) -> new SidedInvWrapper((WorldlyContainer) blockEntity, side));
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, REDSTONE_CLOCK.get(), (blockEntity, side) -> new SidedInvWrapper((WorldlyContainer) blockEntity, side));
+		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, DEATH_GENERATOR.get(), (blockEntity, side) -> new SidedInvWrapper((WorldlyContainer) blockEntity, side));
+		event.registerBlockEntity(Capabilities.EnergyStorage.BLOCK, DEATH_GENERATOR.get(), (blockEntity, side) -> ((DeathGeneratorBlockEntity) blockEntity).getEnergyStorage());
+		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, PINK_GENERATOR.get(), (blockEntity, side) -> new SidedInvWrapper((WorldlyContainer) blockEntity, side));
+		event.registerBlockEntity(Capabilities.EnergyStorage.BLOCK, PINK_GENERATOR.get(), (blockEntity, side) -> ((PinkGeneratorBlockEntity) blockEntity).getEnergyStorage());
+		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, FROSTY_GENERATOR.get(), (blockEntity, side) -> new SidedInvWrapper((WorldlyContainer) blockEntity, side));
+		event.registerBlockEntity(Capabilities.EnergyStorage.BLOCK, FROSTY_GENERATOR.get(), (blockEntity, side) -> ((FrostyGeneratorBlockEntity) blockEntity).getEnergyStorage());
+		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, HALITOSIS_GENERATOR.get(), (blockEntity, side) -> new SidedInvWrapper((WorldlyContainer) blockEntity, side));
+		event.registerBlockEntity(Capabilities.EnergyStorage.BLOCK, HALITOSIS_GENERATOR.get(), (blockEntity, side) -> ((HalitosisGeneratorBlockEntity) blockEntity).getEnergyStorage());
+		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, SLIMEY_GENERATOR.get(), (blockEntity, side) -> new SidedInvWrapper((WorldlyContainer) blockEntity, side));
+		event.registerBlockEntity(Capabilities.EnergyStorage.BLOCK, SLIMEY_GENERATOR.get(), (blockEntity, side) -> ((SlimeyGeneratorBlockEntity) blockEntity).getEnergyStorage());
+		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, TRASH_CAN.get(), (blockEntity, side) -> new SidedInvWrapper((WorldlyContainer) blockEntity, side));
+		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, TRASH_CHEST.get(), (blockEntity, side) -> new SidedInvWrapper((WorldlyContainer) blockEntity, side));
 	}
 }

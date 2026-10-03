@@ -1,0 +1,29 @@
+{
+  "_fv": 89,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "unlockingItems": [],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      "Blocks.PURPUR_BLOCK",
+      "Blocks.PURPUR_BLOCK",
+      "Blocks.PURPUR_BLOCK",
+      "Blocks.PURPUR_BLOCK",
+      "Blocks.END_ROD",
+      "Blocks.PURPUR_BLOCK",
+      "TAG:c:dusts/redstone",
+      "CUSTOM:FurnaceGenerator",
+      "TAG:c:dusts/redstone"
+    ],
+    "recipeReturnStack": "CUSTOM:HalitosisGenerator",
+    "name": "halitosis_gen_recipe",
+    "namespace": "mod"
+  }
+}

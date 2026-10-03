@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    "aba",
+    "cdc"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:snowball"
+    },
+    "b": {
+      "item": "minecraft:ice"
+    },
+    "c": {
+      "tag": "c:dusts/redstone"
+    },
+    "d": {
+      "item": "euru:furnace_generator"
+    }
+  },
+  "result": {
+    "id": "euru:frosty_generator",
+    "count": 1
+  }
+}

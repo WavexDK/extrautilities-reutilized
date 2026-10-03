@@ -1,0 +1,29 @@
+{
+  "_fv": 89,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "unlockingItems": [],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      "TAG:c:rotten",
+      "TAG:c:rotten",
+      "TAG:c:rotten",
+      "TAG:c:rotten",
+      "Items.SPIDER_EYE",
+      "TAG:c:rotten",
+      "TAG:c:dusts/redstone",
+      "CUSTOM:FurnaceGenerator",
+      "TAG:c:dusts/redstone"
+    ],
+    "recipeReturnStack": "CUSTOM:DeathGenerator",
+    "name": "death_gen_recipe",
+    "namespace": "mod"
+  }
+}

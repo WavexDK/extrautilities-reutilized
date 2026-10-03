@@ -1,0 +1,29 @@
+{
+  "_fv": 89,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "unlockingItems": [],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      "TAG:c:slime_balls",
+      "TAG:c:slime_balls",
+      "TAG:c:slime_balls",
+      "TAG:c:slime_balls",
+      "TAG:c:storage_blocks/slime",
+      "TAG:c:slime_balls",
+      "TAG:c:dusts/redstone",
+      "CUSTOM:FurnaceGenerator",
+      "TAG:c:dusts/redstone"
+    ],
+    "recipeReturnStack": "CUSTOM:SlimeyGenerator",
+    "name": "slimey_gen_recipe",
+    "namespace": "mod"
+  }
+}

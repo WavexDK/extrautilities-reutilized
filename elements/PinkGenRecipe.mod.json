@@ -1,0 +1,29 @@
+{
+  "_fv": 89,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "unlockingItems": [],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      "Items.DYE#9",
+      "Items.DYE#9",
+      "Items.DYE#9",
+      "Items.DYE#9",
+      "Blocks.WOOL#6",
+      "Items.DYE#9",
+      "TAG:c:dusts/redstone",
+      "CUSTOM:FurnaceGenerator",
+      "TAG:c:dusts/redstone"
+    ],
+    "recipeReturnStack": "CUSTOM:PinkGenerator",
+    "name": "pink_gen_recipe",
+    "namespace": "mod"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "parent": "euru:custom/trashcantemp",
+  "textures": {
+    "all": "euru:block/trashcantemptexture",
+    "particle": "euru:block/trashcantemptexture",
+    "0": "euru:block/trashcantemptexture"
+  },
+  "render_type": "solid"
+}

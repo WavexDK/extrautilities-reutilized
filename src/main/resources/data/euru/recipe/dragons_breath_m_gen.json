@@ -1,0 +1,18 @@
+{
+  "type": "euru:halitosis_gen_recipe_type",
+  "ingredients": [
+    {
+      "item": "minecraft:dragon_breath"
+    }
+  ],
+  "strings": [
+    "euru:halitosis_generator",
+    "minecraft:dragon_breath"
+  ],
+  "outputs": [
+    {
+      "id": "minecraft:polished_tuff",
+      "count": 0
+    }
+  ]
+}

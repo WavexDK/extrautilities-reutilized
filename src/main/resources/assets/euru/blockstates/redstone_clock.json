@@ -1,32 +1,17 @@
 {
   "variants": {
-    "facing=north,on=true": {
-      "model": "euru:block/redstone_clock_0"
-    },
-    "facing=north,on=false": {
+    "facing=north": {
       "model": "euru:block/redstone_clock"
     },
-    "facing=east,on=true": {
-      "model": "euru:block/redstone_clock_0",
-      "y": 90
-    },
-    "facing=east,on=false": {
+    "facing=east": {
       "model": "euru:block/redstone_clock",
       "y": 90
     },
-    "facing=south,on=true": {
-      "model": "euru:block/redstone_clock_0",
-      "y": 180
-    },
-    "facing=south,on=false": {
+    "facing=south": {
       "model": "euru:block/redstone_clock",
       "y": 180
     },
-    "facing=west,on=true": {
-      "model": "euru:block/redstone_clock_0",
-      "y": 270
-    },
-    "facing=west,on=false": {
+    "facing=west": {
       "model": "euru:block/redstone_clock",
       "y": 270
     }

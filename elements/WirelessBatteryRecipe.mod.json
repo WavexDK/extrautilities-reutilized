@@ -13,13 +13,13 @@
     "recipeShapeless": false,
     "recipeSlots": [
       "CUSTOM:StoneBurnt",
-      "CUSTOM:StoneBurnt",
-      "CUSTOM:StoneBurnt",
       "TAG:c:storage_blocks/redstone",
+      "CUSTOM:StoneBurnt",
+      "CUSTOM:StoneBurnt",
       "CUSTOM:ResonatingRedstoneCrystal",
+      "CUSTOM:StoneBurnt",
+      "CUSTOM:StoneBurnt",
       "TAG:c:storage_blocks/redstone",
-      "CUSTOM:StoneBurnt",
-      "CUSTOM:StoneBurnt",
       "CUSTOM:StoneBurnt"
     ],
     "recipeReturnStack": "CUSTOM:WirelessBattery",

@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "euru:block/trashchesttemp_bottom",
+    "up": "euru:block/trashchesttemp_top",
+    "north": "euru:block/trashchesttemp_side",
+    "east": "euru:block/trashchesttemp_side",
+    "south": "euru:block/trashchesttemp_side",
+    "west": "euru:block/trashchesttemp_side",
+    "particle": "euru:block/trashchesttemp_bottom"
+  },
+  "render_type": "solid"
+}

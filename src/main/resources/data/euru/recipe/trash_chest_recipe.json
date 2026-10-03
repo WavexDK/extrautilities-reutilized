@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "euru:trash_can"
+    },
+    {
+      "tag": "c:dusts/redstone"
+    },
+    {
+      "tag": "c:chests/wooden"
+    }
+  ],
+  "result": {
+    "id": "euru:trash_chest",
+    "count": 1
+  }
+}

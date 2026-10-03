@@ -48,6 +48,16 @@ public class EuruModRecipeTypes {
 			SERIALIZERS.register("de_gen_recipe_type", () -> DEGenRecipeTypeRecipe.Serializer.INSTANCE);
 			RECIPE_TYPES.register("ex_gen_recipe_type", () -> EXGenRecipeTypeRecipe.Type.INSTANCE);
 			SERIALIZERS.register("ex_gen_recipe_type", () -> EXGenRecipeTypeRecipe.Serializer.INSTANCE);
+			RECIPE_TYPES.register("pink_gen_recipe_type", () -> PinkGenRecipeTypeRecipe.Type.INSTANCE);
+			SERIALIZERS.register("pink_gen_recipe_type", () -> PinkGenRecipeTypeRecipe.Serializer.INSTANCE);
+			RECIPE_TYPES.register("death_gen_recipe_type", () -> DeathGenRecipeTypeRecipe.Type.INSTANCE);
+			SERIALIZERS.register("death_gen_recipe_type", () -> DeathGenRecipeTypeRecipe.Serializer.INSTANCE);
+			RECIPE_TYPES.register("frosty_gen_recipe_type", () -> FrostyGenRecipeTypeRecipe.Type.INSTANCE);
+			SERIALIZERS.register("frosty_gen_recipe_type", () -> FrostyGenRecipeTypeRecipe.Serializer.INSTANCE);
+			RECIPE_TYPES.register("halitosis_gen_recipe_type", () -> HalitosisGenRecipeTypeRecipe.Type.INSTANCE);
+			SERIALIZERS.register("halitosis_gen_recipe_type", () -> HalitosisGenRecipeTypeRecipe.Serializer.INSTANCE);
+			RECIPE_TYPES.register("slimey_gen_recipe_type", () -> SlimeyGenRecipeTypeRecipe.Type.INSTANCE);
+			SERIALIZERS.register("slimey_gen_recipe_type", () -> SlimeyGenRecipeTypeRecipe.Serializer.INSTANCE);
 		});
 	}
 }

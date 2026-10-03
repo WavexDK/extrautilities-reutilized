@@ -1,0 +1,18 @@
+{
+  "type": "euru:slimey_gen_recipe_type",
+  "ingredients": [
+    {
+      "tag": "c:storage_blocks/slime"
+    }
+  ],
+  "strings": [
+    "euru:slimey_generator",
+    "c:storage_blocks/slime"
+  ],
+  "outputs": [
+    {
+      "id": "minecraft:polished_tuff",
+      "count": 0
+    }
+  ]
+}

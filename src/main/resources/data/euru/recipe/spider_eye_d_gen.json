@@ -1,0 +1,18 @@
+{
+  "type": "euru:death_gen_recipe_type",
+  "ingredients": [
+    {
+      "item": "minecraft:spider_eye"
+    }
+  ],
+  "strings": [
+    "euru:death_generator",
+    "minecraft:spider_eye"
+  ],
+  "outputs": [
+    {
+      "id": "minecraft:polished_tuff",
+      "count": 0
+    }
+  ]
+}

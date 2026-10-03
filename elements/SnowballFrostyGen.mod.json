@@ -1,0 +1,23 @@
+{
+  "_fv": 89,
+  "_type": "jeirecipe",
+  "definition": {
+    "category": "frosty_gen_recipe_type",
+    "ingredients": [
+      "Items.SNOWBALL"
+    ],
+    "integers": [],
+    "strings": [
+      "euru:frosty_generator",
+      "minecraft:snowball"
+    ],
+    "recipetype": "FrostyGenRecipeType",
+    "results": [
+      "Blocks.POLISHED_TUFF"
+    ],
+    "resultCounts": [
+      0
+    ],
+    "count": 0
+  }
+}
