@@ -1,0 +1,29 @@
+{
+  "_fv": 89,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "unlockingItems": [],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      "TAG:c:gems/diamond",
+      "Blocks.LIGHT_WEIGHTED_PRESSURE_PLATE",
+      "TAG:c:gems/diamond",
+      "TAG:c:gems/diamond",
+      "CUSTOM:IronDrum",
+      "TAG:c:gems/diamond",
+      "TAG:c:gems/diamond",
+      "Blocks.LIGHT_WEIGHTED_PRESSURE_PLATE",
+      "TAG:c:gems/diamond"
+    ],
+    "recipeReturnStack": "CUSTOM:ReinforcedLargeDrum",
+    "name": "reinforced_large_drum_recipe",
+    "namespace": "mod"
+  }
+}

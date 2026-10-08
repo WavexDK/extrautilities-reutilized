@@ -125,6 +125,9 @@ public class EuruModItems {
 	public static final DeferredItem<Item> SLIMEY_GENERATOR = block(EuruModBlocks.SLIMEY_GENERATOR);
 	public static final DeferredItem<Item> TRASH_CAN = block(EuruModBlocks.TRASH_CAN);
 	public static final DeferredItem<Item> TRASH_CHEST = block(EuruModBlocks.TRASH_CHEST);
+	public static final DeferredItem<Item> STONE_DRUM = block(EuruModBlocks.STONE_DRUM);
+	public static final DeferredItem<Item> IRON_DRUM = block(EuruModBlocks.IRON_DRUM);
+	public static final DeferredItem<Item> REINFORCED_LARGE_DRUM = block(EuruModBlocks.REINFORCED_LARGE_DRUM);
 
 	// Start of user code block custom items
 	// End of user code block custom items

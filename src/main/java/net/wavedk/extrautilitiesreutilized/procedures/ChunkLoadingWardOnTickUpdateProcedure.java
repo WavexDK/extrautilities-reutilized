@@ -3,116 +3,55 @@ package net.wavedk.extrautilitiesreutilized.procedures;
 import org.apache.commons.lang3.function.FailableFunction;
 
 import net.wavedk.extrautilitiesreutilized.network.EuruModVariables;
+import net.wavedk.extrautilitiesreutilized.init.EuruModBlocks;
 
 import net.neoforged.neoforge.server.ServerLifecycleHooks;
 
-import net.minecraft.world.phys.Vec3;
-import net.minecraft.world.phys.Vec2;
-import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.network.chat.Component;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.BlockPos;
-import net.minecraft.commands.CommandSourceStack;
-import net.minecraft.commands.CommandSource;
 
 import java.util.function.Supplier;
 import java.util.UUID;
 
 public class ChunkLoadingWardOnTickUpdateProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z) {
-		String placedBy = "";
 		Entity player = null;
-		boolean canPass = false;
-		placedBy = getBlockNBTString(world, BlockPos.containing(x, y, z), "placedBy");
+		double n = 0;
+		com.google.gson.JsonObject uobj = new com.google.gson.JsonObject();
+		com.google.gson.JsonObject general = new com.google.gson.JsonObject();
 		if (ServerLifecycleHooks.getCurrentServer() != null) {
 			for (ServerLevel worlditerator : ServerLifecycleHooks.getCurrentServer().getAllLevels()) {
 				world = worlditerator;
-				player = world instanceof ServerLevel _serverGetEntityUUID ? _serverGetEntityUUID.getEntity(tryOrDefault(placedBy, UUID::fromString, () -> new UUID(0, 0))) : null;
-				if (player instanceof Player || player instanceof ServerPlayer) {
+				player = world instanceof ServerLevel _serverGetEntityUUID ? _serverGetEntityUUID.getEntity(tryOrDefault((getBlockNBTString(world, BlockPos.containing(x, y, z), "placedBy")), UUID::fromString, () -> new UUID(0, 0))) : null;
+				if (player instanceof ServerPlayer || player instanceof Player) {
 					break;
 				}
 			}
 		}
-		if (player instanceof Player || player instanceof ServerPlayer) {
-			canPass = false;
-			if (!player.getData(EuruModVariables.PLAYER_VARIABLES).playerGPChecking) {
-				if (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "tickCounter") > 29) {
-					canPass = true;
-					if (!world.isClientSide()) {
-						BlockPos _bp = BlockPos.containing(x, y, z);
-						BlockEntity _blockEntity = world.getBlockEntity(_bp);
-						BlockState _bs = world.getBlockState(_bp);
-						if (_blockEntity != null) {
-							_blockEntity.getPersistentData().putDouble("tickCounter", 0);
-						}
-						if (world instanceof Level _level)
-							_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+		if (player instanceof ServerPlayer || player instanceof Player) {
+			if (!EuruModVariables.WorldVariables.get(world).chunkloadingward.contains(world.getChunk(BlockPos.containing(x, y, z)))) {
+				if (player.getData(EuruModVariables.PLAYER_VARIABLES).playerGP_Total >= player.getData(EuruModVariables.PLAYER_VARIABLES).playerGP_Used && player.getData(EuruModVariables.PLAYER_VARIABLES).playerGPChecking == false) {
+					if (world instanceof ServerLevel _serverLevel) {
+						_serverLevel.setChunkForced(world.getChunk(BlockPos.containing(x, y, z)).getPos().x, world.getChunk(BlockPos.containing(x, y, z)).getPos().z, true);
 					}
-				} else {
-					if (!world.isClientSide()) {
-						BlockPos _bp = BlockPos.containing(x, y, z);
-						BlockEntity _blockEntity = world.getBlockEntity(_bp);
-						BlockState _bs = world.getBlockState(_bp);
-						if (_blockEntity != null) {
-							_blockEntity.getPersistentData().putDouble("tickCounter", (getBlockNBTNumber(world, BlockPos.containing(x, y, z), "tickCounter") + 1));
-						}
-						if (world instanceof Level _level)
-							_level.sendBlockUpdated(_bp, _bs, _bs, 3);
-					}
+					EuruModVariables.WorldVariables.get(world).chunkloadingward.add(world.getChunk(BlockPos.containing(x, y, z)));
+					EuruModVariables.WorldVariables.get(world).markSyncDirty();
 				}
+			} else if (player.getData(EuruModVariables.PLAYER_VARIABLES).playerGP_Total < player.getData(EuruModVariables.PLAYER_VARIABLES).playerGP_Used && player.getData(EuruModVariables.PLAYER_VARIABLES).playerGPChecking == false) {
+				EuruModVariables.WorldVariables.get(world).chunkloadingward.remove((int) EuruModVariables.WorldVariables.get(world).chunkloadingward.indexOf(world.getChunk(BlockPos.containing(x, y, z))));
 			}
-			if (canPass) {
-				if (!getBlockNBTLogic(world, BlockPos.containing(x, y, z), "chunkLoaded")) {
-					if (!player.getData(EuruModVariables.PLAYER_VARIABLES).playerGPChecking && player.getData(EuruModVariables.PLAYER_VARIABLES).playerGP_Total >= player.getData(EuruModVariables.PLAYER_VARIABLES).playerGP_Used) {
-						if (world instanceof ServerLevel _level)
-							_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
-									("forceload add " + (("" + x).substring(0, ("" + x).indexOf(".", 0)) + " ") + ("" + z).substring(0, ("" + z).indexOf(".", 0))));
-						if (!world.isClientSide()) {
-							BlockPos _bp = BlockPos.containing(x, y, z);
-							BlockEntity _blockEntity = world.getBlockEntity(_bp);
-							BlockState _bs = world.getBlockState(_bp);
-							if (_blockEntity != null) {
-								_blockEntity.getPersistentData().putBoolean("chunkLoaded", true);
-							}
-							if (world instanceof Level _level)
-								_level.sendBlockUpdated(_bp, _bs, _bs, 3);
-						}
-					}
-				} else {
-					if (!player.getData(EuruModVariables.PLAYER_VARIABLES).playerGPChecking) {
-						if (player.getData(EuruModVariables.PLAYER_VARIABLES).playerGP_Total < player.getData(EuruModVariables.PLAYER_VARIABLES).playerGP_Used) {
-							if (world instanceof ServerLevel _level)
-								_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
-										("forceload remove " + (("" + x).substring(0, ("" + x).indexOf(".", 0)) + " ") + ("" + z).substring(0, ("" + z).indexOf(".", 0))));
-							if (!world.isClientSide()) {
-								BlockPos _bp = BlockPos.containing(x, y, z);
-								BlockEntity _blockEntity = world.getBlockEntity(_bp);
-								BlockState _bs = world.getBlockState(_bp);
-								if (_blockEntity != null) {
-									_blockEntity.getPersistentData().putBoolean("chunkLoaded", false);
-								}
-								if (world instanceof Level _level)
-									_level.sendBlockUpdated(_bp, _bs, _bs, 3);
-							}
-						} else if ((executeCommandGetResult(world, new Vec3(x, y, z), ("forceload query " + (("" + x).substring(0, ("" + x).indexOf(".", 0)) + " ") + ("" + z).substring(0, ("" + z).indexOf(".", 0)))))
-								.contains("is not marked for force loading")) {
-							if (world instanceof ServerLevel _level)
-								_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
-										("forceload add " + (("" + x).substring(0, ("" + x).indexOf(".", 0)) + " ") + ("" + z).substring(0, ("" + z).indexOf(".", 0))));
-						}
-					}
-				}
-			}
-			if (player.getData(EuruModVariables.PLAYER_VARIABLES).playerGPChecking) {
+			if (player.getData(EuruModVariables.PLAYER_VARIABLES).playerGPChecking == true) {
+				general = EuruModVariables.unified_config.get("general").getAsJsonObject();
+				uobj = general.get((BuiltInRegistries.ITEM.getKey(EuruModBlocks.CHUNK_LOADING_WARD.get().asItem()).toString())).getAsJsonObject();
 				{
 					EuruModVariables.PlayerVariables _vars = player.getData(EuruModVariables.PLAYER_VARIABLES);
-					_vars.playerGP_Used_Update = player.getData(EuruModVariables.PLAYER_VARIABLES).playerGP_Used_Update + getBlockNBTNumber(world, BlockPos.containing(x, y, z), "gp_needed");
+					_vars.playerGP_Used_Update = player.getData(EuruModVariables.PLAYER_VARIABLES).playerGP_Used_Update + uobj.get("gp_needed").getAsDouble();
 					_vars.markSyncDirty();
 				}
 			}
@@ -132,48 +71,5 @@ public class ChunkLoadingWardOnTickUpdateProcedure {
 		} catch (Exception e) {
 			return fallback.get();
 		}
-	}
-
-	private static double getBlockNBTNumber(LevelAccessor world, BlockPos pos, String tag) {
-		BlockEntity blockEntity = world.getBlockEntity(pos);
-		if (blockEntity != null)
-			return blockEntity.getPersistentData().getDouble(tag);
-		return -1;
-	}
-
-	private static boolean getBlockNBTLogic(LevelAccessor world, BlockPos pos, String tag) {
-		BlockEntity blockEntity = world.getBlockEntity(pos);
-		if (blockEntity != null)
-			return blockEntity.getPersistentData().getBoolean(tag);
-		return false;
-	}
-
-	private static String executeCommandGetResult(LevelAccessor world, Vec3 pos, String command) {
-		StringBuilder result = new StringBuilder();
-		if (world instanceof ServerLevel level) {
-			CommandSource dataConsumer = new CommandSource() {
-				@Override
-				public void sendSystemMessage(Component message) {
-					result.append(message.getString());
-				}
-
-				@Override
-				public boolean acceptsSuccess() {
-					return true;
-				}
-
-				@Override
-				public boolean acceptsFailure() {
-					return true;
-				}
-
-				@Override
-				public boolean shouldInformAdmins() {
-					return false;
-				}
-			};
-			level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(dataConsumer, pos, Vec2.ZERO, level, 4, "", Component.literal(""), level.getServer(), null), command);
-		}
-		return result.toString();
 	}
 }

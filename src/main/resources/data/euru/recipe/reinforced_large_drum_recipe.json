@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aba",
+    "aca",
+    "aba"
+  ],
+  "key": {
+    "a": {
+      "tag": "c:gems/diamond"
+    },
+    "b": {
+      "item": "minecraft:light_weighted_pressure_plate"
+    },
+    "c": {
+      "item": "euru:iron_drum"
+    }
+  },
+  "result": {
+    "id": "euru:reinforced_large_drum",
+    "count": 1
+  }
+}

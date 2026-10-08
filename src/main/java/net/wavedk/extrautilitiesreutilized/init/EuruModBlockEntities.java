@@ -64,6 +64,9 @@ public class EuruModBlockEntities {
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> SLIMEY_GENERATOR = register("slimey_generator", EuruModBlocks.SLIMEY_GENERATOR, SlimeyGeneratorBlockEntity::new);
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> TRASH_CAN = register("trash_can", EuruModBlocks.TRASH_CAN, TrashCanBlockEntity::new);
 	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> TRASH_CHEST = register("trash_chest", EuruModBlocks.TRASH_CHEST, TrashChestBlockEntity::new);
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> STONE_DRUM = register("stone_drum", EuruModBlocks.STONE_DRUM, StoneDrumBlockEntity::new);
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> IRON_DRUM = register("iron_drum", EuruModBlocks.IRON_DRUM, IronDrumBlockEntity::new);
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> REINFORCED_LARGE_DRUM = register("reinforced_large_drum", EuruModBlocks.REINFORCED_LARGE_DRUM, ReinforcedLargeDrumBlockEntity::new);
 
 	// Start of user code block custom block entities
 	// End of user code block custom block entities
@@ -131,5 +134,11 @@ public class EuruModBlockEntities {
 		event.registerBlockEntity(Capabilities.EnergyStorage.BLOCK, SLIMEY_GENERATOR.get(), (blockEntity, side) -> ((SlimeyGeneratorBlockEntity) blockEntity).getEnergyStorage());
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, TRASH_CAN.get(), (blockEntity, side) -> new SidedInvWrapper((WorldlyContainer) blockEntity, side));
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, TRASH_CHEST.get(), (blockEntity, side) -> new SidedInvWrapper((WorldlyContainer) blockEntity, side));
+		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, STONE_DRUM.get(), (blockEntity, side) -> new SidedInvWrapper((WorldlyContainer) blockEntity, side));
+		event.registerBlockEntity(Capabilities.FluidHandler.BLOCK, STONE_DRUM.get(), (blockEntity, side) -> ((StoneDrumBlockEntity) blockEntity).getFluidTank());
+		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, IRON_DRUM.get(), (blockEntity, side) -> new SidedInvWrapper((WorldlyContainer) blockEntity, side));
+		event.registerBlockEntity(Capabilities.FluidHandler.BLOCK, IRON_DRUM.get(), (blockEntity, side) -> ((IronDrumBlockEntity) blockEntity).getFluidTank());
+		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, REINFORCED_LARGE_DRUM.get(), (blockEntity, side) -> new SidedInvWrapper((WorldlyContainer) blockEntity, side));
+		event.registerBlockEntity(Capabilities.FluidHandler.BLOCK, REINFORCED_LARGE_DRUM.get(), (blockEntity, side) -> ((ReinforcedLargeDrumBlockEntity) blockEntity).getFluidTank());
 	}
 }

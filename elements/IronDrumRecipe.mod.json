@@ -1,0 +1,29 @@
+{
+  "_fv": 89,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "unlockingItems": [],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      "TAG:c:ingots/iron",
+      "Blocks.HEAVY_WEIGHTED_PRESSURE_PLATE",
+      "TAG:c:ingots/iron",
+      "TAG:c:ingots/iron",
+      "Items.CAULDRON",
+      "TAG:c:ingots/iron",
+      "TAG:c:ingots/iron",
+      "Blocks.HEAVY_WEIGHTED_PRESSURE_PLATE",
+      "TAG:c:ingots/iron"
+    ],
+    "recipeReturnStack": "CUSTOM:IronDrum",
+    "name": "iron_drum_recipe",
+    "namespace": "mod"
+  }
+}

@@ -1,13 +1,10 @@
 package net.wavedk.extrautilitiesreutilized.procedures;
 
-import net.wavedk.extrautilitiesreutilized.network.EuruModVariables;
-
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.BlockPos;
 
 import java.io.File;
@@ -26,19 +23,6 @@ public class ChunkLoaderBlockIsPlacedByProcedure {
 			BlockState _bs = world.getBlockState(_bp);
 			if (_blockEntity != null) {
 				_blockEntity.getPersistentData().putString("placedBy", (entity.getStringUUID()));
-				_blockEntity.getPersistentData().putBoolean("chunkLoaded", false);
-			}
-			if (world instanceof Level _level)
-				_level.sendBlockUpdated(_bp, _bs, _bs, 3);
-		}
-		tobj = EuruModVariables.unified_config.get("general").getAsJsonObject();
-		blockobj = tobj.get((BuiltInRegistries.BLOCK.getKey((world.getBlockState(BlockPos.containing(x, y, z))).getBlock()).toString())).getAsJsonObject();
-		if (!world.isClientSide()) {
-			BlockPos _bp = BlockPos.containing(x, y, z);
-			BlockEntity _blockEntity = world.getBlockEntity(_bp);
-			BlockState _bs = world.getBlockState(_bp);
-			if (_blockEntity != null) {
-				_blockEntity.getPersistentData().putDouble("gp_needed", blockobj.get("gp_needed").getAsDouble());
 			}
 			if (world instanceof Level _level)
 				_level.sendBlockUpdated(_bp, _bs, _bs, 3);

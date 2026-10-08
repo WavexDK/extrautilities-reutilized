@@ -1,0 +1,11 @@
+{
+  "_fv": 89,
+  "_type": "potion",
+  "definition": {
+    "potionName": "Potion of Oily ",
+    "splashName": "Splash Potion of Oily ",
+    "lingeringName": "Lingering Potion of Oily ",
+    "arrowName": "Arrow of Oily",
+    "effects": []
+  }
+}

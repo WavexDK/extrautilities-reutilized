@@ -91,7 +91,7 @@ public class EURUUnifiedConfigManagerProcedure {
 		String cItem = "";
 		String coutput = "";
 		configFile = new File((FMLPaths.GAMEDIR.get().toString() + "/config/euru/"), File.separator + "euru_unified_config.json");
-		EuruModVariables.cVer = 7;
+		EuruModVariables.cVer = 3;
 		cVer = EuruModVariables.cVer;
 		if (!configFile.exists()) {
 			try {
@@ -171,10 +171,10 @@ public class EURUUnifiedConfigManagerProcedure {
 			recipesOBJ.add((BuiltInRegistries.ITEM.getKey(EuruModBlocks.CRUSHER.get().asItem()).toString()), crushobj);
 			configJsonObject.add("recipes", recipesOBJ);
 			groupmills.addProperty("efficiency", 0.85);
-			groupmills.addProperty("efficiency_cutoff", 4);
+			groupmills.addProperty("efficiency_cutoff", 16);
 			gpman.add("mills", groupmills);
 			gsolar.addProperty("efficiency", 0.97);
-			gsolar.addProperty("efficiency_cutoff", 4);
+			gsolar.addProperty("efficiency_cutoff", 60);
 			gpman.add("solarpanels", gsolar);
 			spman.addProperty("efficiency", 0.75);
 			spman.addProperty("efficiency_cutoff", 1);

@@ -1,0 +1,20 @@
+{
+  "_fv": 89,
+  "_type": "potion",
+  "definition": {
+    "potionName": "Potion of Gravity",
+    "splashName": "Splash Potion of Gravity",
+    "lingeringName": "Lingering Potion of Gravity",
+    "arrowName": "Arrow of Gravity",
+    "effects": [
+      {
+        "effect": "CUSTOM:GravityEffect",
+        "duration": 9600,
+        "infinite": false,
+        "amplifier": 0,
+        "ambient": false,
+        "showParticles": true
+      }
+    ]
+  }
+}

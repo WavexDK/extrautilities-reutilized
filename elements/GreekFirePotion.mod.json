@@ -1,0 +1,20 @@
+{
+  "_fv": 89,
+  "_type": "potion",
+  "definition": {
+    "potionName": "Potion of Greek Fire",
+    "splashName": "Splash Potion of Greek Fire",
+    "lingeringName": "Lingering Potion of Greek Fire",
+    "arrowName": "Arrow of Greek Fire",
+    "effects": [
+      {
+        "effect": "CUSTOM:GreekFireEffect",
+        "duration": 2400,
+        "infinite": false,
+        "amplifier": 0,
+        "ambient": false,
+        "showParticles": true
+      }
+    ]
+  }
+}

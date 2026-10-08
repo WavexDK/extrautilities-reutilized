@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "euru:block/iron_drum"
+    },
+    "facing=east": {
+      "model": "euru:block/iron_drum",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "euru:block/iron_drum",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "euru:block/iron_drum",
+      "y": 270
+    }
+  }
+}

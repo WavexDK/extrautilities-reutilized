@@ -14,7 +14,7 @@ public class DoomMobEffect extends MobEffect {
 
 	@Override
 	public void onEffectStarted(LivingEntity entity, int amplifier) {
-		DoomEffectStartedappliedProcedure.execute(entity.level(), entity);
+		DoomEffectStartedappliedProcedure.execute(entity);
 	}
 
 	@Override

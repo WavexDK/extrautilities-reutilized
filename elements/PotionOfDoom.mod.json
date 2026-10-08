@@ -1,0 +1,20 @@
+{
+  "_fv": 89,
+  "_type": "potion",
+  "definition": {
+    "potionName": "Potion of Doom",
+    "splashName": "Splash Potion of Doom",
+    "lingeringName": "Lingering Potion of Doom",
+    "arrowName": "Arrow of Doom",
+    "effects": [
+      {
+        "effect": "CUSTOM:Doom",
+        "duration": 1200,
+        "infinite": false,
+        "amplifier": 0,
+        "ambient": false,
+        "showParticles": true
+      }
+    ]
+  }
+}

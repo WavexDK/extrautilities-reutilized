@@ -15,7 +15,7 @@
     "displayFluidOverlay": false,
     "animateBlockItem": false,
     "itemTexture": "",
-    "particleTexture": "clparticle",
+    "particleTexture": "minecraft:oak_log",
     "tintType": "No tint",
     "isItemTinted": false,
     "hasTransparency": true,
@@ -110,9 +110,6 @@
     "isFluidTank": false,
     "fluidCapacity": 8000,
     "fluidRestrictions": [],
-    "onTickUpdate": "ChunkLoadingWardOnTickUpdate",
-    "onDestroyedByPlayer": "ChunkLoaderBlockDestroyedByPlayer",
-    "onDestroyedByExplosion": "ChunkLoaderBlockDestroyedByPlayer",
     "onBlockPlayedBy": "ChunkLoaderBlockIsPlacedBy",
     "restrictionBiomes": [],
     "blocksToReplace": [

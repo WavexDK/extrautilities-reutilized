@@ -1,0 +1,20 @@
+{
+  "_fv": 89,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Brewing",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "unlockingItems": [],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "brewingInputStack": "POTION:LONG_LEAPING",
+    "brewingIngredientStack": "Items.SUGAR",
+    "brewingReturnStack": "POTION:CUSTOM:LevitationPotion",
+    "name": "levitation_potion_recipe",
+    "namespace": "mod"
+  }
+}

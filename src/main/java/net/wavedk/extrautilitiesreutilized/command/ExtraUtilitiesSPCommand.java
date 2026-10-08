@@ -1,7 +1,7 @@
 package net.wavedk.extrautilitiesreutilized.command;
 
+import net.wavedk.extrautilitiesreutilized.procedures.SPReloadConfigProcedure;
 import net.wavedk.extrautilitiesreutilized.procedures.ReturnSuccessReloadProcedure;
-import net.wavedk.extrautilitiesreutilized.procedures.EURUUnifiedConfigManagerProcedure;
 
 import net.neoforged.neoforge.event.RegisterCommandsEvent;
 import net.neoforged.neoforge.common.util.FakePlayerFactory;
@@ -33,7 +33,7 @@ public class ExtraUtilitiesSPCommand {
 						if (entity != null)
 							direction = entity.getDirection();
 
-						EURUUnifiedConfigManagerProcedure.execute();
+						SPReloadConfigProcedure.execute(world);
 						return 0;
 					}).executes(arguments -> {
 						Level world = arguments.getSource().getUnsidedLevel();

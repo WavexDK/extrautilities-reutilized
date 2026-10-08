@@ -56,6 +56,7 @@ public class EuruMod {
 		EuruModItems.REGISTRY.register(modEventBus);
 		EuruModTabs.REGISTRY.register(modEventBus);
 		EuruModVariables.ATTACHMENT_TYPES.register(modEventBus);
+		EuruModPotions.REGISTRY.register(modEventBus);
 		EuruModMobEffects.REGISTRY.register(modEventBus);
 		EuruModMenus.REGISTRY.register(modEventBus);
 		EuruModVillagerProfessions.PROFESSIONS.register(modEventBus);

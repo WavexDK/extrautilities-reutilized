@@ -50,7 +50,7 @@ public class PanelsTickUpdateHandlerProcedure {
 		if (player instanceof Player || player instanceof ServerPlayer) {
 			if (player.getData(EuruModVariables.PLAYER_VARIABLES).playerGPChecking) {
 				canGenerate = true;
-				if (world.dayTime() >= getBlockNBTNumber(world, BlockPos.containing(x, y, z), "needs_time_min") && world.dayTime() <= getBlockNBTNumber(world, BlockPos.containing(x, y, z), "needs_time_max")
+				if (world.dayTime() % 24000 >= getBlockNBTNumber(world, BlockPos.containing(x, y, z), "needs_time_min") && world.dayTime() % 24000 <= getBlockNBTNumber(world, BlockPos.containing(x, y, z), "needs_time_max")
 						&& (getBlockNBTLogic(world, BlockPos.containing(x, y, z), "needs_sky") == true && world.canSeeSkyFromBelowWater(BlockPos.containing(x, y + 1, z))
 								|| getBlockNBTLogic(world, BlockPos.containing(x, y, z), "needs_sky") == false)) {
 					if (getBlockNBTLogic(world, BlockPos.containing(x, y, z), "needs_block")) {

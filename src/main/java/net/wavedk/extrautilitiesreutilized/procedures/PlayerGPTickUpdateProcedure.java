@@ -81,24 +81,18 @@ public class PlayerGPTickUpdateProcedure {
 		}
 		cEntity = entity;
 		isFlying = cEntity instanceof net.minecraft.world.entity.player.Player player && player.getAbilities().mayfly;;
-		if (!entity.getData(EuruModVariables.PLAYER_VARIABLES).playerGPChecking) {
-			if (isEquippedCurios) {
-				if (isFlying) {
-					if (entity.getData(EuruModVariables.PLAYER_VARIABLES).ringFlying) {
-						if (entity.getData(EuruModVariables.PLAYER_VARIABLES).playerGP_Used > entity.getData(EuruModVariables.PLAYER_VARIABLES).playerGP_Total) {
-							if (cEntity instanceof net.minecraft.world.entity.player.Player player) {
-								player.getAbilities().mayfly = false;
-								player.getAbilities().flying = false;
-								player.onUpdateAbilities();
-							}
-							{
-								EuruModVariables.PlayerVariables _vars = entity.getData(EuruModVariables.PLAYER_VARIABLES);
-								_vars.ringFlying = false;
-								_vars.markSyncDirty();
-							}
-						}
+		if (isEquippedCurios) {
+			if (getEntityGameType(entity) == GameType.SURVIVAL || getEntityGameType(entity) == GameType.ADVENTURE) {
+				if (entity.getData(EuruModVariables.PLAYER_VARIABLES).playerGPChecking) {
+					catobj = EuruModVariables.unified_config.get("general").getAsJsonObject();
+					cObj = catobj.get((BuiltInRegistries.ITEM.getKey(EuruModItems.ANGEL_RING.get()).toString())).getAsJsonObject();
+					{
+						EuruModVariables.PlayerVariables _vars = entity.getData(EuruModVariables.PLAYER_VARIABLES);
+						_vars.playerGP_Used_Update = entity.getData(EuruModVariables.PLAYER_VARIABLES).playerGP_Used_Update + cObj.get("gp_needed").getAsDouble();
+						_vars.markSyncDirty();
 					}
-				} else {
+				}
+				if (!entity.getData(EuruModVariables.PLAYER_VARIABLES).playerGPChecking) {
 					if (entity.getData(EuruModVariables.PLAYER_VARIABLES).playerGP_Used <= entity.getData(EuruModVariables.PLAYER_VARIABLES).playerGP_Total) {
 						if (entity instanceof Player _player) {
 							_player.getAbilities().mayfly = true;
@@ -109,28 +103,28 @@ public class PlayerGPTickUpdateProcedure {
 							_vars.ringFlying = true;
 							_vars.markSyncDirty();
 						}
+					} else if (isFlying && entity.getData(EuruModVariables.PLAYER_VARIABLES).ringFlying) {
+						{
+							EuruModVariables.PlayerVariables _vars = entity.getData(EuruModVariables.PLAYER_VARIABLES);
+							_vars.ringFlying = false;
+							_vars.markSyncDirty();
+						}
+						if (entity instanceof Player _player) {
+							_player.getAbilities().mayfly = (true == false);
+							_player.onUpdateAbilities();
+						}
 					}
 				}
-			} else if (isFlying && entity.getData(EuruModVariables.PLAYER_VARIABLES).ringFlying) {
-				if (cEntity instanceof net.minecraft.world.entity.player.Player player) {
-					player.getAbilities().mayfly = false;
-					player.getAbilities().flying = false;
-					player.onUpdateAbilities();
-				}
-				{
-					EuruModVariables.PlayerVariables _vars = entity.getData(EuruModVariables.PLAYER_VARIABLES);
-					_vars.ringFlying = false;
-					_vars.markSyncDirty();
-				}
 			}
-		}
-		if ((isEquippedCurios || isEquippedCurios) && entity.getData(EuruModVariables.PLAYER_VARIABLES).playerGPChecking && getEntityGameType(entity) == GameType.SURVIVAL) {
-			catobj = EuruModVariables.unified_config.get("general").getAsJsonObject();
-			cObj = catobj.get((BuiltInRegistries.ITEM.getKey(EuruModItems.ANGEL_RING.get()).toString())).getAsJsonObject();
+		} else if (isFlying && entity.getData(EuruModVariables.PLAYER_VARIABLES).ringFlying) {
 			{
 				EuruModVariables.PlayerVariables _vars = entity.getData(EuruModVariables.PLAYER_VARIABLES);
-				_vars.playerGP_Used_Update = entity.getData(EuruModVariables.PLAYER_VARIABLES).playerGP_Used_Update + cObj.get("gp_needed").getAsDouble();
+				_vars.ringFlying = false;
 				_vars.markSyncDirty();
+			}
+			if (entity instanceof Player _player) {
+				_player.getAbilities().mayfly = (true == false);
+				_player.onUpdateAbilities();
 			}
 		}
 		{

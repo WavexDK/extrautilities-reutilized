@@ -1,0 +1,9 @@
+{
+  "parent": "euru:custom/drum",
+  "textures": {
+    "all": "euru:block/stonedrum2",
+    "particle": "euru:block/stonedrum2",
+    "0": "euru:block/stonedrum1"
+  },
+  "render_type": "solid"
+}

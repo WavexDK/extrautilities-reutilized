@@ -1,0 +1,9 @@
+{
+  "parent": "euru:custom/drum",
+  "textures": {
+    "all": "euru:block/largedrum",
+    "particle": "euru:block/largedrum",
+    "0": "euru:block/largedrum"
+  },
+  "render_type": "solid"
+}

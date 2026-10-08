@@ -53,6 +53,9 @@ public class EuruModTabs {
 				tabData.accept(EuruModBlocks.TRASH_CHEST.get().asItem());
 				tabData.accept(EuruModBlocks.TRASH_CAN.get().asItem());
 				tabData.accept(EuruModBlocks.CHUNK_LOADING_WARD.get().asItem());
+				tabData.accept(EuruModBlocks.REINFORCED_LARGE_DRUM.get().asItem());
+				tabData.accept(EuruModBlocks.IRON_DRUM.get().asItem());
+				tabData.accept(EuruModBlocks.STONE_DRUM.get().asItem());
 				tabData.accept(EuruModBlocks.NETHERITE_SPIKE.get().asItem());
 				tabData.accept(EuruModBlocks.DIAMOND_SPIKE.get().asItem());
 				tabData.accept(EuruModBlocks.IRON_SPIKE.get().asItem());

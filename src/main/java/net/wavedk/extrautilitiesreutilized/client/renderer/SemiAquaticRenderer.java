@@ -5,6 +5,7 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.api.distmarker.Dist;
 
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.LivingEntity;
 
 import com.mojang.math.Axis;
@@ -15,7 +16,7 @@ public class SemiAquaticRenderer {
 	@SubscribeEvent
 	public static void onRenderLiving(RenderLivingEvent.Pre<?, ?> event) {
 		LivingEntity entity = event.getEntity();
-		if (entity != null && entity.isInWater() && entity.getXRot() < -5.0F) {
+		if (entity != null && !(entity instanceof Player) && entity.isInWater() && entity.getXRot() < -5.0F) {
 			PoseStack poseStack = event.getPoseStack();
 			poseStack.pushPose();
 			float centerY = entity.getBbHeight() / 2.0F;
@@ -29,7 +30,7 @@ public class SemiAquaticRenderer {
 	@SubscribeEvent
 	public static void onRenderLivingPost(RenderLivingEvent.Post<?, ?> event) {
 		LivingEntity entity = event.getEntity();
-		if (entity != null && entity.isInWater() && entity.getXRot() < -5.0F) {
+		if (entity != null && !(entity instanceof Player) && entity.isInWater() && entity.getXRot() < -5.0F) {
 			event.getPoseStack().popPose();
 		}
 	}

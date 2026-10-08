@@ -3,7 +3,7 @@
   "_type": "potioneffect",
   "definition": {
     "effectName": "Doom",
-    "icon": "doomeffect",
+    "icon": "tempeffect",
     "color": {
       "value": -10092544,
       "falpha": 0.0

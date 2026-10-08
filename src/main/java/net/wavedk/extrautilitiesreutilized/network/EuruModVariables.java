@@ -27,10 +27,12 @@ import net.minecraft.network.protocol.PacketFlow;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.nbt.Tag;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.core.HolderLookup;
 
 import java.util.function.Supplier;
+import java.util.ArrayList;
 
 @EventBusSubscriber
 public class EuruModVariables {
@@ -160,6 +162,8 @@ public class EuruModVariables {
 		boolean _syncDirty = false;
 		public boolean doeList_empty = false;
 		public double doeUpdateCounter = 0;
+		public ArrayList<Object> chunkloadingward = new ArrayList<>();
+		public ArrayList<Object> chunkloadingward_old = new ArrayList<>();
 
 		public static WorldVariables load(CompoundTag tag, HolderLookup.Provider lookupProvider) {
 			WorldVariables data = new WorldVariables();
@@ -170,12 +174,16 @@ public class EuruModVariables {
 		public void read(CompoundTag nbt, HolderLookup.Provider lookupProvider) {
 			doeList_empty = nbt.getBoolean("doeList_empty");
 			doeUpdateCounter = nbt.getDouble("doeUpdateCounter");
+			chunkloadingward = NbtArrayLists.loadGlobalWorld(nbt.getList("chunkloadingward", Tag.TAG_COMPOUND), lookupProvider);
+			chunkloadingward_old = NbtArrayLists.loadGlobalWorld(nbt.getList("chunkloadingward_old", Tag.TAG_COMPOUND), lookupProvider);
 		}
 
 		@Override
 		public CompoundTag save(CompoundTag nbt, HolderLookup.Provider lookupProvider) {
 			nbt.putBoolean("doeList_empty", doeList_empty);
 			nbt.putDouble("doeUpdateCounter", doeUpdateCounter);
+			nbt.put("chunkloadingward", NbtArrayLists.saveGlobalWorld(chunkloadingward, lookupProvider));
+			nbt.put("chunkloadingward_old", NbtArrayLists.saveGlobalWorld(chunkloadingward_old, lookupProvider));
 			return nbt;
 		}
 

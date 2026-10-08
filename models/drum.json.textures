@@ -1,0 +1,22 @@
+{
+  "mappings": {
+    "default": {
+      "name": "default",
+      "map": {
+        "0": "stonedrum1"
+      }
+    },
+    "iron": {
+      "name": "iron",
+      "map": {
+        "0": "irondrum1"
+      }
+    },
+    "large": {
+      "name": "large",
+      "map": {
+        "0": "largedrum"
+      }
+    }
+  }
+}
