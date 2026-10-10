@@ -1,0 +1,29 @@
+{
+  "_fv": 89,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "unlockingItems": [],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      "TAG:c:gems/diamond",
+      "TAG:c:gems/diamond",
+      "TAG:c:gems/diamond",
+      "Blocks.CLAY",
+      "CUSTOM:TrimBase",
+      "Blocks.CLAY",
+      "TAG:c:terracotta",
+      "TAG:c:terracotta",
+      "TAG:c:terracotta"
+    ],
+    "recipeReturnStack": "Items.HOST_ARMOR_TRIM",
+    "name": "host_recipe",
+    "namespace": "mod"
+  }
+}

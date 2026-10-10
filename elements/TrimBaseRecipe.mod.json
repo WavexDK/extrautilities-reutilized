@@ -1,0 +1,29 @@
+{
+  "_fv": 89,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "unlockingItems": [],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      "",
+      "TAG:c:stones",
+      "TAG:c:nuggets/steel",
+      "TAG:c:stones",
+      "TAG:c:gems/diamond",
+      "TAG:c:stones",
+      "TAG:c:nuggets/steel",
+      "TAG:c:stones",
+      ""
+    ],
+    "recipeReturnStack": "CUSTOM:TrimBase",
+    "name": "trim_base_recipe",
+    "namespace": "mod"
+  }
+}

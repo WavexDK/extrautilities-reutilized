@@ -1,0 +1,27 @@
+{
+  "_fv": 89,
+  "_type": "jeirecipe",
+  "definition": {
+    "category": "enchanter_recipe_type",
+    "ingredients": [
+      "CUSTOM:IngotOExperience",
+      "Items.DYE#4"
+    ],
+    "integers": [
+      1,
+      9
+    ],
+    "strings": [
+      "euru:enchanter",
+      "euru:ingot_o_experience"
+    ],
+    "recipetype": "EnchanterRecipeType",
+    "results": [
+      "CUSTOM:EnchantedIngot"
+    ],
+    "resultCounts": [
+      1
+    ],
+    "count": 0
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "euru:block/steel_block",
+    "up": "euru:block/steel_block",
+    "north": "euru:block/steel_block",
+    "east": "euru:block/steel_block",
+    "south": "euru:block/steel_block",
+    "west": "euru:block/steel_block",
+    "particle": "euru:block/steel_block"
+  },
+  "render_type": "solid"
+}

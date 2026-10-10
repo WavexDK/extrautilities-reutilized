@@ -1,10 +1,6 @@
 package net.wavedk.extrautilitiesreutilized.procedures;
 
-import org.apache.commons.lang3.function.FailableFunction;
-
 import net.wavedk.extrautilitiesreutilized.network.EuruModVariables;
-
-import net.neoforged.neoforge.server.ServerLifecycleHooks;
 
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -13,15 +9,12 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 
 import java.util.regex.Pattern;
-import java.util.function.Supplier;
-import java.util.UUID;
 
 import java.io.File;
 
@@ -38,15 +31,7 @@ public class PanelsTickUpdateHandlerProcedure {
 		String levelOfWater = "";
 		Direction cD = Direction.NORTH;
 		placedBy = getBlockNBTString(world, BlockPos.containing(x, y, z), "placedBy");
-		if (ServerLifecycleHooks.getCurrentServer() != null) {
-			for (ServerLevel worlditerator : ServerLifecycleHooks.getCurrentServer().getAllLevels()) {
-				world = worlditerator;
-				player = world instanceof ServerLevel _serverGetEntityUUID ? _serverGetEntityUUID.getEntity(tryOrDefault(placedBy, UUID::fromString, () -> new UUID(0, 0))) : null;
-				if (player instanceof Player || player instanceof ServerPlayer) {
-					break;
-				}
-			}
-		}
+		player = GetPlayerfromWorldsProcedure.execute(world, getBlockNBTString(world, BlockPos.containing(x, y, z), "placedBy"));
 		if (player instanceof Player || player instanceof ServerPlayer) {
 			if (player.getData(EuruModVariables.PLAYER_VARIABLES).playerGPChecking) {
 				canGenerate = true;
@@ -55,11 +40,11 @@ public class PanelsTickUpdateHandlerProcedure {
 								|| getBlockNBTLogic(world, BlockPos.containing(x, y, z), "needs_sky") == false)) {
 					if (getBlockNBTLogic(world, BlockPos.containing(x, y, z), "needs_block")) {
 						canGenerate = false;
-						String _splitContent25 = Pattern.quote(",");
-						String _toSplit25 = (getBlockNBTString(world, BlockPos.containing(x, y, z), "needs_block_sides"));
-						String[] _array25 = _toSplit25.split(_splitContent25);
-						if (_array25.length != 0) {
-							for (String stringiterator : _array25) {
+						String _splitContent21 = Pattern.quote(",");
+						String _toSplit21 = (getBlockNBTString(world, BlockPos.containing(x, y, z), "needs_block_sides"));
+						String[] _array21 = _toSplit21.split(_splitContent21);
+						if (_array21.length != 0) {
+							for (String stringiterator : _array21) {
 								cD = GetDirectionFromTextProcedure.execute(blockstate, stringiterator);
 								if ((world.getBlockState(BlockPos.containing(x + cD.getStepX(), y + cD.getStepY(), z + cD.getStepZ()))).getBlock() == BuiltInRegistries.BLOCK
 										.get(ResourceLocation.parse(((getBlockNBTString(world, BlockPos.containing(x, y, z), "needs_block_id"))).toLowerCase(java.util.Locale.ENGLISH)))) {
@@ -68,8 +53,8 @@ public class PanelsTickUpdateHandlerProcedure {
 								}
 							}
 						} else {
-							String stringiterator = _toSplit25;
-							for (int _yourmother25 = 0; _yourmother25 < 1; _yourmother25++) {
+							String stringiterator = _toSplit21;
+							for (int _yourmother21 = 0; _yourmother21 < 1; _yourmother21++) {
 								cD = GetDirectionFromTextProcedure.execute(blockstate, stringiterator);
 								if ((world.getBlockState(BlockPos.containing(x + cD.getStepX(), y + cD.getStepY(), z + cD.getStepZ()))).getBlock() == BuiltInRegistries.BLOCK
 										.get(ResourceLocation.parse(((getBlockNBTString(world, BlockPos.containing(x, y, z), "needs_block_id"))).toLowerCase(java.util.Locale.ENGLISH)))) {
@@ -162,7 +147,7 @@ public class PanelsTickUpdateHandlerProcedure {
 					_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 			}
 		}
-		GroupPanelsConfigHandlerProcedure.execute(world, x, y, z);
+		GroupPanelsConfigHandlerProcedure.execute(world, x, y, z, blockstate);
 	}
 
 	private static String getBlockNBTString(LevelAccessor world, BlockPos pos, String tag) {
@@ -170,14 +155,6 @@ public class PanelsTickUpdateHandlerProcedure {
 		if (blockEntity != null)
 			return blockEntity.getPersistentData().getString(tag);
 		return "";
-	}
-
-	private static <A, B> A tryOrDefault(B funcArg, FailableFunction<B, A, Exception> func, Supplier<A> fallback) {
-		try {
-			return func.apply(funcArg);
-		} catch (Exception e) {
-			return fallback.get();
-		}
 	}
 
 	private static double getBlockNBTNumber(LevelAccessor world, BlockPos pos, String tag) {

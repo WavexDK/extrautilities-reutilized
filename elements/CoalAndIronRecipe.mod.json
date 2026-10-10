@@ -1,0 +1,29 @@
+{
+  "_fv": 89,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "unlockingItems": [],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": true,
+    "recipeSlots": [
+      "",
+      "",
+      "TAG:c:nuggets/iron",
+      "TAG:c:ingots/iron",
+      "TAG:minecraft:coals",
+      "TAG:c:nuggets/iron",
+      "",
+      "",
+      "TAG:c:nuggets/iron"
+    ],
+    "recipeReturnStack": "CUSTOM:CoalAndIron",
+    "name": "coal_and_iron_recipe",
+    "namespace": "mod"
+  }
+}

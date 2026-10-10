@@ -4,7 +4,7 @@ license="Custom license"
 
 [[mods]]
 modId="euru"
-version="0.1.9"
+version="0.2.0-PR.2"
 displayName="Extra Utilities: Reutilized"
 displayURL="https://buymeacoffee.com/wavedk"
 logoFile="logo.png"

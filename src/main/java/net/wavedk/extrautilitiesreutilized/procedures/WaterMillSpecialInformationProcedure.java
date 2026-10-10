@@ -16,6 +16,6 @@ public class WaterMillSpecialInformationProcedure {
 		catobj = EuruModVariables.unified_config.get("gp_generation").getAsJsonObject();
 		iobj = catobj.get((BuiltInRegistries.ITEM.getKey(EuruModBlocks.WATER_MILL.get().asItem()).toString())).getAsJsonObject();
 		gpr = "" + iobj.get("gp_generated").getAsDouble();
-		return "\u00A77Generates " + gpr + "\u00A77GP per block of flowing water touching it.";
+		return "\u00A77Generates " + gpr + "\u00A77GP per block of water touching it.";
 	}
 }

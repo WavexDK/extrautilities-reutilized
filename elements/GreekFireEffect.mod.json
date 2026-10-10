@@ -3,7 +3,7 @@
   "_type": "potioneffect",
   "definition": {
     "effectName": "Greek Fire",
-    "icon": "tempeffect",
+    "icon": "greek_fire_effect",
     "color": {
       "value": -8974061,
       "falpha": 0.0

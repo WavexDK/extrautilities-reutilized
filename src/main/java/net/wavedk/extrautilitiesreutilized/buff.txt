@@ -1,0 +1,5 @@
+./init/EuruModCuriosCompat.java:import net.wavedk.extrautilitiesreutilized.procedures.AngelRingItemInInventoryTickProcedure;
+./init/EuruModCuriosCompat.java:				AngelRingItemInInventoryTickProcedure.execute(slotContext.entity());
+./item/AngelRingItem.java:import net.wavedk.extrautilitiesreutilized.procedures.AngelRingItemInInventoryTickProcedure;
+./item/AngelRingItem.java:		AngelRingItemInInventoryTickProcedure.execute(entity);
+./procedures/AngelRingItemInInventoryTickProcedure.java:public class AngelRingItemInInventoryTickProcedure {

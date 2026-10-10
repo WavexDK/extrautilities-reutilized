@@ -1,0 +1,29 @@
+{
+  "_fv": 89,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "unlockingItems": [],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      "TAG:c:gems/diamond",
+      "TAG:c:gems/diamond",
+      "TAG:c:gems/diamond",
+      "TAG:c:sands",
+      "CUSTOM:TrimBase",
+      "TAG:c:sands",
+      "TAG:c:sandstone/blocks",
+      "TAG:c:sandstone/blocks",
+      "TAG:c:sandstone/blocks"
+    ],
+    "recipeReturnStack": "Items.DUNE_ARMOR_TRIM",
+    "name": "dune_recipe",
+    "namespace": "mod"
+  }
+}

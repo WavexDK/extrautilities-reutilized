@@ -72,6 +72,7 @@ public class EuruModBlocks {
 	public static final DeferredBlock<Block> STONE_DRUM;
 	public static final DeferredBlock<Block> IRON_DRUM;
 	public static final DeferredBlock<Block> REINFORCED_LARGE_DRUM;
+	public static final DeferredBlock<Block> STEEL_BLOCK;
 	static {
 		SOLAR_PANEL = REGISTRY.register("solar_panel", SolarPanelBlock::new);
 		LUNAR_PANEL = REGISTRY.register("lunar_panel", LunarPanelBlock::new);
@@ -132,6 +133,7 @@ public class EuruModBlocks {
 		STONE_DRUM = REGISTRY.register("stone_drum", StoneDrumBlock::new);
 		IRON_DRUM = REGISTRY.register("iron_drum", IronDrumBlock::new);
 		REINFORCED_LARGE_DRUM = REGISTRY.register("reinforced_large_drum", ReinforcedLargeDrumBlock::new);
+		STEEL_BLOCK = REGISTRY.register("steel_block", SteelBlockBlock::new);
 	}
 	// Start of user code block custom blocks
 	// End of user code block custom blocks

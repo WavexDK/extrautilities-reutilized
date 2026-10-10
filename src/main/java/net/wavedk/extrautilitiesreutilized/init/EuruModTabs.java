@@ -81,6 +81,8 @@ public class EuruModTabs {
 				tabData.accept(EuruModItems.ENCHANTED_APPLE.get());
 				tabData.accept(EuruModItems.ENCHANTED_INGOT.get());
 				tabData.accept(EuruModItems.MAGICAL_NUGGET.get());
+				tabData.accept(EuruModItems.INGOT_O_EXPERIENCE.get());
+				tabData.accept(EuruModItems.NUGGETO_EXPERIENCE.get());
 				tabData.accept(EuruModItems.GOLDEN_LASSO.get());
 				tabData.accept(EuruModItems.CURSED_LASSO.get());
 				tabData.accept(EuruModItems.ANGEL_RING.get());
@@ -89,7 +91,6 @@ public class EuruModTabs {
 				tabData.accept(EuruModBlocks.ENDER_LILLY.get().asItem());
 				tabData.accept(EuruModItems.DROP_OF_EVIL.get());
 				tabData.accept(EuruModItems.RESONATING_REDSTONE_CRYSTAL.get());
-				tabData.accept(EuruModItems.NUGGETO_EXPERIENCE.get());
 				tabData.accept(EuruModItems.ENDER_SHARD.get());
 				tabData.accept(EuruModItems.NETHERITE_SICKLE.get());
 				tabData.accept(EuruModItems.DIAMOND_SICKLE.get());
@@ -99,6 +100,14 @@ public class EuruModTabs {
 				tabData.accept(EuruModItems.WOODEN_SICKLE.get());
 				tabData.accept(EuruModItems.GLASS_CUTTER.get());
 			}).build());
+	public static final DeferredHolder<CreativeModeTab, CreativeModeTab> CRAFTABLES = REGISTRY.register("craftables",
+			() -> CreativeModeTab.builder().title(Component.translatable("item_group.euru.craftables")).icon(() -> new ItemStack(EuruModItems.COAL_AND_IRON.get())).displayItems((parameters, tabData) -> {
+				tabData.accept(EuruModBlocks.STEEL_BLOCK.get().asItem());
+				tabData.accept(EuruModItems.COAL_AND_IRON.get());
+				tabData.accept(EuruModItems.STEEL_INGOT.get());
+				tabData.accept(EuruModItems.STEEL_NUGGET.get());
+				tabData.accept(EuruModItems.TRIM_BASE.get());
+			}).withTabsBefore(EURU.getId()).build());
 	public static final DeferredHolder<CreativeModeTab, CreativeModeTab> EURU_COMPRESSED = REGISTRY.register("euru_compressed",
 			() -> CreativeModeTab.builder().title(Component.translatable("item_group.euru.euru_compressed")).icon(() -> new ItemStack(EuruModBlocks.DOUBLE_COMPRESSED_COBBLESTONE.get())).displayItems((parameters, tabData) -> {
 				tabData.accept(EuruModBlocks.COMPRESSED_COBBLESTONE.get().asItem());
@@ -109,5 +118,5 @@ public class EuruModTabs {
 				tabData.accept(EuruModBlocks.SEXTUPLE_COMPRESSED_COBBLESTONE.get().asItem());
 				tabData.accept(EuruModBlocks.SEPTUPLE_COMPRESSED_COBBLESTONE.get().asItem());
 				tabData.accept(EuruModBlocks.OCTUPLE_COMPRESSED_COBBLESTONE.get().asItem());
-			}).withTabsBefore(EURU.getId()).build());
+			}).withTabsBefore(CRAFTABLES.getId()).build());
 }

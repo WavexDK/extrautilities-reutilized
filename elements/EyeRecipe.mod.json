@@ -1,0 +1,29 @@
+{
+  "_fv": 89,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "unlockingItems": [],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      "TAG:c:gems/diamond",
+      "TAG:c:gems/diamond",
+      "TAG:c:gems/diamond",
+      "TAG:c:ender_pearls",
+      "CUSTOM:TrimBase",
+      "TAG:c:ender_pearls",
+      "Blocks.END_BRICKS",
+      "Blocks.END_BRICKS",
+      "Blocks.END_BRICKS"
+    ],
+    "recipeReturnStack": "Items.EYE_ARMOR_TRIM",
+    "name": "eye_recipe",
+    "namespace": "mod"
+  }
+}

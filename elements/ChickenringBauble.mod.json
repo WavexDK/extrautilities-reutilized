@@ -13,7 +13,6 @@
     "hasModel": false,
     "baubleModel": "Default",
     "baubleModelTexture": "",
-    "curioTick": "ChickenRingItemInInventoryTick",
     "helmetModelPart": "Empty",
     "bodyModelPart": "Empty",
     "armsModelPartL": "Empty",

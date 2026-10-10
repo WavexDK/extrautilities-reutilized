@@ -11,7 +11,7 @@
   "block.euru.solar_panel.description_1": "§7Efficiency reduced by 0.95/block @ 80 blocks.",
   "block.euru.solar_panel.description_0": "§7Generates 1GP at daytime, if the block can see the sky",
   "block.euru.lunar_panel.description_0": "§7Generates 0.7GP at night, if the block can see the sky",
-  "block.euru.lunar_panel.description_1": "§7Efficiency reduces at 0.95/block @ 80 blocks.",
+  "block.euru.lunar_panel.description_1": "§7Efficiency reduced by 0.95/block @ 60 blocks.",
   "item.euru.resonator": "Resonator",
   "item.euru.upgrade_base": "Upgrade Base",
   "item.euru.speed_upgrade": "Speed Upgrade",
@@ -254,5 +254,12 @@
   "item.minecraft.splash_potion.effect.greek_fire_potion": "Splash Potion of Greek Fire",
   "block.euru.stone_drum": "Stone Drum",
   "block.euru.iron_drum": "Iron Drum",
-  "block.euru.reinforced_large_drum": "Reinforced Large Drum"
+  "block.euru.reinforced_large_drum": "Reinforced Iron Drum",
+  "item.euru.steel_ingot": "Steel Ingot",
+  "item.euru.steel_nugget": "Steel Nugget",
+  "block.euru.steel_block": "Block of Steel",
+  "item.euru.coal_and_iron": "Coal n' Iron",
+  "item_group.euru.craftables": "Craftables",
+  "item.euru.trim_base": "Trim Base",
+  "item.euru.ingot_o_experience": "Ingot o' Experience"
 }

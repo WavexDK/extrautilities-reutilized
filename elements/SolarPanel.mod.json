@@ -40,10 +40,8 @@
     "customProperties": [],
     "name": "Solar Panel",
     "specialInformation": {
-      "fixedValue": [
-        "§7Generates 1GP at daytime, if the block can see the sky",
-        "§7Efficiency reduced by 0.95/block @ 80 blocks."
-      ]
+      "fixedValue": [],
+      "name": "PanelSI"
     },
     "hardness": 1.0,
     "resistance": 10.0,

@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    "bcb",
+    "ddd"
+  ],
+  "key": {
+    "a": {
+      "tag": "c:gems/diamond"
+    },
+    "b": {
+      "tag": "c:sands"
+    },
+    "c": {
+      "item": "euru:trim_base"
+    },
+    "d": {
+      "tag": "c:sandstone/blocks"
+    }
+  },
+  "result": {
+    "id": "minecraft:dune_armor_trim_smithing_template",
+    "count": 1
+  }
+}

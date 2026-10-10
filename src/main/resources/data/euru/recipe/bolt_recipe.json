@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    "bcb",
+    "bbb"
+  ],
+  "key": {
+    "a": {
+      "tag": "c:gems/diamond"
+    },
+    "b": {
+      "tag": "c:storage_blocks/copper"
+    },
+    "c": {
+      "item": "euru:trim_base"
+    }
+  },
+  "result": {
+    "id": "minecraft:bolt_armor_trim_smithing_template",
+    "count": 1
+  }
+}

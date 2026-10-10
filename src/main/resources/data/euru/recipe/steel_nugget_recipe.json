@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "a"
+  ],
+  "key": {
+    "a": {
+      "tag": "c:ingots/steel"
+    }
+  },
+  "result": {
+    "id": "euru:steel_nugget",
+    "count": 1
+  }
+}

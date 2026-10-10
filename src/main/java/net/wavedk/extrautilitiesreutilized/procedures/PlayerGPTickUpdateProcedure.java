@@ -1,24 +1,15 @@
 package net.wavedk.extrautilitiesreutilized.procedures;
 
 import net.wavedk.extrautilitiesreutilized.network.EuruModVariables;
-import net.wavedk.extrautilitiesreutilized.init.EuruModItems;
-import net.wavedk.extrautilitiesreutilized.EuruMod;
 
-import net.neoforged.neoforge.items.IItemHandler;
 import net.neoforged.neoforge.event.tick.PlayerTickEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.bus.api.Event;
 
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.GameType;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.client.multiplayer.PlayerInfo;
-import net.minecraft.client.Minecraft;
 
 import javax.annotation.Nullable;
 
@@ -63,65 +54,17 @@ public class PlayerGPTickUpdateProcedure {
 		} else {
 			UpdateGPProcedure.execute(world, entity);
 		}
-		isEquippedCurios = false;
-		if (hasEntityInInventory(entity, new ItemStack(EuruModItems.ANGEL_RING.get()))) {
-			isEquippedCurios = true;
-		}
-		if (entity instanceof Player player3) {
-			IItemHandler inventory3 = EuruMod.CuriosApiHelper.getCuriosInventory(player3);
-			if (inventory3 != null) {
-				for (int i = 0; i < inventory3.getSlots(); i++) {
-					ItemStack itemstackiterator = inventory3.getStackInSlot(i);
-					if (itemstackiterator.getItem() == EuruModItems.ANGEL_RING.get()) {
-						isEquippedCurios = true;
-						break;
-					}
+		if (entity.getPersistentData().getDouble("canFlyCounterAngelRing") > 0) {
+			entity.getPersistentData().putDouble("canFlyCounterAngelRing", (entity.getPersistentData().getDouble("canFlyCounterAngelRing") - 1));
+			if (!entity.getPersistentData().getBoolean("canFlyAR")) {
+				entity.getPersistentData().putBoolean("canFlyAR", true);
+				if (entity instanceof Player _player) {
+					_player.getAbilities().mayfly = true;
+					_player.onUpdateAbilities();
 				}
 			}
-		}
-		cEntity = entity;
-		isFlying = cEntity instanceof net.minecraft.world.entity.player.Player player && player.getAbilities().mayfly;;
-		if (isEquippedCurios) {
-			if (getEntityGameType(entity) == GameType.SURVIVAL || getEntityGameType(entity) == GameType.ADVENTURE) {
-				if (entity.getData(EuruModVariables.PLAYER_VARIABLES).playerGPChecking) {
-					catobj = EuruModVariables.unified_config.get("general").getAsJsonObject();
-					cObj = catobj.get((BuiltInRegistries.ITEM.getKey(EuruModItems.ANGEL_RING.get()).toString())).getAsJsonObject();
-					{
-						EuruModVariables.PlayerVariables _vars = entity.getData(EuruModVariables.PLAYER_VARIABLES);
-						_vars.playerGP_Used_Update = entity.getData(EuruModVariables.PLAYER_VARIABLES).playerGP_Used_Update + cObj.get("gp_needed").getAsDouble();
-						_vars.markSyncDirty();
-					}
-				}
-				if (!entity.getData(EuruModVariables.PLAYER_VARIABLES).playerGPChecking) {
-					if (entity.getData(EuruModVariables.PLAYER_VARIABLES).playerGP_Used <= entity.getData(EuruModVariables.PLAYER_VARIABLES).playerGP_Total) {
-						if (entity instanceof Player _player) {
-							_player.getAbilities().mayfly = true;
-							_player.onUpdateAbilities();
-						}
-						{
-							EuruModVariables.PlayerVariables _vars = entity.getData(EuruModVariables.PLAYER_VARIABLES);
-							_vars.ringFlying = true;
-							_vars.markSyncDirty();
-						}
-					} else if (isFlying && entity.getData(EuruModVariables.PLAYER_VARIABLES).ringFlying) {
-						{
-							EuruModVariables.PlayerVariables _vars = entity.getData(EuruModVariables.PLAYER_VARIABLES);
-							_vars.ringFlying = false;
-							_vars.markSyncDirty();
-						}
-						if (entity instanceof Player _player) {
-							_player.getAbilities().mayfly = (true == false);
-							_player.onUpdateAbilities();
-						}
-					}
-				}
-			}
-		} else if (isFlying && entity.getData(EuruModVariables.PLAYER_VARIABLES).ringFlying) {
-			{
-				EuruModVariables.PlayerVariables _vars = entity.getData(EuruModVariables.PLAYER_VARIABLES);
-				_vars.ringFlying = false;
-				_vars.markSyncDirty();
-			}
+		} else if (entity.getPersistentData().getBoolean("canFlyAR")) {
+			entity.getPersistentData().putBoolean("canFlyAR", false);
 			if (entity instanceof Player _player) {
 				_player.getAbilities().mayfly = (true == false);
 				_player.onUpdateAbilities();
@@ -133,22 +76,5 @@ public class PlayerGPTickUpdateProcedure {
 			_vars.updateab2 = true;
 			_vars.markSyncDirty();
 		}
-	}
-
-	private static boolean hasEntityInInventory(Entity entity, ItemStack itemstack) {
-		if (entity instanceof Player player)
-			return player.getInventory().contains(stack -> !stack.isEmpty() && ItemStack.isSameItem(stack, itemstack));
-		return false;
-	}
-
-	private static GameType getEntityGameType(Entity entity) {
-		if (entity instanceof ServerPlayer serverPlayer) {
-			return serverPlayer.gameMode.getGameModeForPlayer();
-		} else if (entity instanceof Player player && player.level().isClientSide()) {
-			PlayerInfo playerInfo = Minecraft.getInstance().getConnection().getPlayerInfo(player.getGameProfile().getId());
-			if (playerInfo != null)
-				return playerInfo.getGameMode();
-		}
-		return null;
 	}
 }

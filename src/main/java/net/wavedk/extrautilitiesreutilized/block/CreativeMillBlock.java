@@ -88,7 +88,7 @@ public class CreativeMillBlock extends Block implements EntityBlock {
 	@Override
 	public void setPlacedBy(Level world, BlockPos pos, BlockState blockstate, LivingEntity entity, ItemStack itemstack) {
 		super.setPlacedBy(world, pos, blockstate, entity, itemstack);
-		GroupMillsAddedHandlerProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ(), entity);
+		GroupMillsAddedHandlerProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ(), blockstate, entity);
 	}
 
 	@Override

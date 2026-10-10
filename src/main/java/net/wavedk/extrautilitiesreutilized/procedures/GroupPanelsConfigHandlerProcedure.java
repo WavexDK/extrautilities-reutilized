@@ -23,7 +23,7 @@ import java.util.UUID;
 import java.io.File;
 
 public class GroupPanelsConfigHandlerProcedure {
-	public static void execute(LevelAccessor world, double x, double y, double z) {
+	public static void execute(LevelAccessor world, double x, double y, double z, BlockState blockstate) {
 		double c_y = 0;
 		double c_x = 0;
 		double c_z = 0;
@@ -53,7 +53,7 @@ public class GroupPanelsConfigHandlerProcedure {
 		if (player instanceof Player || player instanceof ServerPlayer) {
 			gp_gen_obj = EuruModVariables.unified_config.get("gp_generation").getAsJsonObject();
 			effman = EuruModVariables.unified_config.get("gp_efficiency_manager").getAsJsonObject();
-			itemOBJ = gp_gen_obj.get((BuiltInRegistries.BLOCK.getKey((world.getBlockState(BlockPos.containing(x, y, z))).getBlock()).toString())).getAsJsonObject();
+			itemOBJ = gp_gen_obj.get((BuiltInRegistries.BLOCK.getKey(blockstate.getBlock()).toString())).getAsJsonObject();
 			allblocks = effman.get("group_allblocks").getAsJsonObject();
 			if (!world.isClientSide()) {
 				BlockPos _bp = BlockPos.containing(x, y, z);

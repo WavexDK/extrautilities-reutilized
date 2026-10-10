@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "c:nuggets/iron"
+    },
+    {
+      "tag": "c:ingots/iron"
+    },
+    {
+      "tag": "minecraft:coals"
+    },
+    {
+      "tag": "c:nuggets/iron"
+    },
+    {
+      "tag": "c:nuggets/iron"
+    }
+  ],
+  "result": {
+    "id": "euru:coal_and_iron",
+    "count": 1
+  }
+}

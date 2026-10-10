@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "euru:steel_block",
     "euru:diamond_spike",
     "euru:gold_spike"
   ]

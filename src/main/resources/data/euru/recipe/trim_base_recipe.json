@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " ab",
+    "aca",
+    "ba "
+  ],
+  "key": {
+    "a": {
+      "tag": "c:stones"
+    },
+    "b": {
+      "tag": "c:nuggets/steel"
+    },
+    "c": {
+      "tag": "c:gems/diamond"
+    }
+  },
+  "result": {
+    "id": "euru:trim_base",
+    "count": 1
+  }
+}

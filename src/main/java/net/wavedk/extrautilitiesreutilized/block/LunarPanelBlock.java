@@ -1,6 +1,7 @@
 package net.wavedk.extrautilitiesreutilized.block;
 
 import net.wavedk.extrautilitiesreutilized.procedures.PanelsTickUpdateHandlerProcedure;
+import net.wavedk.extrautilitiesreutilized.procedures.PanelSIProcedure;
 import net.wavedk.extrautilitiesreutilized.procedures.GroupSolarPanelsAddedHandlerProcedure;
 import net.wavedk.extrautilitiesreutilized.block.entity.LunarPanelBlockEntity;
 
@@ -29,6 +30,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.Containers;
 import net.minecraft.util.RandomSource;
@@ -36,6 +38,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.network.chat.Component;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
+import net.minecraft.client.Minecraft;
 
 import java.util.List;
 
@@ -70,8 +73,13 @@ public class LunarPanelBlock extends Block implements EntityBlock {
 	@OnlyIn(Dist.CLIENT)
 	public void appendHoverText(ItemStack itemstack, Item.TooltipContext context, List<Component> list, TooltipFlag flag) {
 		super.appendHoverText(itemstack, context, list, flag);
-		list.add(Component.translatable("block.euru.lunar_panel.description_0"));
-		list.add(Component.translatable("block.euru.lunar_panel.description_1"));
+		Entity entity = itemstack.getEntityRepresentation() != null ? itemstack.getEntityRepresentation() : Minecraft.getInstance().player;
+		String hoverText = PanelSIProcedure.execute(itemstack);
+		if (hoverText != null) {
+			for (String line : hoverText.split("\n")) {
+				list.add(Component.literal(line));
+			}
+		}
 	}
 
 	@Override
@@ -117,7 +125,7 @@ public class LunarPanelBlock extends Block implements EntityBlock {
 	@Override
 	public void setPlacedBy(Level world, BlockPos pos, BlockState blockstate, LivingEntity entity, ItemStack itemstack) {
 		super.setPlacedBy(world, pos, blockstate, entity, itemstack);
-		GroupSolarPanelsAddedHandlerProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ(), entity);
+		GroupSolarPanelsAddedHandlerProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ(), blockstate, entity);
 	}
 
 	@Override

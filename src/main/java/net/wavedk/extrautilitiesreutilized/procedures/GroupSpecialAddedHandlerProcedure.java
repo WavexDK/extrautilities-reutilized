@@ -12,7 +12,7 @@ import net.minecraft.core.BlockPos;
 import java.io.File;
 
 public class GroupSpecialAddedHandlerProcedure {
-	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
+	public static void execute(LevelAccessor world, double x, double y, double z, BlockState blockstate, Entity entity) {
 		if (entity == null)
 			return;
 		double c_y = 0;
@@ -42,7 +42,7 @@ public class GroupSpecialAddedHandlerProcedure {
 					_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 			}
 		}
-		GroupPanelsConfigHandlerProcedure.execute(world, x, y, z);
+		GroupPanelsConfigHandlerProcedure.execute(world, x, y, z, blockstate);
 	}
 
 	private static String getBlockNBTString(LevelAccessor world, BlockPos pos, String tag) {

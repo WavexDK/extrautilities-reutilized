@@ -85,7 +85,7 @@ public class ReinforcedLargeDrumBlockEntity extends RandomizableContainerBlockEn
 
 	@Override
 	public Component getDisplayName() {
-		return Component.literal("Reinforced Large Drum");
+		return Component.literal("Reinforced Iron Drum");
 	}
 
 	@Override

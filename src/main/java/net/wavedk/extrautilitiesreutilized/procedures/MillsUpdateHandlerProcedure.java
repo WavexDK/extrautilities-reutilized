@@ -1,10 +1,6 @@
 package net.wavedk.extrautilitiesreutilized.procedures;
 
-import org.apache.commons.lang3.function.FailableFunction;
-
 import net.wavedk.extrautilitiesreutilized.network.EuruModVariables;
-
-import net.neoforged.neoforge.server.ServerLifecycleHooks;
 
 import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
@@ -16,15 +12,12 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 
 import java.util.regex.Pattern;
-import java.util.function.Supplier;
-import java.util.UUID;
 
 import java.io.File;
 
@@ -44,15 +37,7 @@ public class MillsUpdateHandlerProcedure {
 		File cfile = new File("");
 		Direction cD = Direction.NORTH;
 		placedBy = getBlockNBTString(world, BlockPos.containing(x, y, z), "placedBy");
-		if (ServerLifecycleHooks.getCurrentServer() != null) {
-			for (ServerLevel worlditerator : ServerLifecycleHooks.getCurrentServer().getAllLevels()) {
-				world = worlditerator;
-				player = world instanceof ServerLevel _serverGetEntityUUID ? _serverGetEntityUUID.getEntity(tryOrDefault(placedBy, UUID::fromString, () -> new UUID(0, 0))) : null;
-				if (player instanceof Player || player instanceof ServerPlayer) {
-					break;
-				}
-			}
-		}
+		player = GetPlayerfromWorldsProcedure.execute(world, getBlockNBTString(world, BlockPos.containing(x, y, z), "placedBy"));
 		if (player instanceof Player || player instanceof ServerPlayer) {
 			if (player.getData(EuruModVariables.PLAYER_VARIABLES).playerGPChecking) {
 				canGenerate = true;
@@ -61,11 +46,11 @@ public class MillsUpdateHandlerProcedure {
 								|| getBlockNBTLogic(world, BlockPos.containing(x, y, z), "needs_sky") == false)) {
 					if (getBlockNBTLogic(world, BlockPos.containing(x, y, z), "needs_block")) {
 						canGenerate = false;
-						String _splitContent25 = Pattern.quote(",");
-						String _toSplit25 = (getBlockNBTString(world, BlockPos.containing(x, y, z), "needs_block_sides"));
-						String[] _array25 = _toSplit25.split(_splitContent25);
-						if (_array25.length != 0) {
-							for (String stringiterator : _array25) {
+						String _splitContent21 = Pattern.quote(",");
+						String _toSplit21 = (getBlockNBTString(world, BlockPos.containing(x, y, z), "needs_block_sides"));
+						String[] _array21 = _toSplit21.split(_splitContent21);
+						if (_array21.length != 0) {
+							for (String stringiterator : _array21) {
 								cD = GetDirectionFromTextProcedure.execute(blockstate, stringiterator);
 								if ((world.getBlockState(BlockPos.containing(x + cD.getStepX(), y + cD.getStepY(), z + cD.getStepZ()))).getBlock() == BuiltInRegistries.BLOCK
 										.get(ResourceLocation.parse(((getBlockNBTString(world, BlockPos.containing(x, y, z), "needs_block_id"))).toLowerCase(java.util.Locale.ENGLISH)))) {
@@ -74,8 +59,8 @@ public class MillsUpdateHandlerProcedure {
 								}
 							}
 						} else {
-							String stringiterator = _toSplit25;
-							for (int _yourmother25 = 0; _yourmother25 < 1; _yourmother25++) {
+							String stringiterator = _toSplit21;
+							for (int _yourmother21 = 0; _yourmother21 < 1; _yourmother21++) {
 								cD = GetDirectionFromTextProcedure.execute(blockstate, stringiterator);
 								if ((world.getBlockState(BlockPos.containing(x + cD.getStepX(), y + cD.getStepY(), z + cD.getStepZ()))).getBlock() == BuiltInRegistries.BLOCK
 										.get(ResourceLocation.parse(((getBlockNBTString(world, BlockPos.containing(x, y, z), "needs_block_id"))).toLowerCase(java.util.Locale.ENGLISH)))) {
@@ -168,7 +153,7 @@ public class MillsUpdateHandlerProcedure {
 					_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 			}
 		}
-		GroupPanelsConfigHandlerProcedure.execute(world, x, y, z);
+		GroupPanelsConfigHandlerProcedure.execute(world, x, y, z, blockstate);
 		if (getBlockNBTLogic(world, BlockPos.containing(x, y, z), "generating")) {
 			{
 				BlockPos _pos = BlockPos.containing(x, y, z);
@@ -187,7 +172,7 @@ public class MillsUpdateHandlerProcedure {
 					if (world instanceof Level _level)
 						_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 				}
-				if ((getPropertyByName((world.getBlockState(BlockPos.containing(x, y, z))), "animation") instanceof IntegerProperty _getip44 ? (world.getBlockState(BlockPos.containing(x, y, z))).getValue(_getip44) : -1) == 3) {
+				if ((getPropertyByName((world.getBlockState(BlockPos.containing(x, y, z))), "animation") instanceof IntegerProperty _getip40 ? (world.getBlockState(BlockPos.containing(x, y, z))).getValue(_getip40) : -1) == 3) {
 					{
 						int _value = 0;
 						BlockPos _pos = BlockPos.containing(x, y, z);
@@ -197,7 +182,7 @@ public class MillsUpdateHandlerProcedure {
 					}
 				} else {
 					{
-						int _value = (getPropertyByName((world.getBlockState(BlockPos.containing(x, y, z))), "animation") instanceof IntegerProperty _getip47 ? (world.getBlockState(BlockPos.containing(x, y, z))).getValue(_getip47) : -1) + 1;
+						int _value = (getPropertyByName((world.getBlockState(BlockPos.containing(x, y, z))), "animation") instanceof IntegerProperty _getip43 ? (world.getBlockState(BlockPos.containing(x, y, z))).getValue(_getip43) : -1) + 1;
 						BlockPos _pos = BlockPos.containing(x, y, z);
 						BlockState _bs = world.getBlockState(_pos);
 						if (_bs.getBlock().getStateDefinition().getProperty("animation") instanceof IntegerProperty _integerProp && _integerProp.getPossibleValues().contains(_value))
@@ -238,14 +223,6 @@ public class MillsUpdateHandlerProcedure {
 		if (blockEntity != null)
 			return blockEntity.getPersistentData().getString(tag);
 		return "";
-	}
-
-	private static <A, B> A tryOrDefault(B funcArg, FailableFunction<B, A, Exception> func, Supplier<A> fallback) {
-		try {
-			return func.apply(funcArg);
-		} catch (Exception e) {
-			return fallback.get();
-		}
 	}
 
 	private static double getBlockNBTNumber(LevelAccessor world, BlockPos pos, String tag) {

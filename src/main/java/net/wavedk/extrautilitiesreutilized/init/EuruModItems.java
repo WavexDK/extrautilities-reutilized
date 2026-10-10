@@ -128,6 +128,12 @@ public class EuruModItems {
 	public static final DeferredItem<Item> STONE_DRUM = block(EuruModBlocks.STONE_DRUM);
 	public static final DeferredItem<Item> IRON_DRUM = block(EuruModBlocks.IRON_DRUM);
 	public static final DeferredItem<Item> REINFORCED_LARGE_DRUM = block(EuruModBlocks.REINFORCED_LARGE_DRUM);
+	public static final DeferredItem<Item> STEEL_INGOT = REGISTRY.register("steel_ingot", SteelIngotItem::new);
+	public static final DeferredItem<Item> STEEL_NUGGET = REGISTRY.register("steel_nugget", SteelNuggetItem::new);
+	public static final DeferredItem<Item> STEEL_BLOCK = block(EuruModBlocks.STEEL_BLOCK);
+	public static final DeferredItem<Item> COAL_AND_IRON = REGISTRY.register("coal_and_iron", CoalAndIronItem::new);
+	public static final DeferredItem<Item> TRIM_BASE = REGISTRY.register("trim_base", TrimBaseItem::new);
+	public static final DeferredItem<Item> INGOT_O_EXPERIENCE = REGISTRY.register("ingot_o_experience", IngotOExperienceItem::new);
 
 	// Start of user code block custom items
 	// End of user code block custom items

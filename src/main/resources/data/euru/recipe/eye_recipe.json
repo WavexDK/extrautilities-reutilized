@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    "bcb",
+    "ddd"
+  ],
+  "key": {
+    "a": {
+      "tag": "c:gems/diamond"
+    },
+    "b": {
+      "tag": "c:ender_pearls"
+    },
+    "c": {
+      "item": "euru:trim_base"
+    },
+    "d": {
+      "item": "minecraft:end_stone_bricks"
+    }
+  },
+  "result": {
+    "id": "minecraft:eye_armor_trim_smithing_template",
+    "count": 1
+  }
+}

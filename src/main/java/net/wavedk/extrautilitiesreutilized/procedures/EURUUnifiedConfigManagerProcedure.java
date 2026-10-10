@@ -91,7 +91,7 @@ public class EURUUnifiedConfigManagerProcedure {
 		String cItem = "";
 		String coutput = "";
 		configFile = new File((FMLPaths.GAMEDIR.get().toString() + "/config/euru/"), File.separator + "euru_unified_config.json");
-		EuruModVariables.cVer = 3;
+		EuruModVariables.cVer = 973.2;
 		cVer = EuruModVariables.cVer;
 		if (!configFile.exists()) {
 			try {
@@ -112,6 +112,15 @@ public class EURUUnifiedConfigManagerProcedure {
 			itemobj.addProperty("output", (BuiltInRegistries.ITEM.getKey(EuruModBlocks.BLOCK_OF_EVIL_INFUSED_INGOT.get().asItem()).toString()));
 			eobj.add((BuiltInRegistries.ITEM.getKey(Blocks.IRON_BLOCK.asItem()).toString()), itemobj);
 			erlArray.add((BuiltInRegistries.ITEM.getKey(Blocks.IRON_BLOCK.asItem()).toString()));
+			itemobj = new com.google.gson.JsonObject();
+			itemobj.addProperty("gp_required", 16);
+			itemobj.addProperty("fe_required", 8000);
+			itemobj.addProperty("lapis_required", 9);
+			itemobj.addProperty("wait_time", 800);
+			itemobj.addProperty("lapis_input", (BuiltInRegistries.ITEM.getKey(Items.LAPIS_LAZULI).toString()));
+			itemobj.addProperty("output", (BuiltInRegistries.ITEM.getKey(EuruModItems.ENCHANTED_INGOT.get()).toString()));
+			eobj.add((BuiltInRegistries.ITEM.getKey(EuruModItems.INGOT_O_EXPERIENCE.get()).toString()), itemobj);
+			erlArray.add((BuiltInRegistries.ITEM.getKey(EuruModItems.INGOT_O_EXPERIENCE.get()).toString()));
 			itemobj = new com.google.gson.JsonObject();
 			itemobj.addProperty("gp_required", 4);
 			itemobj.addProperty("fe_required", 1000);

@@ -1,0 +1,25 @@
+{
+  "type": "euru:enchanter_recipe_type",
+  "ingredients": [
+    {
+      "item": "euru:ingot_o_experience"
+    },
+    {
+      "item": "minecraft:lapis_lazuli"
+    }
+  ],
+  "integers": [
+    1,
+    9
+  ],
+  "strings": [
+    "euru:enchanter",
+    "euru:ingot_o_experience"
+  ],
+  "outputs": [
+    {
+      "id": "euru:enchanted_ingot",
+      "count": 1
+    }
+  ]
+}

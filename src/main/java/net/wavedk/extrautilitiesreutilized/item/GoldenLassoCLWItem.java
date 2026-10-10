@@ -1,6 +1,7 @@
 package net.wavedk.extrautilitiesreutilized.item;
 
 import net.wavedk.extrautilitiesreutilized.procedures.GoldenLassoVillagerSpecialInformationProcedure;
+import net.wavedk.extrautilitiesreutilized.init.EuruModItems;
 
 import net.neoforged.api.distmarker.OnlyIn;
 import net.neoforged.api.distmarker.Dist;
@@ -17,6 +18,16 @@ import java.util.List;
 public class GoldenLassoCLWItem extends Item {
 	public GoldenLassoCLWItem() {
 		super(new Item.Properties().stacksTo(1));
+	}
+
+	@Override
+	public boolean hasCraftingRemainingItem(ItemStack stack) {
+		return true;
+	}
+
+	@Override
+	public ItemStack getCraftingRemainingItem(ItemStack itemstack) {
+		return new ItemStack(EuruModItems.GOLDEN_LASSO.get());
 	}
 
 	@Override
